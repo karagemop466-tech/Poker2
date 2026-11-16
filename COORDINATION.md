@@ -79,7 +79,7 @@ Integration result (arena/acd81e67-poker2 → main):
 | T4 Hotels: resort-fee verification (Venetian, Wynn) | done (room rates and walk times not verified; blank) | arena/a22d577b-poker2 | `data/verified/hotels.json` |
 | T5 Executive summary, questions, suggestions, sources | done | arena/a22d577b-poker2 | `data/verified/{summary,questions,suggestions,sources}.json` |
 | T6 Site build (generator with official-source and link checks) | done | arena/a22d577b-poker2 | `scripts/build.mjs`, `verified/**` |
-| T7 Integration: merge, Pages check, record | in progress | arena/a22d577b-poker2 | this section |
+| T7 Integration: merge, Pages check, record | done | arena/a22d577b-poker2 | this section |
 
 Coexistence with main (no overwrites):
 - Main's `data/*.json` and root pages (`index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `pages/*`, `docs/*`) belong to other sessions and were NOT changed.
@@ -92,3 +92,7 @@ Task log (this session):
 - 2026-11-16: Corrected drafts. Removed unsupported claims (a Wynn phone number, an Encore location, WPT re-entry text, an unverified Wynn tax rate, aggregator resort-fee figures). Confirmed the Venetian structure URL pattern (sheet 16 resolves and confirms the Event 36 facts).
 - 2026-11-16: First merge attempt (PR #11) conflicted with main's new data and root pages. Resolved by moving this session's files to `data/verified/` and `verified/` and merging main, keeping main's COORDINATION.md and appending this section. No other session's files were overwritten.
 - Conflicts logged: COORDINATION.md (add/add) — resolved by keeping main's board and appending this section. `data/*.json` and root site names — avoided by relocation.
+- **PR link and merge result:** [PR #11](https://github.com/karagemop466-tech/Poker2/pull/11) (`arena/a22d577b-poker2` → `main`), merged with a merge commit as `c83d13e`. Mergeable state was CLEAN before merge.
+- **Pages deploy:** the `Deploy static site` workflow run [43932308394](https://github.com/karagemop466-tech/Poker2/actions/runs/43932308394) completed `success` on `c83d13e`. A later `pages build and deployment` run was cancelled by the `pages` concurrency group; Pages status reported `built` for `c83d13e`.
+- **Live check (fetched):** https://karagemop466-tech.github.io/Poker2/verified/ and https://karagemop466-tech.github.io/Poker2/verified/flagged/ both serve the merged content. Root site not changed.
+- **Published:** the Flagged for Review page is at `/verified/flagged/`. Flags F01–F20 do not block the merge.
