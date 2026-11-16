@@ -52,7 +52,7 @@
     },
     {
       "item": "Wynn daily 12pm $200 NLH",
-      "where": "Mon–Thu, Sat, Sun",
+      "where": "Mon\u2013Thu, Sat, Sun",
       "detail": "Guarantee and re-entry not verified."
     },
     {
@@ -73,7 +73,7 @@
     {
       "item": "Clark County transient lodging tax",
       "where": "All hotels",
-      "detail": "Secondary sources conflict (13.38% vs 10.5%–13.38%). No official county source found. Left blank."
+      "detail": "Secondary sources conflict (13.38% vs 10.5%\u201313.38%). No official county source found. Left blank."
     },
     {
       "item": "Golden Nugget Grand Poker Series",
@@ -84,6 +84,11 @@
       "item": "Aria poker schedule",
       "where": "ARIA",
       "detail": "Official schedule not captured in verified notes. Not listed."
+    },
+    {
+      "item": "Westgate: $70 NLH freezeouts (5:05 PM & 9:05 PM)",
+      "where": "Westgate Las Vegas poker room",
+      "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying."
     }
   ]
 }
