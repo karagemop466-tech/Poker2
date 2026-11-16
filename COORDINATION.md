@@ -137,3 +137,16 @@ Task log:
 - Added Westgate finding as a flagged third-party lead only (consistent with the site's official-source standard—not used as a confirmed value): `data/non_official_refs.json` TP_WESTGATE; `data/flags.json` Westgate flag.
 - Created PR [#8](https://github.com/karagemop466-tech/Poker2/pull/8) (`arena/3ab1bcae-poker2` → `main`); merged with merge commit `6f5e6db`; Pages workflow completed `built`; live site at https://karagemop466-tech.github.io/Poker2/. Subsequently PR #14 (`arena/e3cb221d-poker2`) merged on top at `bde7308`; main sync verified.
 - Flagged items (do not block merge): Westgate entry rules are aggregator-sourced, not confirmed with the Westgate poker room.
+
+## Session arena/93b28309-poker2 — supplemental audit (2026-11-16)
+
+| Task | Status | Files |
+|---|---|---|
+| Wynn WPT / MGM official source cross-check | done; unknowns flagged | `data/sources.json`, `data/flags.json`, `pages/spending.html`, `pages/schedule.html`, `flagged.html` |
+| Hotel fee / quality comparison corrections | done; dated totals and walk durations remain blank | `data/hotels.csv`, `data/hotels.json`, `hotels.html`, `pages/hotel-costs.html` |
+| Integrate into current dashboard and record source audit | done | `reports/research-and-verification.md`, current root pages |
+
+- Preserved latest upstream dashboard pages and other sessions' coordination records. No new dashboard was introduced.
+- Official source findings and unresolved questions are detailed in `reports/research-and-verification.md`, `data/flags.json`, and the pages above. Wynn's verified re-entry events remain excluded from single-entry recommendations. MGM's August-labeled PDF relevance and $11 gratuity / 10,000-chip wording remain flagged. Hotel prices, true nightly totals and walk times remain blank; Venetian/Palazzo poker-rate numbers are not assigned to a specific property.
+- Validation: `python3 scripts/check_links.py` passed (131/131 rows cited); custom check found no broken relative links in 20 root/pages HTML documents; `git diff --check` passed; CSVs parse and all data rows have official HTTPS source links; local preview returned HTTP 200.
+- Existing Pages workflow deploys repository root on push to `main`; no workflow change was needed. PR/merge/deployment result pending.

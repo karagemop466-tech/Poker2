@@ -24,7 +24,7 @@
     "type": "Official hotel fee page"
   },
   "V_HOTEL_TC": {
-    "label": "Venetian: Hotel Terms & Conditions (resort fee $55 plus tax; seen in search index, not fully opened)",
+    "label": "Venetian Hotel Terms & Conditions (13.38% room tax and $55 resort fee plus applicable tax; opened 2026-11-16)",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
     "publisher": "The Venetian Las Vegas (official)",
     "type": "Official terms"
@@ -54,7 +54,7 @@
     "type": "Official poster PDF"
   },
   "W_TC": {
-    "label": "Wynn: Resort fee terms ($55 plus tax; visitwynn.com terms page, seen in search index)",
+    "label": "Wynn Resort Fee terms ($55 plus tax; existing official offer/terms link)",
     "url": "https://www.visitwynn.com/tc/index.cfm?term_id=850250",
     "publisher": "Wynn Resorts (official)",
     "type": "Official terms"
@@ -244,5 +244,53 @@
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
     "publisher": "The Venetian Resort Las Vegas",
     "type": "Official rate page"
+  },
+  "V_SERIES_OVERVIEW": {
+    "label": "Venetian DeepStack series overview (current-series module and next series)",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "publisher": "The Venetian Resort Las Vegas (official)",
+    "type": "Official series overview"
+  },
+  "W_RESORT_INFO": {
+    "label": "Wynn Las Vegas Resort Policies & Information (current $55 plus tax fee)",
+    "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official hotel fee page"
+  },
+  "W_QUALITY": {
+    "label": "Wynn 2026 awards statement (Wynn Tower Suites Five-Star streak)",
+    "url": "https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official awards statement"
+  },
+  "MGM_POKER": {
+    "label": "MGM Grand poker room page (daily tournaments, linked schedule and structures)",
+    "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+    "publisher": "MGM Grand Las Vegas (official)",
+    "type": "Official poker-room page"
+  },
+  "MGM_TOURNEY_SCHED": {
+    "label": "MGM Grand tournament schedule PDF (titled August; year not stated)",
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
+    "publisher": "MGM Grand Las Vegas (official)",
+    "type": "Official tournament schedule PDF; date applicability uncertain"
+  },
+  "MGM_120_STRUCT": {
+    "label": "MGM Grand $120 No-Limit Hold'em structure (voluntary $11 gratuity / 10,000 chips text)",
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf",
+    "publisher": "MGM Grand Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "MGM_HOTEL_TC": {
+    "label": "MGM Grand Hotel Reservation Terms and Conditions ($50 nightly fee plus tax)",
+    "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+    "publisher": "MGM Grand Las Vegas / MGM Resorts (official)",
+    "type": "Official hotel terms"
+  },
+  "MGM_HOTEL": {
+    "label": "MGM Grand Hotel Rooms (official booking/room categories)",
+    "url": "https://mgmgrand.mgmresorts.com/en/hotel.html",
+    "publisher": "MGM Grand Las Vegas (official)",
+    "type": "Official hotel page"
   }
 }
