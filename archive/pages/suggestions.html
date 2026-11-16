@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions — Poker2</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body><!--ARCHIVE-BANNER-->
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#2b1113;
+border-top:2px solid #e8564f;color:#f4dede;font:13px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+padding:9px 16px;text-align:center">
+<b style="color:#ff8a80">SUPERSEDED SITE.</b>
+This dashboard has been replaced. Its buy-ins, guarantees and fees were typed by hand and are not
+traceable to a source — at least one figures is wrong. Kept only as an audit trail.
+<a href="../../index.html" style="color:#7fc4ff">Open the current dashboard →</a>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <div>
+      <h1>Suggestions &mdash; Review Before Implementing</h1>
+      <p class="sub">Proposed improvements to the site and to decision-making. These are options to review &mdash; no change should be implemented without checking this list first.</p>
+    </div>
+    <a class="button" href="../root/index.html" style="color:#fff;background:var(--accent);padding:8px 14px;border-radius:6px;text-decoration:none;">&larr; Dashboard</a>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="../root/index.html">Dashboard</a>
+    <a href="tournaments.html">Single-Entry Tournaments</a>
+    <a href="advantage-tournaments.html">Spend-More Advantage Events</a>
+    <a href="hotels.html">Hotels &amp; True Cost</a>
+    <a href="schedule.html">All-Day Schedule</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="suggestions.html" class="active">Suggestions</a>
+    <a href="questions.html">Open Questions</a>
+    <a href="flagged-review.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Suggested Site &amp; Decision-Making Improvements</h1>
+    <p class="lead">Review each suggestion, pick the best path, then implement. Estimated effort and dependencies are given where known.</p>
+  </div>
+
+  <div class="callout info">
+    <strong>How to use this page.</strong> Read each suggestion, weigh impact vs. effort, then decide which to implement. Suggestions are not prioritized by us &mdash; you choose the order. Related open questions are cross-linked to <a href="questions.html">Open Questions</a> and <a href="flagged-review.html">Flagged for Review</a>.
+  </div>
+
+  <div class="sugg">
+    <h3>S-1 &mdash; Live hotel rate lookup with true-cost calculator</h3>
+    <div class="meta">Impact: high &bull; Effort: high &bull; Depends on: Q6 (live rates)</div>
+    <p>Replace the blank rate cells with a real calculator: user picks dates and hotel, the site opens the hotel&rsquo;s official booking page (direct link) and shows <span class="katex-like">room rate + resort fee + 13.38% Clark County tax + parking = true cost per night</span>, plus stay total. Because official booking engines are JavaScript-rendered and could not be scraped, the site should link out to official booking pages with the user&rsquo;s dates pre-filled where the booking engine supports URL date parameters, rather than displaying scraped rates (which would go stale immediately).</p>
+    <p><strong>Review before implementing:</strong> confirm which official booking engines support date-prefilled URLs; confirm tax treatment of resort fees (Q10); add a &ldquo;not a quote&rdquo; disclaimer.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-2 &mdash; Re-entry / multi-entry policy extractor</h3>
+    <div class="meta">Impact: high &bull; Effort: medium &bull; Depends on: Q1, Q11</div>
+    <p>Automatically parse each tournament&rsquo;s official structure-sheet PDF for re-entry, rebuy, add-on, and multiple-flight language, and tag every event &ldquo;single-entry&rdquo;, &ldquo;re-entry allowed&rdquo;, &ldquo;rebuys/add-ons&rdquo;, or &ldquo;multiple flights&rdquo; with a link to the source. This directly supports your &ldquo;single entry only&rdquo; requirement and prevents misclassification (currently every Venetian entry policy is flagged unverified).</p>
+    <p><strong>Review before implementing:</strong> decide whether to parse PDFs server-side or maintain a hand-verified policy list; link every tag to the official structure sheet.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-3 &mdash; Verified walking distances and routes</h3>
+    <div class="meta">Impact: high &bull; Effort: medium &bull; Depends on: Q8</div>
+    <p>Replace estimated walk times with Google Maps (or equivalent) walking-route distances and times between each hotel and each tournament venue, saved per route and re-checked regularly. Show &ldquo;verified on <date>&rdquo; and flag routes over 30 minutes.</p>
+    <p><strong>Review before implementing:</strong> pick a mapping provider with a terms-of-use-compliant API; decide how often routes are re-verified (Strip construction changes walking routes).</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-4 &mdash; Calendar view and iCal export</h3>
+    <div class="meta">Impact: medium &bull; Effort: medium</div>
+    <p>A monthly calendar of single-entry tournaments (and a separate one for advantage events) with Add-to-Calendar (iCal) per event, time zone labeled Pacific, and a clash detector warning when two selected events overlap.</p>
+    <p><strong>Review before implementing:</strong> source of truth is the official listings; builds on S-2 so only verified-single-entry events appear in the single-entry calendar.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-5 &mdash; Budget and bankroll planner</h3>
+    <div class="meta">Impact: medium &bull; Effort: medium &bull; Depends on: S-1</div>
+    <p>User enters trip dates, hotel, and target tournaments; the site computes total estimated cost (stay true cost + sum of buy-ins + estimated travel/food) and a &ldquo;tournaments you can afford&rdquo; list ranked by guarantee-per-dollar.</p>
+    <p><strong>Review before implementing:</strong> label all outputs as estimates, not projections of winnings; no bankroll-management advice beyond arithmetic.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-6 &mdash; Filtering and dashboard controls</h3>
+    <div class="meta">Impact: medium &bull; Effort: low</div>
+    <p>Filters on the tournament tables: by buy-in range, guarantee, date, game (NLH/PLO/Seniors/Ladies), entry type (verified single-entry vs. advantage), and venue. Toggle &ldquo;show flagged/unverified rows&rdquo;.</p>
+    <p><strong>Review before implementing:</strong> keep the unfiltered official table as the source of truth; filters only hide rows, never alter data.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-7 &mdash; Accessibility and mobile usability</h3>
+    <div class="meta">Impact: medium &bull; Effort: low&ndash;medium</div>
+    <p>WCAG 2.1 AA contrast, scalable text, touch-friendly tables (horizontal scroll on small screens), and a print-friendly stylesheet so a traveler can print the schedule.</p>
+    <p><strong>Review before implementing:</strong> test with a screen reader and on a phone before release.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-8 &mdash; Change monitoring for official pages</h3>
+    <div class="meta">Impact: medium &bull; Effort: medium</div>
+    <p>Periodically re-fetch the official Venetian, Wynn, Aria, Bellagio, and Caesars poker pages and highlight any change in dates, buy-ins, or guarantees, since poker schedules change without notice.</p>
+    <p><strong>Review before implementing:</strong> respect site terms of use and robots.txt; use official pages only; log what changed and when.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-9 &mdash; Saved itineraries and user accounts (optional)</h3>
+    <div class="meta">Impact: low &bull; Effort: high</div>
+    <p>Let users save a shortlist of tournaments and hotels, with estimated total cost, and email it to themselves. Only if the site grows beyond a personal planning tool.</p>
+    <p><strong>Review before implementing:</strong> privacy and data-retention policy required; not needed for the first version.</p>
+  </div>
+
+  <div class="sugg">
+    <h3>S-10 &mdash; Illustrative expected-value estimates (analytical only)</h3>
+    <div class="meta">Impact: low &bull; Effort: low</div>
+    <p>Add a clearly-labeled illustrative column: guarantee &divide; buy-in ratio (already shown in the executive summary) with a warning that actual prize pools depend on field size and this is not a prediction of winnings. Do not add win-probability or ROI models unless clearly labeled as illustrative.</p>
+    <p><strong>Review before implementing:</strong> keep it purely arithmetic; avoid anything that looks like gambling advice.</p>
+  </div>
+
+  <div class="callout warn">
+    <strong>Decision rule.</strong> Before implementing any suggestion: (1) check the related open question on the <a href="questions.html">Open Questions</a> page, (2) confirm the data source is official, (3) decide priority and effort, (4) record the decision in <a href="flagged-review.html">Flagged for Review</a> if it changes any displayed value.
+  </div>
+
+  <p class="small">Next: <a href="questions.html">Open Questions</a> &mdash; what must be known before decisions are made, and how to find it.</p>
+</div>
+
+<footer>
+  Poker2 &bull; Data verified Nov 16, 2026 &bull; Not affiliated with any casino, hotel, or poker tour &bull; 21+ &bull; Verify with the venue before playing.
+</footer>
+
+</body>
+</html>
