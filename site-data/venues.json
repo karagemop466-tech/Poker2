@@ -1,0 +1,160 @@
+{
+ "as_of": "2026-11-16",
+ "venues": [
+  {
+   "id": "venetian",
+   "name": "The Venetian / The Palazzo Poker Room",
+   "brand_group": "Venetian Resort",
+   "room": {
+    "location_official": "The Palazzo, level 2, Grand Canal Shoppes",
+    "hours_official": "Open 24 Hours (Mon-Sun 12:00 AM - 11:59 PM)",
+    "size_claim_excerpt": "The Poker Room features 50 tables spread across 14,000 square feet of space, making it the largest room on the Las Vegas Strip.",
+    "phone": "702.414.7657",
+    "email": "lv_cas_poker@venetianlasvegas.com",
+    "hotel_front_desk_phone": "702.414.1000",
+    "rewards_note": "Venetian Rewards card required to enter tournaments; poker play earns $2 in rewards per hour played and rewards can be used toward tournament buy-ins.",
+    "player_parking_excerpt": "Non-registered hotel guests who play for three hours or more in our tournaments or cash games receive complimentary self-parking.",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "rates_source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "booking_phone": "866.255.8936",
+    "booking_code": "EPOKR25",
+    "retrieved": "2026-11-16"
+   },
+   "series": {
+    "name": "DeepStack Extravaganza IV",
+    "dates": "2026-11-16 to 2026-12-23",
+    "headline_gtd": "More than $3.6 Million in guaranteed tournament prize pools",
+    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "overview_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "retrieved": "2026-11-16"
+   },
+   "coverage": {
+    "events_rows": 94,
+    "structure_sheets_read": 10,
+    "structure_sheets_published": 37,
+    "status": "primary coverage"
+   },
+   "hotels": [
+    "H-VEN",
+    "H-PAL",
+    "H-PMGM",
+    "H-ARIA",
+    "H-COSMO",
+    "H-BEL",
+    "H-WYN"
+   ]
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn / Encore Poker Room",
+   "brand_group": "Wynn Resorts",
+   "room": {
+    "location_official": null,
+    "hours_official": null,
+    "source_url": "https://www.wynnlasvegas.com/casino/poker",
+    "retrieved": "not read in this pass",
+    "status": "not_read_this_pass"
+   },
+   "series": {
+    "name": "WPT World Championship (Nov 27 - Dec 21, 2026) + daily tournaments",
+    "schedule_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+    "structures_url_official": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "daily_poster_url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+    "daily_structures_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   },
+   "coverage": {
+    "status": "read by an earlier session on 2026-11-16 (research/e3cb221d-official-follow-up.md); not re-read in this pass - see flag FG-04"
+   },
+   "hotels": [
+    "H-WYN"
+   ]
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace Poker Room (and Horseshoe Las Vegas)",
+   "brand_group": "Caesars Entertainment",
+   "room": {
+    "source_url": "https://www.caesars.com/caesars-palace/casino/poker",
+    "guide_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "daily_flyer_pdf": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "retrieved": "not read in this pass (read 2026-11-16 by session e3cb221d)"
+   },
+   "coverage": {
+    "status": "recurring-format information only; the official guide does not publish buy-in, guarantee or entry limits for the Horseshoe schedule - see flag FG-04b"
+   },
+   "hotels": [
+    "H-CAES",
+    "H-PARIS",
+    "H-HORSE"
+   ]
+  },
+  {
+   "id": "mgm",
+   "name": "MGM Grand Poker Room",
+   "brand_group": "MGM Resorts",
+   "room": {
+    "source_url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+    "retrieved": "not read in this pass"
+   },
+   "coverage": {
+    "status": "official schedule PDF is titled 'August' with no year; relevance to the Nov-Dec 2026 window unproven - see flag FG-10"
+   },
+   "hotels": [
+    "H-PMGM",
+    "H-ARIA"
+   ]
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio Poker Room",
+   "brand_group": "MGM Resorts",
+   "room": {
+    "source_url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "retrieved": "not read in this pass"
+   },
+   "coverage": {
+    "status": "three official weekly-format term sheets are linked (Friday $600 NLH, Saturday $1,000 NLH, Sunday $400 H.O.R.S.E.); their contents were not read in this pass, so no values are published - see flag FG-09"
+   },
+   "hotels": [
+    "H-BEL"
+   ]
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Poker Room",
+   "brand_group": "MGM Resorts",
+   "room": {
+    "source_url": "https://aria.mgmresorts.com/en/casino/poker.html",
+    "retrieved": "not read in this pass",
+    "prior_note": "A prior session recorded that ARIA's page does not list daily tournaments and asks players to call for the current schedule."
+   },
+   "coverage": {
+    "status": "no dated official schedule captured - row list intentionally empty"
+   },
+   "hotels": [
+    "H-ARIA"
+   ]
+  },
+  {
+   "id": "goldennugget",
+   "name": "Golden Nugget Poker Room (downtown - not on the Strip)",
+   "brand_group": "Golden Nugget",
+   "room": {
+    "source_url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+    "retrieved": "not read in this pass"
+   },
+   "coverage": {
+    "status": "included for completeness: outside walking distance of the Strip properties in this dataset; re-entry and add-on language was recorded by an earlier session"
+   },
+   "hotels": []
+  }
+ ],
+ "not_covered_yet": [
+  "Planet Hollywood / Bally's Las Vegas poker rooms - no official schedule reviewed",
+  "The LINQ Hotel poker room - no official schedule reviewed",
+  "Paris Las Vegas poker room - no official schedule reviewed",
+  "Luxor / Excalibur / New York-New York poker rooms - no official schedule reviewed",
+  "The Palms, South Point, Circa, The STRAT - outside the Strip walking set, not reviewed"
+ ],
+ "note": "A venue stays in 'not_covered_yet' until its own official page has been read. Nothing is inferred from aggregators."
+}

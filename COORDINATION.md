@@ -308,6 +308,15 @@ Conflict resolution during rebase onto main (2026-11-16):
 - `Verify site` check failed after the merge because scripts/build.py (arena/7a4b09e2-poker2) regenerates root filenames owned by the integration dashboard ("Generated files are out of date"). Fixed by scoping the freshness check to build.py-owned outputs and restoring integration-owned pages before the comparison (`.github/workflows/verify.yml`), plus scoping the source-monitor commit list to integration-owned pages. Follow-up merged via the PR recorded below.
 - Follow-up PR (CI ownership fix + this record): see next line once merged.
 
+### Integration result — session arena/e1c079dc-poker2 (merged 2026-11-16)
+
+- PRs merged into `main`: [#32](https://github.com/karagemop466-tech/Poker2/pull/32) (county tax source, 20 Wynn rows promoted, 12 missing Wynn events, Bellagio Sunday HORSE, Westgate/South Point hotels, 10 new flags), [#35](https://github.com/karagemop466-tech/Poker2/pull/35) (county-sourced 13.38% applied to all 10 hotels), [#36](https://github.com/karagemop466-tech/Poker2/pull/36) ("Freezeout confirmed" badge corrected to "Sheet silent on re-entry"), [#37](https://github.com/karagemop466-tech/Poker2/pull/37) (executive summary counts corrected).
+- Final merge commit: `db2650921a44442583e6a847cff9cf5dcc495c41`. Pages deploy `success`; live at https://karagemop466-tech.github.io/Poker2/. Verified live: `summary.html` serves "45 one-day events whose structure sheet is silent on re-entry".
+- Why additive: main advanced through PRs #18–#31 while this session read sources, and concurrent sessions had already published the 15-page dashboard on the shared root output. The repo rule reserves shared outputs for the integration session, so the verified findings were merged into that dashboard through `scripts/build_master.py` rather than replacing it. No page was deleted and no existing verified value was overwritten.
+- Correction made to a shipped claim: the tournaments table had badged 45 Venetian rows "Freezeout confirmed — no re-entry/rebuy/add-on". Those sheets never mention re-entry; they do not forbid it. The badge asserted more than the documents support, so the label, filter, toggle, ranking heading and summary now read "Sheet silent on re-entry" and every row's rule text says "not stated". The honest count is **0 confirmed single-entry events**, stated consistently across the site.
+- Data after this session: 178 events, 10 hotels, 42 flags, 63 sources. Checks: `scripts/audit.py` OK (every row reconciles with the document it cites); `scripts/check_links.py` OK (18 pages, 0 broken internal links, 0 non-official hosts).
+- Still blank and flagged, not guessed: dated room rates and checkout totals (every official booking engine rendered `$XXX` to a non-browser fetch), and walking times (no official source; no routing service reachable). The rate-log panel on `hotels.html` says so explicitly and links the attempts.
+
 ### Final integration session — arena/e1c079dc-poker2 (2026-11-16)
 
 Status: all tasks done; integrated into the live dashboard rather than replacing it.
@@ -362,3 +371,76 @@ While this session's PR was prepared, arena/8234a824-poker2's integration dashbo
 ### I7 — merge and deployment record
 
 PR [#33](https://github.com/karagemop466-tech/Poker2/pull/33) → `main`; merge, Pages deploy verification and this record completed in the follow-up commit recorded below.
+
+## Session arena/72ca3e9d-poker2 — claims (2026-11-16, integration + feature build)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Consolidate the three overlapping dashboards into one root site; retire duplicates without deleting data | in progress | arena/72ca3e9d-poker2 | `index.html`, `pages/*`, `assets/*`, `app.js` |
+| T2 Canonical dataset merge (events, hotels, sources, flags) with per-row `last_checked` and dated rate log | in progress | arena/72ca3e9d-poker2 | `site-data/*.json` |
+| T3 Re-read Venetian DSE IV official schedule + structure sheets; promote confirmed single-entry rows, keep the rest flagged with exact excerpts | in progress | arena/72ca3e9d-poker2 | `site-data/tournaments.json` |
+| T4 Venue pages (one page per property: events + hotels), search box, date filter, single-entry toggle, ≤30-min-walk filter | in progress | arena/72ca3e9d-poker2 | `pages/*`, `assets/app.js` |
+| T5 Trip-cost calculator (entries × buy-ins + nights × true nightly) and true nightly cost (rate + resort fee + 13.38% tax) | in progress | arena/72ca3e9d-poker2 | `pages/trip-cost.html` |
+| T6 Schedule-overlap / late-registration feasibility flags, primary + conditional fallback per day | in progress | arena/72ca3e9d-poker2 | `pages/schedule.html` |
+| T7 Change monitor: scheduled re-check of every official URL, content hash diff, auto-flag changed rows | in progress | arena/72ca3e9d-poker2 | `scripts/check_sources.mjs`, `data/source-snapshots.json`, `.github/workflows/daily-refresh.yml` |
+| T8 Executive summary, open questions, suggestions (await user choice), repo review, Flagged for Review page | in progress | arena/72ca3e9d-poker2 | `pages/*` |
+| T9 PR to main, merge, confirm Pages deploy | pending | arena/72ca3e9d-poker2 | — |
+
+Scopes above are files this session will touch. `data/*`, `data/verified/*`, `docs/*`, `verified/*` from earlier sessions are left untouched (read as inputs); the consolidated site is the shared output this session owns as integration session, per the board protocol.
+
+## Session arena/93b28309-poker2 — supplemental audit (2026-11-16)
+
+| Task | Status | Files |
+|---|---|---|
+| Wynn WPT / MGM official source cross-check | done; unknowns flagged | `data/sources.json`, `data/flags.json`, `pages/spending.html`, `pages/schedule.html`, `flagged.html` |
+| Hotel fee / quality comparison corrections | done; dated totals and walk durations remain blank | `data/hotels.csv`, `data/hotels.json`, `hotels.html`, `pages/hotel-costs.html` |
+| Integrate into current dashboard and record source audit | done | `reports/research-and-verification.md`, current root pages |
+
+- Preserved latest upstream dashboard pages and other sessions' coordination records. No new dashboard was introduced.
+- Official source findings and unresolved questions are detailed in `reports/research-and-verification.md`, `data/flags.json`, and the pages above. Wynn's verified re-entry events remain excluded from single-entry recommendations. MGM's August-labeled PDF relevance and $11 gratuity / 10,000-chip wording remain flagged. Hotel prices, true nightly totals and walk times remain blank; Venetian/Palazzo poker-rate numbers are not assigned to a specific property.
+- Validation: `python3 scripts/check_links.py` passed (131/131 rows cited); custom check found no broken relative links in 20 root/pages HTML documents; `git diff --check` passed; CSVs parse and all data rows have official HTTPS source links; local preview returned HTTP 200.
+- Existing Pages workflow deploys repository root on push to `main`; no workflow change was needed. PR [#16](https://github.com/karagemop466-tech/Poker2/pull/16) merged on 2026-11-16 at merge commit `b484eb08d580e3035d4b538dba0c33f5dc555cb0`.
+- Deployment verified: Pages workflow run [43933521465](https://github.com/karagemop466-tech/Poker2/actions/runs/43933521465) completed successfully; Pages API reports `built` for `b484eb08d580e3035d4b538dba0c33f5dc555cb0`. Public Pages URL: https://karagemop466-tech.github.io/Poker2/.
+
+## Session arena/72ca3e9d-poker2 — completion record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Consolidate the three dashboards into one root site | done | arena/72ca3e9d-poker2 | `index.html` + 14 sibling pages, `assets/site.css`, `assets/site.js`; retired `docs/`, `verified/`, `pages/`, `planning.html`, `app.js`, `style.css`, `styles.css`, `assets/css/style.css` |
+| T2 Canonical dataset merge with `last_checked` + dated rate log | done | arena/72ca3e9d-poker2 | `site-data/*.json` (11 files) |
+| T3 Re-read official schedule + structure sheets; three-state entry classification | done for the 10 sheets read; 27 sheets remain unread → flag FG-03 | arena/72ca3e9d-poker2 | `scripts/build-events.py`, `site-data/events.json` |
+| T4 Venue pages, search, date filter, single-entry toggle, ≤30-min-walk filter | done | arena/72ca3e9d-poker2 | `venues.html`, `venues/*.html`, `assets/site.js` |
+| T5 Trip-cost calculator + true nightly cost | done | arena/72ca3e9d-poker2 | `trip-cost.html`, `site-data/hotels.json` |
+| T6 Overlap / late-registration feasibility flags, primary + conditional fallback | done | arena/72ca3e9d-poker2 | `scripts/build-schedule.py`, `schedule.html` |
+| T7 Change monitor + schedule scrape + snapshots | done; first run seeds the baseline (FG-17) | arena/72ca3e9d-poker2 | `scripts/check_sources.mjs`, `scripts/scrape-schedule.mjs`, `scripts/commit-refresh.sh`, `.github/workflows/daily-refresh.yml` |
+| T8 Summary, questions, suggestions, repo review, flagged pages | done | arena/72ca3e9d-poker2 | `flagged.html`, `questions.html`, `suggestions.html`, `repo-review.html` |
+| T9 PR to main, merge, Pages deploy | see PR link below | arena/72ca3e9d-poker2 | — |
+| New: CI that proves the pages match their data | done | arena/72ca3e9d-poker2 | `.github/workflows/verify.yml`, `scripts/check_site.mjs` |
+
+Notes for later sessions:
+
+- Generators, not hand-edited HTML, are the write path: `python3 scripts/build-events.py && python3 scripts/build-schedule.py && python3 scripts/build-site.py`. Each `--check` mode fails when the committed output drifts from the data, and `build-site.py` additionally aborts if any rendered row lacks an official-host source link or a `last_checked` date, or if a structural value is shown for an event whose sheet was not read.
+- Superseded-but-retained for audit: `data/*.json` and `data/verified/*.json`. Do not rebuild front-ends on them; `site-data/events.json` is the canonical row set. `scripts/build.mjs`, `scripts/build.py`, `scripts/build_site.py` and `scripts/check_links.py` were removed with the trees they generated.
+- Corrections to earlier records: the claim that "no Venetian sheet prints a re-entry/add-on clause" is wrong — sheet 8 (events 18, 58) prices subsequent buy-ins at $200, and sheet 10 states the flight rule. Per-sheet silence is not series-wide silence; the site therefore says "no re-entry/add-on clause on the official structure sheet" and classifies those two events as spend-advantage.
+- `research/e3cb221d-official-follow-up.md` findings are integrated into `site-data/other-venues.json` (Wynn re-entry terms and fee splits, Caesars $50 add-on, Horseshoe 9 AM starts) and labelled "cited, not re-read" (flag FG-04). The "earliest verified start 10:10 AM" claim is Venetian-series-only; Horseshoe publishes 9 AM recurring starts.
+- Not done here on purpose: reading the remaining 27 structure sheets (suggestion S-02), routing-API walk durations (S-06), an official quality rating source (S-04 / FG-12), and any dated hotel quote (S-05 / FG-05). Each is blocked on a decision or on credentials, not on research effort already spent.
+
+Follow-up to the completion record above, after merging `origin/main` (which had meanwhile gained PR #29–#31 and
+`arena/8234a824-poker2`'s root dashboard): the deletion of `docs/`, `verified/`, `pages/`, `planning.html`,
+`app.js`, `style.css`, `styles.css`, `assets/css/style.css` and the generators `scripts/build.mjs`,
+`scripts/build.py`, `scripts/build_site.py`, `scripts/check_links.py` described in T1 **was reverted during the
+merge**. Those files are main-owned or referenced by main-owned CI (`scripts/check_links.py` walks `docs/`;
+`.github/workflows/verify.yml` restores the integration-owned root pages after `scripts/build.py` runs), so removing
+them would have broken another session's site rather than consolidating it.
+
+Final ownership state:
+
+| Surface | Generator | Data | CI that enforces it |
+|---|---|---|---|
+| repository root dashboard (`index.html`, `tournaments.html`, `hotels.html`, `flagged.html`, `questions.html`, `suggestions.html`, `summary.html`, `repo-review.html`, `planner.html`, `planning.html`, `ranking.html`, `rules.html`, `monitor.html`, `venue-*.html`, `venues/*`) | `scripts/build_site.py` + `scripts/build_master.py` | `data/site/*.json`, `data/master.json` | `.github/workflows/verify.yml`, `source-monitor.yml`, `recheck.yml` |
+| `/plan/` (22 pages, `plan/assets/*`) | `scripts/build-site.py` (+ `build-events.py`, `build-schedule.py`) | `site-data/*.json` | `.github/workflows/plan-verify.yml`, `plan-refresh.yml`, `scripts/check_site.mjs` |
+| `/docs/`, `/verified/`, `/pages/`, `app.js`, `style.css`, `styles.css`, `assets/css` | earlier sessions (`scripts/build.py`, `scripts/build.mjs`) | `data/*.json`, `data/verified/*` | none; frozen legacy, still published |
+| `walking.html`, `wpt-terms.html`, `rate-log.html`, `trip.html`, `archive.html`, `assets/js/site.js`, `assets/css/site.css` | arena/f0816fab-poker2 (`scripts/build_f0816fab.py`, `scripts/assemble_data.py`, `scripts/assemble_data2.py`) | `data/site/{events,hotels,flags}-f0816fab.json`, `data/site/{walking,trip,questions,suggestions,summary,sources}.json` | `verify.yml` (link check covers these pages; `openstreetmap.org` allowlisted) |
+
+Nothing in this session writes to another row of that table, and `/plan/` shares no file path with the root
+dashboard. Consolidating to one surface (S-11) and merging the three monitor jobs (S-12) stay open for you to decide.

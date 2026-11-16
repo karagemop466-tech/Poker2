@@ -1,0 +1,76 @@
+{
+ "as_of": "2026-11-16",
+ "why_a_log": "Rates move every day, so a single number is never honest. Each entry records what was published, on what date, for which dates, under which conditions, and with which source excerpt. Rows never overwrite each other.",
+ "live_lookup_limit": "The official booking engines (venetianlasvegas.com/book, wynnlasvegas.com/book, MGM property sites) render date-specific prices only inside JavaScript. A static site with no server cannot read them, and this workspace has no outbound access to those hosts, so no dated room quote is claimed. Booking deep links below open the official engine with the stay dates already filled in.",
+ "entries": [
+  {
+   "id": "R-VEN-POKER",
+   "hotel_id": "H-VEN",
+   "date_captured": "2026-11-16",
+   "rate_usd": 119,
+   "rate_kind": "poker suite rate - 'starting as low as' (not a quote)",
+   "occupancy_basis": "single/double occupancy, Luxury King Suite",
+   "conditions": "Requires qualifying poker play: six hours of active live cash gameplay OR a $300-or-higher tournament buy-in for each night stayed, completed before 2 a.m. on the last night. Otherwise the nightly rate reverts to the prevailing rate.",
+   "applies_to_dates": "2026 season page; future rates published only up to 150 days from the current date",
+   "cancellation": "See hotel terms: deposit at booking; prepaid offers non-refundable",
+   "excerpt": "These rates will start as low as $119 and $209 and can be higher. Future rates are only provided out to a maximum of 150 days from the current date. Rates are subject to qualifying poker play and availability based on hotel occupancy. Blackout dates may apply. Rates are based on single/double occupancy in a Luxury King Suite in The Venetian or The Palazzo. There is a $55 resort fee per night stayed.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "verified_official_starting_rate",
+   "caveat": "A 'from' rate is a floor, not the price you will be charged for your dates. Do not treat it as a checkout total."
+  },
+  {
+   "id": "R-PAL-POKER",
+   "hotel_id": "H-PAL",
+   "date_captured": "2026-11-16",
+   "rate_usd": 209,
+   "rate_kind": "poker suite rate - 'starting as low as' (Palazzo)",
+   "occupancy_basis": "single/double occupancy, Luxury King Suite",
+   "conditions": "Same qualifying-play requirement as R-VEN-POKER.",
+   "excerpt": "These rates will start as low as $119 and $209 and can be higher.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "verified_official_starting_rate",
+   "caveat": "The page does not say which of the two numbers belongs to which property beyond the order of naming; treat 119/209 as a paired 'Venetian / Palazzo' statement (flag FG-05b)."
+  },
+  {
+   "id": "R-VEN-DATES-NOQUOTE",
+   "hotel_id": "H-VEN",
+   "date_captured": "2026-11-16",
+   "rate_usd": null,
+   "rate_kind": "date-specific quote - not obtainable",
+   "occupancy_basis": "2 adults, 2026-11-17 to 2026-11-19 was the default shown in the site's own date widget",
+   "conditions": "The booking engine requires JavaScript; the page fetched in this pass showed no price.",
+   "excerpt": "Select Dates Tue, Nov 17 Thu, Nov 19 - Check Rates (no price in the fetched content)",
+   "source_url": "https://www.venetianlasvegas.com/book",
+   "status": "no_quote_available",
+   "caveat": "Left blank on purpose. The first verified nightly number can only come from an itemised checkout total."
+  },
+  {
+   "id": "R-WYN-NOQUOTE",
+   "hotel_id": "H-WYN",
+   "date_captured": "2026-11-16",
+   "rate_usd": null,
+   "rate_kind": "date-specific quote - not obtainable",
+   "excerpt": "A full deposit of all room nights and tax will be charged at the time of booking.",
+   "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "status": "no_quote_available",
+   "caveat": "Wynn's terms are explicit that the whole stay is prepaid at booking, which changes the cancellation maths: the refundable window, not the nightly rate, is the risk."
+  },
+  {
+   "id": "R-PMGM-NOQUOTE",
+   "hotel_id": "H-PMGM",
+   "date_captured": "2026-11-16",
+   "rate_usd": null,
+   "rate_kind": "date-specific quote - not obtainable",
+   "excerpt": "The first night's deposit is fully refundable provided a timely notice of cancellation is received ... at least 72 hours prior to the arrival date.",
+   "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+   "status": "no_quote_available"
+  }
+ ],
+ "booking_links": [
+  { "hotel_id": "H-VEN", "label": "Venetian/Palazzo official booking - 4 nights from Wed 2026-11-18", "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar" },
+  { "hotel_id": "H-VEN", "label": "Venetian/Palazzo official booking - 4 nights from Sun 2026-12-13", "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-13&children[]=0&departure_date=2026-12-17&view=calendar" },
+  { "hotel_id": "H-WYN", "label": "Wynn official booking start (fill dates in the engine)", "url": "https://www.wynnlasvegas.com/book" },
+  { "hotel_id": "H-PMGM", "label": "Park MGM official hotel page (fill dates in the engine)", "url": "https://parkmgm.mgmresorts.com/en/hotel.html" },
+  { "hotel_id": "H-ARIA", "label": "ARIA official hotel page (fill dates in the engine)", "url": "https://aria.mgmresorts.com/en/hotel.html" }
+ ]
+}
