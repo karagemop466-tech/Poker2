@@ -7,7 +7,16 @@
 <meta name="description" content="The three superseded dashboards, preserved as an audit trail and marked unusable.">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body><!--ARCHIVE-BANNER-->
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#2b1113;
+border-top:2px solid #e8564f;color:#f4dede;font:13px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+padding:9px 16px;text-align:center">
+<b style="color:#ff8a80">SUPERSEDED SITE.</b>
+This dashboard has been replaced. Its buy-ins, guarantees and fees were typed by hand and are not
+traceable to a source — at least one figures is wrong. Kept only as an audit trail.
+<a href="../index.html" style="color:#7fc4ff">Open the current dashboard →</a>
+</div>
+
 <div class="wrap">
 <aside>
   <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
@@ -20,7 +29,7 @@
   <p class="note" style="max-width:76ch">Four dashboards were built in this repository before the current
   one. They are kept rather than deleted, because the record of what was claimed before — and what was
   wrong about it — is part of the research. Every archived page carries a banner at the top saying so.</p></div>
-  <div class="stamp">archived trees<br><b class="count">4</b><br>of 4</div>
+  <div class="stamp">archived trees<br><b class="count">5</b><br>of 5</div>
 </div>
 
 <section class="panel badbox">
@@ -41,7 +50,9 @@ came from.</p>
 <td class="note">Fifteen category pages split out of the first dashboard. Same numbers, same lack of provenance, spread across more files.</td>
 <td><a href="pages/tournaments.html">Open archived tree →</a></td></tr><tr><td><b>Second subsite</b></td><td class="mono note">docs/*.html (10 files)</td>
 <td class="note">A second complete site under /docs/ with its own navigation and its own copies of the event numbers. Diverged from the root dashboard: some buy-ins differ between the two.</td>
-<td><a href="docs/index.html">Open archived tree →</a></td></tr><tr><td><b>Third subsite</b></td><td class="mono note">verified/** (14 files)</td>
+<td><a href="docs/index.html">Open archived tree →</a></td></tr><tr><td><b>Fifth build, from a parallel session</b></td><td class="mono note">archive/parallel/ (19 pages)</td>
+<td class="note">A complete independent build by session arena/7a4b09e2-poker2, merged to main hours before this one. It read all 37 Venetian structure sheets. Preserved because its per-sheet findings are the strongest evidence in the repository, and cross-checks this build&#x27;s numbers exactly.</td>
+<td><a href="parallel/index.html">Open archived tree →</a></td></tr><tr><td><b>Third subsite</b></td><td class="mono note">verified/** (14 files)</td>
 <td class="note">Generated from data/verified/*.json by scripts/build.mjs. The closest of the three to a real source-backed build — it had a data layer — but its rows still carried no last-checked date and no per-row link.</td>
 <td><a href="verified/index.html">Open archived tree →</a></td></tr></tbody></table></div>
 

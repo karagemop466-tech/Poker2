@@ -18,11 +18,11 @@
 <div class="pagehead">
   <div><div class="eyebrow">Ideas are proposed first and gated before anyone builds them</div>
   <h1>Suggestions</h1>
-  <p class="note" style="max-width:76ch">Thirteen improvements found while doing the research. The brief
+  <p class="note" style="max-width:76ch">Fourteen improvements found while doing the research. The brief
   asked for a suggestions page whose items are <b>gated before implementation</b> — so each one states what
   it would do, why it is worth doing, and what must be true before it can be built. Four are already
   implemented on this site because they needed nothing external.</p></div>
-  <div class="stamp">proposals<br><b class="count">13</b><br>needs review: 5</div>
+  <div class="stamp">proposals<br><b class="count">14</b><br>needs review: 6</div>
 </div>
 
 <section class="panel">
@@ -128,6 +128,13 @@ do.</p>
 <p><b>Why it is worth doing.</b> Four parallel sites with conflicting numbers is the largest source of confusion in this repository.</p>
 <p><b>How it would work.</b> Applied here: the new dashboard replaces them and the old trees are archived under /archive/ with a banner.</p>
 <p><b>Effort / gate.</b> Done in this session — review the archive before deleting it.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-14 — Collapse the two surviving data modules into one</summary>
+<p><b>What it does.</b> The repository now holds scripts/poker_data.py (this build&#x27;s dataset, 237 rows) and scripts/dataset.py (session arena/7a4b09e2-poker2&#x27;s dataset, 96 rows). Both describe the same official documents. Merging them into one module would remove the last duplicate source of truth.</p>
+<p><b>Why it is worth doing.</b> Two modules can drift. The whole point of this consolidation was that one number should live in one place; leaving two data layers is the same defect this rebuild was meant to fix, just smaller.</p>
+<p><b>How it would work.</b> Diff the two event lists key by key, prefer the sheet-transcribed value where they disagree, keep the 37-sheet sweep&#x27;s per-event findings, then delete the loser and re-point its generator.</p>
+<p><b>Effort / gate.</b> Needs review, not code: scripts/dataset.py and scripts/build.py belong to another session, and COORDINATION.md forbids editing another session&#x27;s files from inside an integration session. It needs that session&#x27;s owner, or an explicit hand-off.</p>
 </details>
 
 <section class="panel warnbox">

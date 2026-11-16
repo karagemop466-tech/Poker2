@@ -1793,7 +1793,7 @@ def page_suggestions():
 <div class="pagehead">
   <div><div class="eyebrow">Ideas are proposed first and gated before anyone builds them</div>
   <h1>Suggestions</h1>
-  <p class="note" style="max-width:76ch">Thirteen improvements found while doing the research. The brief
+  <p class="note" style="max-width:76ch">Fourteen improvements found while doing the research. The brief
   asked for a suggestions page whose items are <b>gated before implementation</b> — so each one states what
   it would do, why it is worth doing, and what must be true before it can be built. Four are already
   implemented on this site because they needed nothing external.</p></div>
@@ -2164,6 +2164,10 @@ ARCHIVE_TREES = [
     ("docs", "Second subsite", "docs/*.html (10 files)", "docs/index.html",
      "A second complete site under /docs/ with its own navigation and its own copies of the event numbers. "
      "Diverged from the root dashboard: some buy-ins differ between the two."),
+    ("parallel", "Fifth build, from a parallel session", "archive/parallel/ (19 pages)", "parallel/index.html",
+     "A complete independent build by session arena/7a4b09e2-poker2, merged to main hours before this one. "
+     "It read all 37 Venetian structure sheets. Preserved because its per-sheet findings are the strongest "
+     "evidence in the repository, and cross-checks this build's numbers exactly."),
     ("verified", "Third subsite", "verified/** (14 files)", "verified/index.html",
      "Generated from data/verified/*.json by scripts/build.mjs. The closest of the three to a real "
      "source-backed build — it had a data layer — but its rows still carried no last-checked date and no "

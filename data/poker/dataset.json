@@ -7410,6 +7410,15 @@
    "why": "Four parallel sites with conflicting numbers is the largest source of confusion in this repository.",
    "how": "Applied here: the new dashboard replaces them and the old trees are archived under /archive/ with a banner.",
    "effort": "Done in this session \u2014 review the archive before deleting it."
+  },
+  {
+   "id": "S-14",
+   "status": "needs-review",
+   "title": "Collapse the two surviving data modules into one",
+   "what": "The repository now holds scripts/poker_data.py (this build's dataset, 237 rows) and scripts/dataset.py (session arena/7a4b09e2-poker2's dataset, 96 rows). Both describe the same official documents. Merging them into one module would remove the last duplicate source of truth.",
+   "why": "Two modules can drift. The whole point of this consolidation was that one number should live in one place; leaving two data layers is the same defect this rebuild was meant to fix, just smaller.",
+   "how": "Diff the two event lists key by key, prefer the sheet-transcribed value where they disagree, keep the 37-sheet sweep's per-event findings, then delete the loser and re-point its generator.",
+   "effort": "Needs review, not code: scripts/dataset.py and scripts/build.py belong to another session, and COORDINATION.md forbids editing another session's files from inside an integration session. It needs that session's owner, or an explicit hand-off."
   }
  ],
  "sources": {
