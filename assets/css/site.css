@@ -1,0 +1,69 @@
+/* Vegas Poker Trip Planner — unified dashboard */
+:root {
+  --bg: #f6f7fb; --card: #ffffff; --ink: #1c2333; --muted: #5b6472;
+  --accent: #2456d6; --accent-soft: #e8eefc; --good: #10733f; --bad: #a32020;
+  --warn: #8a5a00; --line: #e3e7ef; --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+header { background: #16213e; color: #fff; padding: 22px 0 16px; }
+header h1 { margin: 0; font-size: 24px; }
+header h1 a { color: #fff; text-decoration: none; }
+header .sub { color: #b7c2dd; font-size: 13px; margin-top: 4px; }
+nav { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.navrow { display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 20px; }
+nav a { color: var(--ink); text-decoration: none; padding: 6px 10px; border-radius: 8px; font-size: 13.5px; }
+nav a:hover { background: var(--accent-soft); color: var(--accent); }
+main { padding: 26px 20px 60px; }
+h2 { font-size: 21px; margin: 26px 0 10px; }
+h3 { font-size: 16.5px; margin: 22px 0 8px; }
+a { color: var(--accent); }
+.hero { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.hero h2 { margin-top: 0; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 18px 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.card .kpi { font-size: 22px; font-weight: 700; color: var(--accent); }
+.card .lbl { font-weight: 600; margin-top: 2px; }
+.card .note { color: var(--muted); font-size: 12.5px; margin-top: 6px; }
+.pill { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 10px; font-size: 12.5px; margin: 2px 4px 2px 0; }
+.finding { background: var(--card); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 16px; margin: 10px 0; }
+.finding h3 { margin: 4px 0 6px; }
+.steps li { margin: 6px 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; margin: 12px 0; }
+.filters label { font-size: 13.5px; display: flex; gap: 6px; align-items: center; }
+input[type="date"], input[type="number"], select { padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.search { flex: 1 1 220px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+table.data { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; font-size: 13.5px; }
+table.data th { text-align: left; background: #eef1f8; padding: 9px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.data td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.data tr:last-child td { border-bottom: none; }
+table.data tr.hidden { display: none; }
+.tiny { color: var(--muted); font-size: 11.8px; }
+.elig { color: var(--warn); font-size: 12px; }
+.days { display: grid; gap: 10px; }
+.daycard { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; }
+.daycard .date { font-weight: 700; color: var(--accent); }
+.primary { margin: 6px 0; }
+.fallback { margin: 4px 0 0; color: var(--warn); }
+.flagline { color: var(--bad); font-size: 12.5px; margin-top: 4px; }
+.muted { color: var(--muted); }
+.calc { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.calc label { display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; }
+.calcOut { grid-column: 1 / -1; background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
+.formula { background: var(--card); border: 1px dashed var(--accent); border-radius: var(--radius); padding: 12px 16px; }
+.qitem { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; margin: 12px 0; }
+.qitem.flag { border-left: 4px solid var(--bad); }
+.qitem h3 { margin-top: 0; }
+footer { background: #16213e; color: #b7c2dd; padding: 18px 0; font-size: 12.5px; }
+footer a { color: #d7e0f5; }
+.badge { padding: 2px 8px; border-radius: 6px; font-size: 11.5px; font-weight: 600; }
+.b-se { background: #e2f4e8; color: var(--good); }
+.b-flag { background: #fdf1d7; color: var(--warn); }
+.b-excl { background: #fde3e3; color: var(--bad); }
+.b-unv { background: #e9ecf2; color: var(--muted); }
+details { margin: 8px 0; }
+summary { cursor: pointer; color: var(--accent); }
+.rulegrid { display: grid; grid-template-columns: 130px 1fr; gap: 4px 12px; font-size: 12.8px; margin: 8px 0; }
+.rulegrid .k { font-weight: 600; }
+@media (max-width: 720px) { .kpis { grid-template-columns: 1fr; } table.data { display: block; overflow-x: auto; } }

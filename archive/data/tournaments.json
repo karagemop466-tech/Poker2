@@ -1,0 +1,1464 @@
+{
+  "as_of": "2026-11-16",
+  "single_entry": [
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 52,
+      "date": "2026-12-15 (Tue)",
+      "time": "11:10 AM",
+      "name": "$1,100 NLH Progressive Knock-Out Bounty (1Day)",
+      "buy_in": 1100,
+      "gtd": 75000,
+      "fee": 130,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "PKO: bounty money counts toward guarantee per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V34"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 54,
+      "date": "2026-12-16 (Wed)",
+      "time": "11:10 AM",
+      "name": "$600 NLH Bounty (1Day) — $200 to start, $500 in the money",
+      "buy_in": 600,
+      "gtd": 50000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Bounty values change at the money; see sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V11"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 24,
+      "date": "2026-12-02 (Wed)",
+      "time": "10:10 AM",
+      "name": "$600 NLH Seniors (1Day) — must be 50+",
+      "buy_in": 600,
+      "gtd": 40000,
+      "fee": 90,
+      "reg_closes": "3:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Age 50+ required.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V17"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 28,
+      "date": "2026-12-06 (Sun)",
+      "time": "11:10 AM",
+      "name": "$600 No-Limit Hold'em (1Day)",
+      "buy_in": 600,
+      "gtd": 40000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet read; no re-entry or rebuy language found.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V7"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 30,
+      "date": "2026-12-07 (Mon)",
+      "time": "11:10 AM",
+      "name": "$600 NLH Bounty (1Day) — $200 to start, $500 in the money",
+      "buy_in": 600,
+      "gtd": 40000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Bounty values change at the money; see sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V11"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 32,
+      "date": "2026-12-08 (Tue)",
+      "time": "10:10 AM",
+      "name": "$600 NLH Seniors (1Day) — must be 50+",
+      "buy_in": 600,
+      "gtd": 40000,
+      "fee": 90,
+      "reg_closes": "3:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Age 50+ required.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V17"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 14,
+      "date": "2026-11-27 (Fri)",
+      "time": "11:10 AM",
+      "name": "$600 No-Limit Hold'em (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet read; no re-entry or rebuy language found.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V7"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 16,
+      "date": "2026-11-28 (Sat)",
+      "time": "11:10 AM",
+      "name": "$600 NLH Bounty (1Day) — $200 bounties from start, $500 once in the money",
+      "buy_in": 600,
+      "gtd": 30000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Bounty values change at the money; see sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V11"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 63,
+      "date": "2026-12-23 (Wed)",
+      "time": "11:10 AM",
+      "name": "$600 No-Limit Hold'em (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "fee": 90,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet read; no re-entry or rebuy language found.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V7"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 10,
+      "date": "2026-11-25 (Wed)",
+      "time": "11:10 AM",
+      "name": "$400 No-Limit Hold'em (1Day)",
+      "buy_in": 400,
+      "gtd": 15000,
+      "fee": 65,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet read; no re-entry or rebuy language found.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V6"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 29,
+      "date": "2026-12-06 (Sun)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 31,
+      "date": "2026-12-07 (Mon)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 34,
+      "date": "2026-12-08 (Tue)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 38,
+      "date": "2026-12-09 (Wed)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 42,
+      "date": "2026-12-10 (Thu)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 50,
+      "date": "2026-12-13 (Sun)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 51,
+      "date": "2026-12-14 (Mon)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 53,
+      "date": "2026-12-15 (Tue)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 55,
+      "date": "2026-12-16 (Wed)",
+      "time": "5:10 PM",
+      "name": "$300 NLH Bounty (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "fee": 50,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "Bounty per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V15"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 18,
+      "date": "2026-11-28 (Sat)",
+      "time": "5:10 PM",
+      "name": "$200 NLH PokerAtlas Valuetown Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 20000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "PokerAtlas PRO: $20 rake discount (applies to PRO members).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V8"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 58,
+      "date": "2026-12-19 (Sat)",
+      "time": "5:10 PM",
+      "name": "$200 NLH PokerAtlas Valuetown Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 20000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "PokerAtlas PRO: $20 rake discount (applies to PRO members).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V8"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 8,
+      "date": "2026-11-23 (Mon)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Progressive Knock-Out Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "PKO.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V30"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 9,
+      "date": "2026-11-24 (Tue)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 11,
+      "date": "2026-11-25 (Wed)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 13,
+      "date": "2026-11-26 (Thu)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 15,
+      "date": "2026-11-27 (Fri)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 21,
+      "date": "2026-11-29 (Sun)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 22,
+      "date": "2026-11-30 (Mon)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 23,
+      "date": "2026-12-01 (Tue)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 25,
+      "date": "2026-12-02 (Wed)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 60,
+      "date": "2026-12-20 (Sun)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 61,
+      "date": "2026-12-21 (Mon)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 62,
+      "date": "2026-12-22 (Tue)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 64,
+      "date": "2026-12-23 (Wed)",
+      "time": "5:10 PM",
+      "name": "$200 NLH Bounty (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "fee": 40,
+      "reg_closes": "9:40 PM",
+      "chips": 25000,
+      "level": "30",
+      "notes": "$50 bounty per elimination per sheet.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V1"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 3,
+      "date": "2026-11-19 (Thu)",
+      "time": "10:10 AM",
+      "name": "$200 NLH RaceDay Stack (1Day) — race to finish before the race",
+      "buy_in": 200,
+      "gtd": null,
+      "fee": 35,
+      "reg_closes": "12:25 PM",
+      "chips": 30000,
+      "level": "20/15",
+      "notes": "No guarantee listed on schedule or sheet (blank).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V18"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 4,
+      "date": "2026-11-20 (Fri)",
+      "time": "10:10 AM",
+      "name": "$200 NLH RaceDay Stack (1Day) — race to finish before the race",
+      "buy_in": 200,
+      "gtd": null,
+      "fee": 35,
+      "reg_closes": "12:25 PM",
+      "chips": 30000,
+      "level": "20/15",
+      "notes": "No guarantee listed on schedule or sheet (blank).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V18"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 5,
+      "date": "2026-11-21 (Sat)",
+      "time": "10:10 AM",
+      "name": "$200 NLH RaceDay Stack (1Day) — race to finish before the race",
+      "buy_in": 200,
+      "gtd": null,
+      "fee": 35,
+      "reg_closes": "12:25 PM",
+      "chips": 30000,
+      "level": "20/15",
+      "notes": "No guarantee listed on schedule or sheet (blank).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V18"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 6,
+      "date": "2026-11-22 (Sun)",
+      "time": "11:10 AM",
+      "name": "$200 No-Limit Hold'em (1Day)",
+      "buy_in": 200,
+      "gtd": null,
+      "fee": 40,
+      "reg_closes": "3:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "No guarantee on schedule or sheet (blank).",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V29"
+      ]
+    }
+  ],
+  "flighted_or_reentry_unverified": [
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 1,
+      "date": "2026-11-16 to 2026-11-18",
+      "time": "11:10 AM / 5:10 PM (flights 1A–1D)",
+      "name": "$300 No-Limit Hold'em (Flights 1A–1D; Day 2 restart Nov 18)",
+      "buy_in": 300,
+      "gtd": 75000,
+      "fee": null,
+      "reg_closes": "3:40 PM / 8:40 PM",
+      "chips": 30000,
+      "level": "40/30",
+      "notes": "Multi-flight; re-entry not confirmed. Structure sheet not read in verified notes.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V10"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 7,
+      "date": "2026-11-23 to 2026-11-25",
+      "time": "11:10 AM (1A/1B)",
+      "name": "$400 No-Limit Hold'em (Flights 1A/1B; Day 2 restart Nov 25)",
+      "buy_in": 400,
+      "gtd": 75000,
+      "fee": 70,
+      "reg_closes": "5:55 PM",
+      "chips": 40000,
+      "level": "40",
+      "notes": "Multi-flight; re-entry status not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V2"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 19,
+      "date": "2026-11-29 to 2026-12-02",
+      "time": "11:10 AM (1A–1C)",
+      "name": "$400 No-Limit Hold'em (Flights 1A–1C; Day 2 restart Dec 2)",
+      "buy_in": 400,
+      "gtd": 75000,
+      "fee": 70,
+      "reg_closes": "5:55 PM",
+      "chips": 40000,
+      "level": "40",
+      "notes": "Multi-flight; sheet 3 read for GTD only; fee not in verified notes.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V3"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 26,
+      "date": "2026-12-03 to 2026-12-06",
+      "time": "11:10 AM (1A–1F)",
+      "name": "$800 No-Limit Hold'em (Flights 1A–1F; Day 2 restart Dec 6)",
+      "buy_in": 800,
+      "gtd": 500000,
+      "fee": 110,
+      "reg_closes": "3:40 PM / 8:40 PM",
+      "chips": 40000,
+      "level": "40/30/20",
+      "notes": "Six flights; re-entry status not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V12"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 39,
+      "date": "2026-12-10 to 2026-12-11",
+      "time": "10:10 AM (2-day)",
+      "name": "$800 No-Limit Hold'em LIPS Ladies (2Day) — Women in Poker Main Event",
+      "buy_in": 800,
+      "gtd": 40000,
+      "fee": null,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "40",
+      "notes": "Two-day event; structure sheet not read — flagged.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V32"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 47,
+      "date": "2026-12-12 to 2026-12-14",
+      "time": "10:10 AM (1A) / 6:10 PM (1B)",
+      "name": "$2,200 No-Limit Hold'em PokerAtlas Championship Title Event",
+      "buy_in": 2200,
+      "gtd": 1000000,
+      "fee": 225,
+      "reg_closes": "4:55 PM / 11:10 PM",
+      "chips": 40000,
+      "level": "40/30",
+      "notes": "Flights 1A/1B; re-entry status not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V21"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 49,
+      "date": "2026-12-12 to 2026-12-15",
+      "time": "10:10 AM (Seniors 1A/1B)",
+      "name": "$1,100 No-Limit Hold'em Seniors (50+; Flights 1A/1B)",
+      "buy_in": 1100,
+      "gtd": 300000,
+      "fee": 140,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "40",
+      "notes": "50+ required; flights; re-entry not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V20"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 56,
+      "date": "2026-12-17 to 2026-12-20",
+      "time": "10:10 AM (1A/1C/1E) / 6:10 PM (1B/1D)",
+      "name": "$1,100 No-Limit Hold'em (Flights 1A–1E; Day 2 restart Dec 20)",
+      "buy_in": 1100,
+      "gtd": 500000,
+      "fee": 140,
+      "reg_closes": "4:55 PM / 11:10 PM",
+      "chips": 40000,
+      "level": "40/30",
+      "notes": "$40 rake discount on some entries per schedule; re-entry not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V35"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 59,
+      "date": "2026-12-20 to 2026-12-23",
+      "time": "11:10 AM (1A–1C)",
+      "name": "$600 No-Limit Hold'em (Flights 1A–1C; Day 2 restart Dec 23)",
+      "buy_in": 600,
+      "gtd": 150000,
+      "fee": 95,
+      "reg_closes": "5:55 PM",
+      "chips": 40000,
+      "level": "40",
+      "notes": "$20 rake discount on early entry per schedule; re-entry not stated in sheet read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED",
+        "S_V4"
+      ]
+    }
+  ],
+  "review_unverified_venetian": [
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 2,
+      "date": "2026-11-18 (Wed)",
+      "time": "11:10 AM",
+      "name": "$300 No-Limit Hold'em (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "fee": null,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet 5 not read; fee and re-entry unverified.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 12,
+      "date": "2026-11-26 (Thu)",
+      "time": "11:10 AM",
+      "name": "$300 No-Limit Hold'em (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "fee": null,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet 5 not read; fee and re-entry unverified.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 17,
+      "date": "2026-11-28 (Sat)",
+      "time": "12:10 PM",
+      "name": "$400 Pot Limit Omaha Bounty (1Day)",
+      "buy_in": 400,
+      "gtd": 15000,
+      "fee": null,
+      "reg_closes": "4:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 20,
+      "date": "2026-11-29 (Sun)",
+      "time": "12:10 PM",
+      "name": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "fee": null,
+      "reg_closes": "4:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 27,
+      "date": "2026-12-03 (Thu)",
+      "time": "12:10 PM",
+      "name": "$600 BIG O (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "fee": null,
+      "reg_closes": "4:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 36,
+      "date": "2026-12-09 (Wed)",
+      "time": "11:10 AM",
+      "name": "$800 NLH Bounty (1Day) — $200 to start, $500 in the money",
+      "buy_in": 800,
+      "gtd": 75000,
+      "fee": null,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 40,
+      "date": "2026-12-10 (Thu)",
+      "time": "12:10 PM",
+      "name": "$600 Pot Limit Omaha Bounty (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "fee": null,
+      "reg_closes": "4:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 43,
+      "date": "2026-12-11 (Fri)",
+      "time": "11:10 AM",
+      "name": "$600 NLH Kings and Queens Bounty (1Day) — open to all",
+      "buy_in": 600,
+      "gtd": 30000,
+      "fee": null,
+      "reg_closes": "4:55 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 57,
+      "date": "2026-12-17 (Thu)",
+      "time": "12:10 PM",
+      "name": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "fee": null,
+      "reg_closes": "4:40 PM",
+      "chips": 30000,
+      "level": "30",
+      "notes": "Structure sheet not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 35,
+      "date": "2026-12-08 (Tue)",
+      "time": "10:10 AM",
+      "name": "$600 NLH LIPS Jingle Tag Team (1Day) — team entry",
+      "buy_in": 600,
+      "gtd": 10000,
+      "fee": null,
+      "reg_closes": "2:40 PM",
+      "chips": 40000,
+      "level": "30",
+      "notes": "Team format (female/female or female/male). Structure not read.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    }
+  ],
+  "satellites": [
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 33,
+      "date": "2026-12-08 (Tue)",
+      "time": "4:10 PM",
+      "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day)",
+      "buy_in": 100,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "6:25 PM",
+      "chips": 20000,
+      "level": "20",
+      "notes": "Satellite — prize: 2 seats to Event 39. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 37,
+      "date": "2026-12-09 (Wed)",
+      "time": "4:10 PM",
+      "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day)",
+      "buy_in": 100,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "6:25 PM",
+      "chips": 20000,
+      "level": "20",
+      "notes": "Satellite — prize: 2 seats to Event 39. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 41,
+      "date": "2026-12-10 (Thu)",
+      "time": "4:10 PM",
+      "name": "$260 NLH Milestone Satellite (1Day)",
+      "buy_in": 260,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "6:25 PM",
+      "chips": 20000,
+      "level": "20",
+      "notes": "Satellite — prize: 2 seats to Event 47. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 44,
+      "date": "2026-12-11 (Fri)",
+      "time": "4:10 PM",
+      "name": "$260 NLH Milestone Satellite (1Day)",
+      "buy_in": 260,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "6:25 PM",
+      "chips": 20000,
+      "level": "20",
+      "notes": "Satellite — prize: 2 seats to Event 47. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 45,
+      "date": "2026-12-11 (Fri)",
+      "time": "8:10 PM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+      "buy_in": 260,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "9:55 PM",
+      "chips": 20000,
+      "level": "15",
+      "notes": "Satellite — prize: 2 seats to Event 47. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 46,
+      "date": "2026-12-12 (Sat)",
+      "time": "9:10 AM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+      "buy_in": 260,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "10:55 AM",
+      "chips": 20000,
+      "level": "15",
+      "notes": "Satellite — prize: 2 seats to Event 47. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    },
+    {
+      "venue": "Venetian / Palazzo (DSE IV)",
+      "event": 48,
+      "date": "2026-12-12 (Sat)",
+      "time": "12:10 PM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day)",
+      "buy_in": 260,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "1:55 PM",
+      "chips": 20000,
+      "level": "15",
+      "notes": "Satellite — prize: 2 seats to Event 47. Re-entry not confirmed.",
+      "src": [
+        "V_EVENT",
+        "V_SCHED"
+      ]
+    }
+  ],
+  "spending_advantage_or_reentry": [
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-11-27",
+      "time": "1:00 PM",
+      "name": "Pot Limit Omaha",
+      "buy_in": 400,
+      "gtd": 0,
+      "fee": "$45 fee + $18 staff charge (prize pool $337)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Unlimited re-entry until start of Level 9 per notes. 30K chips. Schedule PDF re-fetch failed (HTTP 500); values from earlier read of the PDF.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-11-30 to 2026-12-04",
+      "time": "11:00 AM (Day 1A)",
+      "name": "No-Limit Hold'em $800",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "fee": "$72 fee + $33 staff charge (prize pool $695)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Unlimited re-entry per flight until start of Level 9.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-12-03 to 2026-12-05",
+      "time": "11:00 AM (Day 1A)",
+      "name": "No-Limit Hold'em $1,600",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "fee": "$120 + $50 (prize pool $1,430)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Unlimited re-entry per flight until start of Level 10.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-12-05 to 2026-12-12",
+      "time": "11:00 AM (Day 1A)",
+      "name": "WPT Prime Championship $1,100 (5-day NLH)",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "fee": "$90 + $40 (prize pool $970)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "One entry plus one re-entry per flight until start of Level 10. Not single-entry.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-12-06 to 2026-12-07",
+      "time": "11:00 AM (Day 1A)",
+      "name": "PLO Mystery Bounty $1,600",
+      "buy_in": 1600,
+      "gtd": 500000,
+      "fee": "$120 + $50 plus $500 bounty pool (prize pool $930)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Unlimited re-entry per flight until start of Level 10.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "2026-12-05 to 2026-12-21",
+      "time": "9:00 PM (select dates)",
+      "name": "NLH Turbo $600",
+      "buy_in": 600,
+      "gtd": 50000,
+      "fee": "$60 + $25 (prize pool $515)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Unlimited re-entry until start of Level 9. Time as recorded in notes; verify.",
+      "src": [
+        "W_POKER",
+        "W_WPT_SCHED",
+        "W_WPT_STRUCT"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "Dec 13, 2026",
+      "time": "",
+      "name": "WPT World Championship $10,400 ($1M added)",
+      "buy_in": 10400,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Entry rules NOT verified. Flagged: buy-in and rules must be checked on the official structures sheet.",
+      "src": [
+        "W_POKER"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (WPT World Championship)",
+      "event": "",
+      "date": "Nov 27 – Dec 21, 2026",
+      "time": "",
+      "name": "Super Gold Million $400 ($3,000,000 GTD)",
+      "buy_in": 400,
+      "gtd": 3000000,
+      "fee": null,
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Re-entry and dates NOT verified. Named on Wynn poker page; details not in verified notes.",
+      "src": [
+        "W_POKER"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (Daily)",
+      "event": "",
+      "date": "Fri (poster)",
+      "time": "12:00 PM",
+      "name": "NLH Rebuy $240",
+      "buy_in": 240,
+      "gtd": 40000,
+      "fee": null,
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Rebuy event; re-entry by rebuy per Wynn poker page. Guarantee from Wynn poker page ($40,000 guaranteed NLH Rebuy on Friday).",
+      "src": [
+        "W_POKER",
+        "W_DAILY"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (Daily)",
+      "event": "",
+      "date": "Mon–Thu, Sat, Sun (poster)",
+      "time": "12:00 PM",
+      "name": "NLH $200",
+      "buy_in": 200,
+      "gtd": null,
+      "fee": null,
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Re-entry NOT verified. Guarantee not captured in verified notes.",
+      "src": [
+        "W_DAILY"
+      ]
+    },
+    {
+      "venue": "Wynn Las Vegas (Daily)",
+      "event": "",
+      "date": "Nightly (poster)",
+      "time": "6:00 PM",
+      "name": "NLH $160",
+      "buy_in": 160,
+      "gtd": 10000,
+      "fee": null,
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Re-entry NOT verified. $10,000 guaranteed each evening at 6 p.m. per Wynn poker page.",
+      "src": [
+        "W_POKER",
+        "W_DAILY"
+      ]
+    },
+    {
+      "venue": "Bellagio",
+      "event": "",
+      "date": "Every Friday (dates per PDF; not captured)",
+      "time": "11:00 AM",
+      "name": "NLH $600",
+      "buy_in": 600,
+      "gtd": null,
+      "fee": "$50 house fee; $40 optional gratuity (prize pool $510)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Buy-in and re-enter through end of Level 8.",
+      "src": [
+        "B_FRI"
+      ]
+    },
+    {
+      "venue": "Bellagio",
+      "event": "",
+      "date": "Every Sunday (dates per PDF; not captured)",
+      "time": "11:00 AM",
+      "name": "H.O.R.S.E. $400",
+      "buy_in": 400,
+      "gtd": null,
+      "fee": "$35 house fee; $25 optional gratuity (prize pool $340)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Buy-in and re-enter through end of Level 8.",
+      "src": [
+        "B_SUN"
+      ]
+    },
+    {
+      "venue": "Bellagio",
+      "event": "",
+      "date": "Every Saturday (dates per PDF; not captured)",
+      "time": "11:00 AM",
+      "name": "NLH $1,100 (PDF heading) — page link says $1,000",
+      "buy_in": 1100,
+      "gtd": 50000,
+      "fee": "$50 admin; $40 optional gratuity (prize pool $510)",
+      "reg_closes": "",
+      "chips": "",
+      "level": "",
+      "notes": "Re-entry NOT verified (flagged). Conflicting title ($1,100 vs $1,000) and a level 3 blind typo in the sheet. Flagged.",
+      "src": [
+        "B_SAT"
+      ]
+    }
+  ]
+}

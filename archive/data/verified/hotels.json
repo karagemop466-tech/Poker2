@@ -1,0 +1,58 @@
+{
+  "as_of": "2026-11-16",
+  "clark_county_room_tax_note": "The Venetian's official hotel terms state a Clark County Room Tax of 13.38%. The Wynn terms say only 'plus tax'.",
+  "rows": [
+    {
+      "id": "H-VEN",
+      "hotel": "The Venetian Resort Las Vegas",
+      "tournament_site": "The Venetian (DeepStack Extravaganza IV, official schedule)",
+      "walk_to_poker_room": "",
+      "walk_to_poker_room_status": "UNVERIFIED — no walking time was captured.",
+      "walk_to_wynn_poker_room": "",
+      "walk_to_wynn_poker_room_status": "UNVERIFIED — no walking time was captured.",
+      "nightly_room_rate": "",
+      "rate_status": "UNVERIFIED — room rates are dynamic and no official nightly rate was captured for the review date.",
+      "resort_fee_official": "$55 plus applicable tax per night, payable at check-in",
+      "resort_fee_value": 55,
+      "resort_fee_with_13_38_tax_computed": 62.36,
+      "resort_fee_computed_note": "Computed as $55 × 1.1338 = $62.36. The official text says 'plus applicable tax'. Applying the 13.38% county rate to the fee is an assumption to confirm.",
+      "resort_fee_includes": "Access for two to the Canyon Ranch fitness facility; in-suite internet; boarding pass printing; unlimited local and toll-free calls; PressReader.",
+      "parking": "$20/day for hotel guests (official).",
+      "incidental_deposit": "$150 per night (official).",
+      "quality_rating": "",
+      "quality_status": "UNVERIFIED — no official or recognized rating was captured.",
+      "true_cost_per_night": "",
+      "true_cost_status": "UNVERIFIED — needs an official nightly room rate. Formula once the rate is known: room rate + resort fee + tax (13.38% on the room rate per the county rule; the fee tax is an assumption). Parking and deposit excluded.",
+      "sources": [
+        {"label": "The Venetian — Hotel Terms & Conditions (resort fee, 13.38% room tax, parking, deposit)", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"},
+        {"label": "The Venetian — DeepStack Poker Series overview", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"}
+      ]
+    },
+    {
+      "id": "H-WYN",
+      "hotel": "Wynn Las Vegas",
+      "tournament_site": "Wynn Las Vegas poker room (official Wynn poker page and daily structure sheets)",
+      "walk_to_poker_room": "",
+      "walk_to_poker_room_status": "UNVERIFIED — no walking time was captured.",
+      "walk_to_wynn_poker_room": "",
+      "walk_to_wynn_poker_room_status": "UNVERIFIED — no walking time was captured.",
+      "nightly_room_rate": "",
+      "rate_status": "UNVERIFIED — room rates are dynamic and no official nightly rate was captured for the review date.",
+      "resort_fee_official": "$55 plus tax per room night for Wynn Resort King / Two Queens and Tower Suite rooms (official, expired-offer terms; see flag F16).",
+      "resort_fee_value": 55,
+      "resort_fee_with_13_38_tax_computed": 62.36,
+      "resort_fee_computed_note": "Computed as $55 × 1.1338 = $62.36. The official text says 'plus tax' with no rate. The 13.38% rate comes from The Venetian's terms and must be confirmed for Wynn (flag F17).",
+      "resort_fee_includes": "Wi-Fi; water; unlimited local calls; fitness access for two; newsstand; self-parking for up to two vehicles (valet or self-parking for Tower Suites).",
+      "parking": "Self-parking for up to two vehicles is included in the resort fee (official).",
+      "incidental_deposit": "$150 per night (official, Wynn terms).",
+      "quality_rating": "",
+      "quality_status": "UNVERIFIED — no official or recognized rating was captured.",
+      "true_cost_per_night": "",
+      "true_cost_status": "UNVERIFIED — needs an official nightly room rate. Same formula as The Venetian.",
+      "sources": [
+        {"label": "Wynn Las Vegas — Terms (resort fee, parking, deposit; a 2026 promotion page, see flag F16)", "url": "https://www.visitwynn.com/tc/index.cfm?term_id=850250"},
+        {"label": "Wynn Las Vegas — Poker room page", "url": "https://www.wynnlasvegas.com/casino/poker"}
+      ]
+    }
+  ]
+}

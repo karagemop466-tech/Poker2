@@ -1,0 +1,110 @@
+{
+ "as_of": "2026-11-16",
+ "intro": "Suggestions for improving the decision process and the site. None are implemented \u2014 review and choose a path before any change is built.",
+ "items": [
+  {
+   "id": "S01",
+   "title": "Confirm the 33 unverified WPT rows directly with the Wynn poker room",
+   "category": "Verification",
+   "options": [
+    "A) Email/call the Wynn poker room for written entry terms on each unverified WPT event.",
+    "B) Leave them unverified and decide only on Venetian data.",
+    "C) Treat WPT rows with similar names to verified re-entry events as re-entry (not recommended \u2014 inference)."
+   ],
+   "tradeoff": "A closes the biggest information gap. B is safest but leaves the WPT schedule unusable. C violates the no-inference rule.",
+   "status": "Awaiting decision",
+   "impact": "high"
+  },
+  {
+   "id": "S02",
+   "title": "Capture dated hotel quotes for Dec 6\u201313 at booking time",
+   "category": "Hotels",
+   "options": [
+    "A) Manual capture from each official booking page into the rate log (checkout total, nightly average, fee, tax, parking, cancellation deadline, timestamp).",
+    "B) Use the conditional poker rates as planning estimates.",
+    "C) Wait until 30 days out when cancellation windows matter."
+   ],
+   "tradeoff": "A yields true cost numbers but is per-date manual work. B over/under-shoots. C is timed to cancellation deadlines.",
+   "status": "Awaiting decision",
+   "impact": "high"
+  },
+  {
+   "id": "S03",
+   "title": "Verify walk times on Google Maps before booking",
+   "category": "Logistics",
+   "options": [
+    "A) Click each prefilled Google Maps link for the hotel\u2013venue pairs you will use.",
+    "B) Accept the OSRM routing estimates.",
+    "C) Add a physical test walk on arrival."
+   ],
+   "tradeoff": "A is the confirmation step the \u226430-minute rule deserves. B risks bridge/detour errors. C is too late for booking.",
+   "status": "Awaiting decision",
+   "impact": "medium"
+  },
+  {
+   "id": "S04",
+   "title": "Add remaining poker rooms to the daily schedule pull",
+   "category": "Coverage",
+   "options": [
+    "A) Add Palms, South Point, Orleans, The Strat, Golden Nugget official schedules to the morning monitor.",
+    "B) Keep Venetian/Wynn/Caesars/MGM scope.",
+    "C) Add only rooms with confirmed single-entry daily events."
+   ],
+   "tradeoff": "A broadens the search for 8 AM starts and freezeout dailies. B is cheaper. C depends on discovery.",
+   "status": "Awaiting decision",
+   "impact": "medium"
+  },
+  {
+   "id": "S05",
+   "title": "Resolve the Valuetown 'subsequent buy in's' wording",
+   "category": "Verification",
+   "options": [
+    "A) Ask the Venetian poker room in writing whether Events 18/58 are single-entry.",
+    "B) Keep them flagged and exclude from the plan.",
+    "C) Play them only as a fallback."
+   ],
+   "tradeoff": "A settles it. B loses two $20K-guarantee options. C keeps exposure small.",
+   "status": "Awaiting decision",
+   "impact": "medium"
+  },
+  {
+   "id": "S06",
+   "title": "Tighten event-duration estimates",
+   "category": "Schedule",
+   "options": [
+    "A) Record actual finish times of the first events played and feed them back into the overlap logic.",
+    "B) Ask the tournament desk for typical durations.",
+    "C) Keep level-count estimates."
+   ],
+   "tradeoff": "A self-corrects during the trip. B is quick. C is current state.",
+   "status": "Awaiting decision",
+   "impact": "low"
+  },
+  {
+   "id": "S07",
+   "title": "Quality ratings for hotels",
+   "category": "Hotels",
+   "options": [
+    "A) AAA Diamond listings.",
+    "B) Forbes Travel Guide stars (Wynn Tower Suites statement already captured).",
+    "C) Keep class assumptions."
+   ],
+   "tradeoff": "A and B are third-party verified ratings; C is assumption-based.",
+   "status": "Awaiting decision",
+   "impact": "low"
+  },
+  {
+   "id": "S08",
+   "title": "Merge the archived dashboards into this one",
+   "category": "Site",
+   "options": [
+    "A) Keep archives as-is (current state) with links from the Archive page.",
+    "B) Delete after a review period.",
+    "C) Port any unique rows from archives into data/site/ (they are already merged)."
+   ],
+   "tradeoff": "A preserves prior sessions' work. B cleans up. C is already done by the integration pass.",
+   "status": "Awaiting decision",
+   "impact": "low"
+  }
+ ]
+}

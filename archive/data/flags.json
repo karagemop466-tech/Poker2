@@ -1,0 +1,114 @@
+{
+  "flags": [
+    {
+      "item": "Venetian: Re-entry/add-on rules",
+      "where": "All Venetian events",
+      "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying."
+    },
+    {
+      "item": "Venetian: Structure sheets not read",
+      "where": "Events 2, 12, 17, 20, 27, 36, 39, 40, 43, 57, 35 and satellites",
+      "detail": "Fee and rules left blank."
+    },
+    {
+      "item": "Venetian: Event 19 fee",
+      "where": "Event 19",
+      "detail": "Only GTD confirmed; fee not in verified notes."
+    },
+    {
+      "item": "Venetian: RaceDay Stack guarantee",
+      "where": "Events 3, 4, 5",
+      "detail": "No guarantee printed on schedule or sheet."
+    },
+    {
+      "item": "Venetian: Event 6 guarantee",
+      "where": "Event 6",
+      "detail": "No guarantee printed."
+    },
+    {
+      "item": "Bellagio: Saturday re-entry",
+      "where": "Saturday $1,100 NLH",
+      "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet."
+    },
+    {
+      "item": "Bellagio: Dates",
+      "where": "Friday, Saturday, Sunday",
+      "detail": "Dates not captured from PDFs. Recurring schedule only."
+    },
+    {
+      "item": "Wynn: WPT World Championship $10,400",
+      "where": "Dec 13",
+      "detail": "Entry rules unverified."
+    },
+    {
+      "item": "Wynn: Super Gold Million $400",
+      "where": "Dec 10–12; Days 1A–1D (schedule PDF)",
+      "detail": "$400 buy-in, $3,000,000 guarantee, and multi-flight dates/start times verified in official WPT schedule. Event-specific re-entry rules / full entry-fee split were not verified; not single-entry approved."
+    },
+    {
+      "item": "Wynn: Schedule PDF",
+      "where": "WPT schedule",
+      "detail": "Re-fetched successfully on 2026-11-16 and read through official PDF chunks 1–7. Relevant event-level re-entry terms are now confirmed; do not carry forward the earlier HTTP 500 re-fetch note."
+    },
+    {
+      "item": "Wynn daily 12pm $200 NLH",
+      "where": "Mon–Thu, Sat, Sun",
+      "detail": "Guarantee and re-entry not verified."
+    },
+    {
+      "item": "Hotels: nightly rates",
+      "where": "All hotels",
+      "detail": "Exact-date official rate quotes not captured. Venetian poker-rate page gives $119 and $209 as starting rates for Venetian/Palazzo suites but does not explicitly map the amounts to each property; no mapping or total assumed."
+    },
+    {
+      "item": "Hotels: walking distances",
+      "where": "All hotels",
+      "detail": "No official walking distances captured. 30-minute test not verified."
+    },
+    {
+      "item": "Hotels: Encore and others",
+      "where": "Encore, others",
+      "detail": "Wynn resort information page fetched directly and confirms $55 plus tax per room night. MGM Grand hotel terms fetched directly and confirm $50 plus tax (eligible Gold+ reservations may qualify for waiver). Room rates and walk times remain blank."
+    },
+    {
+      "item": "Clark County transient lodging tax",
+      "where": "All hotels",
+      "detail": "Secondary sources conflict (13.38% vs 10.5%–13.38%). No official county source found. Left blank."
+    },
+    {
+      "item": "Golden Nugget Grand Poker Series",
+      "where": "Downtown; June 2026",
+      "detail": "Excluded: not on Strip and dates passed."
+    },
+    {
+      "item": "Aria poker schedule",
+      "where": "ARIA",
+      "detail": "Official schedule not captured in verified notes. Not listed."
+    },
+    {
+      "item": "Westgate: $70 NLH freezeouts (5:05 PM & 9:05 PM)",
+      "where": "Westgate Las Vegas poker room",
+      "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying."
+    },
+    {
+      "item": "MGM daily schedule: date/time inconsistency",
+      "where": "MGM Grand daily tournaments",
+      "detail": "Current official poker page lists 11:00 AM, 7:00 PM, 11:00 PM and links to a schedule PDF titled August (year not stated), listing 11:10 AM, 7:10 PM and 11:10 PM. Do not treat the August buy-in/guarantee as current November terms without MGM confirmation. Sources: MGM_POKER, MGM_TOURNEY_SCHED."
+    },
+    {
+      "item": "MGM $120 NLH: paid-stack advantage / cost ambiguity",
+      "where": "Linked $120 NLH structure",
+      "detail": "Official structure says a voluntary $11 staff gratuity gives 10,000 additional chips; its fee allocation sums to the $120 posted entry, but does not clearly say whether the $11 is above the $120 or a portion of it. Keep separate and confirm exact cost/stack choice. Source: MGM_120_STRUCT."
+    },
+    {
+      "item": "Venetian series module mismatch",
+      "where": "General poker page versus series overview",
+      "detail": "General room page says Current Series WPT Fall Festival Oct 28–Nov 15, while official series overview lists DeepStack Extravaganza IV Nov 16–Dec 23. Treat detailed event schedule as source for event details and confirm changes."
+    },
+    {
+      "item": "Wynn $600 NLH $400K re-entry",
+      "where": "Nov 27–30 WPT event",
+      "detail": "Official WPT structure confirms unlimited re-entry in each starting flight until Level 9; not a single-entry event. Players advancing to Day 2 cannot enter later flights."
+    }
+  ]
+}
