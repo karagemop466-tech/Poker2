@@ -61,3 +61,13 @@
 - All hotel room totals and off-property walk times remain unverified/blank.
 
 All flags and suggestions are published at the [Flagged for Review](../pages/review.html) and [Questions & Suggestions](../pages/decisions.html) pages.
+
+
+## Supplemental audit — November 16, 2026
+
+- **Wynn WPT structure cross-check:** the official structures PDF was re-fetched and read (the earlier HTTP 500 note is stale). Confirmed re-entry terms: WPT $600/$400K and $800/$1M events allow unlimited re-entry per starting flight through Level 9; WPT Prime $1,100/$5M permits one entry plus one re-entry per flight through Level 10. These remain excluded from strict single-entry recommendations. The PLO $400 event's entry limit is not asserted here.
+- **Wynn Mystery Bounty / $10,400:** the official Wynn page identifies the $400 Super Gold Million Mystery Bounty and $3M guarantee, but our captured evidence does not establish its precise date/time, fee allocation, or entry limit. These cells/rules remain flagged. The schedule PDF lists the $10,400 WPT World Championship on Dec 13; its rule/fee breakdown is not confirmed here.
+- **MGM Grand:** official poker-room page advertises 11 AM, 7 PM, and 11 PM daily starts, and links a schedule PDF titled August without year. The PDF lists 11:10 AM, 7:10 PM, and 11:10 PM. We do not treat that schedule's relevance/current date as confirmed. Its $120 structure's voluntary $11 gratuity / 10,000-chip statement is ambiguous about whether the amount is included in or additional to the $120; no cost interpretation is inferred.
+- **Hotels:** Wynn resort information page directly confirms $55 plus tax per room night. MGM Grand terms confirm $50 plus applicable tax per night (waiver may depend on eligibility). Wynn's 2026 awards statement reports Wynn Tower Suites' 20th consecutive Forbes Travel Guide Five-Star rating; this is not generalized to all Wynn rooms. Venetian's poker suite page's $119/$209 starting rates are not mapped by property in the wording reviewed, so no property-specific rate is assigned. No dated quote, full tax-inclusive nightly price, or route-verified walk time is available; hotel cost ranking and 30-minute walk eligibility remain intentionally blank.
+- **Venetian general-page inconsistency:** general poker page's “Current Series” module lagged the dedicated series page; use the dedicated official event schedule for dates/event facts and confirm close to play.
+- Data sources and unresolved items: `data/sources.json`, `data/flags.json`, `data/hotels.csv`, and `data/hotels.json`. Source links have been added to each new hotel row; no unknown entry rule or hotel price is inferred.

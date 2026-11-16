@@ -5,26 +5,28 @@
       "name": "The Venetian",
       "address": "3355 S. Las Vegas Blvd (Strip)",
       "resort_fee": "$55 plus tax per night",
-      "rate": "from $119 (poker suite, conditional; before fee and tax)",
+      "rate": null,
       "walk": null,
       "src": [
         "V_RESORT_FEE",
         "V_POKER_RATES",
-        "V_HOTEL_TC"
+        "V_HOTEL_TC",
+        "V_POKER"
       ],
-      "notes": "Poker suite rate is conditional on qualifying play each night and on availability; blackout dates may apply. Dated quote not captured. Walking time not verified."
+      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Qualifying-play conditions and availability apply. Dated quote and walking time not captured."
     },
     {
       "name": "The Palazzo",
       "address": "3325 S. Las Vegas Blvd (Strip)",
       "resort_fee": "$55 plus tax per night",
-      "rate": "from $209 (poker suite, conditional; before fee and tax)",
+      "rate": null,
       "walk": null,
       "src": [
         "V_RESORT_FEE",
-        "V_POKER_RATES"
+        "V_POKER_RATES",
+        "V_POKER"
       ],
-      "notes": "Same poker-suite conditions as the Venetian. Dated quote not captured. Walking time not verified."
+      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Same resort poker room, but walk duration not published."
     },
     {
       "name": "Wynn Las Vegas",
@@ -33,9 +35,10 @@
       "rate": null,
       "walk": null,
       "src": [
-        "W_TC"
+        "W_RESORT_INFO",
+        "W_QUALITY"
       ],
-      "notes": "Fee from search snippet of official terms; full page not fetched. Rate and walk time blank."
+      "notes": "Official resort information page fetched: $55 plus tax per room night. Wynn Tower Suites has a 20th consecutive Forbes Travel Guide Five-Star rating statement for 2026; applies to Tower Suites only. Rate and walk time blank."
     },
     {
       "name": "ARIA Resort & Casino",
@@ -58,7 +61,20 @@
         "B_TC"
       ],
       "notes": "Gold+ waives the fee. $150/day incidental."
+    },
+    {
+      "name": "MGM Grand",
+      "address": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "resort_fee": "$50 plus applicable tax per night",
+      "rate": null,
+      "walk": null,
+      "src": [
+        "MGM_HOTEL_TC",
+        "MGM_HOTEL",
+        "MGM_POKER"
+      ],
+      "notes": "Official hotel terms state $50 plus tax and possible Gold+ fee waiver for eligible reservations. Daily poker tournaments are published at the same resort; exact room-to-poker walk time and dated room rate remain blank."
     }
   ],
-  "note": "Hotel rates and walking distances are not published on official pages and were not verified. The 30-minute walk test and cost ranking are therefore left blank."
+  "note": "Hotel rates and walking distances are not published for unspecified trip dates and were not verified. The 30-minute walk test and cost ranking remain blank. Resort fees are from current official property terms. Venetian/Palazzo poker-rate starting prices are not assigned to one property absent an explicit mapping or dated quote."
 }
