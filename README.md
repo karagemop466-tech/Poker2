@@ -1,25 +1,21 @@
 # Vegas Poker Planner
 
-A static, source-linked research dashboard for Las Vegas Strip-area poker tournaments and hotel planning. The first snapshot is dated 16 November 2026.
+A static, source-audited research dashboard for Las Vegas Strip poker tournament planning. The site separates verified official schedule facts from unknowns; it intentionally avoids inferring single-entry status, hotel rates, fees, and walking times.
 
-## Pages
+## Preview locally
 
-- `index.html` — executive summary and provisional comparisons
-- `tournaments.html` — selected dated events, buy-in/guarantee comparisons, and paid-extra-spend events kept separate
-- `schedule.html` — a cautious start-time plan, including the lack of an official 8:00 AM tournament start
-- `hotels.html` — source-verified fee information and clearly blank date-specific nightly totals
-- `decision.html` — question/answer register and proposed improvements
-- `flagged.html` — unverified facts and source irregularities
-- `sources.html` — official source register and calculation rules
+Open `index.html` directly, or run `python3 -m http.server 8000` and visit `http://localhost:8000`.
 
-## Local preview
+## Publishing
 
-Open `index.html` in a browser, or run a static server from the repository root, e.g. `python3 -m http.server 8000`.
+GitHub Pages workflow is configured to publish the repository root on pushes to `main` and via manual dispatch. Site: `index.html`.
 
-## Publication
+## Verification notes
 
-The repository's existing GitHub Pages configuration serves the repository root from `main` (branch deployment). The site is published by merging the static files to `main`; the current published Pages URL is `https://karagemop466-tech.github.io/Poker2/`. No Actions deployment workflow is used because the repository's Pages source is configured for branch deployment.
+Research snapshot: 2026-11-16 (UTC). Primary schedule: [Venetian DeepStack Extravaganza IV official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html). Series overview: [official Venetian tournament series](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html). Hotel promotion context: [official Venetian offers](https://www.venetianlasvegas.com/hotel/offers.html). Per-row links point directly to the published schedule; full structure sheets are linked from that source. No event is represented as confirmed single-entry until its official rules are checked.
 
-## Verification policy
+See [COORDINATION.md](COORDINATION.md) for scope and verification log. Use the site's **Flagged for Review** section before relying on any unverified item.
 
-Official venue/hotel sources are linked at the data row level. A blank means unverified/not published in the source checked, not zero. Tournament guarantee-to-buy-in ratios are descriptive arithmetic, not expected return. The research is a dated snapshot; check operator terms, event availability, hotel quotes and schedule changes again before travel.
+## Category pages (added)
+
+Detail pages live in `pages/`: single-entry candidates, re-entry/spending events (kept separate), 8 AM schedule, hotel cost detail, summary, flagged rows, site-improvement suggestions (awaiting your choice; no changes made), questions, and repo review. Regenerate them with `python3 scripts/build.py`. Data lives in `data/`. Blank cells are unverified and are listed on the flagged pages.
