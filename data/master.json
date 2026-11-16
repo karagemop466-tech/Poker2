@@ -7262,9 +7262,9 @@
   "scope": "Covered: The Venetian (DeepStack Extravaganza IV, official schedule rows Nov 16 \u2013 Dec 23, 2026) and Wynn Las Vegas (daily tournaments and WPT World Championship, Nov 27 \u2013 Dec 21, 2026). Not covered: other Strip rooms. Every value is from an official source or is marked UNVERIFIED.",
   "headline_numbers": [
    {
-    "label": "Verified single-entry events (The Venetian)",
-    "value": "32",
-    "note": "One-day events from Nov 18 \u2013 Dec 23, 2026. Structure sheets checked for re-entry, rebuy and add-on."
+    "label": "Structure sheet silent on re-entry (The Venetian)",
+    "value": "45",
+    "note": "One-day events Nov 18 - Dec 23, 2026 whose official structure sheet was read in full and prints no re-entry, rebuy or add-on clause. Silence is NOT a published freezeout rule: no Venetian sheet states \"no re-entry\", so these are sheet-silent, not confirmed single-entry."
    },
    {
     "label": "Excluded rows",
@@ -7277,9 +7277,9 @@
     "note": "Official schedule values only; re-entry status unknown."
    },
    {
-    "label": "Verified single-entry events at Wynn",
+    "label": "Structure sheet silent on re-entry at Wynn",
     "value": "0",
-    "note": "All Wynn daily events allow re-entry or add-ons. WPT rows are unverified or excluded."
+    "note": "Every Wynn structure sheet read prints an explicit re-entry clause, so none is even sheet-silent."
    },
    {
     "label": "Earliest verified single-entry start",
