@@ -163,3 +163,79 @@ Task log:
 | T5 Final integration: PR → main, Pages deploy, record | in progress | arena/7d846749-poker2 | `COORDINATION.md` |
 
 Claim (2026-11-16): This is the final integration session for the shared outputs. Claimed the new namespaces `data/poker/`, `app/`, `scripts/build_poker_site.py` plus `COORDINATION.md` so no existing session file is overwritten. Existing root pages, `pages/`, `docs/`, `verified/` and `data/*.json` remain owned by the earlier sessions and are left untouched. Branch is fixed by the platform as `arena/7d846749-poker2` (task spec asks for `session-<id>/<task>`; recorded as a deviation, same as earlier sessions).
+
+## Session arena/7d846749-poker2 — final integration, feature build and consolidation (2026-11-16)
+
+Status of T1–T5 as of the end of this session: **all done**. Details and the merge/deploy trail are
+recorded below and in the PR.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Repo review + coordination claim | done | arena/7d846749-poker2 | `COORDINATION.md`, `repo-review.html` |
+| T2 Official re-verification of every event/hotel row | done — 237 event rows, 7 hotels, 14 walk pairs | arena/7d846749-poker2 | `scripts/poker_data.py`, `data/poker/dataset.json` |
+| T3 Feature build | done | arena/7d846749-poker2 | `scripts/build_dashboard.py`, `style.css`, `app.js` |
+| T4 Consolidated site | done — 21 generated pages | arena/7d846749-poker2 | `index.html`, `events.html`, `ranking.html`, `dayplan.html`, `trip-cost.html`, `hotels.html`, `rates.html`, `walking.html`, `questions.html`, `suggestions.html`, `flagged.html`, `sources.html`, `repo-review.html`, `venues/*` |
+| T5 Final integration: PR → main, Pages deploy, record | done — see PR link and deploy result below | arena/7d846749-poker2 | `COORDINATION.md` |
+
+### Scope actually touched
+
+Claimed and used: `scripts/poker_data.py`, `scripts/build_dashboard.py`, `scripts/stamp_archive.py`,
+`data/poker/`, `style.css`, `app.js`, the 13 root HTML pages listed above, `venues/`, `archive/`,
+`README.md`, this file.
+
+Earlier sessions' trees (`pages/`, `docs/`, `verified/`, root `tournaments.html`, `planning.html`,
+`styles.css`, `assets/`) were **moved into `archive/`, not deleted**, and every archived page now
+carries a fixed banner marking it superseded. Nothing from an earlier session was rewritten in place;
+the archived copies are byte-identical to what was committed, apart from the injected banner.
+
+### What changed in the data model, and why
+
+Three corrections were made during this session, each recorded as a flag or a review finding:
+
+1. **"Not stated" was split from "unread".** An event whose structure sheet was never opened is
+   *unverified*, not silent. The dataset now carries `sheet_read` per row and the site distinguishes
+   53 silent rows, 168 unread rows and 16 rows where re-entry is positively permitted. Previously all
+   237 could have been read as "silent", which would have overstated the evidence.
+2. **Zero events are confirmed single-entry.** An earlier reading of this repository treated MGM
+   Grand's $120 daily as confirmed single-entry because its sheet never mentions re-entry. That is an
+   inference from silence and has been reversed. The single-entry toggle now returns zero rows and
+   explains itself.
+3. **A derived event length was removed.** An intermediate version of `build_dashboard.py` computed a
+   "maximum length" per event from a hard-coded level table written from memory. It was not
+   transcribed from the sheets, so it was deleted rather than corrected. The day plan now tests
+   fallbacks against published late-registration closes, which are real, and states that no room
+   publishes a finish time.
+
+4. **Recurring events are counted once.** A bug expanded each daily/weekly event into seven weekday
+   rows, triple-counting the schedule. Fixed: one row per recurring event with a weekday list, expanded
+   per date only when the day plan is built.
+
+### Verification performed this session
+
+- 21 generated pages parsed with an HTML tag-balance checker: **0 unclosed or mismatched tags**.
+- Internal link check across all 62 site + archive pages: **0 broken relative links**.
+- `node --check app.js` passes.
+- Generator determinism: rebuilding twice produces byte-identical HTML (md5 verified).
+- Every source URL re-confirmed live by re-fetching the three load-bearing documents: the Venetian
+  DeepStack IV schedule table (matches the dataset row for row), the Caesars Palace daily flyer
+  (fee splits $70/$30 and the $45/$5 add-on confirmed verbatim), the Wynn WPT schedule PDF (dates,
+  times and buy-ins confirmed). The Venetian `structure_7.pdf` was re-read and confirms $90 house fee
+  on a $600 buy-in, 28 levels of 30 minutes, late registration "10 levels + Break (~ 4:55 PM)".
+- Outbound URL resolution could **not** be automated: this sandbox has no outbound network from bash,
+  so `urllib`/`curl` cannot reach the properties. The three re-fetches above were done with the page
+  fetcher instead. `scripts/check_links.py` therefore remains a manual/CI-time check, not a local one.
+
+### Known gaps left open (all published on the Flagged page)
+
+- **No dated hotel rate exists.** Every booking flow read returned `$XXX` placeholders to a
+  non-browser client. Resort fees, tax, parking and cancellation terms are verified; the room rate is
+  not. F-03 / Q-09.
+- **23 of 37 Venetian structure sheets were not opened.** Those events carry a buy-in from the
+  schedule table and a blank fee. Stated on `sources.html`.
+- **Horseshoe publishes no buy-in anywhere retrievable.** Six start times exist only in a Caesars
+  corporate article; those rows are blank and labelled `official-editorial`. F-07.
+- **Caesars Palace resort fee unverified.** All fee URLs redirect to a landing page. F-08.
+- **Bellagio Saturday $1,100 contradicts itself** ($50K guarantee vs $600-per-player pool
+  allocation). Excluded from the ranking. F-05.
+
+None of these block publication, per the brief. They are surfaced rather than smoothed over.

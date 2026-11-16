@@ -1,21 +1,84 @@
 # Vegas Poker Planner
 
-A static, source-audited research dashboard for Las Vegas Strip poker tournament planning. The site separates verified official schedule facts from unknowns; it intentionally avoids inferring single-entry status, hotel rates, fees, and walking times.
+A static, source-audited research dashboard for Las Vegas Strip poker tournament planning.
+Every number on the site links to the official page, PDF or structure sheet it came from, and
+every table row carries the date that source was last read. Values no official source states are
+left blank and listed on the Flagged page — they are never inferred or filled in.
 
-## Preview locally
+Live site: <https://karagemop466-tech.github.io/Poker2/>
 
-Open `index.html` directly, or run `python3 -m http.server 8000` and visit `http://localhost:8000`.
+## Rebuild
+
+```bash
+python3 scripts/poker_data.py        # dataset  -> data/poker/dataset.json
+python3 scripts/build_dashboard.py   # pages    -> index.html, *.html, venues/*.html
+python3 scripts/stamp_archive.py     # banners on every archived page
+```
+
+Both generators are deterministic: rebuilding without changing the data produces byte-identical
+HTML, which is what makes a diff in a pull request meaningful.
+
+## Where the numbers live
+
+There is exactly one source of truth: `scripts/poker_data.py`. It holds
+
+| Constant | Contains |
+|---|---|
+| `SOURCES` | every page/PDF/route read, keyed, with publisher, URL and what it was used for |
+| `EVENTS` | 237 tournament rows (Venetian DSE IV, Wynn WPT, 20 recurring daily/weekly events) |
+| `VENUES` | the six properties that run tournaments |
+| `HOTELS` | seven properties with verified resort fees, taxes, parking, cancellation terms |
+| `WALKS` | 14 measured hotel→poker-room walking pairs |
+| `RATE_LOG` | dated rate observations, append-only |
+| `FLAGS` | 13 source irregularities |
+| `QUESTIONS` | 12 open questions, 5 of them blocking |
+| `SUGGESTIONS` | 13 gated improvement proposals |
+
+Nothing else in the repository may hold a buy-in, guarantee, fee, rate or walk time. If a page
+needs a number, it imports it from here.
+
+## Site structure
+
+```
+index.html          Dashboard — the verdict, the gaps, the top ratios
+events.html         Every event, searchable, filterable, with per-row source + last-checked
+ranking.html        Three lists: sheet-silent, spend-more, and non-comparable formats
+dayplan.html        One primary event per date, plus conditional fallbacks
+trip-cost.html      Calculator: entries × buy-ins + nights × true hotel cost
+hotels.html         Fees, taxes, parking, cancellation — and the missing room rate
+rates.html          Append-only rate log
+walking.html        30-minute walking gate, measured
+venues/             One page per property (6)
+questions.html      What must be answered before booking
+suggestions.html    Gated improvement proposals
+flagged.html        Source irregularities, with severities
+sources.html        Every source, classed by authority
+repo-review.html    Line-by-line review of this repository itself
+archive/            The four superseded dashboards, bannered and marked unusable
+```
+
+## The two rules the site is built to keep
+
+**1. Silence is not confirmation.** `entry_rule = "not_stated"` is a distinct value from a
+confirmed single-entry rule, and the site distinguishes three states per row:
+
+- `silent on entry limit` — the event's own structure sheet was opened and says nothing about a
+  maximum number of entries. 53 rows.
+- `sheet not read` — nobody opened that event's sheet, so the row is *unverified*, not silent.
+  168 rows.
+- `re-entry` / `rebuy + add-on` — the property's own terms positively permit paying again. 16 rows.
+
+No row carries a written single-entry confirmation, so the "single-entry confirmed" filter returns
+zero rows by design. That is the finding, not a bug.
+
+**2. A derived number is a number nobody published.** An intermediate draft computed event lengths
+from a table of level counts written from memory. It was removed rather than corrected, and the
+removal is recorded on `repo-review.html`. No event-length figure appears anywhere now.
 
 ## Publishing
 
-GitHub Pages workflow is configured to publish the repository root on pushes to `main` and via manual dispatch. Site: `index.html`.
+`.github/workflows/pages.yml` publishes the repository root on push to `main` and on manual
+dispatch. See `COORDINATION.md` for the session log, the verification record and the merge/deploy
+trail.
 
-## Verification notes
-
-Research snapshot: 2026-11-16 (UTC). Primary schedule: [Venetian DeepStack Extravaganza IV official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html). Series overview: [official Venetian tournament series](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html). Hotel promotion context: [official Venetian offers](https://www.venetianlasvegas.com/hotel/offers.html). Per-row links point directly to the published schedule; full structure sheets are linked from that source. No event is represented as confirmed single-entry until its official rules are checked.
-
-See [COORDINATION.md](COORDINATION.md) for scope and verification log. Use the site's **Flagged for Review** section before relying on any unverified item.
-
-## Category pages (added)
-
-Detail pages live in `pages/`: single-entry candidates, re-entry/spending events (kept separate), 8 AM schedule, hotel cost detail, summary, flagged rows, site-improvement suggestions (awaiting your choice; no changes made), questions, and repo review. Regenerate them with `python3 scripts/build.py`. Data lives in `data/`. Blank cells are unverified and are listed on the flagged pages.
+Research snapshot: **2026-11-16 (UTC)**.
