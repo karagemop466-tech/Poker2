@@ -1,0 +1,89 @@
+{
+  "flags": [
+    {
+      "item": "Venetian: Re-entry/add-on rules",
+      "where": "All Venetian events",
+      "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying."
+    },
+    {
+      "item": "Venetian: Structure sheets not read",
+      "where": "Events 2, 12, 17, 20, 27, 36, 39, 40, 43, 57, 35 and satellites",
+      "detail": "Fee and rules left blank."
+    },
+    {
+      "item": "Venetian: Event 19 fee",
+      "where": "Event 19",
+      "detail": "Only GTD confirmed; fee not in verified notes."
+    },
+    {
+      "item": "Venetian: RaceDay Stack guarantee",
+      "where": "Events 3, 4, 5",
+      "detail": "No guarantee printed on schedule or sheet."
+    },
+    {
+      "item": "Venetian: Event 6 guarantee",
+      "where": "Event 6",
+      "detail": "No guarantee printed."
+    },
+    {
+      "item": "Bellagio: Saturday re-entry",
+      "where": "Saturday $1,100 NLH",
+      "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet."
+    },
+    {
+      "item": "Bellagio: Dates",
+      "where": "Friday, Saturday, Sunday",
+      "detail": "Dates not captured from PDFs. Recurring schedule only."
+    },
+    {
+      "item": "Wynn: WPT World Championship $10,400",
+      "where": "Dec 13",
+      "detail": "Entry rules unverified."
+    },
+    {
+      "item": "Wynn: Super Gold Million $400",
+      "where": "Named on Wynn poker page",
+      "detail": "$3M guarantee shown. Dates, buy-in breakdown and re-entry not verified."
+    },
+    {
+      "item": "Wynn: Schedule PDF",
+      "where": "WPT schedule",
+      "detail": "Re-fetch returned HTTP 500 on 2026-11-16. Retry before relying on a re-read."
+    },
+    {
+      "item": "Wynn daily 12pm $200 NLH",
+      "where": "Mon–Thu, Sat, Sun",
+      "detail": "Guarantee and re-entry not verified."
+    },
+    {
+      "item": "Hotels: nightly rates",
+      "where": "All hotels",
+      "detail": "Official rate data not captured. Cost ranking not possible."
+    },
+    {
+      "item": "Hotels: walking distances",
+      "where": "All hotels",
+      "detail": "No official walking distances captured. 30-minute test not verified."
+    },
+    {
+      "item": "Hotels: Encore and others",
+      "where": "Encore, others",
+      "detail": "Resort fee not verified; not listed."
+    },
+    {
+      "item": "Clark County transient lodging tax",
+      "where": "All hotels",
+      "detail": "Secondary sources conflict (13.38% vs 10.5%–13.38%). No official county source found. Left blank."
+    },
+    {
+      "item": "Golden Nugget Grand Poker Series",
+      "where": "Downtown; June 2026",
+      "detail": "Excluded: not on Strip and dates passed."
+    },
+    {
+      "item": "Aria poker schedule",
+      "where": "ARIA",
+      "detail": "Official schedule not captured in verified notes. Not listed."
+    }
+  ]
+}
