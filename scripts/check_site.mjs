@@ -49,6 +49,27 @@ for (const p of pages.concat(fs.readdirSync(path.join(ROOT, PLAN, "venues")).map
   }
 }
 
+/* the trip calculator must agree with the static column next to it */
+{
+  const html = read(PLAN + "/trip-cost.html");
+  const win = (D.schedule.windows.best_poker_rate_compatible || [])[0]
+    || (D.schedule.windows.best_size_ratio || [])[0];
+  const nightsAttr = (html.match(/id="c-nights"[^>]*value="(\d+)"/) || [])[1];
+  const pickCount = (html.match(/id="c-pick"[\s\S]*?<\/div>/) || [""])[0].split('type="checkbox"').length - 1;
+  if (!win) fail.push("no recommended window was generated at all");
+  else {
+    if (nightsAttr !== String(win.nights)) fail.push("trip-cost.html nights input is " + nightsAttr + " but the recommended window is " + win.nights);
+    if (pickCount !== win.days.length) fail.push("trip-cost.html offers " + pickCount + " day rows for a " + win.days.length + "-day window");
+    const checked = (html.match(/id="c-pick"[\s\S]*?<\/div>/) || [""])[0].split("checked").length - 1;
+    if (checked < win.days.length) fail.push("the recommended days are not pre-selected (checked=" + checked + ")");
+  }
+  if (/%[A-Z][A-Z_]{2,}%/.test(html)) fail.push("trip-cost.html has an unresolved placeholder");
+  if (/id="c-hotel"[\s\S]{0,400}?selected/.test(html) === false && !/id="c-hotel">\s*<option value="H-VEN"/.test(html)) {
+    // not fatal: the first option is the default; just make sure a default exists
+    if (!/id="c-hotel">/.test(html)) fail.push("trip-cost.html has no hotel select");
+  }
+}
+
 if (fail.length) {
   console.error("SITE CHECKS FAILED:");
   for (const f of fail.slice(0, 25)) console.error("  - " + f);
