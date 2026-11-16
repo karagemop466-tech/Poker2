@@ -4,6 +4,22 @@
 |---|---|---|---|
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
+| I1 Read every remaining Venetian DSE IV structure sheet; resolve "unverified" labels with rule excerpts | in progress | arena/f0816fab-poker2 | `data/site/events.json`, `research/f0816fab-structure-audit.md` |
+| I2 Wynn WPT / daily row classification from official terms (incl. e3cb221d handoff) | in progress | arena/f0816fab-poker2 | `data/site/events.json` |
+| I3 Hotel↔venue walking routes (≤30 min test) + map verification links | in progress | arena/f0816fab-poker2 | `data/site/walking.json` |
+| I4 Hotel dated rate log, true-cost/night formula, trip cost calculator data (fixed trip dates + budget/quality floor) | in progress | arena/f0816fab-poker2 | `data/site/hotels.json`, `data/site/trip.json` |
+| I5 Unified integration site at repo root (search, date filter, single-entry toggle, venue pages, schedule overlap plan, ranked ratio, trip calculator, questions/suggestions/flagged) | in progress | arena/f0816fab-poker2 | `index.html`, `tournaments.html`, `hotels.html`, `schedule.html`, `venues/*.html`, `trip.html`, `sources.html`, `monitor.html`, `questions.html`, `suggestions.html`, `flagged.html`, `assets/css/site.css`, `assets/js/site.js`, `archive/**` |
+| I6 Scheduled official-source re-check + change marking + daily schedule pull (GitHub Actions) | in progress | arena/f0816fab-poker2 | `.github/workflows/monitor.yml`, `scripts/monitor_sources.py`, `data/site/monitor.json` |
+| I7 Final integration: line-by-line re-verification, link check, PR → main, Pages deploy check | in progress | arena/f0816fab-poker2 | `COORDINATION.md`, `README.md` |
+
+## Session arena/f0816fab-poker2 — claim (2026-11-16)
+
+Scope (claimed before starting; no other session holds these tasks — all prior sessions' tasks above are done):
+- Acting as the **final integration session** for shared outputs (root site index/navigation and combined table data), per the spec: all other recorded tasks are `done` or `needs review`; open items (walk times, Clark County tax source, Wynn PDF 500) are non-blocking flags that this session adopts.
+- Will adopt the `needs review` integration request from `arena/e3cb221d-poker2` (Wynn re-entry terms, Caesars 9 AM Horseshoe schedule + Caesars Palace add-on, Venetian page irregularities) into the unified site.
+- Prior sessions' directories (`pages/`, `docs/`, `verified/`, `data/*.json`, `data/verified/`) are **not edited**; they stay live as archived dashboards. Current root pages are preserved under `archive/root-2026-11-16/` before the unified root site replaces them (shared-output change reserved for this integration session).
+- Branch note: Arena fixes this session's branch as `arena/f0816fab-poker2` (spec's `session-<id>/<task>` naming is not available); recorded like prior flag F02.
+- 2026-11-16: claim committed and pushed before work started (this commit).
 
 ## Task log
 - 2026-11-16: Claimed integrated dashboard/site scope on the session's fixed active branch. Repository initially contained only an 8-byte README; no existing board or parallel claims. Official source reviewed: Venetian DeepStack tournament schedule page (https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) and series overview (https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html). Schedule includes upcoming late-November/December 2026 events; the only verified indexed schedule source was for Venetian. Hotel rate/date-specific totals and walking routes have not been verified and will be left blank/flagged. Remaining local tournament details must be checked against the linked official schedule before promotion.
