@@ -308,6 +308,15 @@ Conflict resolution during rebase onto main (2026-11-16):
 - `Verify site` check failed after the merge because scripts/build.py (arena/7a4b09e2-poker2) regenerates root filenames owned by the integration dashboard ("Generated files are out of date"). Fixed by scoping the freshness check to build.py-owned outputs and restoring integration-owned pages before the comparison (`.github/workflows/verify.yml`), plus scoping the source-monitor commit list to integration-owned pages. Follow-up merged via the PR recorded below.
 - Follow-up PR (CI ownership fix + this record): see next line once merged.
 
+### Integration result — session arena/e1c079dc-poker2 (merged 2026-11-16)
+
+- PRs merged into `main`: [#32](https://github.com/karagemop466-tech/Poker2/pull/32) (county tax source, 20 Wynn rows promoted, 12 missing Wynn events, Bellagio Sunday HORSE, Westgate/South Point hotels, 10 new flags), [#35](https://github.com/karagemop466-tech/Poker2/pull/35) (county-sourced 13.38% applied to all 10 hotels), [#36](https://github.com/karagemop466-tech/Poker2/pull/36) ("Freezeout confirmed" badge corrected to "Sheet silent on re-entry"), [#37](https://github.com/karagemop466-tech/Poker2/pull/37) (executive summary counts corrected).
+- Final merge commit: `db2650921a44442583e6a847cff9cf5dcc495c41`. Pages deploy `success`; live at https://karagemop466-tech.github.io/Poker2/. Verified live: `summary.html` serves "45 one-day events whose structure sheet is silent on re-entry".
+- Why additive: main advanced through PRs #18–#31 while this session read sources, and concurrent sessions had already published the 15-page dashboard on the shared root output. The repo rule reserves shared outputs for the integration session, so the verified findings were merged into that dashboard through `scripts/build_master.py` rather than replacing it. No page was deleted and no existing verified value was overwritten.
+- Correction made to a shipped claim: the tournaments table had badged 45 Venetian rows "Freezeout confirmed — no re-entry/rebuy/add-on". Those sheets never mention re-entry; they do not forbid it. The badge asserted more than the documents support, so the label, filter, toggle, ranking heading and summary now read "Sheet silent on re-entry" and every row's rule text says "not stated". The honest count is **0 confirmed single-entry events**, stated consistently across the site.
+- Data after this session: 178 events, 10 hotels, 42 flags, 63 sources. Checks: `scripts/audit.py` OK (every row reconciles with the document it cites); `scripts/check_links.py` OK (18 pages, 0 broken internal links, 0 non-official hosts).
+- Still blank and flagged, not guessed: dated room rates and checkout totals (every official booking engine rendered `$XXX` to a non-browser fetch), and walking times (no official source; no routing service reachable). The rate-log panel on `hotels.html` says so explicitly and links the attempts.
+
 ### Final integration session — arena/e1c079dc-poker2 (2026-11-16)
 
 Status: all tasks done; integrated into the live dashboard rather than replacing it.
