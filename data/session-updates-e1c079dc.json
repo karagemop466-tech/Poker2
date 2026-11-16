@@ -1,0 +1,214 @@
+{
+ "_meta": {
+  "session": "arena/e1c079dc-poker2",
+  "as_of": "2026-11-16",
+  "purpose": "Additive verified findings from the final integration session, merged into data/master.json by scripts/build_master.py. Nothing here replaces or re-guesses a value already on the site: every entry was read from the official document named in its url on 2026-11-16, and every field the document does not print is null.",
+  "how_to_use": "Consumed by scripts/build_master.py. Do not hand-edit data/master.json."
+ },
+ "county_room_tax": {
+  "value": 0.1338,
+  "text": "13.38%",
+  "excerpt": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments: licensed hotel/motel (HOT) accounts show '13.38%' as the transient lodging tax rate. The county's combined transient lodging tax return breaks the same burden into an 8.5% county component and a 4.5% county component.",
+  "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+  "secondary_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf",
+  "corroboration": "The Cosmopolitan's official reservation terms state 'Nightly rates do not include 13.38% room tax' and the Venetian's hotel terms state 'Clark County Room Tax of 13.38%'.",
+  "retrieved": "2026-11-16",
+  "note": "Previously the 13.38% figure rested only on hotel terms with no county source. This is the county's own document."
+ },
+ "wynn_wpt_fee_splits": [
+  {
+   "event": "$600 No Limit Hold'em $400K GTD (Day 1A-1F)",
+   "buy_in": 600,
+   "split": "$510 prize pool + $65 house fee + $25 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $510 + $65 + $25.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$800 No Limit Hold'em $1M GTD (Day 1A-1F)",
+   "buy_in": 800,
+   "split": "$695 prize pool + $72 house fee + $33 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $695 + $72 + $33.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,600 No Limit Hold'em $1M GTD (Day 1A-1B)",
+   "buy_in": 1600,
+   "split": "$1,430 prize pool + $120 house fee + $50 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $1,430 + $120 + $50.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,100 WPT Prime Championship $5M GTD (Day 1A-1D)",
+   "buy_in": 1100,
+   "split": "$970 prize pool + $90 house fee + $40 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $970 + $90 + $40.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,600 PLO Mystery Bounty $500K GTD",
+   "buy_in": 1600,
+   "split": "$930 prize pool + $500 mystery bounty + $120 house fee + $50 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $930 + $500 bounty + $120 + $50.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  }
+ ],
+ "wynn_event_terms": [
+  {
+   "event": "$600 Turbo (NLH $50K GTD)",
+   "dates": "Dec 5, 6, 7, 8, 9, 12 and 14 at 9:00 PM; Dec 21 at 6:00 PM",
+   "chips": 30000,
+   "level_min": 20,
+   "re_entry": "Unlimited re-entry until the start of level 9.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$600 TORSE / $600 Mixed Triple Draw / $600 Limit Omaha 8 / $600 Limit Omaha 8-Stud 8 / $600 HORSE",
+   "chips": 35000,
+   "level_min": null,
+   "re_entry": "Unlimited re-entry until the start of level 9 (structure sheet).",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$400 Pot Limit Omaha / $1,100 Pot Limit Omaha",
+   "chips": 30000,
+   "re_entry": "Unlimited re-entry until the start of level 9 (structure sheet).",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  }
+ ],
+ "wynn_unstructured_events": [
+  {"event": "WPT World Championship $10,400", "dates": "Dec 13-20, 2026", "note": "Day 1A-1C Dec 13-15 11:00 AM; Day 2 Dec 16; late registration open until the start of Day 2; 100,000 chips, 60/90-minute levels (official schedule). No structure sheet for this event appears in the official WPT structures PDF, which covers 13 other events, so entry rules, chips and fee split stay unverified.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "$400 Super Gold Million Mystery Bounty $3M GTD", "dates": "Dec 10-14, 2026", "note": "Day 1A-1D Dec 10-12, 30,000 chips. No structure sheet in the WPT structures PDF. The schedule also jumps from 'Day 1A-D' to 'Day 3' with no Day 2 row.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "$1,600 PLO $1M GTD", "dates": "Dec 13-15, 2026", "note": "Multi-flight; no structure sheet published.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "$800 NLH $500K GTD", "dates": "Dec 13-15, 2026", "note": "Multi-flight; no structure sheet published.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "$3,000 NLH $2M GTD", "dates": "Dec 17-18, 2026", "note": "Multi-flight; no structure sheet published.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "$1,600 NLH Mystery Bounty $1M GTD", "dates": "Dec 19-21, 2026", "note": "Multi-flight; no structure sheet published.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"},
+  {"event": "Ladies NLH Championship $1,100 ($250K GTD) and Seniors NLH Championship $1,100 ($500K GTD)", "dates": "Dec 13-14 and Dec 17-19, 2026", "note": "Ladies event is $1,100 of an $11,100 headline with a ladies discount (schedule footnote). No structure sheets published for either.", "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"}
+ ],
+ "bellagio_sunday_horse": {
+  "name": "$400 H.O.R.S.E. (Sundays 11:00 AM)",
+  "buy_in": 400,
+  "split": "$340 prize pool + $35 house fee + $25 voluntary staff gratuity",
+  "chips": 30000,
+  "level_min": 30,
+  "re_entry": "Players may buy-in and re-enter through the end of level 8 (including the break).",
+  "add_on": "A voluntary $25 staff gratuity at registration grants an additional 15,000 starting chips.",
+  "excerpt": "Rule 01: 'The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.' Rule 05: 'Players may buy-in and re-enter through the end of level 8 (Including Break).'",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+  "retrieved": "2026-11-16",
+  "verdict": "excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity."
+ },
+ "bellagio_saturday": {
+  "name": "Saturday No Limit Hold'em",
+  "verdict": "unverified",
+  "why": "The official Saturday PDF contradicts itself: a '$1,100 BUY-IN' heading, a '$1,000 NLH' label on the poker page's link, and rule text quoting a $600 buy-in with $510/$50/$40 splits, plus a combined Day 2 dated 9/13/26. No value from this sheet is used.",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "retrieved": "2026-11-16"
+ },
+ "mgm_grand_daily": {
+  "structure": {
+   "buy_in": 120,
+   "split": "$92 prize pool + $13 house fee + $11 voluntary gratuity + $4 tournament promotions",
+   "chips": 25000,
+   "level_min": 15,
+   "late_reg": "Registration is open until level 8",
+   "excerpt": "Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a once-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf",
+   "retrieved": "2026-11-16"
+  },
+  "verdict": "excluded from the single-entry ranking: the optional $11 gratuity buys 10,000 extra chips, a pay-for-advantage mechanic.",
+  "schedule_warning": "The linked weekly grid is titled 'MGM Grand August Tournament Schedule' and states no year; Monday-Friday 11:10 AM $120, Saturday 11:10 AM $150 with a $2,000 guarantee, 7:10 PM and 11:10 PM $120 daily."
+ },
+ "horseshoe_daily_times": {
+  "times": ["9:00 AM", "11:00 AM", "2:00 PM", "5:00 PM", "8:00 PM", "11:00 PM"],
+  "excerpt": "Caesars' official article: 'At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold'em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. ... A mixture of buy-ins, levels and guarantees...'",
+  "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+  "retrieved": "2026-11-16",
+  "note": "Only the six start times are officially published. No buy-in, guarantee, structure or entry-rule document was located, so those fields stay blank."
+ },
+ "westgate": {
+  "hours": "Poker room opens Mon-Fri 12:00 PM, Sat-Sun 10:00 AM; 7 tables, 9-handed",
+  "phone": "(702) 732-5223",
+  "tournaments": "The official page publishes no tournament times, buy-ins or structures.",
+  "third_party_slate_not_used": "$55-$70 daily events appear on third-party trackers only and are not used.",
+  "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/",
+  "retrieved": "2026-11-16"
+ },
+ "south_point": {
+  "slate": "Four daily tournaments at 10:10 AM, 2:10 PM, 6:10 PM and 10:10 PM with $120 and $300 buy-ins; 30-table 24-hour room.",
+  "not_published": "Which time carries which buy-in, guarantees, chips, level lengths and entry rules are not published on the page we could reach.",
+  "walk_rule": "9777 S Las Vegas Blvd is about 8 miles south of the Strip, so it cannot satisfy a 30-minute walk pairing with a Strip hotel.",
+  "url": "https://southpointcasino.com/casino/poker-room",
+  "retrieved": "2026-11-16"
+ },
+ "aria": {
+  "status": "no schedule published",
+  "excerpt": "ARIA's official poker page describes a 24-table room and directs players to its social account; it publishes no tournament schedule or structures.",
+  "phone": "702-590-7232",
+  "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+  "retrieved": "2026-11-16"
+ },
+ "westgate_resort_fee_conflict": {
+  "value_used": 49.99,
+  "conflict": "The Westgate terms page states a '$49.99 +tax' nightly resort fee for Westgate Las Vegas; the property's resort-fee FAQ page says $49.99 in its body text but $36.99 in its embedded structured answer.",
+  "url": "https://www.westgateresorts.com/terms-and-conditions/",
+  "secondary_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+  "retrieved": "2026-11-16"
+ },
+ "caesars_resort_fee_range": {
+  "text": "$45-$50 plus applicable tax",
+  "excerpt": "Caesars corporate disclaimer: 'Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.'",
+  "url": "https://www.caesars.com/corporate/disclaimer",
+  "retrieved": "2026-11-16",
+  "note": "Only a range is published, so no single Caesars Palace fee value is entered."
+ },
+ "walking_check": {
+  "status": "not verified",
+  "why": "No official hotel or poker-room page publishes a walking time between properties, and no routing service could be queried from the build environment. Every walk field stays blank and the 30-minute rule is recorded as unapplied rather than assumed.",
+  "addresses_published": {
+   "The Venetian": "3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "The Palazzo": "3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Wynn Las Vegas": "3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Bellagio": "3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "The Cosmopolitan": "3708 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "ARIA": "3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Caesars Palace": "3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Horseshoe Las Vegas": "3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "MGM Grand": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Westgate Las Vegas": "3000 Paradise Rd, Las Vegas, NV 89109",
+   "South Point": "9777 S. Las Vegas Blvd, Las Vegas, NV 89183"
+  }
+ },
+ "rate_log": {
+  "status": "no dated quote captured",
+  "attempts": [
+   {"hotel": "The Venetian", "check_in": "2026-11-27", "check_out": "2026-12-02", "occupancy": 2, "result": "The official booking calendar rendered every nightly price as '$XXX' to a non-browser fetch, so no dated rate could be read.", "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar", "logged": "2026-11-16"}
+  ],
+  "method": "Each attempt is appended with its dates, occupancy, what blocked it and a timestamp; a quote is only entered with check-in, check-out, occupancy, room type, nightly rate, resort fee, tax, parking, cancellation deadline and checkout total."
+ },
+ "venetian_series_label": {
+  "status": "stale official label",
+  "excerpt": "The DeepStack overview page still labels the 'Current Series' as the WPT Fall Festival while the DSE IV event page and schedule PDF (Nov 16 - Dec 23, 2026) are live.",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+  "retrieved": "2026-11-16"
+ },
+ "irregularities": [
+  {"id": "IR-E1C-01", "severity": "high", "item": "No event has an affirmative single-entry document", "detail": "All 30 structure sheets read across the Venetian, Wynn, Bellagio, Caesars and MGM either allow re-entry, sell chips, or say nothing about re-entry. No document states 'no re-entry, no add-on', so the site reports zero confirmed single-entry events.", "action": "Ask each room for a written freezeout statement per event and log the reply with a date.", "sources": ["https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf", "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"]},
+  {"id": "IR-E1C-02", "severity": "high", "item": "Wynn publishes structures for only 13 of its ~46 series events", "detail": "The WPT World Championship $10,400, the $400 Super Gold Million, the high rollers, the Ladies and Seniors championships and the close-out bounties have no published structure sheet, so their entry rules, chips and fee splits are blank.", "action": "Ask the Wynn poker room whether those sheets exist.", "sources": ["https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"]},
+  {"id": "IR-E1C-03", "severity": "medium", "item": "WPT schedule PDF contains internal date errors", "detail": "A 'Dec. 18 Wednesday' block is actually Dec 16; $800 and $1,600 Day 2 rows conflict with the structures PDF; Super Gold Million jumps from Day 1A-D to 'Day 3' with no Day 2 row. Where the documents conflict the structures PDF was treated as authoritative.", "action": "Ask the Wynn to confirm the corrected day-by-day schedule.", "sources": ["https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"]},
+  {"id": "IR-E1C-04", "severity": "medium", "item": "MGM Grand tournament PDF is titled 'August' with no year", "detail": "The weekly grid repeats consistently and matches the poker room page times (11:10 AM / 7:10 PM / 11:10 PM), but the document header is 'August Tournament Schedule' with no year, so the grid cannot be dated.", "action": "Ask MGM Grand for a dated version of the PDF.", "sources": ["https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"]},
+  {"id": "IR-E1C-05", "severity": "medium", "item": "Two official Westgate pages quote different resort fees", "detail": "The terms page says $49.99 plus tax per night; the resort-fee FAQ says $49.99 in its body but $36.99 in its structured answer.", "action": "Get a booking-cart total to settle which is charged.", "sources": ["https://www.westgateresorts.com/terms-and-conditions/", "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/"]},
+  {"id": "IR-E1C-06", "severity": "medium", "item": "Caesars Palace resort fee published only as a range", "detail": "Caesars' corporate disclaimer gives a $45-$50 plus tax daily range and says fees are waived for Diamond and Seven Stars; no single figure is entered.", "action": "Capture a booking-cart total for specific dates.", "sources": ["https://www.caesars.com/corporate/disclaimer"]},
+  {"id": "IR-E1C-07", "severity": "high", "item": "No dated room rate and no walking time could be verified", "detail": "Every official booking engine renders prices as '$XXX' to a non-browser fetch, and no routing service was reachable, so the trip-cost and 30-minute-walk calculations remain unapplied rather than assumed. Official addresses are published for the walk check.", "action": "Run a browser session for each booking page and each hotel-to-venue pair, logging a dated row per attempt.", "sources": ["https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"]},
+  {"id": "IR-E1C-08", "severity": "low", "item": "ARIA publishes no tournament schedule", "detail": "ARIA's official poker page describes 24 tables and points to its social account; no schedule or structures are published.", "action": "Call 702-590-7232 if ARIA events matter.", "sources": ["https://aria.mgmresorts.com/en/casino/poker.html"]},
+  {"id": "IR-E1C-09", "severity": "low", "item": "Venetian series-overview label is stale", "detail": "The DeepStack overview page still names the WPT Fall Festival as the current series while DSE IV is live.", "action": "Re-check the overview page before relying on any series-level statement from it.", "sources": ["https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"]},
+  {"id": "IR-E1C-10", "severity": "low", "item": "Treasure Island resort fee unverified", "detail": "Only third-party pages state a TI resort fee ($49.95 plus tax); no official TI page could be reached in this pass, so the field stays blank.", "action": "Open treasureisland.com terms in a browser and log the fee.", "sources": []}
+ ]
+}

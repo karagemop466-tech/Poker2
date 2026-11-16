@@ -361,9 +361,25 @@ The daily schedule is suspended during Wynn series (official page).</p>
     # ---------------- hotels ----------------
     body_h = f"""
 <h1>Hotels — true cost per night</h1>
-<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% Clark County
-room tax is officially disclosed in The Venetian’s hotel terms; applying it to other properties is an assumption to confirm.
+<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% room tax is the
+Clark County transient lodging rate: the county’s own licensing guide for hotel/motel establishments prints 13.38%, the county’s
+combined transient lodging return breaks it into an 8.5% and a 4.5% county component, and both The Venetian’s and The Cosmopolitan’s
+hotel terms state 13.38% verbatim.
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+target="_blank" rel="noopener">County guide (PDF)</a> ·
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf"
+target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
+<div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
+<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
+rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
+a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
+parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
+<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
+target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
+<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
+was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
+hotel and poker room are in the table above so each pair can be checked directly.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
 <h2>Dated rate logs</h2>

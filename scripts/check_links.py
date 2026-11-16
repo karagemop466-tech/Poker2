@@ -13,6 +13,8 @@ OFFICIAL = (
     "venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com", "mgmresorts.com",
     "contentstack.io", "caesars.com", "github.com", "pokertda.com", "visitwynn.com",
     "rwlasvegas.com", "google.com", "apple.com", "goldennugget.com",
+    # added by arena/e1c079dc-poker2: operator and county official domains
+    "westgateresorts.com", "southpointcasino.com", "clarkcountynv.gov",
 )
 PAGES = [
     "index.html", "tournaments.html", "schedule.html", "hotels.html", "venues.html",
