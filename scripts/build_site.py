@@ -15,8 +15,8 @@ OFFICIAL_HOSTS = {"www.venetianlasvegas.com", "www.caesars.com", "www.wynnlasveg
                   "cdn.wynnresorts.com", "mgmgrand.mgmresorts.com", "assets.contentstack.io",
                   "www.goldennugget.com", "www.resortsworldlasvegas.com"}
 
-T = json.load(open(DATA / "tournaments.json"))
-H = json.load(open(DATA / "hotels.json"))
+T = json.load(open(DATA / "venetian-dse4-official-check.json"))
+H = json.load(open(DATA / "hotels-official-check.json"))
 S = T["sources"]
 VEN_PDF = S["venetian_structure_pdf_base"]
 ERRORS = []
