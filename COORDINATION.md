@@ -117,3 +117,18 @@ Publication coordination: the integrated site has already been merged by prior s
 ### Subsequent integration record from upstream main
 - Existing integration PR [#11](https://github.com/karagemop466-tech/Poker2/pull/11) (`arena/a22d577b-poker2` → `main`) merged with merge commit `c83d13e`; Pages workflow run [43932308394](https://github.com/karagemop466-tech/Poker2/actions/runs/43932308394) completed successfully. Pages status was `built`; live content was checked at `/verified/` and `/verified/flagged/`.
 - Upstream finalization for PR #11 and its Pages deployment was preserved from main rather than overwritten by this session's board entry.
+
+## Session arena/3ab1bcae-poker2 — Las Vegas poker vacation planner (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Review repo + build initial single-entry/multi-entry/hotel/schedule/summary/suggestions/questions/flagged Pages site | done (superseded by integrated main site) | arena/3ab1bcae-poker2 | index.html, style.css, tournaments.html, multi-entry.html, hotels.html, schedule.html, executive-summary.html, suggestions.html, questions.html, flagged-review.html |
+| Add verified single-entry lead as flagged third-party reference | done | arena/3ab1bcae-poker2 | data/non_official_refs.json, data/flags.json |
+| Integration/PR to main + Pages deploy confirmation | done | arena/3ab1bcae-poker2 | PR #8, main |
+
+Task log:
+- Branch `arena/3ab1bcae-poker2` created from base `058cd54` (stale initial commit); later re-based onto current main (`c889d78`) to avoid overwriting parallel sessions' integrated site.
+- Researched live Strip tournaments (VegasPokerCalendar Nov 16-17, 2026 + PokerAtlas venue calendars). Verified Westgate $70 NLH freezeouts at 5:05 PM and 9:05 PM via the VegasPokerCalendar detail page ('Freezeout / No rebuy / No add-on').
+- Added Westgate finding as a flagged third-party lead only (consistent with the site's official-source standard — not used as a confirmed value): `data/non_official_refs.json` TP_WESTGATE; `data/flags.json` Westgate flag.
+- Created PR [#8](https://github.com/karagemop466-tech/Poker2/pull/8) (`arena/3ab1bcae-poker2` → `main`); merged with merge commit `6f5e6db`; Pages workflow completed `built`; live site at https://karagemop466-tech.github.io/Poker2/. Subsequently PR #14 (`arena/e3cb221d-poker2`) merged on top at `bde7308`; main sync verified.
+- Flagged items (do not block merge): Westgate entry rules are aggregator-sourced, not confirmed with the Westgate poker room.
