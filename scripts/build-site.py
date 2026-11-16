@@ -1183,13 +1183,15 @@ def p_repo():
     crows = ""
     for a, b in checks:
         crows += ("<tr><td>" + a + '</td><td class="sm">' + b + "</td><td>" + badge("automated", "info") + "</td></tr>")
-    listing = " ".join("<code>" + esc(f) + "</code>" for f in sorted(os.listdir(ROOT)) if not f.startswith("."))
+    # a directory listing would make the page depend on what happens to be checked out, so the
+    # inventory below is the deterministic set of files this build writes
+    listing = " ".join("<code>" + esc(f) + "</code>" for f in sorted(pages_written))
     bullets = [
         ("FG-14", "<code>data/tournaments.json</code> attributed structure-sheet values (registration cutoff, stack, level length) to the schedule page, and a second session had already flagged those fields as unreproducible from that page. Both were half right: the values are real, the attribution was not. Fixed by per-field source links in the new dataset."),
         ("FG-15", "<code>data/venetian-dse4-official-check.json</code> (47 rows) and <code>data/verified/tournaments.json</code> (32 rows) each labelled rows &ldquo;single_entry&rdquo; on sheet silence alone, and the former counted per-flight rows as separate single-entry events. The consolidated dataset uses three states and groups flights by event."),
         ("FG-16", "Four front-ends (the repository root dashboard, <code>/docs/</code>, <code>/verified/</code>, <code>/pages/</code>) render four datasets with different labels for the same event. Nothing was deleted to fix that: the root dashboard belongs to <code>scripts/build_site.py</code> and its CI ownership note, and this <code>/plan/</code> surface is generated beside it from <code>site-data/*.json</code>. Consolidating to one surface is suggestion S-11."),
         ("FG-19", "For the 34 rows whose sheet was read, the buy-in is fee-inclusive. For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter shows the published buy-in with a caveat instead of a computed total."),
-        ("Repo hygiene", "Two stylesheets and two scripts existed at the root (<code>style.css</code>/<code>styles.css</code>, <code>app.js</code>) with overlapping selectors from different sessions; retired in favour of <code>assets/site.css</code> and <code>assets/site.js</code>. <code>scripts/build.mjs</code> and <code>scripts/build.py</code> built the retired front-ends and are no longer the publisher path."),
+        ("Repo hygiene", "The root carries <code>style.css</code>, <code>styles.css</code>, <code>app.js</code> and <code>assets/</code> from several sessions with overlapping selectors. All of them stay in place because the root dashboard references them; this surface ships its own <code>plan/assets/site.css</code> and <code>plan/assets/site.js</code>, and the build fails if either is missing, so neither page set can restyle the other."),
     ]
     blist = ""
     for tag_, txt in bullets:
@@ -1217,7 +1219,7 @@ Actions job, which reports here rather than silently rewriting data.</li>
 <div class="tablewrap compact"><table><thead><tr><th>Check</th><th>Where</th><th>Type</th></tr></thead><tbody>""" + crows + """</tbody></table></div>
 <h2>Irregularities found in the repo itself</h2>
 <ul class="tight">""" + blist + """</ul>
-<h2>Working tree at the top level</h2>
+<h2>Files this build writes</h2>
 <p class="sm">""" + listing + """</p>
 <h2>Coordination</h2>
 <p class="sm">Board and hand-off record: <a href="../COORDINATION.md">COORDINATION.md</a> (per-session claims, conflict
