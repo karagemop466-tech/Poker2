@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OFFICIAL = (
     "venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com", "mgmresorts.com",
     "contentstack.io", "caesars.com", "github.com", "pokertda.com", "visitwynn.com",
-    "rwlasvegas.com", "google.com", "apple.com",
+    "rwlasvegas.com", "google.com", "apple.com", "goldennugget.com",
 )
 PAGES = [
     "index.html", "tournaments.html", "schedule.html", "hotels.html", "venues.html",
