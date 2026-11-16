@@ -292,5 +292,191 @@
     "url": "https://mgmgrand.mgmresorts.com/en/hotel.html",
     "publisher": "MGM Grand Las Vegas (official)",
     "type": "Official hotel page"
+  },
+  "V_HOTEL_BOOK": {
+    "label": "The Venetian official booking page",
+    "url": "https://www.venetianlasvegas.com/book",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Hotel booking link"
+  },
+  "V_OFFERS": {
+    "label": "The Venetian official hotel offers",
+    "url": "https://www.venetianlasvegas.com/hotel/offers.html",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Hotel offers"
+  },
+  "W_DAILY_STRUCT": {
+    "label": "Wynn official daily tournament structures PDF",
+    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "W_HOME": {
+    "label": "Wynn Las Vegas official home page",
+    "url": "https://www.wynnlasvegas.com/",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official property page"
+  },
+  "W_TERMS_850257": {
+    "label": "Wynn official hotel terms linked in site",
+    "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official hotel terms"
+  },
+  "ARIA_NIGHTLIFE": {
+    "label": "ARIA official events/nightlife page (linked in site)",
+    "url": "https://www.aria.com/en/nightlife.html",
+    "publisher": "ARIA Resort & Casino (official)",
+    "type": "Official property page"
+  },
+  "CAESARS_POKER": {
+    "label": "Caesars Palace official poker page",
+    "url": "https://www.caesars.com/caesars-palace/casino/poker",
+    "publisher": "Caesars Palace (official)",
+    "type": "Official poker-room page"
+  },
+  "CAESARS_SCHEDULE_2026": {
+    "label": "Caesars official daily NLH tournament flyer (2026)",
+    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "publisher": "Caesars Palace (official)",
+    "type": "Official tournament schedule PDF"
+  },
+  "CAESARS_HOTELS": {
+    "label": "Caesars official Las Vegas hotels page",
+    "url": "https://www.caesars.com/las-vegas/hotels",
+    "publisher": "Caesars Entertainment (official)",
+    "type": "Official hotel directory"
+  },
+  "GOLDEN_NUGGET_DAILY": {
+    "label": "Golden Nugget Las Vegas official daily poker tournaments page",
+    "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+    "publisher": "Golden Nugget Las Vegas (official)",
+    "type": "Official poker schedule page"
+  },
+  "HARD_ROCK_LV": {
+    "label": "Hard Rock official Las Vegas property page (linked in site)",
+    "url": "https://www.hardrock.com/las-vegas/",
+    "publisher": "Hard Rock (official)",
+    "type": "Official property page"
+  },
+  "MGM_POKER_LEGACY": {
+    "label": "MGM Grand official poker page (legacy URL linked in site)",
+    "url": "https://www.mgmgrand.com/en/casino/poker.html",
+    "publisher": "MGM Grand Las Vegas (official)",
+    "type": "Official poker-room page"
+  },
+  "MGM_CORPORATE": {
+    "label": "MGM Resorts official home page",
+    "url": "https://www.mgmresorts.com",
+    "publisher": "MGM Resorts International (official)",
+    "type": "Official corporate page"
+  },
+  "RESORTS_WORLD": {
+    "label": "Resorts World Las Vegas official site (linked in site)",
+    "url": "https://www.rsworld.com",
+    "publisher": "Resorts World Las Vegas (official)",
+    "type": "Official property page"
+  },
+  "V_STRUCT_09": {
+    "label": "The Venetian official 2026 structure sheet 9",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_13": {
+    "label": "The Venetian official 2026 structure sheet 13",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_14": {
+    "label": "The Venetian official 2026 structure sheet 14",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_16": {
+    "label": "The Venetian official 2026 structure sheet 16",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_19": {
+    "label": "The Venetian official 2026 structure sheet 19",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_22": {
+    "label": "The Venetian official 2026 structure sheet 22",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_23": {
+    "label": "The Venetian official 2026 structure sheet 23",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_24": {
+    "label": "The Venetian official 2026 structure sheet 24",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_25": {
+    "label": "The Venetian official 2026 structure sheet 25",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_26": {
+    "label": "The Venetian official 2026 structure sheet 26",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_27": {
+    "label": "The Venetian official 2026 structure sheet 27",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_28": {
+    "label": "The Venetian official 2026 structure sheet 28",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_31": {
+    "label": "The Venetian official 2026 structure sheet 31",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_32": {
+    "label": "The Venetian official 2026 structure sheet 32",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_33": {
+    "label": "The Venetian official 2026 structure sheet 33",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_36": {
+    "label": "The Venetian official 2026 structure sheet 36",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
+  },
+  "V_STRUCT_37": {
+    "label": "The Venetian official 2026 structure sheet 37",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official tournament structure PDF"
   }
 }
