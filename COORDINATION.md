@@ -92,3 +92,30 @@ Task log (this session):
 - 2026-11-16: Corrected drafts. Removed unsupported claims (a Wynn phone number, an Encore location, WPT re-entry text, an unverified Wynn tax rate, aggregator resort-fee figures). Confirmed the Venetian structure URL pattern (sheet 16 resolves and confirms the Event 36 facts).
 - 2026-11-16: First merge attempt (PR #11) conflicted with main's new data and root pages. Resolved by moving this session's files to `data/verified/` and `verified/` and merging main, keeping main's COORDINATION.md and appending this section. No other session's files were overwritten.
 - Conflicts logged: COORDINATION.md (add/add) — resolved by keeping main's board and appending this section. `data/*.json` and root site names — avoided by relocation.
+
+## Current session and constraints
+
+- **Owner/session identifier:** `arena/704e2a25-poker2` (current Arena branch; no separate session ID was exposed in the checkout).
+- **Branch:** `arena/704e2a25-poker2` (the active branch provided for this session).
+- **Initial repository review:** the repository contained only `README.md` (`# Poker2`); no `COORDINATION.md` or other task claims existed.
+- **Concurrency note:** this board was created because none existed. No other claims were visible at claim time. This checkout exposes no mechanism to enumerate other live Arena sessions, so avoid overlapping edits if another contributor appears.
+- **Branch constraint:** work stays on the provided branch; do not create or switch branches.
+
+## Task board
+
+| Task | Status | Owner | File scope |
+| --- | --- | --- | --- |
+| Research and verify official tournament/hotel information; build the decision-support site; test and publish via GitHub Pages | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `index.html`, `assets/`, `data/`, `pages/`, `.github/workflows/` |
+
+## Completion log
+
+_No tasks completed yet._
+
+## Sources and verification log
+
+_To be recorded after official-source checks and build/deploy verification._
+
+## Irregularities / requests
+
+- Vacation dates, number of nights/guests, and room requirements were not supplied. Exact date-specific hotel totals (including resort fees and taxes) cannot be represented as verified until those inputs or publicly published date-specific rates exist. The site will leave unconfirmed amounts blank and flag the limitation rather than infer prices.
+- “Single entry” will be treated as a format explicitly confirmed by an official tournament structure/rules page. Events whose official page does not establish entry/re-entry/add-on rules will be excluded from the primary shortlist and flagged for review.
