@@ -151,3 +151,15 @@ Task log:
 - Validation: `python3 scripts/check_links.py` passed (131/131 rows cited); custom check found no broken relative links in 20 root/pages HTML documents; `git diff --check` passed; CSVs parse and all data rows have official HTTPS source links; local preview returned HTTP 200.
 - Existing Pages workflow deploys repository root on push to `main`; no workflow change was needed. PR [#16](https://github.com/karagemop466-tech/Poker2/pull/16) merged on 2026-11-16 at merge commit `b484eb08d580e3035d4b538dba0c33f5dc555cb0`.
 - Deployment verified: Pages workflow run [43933521465](https://github.com/karagemop466-tech/Poker2/actions/runs/43933521465) completed successfully; Pages API reports `built` for `b484eb08d580e3035d4b538dba0c33f5dc555cb0`. Public Pages URL: https://karagemop466-tech.github.io/Poker2/.
+
+## Session arena/7d846749-poker2 — integration + feature build (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Repo review + coordination claim | in progress | arena/7d846749-poker2 | `COORDINATION.md` |
+| T2 Official re-verification of every event/hotel row (line by line, source links) | in progress | arena/7d846749-poker2 | `data/poker/*.json` (new) |
+| T3 Feature build: trip-cost calculator, dated rate log, last-checked dates, per-venue pages, global search, date filter, single-entry toggle, overlap flags, walking-route table | in progress | arena/7d846749-poker2 | `scripts/*`, `app/*` (new) |
+| T4 Consolidated site (landing + subpages) with source checks and link check | in progress | arena/7d846749-poker2 | `site/**` or `docs/**` (see claim) |
+| T5 Final integration: PR → main, Pages deploy, record | in progress | arena/7d846749-poker2 | `COORDINATION.md` |
+
+Claim (2026-11-16): This is the final integration session for the shared outputs. Claimed the new namespaces `data/poker/`, `app/`, `scripts/build_poker_site.py` plus `COORDINATION.md` so no existing session file is overwritten. Existing root pages, `pages/`, `docs/`, `verified/` and `data/*.json` remain owned by the earlier sessions and are left untouched. Branch is fixed by the platform as `arena/7d846749-poker2` (task spec asks for `session-<id>/<task>`; recorded as a deviation, same as earlier sessions).
