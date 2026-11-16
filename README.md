@@ -18,7 +18,7 @@ Open `index.html` in a browser, or run a static server from the repository root,
 
 ## Publication
 
-GitHub Pages deployment is configured through `.github/workflows/pages.yml` on pushes to `main` and manual workflow dispatch. The repository's Pages setting must use **GitHub Actions** as its build/deployment source.
+The repository's existing GitHub Pages configuration serves the repository root from `main` (branch deployment). The site is published by merging the static files to `main`; the current published Pages URL is `https://karagemop466-tech.github.io/Poker2/`. No Actions deployment workflow is used because the repository's Pages source is configured for branch deployment.
 
 ## Verification policy
 
