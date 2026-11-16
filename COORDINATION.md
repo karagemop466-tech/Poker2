@@ -444,3 +444,12 @@ Final ownership state:
 
 Nothing in this session writes to another row of that table, and `/plan/` shares no file path with the root
 dashboard. Consolidating to one surface (S-11) and merging the three monitor jobs (S-12) stay open for you to decide.
+
+### I7 — final record (2026-11-16)
+
+- PR [#33](https://github.com/karagemop466-tech/Poker2/pull/33) merged to `main` at merge commit `1f91dc9` (branch `arena/f0816fab-poker2`; two upstream integrations merged in along the way — the 8234a824/7a4b09e2 dashboard pipeline kept as the root site, and the e1c079dc strict-label corrections adopted).
+- GitHub Pages deployment [run 43945262064](https://github.com/karagemop466-tech/Poker2/actions/runs/43945262064) completed successfully; Pages API reports `built` for the current `main`. Public URL: https://karagemop466-tech.github.io/Poker2/
+- Live verification: `https://karagemop466-tech.github.io/Poker2/walking.html` serves the f0816fab walking matrix (21 hotels × 6 poker rooms, routed minutes, per-pair Google Maps confirmation links); `wpt-terms.html`, `rate-log.html`, `trip.html`, `archive.html` published alongside the dashboard, linked from its nav.
+- CI on the merged tree: `scripts/audit.py` OK (every row reconciles with the official document it cites), `scripts/build.py` / `scripts/build_master.py` / `scripts/build_site.py` OK, `scripts/check_links.py` OK (24 pages, no broken internal links, no non-official external hosts — allowlist unions 72ca3e9d/e1c079dc/f0816fab additions).
+- I6 note: scheduled source re-check runs on the repository's existing monitors (`source-monitor.yml`, `recheck.yml` — arena/96765ae0-poker2, covering every official URL incl. all 37 structure-sheet URLs with dated snapshots and change flagging); this session's duplicate monitor was dropped during integration in favor of that coverage.
+- Post-merge additions (this record + any upstream union) land via follow-up PR from the same branch.
