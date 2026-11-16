@@ -37,8 +37,9 @@ const stripTags = (html) =>
     .replace(/&amp;/g, "&")
     .replace(/&#39;|&rsquo;/g, "'")
     .replace(/&quot;/g, '"')
-    .replace(/[ \t]+/g, " ")
-    .replace(/\n{2,}/g, "\n")
+    // One space everywhere: a published sentence is hard-wrapped in the HTML, and the tracked
+    // patterns are written with single spaces, so newlines must not become part of the match.
+    .replace(/\s+/g, " ")
     .trim();
 
 function targets() {
@@ -96,6 +97,69 @@ function diffValues(prev, next) {
     }
   }
   return diffs;
+}
+
+export function _test_only() {
+  // Offline test of what the monitor actually does: it runs the *production* patterns from
+  // site-data/sources.json against text containing the sentences they are meant to match.
+  // Run with: node scripts/check_sources.mjs --selftest
+  const assert = (cond, msg) => { if (!cond) { console.error("SELFTEST FAIL: " + msg); process.exit(1); } };
+  const fixture = `<html><body>
+    <p>The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon
+    check-in. The daily fee for registered hotel guests is $20/day, seven days a week. Valet parking is $40/day.
+    A credit card incidental deposit of $150 per night is required upon check-in. Daily rates do not include the
+    applicable Clark County Room Tax of 13.38%. For reservations with more than 2 guests per suite, a charge of $50
+    is added to the daily rate for each additional guest 13 years of age or older. Check-out prior to your scheduled
+    departure date will result in an additional charge of $100.</p>
+    <p>A daily resort fee of $50.00 plus applicable tax will be applied to all reservations. There is an additional
+    charge of $40 plus tax per occupant, per night, above 2 occupants per room, as well as a $100 incidental amount per
+    day. The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room
+    Reservations at least 72 hours prior to the arrival date. Check in time is 3 pm and check out time is 11 am.</p>
+    <p>These rates will start as low as $119 and $209 and can be higher. Future rates are only provided out to a
+    maximum of 150 days from the current date. You must play six hours of active live cash gameplay or buy in to a
+    $300 or higher tournament for each night. There is a $55 resort fee per night stayed.</p>
+    <p>Our interior bridge allows you to stroll effortlessly between Bellagio, The Cosmopolitan of Las Vegas, and
+    Vdara.</p><script>var decoy = "Resort Fee of $999 must not be seen";</script></body></html>`;
+
+  const text = stripTags(fixture);
+  assert(!text.includes("decoy"), "script bodies are stripped before extraction");
+
+  const official = readJson(path.join(DATA, "sources.json")).official;
+  let checked = 0;
+  for (const src of official) {
+    for (const { key, regex } of (src.monitor || {}).extract || []) {
+      let re2;
+      try { re2 = new RegExp(regex, "i"); }
+      catch (e) { assert(false, src.id + "." + key + " is not a compilable regex: " + e.message); }
+      // a pattern may omit capture groups; extractValues() then records the whole match
+      assert(new RegExp(regex).source === re2.source, src.id + "." + key + " flags changed the match");
+      checked++;
+      // the hotel and poker-rate patterns are exercised against the fixture text above
+      if (["SRC-V-HOTELTC", "SRC-PMGM-TERMS", "SRC-V-POKERRATE", "SRC-MGM-PARKING"].includes(src.id)) {
+        const v = extractValues(text, [{ key, regex }]);
+        assert(v[key] !== null, src.id + "." + key + " matched nothing in text that contains the sentence: " + regex);
+        assert(!/decoy|999/.test(String(v[key])), src.id + "." + key + " matched the decoy: " + v[key]);
+      }
+    }
+  }
+  assert(checked >= 20, "expected at least 20 tracked patterns, got " + checked);
+
+  const diffs = diffValues({ values: { resort_fee: "50", gone: "x" } }, { resort_fee: "55", gone: null });
+  // a clause that used to match and now does not is a change too, so two lines are expected here
+  assert(diffs.length === 2 && diffs[0][0] === "resort_fee" && diffs[0][1] === "50" && diffs[0][2] === "55"
+    && diffs[1][0] === "gone" && diffs[1][2] === "(not found)",
+    "the moved value and the vanished clause are both reported: " + JSON.stringify(diffs));
+  assert(diffValues(null, { a: 1 }).length === 0, "no baseline means no diff (state stays 'new')");
+
+  const list = targets();
+  const sheets = list.filter((t) => String(t.id).startsWith("SHEET-"));
+  assert(sheets.length === 37, "all 37 structure sheets are watched, got " + sheets.length);
+  assert(sheets.every((t) => t.binary), "sheets are hash-only: PDF text extraction is not attempted here");
+  assert(list.length >= 60, "watch list is the sources plus the sheets, got " + list.length);
+  const seen = new Set(list.map((t) => t.url));
+  assert(seen.size === list.length, "no URL is monitored twice");
+  console.log("selftest ok: " + checked + " tracked patterns compile and match, " + list.length +
+    " monitored URLs with no duplicates, diff logic reports only real movement");
 }
 
 async function main() {
@@ -175,4 +239,6 @@ async function main() {
   if (allFailed) { console.error("every fetch failed - the runner has no network access"); process.exit(1); }
 }
 
-main().catch((e) => { console.error(String(e && e.stack || e)); process.exit(1); });
+if (process.argv.includes("--selftest")) { _test_only(); } else {
+  main().catch((e) => { console.error(String(e && e.stack || e)); process.exit(1); });
+}
