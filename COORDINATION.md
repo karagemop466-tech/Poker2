@@ -39,4 +39,6 @@ Task log:
 
 Integration (this session is the integration session for shared outputs):
 - Branch: `arena/f743ae5a-poker2` → PR #6 into `main`.
-- Pages deploy and merge result: recorded below after merge.
+- PR: https://github.com/karagemop466-tech/Poker2/pull/6 — MERGED (merge commit `d99cae9`, merge type: merge commit, 2026-11-16 18:43 UTC). Merged without waiting for review, per the user's instructions.
+- Pages deploy: workflow run [43931759807](https://github.com/karagemop466-tech/Poker2/actions/runs/43931759807) completed `success`. Live check: https://karagemop466-tech.github.io/Poker2/pages/single-entry.html serves the new content.
+- Open items (not blocking merge, listed in Flagged): hotel walking distances; Clark County lodging tax; Wynn schedule PDF re-verify; Venetian structure sheets not yet read (2, 12, 17, 20, 27, 36, 39, 40, 43, 57, 35, satellites).
