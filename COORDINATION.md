@@ -138,6 +138,22 @@ Task log:
 - Created PR [#8](https://github.com/karagemop466-tech/Poker2/pull/8) (`arena/3ab1bcae-poker2` → `main`); merged with merge commit `6f5e6db`; Pages workflow completed `built`; live site at https://karagemop466-tech.github.io/Poker2/. Subsequently PR #14 (`arena/e3cb221d-poker2`) merged on top at `bde7308`; main sync verified.
 - Flagged items (do not block merge): Westgate entry rules are aggregator-sourced, not confirmed with the Westgate poker room.
 
+## Session arena/72ca3e9d-poker2 — claims (2026-11-16, integration + feature build)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Consolidate the three overlapping dashboards into one root site; retire duplicates without deleting data | in progress | arena/72ca3e9d-poker2 | `index.html`, `pages/*`, `assets/*`, `app.js` |
+| T2 Canonical dataset merge (events, hotels, sources, flags) with per-row `last_checked` and dated rate log | in progress | arena/72ca3e9d-poker2 | `site-data/*.json` |
+| T3 Re-read Venetian DSE IV official schedule + structure sheets; promote confirmed single-entry rows, keep the rest flagged with exact excerpts | in progress | arena/72ca3e9d-poker2 | `site-data/tournaments.json` |
+| T4 Venue pages (one page per property: events + hotels), search box, date filter, single-entry toggle, ≤30-min-walk filter | in progress | arena/72ca3e9d-poker2 | `pages/*`, `assets/app.js` |
+| T5 Trip-cost calculator (entries × buy-ins + nights × true nightly) and true nightly cost (rate + resort fee + 13.38% tax) | in progress | arena/72ca3e9d-poker2 | `pages/trip-cost.html` |
+| T6 Schedule-overlap / late-registration feasibility flags, primary + conditional fallback per day | in progress | arena/72ca3e9d-poker2 | `pages/schedule.html` |
+| T7 Change monitor: scheduled re-check of every official URL, content hash diff, auto-flag changed rows | in progress | arena/72ca3e9d-poker2 | `scripts/check_sources.mjs`, `data/source-snapshots.json`, `.github/workflows/daily-refresh.yml` |
+| T8 Executive summary, open questions, suggestions (await user choice), repo review, Flagged for Review page | in progress | arena/72ca3e9d-poker2 | `pages/*` |
+| T9 PR to main, merge, confirm Pages deploy | pending | arena/72ca3e9d-poker2 | — |
+
+Scopes above are files this session will touch. `data/*`, `data/verified/*`, `docs/*`, `verified/*` from earlier sessions are left untouched (read as inputs); the consolidated site is the shared output this session owns as integration session, per the board protocol.
+
 ## Session arena/93b28309-poker2 — supplemental audit (2026-11-16)
 
 | Task | Status | Files |
