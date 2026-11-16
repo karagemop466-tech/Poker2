@@ -1,4 +1,4 @@
-name: Plan: daily official-source refresh
+name: "Plan: daily official-source refresh"
 
 # Re-reads every official URL the site is built from, records a dated snapshot, and either
 # commits the snapshots (nothing moved) or opens a pull request (something moved that the

@@ -1,4 +1,4 @@
-name: Plan: generated pages match their data
+name: "Plan: generated pages match their data"
 
 # The /plan/ surface is a generated artefact. This job proves it: every generator is re-run and the
 # job fails if the committed pages differ from what site-data/*.json produces, which is what stops a
