@@ -1,0 +1,242 @@
+{
+  "V_EVENT": {
+    "label": "Venetian: DeepStack Extravaganza IV (Nov 16 – Dec 23, 2026) event page",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official schedule page"
+  },
+  "V_SCHED": {
+    "label": "Venetian: DSE IV Nov 16 – Dec 23, 2026 schedule (PDF)",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official schedule PDF"
+  },
+  "V_POKER": {
+    "label": "Venetian: Poker room page (location, hours, player parking)",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official poker room page"
+  },
+  "V_RESORT_FEE": {
+    "label": "Venetian: Resort Fee page ($55 plus tax per night)",
+    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official hotel fee page"
+  },
+  "V_HOTEL_TC": {
+    "label": "Venetian: Hotel Terms & Conditions (resort fee $55 plus tax; seen in search index, not fully opened)",
+    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official terms"
+  },
+  "W_POKER": {
+    "label": "Wynn Las Vegas: Poker room page",
+    "url": "https://www.wynnlasvegas.com/casino/poker",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official poker room page"
+  },
+  "W_WPT_SCHED": {
+    "label": "Wynn: WPT World Championship schedule (PDF, Nov 27 – Dec 21, 2026)",
+    "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official schedule PDF"
+  },
+  "W_WPT_STRUCT": {
+    "label": "Wynn: WPT World Championship terms & structures (PDF)",
+    "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official terms PDF"
+  },
+  "W_DAILY": {
+    "label": "Wynn: Daily tournaments poster (PDF; file date suggests June 2026 — see Flagged)",
+    "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+    "publisher": "Wynn Las Vegas (official)",
+    "type": "Official poster PDF"
+  },
+  "W_TC": {
+    "label": "Wynn: Resort fee terms ($55 plus tax; visitwynn.com terms page, seen in search index)",
+    "url": "https://www.visitwynn.com/tc/index.cfm?term_id=850250",
+    "publisher": "Wynn Resorts (official)",
+    "type": "Official terms"
+  },
+  "B_POKER": {
+    "label": "Bellagio: Poker room page (weekly tournaments)",
+    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "publisher": "Bellagio Las Vegas (official)",
+    "type": "Official poker room page"
+  },
+  "B_FRI": {
+    "label": "Bellagio: Friday $600 NLH terms (PDF)",
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "publisher": "Bellagio Las Vegas (official)",
+    "type": "Official terms PDF"
+  },
+  "B_SAT": {
+    "label": "Bellagio: Saturday NLH terms (PDF; heading says $1100, page says $1,000)",
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "publisher": "Bellagio Las Vegas (official)",
+    "type": "Official terms PDF"
+  },
+  "B_SUN": {
+    "label": "Bellagio: Sunday $400 H.O.R.S.E. terms (PDF)",
+    "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+    "publisher": "Bellagio Las Vegas (official)",
+    "type": "Official terms PDF"
+  },
+  "B_TC": {
+    "label": "Bellagio: Hotel Reservation Terms ($55 plus tax resort fee; $150/day incidental hold)",
+    "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "publisher": "Bellagio Las Vegas / MGM Resorts (official)",
+    "type": "Official terms"
+  },
+  "A_POKER": {
+    "label": "ARIA: Poker page (states daily tournaments are not listed; call for current info)",
+    "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+    "publisher": "ARIA Resort & Casino (official)",
+    "type": "Official poker room page"
+  },
+  "A_TC": {
+    "label": "ARIA: Hotel Reservation Terms ($55 plus tax resort fee; $150/night deluxe incidental hold)",
+    "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "publisher": "ARIA Resort & Casino (official)",
+    "type": "Official terms"
+  },
+  "A_FAQ": {
+    "label": "ARIA: Resort FAQ (resort fee inclusions)",
+    "url": "https://aria.mgmresorts.com/en/faq.html",
+    "publisher": "ARIA Resort & Casino (official)",
+    "type": "Official FAQ"
+  },
+  "MGM_TC": {
+    "label": "MGM Resorts: Hotel terms index (links to each property's terms)",
+    "url": "https://www.mgmresorts.com/en/terms-and-conditions.html",
+    "publisher": "MGM Resorts (official)",
+    "type": "Official terms index"
+  },
+  "GN_SCHED": {
+    "label": "Golden Nugget (downtown): Grand Poker Series 2026 schedule (June 3–28, 2026) — out of scope",
+    "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/grand-poker-series-2026/grand-poker-series-schedule/",
+    "publisher": "Golden Nugget Las Vegas (official)",
+    "type": "Official schedule page"
+  },
+  "S_V1": {
+    "label": "Venetian structure sheet: $200 NLH Bounty (1Day) — Event 9, 11, 13, 15, 21, 22, 23, 25, 60, 61, 62, 64",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V2": {
+    "label": "Venetian structure sheet: $400 NLH Days 1A+1B (multi-flight)",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V3": {
+    "label": "Venetian structure sheet: $400 NLH Days 1A–1C (multi-flight)",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V4": {
+    "label": "Venetian structure sheet: $600 NLH Days 1A–1C $150K (multi-flight)",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V5": {
+    "label": "Venetian structure sheet: $300 NLH (1Day) — Events 2 & 12",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V6": {
+    "label": "Venetian structure sheet: $400 NLH (1Day) — Event 10",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V7": {
+    "label": "Venetian structure sheet: $600 NLH (1Day) — Events 14, 28, 63",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V8": {
+    "label": "Venetian structure sheet: $200 NLH PokerAtlas Valuetown Bounty (1Day) — Events 18, 58",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V11": {
+    "label": "Venetian structure sheet: $600 NLH Bounty (1Day) — Events 16, 30, 54",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V12": {
+    "label": "Venetian structure sheet: $800 NLH Days 1A/1C/1E (multi-flight) — Event 26",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V15": {
+    "label": "Venetian structure sheet: $300 NLH Bounty (1Day) — Events 29, 31, 34, 38, 42, 50, 51, 53, 55",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V17": {
+    "label": "Venetian structure sheet: $600 NLH Seniors (1Day) — Events 24, 32",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V18": {
+    "label": "Venetian structure sheet: $200 NLH RaceDay Stack (1Day) — Events 3, 4, 5",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V20": {
+    "label": "Venetian structure sheet: $1,100 NLH Seniors Days 1A/1B (multi-flight) — Event 49",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V21": {
+    "label": "Venetian structure sheet: $2,200 NLH Title Event Days 1A/1B (multi-flight) — Event 47",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V29": {
+    "label": "Venetian structure sheet: $200 NLH (1Day) — Event 6",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V30": {
+    "label": "Venetian structure sheet: $200 NLH PKO (1Day) — Event 8",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V34": {
+    "label": "Venetian structure sheet: $1,100 NLH PKO (1Day) — Event 52",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V35": {
+    "label": "Venetian structure sheet: $1,100 NLH Days 1A/1C/1E (multi-flight) — Event 56",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V10": {
+    "label": "Venetian structure sheet: $300 NLH (1Day) — Days A+C (multi-flight) — Event 1",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  }
+}
