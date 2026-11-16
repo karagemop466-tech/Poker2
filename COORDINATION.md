@@ -118,6 +118,11 @@ Publication coordination: the integrated site has already been merged by prior s
 - Existing integration PR [#11](https://github.com/karagemop466-tech/Poker2/pull/11) (`arena/a22d577b-poker2` → `main`) merged with merge commit `c83d13e`; Pages workflow run [43932308394](https://github.com/karagemop466-tech/Poker2/actions/runs/43932308394) completed successfully. Pages status was `built`; live content was checked at `/verified/` and `/verified/flagged/`.
 - Upstream finalization for PR #11 and its Pages deployment was preserved from main rather than overwritten by this session's board entry.
 
+### Session arena/e3cb221d-poker2 publication result
+- Follow-up PR [#14](https://github.com/karagemop466-tech/Poker2/pull/14) merged to `main` at `bde73082b57ff38a4867929aee5c44b5c80b7541` on 2026-11-16 18:50 UTC. It added the official-source follow-up report and this coordination record; it did not replace main-owned dashboard files.
+- GitHub Pages build/deploy succeeded: `pages build and deployment` run [43933010600](https://github.com/karagemop466-tech/Poker2/actions/runs/43933010600) and `Deploy static site to GitHub Pages` run [43933012134](https://github.com/karagemop466-tech/Poker2/actions/runs/43933012134). Pages API reports `status: built` for commit `bde73082b57ff38a4867929aee5c44b5c80b7541`; site URL remains https://karagemop466-tech.github.io/Poker2/.
+- Both workflows were queued concurrently; an older competing run was cancelled by the Pages concurrency group. The final runs above completed successfully and the latest Pages build is `built`.
+
 ## Session arena/3ab1bcae-poker2 — Las Vegas poker vacation planner (2026-11-16)
 
 | Task | Status | Owner | Files |
@@ -128,7 +133,7 @@ Publication coordination: the integrated site has already been merged by prior s
 
 Task log:
 - Branch `arena/3ab1bcae-poker2` created from base `058cd54` (stale initial commit); later re-based onto current main (`c889d78`) to avoid overwriting parallel sessions' integrated site.
-- Researched live Strip tournaments (VegasPokerCalendar Nov 16-17, 2026 + PokerAtlas venue calendars). Verified Westgate $70 NLH freezeouts at 5:05 PM and 9:05 PM via the VegasPokerCalendar detail page ('Freezeout / No rebuy / No add-on').
-- Added Westgate finding as a flagged third-party lead only (consistent with the site's official-source standard — not used as a confirmed value): `data/non_official_refs.json` TP_WESTGATE; `data/flags.json` Westgate flag.
+- Researched live Strip tournaments (VegasPokerCalendar Nov 16–17, 2026 + PokerAtlas venue calendars). Verified Westgate $70 NLH freezeouts at 5:05 PM and 9:05 PM via the VegasPokerCalendar detail page (“Freezeout / No rebuy / No add-on”).
+- Added Westgate finding as a flagged third-party lead only (consistent with the site's official-source standard—not used as a confirmed value): `data/non_official_refs.json` TP_WESTGATE; `data/flags.json` Westgate flag.
 - Created PR [#8](https://github.com/karagemop466-tech/Poker2/pull/8) (`arena/3ab1bcae-poker2` → `main`); merged with merge commit `6f5e6db`; Pages workflow completed `built`; live site at https://karagemop466-tech.github.io/Poker2/. Subsequently PR #14 (`arena/e3cb221d-poker2`) merged on top at `bde7308`; main sync verified.
 - Flagged items (do not block merge): Westgate entry rules are aggregator-sourced, not confirmed with the Westgate poker room.
