@@ -78,7 +78,7 @@ def page(title, active, body, desc=""):
 """
 
 CATS = {
-    "single": ('b-good', "Freezeout confirmed"),
+    "single": ('b-warn', "Sheet silent on re-entry"),
     "ambiguous": ('b-warn', "Entry limit ambiguous"),
     "spend-more": ('b-bad', "Spend-more (re-entry/add-on)"),
     "multi-flight": ('b-info', "Multi-flight"),
@@ -93,7 +93,7 @@ def cat_badge(cat):
 
 def rule_badge(rules):
     se = rules.get("single_entry", "")
-    if se.startswith("freezeout"):
+    if se.startswith("not stated"):
         return '<span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span>'
     if se.startswith("ambiguous"):
         return '<span class="badge b-warn">ambiguous wording</span>'
@@ -151,7 +151,7 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
 def toolbar(table_id, dates=None, with_walk=False, cat_options=True):
     opts = "".join(f'<option value="{esc(d)}">{esc(d)}</option>' for d in (dates or []))
     cats = ('<option value="">All categories</option>'
-            '<option value="single">Freezeout confirmed</option>'
+            '<option value="single">Sheet silent on re-entry</option>'
             '<option value="ambiguous">Entry limit ambiguous</option>'
             '<option value="spend-more">Spend-more (re-entry/add-on)</option>'
             '<option value="multi-flight">Multi-flight</option>'
@@ -165,7 +165,7 @@ def toolbar(table_id, dates=None, with_walk=False, cat_options=True):
 <select data-bind-date="{table_id}"><option value="">All dates</option>{opts}</select>
 {f'<select data-bind-cat="{table_id}">{cats}</select>' if cat_options else ''}
 {walk}
-<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;{table_id}&quot;]');if(s){{s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}}"> Freezeout confirmed only</label>
+<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;{table_id}&quot;]');if(s){{s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}}"> Sheet silent on re-entry only</label>
 <span class="count" data-count-for="{table_id}"></span>
 </div>"""
 
@@ -239,10 +239,10 @@ def build():
 <h1>Dashboard</h1>
 <p class="lead">A verified-source planner for live tournament poker on and near the Las Vegas Strip.
 Start with the <a href="summary.html">executive summary</a>, filter the <a href="tournaments.html">tournament table</a>
-to <em>freezeout confirmed</em>, then price the stay on the <a href="hotels.html">hotels page</a> and
+to <em>sheet silent on re-entry</em>, then price the stay on the <a href="hotels.html">hotels page</a> and
 build the trip in the <a href="planner.html">trip planner</a>.</p>
 <div class="cards">
-  <div class="card"><div class="k">Freezeout-confirmed events</div><div class="v">{len(singles)}</div>
+  <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len(singles)}</div>
     <div class="s">sheet read; no re-entry/rebuy/add-on mechanism</div></div>
   <div class="card"><div class="k">Entry limit ambiguous</div><div class="v">{len(ambiguous)}</div>
     <div class="s">sheet wording conflicts (see flagged)</div></div>
@@ -258,7 +258,7 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <div class="panel">
 <h2>How to read this site</h2>
 <ul class="tight">
-<li><span class="badge b-good">Freezeout confirmed</span> — the official structure sheet was fully read and offers no re-entry, rebuy or add-on. It is <strong>not</strong> an express “single entry” clause (see <a href="flagged.html">flag IR-8234-02</a>).</li>
+<li><span class="badge b-warn">Sheet silent on re-entry</span> — the official structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. It also never states “no re-entry”: this is <strong>silence, not a published freezeout rule</strong>, so no event on this site is labelled confirmed single-entry (see <a href="flagged.html">flag IR-8234-02</a>).</li>
 <li><span class="badge b-warn">Entry limit ambiguous</span> — sheet read, but wording suggests possible extra buy-ins.</li>
 <li><span class="badge b-bad">Spend-more</span> — a verified way to buy more chips or entries. Kept out of the main ranking.</li>
 <li><span class="badge b-warn">UNVERIFIED</span> — the value or rule could not be confirmed from an official source. Left blank, never inferred.</li>
@@ -284,14 +284,14 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <h1>Executive summary</h1>
 <p class="lead">Updated {AS_OF} after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
 <div class="panel"><h2>Scope</h2><p>{esc(s.get('scope',''))}</p>
-<p>The current verified picture: <strong>{len(singles)} freezeout-confirmed one-day events</strong> (The Venetian DSE IV),
+<p>The current verified picture: <strong>{len(singles)} one-day events whose structure sheet is silent on re-entry</strong> (The Venetian DSE IV) — none of them has a published no-re-entry rule,
 {len(ambiguous)} entry-ambiguous events, {len(spend)} spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
 plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy-ins are not all published.</p></div>
 <div class="panel"><h2>Headline numbers (recorded {esc(s.get('as_of',''))})</h2><ul class="tight">{hn}</ul>
 <p class="note">Numbers above were recorded by the earlier verified pass; the counts on this page reflect the merged master dataset after the 2026-11-16 structure-sheet session. Where they differ, the newer verification supersedes.</p></div>
 <div class="panel"><h2>What matters for a decision</h2>
 <ul class="tight">
-<li><strong>Best verified value patterns:</strong> Venetian one-day freezeouts with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
+<li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
 <li><strong>Do not mix in spend-more events</strong> without budgeting re-entries/add-ons: Wynn WPT re-entry events, Wynn Friday $240 rebuy, Caesars Palace $50 add-on, Golden Nugget re-entries/add-ons.</li>
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
 <li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
@@ -302,7 +302,7 @@ plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy
     body_t = f"""
 <h1>All tournaments</h1>
 <p class="lead">Every row links to an official schedule page and, where read, its official structure sheet.
-Use the search box, the date selector and the “Freezeout confirmed only” toggle.</p>
+Use the search box, the date selector and the “sheet silent on re-entry only” toggle.</p>
 {toolbar('tbl-tournaments', all_dates)}
 {event_table(evs, 'tbl-tournaments', show_checkboxes=True)}
 <p class="note">Buy-in amounts are the totals collected at the cage; the fee split shown under the buy-in comes from the official structure sheet (house fee / prize pool per entry). “Pool ÷ fee” = published guarantee ÷ total buy-in — a descriptive ratio only.</p>"""
@@ -321,7 +321,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 Official schedule: <a href="{esc(master['sources'].get('V_SCHED',{}).get('url',''))}" target="_blank" rel="noopener">DSE IV event page</a>.
 Hotel: The Venetian / The Palazzo, on-site poker room.</p>
 <div class="cards">
- <div class="card"><div class="k">Freezeout confirmed here</div><div class="v">{len([e for e in ven_evs if e['category']=='single'])}</div></div>
+ <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len([e for e in ven_evs if e['category']=='single'])}</div></div>
  <div class="card"><div class="k">Multi-flight / satellites / team</div><div class="v">{len([e for e in ven_evs if e['category'] in ('multi-flight','satellite','team')])}</div></div>
  <div class="card"><div class="k">Ambiguous entry limits</div><div class="v">{len([e for e in ven_evs if e['category']=='ambiguous'])}</div></div>
 </div>
@@ -338,7 +338,7 @@ Official page: <a href="https://www.wynnlasvegas.com/casino/poker" target="_blan
 The daily schedule is suspended during Wynn series (official page).</p>
 <div class="cards">
  <div class="card"><div class="k">WPT rows</div><div class="v">{len(wyn_evs)}</div><div class="s">re-entry confirmed on featured events</div></div>
- <div class="card"><div class="k">Freezeout confirmed here</div><div class="v">{len([e for e in wyn_evs if e['category']=='single'])}</div></div>
+ <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len([e for e in wyn_evs if e['category']=='single'])}</div></div>
  <div class="card"><div class="k">Spend-more (WPT re-entry + daily rebuy)</div><div class="v">{len([e for e in wyn_evs if e['category']=='spend-more'])}</div></div>
 </div>
 {event_table(wyn_evs, 'tbl-venue')}
@@ -364,9 +364,25 @@ The daily schedule is suspended during Wynn series (official page).</p>
     # ---------------- hotels ----------------
     body_h = f"""
 <h1>Hotels — true cost per night</h1>
-<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% Clark County
-room tax is officially disclosed in The Venetian’s hotel terms; applying it to other properties is an assumption to confirm.
+<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% room tax is the
+Clark County transient lodging rate: the county’s own licensing guide for hotel/motel establishments prints 13.38%, the county’s
+combined transient lodging return breaks it into an 8.5% and a 4.5% county component, and both The Venetian’s and The Cosmopolitan’s
+hotel terms state 13.38% verbatim.
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+target="_blank" rel="noopener">County guide (PDF)</a> ·
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf"
+target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
+<div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
+<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
+rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
+a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
+parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
+<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
+target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
+<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
+was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
+hotel and poker room are in the table above so each pair can be checked directly.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
 <h2>Dated rate logs</h2>
@@ -455,7 +471,7 @@ where true hotel cost/night = (rate + resort fee) × (1 + tax) + parking. Enter 
 <div class="panel" id="trip-calc">
 <h2>Trip cost calculator</h2>
 <div class="form-grid">
-  <div><label>Pick freezeout-confirmed / ambiguous entries</label>
+  <div><label>Pick sheet-silent / ambiguous entries</label>
     <div style="max-height:14rem;overflow:auto;border:1px solid var(--line);border-radius:8px;padding:.5rem">{cb_items}</div>
     <small class="note" id="trip-entry-sum"></small></div>
   <div>
@@ -507,7 +523,7 @@ Rows with an overlap badge cannot be played in sequence as planned.</p>
 (guaranteed prize pool ÷ total entry fee). It is <strong>not</strong> a forecast, an EV estimate, or a prediction of
 attendance, overlay, or ROI. Events are ranked only when both the total entry fee and the guarantee are confirmed from
 official sources. Bounty and multi-flight events are shown in separate tables because their guarantees are not comparable.</div>
-<h2>Freezeout-confirmed NLH events (no bounty)</h2>
+<h2>NLH events whose sheet is silent on re-entry (no bounty)</h2>
 <table class="data"><thead><tr>{head_r}</tr></thead><tbody>{rank_rows(nlh_singles)}</tbody></table>
 <h2>Bounty / PKO events — labeled separately</h2>
 <p class="note">For bounty events the published guarantee often includes total bounties (marked in the table where the structure sheet says so).</p>
@@ -647,7 +663,7 @@ path. Nothing here has been implemented.</p>
 <ul class="tight">
 <li>Three overlapping dashboards exist (root, <code>/docs/</code>, <code>/verified/</code>). This root dashboard supersedes them; consolidation is suggestion S-C.</li>
 <li>Earlier datasets disagreed on chip counts and reg-close times for some Venetian rows (see session arena/acd81e67-poker2 notes in COORDINATION.md). Rows in this site use the structure-sheet values where the sheet was read; others carry blanks.</li>
-<li>“Verified single-entry” in older files meant “no re-entry language found”. This site labels that state precisely (“Freezeout confirmed — sheet read”) and keeps the express-confirmation caveat in every legend.</li>
+<li>“Verified single-entry” in older files meant “no re-entry language found”. This site labels that state precisely (“Sheet silent on re-entry — sheet read”) and states in every legend that silence is not a published freezeout rule.</li>
 <li>Wynn WPT “NIH” naming, the Venetian series-label staleness, and the Caesars guide-vs-flyer buy-in conflict are preserved as flags.</li>
 </ul></div>
 <div class="panel"><h2>Verification performed in this integration pass</h2>

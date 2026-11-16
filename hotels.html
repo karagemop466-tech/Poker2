@@ -35,15 +35,31 @@
 <main>
 
 <h1>Hotels — true cost per night</h1>
-<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% Clark County
-room tax is officially disclosed in The Venetian’s hotel terms; applying it to other properties is an assumption to confirm.
+<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% room tax is the
+Clark County transient lodging rate: the county’s own licensing guide for hotel/motel establishments prints 13.38%, the county’s
+combined transient lodging return breaks it into an 8.5% and a 4.5% county component, and both The Venetian’s and The Cosmopolitan’s
+hotel terms state 13.38% verbatim.
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+target="_blank" rel="noopener">County guide (PDF)</a> ·
+<a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf"
+target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
+<div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
+<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
+rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
+a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
+parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
+<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
+target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
+<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
+was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
+hotel and poker room are in the table above so each pair can be checked directly.</p></div>
 <div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="tbl-hotels">
 <select data-bind-date="tbl-hotels"><option value="">All dates</option></select>
 
 <label><input type="checkbox" data-bind-walk="tbl-hotels"> ≤30-min walk verified only</label>
-<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-hotels&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Freezeout confirmed only</label>
+<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-hotels&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Sheet silent on re-entry only</label>
 <span class="count" data-count-for="tbl-hotels"></span>
 </div>
 <table class="data" id="tbl-hotels"><thead><tr><th>Hotel</th><th>Address</th><th>Latest logged rate</th><th>Resort fee</th><th>Tax</th><th>Parking</th><th>True cost / night</th><th>Walking time (30-min limit)</th><th>Sources / last checked</th></tr></thead><tbody><tr data-cat="hotel" data-walk-ok="0">
@@ -71,9 +87,9 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Wynn Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3131 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per room night (official resort-information page)</small></td><td><span class="badge b-warn">blank</span><small class="note">Wynn terms say “plus tax” with no published rate. The 13.38% Clark County rate comes from Venetian’s terms — applying it here is unverified (flag).</small></td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per room night (official resort-information page)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
 <td>Self-parking for up to two vehicles is included in the resort fee (official).</td>
-<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
@@ -82,9 +98,9 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>ARIA Resort &amp; Casino</strong><small class="note">Strip</small></td>
 <td>3730 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
 <td>—</td>
-<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
@@ -93,9 +109,9 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Bellagio</strong><small class="note">Strip</small></td>
 <td>3600 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
 <td>—</td>
-<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
@@ -104,9 +120,9 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>MGM Grand</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3799 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td>$50 /night<small class="note">$50 plus applicable tax per night (official hotel terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$50 /night<small class="note">$50 plus applicable tax per night (official hotel terms)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
 <td>—</td>
-<td><div data-hotel-calc data-fee="50.0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="50.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
@@ -115,9 +131,9 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Horseshoe Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3645 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td><span class="badge b-warn">blank</span></td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms do not print a rate.</small></td>
 <td>—</td>
-<td><div data-hotel-calc data-fee="0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
@@ -126,16 +142,38 @@ Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Caesars Palace</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3570 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
-<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td><span class="badge b-warn">blank</span></td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
 <td>—</td>
-<td><div data-hotel-calc data-fee="0" data-tax="0" data-parking="0">
+<td><div data-hotel-calc data-fee="0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=CP" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>Westgate Las Vegas Resort &amp; Casino</strong><small class="note">Off-Strip (Paradise Rd)</small></td>
+<td>3000 Paradise Rd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$49.99 /night<small class="note">$49.99 plus tax per night (terms page); the resort-fee FAQ also states $36.99 in its structured answer</small></td><td>13.38%<small class="note">Clark County transient lodging tax, per the county licensing guide.</small></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="49.99" data-tax="0.1338" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.westgateresorts.com/terms-and-conditions/" rel="noopener" target="_blank">schedule</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>South Point Hotel, Casino &amp; Spa</strong><small class="note">South of the Strip (about 8 miles)</small></td>
+<td>9777 S. Las Vegas Blvd, Las Vegas, NV 89183</td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax, per the county licensing guide.</small></td>
+<td>Self-parking is free (stated on the poker page)</td>
+<td><div data-hotel-calc data-fee="0" data-tax="0.1338" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"> <small class="note">checked 2026-11-16</small></td>
 </tr></tbody></table>
 <h2>Dated rate logs</h2>
-<details><summary>The Venetian Resort Las Vegas</summary><ul class='tight'><li><strong>2026-11-16</strong>: $119 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>The Palazzo at The Venetian</summary><ul class='tight'><li><strong>2026-11-16</strong>: $209 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>Wynn Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>ARIA Resort &amp; Casino</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Bellagio</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>MGM Grand</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Horseshoe Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Caesars Palace</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details>
+<details><summary>The Venetian Resort Las Vegas</summary><ul class='tight'><li><strong>2026-11-16</strong>: $119 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>The Palazzo at The Venetian</summary><ul class='tight'><li><strong>2026-11-16</strong>: $209 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>Wynn Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>ARIA Resort &amp; Casino</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Bellagio</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>MGM Grand</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Horseshoe Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Caesars Palace</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Westgate Las Vegas Resort &amp; Casino</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>South Point Hotel, Casino &amp; Spa</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details>
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>

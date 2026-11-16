@@ -1,6 +1,6 @@
 {
  "as_of": "2026-11-16",
- "verification_method": "Every Venetian structure sheet (1-37) and the complete Wynn WPT structures PDF (8 chunks) were read in full on 2026-11-16. Classification: 'single_entry_confirmed' = official sheet read in full, no re-entry/rebuy/add-on clause; 'flagged_ambiguous' = sheet read but wording leaves entry count unsettled; 'excluded' = re-entry/rebuy/add-on/multi-flight/satellite/team/spend-more confirmed or event type not a cash freezeout; 'unverified' = entry terms not published in the sources read. Values are copied from official sources only; null = not stated on the source.",
+ "verification_method": "Every Venetian structure sheet (1-37) and the complete Wynn WPT structures PDF (8 chunks) were read in full on 2026-11-16. Classification (strict; sheet silence is never labelled 'confirmed'): 'sheet_silent' = official sheet read in full, no re-entry/rebuy/add-on clause anywhere \u2014 a candidate, NOT an explicit single-entry confirmation (terminology follows arena/e1c079dc-poker2's correction on main); 'flagged_ambiguous' = sheet read but wording leaves entry count unsettled; 'excluded' = re-entry/rebuy/add-on/multi-flight/satellite/team/spend-more confirmed or event type not a cash freezeout; 'unverified' = entry terms not published in the sources read. Values are copied from official sources only; null = not stated on the source.",
  "events": [
   {
    "id": "V-E09",
@@ -23,11 +23,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -87,11 +87,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -151,11 +151,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -215,11 +215,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -279,11 +279,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -343,11 +343,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -407,11 +407,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -471,11 +471,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -535,11 +535,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -599,11 +599,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -663,11 +663,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -727,11 +727,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 1,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S1",
      "retrieved": "2026-11-16"
@@ -790,11 +790,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 5,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
      "source": "V_S5",
      "retrieved": "2026-11-16"
@@ -853,11 +853,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 5,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
      "source": "V_S5",
      "retrieved": "2026-11-16"
@@ -916,11 +916,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 6,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $65 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $335 of every $400 Buy In.",
      "source": "V_S6",
      "retrieved": "2026-11-16"
@@ -979,11 +979,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 7,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S7",
      "retrieved": "2026-11-16"
@@ -1042,11 +1042,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 7,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S7",
      "retrieved": "2026-11-16"
@@ -1105,11 +1105,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 7,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S7",
      "retrieved": "2026-11-16"
@@ -1169,11 +1169,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 11,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S11",
      "retrieved": "2026-11-16"
@@ -1233,11 +1233,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 11,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S11",
      "retrieved": "2026-11-16"
@@ -1297,11 +1297,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 11,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S11",
      "retrieved": "2026-11-16"
@@ -1361,11 +1361,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1425,11 +1425,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1489,11 +1489,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1553,11 +1553,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1617,11 +1617,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1681,11 +1681,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1745,11 +1745,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1809,11 +1809,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1873,11 +1873,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 15,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $250 of every $300 Buy In.",
      "source": "V_S15",
      "retrieved": "2026-11-16"
@@ -1937,11 +1937,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 16,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $100 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $700 of every $800 Buy In.",
      "source": "V_S16",
      "retrieved": "2026-11-16"
@@ -2001,11 +2001,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 34,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $130 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $970 of every $1,100 Buy In.",
      "source": "V_S34",
      "retrieved": "2026-11-16"
@@ -2064,11 +2064,11 @@
    "level_min": 20,
    "late_reg": "6 levels + break (~12:25 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 18,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "V_S18",
      "retrieved": "2026-11-16"
@@ -2127,11 +2127,11 @@
    "level_min": 20,
    "late_reg": "6 levels + break (~12:25 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 18,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "V_S18",
      "retrieved": "2026-11-16"
@@ -2190,11 +2190,11 @@
    "level_min": 20,
    "late_reg": "6 levels + break (~12:25 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 18,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "V_S18",
      "retrieved": "2026-11-16"
@@ -2253,11 +2253,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~3:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 29,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S29",
      "retrieved": "2026-11-16"
@@ -2317,11 +2317,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (9:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 30,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "V_S30",
      "retrieved": "2026-11-16"
@@ -2380,11 +2380,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~3:55 PM)",
    "eligibility": "Must be 50+ years of age (sheet note 02; under-50 buyers forfeit prize money and buy-in)",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 17,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S17",
      "retrieved": "2026-11-16"
@@ -2443,11 +2443,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (~3:55 PM)",
    "eligibility": "Must be 50+ years of age (sheet note 02; under-50 buyers forfeit prize money and buy-in)",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 17,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S17",
      "retrieved": "2026-11-16"
@@ -2507,11 +2507,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 26,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In.",
      "source": "V_S26",
      "retrieved": "2026-11-16"
@@ -2698,11 +2698,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 22,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
      "source": "V_S22",
      "retrieved": "2026-11-16"
@@ -2761,11 +2761,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 28,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S28",
      "retrieved": "2026-11-16"
@@ -2825,11 +2825,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 27,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S27",
      "retrieved": "2026-11-16"
@@ -2888,11 +2888,11 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "eligibility": "21+ with Venetian Rewards card",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 23,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S23",
      "retrieved": "2026-11-16"
@@ -2954,11 +2954,11 @@
    "level_min": 30,
    "late_reg": "10 levels + break (4:55 PM)",
    "eligibility": "Open to all players 21+ (trophy to last King and last Queen standing)",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 33,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
      "source": "V_S33",
      "retrieved": "2026-11-16"
@@ -3019,11 +3019,11 @@
    "level_min": 40,
    "late_reg": "9 levels + break (~4:55 PM)",
    "eligibility": "Female players 21+ only (sheet note 02)",
-   "classification": "single_entry_confirmed",
+   "classification": "sheet_silent",
    "struct_sheet": 32,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
      "source": "V_S32",
      "retrieved": "2026-11-16"
@@ -3093,7 +3093,7 @@
    "struct_sheet": 31,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA LIPS.",
      "source": "V_S31",
      "retrieved": "2026-11-16"
@@ -3660,7 +3660,7 @@
    "struct_sheet": 19,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $20 of the $100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $80 of every $100 Buy In.",
      "source": "V_S19",
      "retrieved": "2026-11-16"
@@ -3723,7 +3723,7 @@
    "struct_sheet": 19,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $20 of the $100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $80 of every $100 Buy In.",
      "source": "V_S19",
      "retrieved": "2026-11-16"
@@ -3786,7 +3786,7 @@
    "struct_sheet": 24,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $220 of every $260 Buy In.",
      "source": "V_S24",
      "retrieved": "2026-11-16"
@@ -3849,7 +3849,7 @@
    "struct_sheet": 24,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $40 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $220 of every $260 Buy In.",
      "source": "V_S24",
      "retrieved": "2026-11-16"
@@ -3912,7 +3912,7 @@
    "struct_sheet": 25,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $225 of every $260 Buy In.",
      "source": "V_S25",
      "retrieved": "2026-11-16"
@@ -3975,7 +3975,7 @@
    "struct_sheet": 25,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $225 of every $260 Buy In.",
      "source": "V_S25",
      "retrieved": "2026-11-16"
@@ -4038,7 +4038,7 @@
    "struct_sheet": 25,
    "rules": {
     "single_entry": {
-     "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+     "value": "sheet silent \u2014 no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
      "excerpt": "Sheet contains no re-entry, re-buy or add-on clause. $35 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $225 of every $260 Buy In.",
      "source": "V_S25",
      "retrieved": "2026-11-16"

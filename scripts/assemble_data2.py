@@ -230,7 +230,7 @@ json.dump(hotels, open(os.path.join(OUT, "hotels-f0816fab.json"), "w"), indent=1
 # ---------------------------------------------------------------------------
 events = json.load(open(os.path.join(OUT, "events-f0816fab.json")))["events"]
 from datetime import date, timedelta
-playable = [e for e in events if e["classification"] == "single_entry_confirmed"]
+playable = [e for e in events if e["classification"] == "sheet_silent"]
 open_play = [e for e in playable if e.get("eligibility", "").startswith("21+")]
 gated = [e for e in playable if not e.get("eligibility", "").startswith("21+")]
 by_day, by_day_all = {}, {}
@@ -253,12 +253,12 @@ TRIP_DAYS = best[1]
 trip = {
  "as_of": R,
  "trip_dates": {"play_days": TRIP_DAYS, "nights": 7,
-   "rule": "Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most confirmed single-entry events open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: %d open-to-all entries (%d incl. gated)." % (best[0], best[2])},
+   "rule": "Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most sheet-silent single-entry candidates open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: %d open-to-all entries (%d incl. gated)." % (best[0], best[2])},
  "budget_quality_floor": {"nightly_true_cost_target_usd": 250, "quality_floor": "4-star-and-up class resort",
    "note": "Planning assumptions set for this plan (step 1 of the decision workflow). Adjustable in the calculator below; cost and quality outrank distance, hard limit = 30-minute walk."},
  "tax_rate": 0.1338,
  "day_plan": [],
- "overlap_method": "For each day: the confirmed single-entry event with the earliest start is the primary. The evening event is listed as a conditional fallback (playable only if the player exits the earlier event). A 1-Day event at the Venetian runs to a winner (typically 10–14 hours from start; sheets list 28 levels) so the same-day evening event cannot be scheduled back-to-back — it is a fallback, not a second seat time. Durations are estimates from level counts on the official sheets, not published finish times (flagged).",
+ "overlap_method": "For each day: the sheet-silent candidate with the earliest start is the primary. The evening event is listed as a conditional fallback (playable only if the player exits the earlier event). A 1-Day event at the Venetian runs to a winner (typically 10–14 hours from start; sheets list 28 levels) so the same-day evening event cannot be scheduled back-to-back — it is a fallback, not a second seat time. Durations are estimates from level counts on the official sheets, not published finish times (flagged).",
 }
 for d in TRIP_DAYS:
     ids = by_day_all.get(d, [])
@@ -272,7 +272,7 @@ for d in TRIP_DAYS:
         "fallback": ({"id": fallb["id"], "name": fallb["name"], "start": fallb["start"], "buy_in": fallb["buy_in"], "eligibility": fallb["eligibility"], "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."} if fallb else None),
         "extra": [{"id": e["id"], "name": e["name"], "start": e["start"], "buy_in": e["buy_in"]} for e in evs[2:]],
         "overlap_flags": (
-            ["Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."]
+            ["Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."]
             if len(evs) > 1 else []),
     })
 json.dump(trip, open(os.path.join(OUT, "trip.json"), "w"), indent=1)
@@ -286,11 +286,11 @@ questions = {
  "intro": "Questions that must be answered before money is committed. 'Answered' = settled from an official source this session; 'Open' = the sources do not answer it; the How-to-find column names the discovery step.",
  "items": [
   {"id": "Q01", "question": "Which tournaments are confirmed single-entry freezeouts (no re-entry, rebuy or add-on)?",
-   "status": "Answered for Venetian DSE IV", "answer": "46 Venetian events are confirmed after reading every official structure sheet (1–37) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous 'subsequent buy in's' wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).",
+   "status": "Answered for Venetian DSE IV", "answer": "46 Venetian events are sheet-silent single-entry candidates after reading every official structure sheet (explicit confirmation outstanding) (1–37) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous 'subsequent buy in's' wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).",
    "how_to_find": "Remaining work: ask the Wynn poker room for written entry terms on the 33 unverified WPT rows; ask the Venetian whether Events 18/58 permit subsequent buy-ins.",
    "sources": ["https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html", "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"]},
   {"id": "Q02", "question": "Can a player start play at 8:00 AM with confirmed single-entry events?",
-   "status": "Answered (no)", "answer": "No verified event starts at 8:00 AM anywhere in the dataset. Earliest confirmed single-entry starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).",
+   "status": "Answered (no)", "answer": "No listed event starts at 8:00 AM anywhere in the dataset. Earliest candidate starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).",
    "how_to_find": "Check other rooms' official daily schedules (Palms, South Point, Orleans, Golden Nugget) for earlier starts.",
    "sources": ["https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"]},
   {"id": "Q03", "question": "What is the true nightly hotel cost for the trip dates?",
@@ -401,20 +401,20 @@ summary = {
  "title": "Executive summary — Las Vegas Strip single-entry tournament trip planner",
  "scope": "Venetian DSE IV (Nov 16 – Dec 23, 2026), Wynn WPT World Championship (Nov 27 – Dec 21, 2026) and Wynn/Caesars/MGM recurring dailies. Every Venetian structure sheet (1–37) and the full WPT structures document were read first-hand on 2026-11-16. Values appear only where an official source states them.",
  "headline": [
-  {"label": "Confirmed single-entry events (Venetian DSE IV)", "value": "46", "note": "Structure sheets read in full; no re-entry/rebuy/add-on clauses. Includes 3 bounty types and 1 PKO, labeled separately."},
+  {"label": "Sheet-silent single-entry candidates (Venetian DSE IV)", "value": "46", "note": "Structure sheets read in full; no re-entry/rebuy/add-on clauses anywhere on the sheet — candidates under the strict standard (explicit single-entry confirmation outstanding). Includes 3 bounty types and 1 PKO, labeled separately."},
   {"label": "Flagged (ambiguous entry wording)", "value": "2", "note": "Valuetown events 18/58 — 'subsequent buy in's' phrasing."},
   {"label": "Excluded (spend-more / multi-flight / satellite / team)", "value": "42", "note": "Includes all 12 WPT event types with published terms (all allow re-entry), 4 Wynn dailies, 8 Venetian multi-flights, 7 satellites, 1 team event, Caesars add-on and MGM loyalty events."},
   {"label": "Unverified (entry terms not published)", "value": "33 WPT rows + Horseshoe dailies", "note": "Blank rule fields; flagged; excluded from ranking."},
-  {"label": "Recommended trip window", "value": "fixed by rule — see trip plan", "note": "The consecutive 7-night window with the most confirmed single-entry events open to all players (ties → earliest). Age/gender-gated events shown separately."},
+  {"label": "Recommended trip window", "value": "fixed by rule — see trip plan", "note": "The consecutive 7-night window with the most sheet-silent single-entry candidates open to all players (ties → earliest). Age/gender-gated events shown separately."},
   {"label": "Earliest verified start", "value": "9:00 AM (Horseshoe daily, rules unverified)", "note": "No 8:00 AM start found in any checked official source."},
   {"label": "Best confirmed value ratio (gtd ÷ buy-in)", "value": "Event 36 — 93.75×", "note": "$800 bounty, $75K guarantee (includes bounties), Dec 9 11:10 AM. Descriptive ratio only — not a forecast."},
   {"label": "Walk-time rule", "value": "≤ 30 minutes", "note": "OSRM foot-routing estimates from official addresses; Google Maps confirmation links per pair."},
   {"label": "True hotel cost/night", "value": "rate + resort fee, taxed 13.38%", "note": "Verified fee/tax inputs; dated room rates still to be logged (flagged)."},
  ],
  "findings": [
-  {"title": "Single-entry confirmation is now sheet-level", "text": "All 37 Venetian DSE IV structure sheets were read in full. 46 one-day (plus one two-day) events contain no re-entry, re-buy or add-on clause and are confirmed under the site's documented standard. The two Valuetown events are held back on their 'subsequent buy in's' wording."},
+  {"title": "Single-entry confirmation is now sheet-level", "text": "All 37 Venetian DSE IV structure sheets were read in full. 46 one-day (plus one two-day) events contain no re-entry, re-buy or add-on clause anywhere on the sheet. Under the strict standard adopted on main (arena/e1c079dc-poker2: sheet silence is not confirmation) these are single-entry CANDIDATES — the sheets' one-buy-in accounting supports it, but written single-entry confirmation from the poker room is still outstanding. The two Valuetown events are held back on their 'subsequent buy in's' wording."},
   {"title": "Wynn WPT is a re-entry series", "text": "Every WPT event whose terms are published in the official structures document allows re-entry (unlimited per flight until level 9–10, or one re-entry per flight for WPT Prime). The 12 documented event types are excluded from the single-entry list. 33 schedule rows have no published terms and stay unverified."},
-  {"title": "Value ranking (descriptive ratio)", "text": "Ranked by guarantee ÷ buy-in among confirmed events with a printed guarantee: Event 36 $800 bounty $75K (93.75×), Event 54 $600 bounty $50K (83.33×), Event 52 $1,100 PKO $75K (68.18×). Bounty guarantees include bounty money — read the ratio as description, not EV."},
+  {"title": "Value ranking (descriptive ratio)", "text": "Ranked by guarantee ÷ buy-in among sheet-silent candidates with a printed guarantee: Event 36 $800 bounty $75K (93.75×), Event 54 $600 bounty $50K (83.33×), Event 52 $1,100 PKO $75K (68.18×). Bounty guarantees include bounty money — read the ratio as description, not EV."},
   {"title": "Plan one seat per day, evenings conditional", "text": "For Dec 6–13 the plan gives each day a primary confirmed event and, where a second exists, a conditional evening fallback. 1-Day events run to a winner, so back-to-back seats are flagged as overlapping."},
   {"title": "Walkability", "text": "Venetian/Palazzo are on-site for DSE IV. Harrah's/LINQ/Flamingo/Cromwell are 9–17 min from the Venetian. Wynn/Encore guests are 0–13 min from the WPT room (in Encore). Golden Nugget (83 min), Westgate (39 min), Mandalay Bay (52 min) fail the 30-minute rule to the Venetian."},
   {"title": "Hotel economics", "text": "Verified: Venetian/Palazzo/Wynn/Encore resort fee $55+tax; MGM Grand $50+tax; ARIA/Bellagio $55+tax; conditional Venetian poker rates from $119/$209 per night; 13.38% room tax; Venetian parking $20/day. Not verified: dated room quotes, cancellation deadlines, parking elsewhere — all blank and flagged."},

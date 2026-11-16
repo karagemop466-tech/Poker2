@@ -1,7 +1,7 @@
 {
  "as_of": "2026-11-16",
  "generated_by": "scripts/build_master.py",
- "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018freezeout-confirmed\u2019 means the official structure sheet was fully read and contains no re-entry, rebuy or add-on mechanism; it is not an express \u2018single entry\u2019 clause (see flag IR-8234-02).",
+ "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018sheet silent on re-entry\u2019 means the official structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. That is NOT the same as a published no-re-entry rule: no Las Vegas room in this dataset publishes one, so no event is labelled confirmed single-entry (see flag IR-8234-02).",
  "events": [
   {
    "id": "V-02",
@@ -22,9 +22,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -58,9 +58,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -94,9 +94,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -130,9 +130,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -164,9 +164,9 @@
    "level_min": 30,
    "late_reg": "8 levels + Break (~3:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Late Registration: 8 levels + Break (~ 3:40 PM).",
     "retrieved": "2026-11-16"
    },
@@ -201,9 +201,9 @@
    "level_min": 30,
    "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Players start the event as a $50 bounty. \u2026 A Prize Pool of $8,000 is guaranteed \u2026 which consists of the actual prize pool plus the total amount of bounty prize money.",
     "retrieved": "2026-11-16"
    },
@@ -237,9 +237,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -271,9 +271,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -307,9 +307,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -341,9 +341,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "NOT VERIFIED: structure sheet not yet read",
     "retrieved": "2026-11-16"
    },
@@ -377,9 +377,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -411,9 +411,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -447,9 +447,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -483,9 +483,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -521,9 +521,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In. \u2026 Players receive a $100 Bounty for each player they eliminate \u2026 A total prize pool of $15,000 is guaranteed \u2026 plus the total amount of $100 bounties.",
     "retrieved": "2026-11-16"
    },
@@ -594,9 +594,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In. \u2026 Guarantee: $10,000.",
     "retrieved": "2026-11-16"
    },
@@ -630,9 +630,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -666,9 +666,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -702,9 +702,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -738,9 +738,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (~3:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
     "retrieved": "2026-11-16"
    },
@@ -774,9 +774,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -810,9 +810,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake - Staff). Prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
     "retrieved": "2026-11-16"
    },
@@ -844,9 +844,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -880,9 +880,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -916,9 +916,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -952,9 +952,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -988,9 +988,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (~3:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
     "retrieved": "2026-11-16"
    },
@@ -1024,9 +1024,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1060,9 +1060,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1096,9 +1096,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1134,9 +1134,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Players receive a $200 Bounty for each player they eliminate \u2026 A total prize pool of $25,000 is guaranteed \u2026 plus the total amount of $200 bounties.",
     "retrieved": "2026-11-16"
    },
@@ -1170,9 +1170,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1207,9 +1207,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In \u2026 for \u2026 (LIPS). Prize pool consists of $510 of every $600 Buy In. \u2026 Players receive $200 Bounty for each player they eliminate.",
     "retrieved": "2026-11-16"
    },
@@ -1243,9 +1243,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1279,9 +1279,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1316,9 +1316,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1352,9 +1352,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1388,9 +1388,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1424,9 +1424,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1461,9 +1461,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
     "retrieved": "2026-11-16"
    },
@@ -1533,9 +1533,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1569,9 +1569,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1605,9 +1605,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1639,9 +1639,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1675,9 +1675,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -2964,24 +2964,24 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3000,25 +3000,25 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed",
     "plo"
    ],
-   "chips": null,
+   "chips": 30000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 400,
@@ -3037,24 +3037,24 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3073,25 +3073,25 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed",
     "plo"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3110,25 +3110,25 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed",
     "plo"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3147,25 +3147,25 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed",
     "plo"
    ],
-   "chips": null,
+   "chips": 30000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
@@ -3184,24 +3184,24 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3224,20 +3224,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3260,20 +3260,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3369,20 +3369,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3405,20 +3405,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3549,20 +3549,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3655,20 +3655,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3838,20 +3838,20 @@
     "mixed",
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed. Schedule text reads 'NIH'.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4486,20 +4486,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4586,24 +4586,24 @@
    "pool_per_entry": null,
    "gtd": null,
    "format": "one-day",
-   "category": "unverified",
+   "category": "spend-more",
    "tags": [
     "mixed"
    ],
-   "chips": null,
+   "chips": 35000,
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "Structure sheet not reviewed for re-entry.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4627,20 +4627,20 @@
     "plo",
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4697,20 +4697,20 @@
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
+   "chips": 30000,
+   "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry",
-    "re_entry": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5\u20139, 12, 14, plus Dec 21 at 6 PM",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet not reviewed for re-entry.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4933,22 +4933,22 @@
    "pool_per_entry": null,
    "gtd": 1000000,
    "format": "multi-flight",
-   "category": "multi-flight",
+   "category": "spend-more",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "40",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 multi-flight (official naming)",
-    "re_entry": "unverified for this event\u2019s sheet",
-    "add_on": "unverified",
-    "excerpt": "MULTI-FLIGHT by official naming (Day 1A/1B). Structure sheet NOT reviewed.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "MULTI-FLIGHT by official naming (Day 1A/1B). Structure sheet NOT reviewed.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section. Buy-in split: $1,430 prize pool + $120 house fee + $50 staff gratuity.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1600,
@@ -5001,7 +5001,7 @@
    "pool_per_entry": null,
    "gtd": 500000,
    "format": "multi-flight",
-   "category": "multi-flight",
+   "category": "spend-more",
    "tags": [
     "bounty",
     "plo"
@@ -5010,16 +5010,16 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 multi-flight (official naming)",
-    "re_entry": "unverified for this event\u2019s sheet",
-    "add_on": "unverified",
-    "excerpt": "MULTI-FLIGHT by official naming (Day 1A/1B). Structure sheet NOT reviewed.",
+    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+    "re_entry": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
+    "add_on": "not stated on the structure sheet",
+    "excerpt": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
     "retrieved": "2026-11-16"
    },
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "MULTI-FLIGHT by official naming (Day 1A/1B). Structure sheet NOT reviewed.",
+   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section. Buy-in split: $930 prize pool + $500 bounty + $120 house fee + $50 staff gratuity.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1600,
@@ -5924,6 +5924,441 @@
    "bounty": null,
    "total_entry_fee": null,
    "gtd_ratio": null
+  },
+  {
+   "id": "E1C-WY-01",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "PLO $500 Bounty $1,600 $100K GTD",
+   "game": "",
+   "date": "2026-12-07",
+   "start": "1:00 PM",
+   "buy_in": 1600,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 100000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "bounty"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": true,
+   "bounty": true,
+   "total_entry_fee": 1600,
+   "gtd_ratio": 62.5
+  },
+  {
+   "id": "E1C-WY-02",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "PLO $1,000 Bounty $3,000 $250K GTD",
+   "game": "",
+   "date": "2026-12-09",
+   "start": "1:00 PM",
+   "buy_in": 3000,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 250000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "bounty"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": true,
+   "bounty": true,
+   "total_entry_fee": 3000,
+   "gtd_ratio": 83.3
+  },
+  {
+   "id": "E1C-WY-03",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "PLO Turbo $1,100 $100K GTD",
+   "game": "",
+   "date": "2026-12-14",
+   "start": "7:00 PM",
+   "buy_in": 1100,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 100000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "turbo"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": false,
+   "bounty": false,
+   "total_entry_fee": 1100,
+   "gtd_ratio": 90.9
+  },
+  {
+   "id": "E1C-WY-04",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "Big O $1,100",
+   "game": "",
+   "date": "2026-12-15",
+   "start": "12:00 PM",
+   "buy_in": 1100,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "mixed"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
+  },
+  {
+   "id": "E1C-WY-05",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "PLO Progressive Bounty (PKO) $3,000 $250K GTD",
+   "game": "",
+   "date": "2026-12-15",
+   "start": "1:00 PM",
+   "buy_in": 3000,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 250000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "bounty",
+    "pko"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": true,
+   "bounty": true,
+   "total_entry_fee": 3000,
+   "gtd_ratio": 83.3
+  },
+  {
+   "id": "E1C-WY-06",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "NLH $500 Bounty Turbo $1,600 $100K GTD",
+   "game": "",
+   "date": "2026-12-15",
+   "start": "7:00 PM",
+   "buy_in": 1600,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 100000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "bounty",
+    "turbo"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": true,
+   "bounty": true,
+   "total_entry_fee": 1600,
+   "gtd_ratio": 62.5
+  },
+  {
+   "id": "E1C-WY-07",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "Wynn Mixed Championship (2 Day) $1,600",
+   "game": "",
+   "date": "2026-12-17",
+   "start": "11:00 AM",
+   "buy_in": 1600,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "mixed"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
+  },
+  {
+   "id": "E1C-WY-08",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "NLH High Roller (2 Day) $25,800",
+   "game": "",
+   "date": "2026-12-17",
+   "start": "1:00 PM",
+   "buy_in": 25800,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "high-roller"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
+  },
+  {
+   "id": "E1C-WY-09",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "HORSE $800",
+   "game": "",
+   "date": "2026-12-18",
+   "start": "1:00 PM",
+   "buy_in": 800,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "mixed"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
+  },
+  {
+   "id": "E1C-WY-10",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "NLH Turbo $1,100 $100K GTD",
+   "game": "",
+   "date": "2026-12-18",
+   "start": "6:00 PM",
+   "buy_in": 1100,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 100000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "turbo"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": false,
+   "bounty": false,
+   "total_entry_fee": 1100,
+   "gtd_ratio": 90.9
+  },
+  {
+   "id": "E1C-WY-11",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "Seniors High Roller (3 Day) $5,000 $250K GTD",
+   "game": "",
+   "date": "2026-12-19",
+   "start": "11:00 AM",
+   "buy_in": 5000,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": 250000,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "high-roller",
+    "seniors"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": false,
+   "bounty": false,
+   "total_entry_fee": 5000,
+   "gtd_ratio": 50.0
+  },
+  {
+   "id": "E1C-WY-12",
+   "venue_id": "wynn",
+   "venue": "Wynn Las Vegas",
+   "name": "TORSE Championship (2 Day) $1,600",
+   "game": "",
+   "date": "2026-12-19",
+   "start": "1:00 PM",
+   "buy_in": 1600,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "one-day",
+   "category": "unverified",
+   "tags": [
+    "mixed"
+   ],
+   "chips": null,
+   "level_min": "",
+   "late_reg": "",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+    "retrieved": "2026-11-16"
+   },
+   "last_checked": "2026-11-16",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
   }
  ],
  "hotels": [
@@ -6003,8 +6438,8 @@
    "resort_fee_value": 55.0,
    "resort_fee_text": "$55 plus tax per room night (official resort-information page)",
    "resort_fee_src": "https://www.wynnlasvegas.com/about-us/resort-information",
-   "tax_rate": null,
-   "tax_note": "Wynn terms say \u201cplus tax\u201d with no published rate. The 13.38% Clark County rate comes from Venetian\u2019s terms \u2014 applying it here is unverified (flag).",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms say \u201cplus tax\u201d without printing the rate.",
    "parking": "Self-parking for up to two vehicles is included in the resort fee (official).",
    "deposit": "$150 per night (official Wynn terms, 2026 promo terms page).",
    "booking_url": "https://www.wynnlasvegas.com",
@@ -6029,8 +6464,8 @@
    "resort_fee_value": 55.0,
    "resort_fee_text": "$55 plus tax per night; $50 plus tax extra occupant (official terms)",
    "resort_fee_src": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
-   "tax_rate": null,
-   "tax_note": "Tax rate not captured from an official MGM page \u2014 blank.",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms say \u201cplus tax\u201d without printing the rate.",
    "parking": "",
    "deposit": "$150\u2013$500/day by room type (official terms).",
    "booking_url": "https://aria.mgmresorts.com",
@@ -6055,8 +6490,8 @@
    "resort_fee_value": 55.0,
    "resort_fee_text": "$55 plus tax per night; $50 plus tax extra occupant (official terms)",
    "resort_fee_src": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-   "tax_rate": null,
-   "tax_note": "Tax rate not captured from an official MGM page \u2014 blank.",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms say \u201cplus tax\u201d without printing the rate.",
    "parking": "",
    "deposit": "$150/day incidentals (official terms).",
    "booking_url": "https://bellagio.mgmresorts.com",
@@ -6081,8 +6516,8 @@
    "resort_fee_value": 50.0,
    "resort_fee_text": "$50 plus applicable tax per night (official hotel terms)",
    "resort_fee_src": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
-   "tax_rate": null,
-   "tax_note": "Tax rate not captured from an official MGM page \u2014 blank.",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms say \u201cplus tax\u201d without printing the rate.",
    "parking": "",
    "deposit": "",
    "booking_url": "https://mgmgrand.mgmresorts.com/en/hotel.html",
@@ -6107,8 +6542,8 @@
    "resort_fee_value": null,
    "resort_fee_text": "",
    "resort_fee_src": "https://www.caesars.com/horseshoe-las-vegas/hotel",
-   "tax_rate": null,
-   "tax_note": "",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms do not print a rate.",
    "parking": "",
    "deposit": "",
    "cancellation": "Free 48-hour cancellation advertised on the official hotel page (2026-11-16).",
@@ -6133,8 +6568,8 @@
    "resort_fee_value": null,
    "resort_fee_text": "",
    "resort_fee_src": "https://www.caesars.com/caesars-palace/hotel",
-   "tax_rate": null,
-   "tax_note": "",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms say \u201cplus tax\u201d without printing the rate.",
    "parking": "",
    "deposit": "",
    "cancellation": "Free 48-hour cancellation advertised on official Caesars hotel pages (2026-11-16).",
@@ -6149,7 +6584,73 @@
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+   },
+   "fee_range": {
+    "text": "$45-$50 plus applicable tax",
+    "excerpt": "Caesars corporate disclaimer: 'Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.'",
+    "url": "https://www.caesars.com/corporate/disclaimer",
+    "retrieved": "2026-11-16",
+    "note": "Only a range is published, so no single Caesars Palace fee value is entered."
    }
+  },
+  {
+   "id": "H-WG",
+   "venue_id": "westgate",
+   "area": "Off-Strip (Paradise Rd)",
+   "name": "Westgate Las Vegas Resort & Casino",
+   "venue": "Westgate Las Vegas",
+   "address": "3000 Paradise Rd, Las Vegas, NV 89109",
+   "resort_fee_value": 49.99,
+   "resort_fee_text": "$49.99 plus tax per night (terms page); the resort-fee FAQ also states $36.99 in its structured answer",
+   "resort_fee_src": "https://www.westgateresorts.com/terms-and-conditions/",
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax, per the county licensing guide.",
+   "parking_value": null,
+   "parking": "",
+   "deposit": "",
+   "cancellation": "",
+   "quality": "",
+   "booking_url": "",
+   "rate_log": [],
+   "notes": "Poker room: 7 tables, 9-handed, Mon-Fri 12:00 PM / Sat-Sun 10:00 AM, (702) 732-5223. No tournament schedule published.",
+   "sources": [
+    "https://www.westgateresorts.com/terms-and-conditions/",
+    "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/"
+   ],
+   "retrieved": "2026-11-16",
+   "fee_conflict": {
+    "value_used": 49.99,
+    "conflict": "The Westgate terms page states a '$49.99 +tax' nightly resort fee for Westgate Las Vegas; the property's resort-fee FAQ page says $49.99 in its body text but $36.99 in its embedded structured answer.",
+    "url": "https://www.westgateresorts.com/terms-and-conditions/",
+    "secondary_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+    "retrieved": "2026-11-16"
+   }
+  },
+  {
+   "id": "H-SP",
+   "venue_id": "southpoint",
+   "area": "South of the Strip (about 8 miles)",
+   "name": "South Point Hotel, Casino & Spa",
+   "venue": "South Point",
+   "address": "9777 S. Las Vegas Blvd, Las Vegas, NV 89183",
+   "resort_fee_value": null,
+   "resort_fee_text": null,
+   "resort_fee_src": null,
+   "tax_rate": 0.1338,
+   "tax_note": "Clark County transient lodging tax, per the county licensing guide.",
+   "parking_value": null,
+   "parking": "Self-parking is free (stated on the poker page)",
+   "deposit": "",
+   "cancellation": "",
+   "quality": "30-table 24-hour room; about 8 miles south of the Strip.",
+   "booking_url": "",
+   "rate_log": [],
+   "walk_min": null,
+   "notes": "Cannot satisfy the 30-minute walk rule from any Strip hotel. No official resort fee captured.",
+   "sources": [
+    "https://southpointcasino.com/casino/poker-room"
+   ],
+   "retrieved": "2026-11-16"
   }
  ],
  "questions": [
@@ -6495,7 +6996,9 @@
    "source": "data/flags.json",
    "item": "Clark County transient lodging tax",
    "where": "All hotels",
-   "detail": "Secondary sources conflict (13.38% vs 10.5%\u201313.38%). No official county source found. Left blank."
+   "detail": "Resolved 2026-11-16 by arena/e1c079dc-poker2: Clark County's Department of Business License guide for transient lodging establishments prints a 13.38% transient lodging tax rate for hotel/motel licences, and the county's combined transient lodging tax return shows the 8.5% + 4.5% county components. The Venetian and Cosmopolitan hotel terms state 13.38% verbatim. The rate is now entered with the county document as its source.",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "resolved": "2026-11-16"
   },
   {
    "source": "data/flags.json",
@@ -6601,6 +7104,156 @@
    "where": "Venetian resort-fee page vs poker-suite-rate page",
    "detail": "The resort-fee page says \u2018Rates include a daily Resort Fee of $55 plus tax\u2019 while the poker-rate page lists the fee separately in its conditions; exact meaning for the poker offer should be confirmed at reservation.",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+  },
+  {
+   "id": "IR-E1C-01",
+   "severity": "high",
+   "item": "No event has an affirmative single-entry document",
+   "where": "",
+   "detail": "All 30 structure sheets read across the Venetian, Wynn, Bellagio, Caesars and MGM either allow re-entry, sell chips, or say nothing about re-entry. No document states 'no re-entry, no add-on', so the site reports zero confirmed single-entry events. Next step: Ask each room for a written freezeout statement per event and log the reply with a date.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Ask each room for a written freezeout statement per event and log the reply with a date.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-02",
+   "severity": "high",
+   "item": "Wynn publishes structures for only 13 of its ~46 series events",
+   "where": "",
+   "detail": "The WPT World Championship $10,400, the $400 Super Gold Million, the high rollers, the Ladies and Seniors championships and the close-out bounties have no published structure sheet, so their entry rules, chips and fee splits are blank. Next step: Ask the Wynn poker room whether those sheets exist.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Ask the Wynn poker room whether those sheets exist.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-03",
+   "severity": "medium",
+   "item": "WPT schedule PDF contains internal date errors",
+   "where": "",
+   "detail": "A 'Dec. 18 Wednesday' block is actually Dec 16; $800 and $1,600 Day 2 rows conflict with the structures PDF; Super Gold Million jumps from Day 1A-D to 'Day 3' with no Day 2 row. Where the documents conflict the structures PDF was treated as authoritative. Next step: Ask the Wynn to confirm the corrected day-by-day schedule.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Ask the Wynn to confirm the corrected day-by-day schedule.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-04",
+   "severity": "medium",
+   "item": "MGM Grand tournament PDF is titled 'August' with no year",
+   "where": "",
+   "detail": "The weekly grid repeats consistently and matches the poker room page times (11:10 AM / 7:10 PM / 11:10 PM), but the document header is 'August Tournament Schedule' with no year, so the grid cannot be dated. Next step: Ask MGM Grand for a dated version of the PDF.",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Ask MGM Grand for a dated version of the PDF.",
+   "sources": [
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-05",
+   "severity": "medium",
+   "item": "Two official Westgate pages quote different resort fees",
+   "where": "",
+   "detail": "The terms page says $49.99 plus tax per night; the resort-fee FAQ says $49.99 in its body but $36.99 in its structured answer. Next step: Get a booking-cart total to settle which is charged.",
+   "url": "https://www.westgateresorts.com/terms-and-conditions/",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Get a booking-cart total to settle which is charged.",
+   "sources": [
+    "https://www.westgateresorts.com/terms-and-conditions/",
+    "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-06",
+   "severity": "medium",
+   "item": "Caesars Palace resort fee published only as a range",
+   "where": "",
+   "detail": "Caesars' corporate disclaimer gives a $45-$50 plus tax daily range and says fees are waived for Diamond and Seven Stars; no single figure is entered. Next step: Capture a booking-cart total for specific dates.",
+   "url": "https://www.caesars.com/corporate/disclaimer",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Capture a booking-cart total for specific dates.",
+   "sources": [
+    "https://www.caesars.com/corporate/disclaimer"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-07",
+   "severity": "high",
+   "item": "No dated room rate and no walking time could be verified",
+   "where": "",
+   "detail": "Every official booking engine renders prices as '$XXX' to a non-browser fetch, and no routing service was reachable, so the trip-cost and 30-minute-walk calculations remain unapplied rather than assumed. Official addresses are published for the walk check. Next step: Run a browser session for each booking page and each hotel-to-venue pair, logging a dated row per attempt.",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Run a browser session for each booking page and each hotel-to-venue pair, logging a dated row per attempt.",
+   "sources": [
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-08",
+   "severity": "low",
+   "item": "ARIA publishes no tournament schedule",
+   "where": "",
+   "detail": "ARIA's official poker page describes 24 tables and points to its social account; no schedule or structures are published. Next step: Call 702-590-7232 if ARIA events matter.",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Call 702-590-7232 if ARIA events matter.",
+   "sources": [
+    "https://aria.mgmresorts.com/en/casino/poker.html"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-09",
+   "severity": "low",
+   "item": "Venetian series-overview label is stale",
+   "where": "",
+   "detail": "The DeepStack overview page still names the WPT Fall Festival as the current series while DSE IV is live. Next step: Re-check the overview page before relying on any series-level statement from it.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Re-check the overview page before relying on any series-level statement from it.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+   ],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "id": "IR-E1C-10",
+   "severity": "low",
+   "item": "Treasure Island resort fee unverified",
+   "where": "",
+   "detail": "Only third-party pages state a TI resort fee ($49.95 plus tax); no official TI page could be reached in this pass, so the field stays blank. Next step: Open treasureisland.com terms in a browser and log the fee.",
+   "url": "",
+   "source": "arena/e1c079dc-poker2, 2026-11-16",
+   "action": "Open treasureisland.com terms in a browser and log the fee.",
+   "sources": [],
+   "session": "arena/e1c079dc-poker2",
+   "retrieved": "2026-11-16"
   }
  ],
  "summary": {
@@ -6609,9 +7262,9 @@
   "scope": "Covered: The Venetian (DeepStack Extravaganza IV, official schedule rows Nov 16 \u2013 Dec 23, 2026) and Wynn Las Vegas (daily tournaments and WPT World Championship, Nov 27 \u2013 Dec 21, 2026). Not covered: other Strip rooms. Every value is from an official source or is marked UNVERIFIED.",
   "headline_numbers": [
    {
-    "label": "Verified single-entry events (The Venetian)",
-    "value": "32",
-    "note": "One-day events from Nov 18 \u2013 Dec 23, 2026. Structure sheets checked for re-entry, rebuy and add-on."
+    "label": "Structure sheet silent on re-entry (The Venetian)",
+    "value": "45",
+    "note": "One-day events Nov 18 - Dec 23, 2026 whose official structure sheet was read in full and prints no re-entry, rebuy or add-on clause. Silence is NOT a published freezeout rule: no Venetian sheet states \"no re-entry\", so these are sheet-silent, not confirmed single-entry."
    },
    {
     "label": "Excluded rows",
@@ -6624,9 +7277,9 @@
     "note": "Official schedule values only; re-entry status unknown."
    },
    {
-    "label": "Verified single-entry events at Wynn",
+    "label": "Structure sheet silent on re-entry at Wynn",
     "value": "0",
-    "note": "All Wynn daily events allow re-entry or add-ons. WPT rows are unverified or excluded."
+    "note": "Every Wynn structure sheet read prints an explicit re-entry clause, so none is even sheet-silent."
    },
    {
     "label": "Earliest verified single-entry start",
@@ -7074,6 +7727,262 @@
    "url": "https://github.com/karagemop466-tech/Poker2",
    "publisher": "this repo",
    "type": "log"
+  },
+  "cc_bl_guide_e1c": {
+   "label": "Clark County Dept. of Business License: transient lodging guide (13.38% rate)",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "publisher": "Clark County, Nevada (official)",
+   "type": "official"
+  },
+  "session_updates_e1c": {
+   "label": "Session arena/e1c079dc-poker2 official reads",
+   "url": "https://github.com/karagemop466-tech/Poker2",
+   "publisher": "this repo",
+   "type": "log"
   }
+ },
+ "county_room_tax": {
+  "value": 0.1338,
+  "text": "13.38%",
+  "excerpt": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments: licensed hotel/motel (HOT) accounts show '13.38%' as the transient lodging tax rate. The county's combined transient lodging tax return breaks the same burden into an 8.5% county component and a 4.5% county component.",
+  "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+  "secondary_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf",
+  "corroboration": "The Cosmopolitan's official reservation terms state 'Nightly rates do not include 13.38% room tax' and the Venetian's hotel terms state 'Clark County Room Tax of 13.38%'.",
+  "retrieved": "2026-11-16",
+  "note": "Previously the 13.38% figure rested only on hotel terms with no county source. This is the county's own document."
+ },
+ "wynn_wpt_fee_splits": [
+  {
+   "event": "$600 No Limit Hold'em $400K GTD (Day 1A-1F)",
+   "buy_in": 600,
+   "split": "$510 prize pool + $65 house fee + $25 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $510 + $65 + $25.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$800 No Limit Hold'em $1M GTD (Day 1A-1F)",
+   "buy_in": 800,
+   "split": "$695 prize pool + $72 house fee + $33 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $695 + $72 + $33.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,600 No Limit Hold'em $1M GTD (Day 1A-1B)",
+   "buy_in": 1600,
+   "split": "$1,430 prize pool + $120 house fee + $50 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $1,430 + $120 + $50.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,100 WPT Prime Championship $5M GTD (Day 1A-1D)",
+   "buy_in": 1100,
+   "split": "$970 prize pool + $90 house fee + $40 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $970 + $90 + $40.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$1,600 PLO Mystery Bounty $500K GTD",
+   "buy_in": 1600,
+   "split": "$930 prize pool + $500 mystery bounty + $120 house fee + $50 staff gratuity",
+   "excerpt": "The structures PDF prints the buy-in split as $930 + $500 bounty + $120 + $50.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  }
+ ],
+ "wynn_event_terms": [
+  {
+   "event": "$600 Turbo (NLH $50K GTD)",
+   "dates": "Dec 5, 6, 7, 8, 9, 12 and 14 at 9:00 PM; Dec 21 at 6:00 PM",
+   "chips": 30000,
+   "level_min": 20,
+   "re_entry": "Unlimited re-entry until the start of level 9.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$600 TORSE / $600 Mixed Triple Draw / $600 Limit Omaha 8 / $600 Limit Omaha 8-Stud 8 / $600 HORSE",
+   "chips": 35000,
+   "level_min": null,
+   "re_entry": "Unlimited re-entry until the start of level 9 (structure sheet).",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  },
+  {
+   "event": "$400 Pot Limit Omaha / $1,100 Pot Limit Omaha",
+   "chips": 30000,
+   "re_entry": "Unlimited re-entry until the start of level 9 (structure sheet).",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "retrieved": "2026-11-16"
+  }
+ ],
+ "wynn_unstructured_events": [
+  {
+   "event": "WPT World Championship $10,400",
+   "dates": "Dec 13-20, 2026",
+   "note": "Day 1A-1C Dec 13-15 11:00 AM; Day 2 Dec 16; late registration open until the start of Day 2; 100,000 chips, 60/90-minute levels (official schedule). No structure sheet for this event appears in the official WPT structures PDF, which covers 13 other events, so entry rules, chips and fee split stay unverified.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "$400 Super Gold Million Mystery Bounty $3M GTD",
+   "dates": "Dec 10-14, 2026",
+   "note": "Day 1A-1D Dec 10-12, 30,000 chips. No structure sheet in the WPT structures PDF. The schedule also jumps from 'Day 1A-D' to 'Day 3' with no Day 2 row.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "$1,600 PLO $1M GTD",
+   "dates": "Dec 13-15, 2026",
+   "note": "Multi-flight; no structure sheet published.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "$800 NLH $500K GTD",
+   "dates": "Dec 13-15, 2026",
+   "note": "Multi-flight; no structure sheet published.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "$3,000 NLH $2M GTD",
+   "dates": "Dec 17-18, 2026",
+   "note": "Multi-flight; no structure sheet published.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "$1,600 NLH Mystery Bounty $1M GTD",
+   "dates": "Dec 19-21, 2026",
+   "note": "Multi-flight; no structure sheet published.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  {
+   "event": "Ladies NLH Championship $1,100 ($250K GTD) and Seniors NLH Championship $1,100 ($500K GTD)",
+   "dates": "Dec 13-14 and Dec 17-19, 2026",
+   "note": "Ladies event is $1,100 of an $11,100 headline with a ladies discount (schedule footnote). No structure sheets published for either.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  }
+ ],
+ "bellagio_sunday_horse": {
+  "name": "$400 H.O.R.S.E. (Sundays 11:00 AM)",
+  "buy_in": 400,
+  "split": "$340 prize pool + $35 house fee + $25 voluntary staff gratuity",
+  "chips": 30000,
+  "level_min": 30,
+  "re_entry": "Players may buy-in and re-enter through the end of level 8 (including the break).",
+  "add_on": "A voluntary $25 staff gratuity at registration grants an additional 15,000 starting chips.",
+  "excerpt": "Rule 01: 'The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.' Rule 05: 'Players may buy-in and re-enter through the end of level 8 (Including Break).'",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+  "retrieved": "2026-11-16",
+  "verdict": "excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity."
+ },
+ "bellagio_saturday_warning": {
+  "name": "Saturday No Limit Hold'em",
+  "verdict": "unverified",
+  "why": "The official Saturday PDF contradicts itself: a '$1,100 BUY-IN' heading, a '$1,000 NLH' label on the poker page's link, and rule text quoting a $600 buy-in with $510/$50/$40 splits, plus a combined Day 2 dated 9/13/26. No value from this sheet is used.",
+  "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "retrieved": "2026-11-16"
+ },
+ "mgm_grand_daily_structure": {
+  "structure": {
+   "buy_in": 120,
+   "split": "$92 prize pool + $13 house fee + $11 voluntary gratuity + $4 tournament promotions",
+   "chips": 25000,
+   "level_min": 15,
+   "late_reg": "Registration is open until level 8",
+   "excerpt": "Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a once-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf",
+   "retrieved": "2026-11-16"
+  },
+  "verdict": "excluded from the single-entry ranking: the optional $11 gratuity buys 10,000 extra chips, a pay-for-advantage mechanic.",
+  "schedule_warning": "The linked weekly grid is titled 'MGM Grand August Tournament Schedule' and states no year; Monday-Friday 11:10 AM $120, Saturday 11:10 AM $150 with a $2,000 guarantee, 7:10 PM and 11:10 PM $120 daily."
+ },
+ "horseshoe_daily_times": {
+  "times": [
+   "9:00 AM",
+   "11:00 AM",
+   "2:00 PM",
+   "5:00 PM",
+   "8:00 PM",
+   "11:00 PM"
+  ],
+  "excerpt": "Caesars' official article: 'At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold'em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. ... A mixture of buy-ins, levels and guarantees...'",
+  "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+  "retrieved": "2026-11-16",
+  "note": "Only the six start times are officially published. No buy-in, guarantee, structure or entry-rule document was located, so those fields stay blank."
+ },
+ "westgate_room": {
+  "hours": "Poker room opens Mon-Fri 12:00 PM, Sat-Sun 10:00 AM; 7 tables, 9-handed",
+  "phone": "(702) 732-5223",
+  "tournaments": "The official page publishes no tournament times, buy-ins or structures.",
+  "third_party_slate_not_used": "$55-$70 daily events appear on third-party trackers only and are not used.",
+  "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/",
+  "retrieved": "2026-11-16"
+ },
+ "south_point": {
+  "slate": "Four daily tournaments at 10:10 AM, 2:10 PM, 6:10 PM and 10:10 PM with $120 and $300 buy-ins; 30-table 24-hour room.",
+  "not_published": "Which time carries which buy-in, guarantees, chips, level lengths and entry rules are not published on the page we could reach.",
+  "walk_rule": "9777 S Las Vegas Blvd is about 8 miles south of the Strip, so it cannot satisfy a 30-minute walk pairing with a Strip hotel.",
+  "url": "https://southpointcasino.com/casino/poker-room",
+  "retrieved": "2026-11-16"
+ },
+ "aria": {
+  "status": "no schedule published",
+  "excerpt": "ARIA's official poker page describes a 24-table room and directs players to its social account; it publishes no tournament schedule or structures.",
+  "phone": "702-590-7232",
+  "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+  "retrieved": "2026-11-16"
+ },
+ "westgate_resort_fee_conflict": {
+  "value_used": 49.99,
+  "conflict": "The Westgate terms page states a '$49.99 +tax' nightly resort fee for Westgate Las Vegas; the property's resort-fee FAQ page says $49.99 in its body text but $36.99 in its embedded structured answer.",
+  "url": "https://www.westgateresorts.com/terms-and-conditions/",
+  "secondary_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+  "retrieved": "2026-11-16"
+ },
+ "caesars_resort_fee_range": {
+  "text": "$45-$50 plus applicable tax",
+  "excerpt": "Caesars corporate disclaimer: 'Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.'",
+  "url": "https://www.caesars.com/corporate/disclaimer",
+  "retrieved": "2026-11-16",
+  "note": "Only a range is published, so no single Caesars Palace fee value is entered."
+ },
+ "walking_check": {
+  "status": "not verified",
+  "why": "No official hotel or poker-room page publishes a walking time between properties, and no routing service could be queried from the build environment. Every walk field stays blank and the 30-minute rule is recorded as unapplied rather than assumed.",
+  "addresses_published": {
+   "The Venetian": "3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "The Palazzo": "3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Wynn Las Vegas": "3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Bellagio": "3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "The Cosmopolitan": "3708 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "ARIA": "3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Caesars Palace": "3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Horseshoe Las Vegas": "3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "MGM Grand": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "Westgate Las Vegas": "3000 Paradise Rd, Las Vegas, NV 89109",
+   "South Point": "9777 S. Las Vegas Blvd, Las Vegas, NV 89183"
+  }
+ },
+ "rate_log_e1c": {
+  "status": "no dated quote captured",
+  "attempts": [
+   {
+    "hotel": "The Venetian",
+    "check_in": "2026-11-27",
+    "check_out": "2026-12-02",
+    "occupancy": 2,
+    "result": "The official booking calendar rendered every nightly price as '$XXX' to a non-browser fetch, so no dated rate could be read.",
+    "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar",
+    "logged": "2026-11-16"
+   }
+  ],
+  "method": "Each attempt is appended with its dates, occupancy, what blocked it and a timestamp; a quote is only entered with check-in, check-out, occupancy, room type, nightly rate, resort fee, tax, parking, cancellation deadline and checkout total."
+ },
+ "venetian_series_label": {
+  "status": "stale official label",
+  "excerpt": "The DeepStack overview page still labels the 'Current Series' as the WPT Fall Festival while the DSE IV event page and schedule PDF (Nov 16 - Dec 23, 2026) are live.",
+  "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+  "retrieved": "2026-11-16"
  }
 }

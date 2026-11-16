@@ -12,7 +12,7 @@
    "2026-11-29"
   ],
   "nights": 7,
-  "rule": "Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most confirmed single-entry events open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: 13 open-to-all entries (13 incl. gated)."
+  "rule": "Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most sheet-silent single-entry candidates open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: 13 open-to-all entries (13 incl. gated)."
  },
  "budget_quality_floor": {
   "nightly_true_cost_target_usd": 250,
@@ -79,7 +79,7 @@
    },
    "extra": [],
    "overlap_flags": [
-    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+    "Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
    ]
   },
   {
@@ -101,7 +101,7 @@
    },
    "extra": [],
    "overlap_flags": [
-    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+    "Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
    ]
   },
   {
@@ -123,7 +123,7 @@
    },
    "extra": [],
    "overlap_flags": [
-    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+    "Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
    ]
   },
   {
@@ -145,7 +145,7 @@
    },
    "extra": [],
    "overlap_flags": [
-    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+    "Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
    ]
   },
   {
@@ -167,9 +167,9 @@
    },
    "extra": [],
    "overlap_flags": [
-    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+    "Two candidate events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
    ]
   }
  ],
- "overlap_method": "For each day: the confirmed single-entry event with the earliest start is the primary. The evening event is listed as a conditional fallback (playable only if the player exits the earlier event). A 1-Day event at the Venetian runs to a winner (typically 10\u201314 hours from start; sheets list 28 levels) so the same-day evening event cannot be scheduled back-to-back \u2014 it is a fallback, not a second seat time. Durations are estimates from level counts on the official sheets, not published finish times (flagged)."
+ "overlap_method": "For each day: the sheet-silent candidate with the earliest start is the primary. The evening event is listed as a conditional fallback (playable only if the player exits the earlier event). A 1-Day event at the Venetian runs to a winner (typically 10\u201314 hours from start; sheets list 28 levels) so the same-day evening event cannot be scheduled back-to-back \u2014 it is a fallback, not a second seat time. Durations are estimates from level counts on the official sheets, not published finish times (flagged)."
 }

@@ -6,7 +6,7 @@
    "id": "Q01",
    "question": "Which tournaments are confirmed single-entry freezeouts (no re-entry, rebuy or add-on)?",
    "status": "Answered for Venetian DSE IV",
-   "answer": "46 Venetian events are confirmed after reading every official structure sheet (1\u201337) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous 'subsequent buy in's' wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).",
+   "answer": "46 Venetian events are sheet-silent single-entry candidates after reading every official structure sheet (explicit confirmation outstanding) (1\u201337) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous 'subsequent buy in's' wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).",
    "how_to_find": "Remaining work: ask the Wynn poker room for written entry terms on the 33 unverified WPT rows; ask the Venetian whether Events 18/58 permit subsequent buy-ins.",
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -17,7 +17,7 @@
    "id": "Q02",
    "question": "Can a player start play at 8:00 AM with confirmed single-entry events?",
    "status": "Answered (no)",
-   "answer": "No verified event starts at 8:00 AM anywhere in the dataset. Earliest confirmed single-entry starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).",
+   "answer": "No listed event starts at 8:00 AM anywhere in the dataset. Earliest candidate starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).",
    "how_to_find": "Check other rooms' official daily schedules (Palms, South Point, Orleans, Golden Nugget) for earlier starts.",
    "sources": [
     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"

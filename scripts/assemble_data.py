@@ -58,7 +58,7 @@ def rules_from_sheet(sheet_id, fee_text, extra=None, silent_note=True):
     """Standard structured rule fields from a Venetian sheet read in full."""
     base = {
         "single_entry": {
-            "value": "freezeout (no re-entry / rebuy / add-on clause on official sheet)",
+            "value": "sheet silent — no re-entry / re-buy / add-on clause (single-entry NOT explicitly confirmed)",
             "excerpt": (extra or {}).get("single_excerpt", "Sheet contains no re-entry, re-buy or add-on clause. " + fee_text),
             "source": sheet_id, "retrieved": RETRIEVED},
         "re_entry": {"value": "not offered (no clause found)", "excerpt": "No re-entry language appears anywhere on the sheet.", "source": sheet_id, "retrieved": RETRIEVED},
@@ -106,7 +106,7 @@ for eid, date, day, name in [
        buy_in=200, house_fee=40, prize_pool=160, gtd=8000, gtd_includes_bounties=True,
        bounty_note="$50 bounty per elimination (sheet note 09)", chips=25000, level_min=30,
        late_reg="8 levels + break (9:40 PM)", eligibility="21+ with Venetian Rewards card",
-       classification="single_entry_confirmed", struct_sheet=1,
+       classification="sheet_silent", struct_sheet=1,
        rules=rules_from_sheet("V_S1", S1_FEE),
        note="Guarantee is prize pool + total bounties (sheet note 10). Pays 12.5% of field.",
        sources=["V_PAGE", "V_SCHED", "V_S1"])
@@ -118,7 +118,7 @@ for eid, date, day in [("V-E02", "2026-11-18", "Wed"), ("V-E12", "2026-11-26", "
        event_no=eid.split("E")[-1].lstrip("0"), name="$300 No Limit Hold'em $10K GTD (1Day)", game="NLH", format="freezeout",
        buy_in=300, house_fee=58, prize_pool=242, gtd=10000, gtd_includes_bounties=False,
        chips=40000, level_min=30, late_reg="10 levels + break (~4:55 PM)",
-       eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=5,
+       eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=5,
        rules=rules_from_sheet("V_S5", S5_FEE),
        note="Sheet 5 covers Event Numbers 02 and 12. Pays 12.5% of field.",
        sources=["V_PAGE", "V_SCHED", "V_S5"])
@@ -128,7 +128,7 @@ ev(id="V-E10", venue="The Venetian", series="DSE IV", date="2026-11-25", day="We
    event_no="10", name="$400 No Limit Hold'em $15K GTD (1Day)", game="NLH", format="freezeout",
    buy_in=400, house_fee=65, prize_pool=335, gtd=15000, gtd_includes_bounties=False,
    chips=40000, level_min=30, late_reg="10 levels + break (~4:55 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=6,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=6,
    rules=rules_from_sheet("V_S6", "$65 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $335 of every $400 Buy In."),
    note="Pays 12.5% of field.", sources=["V_PAGE", "V_SCHED", "V_S6"])
 
@@ -139,7 +139,7 @@ for eid, date, day, gtd in [("V-E14", "2026-11-27", "Fri", 30000), ("V-E28", "20
        event_no=eid.split("E")[-1].lstrip("0"), name=f"$600 No Limit Hold'em ${gtd//1000}K GTD (1Day)", game="NLH", format="freezeout",
        buy_in=600, house_fee=90, prize_pool=510, gtd=gtd, gtd_includes_bounties=False,
        chips=40000, level_min=30, late_reg="10 levels + break (~4:55 PM)",
-       eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=7,
+       eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=7,
        rules=rules_from_sheet("V_S7", S7_FEE),
        note="Sheet 7 covers Event Numbers 14, 28 and 63 (guarantees $30K/$40K/$30K).",
        sources=["V_PAGE", "V_SCHED", "V_S7"])
@@ -152,7 +152,7 @@ for eid, date, day, gtd in [("V-E16", "2026-11-28", "Sat", 30000), ("V-E30", "20
        buy_in=600, house_fee=90, prize_pool=510, gtd=gtd, gtd_includes_bounties=True,
        bounty_note="$200 bounty per elimination; $500 per elimination after the money (sheet note 07)",
        chips=40000, level_min=30, late_reg="10 levels + break (4:55 PM)",
-       eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=11,
+       eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=11,
        rules=rules_from_sheet("V_S11", S11_FEE),
        note="Guarantee is prize pool + total bounties. Sheet 11 covers Events 16, 30, 54.",
        sources=["V_PAGE", "V_SCHED", "V_S11"])
@@ -167,7 +167,7 @@ for eid, date, day in [("V-E29", "2026-12-06", "Sun"), ("V-E31", "2026-12-07", "
        buy_in=300, house_fee=50, prize_pool=250, gtd=15000, gtd_includes_bounties=True,
        bounty_note="$100 bounty per elimination (sheet note 09)", chips=25000, level_min=30,
        late_reg="8 levels + break (9:40 PM)", eligibility="21+ with Venetian Rewards card",
-       classification="single_entry_confirmed", struct_sheet=15,
+       classification="sheet_silent", struct_sheet=15,
        rules=rules_from_sheet("V_S15", S15_FEE),
        note="Guarantee is prize pool + total bounties. Sheet 15 covers Events 29–55 listed above.",
        sources=["V_PAGE", "V_SCHED", "V_S15"])
@@ -178,7 +178,7 @@ ev(id="V-E36", venue="The Venetian", series="DSE IV", date="2026-12-09", day="We
    buy_in=800, house_fee=100, prize_pool=700, gtd=75000, gtd_includes_bounties=True,
    bounty_note="$200 bounty per elimination; $500 per elimination after the money (sheet note 07)",
    chips=40000, level_min=30, late_reg="10 levels + break (4:55 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=16,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=16,
    rules=rules_from_sheet("V_S16", "$100 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $700 of every $800 Buy In."),
    note="Guarantee is prize pool + total bounties.", sources=["V_PAGE", "V_SCHED", "V_S16"])
 
@@ -188,7 +188,7 @@ ev(id="V-E52", venue="The Venetian", series="DSE IV", date="2026-12-15", day="Tu
    buy_in=1100, house_fee=130, prize_pool=970, gtd=75000, gtd_includes_bounties=True,
    bounty_note="PKO: players start as a $200 bounty; half the eliminated bounty is kept, half is added to the eliminator's bounty (sheet note 09)",
    chips=40000, level_min=30, late_reg="10 levels + break (4:55 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=34,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=34,
    rules=rules_from_sheet("V_S34", "$130 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $970 of every $1,100 Buy In."),
    note="Guarantee is prize pool + total bounty prize money (sheet note 10).",
    sources=["V_PAGE", "V_SCHED", "V_S34"])
@@ -202,7 +202,7 @@ for eid, date, day in [("V-E03", "2026-11-19", "Thu"), ("V-E04", "2026-11-20", "
        event_no=eid.split("E")[-1].lstrip("0"), name="$200 NLH RaceDay Stack (1Day)", game="NLH", format="freezeout",
        buy_in=200, house_fee=35, prize_pool=165, gtd=None, gtd_includes_bounties=False,
        chips=30000, level_min=20, late_reg="6 levels + break (~12:25 PM)",
-       eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=18,
+       eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=18,
        rules=rules_from_sheet("V_S18", S18_FEE),
        note="No guarantee printed on sheet or schedule. 20-min levels then 15-min. Pay jump: 12.5%.",
        sources=["V_PAGE", "V_SCHED", "V_S18"])
@@ -212,7 +212,7 @@ ev(id="V-E06", venue="The Venetian", series="DSE IV", date="2026-11-22", day="Su
    event_no="06", name="$200 No Limit Hold'em (1Day)", game="NLH", format="freezeout",
    buy_in=200, house_fee=40, prize_pool=160, gtd=None, gtd_includes_bounties=False,
    chips=30000, level_min=30, late_reg="8 levels + break (~3:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=29,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=29,
    rules=rules_from_sheet("V_S29", S1_FEE),
    note="No guarantee printed on sheet or schedule.", sources=["V_PAGE", "V_SCHED", "V_S29"])
 
@@ -222,7 +222,7 @@ ev(id="V-E08", venue="The Venetian", series="DSE IV", date="2026-11-23", day="Mo
    buy_in=200, house_fee=40, prize_pool=160, gtd=8000, gtd_includes_bounties=True,
    bounty_note="PKO: players start as a $50 bounty (sheet note 09)", chips=25000, level_min=30,
    late_reg="8 levels + break (9:40 PM)", eligibility="21+ with Venetian Rewards card",
-   classification="single_entry_confirmed", struct_sheet=30,
+   classification="sheet_silent", struct_sheet=30,
    rules=rules_from_sheet("V_S30", S1_FEE),
    note="Guarantee is prize pool + total bounty prize money (sheet note 10).",
    sources=["V_PAGE", "V_SCHED", "V_S30"])
@@ -235,7 +235,7 @@ for eid, date, day in [("V-E24", "2026-12-02", "Wed"), ("V-E32", "2026-12-08", "
        buy_in=600, house_fee=90, prize_pool=510, gtd=40000, gtd_includes_bounties=False,
        chips=40000, level_min=30, late_reg="10 levels + break (~3:55 PM)",
        eligibility="Must be 50+ years of age (sheet note 02; under-50 buyers forfeit prize money and buy-in)",
-       classification="single_entry_confirmed", struct_sheet=17,
+       classification="sheet_silent", struct_sheet=17,
        rules=rules_from_sheet("V_S17", S17_FEE),
        note="Age-gated 50+.", sources=["V_PAGE", "V_SCHED", "V_S17"])
 
@@ -245,7 +245,7 @@ ev(id="V-E17", venue="The Venetian", series="DSE IV", date="2026-11-28", day="Sa
    buy_in=400, house_fee=60, prize_pool=340, gtd=15000, gtd_includes_bounties=True,
    bounty_note="$100 bounty per elimination (sheet note 08); winner keeps own bounty",
    chips=30000, level_min=30, late_reg="8 levels + break (~4:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=26,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=26,
    rules=rules_from_sheet("V_S26", "$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In."),
    note="Guarantee is prize pool + total bounties (sheet note 10). Plays 8-handed.",
    sources=["V_PAGE", "V_SCHED", "V_S26"])
@@ -274,7 +274,7 @@ ev(id="V-E20", venue="The Venetian", series="DSE IV", date="2026-11-29", day="Su
    event_no="20", name="$300 Pot Limit Omaha $10K GTD (1Day) — Double Board Bomb Pot", game="PLO", format="freezeout",
    buy_in=300, house_fee=58, prize_pool=242, gtd=10000, gtd_includes_bounties=False,
    chips=30000, level_min=30, late_reg="8 levels + break (~4:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=22,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=22,
    rules=rules_from_sheet("V_S22", "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In."),
    note="Double-board bomb-pot PLO; plays 8-handed; pays 12.5%.",
    sources=["V_PAGE", "V_SCHED", "V_S22"])
@@ -284,7 +284,7 @@ ev(id="V-E27", venue="The Venetian", series="DSE IV", date="2026-12-03", day="Th
    event_no="27", name="$600 BIG O $25K GTD (1Day)", game="BIG O", format="freezeout",
    buy_in=600, house_fee=90, prize_pool=510, gtd=25000, gtd_includes_bounties=False,
    chips=30000, level_min=30, late_reg="8 levels + break (~4:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=28,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=28,
    rules=rules_from_sheet("V_S28", S7_FEE),
    note="5-card PLO8 (BIG O). Plays 8-handed; pays 12.5%.", sources=["V_PAGE", "V_SCHED", "V_S28"])
 
@@ -294,7 +294,7 @@ ev(id="V-E40", venue="The Venetian", series="DSE IV", date="2026-12-10", day="Th
    buy_in=600, house_fee=90, prize_pool=510, gtd=25000, gtd_includes_bounties=True,
    bounty_note="$200 bounty per elimination (sheet note 08); winner keeps own bounty",
    chips=30000, level_min=30, late_reg="8 levels + break (~4:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=27,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=27,
    rules=rules_from_sheet("V_S27", S7_FEE),
    note="Guarantee is prize pool + total bounties (sheet note 10). Plays 8-handed.",
    sources=["V_PAGE", "V_SCHED", "V_S27"])
@@ -304,7 +304,7 @@ ev(id="V-E57", venue="The Venetian", series="DSE IV", date="2026-12-17", day="Th
    event_no="57", name="$600 Pot Limit Omaha $25K GTD (1Day) — Double Board Bomb Pot", game="PLO", format="freezeout",
    buy_in=600, house_fee=90, prize_pool=510, gtd=25000, gtd_includes_bounties=False,
    chips=30000, level_min=30, late_reg="8 levels + break (~4:40 PM)",
-   eligibility="21+ with Venetian Rewards card", classification="single_entry_confirmed", struct_sheet=23,
+   eligibility="21+ with Venetian Rewards card", classification="sheet_silent", struct_sheet=23,
    rules=rules_from_sheet("V_S23", S7_FEE),
    note="Double-board bomb-pot PLO; plays 8-handed; pays 12.5%.",
    sources=["V_PAGE", "V_SCHED", "V_S23"])
@@ -317,7 +317,7 @@ ev(id="V-E43", venue="The Venetian", series="DSE IV", date="2026-12-11", day="Fr
    bounty_note="$200 bounty per elimination (sheet note 07); winner keeps own bounty",
    chips=40000, level_min=30, late_reg="10 levels + break (4:55 PM)",
    eligibility="Open to all players 21+ (trophy to last King and last Queen standing)",
-   classification="single_entry_confirmed", struct_sheet=33,
+   classification="sheet_silent", struct_sheet=33,
    rules=rules_from_sheet("V_S33", "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In."),
    note="Guarantee is prize pool + total bounties.", sources=["V_PAGE", "V_SCHED", "V_S33"])
 
@@ -328,7 +328,7 @@ ev(id="V-E39", venue="The Venetian", series="DSE IV", date="2026-12-10", day="Th
    gtd=40000, gtd_includes_bounties=False,
    chips=40000, level_min=40, late_reg="9 levels + break (~4:55 PM)",
    eligibility="Female players 21+ only (sheet note 02)",
-   classification="single_entry_confirmed", struct_sheet=32,
+   classification="sheet_silent", struct_sheet=32,
    rules=rules_from_sheet("V_S32", "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In."),
    note="TWO-DAY: Day 2 resumes Dec 11 at 10:00 AM, streamed final table by PokerGO ~7:00 PM (sheet note 03). Playing Day 2 commits most of Dec 11.",
    days=["2026-12-10", "2026-12-11"], sources=["V_PAGE", "V_SCHED", "V_S32"])
@@ -609,7 +609,7 @@ ev(id="M-MGM-SAT", venue="MGM Grand", series="Weekly (recurring)", date="Saturda
 
 events = {
   "as_of": RETRIEVED,
-  "verification_method": "Every Venetian structure sheet (1-37) and the complete Wynn WPT structures PDF (8 chunks) were read in full on 2026-11-16. Classification: 'single_entry_confirmed' = official sheet read in full, no re-entry/rebuy/add-on clause; 'flagged_ambiguous' = sheet read but wording leaves entry count unsettled; 'excluded' = re-entry/rebuy/add-on/multi-flight/satellite/team/spend-more confirmed or event type not a cash freezeout; 'unverified' = entry terms not published in the sources read. Values are copied from official sources only; null = not stated on the source.",
+  "verification_method": "Every Venetian structure sheet (1-37) and the complete Wynn WPT structures PDF (8 chunks) were read in full on 2026-11-16. Classification (strict; sheet silence is never labelled 'confirmed'): 'sheet_silent' = official sheet read in full, no re-entry/rebuy/add-on clause anywhere — a candidate, NOT an explicit single-entry confirmation (terminology follows arena/e1c079dc-poker2's correction on main); 'flagged_ambiguous' = sheet read but wording leaves entry count unsettled; 'excluded' = re-entry/rebuy/add-on/multi-flight/satellite/team/spend-more confirmed or event type not a cash freezeout; 'unverified' = entry terms not published in the sources read. Values are copied from official sources only; null = not stated on the source.",
   "events": E,
 }
 with open(os.path.join(OUT, "events-f0816fab.json"), "w") as f:

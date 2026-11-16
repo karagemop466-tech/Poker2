@@ -4,9 +4,9 @@
  "scope": "Venetian DSE IV (Nov 16 \u2013 Dec 23, 2026), Wynn WPT World Championship (Nov 27 \u2013 Dec 21, 2026) and Wynn/Caesars/MGM recurring dailies. Every Venetian structure sheet (1\u201337) and the full WPT structures document were read first-hand on 2026-11-16. Values appear only where an official source states them.",
  "headline": [
   {
-   "label": "Confirmed single-entry events (Venetian DSE IV)",
+   "label": "Sheet-silent single-entry candidates (Venetian DSE IV)",
    "value": "46",
-   "note": "Structure sheets read in full; no re-entry/rebuy/add-on clauses. Includes 3 bounty types and 1 PKO, labeled separately."
+   "note": "Structure sheets read in full; no re-entry/rebuy/add-on clauses anywhere on the sheet \u2014 candidates under the strict standard (explicit single-entry confirmation outstanding). Includes 3 bounty types and 1 PKO, labeled separately."
   },
   {
    "label": "Flagged (ambiguous entry wording)",
@@ -26,7 +26,7 @@
   {
    "label": "Recommended trip window",
    "value": "fixed by rule \u2014 see trip plan",
-   "note": "The consecutive 7-night window with the most confirmed single-entry events open to all players (ties \u2192 earliest). Age/gender-gated events shown separately."
+   "note": "The consecutive 7-night window with the most sheet-silent single-entry candidates open to all players (ties \u2192 earliest). Age/gender-gated events shown separately."
   },
   {
    "label": "Earliest verified start",
@@ -52,7 +52,7 @@
  "findings": [
   {
    "title": "Single-entry confirmation is now sheet-level",
-   "text": "All 37 Venetian DSE IV structure sheets were read in full. 46 one-day (plus one two-day) events contain no re-entry, re-buy or add-on clause and are confirmed under the site's documented standard. The two Valuetown events are held back on their 'subsequent buy in's' wording."
+   "text": "All 37 Venetian DSE IV structure sheets were read in full. 46 one-day (plus one two-day) events contain no re-entry, re-buy or add-on clause anywhere on the sheet. Under the strict standard adopted on main (arena/e1c079dc-poker2: sheet silence is not confirmation) these are single-entry CANDIDATES \u2014 the sheets' one-buy-in accounting supports it, but written single-entry confirmation from the poker room is still outstanding. The two Valuetown events are held back on their 'subsequent buy in's' wording."
   },
   {
    "title": "Wynn WPT is a re-entry series",
@@ -60,7 +60,7 @@
   },
   {
    "title": "Value ranking (descriptive ratio)",
-   "text": "Ranked by guarantee \u00f7 buy-in among confirmed events with a printed guarantee: Event 36 $800 bounty $75K (93.75\u00d7), Event 54 $600 bounty $50K (83.33\u00d7), Event 52 $1,100 PKO $75K (68.18\u00d7). Bounty guarantees include bounty money \u2014 read the ratio as description, not EV."
+   "text": "Ranked by guarantee \u00f7 buy-in among sheet-silent candidates with a printed guarantee: Event 36 $800 bounty $75K (93.75\u00d7), Event 54 $600 bounty $50K (83.33\u00d7), Event 52 $1,100 PKO $75K (68.18\u00d7). Bounty guarantees include bounty money \u2014 read the ratio as description, not EV."
   },
   {
    "title": "Plan one seat per day, evenings conditional",
