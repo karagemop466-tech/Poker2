@@ -105,7 +105,7 @@ Task log (this session):
 
 | Task | Status | Owner | File scope |
 | --- | --- | --- | --- |
-| Research and verify official tournament/hotel information; build the decision-support site; test and publish via GitHub Pages | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `index.html`, `assets/`, `data/`, `pages/`, `.github/workflows/` |
+| Research and verify official tournament/hotel information; build the decision-support site; test and publish via GitHub Pages | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `site/`, `.github/workflows/` |
 
 ## Completion log
 
@@ -113,7 +113,14 @@ _No tasks completed yet._
 
 ## Sources and verification log
 
-_To be recorded after official-source checks and build/deploy verification._
+Snapshot date: **2026-11-16**. Research is limited to upcoming Las Vegas Strip events and official hotel terms; any unconfirmed entry policy remains unknown rather than being inferred.
+
+- **Caesars Palace daily NLH:** the official 2026 flyer (`https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf`) verifies 10 a.m. and 6 p.m. at $100; 2 p.m. and 9 p.m. at $160; each has a $1,000 guarantee and 20,000 starting chips. Each has a $50 first-break add-on and re-entry is allowed after elimination within the first break. The 2026 flyer supersedes the linked Caesars marketing article's inaccurate claim that all four buy-ins are $100. These are spend-enabled, not single-entry candidates.
+- **Horseshoe daily NLH:** Caesars' current Las Vegas tournament article (`https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip`) lists 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m., and 11 p.m.; the casino page confirms six daily times but not buy-ins, guarantees, or entry rules. Earliest confirmed recurring start is 9 a.m.; no 8 a.m. start found.
+- **Venetian DeepStack Extravaganza IV:** official schedule (`https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html`) runs Nov. 16–Dec. 23, with event-level structures. Reviewed Nov/Dec one-day structures show entry amounts, guarantees (where published), stacks, and registration details but do not expressly establish one-entry-only or re-entry limits. Do not treat omission of re-entry language as proof of single entry.
+- **WPT World Championship:** Wynn's official schedule (`https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf`) runs Nov. 27–Dec. 21. The official structure book (`https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf`) explicitly allows unlimited re-entry through a level deadline in the $600 NLH, $800 NLH, $1,600 NLH, $600 HORSE and $1,600 PLO Mystery Bounty; the $1,100 WPT Prime allows one entry plus one re-entry per starting flight. These are not strict single-entry.
+- **Hotel quality/cost:** Forbes Travel Guide's 2026 listings rate Wynn, The Venetian, and The Palazzo Four-Star. Official Venetian poker-rate page (`https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html`) advertises starting nightly base rates of $119 (Venetian) and $209 (Palazzo), subject to availability and qualifying poker play; the resort fee is $55 plus tax. Venetian terms specify a 13.38% room tax and $55 plus applicable tax nightly. Wynn's official resort policy (`https://www.wynnlasvegas.com/about-us/resort-information`) confirms $55 plus tax nightly. Neither yields an actual date-specific stay total without trip dates. No reliable current resort-fee amount or date-specific nightly price was established for Caesars Palace or Horseshoe.
+- **On-site proximity:** candidate hotels are on-site at the corresponding poker rooms; exact guest-room-to-room walking times are not published here. Use hotel/venue co-location rather than an invented route estimate.
 
 ## Irregularities / requests
 
