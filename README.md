@@ -205,3 +205,34 @@ pages listed above. Consolidation is offered as suggestion **S-09** for your dec
 4. Bounty, multi-flight, satellite and team events are shown separately, never mixed into a
    like-for-like comparison.
 5. Re-check the official pages before any non-refundable payment.
+
+## `/plan/` — the generated planner surface
+
+`plan/index.html` and its 21 sibling pages are generated from `site-data/*.json` by
+`scripts/build-site.py`; the datasets themselves come from `scripts/build-events.py` (transcriptions of the
+official structure sheets, cross-checked against the schedule page) and `scripts/build-schedule.py` (day plans,
+four-day windows, overlap flags).
+
+Why a second surface rather than editing the root dashboard: the root pages belong to `scripts/build_site.py` and
+its CI ownership note, and the frozen `/docs/`, `/verified/` and `/pages/` trees belong to earlier sessions.
+`plan/` collides with nothing, so both keep building. Choosing one surface to keep long-term is suggestion **S-11**
+and flag **FG-16**.
+
+What is different here:
+
+* every rendered row must link an official-host source and carry a `last_checked` date, or the build fails;
+* single-entry status is three-state (`explicit` / `not stated after a full sheet read` / `not read`), never boolean;
+* no structural value (fee, stack, level length, registration cutoff) renders for an event whose sheet was not read;
+* trip cost = entries x buy-in + nights x (room rate + resort fee + occupant surcharge) x 1.1338, with the room-rate
+  line blank until a dated official capture exists;
+* `.github/workflows/plan-verify.yml` fails when the committed pages differ from the data;
+  `.github/workflows/plan-refresh.yml` re-reads every official URL daily, snapshots hashes plus the tracked values,
+  and opens a review pull request only when a real signal appears (a timestamp-only rewrite never gets committed).
+
+```bash
+python3 scripts/build-events.py && python3 scripts/build-schedule.py && python3 scripts/build-site.py
+node scripts/check_site.mjs && node scripts/scrape-schedule.mjs --selftest
+```
+
+GitHub Pages publishes the repository root, so this surface is live at `/Poker2/plan/`.
+
