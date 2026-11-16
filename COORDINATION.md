@@ -264,3 +264,40 @@ Known limitations, unchanged and published: no confirmed single-entry event (F-0
 - Updated generated dataset/source page and baseline placeholder to state 60 URLs / 60 pending first checks. No fetch result is claimed: `data/site/checks.json` deliberately remains `last_run: null`, with 60 awaiting first check.
 - Verification: `python3 scripts/build.py` generated 96 event rows and 60 official sources; `python3 scripts/audit.py` passed 83 Venetian + 13 other rows / 8 hotels / 60 sources; `python3 scripts/check_links.py` passed 18 pages / 1,232 links / 0 broken internal links / 0 non-official external hosts. Local HTML-link audit passed. Unit checks verified normalized HTML stability, raw PDF change detection, and all 37 numbered PDF URLs.
 - Monitoring cannot be manually dispatched from this session: GitHub returned HTTP 403 `Resource not accessible by integration` for Actions workflow dispatch. The existing daily 06:00 UTC schedule remains enabled; first live baseline is pending. Official sheet sources are enumerated on the [Source register](https://karagemop466-tech.github.io/Poker2/sources.html).
+
+### Cross-session merge — PR #26 (session arena/96765ae0-poker2)
+
+A second session was working the same repository while this one finished. I read its PR before
+touching it, and it fixes a **real bug in the monitor this session wrote**, so I merged it rather
+than closing it as a duplicate.
+
+The bug: `normalise()` in `scripts/recheck_sources.py` applied an HTML tag-stripping regex
+(`<[^>]+>`) to every response, including PDFs. Inside a PDF, everything between `<` and `>` is
+content, not markup, so a changed value in that region produced an identical hash. Demonstrated
+before the fix:
+
+```
+/Key <AAAA400000BBBB>  vs  /Key <AAAA500000BBBB>
+normalise() -> '%PDF-1.7 /Key %%EOF' for both   ->  change undetected
+```
+
+PR #26 replaces this with `content_hash(url, raw)`: raw bytes for `.pdf`, normalised visible text
+for HTML. Re-verified after merging — the `<…>` case is now detected, and HTML markup churn is still
+correctly ignored. It also registers each of the 37 Venetian structure PDFs as its own monitored
+source key (`VSTRUCT01`–`VSTRUCT37`), taking coverage from 23 to 60 URLs.
+
+Post-merge state, re-verified on this branch after rebasing onto `main`:
+`build.py` 96 events / 60 sources / 8 hotels / 14 flags · `audit.py` pass ·
+`check_links.py` pass · `data/site/checks.json` still honestly `last_run: null` with 60 pending
+first checks. README updated to match.
+
+Conflict handling: no file was discarded. #26 rewrote `COORDINATION.md`, `README.md` and
+`data/site/checks.json` in the same region this session had edited; the rebase applied cleanly
+because the two sessions edited different sections, and this entry records the overlap rather than
+resolving it silently.
+
+Still open and not touched by this session: PR #24 (session arena/7d846749-poker2, 105 files,
++24,697 lines, an alternative full 21-page build that claims 237 events and 14 measured walking pairs)
+and PR #1 (session arena/e1130856-poker2, 5 files). Both are alternative builds of the same
+deliverable and cannot be merged on top of this one without overwriting it. They are left for a human
+to choose between; this session did not close another session's work.

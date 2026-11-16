@@ -11,7 +11,7 @@ left **blank** and listed on the **Flagged for review** page — never estimated
 | Area | Status |
 |---|---|
 | Venetian DeepStack Extravaganza IV schedule (Nov 16 – Dec 23, 2026) | Read in full from the official schedule **PDF**: date, event number, start, registration close, guarantee, starting chips, level length |
-| All 37 official Venetian structure sheets | Read individually: buy-in split, late-registration close, stack, level length, payout share |
+| All 37 official Venetian structure sheets | Read individually: buy-in split, late-registration close, stack, level length, payout share. Each sheet is also registered as its own monitored source (`VSTRUCT01`–`VSTRUCT37`) |
 | Wynn WPT World Championship schedule + terms | Read: $600/$400K, TORSE, PLO $400, Mixed Triple Draw entry rules |
 | Wynn daily tournaments | Read: Mon–Thu, Fri rebuy/add-on, Sat–Sun, plus the poster |
 | Bellagio Friday $600, Caesars Palace dailies, MGM Grand $120, Horseshoe | Read to the extent each organiser publishes |
@@ -46,7 +46,8 @@ scripts/recheck_sources.py  Scheduled re-fetch + content hashing of every offici
 
 ```bash
 python3 scripts/build.py          # regenerate every page + data/site/*.json
-python3 scripts/check_links.py    # 18 pages, ~1,100 links, must print OK
+python3 scripts/audit.py          # row-by-row: fee/pool reconciliation, sheet ownership, ordering
+python3 scripts/check_links.py    # 18 pages, ~1,230 links, must print OK
 python3 -m http.server 8000       # preview at http://localhost:8000
 ```
 
@@ -54,7 +55,14 @@ The build refuses to publish a row whose source is not an official host.
 
 ## Monitoring
 
-`.github/workflows/recheck.yml` runs daily at 06:00 UTC: it re-fetches every registered official URL, including each of the 37 Venetian structure PDFs, appends the run to `data/site/checks.json`, rebuilds the site and commits. HTML is compared using normalised text; PDFs are compared using raw response-byte SHA-256 hashes. A changed hash is a review flag, not proof that a cited value changed — the site reports it rather than guessing.
+`.github/workflows/recheck.yml` runs daily at 06:00 UTC: it re-fetches every registered official URL
+(60 of them, including each of the 37 Venetian structure PDFs individually), appends the run to
+`data/site/checks.json`, rebuilds the site and commits.
+
+HTML is compared on normalised visible text so markup churn is ignored. PDFs are compared on raw
+response bytes, because stripping tags out of a PDF silently deletes everything between `<` and `>`
+and a changed guarantee could hide there — a bug found and fixed in #26. A changed hash is a review
+flag, not proof that a cited value moved: the site reports it rather than guessing.
 
 ## Legacy pages
 
