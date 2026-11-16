@@ -151,6 +151,13 @@ def build_events():
         for u in ev["sources"]:
             if not any(h in u for h in OFFICIAL_HOSTS):
                 raise SystemExit("Refusing to publish non-official source: " + u)
+    # stable chronological order: date, then start time, then venue, then event/flight,
+    # so weekday names can never shuffle the table (Nov 26 must follow Nov 25).
+    events.sort(key=lambda e: (
+        e.get("date") or "9999-99-99",
+        re.match(r"^\d", str(e.get("start") or "")) and "%05d" % (int(str(e["start"]).split(":")[0]) * 60
+                                                                   + int(str(e["start"]).split(":")[1])) or "99999",
+        e["venue"], str(e.get("ev")), str(e.get("flight") or "")))
     return events
 
 
