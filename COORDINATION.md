@@ -62,7 +62,9 @@ Task log (this session):
 - Read the official poker suite-rate page: from $119 (Venetian) and $209 (Palazzo), $55 resort fee per night, conditional on 6 hours live cash or a $300+ tournament per night. Recorded as conditional starting rates, not dated quotes.
 - Verification: 131/131 data rows have an official or repo https source; 0 broken internal links in `docs/`.
 
-Integration result (PR for arena/acd81e67-poker2 → main):
-- PR: (recorded below)
-- Merge: (recorded below)
-- Pages deploy: (recorded below)
+Integration result (arena/acd81e67-poker2 → main):
+- PR: [#7](https://github.com/karagemop466-tech/Poker2/pull/7) — merge commit `23e5dfe`, merged 2026-11-16 (merge commit, not squash). Mergeable state was CLEAN after main moved twice; the branch was merged with main (not rebased) to keep the other sessions' commits.
+- Pages deploy: workflow run [43931916982](https://github.com/karagemop466-tech/Poker2/actions/runs/43931916982) completed `success` on `23e5dfe`; `gh api repos/karagemop466-tech/Poker2/pages/builds/latest` reports `built` for `23e5dfe`.
+- Live check: https://karagemop466-tech.github.io/Poker2/docs/single-entry.html fetched and served the merged content. Root site https://karagemop466-tech.github.io/Poker2/ is the other session's page and was not changed.
+- Known issue for review: this branch was force-updated once (a broken merge commit was amended before PR #7 was merged); no other session's commits were rewritten.
+- Flagged items (do not block merge): see `docs/flagged.html` F-01…F-22, and the notes above on main's `reg_closes`/`chips`/`level` values.
