@@ -855,8 +855,25 @@ hotels on the same footprint. Nothing is merged across properties, because fee a
 
 # ------------------------------------------------------------ page: summary ---
 def page_summary():
-    best_pool = sorted([e for e in EVENTS if e.get("gtd")], key=lambda e: -e["gtd"])[:5]
-    best_ratio = sorted([e for e in EVENTS if e.get("ratio")], key=lambda e: -e["ratio"])[:5]
+    # One row per event, not per starting flight: a five-flight event with the same
+    # guarantee would otherwise fill the whole ranking with copies of itself.
+    seen_ev = set()
+
+    def one_per_event(rows):
+        out = []
+        for x in rows:
+            k = (x["venue"], str(x.get("ev")))
+            if k in seen_ev:
+                continue
+            seen_ev.add(k)
+            out.append(x)
+        return out
+
+    best_pool = one_per_event(sorted([e for e in EVENTS if e.get("gtd")],
+                                     key=lambda e: -e["gtd"]))[:5]
+    seen_ev = set()
+    best_ratio = one_per_event(sorted([e for e in EVENTS if e.get("ratio")],
+                                      key=lambda e: -e["ratio"]))[:5]
     h = head("Executive summary", "What is verified, what it means, and what is still missing.",
              "summary.html")
     h += """
@@ -916,9 +933,11 @@ is shown because it is arithmetic on two published numbers, not because it predi
 <div class="tw"><table class="t"><thead><tr><th>Event</th><th>Venue</th><th>Date</th>
 <th class="num">GTD</th><th class="num">Buy-in</th><th class="num">Ratio</th><th>Entry type</th></tr></thead><tbody>
 %s</tbody></table></div>
-<p class="note">The top of this list is dominated by bounty events, whose guarantee includes bounty
-money paid out hand by hand. They are labelled, not hidden, and they are not comparable line-for-line
-with a plain prize-pool guarantee.</p>
+<p class="note">Each event appears once, however many starting flights it runs — the guarantee is
+advertised for the event, not per flight, so listing five flights of the same tournament would
+overstate the choice. Where a row is a bounty event its guarantee includes bounty money paid out hand
+by hand, which is not comparable line-for-line with a plain prize-pool guarantee; the Entry type
+column says which is which. Again this is arithmetic on two published numbers, never a forecast.</p>
 </section>
 
 <section class="block">
