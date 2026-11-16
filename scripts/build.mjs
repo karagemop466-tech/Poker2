@@ -1,5 +1,5 @@
 // Static site generator for the Poker2 GitHub Pages site.
-// Reads data/*.json and writes HTML pages at the repo root (served from main, path /).
+// Reads data/verified/*.json and writes HTML pages to verified/ (served from main, path /verified/).
 // Fails the build if any table row lacks an official source link, or if any
 // internal link points to a page that does not exist.
 //
@@ -10,7 +10,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const read = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), "utf8"));
+const DATA = path.join(ROOT, "data", "verified");
+const OUT = path.join(ROOT, "verified");
+const read = (p) => JSON.parse(fs.readFileSync(path.join(DATA, p.replace(/^data\//, "").replace(/^verified\//, "")), "utf8"));
 
 const T = read("data/tournaments.json");
 const H = read("data/hotels.json");
@@ -107,7 +109,7 @@ ${body}
 </main>
 <footer>
   <p>Every table row links to an official source. Values that could not be confirmed from an official source are left blank and marked UNVERIFIED. Not a betting or financial product. Confirm with the venue before paying.</p>
-  <p>Built from <code>data/*.json</code> by <code>scripts/build.mjs</code>. Repo: <a href="https://github.com/karagemop466-tech/Poker2">karagemop466-tech/Poker2</a>.</p>
+  <p>Built from <code>data/verified/*.json</code> by <code>scripts/build.mjs</code>. Repo: <a href="https://github.com/karagemop466-tech/Poker2">karagemop466-tech/Poker2</a>.</p>
 </footer>
 <script src="${pre}assets/app.js"></script>
 </body>
@@ -352,9 +354,8 @@ if (problems.length) {
 }
 
 for (const [rel, html] of Object.entries(pages)) {
-  const full = path.join(ROOT, rel);
+  const full = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(full), { recursive: true });
   fs.writeFileSync(full, html);
 }
-fs.writeFileSync(path.join(ROOT, ".nojekyll"), "");
-console.log(`Built ${Object.keys(pages).length} pages. Verification passed: every table source is an official host.`);
+console.log(`Built ${Object.keys(pages).length} pages into verified/. Verification passed: every table source is an official host.`);
