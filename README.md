@@ -22,4 +22,4 @@ Detail pages live in `pages/`: single-entry candidates, re-entry/spending events
 
 ## Extended research view
 
-The cross-venue evidence dashboard for the 2026 research snapshot is available at [`site/index.html`](site/index.html) (served on GitHub Pages at `/Poker2/site/`). It incorporates official source checks for Caesars Palace, Horseshoe, Venetian, Wynn/WPT, Bellagio, MGM Grand, SAHARA, and hotel terms without replacing the existing root dashboard.
+The cross-venue evidence dashboard for the 2026 research snapshot is in [`site/index.html`](site/index.html); after this branch is merged, the existing root Pages workflow will serve it at `/Poker2/site/`. It incorporates official source checks for Caesars Palace, Horseshoe, Venetian, Wynn/WPT, Bellagio, MGM Grand, SAHARA, and hotel terms without replacing the existing root dashboard.

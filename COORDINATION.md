@@ -105,12 +105,13 @@ Task log (this session):
 
 | Task | Status | Owner | File scope |
 | --- | --- | --- | --- |
-| Build an isolated cross-venue evidence dashboard; keep the strict single-entry shortlist empty and avoid changing other sessions’ dashboards | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `site/*` |
+| Build an isolated cross-venue evidence dashboard; keep the strict single-entry shortlist empty and avoid changing other sessions’ dashboards | done (pushed; Pages deploy awaits merge) | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `site/*` |
 
 ## Completion log
 
 - 2026-11-16: Implemented the isolated, responsive cross-venue dashboard under `site/` with 25 source-linked event records, 32 official/Forbes Travel Guide sources, an explicitly empty strict single-entry shortlist, a start-time guide, conditional hotel-rate context, and open trip inputs. Existing root/`pages/`/`docs/`/`verified/` dashboards and datasets were left unchanged.
-- Verification: JavaScript syntax checks passed; a DOM-mock render check produced all 25 rows, correctly filtered the four Caesars entries and nine extra-spend records, and rendered all three hotel cards and the source registry. HTML anchor/local-link audit and `git diff --check` passed. Preview server returned HTTP 200 for the page, stylesheet, and both scripts. Remote push is pending.
+- Verification: JavaScript syntax checks passed; a DOM-mock render check produced all 25 rows, correctly filtered the four Caesars entries and nine extra-spend records, and rendered all three hotel cards and the source registry. HTML anchor/local-link audit and `git diff --check` passed. Preview server returned HTTP 200 for the page, stylesheet, and both scripts.
+- Rebase/push: resolved the add/add conflict by preserving the full `origin/main` board and appending this session’s claim/research notes. Rebased commits `1884d44` and `4dd113f` onto `c7deb19`, added site commit `c3921fb`, and pushed the active branch with `--force-with-lease` because the remote pointed to the pre-rebase history. No other branch was touched. The site is not merged or production-deployed; the existing Pages workflow deploys from `main`.
 
 ## Sources and verification log
 
