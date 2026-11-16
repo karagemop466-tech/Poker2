@@ -824,7 +824,7 @@ estimate of a rate: the room-rate line is either a dated official capture or it 
   <div class="filters" style="border:0;padding:0;margin:0 0 8px">
    <label>Hotel<select id="c-hotel">""" + hotelopts + """</select></label>
    <label>Nightly rate source<select id="c-rate"></select></label>
-   <label>Nights<input id="c-nights" type="number" min="1" max="14" value="' + str(rec["nights"]) + '"></label>
+   <label>Nights<input id="c-nights" type="number" min="1" max="14" value="%NIGHTS%"></label>
    <label>Occupancy<select id="c-occ"><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">3 adults</option><option value="4">4 adults</option></select></label>
    <label class="check"><input id="c-parking" type="checkbox"> add hotel self-parking</label>
   </div>
@@ -859,6 +859,7 @@ estimate of a rate: the room-rate line is either a dated official capture or it 
  </div>
 </div>
 </section>"""
+    body = body.replace("%NIGHTS%", str(rec["nights"]))
     page("trip-cost.html", "Trip cost", body)
 
 
@@ -1299,7 +1300,15 @@ def validate():
             if f.get("status") == "verified_official" and not has_src:
                 problems.append("hotel " + h["id"] + "." + fld + ": verified without a source url")
     for fname in sorted(pages_written):
-        txt = open(os.path.join(OUT, fname), encoding="utf8").read()
+        # validate what is about to be written, not what happens to be on disk
+        txt = generated.get(fname) or open(os.path.join(OUT, fname), encoding="utf8").read()
+        for leak in ("' + ", "\" + "):
+            if leak in txt:
+                problems.append(fname + ": a Python concatenation leaked into the HTML (" + leak.strip() +
+                                ") - use a placeholder inside a triple-quoted block")
+        unresolved = re.findall(r"%[A-Z][A-Z_]{2,}%", txt)
+        if unresolved:
+            problems.append(fname + ": unresolved placeholder(s) " + ", ".join(sorted(set(unresolved))))
         base = os.path.dirname(fname)
         for href in re.findall(r'href="([^"#]+)"', txt):
             if href.startswith(("http", "mailto", "tel", "data:")):
@@ -1358,6 +1367,9 @@ def main():
                 os.makedirs(fd, exist_ok=True)
             with open(fpath, "w", encoding="utf8") as fh:
                 fh.write(txt)
+            if open(fpath, encoding="utf8").read() != txt:
+                print("write verification failed for " + fname)
+                raise SystemExit(1)
     print(("committed output unchanged: " if check else "wrote ") + str(len(pages_written)) + " pages, " + str(len(ALL_ROWS)) + " event rows ("
           + str(len(RANKED)) + " ranked, " + str(len(UNVER)) + " unverified, " + str(len(EXCL))
           + " spend-advantage), " + str(len(HOT["hotels"])) + " hotels, " + str(nsearch)
