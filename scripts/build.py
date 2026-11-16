@@ -86,8 +86,8 @@ def build_events():
         ev["kind"] = e["kind"]
         ev["bounty"] = bool(e.get("bounty"))
         ev["re_entry"] = e.get("re_entry", "Not stated on the official structure sheet")
-        ev["rebuy"] = e.get("rebuy", "Not stated on the structure sheet")
-        ev["add_on"] = e.get("add_on", "Not stated on the structure sheet")
+        ev["rebuy"] = e.get("rebuy") or "Not stated on the structure sheet"
+        ev["add_on"] = e.get("add_on") or "Not stated on the structure sheet"
         # Entry-rule verdict, strictly from official text.
         if ev["kind"] == "multi-flight":
             ev["entry_class"] = "Multi-flight"

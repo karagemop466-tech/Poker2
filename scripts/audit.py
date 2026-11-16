@@ -98,6 +98,21 @@ def main():
             if r["value"] and not r["source"]:
                 fail("hotel %s: log value %s has no source" % (h["id"], r["field"]))
 
+    # 10. published rebuy/add-on cells must never be empty or a bare number.
+    #     Silence on the official document must be stated in words, not left blank.
+    path_ev = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                           "data", "site", "events.json")
+    if os.path.exists(path_ev):
+        import json
+        for e in json.load(open(path_ev, encoding="utf-8")):
+            for field in ("rebuy", "add_on"):
+                v = e.get(field)
+                if v is None or str(v).strip() == "":
+                    fail("%s (%s): empty %s cell" % (e["id"], e["venue"], field))
+                elif str(v).strip().isdigit():
+                    fail("%s (%s): %s is a bare number (%r) — needs a written rule"
+                         % (e["id"], e["venue"], field, v))
+
     # 9. the published data must be in strict chronological order, with enough coverage
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
                         "data", "site", "events.json")
