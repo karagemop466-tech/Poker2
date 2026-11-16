@@ -139,7 +139,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 40000,
@@ -156,7 +156,7 @@
    "pool": 242,
    "ratio": 33.33,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 5,
@@ -171,7 +171,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 200,
    "chips": 30000,
@@ -188,7 +188,7 @@
    "pool": 165,
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "12:25",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 18,
@@ -203,7 +203,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 200,
    "chips": 30000,
@@ -220,7 +220,7 @@
    "pool": 165,
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "12:25",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 18,
@@ -235,7 +235,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 200,
    "chips": 30000,
@@ -252,7 +252,7 @@
    "pool": 165,
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "12:25",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 18,
@@ -267,7 +267,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 200,
    "chips": 30000,
@@ -284,7 +284,7 @@
    "pool": 160,
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 29,
@@ -332,7 +332,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -349,7 +349,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 30,
@@ -397,7 +397,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -414,7 +414,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -429,7 +429,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -446,7 +446,7 @@
    "pool": 335,
    "ratio": 37.5,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 6,
@@ -461,7 +461,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -478,7 +478,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -493,7 +493,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 40000,
@@ -510,7 +510,7 @@
    "pool": 242,
    "ratio": 33.33,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 5,
@@ -525,7 +525,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -542,7 +542,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -557,7 +557,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -574,7 +574,7 @@
    "pool": 510,
    "ratio": 666.67,
    "re_entry": "Unlimited re-entry for each starting flight until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 9",
    "rule": "Unlimited re-entry for each starting flight until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
    "rule_note": "Unlimited re-entry per flight",
@@ -591,7 +591,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -608,7 +608,7 @@
    "pool": 510,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 7,
@@ -623,7 +623,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 600,
    "chips": 35000,
@@ -640,7 +640,7 @@
    "pool": 510,
    "ratio": null,
    "re_entry": "Unlimited re-entry will be available until the start of level 9",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 9",
    "rule": "Unlimited re-entry will be available until the start of level 9",
    "rule_note": "Unlimited re-entry",
@@ -657,7 +657,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 400,
    "chips": 30000,
@@ -674,7 +674,7 @@
    "pool": 337,
    "ratio": null,
    "re_entry": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 9 (~5:30 PM)",
    "rule": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
    "rule_note": "Unlimited re-entry",
@@ -691,7 +691,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -708,7 +708,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -723,7 +723,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 600,
    "chips": 40000,
@@ -740,7 +740,7 @@
    "pool": 510,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 11,
@@ -755,7 +755,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 400,
    "chips": 30000,
@@ -772,7 +772,7 @@
    "pool": 340,
    "ratio": 37.5,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 26,
@@ -787,7 +787,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -805,7 +805,7 @@
    "promo": "PokerAtlas PRO members: $20 rake discount on the initial buy-in only ($180 total)",
    "ratio": 100.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 8,
@@ -853,7 +853,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 30000,
@@ -870,7 +870,7 @@
    "pool": 242,
    "ratio": 33.33,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 22,
@@ -885,7 +885,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -902,7 +902,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -950,7 +950,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -967,7 +967,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -1015,7 +1015,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -1032,7 +1032,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -1047,7 +1047,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -1064,7 +1064,7 @@
    "pool": 510,
    "ratio": 66.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:55",
    "restriction": "Must be 50+",
    "rule_note": "Must be 50+. Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
@@ -1080,7 +1080,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -1097,7 +1097,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -1145,7 +1145,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 30000,
@@ -1162,7 +1162,7 @@
    "pool": 510,
    "ratio": 41.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 28,
@@ -1343,7 +1343,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -1360,7 +1360,7 @@
    "pool": 510,
    "ratio": 66.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 7,
@@ -1375,7 +1375,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -1392,7 +1392,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -1407,7 +1407,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 600,
    "chips": 40000,
@@ -1424,7 +1424,7 @@
    "pool": 510,
    "ratio": 66.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 11,
@@ -1439,7 +1439,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -1456,7 +1456,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -1471,7 +1471,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -1488,7 +1488,7 @@
    "pool": 510,
    "ratio": 66.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:55",
    "restriction": "Must be 50+",
    "rule_note": "Must be 50+. Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
@@ -1504,7 +1504,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 100,
    "chips": 20000,
@@ -1522,7 +1522,7 @@
    "prize": "2 seats to Event 39",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "18:25",
    "restriction": "Female players only",
    "rule_note": "Female players only. Awards direct tournament seats, not a cash prize pool.",
@@ -1539,7 +1539,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -1556,7 +1556,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -1571,7 +1571,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -1590,7 +1590,7 @@
    "promo": "$10 of the $600 buy-in withheld as a flat fee for LIPS",
    "ratio": 16.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "14:40",
    "restriction": "Tag teams: female/female or female/male",
    "rule_note": "Tag teams: female/female or female/male. Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
@@ -1606,7 +1606,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 800,
    "chips": 40000,
@@ -1623,7 +1623,7 @@
    "pool": 700,
    "ratio": 93.75,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 16,
@@ -1638,7 +1638,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 100,
    "chips": 20000,
@@ -1656,7 +1656,7 @@
    "prize": "2 seats to Event 39",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "18:25",
    "restriction": "Female players only",
    "rule_note": "Female players only. Awards direct tournament seats, not a cash prize pool.",
@@ -1673,7 +1673,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -1690,7 +1690,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -1740,7 +1740,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 600,
    "chips": 30000,
@@ -1757,7 +1757,7 @@
    "pool": 510,
    "ratio": 41.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 27,
@@ -1772,7 +1772,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 260,
    "chips": 20000,
@@ -1790,7 +1790,7 @@
    "prize": "2 seats to Event 47",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "18:25",
    "rule_note": "Awards direct tournament seats, not a cash prize pool.",
    "seats": 2,
@@ -1806,7 +1806,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -1823,7 +1823,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -1838,7 +1838,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 600,
    "chips": 40000,
@@ -1857,7 +1857,7 @@
    "promo": "$10 of the $600 buy-in withheld as a flat fee for LIPS",
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "restriction": "Open to all players",
    "rule_note": "Open to all players. Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
@@ -1873,7 +1873,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 260,
    "chips": 20000,
@@ -1891,7 +1891,7 @@
    "prize": "2 seats to Event 47",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "18:25",
    "rule_note": "Awards direct tournament seats, not a cash prize pool.",
    "seats": 2,
@@ -1907,7 +1907,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 260,
    "chips": 20000,
@@ -1925,7 +1925,7 @@
    "prize": "2 seats to Event 47",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:55",
    "rule_note": "Awards direct tournament seats, not a cash prize pool.",
    "seats": 2,
@@ -1941,7 +1941,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 260,
    "chips": 20000,
@@ -1959,7 +1959,7 @@
    "prize": "2 seats to Event 47",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "10:55",
    "rule_note": "Awards direct tournament seats, not a cash prize pool.",
    "seats": 2,
@@ -2008,7 +2008,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 260,
    "chips": 20000,
@@ -2026,7 +2026,7 @@
    "prize": "2 seats to Event 47",
    "ratio": null,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "13:55",
    "rule_note": "Awards direct tournament seats, not a cash prize pool.",
    "seats": 2,
@@ -2109,7 +2109,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -2126,7 +2126,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -2175,7 +2175,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -2192,7 +2192,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -2207,7 +2207,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 1100,
    "chips": 40000,
@@ -2224,7 +2224,7 @@
    "pool": 970,
    "ratio": 68.18,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 34,
@@ -2239,7 +2239,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -2256,7 +2256,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -2271,7 +2271,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 600,
    "chips": 40000,
@@ -2288,7 +2288,7 @@
    "pool": 510,
    "ratio": 83.33,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 11,
@@ -2303,7 +2303,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 300,
    "chips": 25000,
@@ -2320,7 +2320,7 @@
    "pool": 250,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 15,
@@ -2369,7 +2369,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 30000,
@@ -2386,7 +2386,7 @@
    "pool": 510,
    "ratio": 41.67,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 23,
@@ -2534,7 +2534,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -2552,7 +2552,7 @@
    "promo": "PokerAtlas PRO members: $20 rake discount on the initial buy-in only ($180 total)",
    "ratio": 100.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 8,
@@ -2601,7 +2601,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -2618,7 +2618,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -2666,7 +2666,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -2683,7 +2683,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -2731,7 +2731,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -2748,7 +2748,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -2763,7 +2763,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -2780,7 +2780,7 @@
    "pool": 510,
    "ratio": 50.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 7,
@@ -2795,7 +2795,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": true,
    "buy_in": 200,
    "chips": 25000,
@@ -2812,7 +2812,7 @@
    "pool": 160,
    "ratio": 40.0,
    "re_entry": "Not stated on the official structure sheet",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "21:40",
    "rule_note": "Structure sheet states no re-entry, rebuy or add-on rule. Absence of a prohibition is not confirmation of single entry.",
    "sheet": 1,
@@ -2827,7 +2827,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play. All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
+   "add_on": "$50 for 15,000 chips, only at the first break",
    "bounty": false,
    "buy_in": 100,
    "chips": 20000,
@@ -2844,7 +2844,7 @@
    "pool": 70,
    "ratio": 10.0,
    "re_entry": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play. All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
-   "rebuy": "None stated",
+   "rebuy": "Re-entry by paying the entry fee after elimination within the first break",
    "reg_close": "start of level 7",
    "rule": "Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play. All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on for 15,000 chips",
@@ -2861,7 +2861,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "None stated",
+   "add_on": "$11 optional gratuity buys 10,000 extra chips",
    "bounty": false,
    "buy_in": 120,
    "chips": 25000,
@@ -2880,7 +2880,7 @@
    "pool": 92,
    "ratio": null,
    "re_entry": "$92 to Prize Pool, $13 House Fee and a one time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions. Entry/re-entry limit not stated.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated",
    "reg_close": "registration open until Level 8",
    "rule": "$92 to Prize Pool, $13 House Fee and a one time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions. Entry/re-entry limit not stated.",
    "rule_note": "Voluntary $11 gratuity buys 10,000 extra chips; entry limit not stated",
@@ -2897,7 +2897,7 @@
    "view": "MGM Grand"
   },
   {
-   "add_on": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 160,
    "chips": 20000,
@@ -2914,7 +2914,7 @@
    "pool": 115,
    "ratio": 6.25,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -2931,7 +2931,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 100,
    "chips": 20000,
@@ -2948,7 +2948,7 @@
    "pool": 70,
    "ratio": 10.0,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -2965,7 +2965,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 160,
    "chips": 20000,
@@ -2982,7 +2982,7 @@
    "pool": 115,
    "ratio": 6.25,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -2999,7 +2999,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": null,
    "chips": null,
@@ -3016,7 +3016,7 @@
    "pool": null,
    "ratio": null,
    "re_entry": "Official property page states the Hall of Fame Poker Room offers '6 exciting tournament times daily'. No buy-in, guarantee, start time or entry-limit document could be retrieved.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "Not stated",
    "rule": "Official property page states the Hall of Fame Poker Room offers '6 exciting tournament times daily'. No buy-in, guarantee, start time or entry-limit document could be retrieved.",
    "rule_note": "Structure not published / not retrievable",
@@ -3033,7 +3033,7 @@
    "view": "Horseshoe Las Vegas"
   },
   {
-   "add_on": "None stated",
+   "add_on": "$40 optional staff gratuity buys 15,000 extra chips",
    "bounty": false,
    "buy_in": 600,
    "chips": 30000,
@@ -3051,7 +3051,7 @@
    "pool": 510,
    "ratio": null,
    "re_entry": "Players may buy-in and re-enter through the end of level 8 (Including Break). The $600 Buy-In is allocated as $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity. The voluntary staff gratuity will grant players an extra 15,000 chips.",
-   "rebuy": "None stated",
+   "rebuy": "Not stated",
    "reg_close": "end of level 8 (incl. break)",
    "rule": "Players may buy-in and re-enter through the end of level 8 (Including Break). The $600 Buy-In is allocated as $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity. The voluntary staff gratuity will grant players an extra 15,000 chips.",
    "rule_note": "Re-entry through level 8 + $40 voluntary gratuity buys 15,000 extra chips",
@@ -3068,7 +3068,7 @@
    "view": "Bellagio"
   },
   {
-   "add_on": "Re-entry is NOT allowed. Unlimited $200 rebuys for 25,000 chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration.",
+   "add_on": "One $100 add-on for 15,000 chips until registration closes",
    "bounty": false,
    "buy_in": 240,
    "chips": 25000,
@@ -3085,7 +3085,7 @@
    "pool": 190,
    "ratio": 166.67,
    "re_entry": "Re-entry is NOT allowed. Unlimited $200 rebuys for 25,000 chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration.",
-   "rebuy": "Re-entry is NOT allowed. Unlimited $200 rebuys for 25,000 chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration.",
+   "rebuy": "Unlimited $200 rebuys for 25,000 chips when at 15,000 or less",
    "reg_close": "start of level 9 (~4:30 PM)",
    "rule": "Re-entry is NOT allowed. Unlimited $200 rebuys for 25,000 chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration.",
    "rule_note": "No re-entry, but unlimited rebuys plus an add-on",
@@ -3102,7 +3102,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 200,
    "chips": 25000,
@@ -3120,7 +3120,7 @@
    "pool": 162,
    "ratio": 50.0,
    "re_entry": "The Tournament entry fee, as well as the re-entry fee, is $200",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 9 (~4:30 PM)",
    "rule": "The Tournament entry fee, as well as the re-entry fee, is $200",
    "rule_note": "Re-entry permitted",
@@ -3137,7 +3137,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated in the official document",
    "bounty": false,
    "buy_in": 200,
    "chips": 25000,
@@ -3154,7 +3154,7 @@
    "pool": 162,
    "ratio": 125.0,
    "re_entry": "The Tournament entry fee, as well as the re-entry fee, is $200",
-   "rebuy": "None stated",
+   "rebuy": "Not stated in the official document",
    "reg_close": "start of level 9",
    "rule": "The Tournament entry fee, as well as the re-entry fee, is $200",
    "rule_note": "Re-entry permitted",
