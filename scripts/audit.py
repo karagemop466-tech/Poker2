@@ -98,6 +98,25 @@ def main():
             if r["value"] and not r["source"]:
                 fail("hotel %s: log value %s has no source" % (h["id"], r["field"]))
 
+    # 9. the published data must be in strict chronological order, with enough coverage
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                        "data", "site", "events.json")
+    if os.path.exists(path):
+        import json
+        built = json.load(open(path, encoding="utf-8"))
+        keys = [(e["date"], minutes(e["start"])) for e in built
+                if re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("date")))]
+        for i in range(len(keys) - 1):
+            if keys[i] > keys[i + 1]:
+                fail("published order: %s %s comes before %s %s" % (keys[i] + keys[i + 1]))
+                break
+        dates = {k[0] for k in keys}
+        if len(dates) < 30:
+            fail("published dataset covers only %d dates" % len(dates))
+        if len(built) != len(D.VENETIAN_EVENTS) + len(D.OTHER_EVENTS):
+            fail("published %d rows but dataset has %d"
+                 % (len(built), len(D.VENETIAN_EVENTS) + len(D.OTHER_EVENTS)))
+
     # 5. sources are official hosts
     for k, (label, url) in D.SOURCES.items():
         if not url.startswith("https://"):

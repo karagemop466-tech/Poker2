@@ -86,8 +86,8 @@ def build_events():
         ev["kind"] = e["kind"]
         ev["bounty"] = bool(e.get("bounty"))
         ev["re_entry"] = e.get("re_entry", "Not stated on the official structure sheet")
-        ev["rebuy"] = e.get("rebuy", "None stated")
-        ev["add_on"] = e.get("add_on", "None stated")
+        ev["rebuy"] = e.get("rebuy", "Not stated on the structure sheet")
+        ev["add_on"] = e.get("add_on", "Not stated on the structure sheet")
         # Entry-rule verdict, strictly from official text.
         if ev["kind"] == "multi-flight":
             ev["entry_class"] = "Multi-flight"
@@ -135,9 +135,10 @@ def build_events():
             "unverified": "Unverified",
         }[e["verdict"]]
         ev["re_entry"] = e.get("rule", "")
-        ev["rebuy"] = ev.get("rule", "") if "rebuy" in (e.get("rule") or "").lower() else "None stated"
-        ev["add_on"] = e.get("rule", "") if ("add-on" in (e.get("rule") or "").lower()
-                                             or "add on" in (e.get("rule") or "").lower()) else "None stated"
+        # Rebuy / add-on come from the verified dataset, not from keyword guessing in prose:
+        # a rule can say "no rebuys" and keyword matching would invert its meaning.
+        ev["rebuy"] = e.get("rebuy") or "Not stated in the official document"
+        ev["add_on"] = e.get("add_on") or "Not stated in the official document"
         ev["rule_note"] = e.get("rule_short", "")
         if e.get("gtd") and e.get("buy_in"):
             ev["ratio"] = round(e["gtd"] / float(e["buy_in"]), 2)
@@ -151,6 +152,13 @@ def build_events():
         for u in ev["sources"]:
             if not any(h in u for h in OFFICIAL_HOSTS):
                 raise SystemExit("Refusing to publish non-official source: " + u)
+    # stable chronological order: date, then start time, then venue, then event/flight,
+    # so weekday names can never shuffle the table (Nov 26 must follow Nov 25).
+    events.sort(key=lambda e: (
+        e.get("date") or "9999-99-99",
+        re.match(r"^\d", str(e.get("start") or "")) and "%05d" % (int(str(e["start"]).split(":")[0]) * 60
+                                                                   + int(str(e["start"]).split(":")[1])) or "99999",
+        e["venue"], str(e.get("ev")), str(e.get("flight") or "")))
     return events
 
 
@@ -687,7 +695,10 @@ def page_single_entry():
                 esc(e["re_entry"] if e["venue"] != "The Venetian"
                     else ("Not stated — " + e["rule_note"])),
                 money(e.get("buy_in")),
-                esc(e.get("rule_short") or e.get("restriction") or ""),
+                '<span class="mini">Rebuy: %s<br>Add-on: %s%s</span>' % (
+                    esc(e.get("rebuy") or "not published"),
+                    esc(e.get("add_on") or "not published"),
+                    ('<br>Restriction: ' + esc(e["restriction"])) if e.get("restriction") else ""),
                 e["sources"][0] and '<a href="%s" target="_blank" rel="noopener">official</a>' % esc(e["sources"][-1])))
     h = head("Entry rules", "Which events are genuinely single-entry — and why none can be confirmed yet.",
              "single-entry.html")
@@ -703,7 +714,7 @@ that does publish a rule publishes a <em>permissive</em> one.</p></section>
 <p>Rows below quote or summarise the organiser's own words. Where the official text is silent, the row
 says silent — it does not say "single entry".</p></div>
 <div class="tw"><table class="t"><thead><tr><th>Venue / event</th><th>Entry verdict</th>
-<th>Official rule text</th><th class="num">Buy-in</th><th>Short form</th><th>Source</th></tr></thead>
+<th>Official rule text</th><th class="num">Buy-in</th><th>Rebuy / add-on</th><th>Source</th></tr></thead>
 <tbody>%s</tbody></table></div>
 </section>
 
