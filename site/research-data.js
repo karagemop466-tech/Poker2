@@ -89,9 +89,9 @@ window.POKER_RESEARCH = {
     {
       date: "Daily · 2026 flyer", time: "2:00 PM", venue: "Caesars Palace",
       name: "Daily NLH · $160", buyIn: 160, guarantee: 1000,
-      detail: "$1K guarantee · 20,000 starting chips · $50 first-break add-on",
-      finding: "Re-entry after elimination is allowed within the first break; add-on is available. Re-entry cap is not stated.",
-      group: "spend", badge: "Re-entry + add-on allowed", sources: ["CAESARS_FLYER"]
+      detail: "$1K guarantee · 20,000 starting chips · $50 first-break add-on · flyer conflicts with marketing article",
+      finding: "Re-entry after elimination is allowed within the first break; add-on is available. Re-entry cap is not stated. Prefer the dated flyer over the article’s claim that all four are $100.",
+      group: "spend", badge: "Re-entry + add-on allowed", sources: ["CAESARS_FLYER", "CAESARS_TOURNAMENTS"]
     },
     {
       date: "Daily · 2026 flyer", time: "6:00 PM", venue: "Caesars Palace",
@@ -103,9 +103,9 @@ window.POKER_RESEARCH = {
     {
       date: "Daily · 2026 flyer", time: "9:00 PM", venue: "Caesars Palace",
       name: "Daily NLH · $160", buyIn: 160, guarantee: 1000,
-      detail: "$1K guarantee · 20,000 starting chips · $50 first-break add-on",
-      finding: "Re-entry after elimination is allowed within the first break; add-on is available. Re-entry cap is not stated.",
-      group: "spend", badge: "Re-entry + add-on allowed", sources: ["CAESARS_FLYER"]
+      detail: "$1K guarantee · 20,000 starting chips · $50 first-break add-on · flyer conflicts with marketing article",
+      finding: "Re-entry after elimination is allowed within the first break; add-on is available. Re-entry cap is not stated. Prefer the dated flyer over the article’s claim that all four are $100.",
+      group: "spend", badge: "Re-entry + add-on allowed", sources: ["CAESARS_FLYER", "CAESARS_TOURNAMENTS"]
     },
     {
       date: "Daily", time: "9:00 AM · 11:00 AM · 2:00 PM · 5:00 PM · 8:00 PM · 11:00 PM", venue: "Horseshoe Las Vegas",
