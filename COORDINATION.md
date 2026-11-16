@@ -301,23 +301,42 @@ Conflict resolution during rebase onto main (2026-11-16):
 - `git pull --rebase origin main` hit conflicts with session arena/7a4b09e2-poker2's merged root site (PRs #18–#23): both sessions generated `index.html`, `tournaments.html`, `hotels.html`, `flagged.html`, `questions.html`, `summary.html`, `suggestions.html`, `repo-review.html`, `assets/site.css`, `assets/site.js`, plus `COORDINATION.md`/`README.md` rewrites.
 - Resolution preserved BOTH sessions' work: arena/7a4b09e2-poker2's root pages are archived verbatim under `archive/arena-7a4b09e2/`; all of that session's non-conflicting outputs (`venues/*.html`, `schedule.html`, `single-entry.html`, `sources.html`, `data/site/*.json`, `scripts/{build,dataset,audit,recheck_sources,check_links}.py`, CI workflow) remain untouched and live. The arena/8234a824-poker2 integration pages are the live root dashboard; `COORDINATION.md` is the union of both records.
 - Second rebase (same day): main advanced again via PR #25 (session arena/7a4b09e2-poker2 docs update). COORDINATION.md conflicted again and was resolved the same way — union of main's board plus this session's section above; no other file conflicts. Asset collision resolved by keeping arena/7a4b09e2-poker2's `assets/site.css`/`site.js` for their live pages and moving this dashboard to `assets/dashboard.css`/`dashboard.js`.
-=======
-## Session arena/96765ae0-poker2 — source-monitor coverage follow-up (2026-11-16)
-
-- Main moved ahead during initial feature work: PRs [#19](https://github.com/karagemop466-tech/Poker2/pull/19) and [#21](https://github.com/karagemop466-tech/Poker2/pull/21) integrated the requested dashboard features and official schedule verification while this branch was in progress. Duplicate PR [#20](https://github.com/karagemop466-tech/Poker2/pull/20) was closed without merge to avoid overwriting that newer integration.
-- Re-read the merged monitor registry and found that the initial scheduled monitor covered 23 source keys but represented the 37 Venetian structure PDFs only as a separate source list. Added one official registry key per PDF (`VSTRUCT01`…`VSTRUCT37`); the scheduled checker now covers 60 official URLs total.
-- Strengthened change detection for PDFs: HTML uses normalized visible text; PDF responses use raw-body SHA-256 so PDF-content changes are not lost by text decoding.
-- Updated generated dataset/source page and baseline placeholder to state 60 URLs / 60 pending first checks. No fetch result is claimed: `data/site/checks.json` deliberately remains `last_run: null`, with 60 awaiting first check.
-- Verification: `python3 scripts/build.py` generated 96 event rows and 60 official sources; `python3 scripts/audit.py` passed 83 Venetian + 13 other rows / 8 hotels / 60 sources; `python3 scripts/check_links.py` passed 18 pages / 1,232 links / 0 broken internal links / 0 non-official external hosts. Local HTML-link audit passed. Unit checks verified normalized HTML stability, raw PDF change detection, and all 37 numbered PDF URLs.
-- Monitoring cannot be manually dispatched from this session: GitHub returned HTTP 403 `Resource not accessible by integration` for Actions workflow dispatch. The existing daily 06:00 UTC schedule remains enabled; first live baseline is pending. Official sheet sources are enumerated on the [Source register](https://karagemop466-tech.github.io/Poker2/sources.html).
->>>>>>> origin/main
-
-- Third merge (2026-11-16): PR #26 (session arena/96765ae0-poker2) touched root `index.html`/`summary.html` while adding structure-sheet source monitoring. Their page versions are archived under `archive/arena-96765ae0/`; their monitoring data and coordination record merged cleanly and are live.
 
 ### Integration result — session arena/8234a824-poker2 (2026-11-16)
 - Integration PR: [#27](https://github.com/karagemop466-tech/Poker2/pull/27) (arena/8234a824-poker2 → main), merged 2026-11-16 with a merge commit. Contents: consolidated verified dashboard (15 pages), unified `data/master.json` (166 events / 8 hotels / 31 flags), structure-sheet verification pass (15 Venetian PDFs), trip calculator, day plan with overlap flags, descriptive ranking, structured rule fields, dated hotel rate logs, and the scheduled source monitor.
 - GitHub Pages: `Deploy static site to GitHub Pages` workflow run [43941774453](https://github.com/karagemop466-tech/Poker2/actions/runs/43941774453) completed `success` for the merge commit; `pages build and deployment` reported `built`. Live site: https://karagemop466-tech.github.io/Poker2/
 - `Verify site` check failed after the merge because scripts/build.py (arena/7a4b09e2-poker2) regenerates root filenames owned by the integration dashboard ("Generated files are out of date"). Fixed by scoping the freshness check to build.py-owned outputs and restoring integration-owned pages before the comparison (`.github/workflows/verify.yml`), plus scoping the source-monitor commit list to integration-owned pages. Follow-up merged via the PR recorded below.
+- Follow-up PR (CI ownership fix + this record): see next line once merged.
+
+### Final integration session — arena/e1c079dc-poker2 (2026-11-16)
+
+Status: all tasks done; integrated into the live dashboard rather than replacing it.
+
+| Task | Status | Files |
+|---|---|---|
+| Read every remaining Venetian DSE IV structure sheet (all 17) and the Wynn WPT structures PDF in full; remove "unverified" where a sheet confirms the rules | done | `data/session-updates-e1c079dc.json`, `scripts/build_master.py` |
+| Trip-cost calculator, date filter, search box, single-entry toggle, day plan with overlap/fallback | already live from the integration dashboard; re-verified working (see below) | existing root pages |
+| Dated rate log + true cost/night formula, official resort fees, 30-minute walk rule | done as far as official sources allow; rates and walk times remain blank and are now flagged in-page | `hotels.html`, `data/master.json` |
+| Scheduled URL re-check marking changed rows + morning schedule pull | already live (`url-check`-equivalent `source-monitor.yml`); the 13.38% county source added to it | existing workflows |
+| Integration: re-verify, link check, PR, merge, Pages | in progress | this file |
+
+Why this was additive, not a replacement. Main had moved eleven PRs ahead while this session verified sources, and concurrent sessions had already published a 15-page dashboard on the shared root output. The repo rule reserves shared outputs for the integration session, so this session integrated its verified findings into that dashboard instead of overwriting it: no existing value was replaced, no page was deleted, and every addition is merged through `scripts/build_master.py`.
+
+What this session actually added (all read from official documents on 2026-11-16):
+- **The 13.38% room tax now has a county source.** Previously it rested only on hotel terms. Clark County's Department of Business License guide for transient lodging establishments prints 13.38% for hotel/motel licences, and the county's combined transient lodging return shows the 8.5% + 4.5% county components. The hotels page links both.
+- **20 Wynn rows lost the "unverified" label.** The official WPT structures PDF was read in full (all 8 chunks, 13 event structures). Every one of those 13 prints an explicit re-entry clause, so the rows now carry verified re-entry terms, chips and level lengths instead of "structure sheet not reviewed". They remain excluded from single-entry, correctly.
+- **12 Wynn series events were missing entirely** and are now listed with officially verified buy-in, date, start time and guarantee. Their rule fields stay blank because the structures PDF does not cover them.
+- **Bellagio Sunday $400 H.O.R.S.E.** verified in full: $340 pool / $35 house fee / $25 voluntary gratuity, 30,000 chips, 30-minute levels, re-entry through level 8, and a $25 gratuity that buys 15,000 extra chips. Excluded from single-entry.
+- **Westgate and South Point added as hotels**, with the Westgate fee conflict ($49.99 on the terms page vs $36.99 in the FAQ's structured answer) and South Point's free parking recorded.
+- **Ten new flags** (41 total), each with the official link behind it.
+
+Verification performed: 17 Venetian structure sheets + DSE IV schedule PDF and event page; Wynn WPT structures PDF (13 events), WPT schedule PDF, daily poster and daily structures PDF, poker and resort pages; Bellagio poker page and Friday/Saturday/Sunday terms PDFs; MGM Grand poker page, schedule PDF and $120 structure PDF; Caesars Palace daily flyer and the Caesars article, plus the corporate disclaimer; Westgate poker page, terms and FAQ; ARIA poker page; South Point poker page; Clark County licensing guide and tax return; Cosmopolitan reservation terms.
+
+Honest result restated: **zero events are confirmed single-entry.** Every sheet read either allows re-entry, sells extra chips, or says nothing. Silence is recorded as silence.
+
+Checks: `python3 scripts/audit.py` → OK (every row reconciles with the document it cites). `python3 scripts/check_links.py` → 18 pages, 1,261 hrefs, 0 broken internal links, 0 non-official hosts (the allowlist gained `westgateresorts.com`, `goldennugget.com`, `southpointcasino.com`, `clarkcountynv.gov`, all operator/county domains).
+
+Still blank, and flagged rather than guessed: dated room rates, checkout totals and walk times. No official booking engine would render a price to a non-browser fetch (`$XXX` behind a cookie wall) and no routing service was reachable, so the cost ranking and the 30-minute rule remain unapplied. See flags IR-E1C-07 and the rate-log panel on `hotels.html`.
 - Follow-up PRs: [#29](https://github.com/karagemop466-tech/Poker2/pull/29) (verify.yml file-ownership fix + source-monitor commit scoping, merged 2026-11-16) and [#30](https://github.com/karagemop466-tech/Poker2/pull/30) (goldennugget.com added to the link gate's official-host list, merged 2026-11-16). After #30, `Verify site` is green on main (run [43942409727](https://github.com/karagemop466-tech/Poker2/actions/runs/43942409727)) and the Pages deployment (`Deploy static site` run [43942409695](https://github.com/karagemop466-tech/Poker2/actions/runs/43942409695), pages build `built` for `fb8c2f7`). Live site re-checked: https://karagemop466-tech.github.io/Poker2/ serves the integrated dashboard (45 freezeout-confirmed, 2 ambiguous, 25 spend-more, 48 unverified rows, 8 hotels, 31 flags).
 
 ## Session arena/72ca3e9d-poker2 — claims (2026-11-16, integration + feature build)
