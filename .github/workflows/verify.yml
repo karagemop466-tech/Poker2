@@ -1,0 +1,42 @@
+name: Verify published site matches its data
+
+# The pages are generated artefacts. This job proves that: it re-runs every generator and fails
+# if the committed HTML differs from what the JSON produces, which is what stops a table on the
+# site from drifting away from the official excerpts transcribed in scripts/build-events.py.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regenerate datasets and pages
+        run: |
+          python3 scripts/build-events.py
+          python3 scripts/build-schedule.py
+          python3 scripts/build-site.py
+      - name: Fail if the committed output differs
+        run: |
+          git add -A -- index.html tournaments.html single-entry.html spend-advantage.html unverified.html \
+            schedule.html hotels.html trip-cost.html rate-log.html venues.html venues sources.html \
+            questions.html suggestions.html flagged.html repo-review.html assets site-data
+          git diff --cached --exit-code --stat || {
+            echo "::error::committed pages differ from site-data/*.json - run the three generators and commit the result"; exit 1; }
+      - name: Parser self-test for the schedule scrape
+        run: node scripts/scrape-schedule.mjs --selftest
+      - name: Client-side data sanity
+        run: node scripts/check_site.mjs

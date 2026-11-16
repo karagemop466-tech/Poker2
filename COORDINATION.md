@@ -167,3 +167,26 @@ Scopes above are files this session will touch. `data/*`, `data/verified/*`, `do
 - Validation: `python3 scripts/check_links.py` passed (131/131 rows cited); custom check found no broken relative links in 20 root/pages HTML documents; `git diff --check` passed; CSVs parse and all data rows have official HTTPS source links; local preview returned HTTP 200.
 - Existing Pages workflow deploys repository root on push to `main`; no workflow change was needed. PR [#16](https://github.com/karagemop466-tech/Poker2/pull/16) merged on 2026-11-16 at merge commit `b484eb08d580e3035d4b538dba0c33f5dc555cb0`.
 - Deployment verified: Pages workflow run [43933521465](https://github.com/karagemop466-tech/Poker2/actions/runs/43933521465) completed successfully; Pages API reports `built` for `b484eb08d580e3035d4b538dba0c33f5dc555cb0`. Public Pages URL: https://karagemop466-tech.github.io/Poker2/.
+
+## Session arena/72ca3e9d-poker2 — completion record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Consolidate the three dashboards into one root site | done | arena/72ca3e9d-poker2 | `index.html` + 14 sibling pages, `assets/site.css`, `assets/site.js`; retired `docs/`, `verified/`, `pages/`, `planning.html`, `app.js`, `style.css`, `styles.css`, `assets/css/style.css` |
+| T2 Canonical dataset merge with `last_checked` + dated rate log | done | arena/72ca3e9d-poker2 | `site-data/*.json` (11 files) |
+| T3 Re-read official schedule + structure sheets; three-state entry classification | done for the 10 sheets read; 27 sheets remain unread → flag FG-03 | arena/72ca3e9d-poker2 | `scripts/build-events.py`, `site-data/events.json` |
+| T4 Venue pages, search, date filter, single-entry toggle, ≤30-min-walk filter | done | arena/72ca3e9d-poker2 | `venues.html`, `venues/*.html`, `assets/site.js` |
+| T5 Trip-cost calculator + true nightly cost | done | arena/72ca3e9d-poker2 | `trip-cost.html`, `site-data/hotels.json` |
+| T6 Overlap / late-registration feasibility flags, primary + conditional fallback | done | arena/72ca3e9d-poker2 | `scripts/build-schedule.py`, `schedule.html` |
+| T7 Change monitor + schedule scrape + snapshots | done; first run seeds the baseline (FG-17) | arena/72ca3e9d-poker2 | `scripts/check_sources.mjs`, `scripts/scrape-schedule.mjs`, `scripts/commit-refresh.sh`, `.github/workflows/daily-refresh.yml` |
+| T8 Summary, questions, suggestions, repo review, flagged pages | done | arena/72ca3e9d-poker2 | `flagged.html`, `questions.html`, `suggestions.html`, `repo-review.html` |
+| T9 PR to main, merge, Pages deploy | see PR link below | arena/72ca3e9d-poker2 | — |
+| New: CI that proves the pages match their data | done | arena/72ca3e9d-poker2 | `.github/workflows/verify.yml`, `scripts/check_site.mjs` |
+
+Notes for later sessions:
+
+- Generators, not hand-edited HTML, are the write path: `python3 scripts/build-events.py && python3 scripts/build-schedule.py && python3 scripts/build-site.py`. Each `--check` mode fails when the committed output drifts from the data, and `build-site.py` additionally aborts if any rendered row lacks an official-host source link or a `last_checked` date, or if a structural value is shown for an event whose sheet was not read.
+- Superseded-but-retained for audit: `data/*.json` and `data/verified/*.json`. Do not rebuild front-ends on them; `site-data/events.json` is the canonical row set. `scripts/build.mjs`, `scripts/build.py`, `scripts/build_site.py` and `scripts/check_links.py` were removed with the trees they generated.
+- Corrections to earlier records: the claim that "no Venetian sheet prints a re-entry/add-on clause" is wrong — sheet 8 (events 18, 58) prices subsequent buy-ins at $200, and sheet 10 states the flight rule. Per-sheet silence is not series-wide silence; the site therefore says "no re-entry/add-on clause on the official structure sheet" and classifies those two events as spend-advantage.
+- `research/e3cb221d-official-follow-up.md` findings are integrated into `site-data/other-venues.json` (Wynn re-entry terms and fee splits, Caesars $50 add-on, Horseshoe 9 AM starts) and labelled "cited, not re-read" (flag FG-04). The "earliest verified start 10:10 AM" claim is Venetian-series-only; Horseshoe publishes 9 AM recurring starts.
+- Not done here on purpose: reading the remaining 27 structure sheets (suggestion S-02), routing-API walk durations (S-06), an official quality rating source (S-04 / FG-12), and any dated hotel quote (S-05 / FG-05). Each is blocked on a decision or on credentials, not on research effort already spent.
