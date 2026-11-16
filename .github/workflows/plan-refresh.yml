@@ -36,7 +36,12 @@ jobs:
           python-version: "3.12"
 
       - name: Check every official source (hash + tracked values)
-        run: node scripts/check_sources.mjs
+        run: |
+          # The self-test runs the tracked patterns from site-data/sources.json against text that
+          # contains the sentences they must match, so a broken pattern fails here instead of
+          # reporting "no change" forever.
+          node scripts/check_sources.mjs --selftest
+          node scripts/check_sources.mjs
 
       - name: Scrape the schedule page and diff it against the dataset
         run: node scripts/scrape-schedule.mjs
