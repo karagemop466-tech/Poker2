@@ -1,0 +1,9 @@
+{
+  "last_run": null,
+  "monitored": 60,
+  "changed_this_run": 0,
+  "never_checked": 60,
+  "errors": 0,
+  "note": "Baseline placeholder. The next scheduled run re-fetches all 60 official URLs, including 37 individual Venetian structure PDFs, and records HTML text hashes / raw PDF hashes. It will replace this placeholder with actual HTTP status codes and content hashes; no source has been checked by this placeholder.",
+  "runs": []
+}

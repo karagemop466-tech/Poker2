@@ -1,38 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Venues &middot; Vegas poker planner</title>
-<meta name="description" content="Venues">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Venues · Vegas Poker Planner</title>
+<meta name="description" content="One page per venue with its events and hotels.">
 <link rel="stylesheet" href="assets/site.css">
-</head>
-<body>
-<header class="site">
-  <div class="head-row">
-    <div class="brand">Vegas poker trip planner <small>official sources only &middot; data checked 2026-11-16</small></div>
-    <div class="sm">Ranking covers one-day events whose official structure sheet was read. Blank = unverified, never guessed.
-      <a href="flagged.html">22 items flagged</a></div>
-  </div>
-  <nav class="top"><a href="index.html">Dashboard</a><a href="tournaments.html">All events</a><a href="single-entry.html">Single-entry ranked</a><a href="spend-advantage.html">Spend-advantage</a><a href="unverified.html">Unverified</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="trip-cost.html">Trip cost</a><a href="rate-log.html">Rate log</a><a href="venues.html" aria-current="page">Venues</a><a href="sources.html">Sources</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="repo-review.html">Repo &amp; method</a></nav>
-</header>
+</head><body>
+<header class="top"><a class="brand" href="index.html">♠ VEGAS POKER PLANNER</a>
+<span class="stamp">Every value sourced · retrieved 2026-11-16</span>
+<button class="menu-btn" onclick="document.body.classList.toggle('nav-open')">Menu</button></header>
+<div class="shell">
+<nav class="side">
+<p class="lbl">SECTIONS</p>
+<a href="index.html">Dashboard</a>
+<a href="tournaments.html">All events</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels &amp; true cost</a>
+<a href="venues.html" class="on">Venues</a>
+<a href="single-entry.html">Entry rules</a>
+<a href="summary.html">Executive summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged for review</a>
+<a href="sources.html">Sources &amp; monitoring</a>
+<a href="repo-review.html">Repo review</a>
+<p class="lbl">NOTE</p>
+<p class="mini">Blank cells are unverified, not zero. Nothing here is an offer.</p>
+</nav>
 <main>
 
-<section>
-<h1>Venues</h1>
-<p class="lede">One page per property, with its events, its hotels, its official documents and what is still missing
-there. A venue stays in &#x27;not_covered_yet&#x27; until its own official page has been read. Nothing is inferred from aggregators.</p>
-<div class="tablewrap compact"><table><thead><tr><th>Venue</th><th>Group</th><th>Rows in the dataset</th>
-<th>Single-entry candidates</th><th>Hotels linked</th><th>Coverage state</th></tr></thead><tbody><tr><td><a href="venues/venetian.html">The Venetian / The Palazzo Poker Room</a></td><td>Venetian Resort</td><td class="num">94</td><td class="num">34</td><td class="num">7</td><td class="sm">primary coverage</td></tr><tr><td><a href="venues/wynn.html">Wynn / Encore Poker Room</a></td><td>Wynn Resorts</td><td class="num">8</td><td class="num">0</td><td class="num">1</td><td class="sm">read by an earlier session on 2026-11-16 (research/e3cb221d-official-follow-up.md); not re-read in this pass - see flag FG-04</td></tr><tr><td><a href="venues/caesars.html">Caesars Palace Poker Room (and Horseshoe Las Vegas)</a></td><td>Caesars Entertainment</td><td class="num">2</td><td class="num">0</td><td class="num">3</td><td class="sm">recurring-format information only; the official guide does not publish buy-in, guarantee or entry limits for the Horseshoe schedule - see flag FG-04b</td></tr><tr><td><a href="venues/mgm.html">MGM Grand Poker Room</a></td><td>MGM Resorts</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="sm">official schedule PDF is titled &#x27;August&#x27; with no year; relevance to the Nov-Dec 2026 window unproven - see flag FG-10</td></tr><tr><td><a href="venues/bellagio.html">Bellagio Poker Room</a></td><td>MGM Resorts</td><td class="num">3</td><td class="num">0</td><td class="num">1</td><td class="sm">three official weekly-format term sheets are linked (Friday $600 NLH, Saturday $1,000 NLH, Sunday $400 H.O.R.S.E.); their contents were not read in this pass, so no values are published - see flag FG-09</td></tr><tr><td><a href="venues/aria.html">ARIA Poker Room</a></td><td>MGM Resorts</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="sm">no dated official schedule captured - row list intentionally empty</td></tr><tr><td><a href="venues/goldennugget.html">Golden Nugget Poker Room (downtown - not on the Strip)</a></td><td>Golden Nugget</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="sm">included for completeness: outside walking distance of the Strip properties in this dataset; re-entry and add-on language was recorded by an earlier session</td></tr></tbody></table></div>
-<h2>Not covered yet</h2><ul class="tight"><li>Planet Hollywood / Bally&#x27;s Las Vegas poker rooms - no official schedule reviewed</li><li>The LINQ Hotel poker room - no official schedule reviewed</li><li>Paris Las Vegas poker room - no official schedule reviewed</li><li>Luxor / Excalibur / New York-New York poker rooms - no official schedule reviewed</li><li>The Palms, South Point, Circa, The STRAT - outside the Strip walking set, not reviewed</li></ul>
-</section>
-</main>
-<footer class="site">
-  Static site generated by <code>scripts/build-site.py</code> from <code>site-data/*.json</code>; the datasets come from <code>scripts/build-events.py</code> and <code>scripts/build-schedule.py</code>.
-  Official pages are re-checked by <a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/daily-refresh.yml">the refresh workflow</a>
-  and reported on the <a href="flagged.html">review page</a>.
-</footer>
-<script src="assets/data.js"></script>
+<section class="hero small"><div class="eyebrow">BY VENUE</div>
+<h1>One page per venue</h1>
+<p class="lede">Each venue page carries that property's verified events, its published fees, and the
+hotels on the same footprint. Nothing is merged across properties, because fee and tax rules differ.</p></section>
+<section class="block"><div class="venues"><a class="venue-card" href="venues/venetian.html"><h3>The Venetian</h3><p class="mini">Bounty, Multi-day, Multi-flight, One-day NLH/PLO, Satellite</p><span class="k">83 event rows</span><span class="k">2 hotel(s)</span></a><a class="venue-card" href="venues/wynn.html"><h3>Wynn</h3><p class="mini">Re-entry permitted, Rebuy / add-on / paid chips</p><span class="k">6 event rows</span><span class="k">2 hotel(s)</span></a><a class="venue-card" href="venues/bellagio.html"><h3>Bellagio</h3><p class="mini">Re-entry permitted</p><span class="k">1 event rows</span><span class="k">1 hotel(s)</span></a><a class="venue-card" href="venues/caesars-palace.html"><h3>Caesars Palace</h3><p class="mini">Rebuy / add-on / paid chips</p><span class="k">4 event rows</span><span class="k">1 hotel(s)</span></a><a class="venue-card" href="venues/mgm-grand.html"><h3>MGM Grand</h3><p class="mini">Rebuy / add-on / paid chips</p><span class="k">1 event rows</span><span class="k">1 hotel(s)</span></a><a class="venue-card" href="venues/horseshoe.html"><h3>Horseshoe Las Vegas</h3><p class="mini">Unverified</p><span class="k">1 event rows</span><span class="k">1 hotel(s)</span></a></div></section>
+
+<footer><p>Independent research dashboard. Official linked pages are authoritative and can change.
+Sources were retrieved on 2026-11-16. Verify again before paying for anything non-refundable.</p>
+<p><a href="flagged.html">Flagged for review</a> · <a href="sources.html">Source register</a></p></footer>
+</main></div>
 <script src="assets/site.js"></script>
-</body>
-</html>
+</body></html>

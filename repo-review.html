@@ -3,55 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Repo &amp; method &middot; Vegas poker planner</title>
-<meta name="description" content="Repo &amp; method">
-<link rel="stylesheet" href="assets/site.css">
+<title>Repo review · Las Vegas Poker Trip Planner</title>
+<meta name="description" content="Repo review">
+<link rel="stylesheet" href="assets/dashboard.css">
 </head>
 <body>
 <header class="site">
-  <div class="head-row">
-    <div class="brand">Vegas poker trip planner <small>official sources only &middot; data checked 2026-11-16</small></div>
-    <div class="sm">Ranking covers one-day events whose official structure sheet was read. Blank = unverified, never guessed.
-      <a href="flagged.html">22 items flagged</a></div>
-  </div>
-  <nav class="top"><a href="index.html">Dashboard</a><a href="tournaments.html">All events</a><a href="single-entry.html">Single-entry ranked</a><a href="spend-advantage.html">Spend-advantage</a><a href="unverified.html">Unverified</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="trip-cost.html">Trip cost</a><a href="rate-log.html">Rate log</a><a href="venues.html">Venues</a><a href="sources.html">Sources</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="repo-review.html" aria-current="page">Repo &amp; method</a></nav>
+  <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
 </header>
+<nav class="site"><a href="index.html">Dashboard</a>
+<a href="summary.html">Executive Summary</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="venue-venetian.html">Venetian</a>
+<a href="venue-wynn.html">Wynn</a>
+<a href="venue-others.html">Other Venues</a>
+<a href="hotels.html">Hotels</a>
+<a href="planner.html">Trip Planner</a>
+<a href="ranking.html">Ranking</a>
+<a href="rules.html">Entry Rules</a>
+<a href="monitor.html">Source Monitor</a>
+<a href="flagged.html">Flagged</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="repo-review.html" class="active">Repo Review</a></nav>
 <main>
 
-<section>
-<h1>Repo review, method, and what changed</h1>
-<p class="lede">The repo arrived with seven prior sessions' work and three parallel dashboards. This page records the
-audit, the consolidation, and how the build enforces its own claims.</p>
-<h2>Method</h2>
+<h1>Repo review</h1>
+<p class="lead">Line-by-line state of the repository as of 2026-11-16, after the integration pass.</p>
+<div class="panel"><h2>Structure</h2>
 <ul class="tight">
-<li><b>Read the official page, then its document.</b> Event rows come from the DSE IV schedule page; fee, stack,
-level, registration and guarantee come from that event's structure sheet. Buy-ins and guarantees parsed from the event
-name are cross-checked against the sheet text, and a mismatch aborts the build.</li>
-<li><b>Three states, never two.</b> <i>explicit</i> (the source says it, excerpt stored), <i>not stated after a full
-read</i> (we read it and the clause is absent), <i>not read</i> (no claim). Only the first two may appear in a table,
-and only a full read with a confirmed fee and guarantee may be ranked.</li>
-<li><b>Computed values are labelled computed.</b> Ratios and &ldquo;earliest plausible finish&rdquo; are derived from
-published times; the derivation is printed next to the table so nobody reads it as a scheduled end time.</li>
-<li><b>No outbound network in the build sandbox</b> (GitHub, npm and PyPI only), so live re-reads happen in the GitHub
-Actions job, which reports here rather than silently rewriting data.</li>
-</ul>
-<h2>Automated checks in this build</h2>
-<div class="tablewrap compact"><table><thead><tr><th>Check</th><th>Where</th><th>Type</th></tr></thead><tbody><tr><td>Every event row links an official source host</td><td class="sm">scripts/build-site.py validate(): non-official or missing source aborts the build</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Every row carries a last-checked date</td><td class="sm">same validation pass</td><td><span class="badge b-info">automated</span></td></tr><tr><td>No structural value shown for an unread sheet</td><td class="sm">validate(): fee/chips/level/reg-close must have sheet_read</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Every resort fee / parking / incidentals / occupancy value has a source URL</td><td class="sm">validate(): &ldquo;verified_official&rdquo; without a URL aborts</td><td><span class="badge b-info">automated</span></td></tr><tr><td>No broken internal links</td><td class="sm">validate(): walks every written page after generation</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Guarantee in the event name matches the guarantee on its structure sheet</td><td class="sm">scripts/build-events.py: 34 cross-checked rows, mismatch aborts</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Event-to-sheet tagging matches each sheet's own &ldquo;Event Numbers&rdquo; line</td><td class="sm">scripts/build-events.py</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Registration-close time parsed from the sheet matches the printed wall clock in the text</td><td class="sm">scripts/build-events.py parses both the level count and the parenthesised time</td><td><span class="badge b-info">automated</span></td></tr><tr><td>Values are never copied from an aggregator</td><td class="sm">site-data/sources.json keeps third-party leads with used_as_value_source: false and they are not referenced by any row</td><td><span class="badge b-info">automated</span></td></tr></tbody></table></div>
-<h2>Irregularities found in the repo itself</h2>
-<ul class="tight"><li><b>FG-14</b>: <code>data/tournaments.json</code> attributed structure-sheet values (registration cutoff, stack, level length) to the schedule page, and a second session had already flagged those fields as unreproducible from that page. Both were half right: the values are real, the attribution was not. Fixed by per-field source links in the new dataset.</li><li><b>FG-15</b>: <code>data/venetian-dse4-official-check.json</code> (47 rows) and <code>data/verified/tournaments.json</code> (32 rows) each labelled rows &ldquo;single_entry&rdquo; on sheet silence alone, and the former counted per-flight rows as separate single-entry events. The consolidated dataset uses three states and groups flights by event.</li><li><b>FG-16</b>: Three dashboards (root, <code>/docs/</code>, <code>/verified/</code>) rendered three datasets with different labels for the same event. The root site is now the only front-end; the duplicate trees are removed and their data kept under <code>data/</code> for audit.</li><li><b>FG-19</b>: For the 34 rows whose sheet was read, the buy-in is fee-inclusive. For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter shows the published buy-in with a caveat instead of a computed total.</li><li><b>Repo hygiene</b>: Two stylesheets and two scripts existed at the root (<code>style.css</code>/<code>styles.css</code>, <code>app.js</code>) with overlapping selectors from different sessions; retired in favour of <code>assets/site.css</code> and <code>assets/site.js</code>. <code>scripts/build.mjs</code> and <code>scripts/build.py</code> built the retired front-ends and are no longer the publisher path.</li></ul>
-<h2>Working tree at the top level</h2>
-<p class="sm"><code>COORDINATION.md</code> <code>README.md</code> <code>assets</code> <code>data</code> <code>flagged.html</code> <code>hotels.html</code> <code>index.html</code> <code>questions.html</code> <code>rate-log.html</code> <code>repo-review.html</code> <code>reports</code> <code>research</code> <code>schedule.html</code> <code>scripts</code> <code>single-entry.html</code> <code>site-data</code> <code>sources.html</code> <code>spend-advantage.html</code> <code>suggestions.html</code> <code>tournaments.html</code> <code>trip-cost.html</code> <code>unverified.html</code> <code>venues</code> <code>venues.html</code></p>
-<h2>Coordination</h2>
-<p class="sm">Board and hand-off record: <a href="COORDINATION.md">COORDINATION.md</a> (per-session claims, conflict
-log, sources and PR history).</p>
-</section>
+<li><code>data/master.json</code> — unified dataset (events, hotels, rate logs, rules, flags) generated by <code>scripts/build_master.py</code> from verified inputs.</li>
+<li><code>data/session-updates.json</code> — this session’s official-source reads (structure-sheet excerpts, recurring venue feeds, hotel facts).</li>
+<li><code>data/source_monitor.json</code> — URL/hash registry maintained by <code>scripts/monitor.py</code> (scheduled).</li>
+<li>Root pages (this dashboard) — generated by <code>scripts/build_site.py</code>; row-level source check fails the build if a row lacks an official link.</li>
+<li><code>docs/</code> and <code>verified/</code> — earlier session dashboards, preserved as archives and linked in the footer.</li>
+<li><code>COORDINATION.md</code> — shared task board for parallel sessions.</li>
+</ul></div>
+<div class="panel"><h2>Irregularities found in earlier data (flagged, not silently fixed)</h2>
+<ul class="tight">
+<li>Three overlapping dashboards exist (root, <code>/docs/</code>, <code>/verified/</code>). This root dashboard supersedes them; consolidation is suggestion S-C.</li>
+<li>Earlier datasets disagreed on chip counts and reg-close times for some Venetian rows (see session arena/acd81e67-poker2 notes in COORDINATION.md). Rows in this site use the structure-sheet values where the sheet was read; others carry blanks.</li>
+<li>“Verified single-entry” in older files meant “no re-entry language found”. This site labels that state precisely (“Freezeout confirmed — sheet read”) and keeps the express-confirmation caveat in every legend.</li>
+<li>Wynn WPT “NIH” naming, the Venetian series-label staleness, and the Caesars guide-vs-flyer buy-in conflict are preserved as flags.</li>
+</ul></div>
+<div class="panel"><h2>Verification performed in this integration pass</h2>
+<ul class="tight">
+<li>13 Venetian structure PDFs read directly (structures 8, 17, 18, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33) + multi-flight sheets 2 and 9.</li>
+<li>Wynn poker page, Caesars poker guide, MGM Grand poker page, Golden Nugget daily page re-read directly.</li>
+<li>Hotel facts: Venetian tax/resort-fee/player-rate pages and Wynn resort-information page are the basis of every hotel value; Caesars fees intentionally blank.</li>
+<li>Build-time check: every event and hotel row must cite an official https source or the build fails.</li>
+</ul></div>
 </main>
 <footer class="site">
-  Static site generated by <code>scripts/build-site.py</code> from <code>site-data/*.json</code>; the datasets come from <code>scripts/build-events.py</code> and <code>scripts/build-schedule.py</code>.
-  Official pages are re-checked by <a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/daily-refresh.yml">the refresh workflow</a>
-  and reported on the <a href="flagged.html">review page</a>.
+  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
+  <a href="COORDINATION.md">COORDINATION.md</a> ·
+  Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
+  <br>Guarantee ÷ entry-fee figures are descriptive ratios, not forecasts. Nothing here is financial advice.
 </footer>
-<script src="assets/data.js"></script>
-<script src="assets/site.js"></script>
+<script src="assets/dashboard.js"></script>
 </body>
 </html>
