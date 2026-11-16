@@ -1,123 +1,151 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hotels &amp; true cost · Vegas Poker Planner</title>
-<meta name="description" content="Resort fees, published room-tax rate, parking and a dated rate log.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels · Las Vegas Poker Trip Planner</title>
+<meta name="description" content="Hotels">
 <link rel="stylesheet" href="assets/site.css">
-</head><body>
-<header class="top"><a class="brand" href="index.html">♠ VEGAS POKER PLANNER</a>
-<span class="stamp">Every value sourced · retrieved 2026-11-16</span>
-<button class="menu-btn" onclick="document.body.classList.toggle('nav-open')">Menu</button></header>
-<div class="shell">
-<nav class="side">
-<p class="lbl">SECTIONS</p>
-<a href="index.html">Dashboard</a>
-<a href="tournaments.html">All events</a>
-<a href="schedule.html">Day plan</a>
-<a href="hotels.html" class="on">Hotels &amp; true cost</a>
-<a href="venues.html">Venues</a>
-<a href="single-entry.html">Entry rules</a>
-<a href="summary.html">Executive summary</a>
+</head>
+<body>
+<header class="site">
+  <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+</header>
+<nav class="site"><a href="index.html">Dashboard</a>
+<a href="summary.html">Executive Summary</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="venue-venetian.html">Venetian</a>
+<a href="venue-wynn.html">Wynn</a>
+<a href="venue-others.html">Other Venues</a>
+<a href="hotels.html" class="active">Hotels</a>
+<a href="planner.html">Trip Planner</a>
+<a href="ranking.html">Ranking</a>
+<a href="rules.html">Entry Rules</a>
+<a href="monitor.html">Source Monitor</a>
+<a href="flagged.html">Flagged</a>
 <a href="questions.html">Questions</a>
 <a href="suggestions.html">Suggestions</a>
-<a href="flagged.html">Flagged for review</a>
-<a href="sources.html">Sources &amp; monitoring</a>
-<a href="repo-review.html">Repo review</a>
-<p class="lbl">NOTE</p>
-<p class="mini">Blank cells are unverified, not zero. Nothing here is an offer.</p>
-</nav>
+<a href="repo-review.html">Repo Review</a></nav>
 <main>
 
-<section class="hero small"><div class="eyebrow">LODGING</div>
-<h1>What a night really costs</h1>
-<p class="lede">A nightly rate is not the cost. The comparable figure is
-<code>(room rate + mandatory resort fee + taxes + parking) ÷ nights</code>, taken from a dated quote
-for the exact stay. Only the components printed on official pages are filled in here; the rest is blank.</p></section>
+<h1>Hotels — true cost per night</h1>
+<p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% Clark County
+room tax is officially disclosed in The Venetian’s hotel terms; applying it to other properties is an assumption to confirm.
+Rates are kept as a <strong>dated log</strong>, never a single value.</p>
+<div class="toolbar">
+<input type="search" placeholder="Search all columns…" data-bind-search="tbl-hotels">
+<select data-bind-date="tbl-hotels"><option value="">All dates</option></select>
 
-<section class="block">
-<div class="head"><h2>Hotel components</h2>
-<p>Fees, taxes and parking exactly as published. Walking time is blank for every property because no
-official source states one.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Property</th><th>Poker room location</th>
-<th class="num">Resort fee / night</th><th class="num">Room tax</th><th class="num">Poker rate</th>
-<th>Rate conditions</th><th class="num">Walk (min)</th><th>Official source</th></tr></thead>
-<tbody><tr><td><b>The Venetian Resort</b><br><span class="mini">Venetian Tower</span></td><td class="mini">Palazzo, level 2, Grand Canal Shoppes (same resort complex)</td><td class="num">$55</td><td class="num">13.38%</td><td class="num">from $119</td><td class="mini">Poker suite rates 'start as low as $119 and $209' for The Venetian or The Palazzo; page does not map each price to a property. Conditional on six hours of active live cash play or a $300+ tournament buy-in per night, else the prevailing rate applies.</td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">official</a> <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official</a> <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>The Palazzo (Venetian Resort)</b><br><span class="mini">Palazzo Tower</span></td><td class="mini">Palazzo, level 2, Grand Canal Shoppes (same building as poker room)</td><td class="num">$55</td><td class="num">13.38%</td><td class="num">from $209</td><td class="mini">Same Venetian poker suite-rate page: 'as low as $119 and $209'; property mapping is not given. Conditional on qualifying play per night.</td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">official</a> <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official</a> <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>Wynn Las Vegas</b><br><span class="mini">Wynn Tower</span></td><td class="mini">Poker room is located in Encore at Wynn Las Vegas</td><td class="num">$55</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">official</a> <a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>Encore at Wynn Las Vegas</b><br><span class="mini">Encore Tower</span></td><td class="mini">Poker room is inside Encore at Wynn Las Vegas, per the official Wynn poker room page</td><td class="num">$55</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">official</a> <a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>Bellagio</b><br><span class="mini">Main tower</span></td><td class="mini">North side of casino, next to the sportsbook</td><td class="num">$55</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">official</a> <a href="https://bellagio.mgmresorts.com/en/casino/poker.html" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>MGM Grand</b><br><span class="mini">Main tower</span></td><td class="mini">Dedicated non-smoking poker room, open 24 hours</td><td class="num">$50</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">official</a> <a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>Caesars Palace</b><br><span class="mini">Main towers</span></td><td class="mini">Poker room open 24/7 with daily tournaments</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.caesars.com/caesars-palace/casino" target="_blank" rel="noopener">official</a></td></tr><tr><td><b>Horseshoe Las Vegas</b><br><span class="mini">Main tower</span></td><td class="mini">Hall of Fame Poker Room, 20 tables; 6 tournament times daily</td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="num"><span class="blank">blank</span></td><td class="mini"><span class="blank">No published poker rate</span></td><td class="num"><span class="blank">blank</span></td><td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/casino" target="_blank" rel="noopener">official</a></td></tr></tbody></table></div>
-<p class="note">Venetian poker room is on Palazzo level 2 in the Grand Canal Shoppes; Wynn's poker room
-is inside Encore. That is a description of the location, not a walking time.</p>
-</section>
-
-<section class="block">
-<div class="head"><h2>The 30-minute walking rule</h2>
-<p>The constraint was that a hotel must be within a 30-minute walk of a tournament. Here is
-exactly how far that constraint can be enforced from official sources today.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Step in the rule</th><th>What official sources give us</th>
-<th>Status</th></tr></thead><tbody>
-<tr><td>Is the poker room in the hotel?</td><td>Published for all six venues, with the room's floor or
-wing (column 2 above). The Venetian and Palazzo towers share one complex with the poker room; Wynn's
-poker room sits inside Encore.</td><td><span class="badge ok">published</span></td></tr>
-<tr><td>How long is the walk?</td><td>Nothing. No retrieved official page states a walking duration,
-distance or route between a Strip hotel and a poker room.</td><td><span class="badge rev">not published</span></td></tr>
-<tr><td>Apply the 30-minute cap</td><td>Cannot be applied mechanically without the previous step.
-Applying it would mean inventing the number the cap is applied to.</td><td><span class="badge warn">blocked</span></td></tr>
-<tr><td>Practical consequence</td><td>Every property on this page is either in the same building as a
-poker room or directly connected to one, so none is plausibly beyond a 30-minute indoor walk — but
-<i>plausibly</i> is the site owner's inference, not a verified fact, and it is therefore not used to
-rank anything.</td><td><span class="badge rev">unverified</span></td></tr>
-</tbody></table></div>
-<p class="note">To close this: time one walk per hotel–room pair, record the date, the route and
-whether it was indoors, and the cap becomes checkable. That is Q-05 on the
-<a href="questions.html">Questions</a> page and F-03 on <a href="flagged.html">Flagged</a>.</p>
-</section>
-
-<section class="block">
-<div class="head"><h2>Dated rate log</h2>
-<p>Rates are stored as observations with a date and a source, never as a single remembered value.
-A new check appends a row; nothing is silently overwritten.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Checked</th><th>Property</th><th>Field</th>
-<th class="num">Value</th><th>Note</th><th>Source</th></tr></thead><tbody><tr><td class="nowrap">2026-11-16</td><td>The Venetian Resort</td><td>resort_fee</td><td class="num">$55</td><td class="mini">plus applicable tax, per night</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Venetian Resort</td><td>room_tax_rate</td><td class="num">13.38%</td><td class="mini">Clark County Room Tax 13.38% (official Venetian hotel terms)</td><td class="src"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Venetian Resort</td><td>poker_rate</td><td class="num">from $119</td><td class="mini">Poker suite rates 'start as low as $119 and $209' for The Venetian or The Palazzo; page does not map each price to a property. Conditional on six hours of active live cash play or a $300+ tournament buy-in per night, else the prevailing rate applies.</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Venetian Resort</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Palazzo (Venetian Resort)</td><td>resort_fee</td><td class="num">$55</td><td class="mini">plus applicable tax, per night</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Palazzo (Venetian Resort)</td><td>room_tax_rate</td><td class="num">13.38%</td><td class="mini">Clark County Room Tax 13.38% (official Venetian hotel terms)</td><td class="src"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Palazzo (Venetian Resort)</td><td>poker_rate</td><td class="num">from $209</td><td class="mini">Same Venetian poker suite-rate page: 'as low as $119 and $209'; property mapping is not given. Conditional on qualifying play per night.</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>The Palazzo (Venetian Resort)</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Wynn Las Vegas</td><td>resort_fee</td><td class="num">$55</td><td class="mini">plus tax, per room night</td><td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>Wynn Las Vegas</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Room tax rate not stated on the official pages read (unverified)</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Wynn Las Vegas</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">No official poker-room rate published on the pages read.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Wynn Las Vegas</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Encore at Wynn Las Vegas</td><td>resort_fee</td><td class="num">$55</td><td class="mini">plus tax, per room night</td><td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>Encore at Wynn Las Vegas</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Room tax rate not stated on the official pages read (unverified)</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Encore at Wynn Las Vegas</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Not published.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Encore at Wynn Las Vegas</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Bellagio</td><td>resort_fee</td><td class="num">$55</td><td class="mini">plus applicable tax</td><td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>Bellagio</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Terms say taxes are estimated at current rates without stating a percentage (unverified)</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Bellagio</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">No official poker rate published.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Bellagio</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>MGM Grand</td><td>resort_fee</td><td class="num">$50</td><td class="mini">plus applicable tax</td><td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>MGM Grand</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Terms say taxes are estimated at current rates without stating a percentage (unverified)</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>MGM Grand</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">No official poker rate published.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>MGM Grand</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Caesars Palace</td><td>resort_fee</td><td class="num"><span class="blank">blank</span></td><td class="mini">No resort-fee figure could be retrieved from an official Caesars source (unverified)</td><td class="src"><a href="https://www.caesars.com/caesars-palace/casino" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>Caesars Palace</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Unverified</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Caesars Palace</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Not published.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Caesars Palace</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Horseshoe Las Vegas</td><td>resort_fee</td><td class="num"><span class="blank">blank</span></td><td class="mini">No resort-fee figure could be retrieved from an official Caesars source (unverified)</td><td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/casino" target="_blank" rel="noopener">official</a></td></tr><tr><td class="nowrap">2026-11-16</td><td>Horseshoe Las Vegas</td><td>room_tax_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Unverified</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Horseshoe Las Vegas</td><td>poker_rate</td><td class="num"><span class="blank">blank</span></td><td class="mini">Not published.</td><td class="src"><span class="blank">no source</span></td></tr><tr><td class="nowrap">2026-11-16</td><td>Horseshoe Las Vegas</td><td>dated_checkout_total</td><td class="num"><span class="blank">blank</span></td><td class="mini">No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.</td><td class="src"><span class="blank">no source</span></td></tr></tbody></table></div>
-</section>
-
-<section class="block">
-<div class="head"><h2>True cost per night calculator</h2>
-<p>Enter a nightly rate copied from the property's own booking page for your exact dates. The
-calculator applies the fees and tax that the official pages publish for the property you name.</p></div>
-<div class="calc">
-<fieldset><legend>Stay</legend>
-<label>Nights <input type="number" id="c-nights" value="5" min="0" max="60"></label>
-<label>Nightly room rate ($) <input type="number" id="c-rate" placeholder="from a live official quote"></label>
-<label>Resort fee / night ($) <input type="number" id="c-fee" value="55" min="0"></label>
-<label>Room tax (%) <input type="number" id="c-tax" value="13.38" step="0.01" min="0"></label>
-<label>Parking / day ($) <input type="number" id="c-park" value="0" min="0"></label>
-<label>Other per-night fees ($) <input type="number" id="c-other" value="0" min="0"></label>
-</fieldset>
-<div class="out" id="c-out"></div>
+<label><input type="checkbox" data-bind-walk="tbl-hotels"> ≤30-min walk verified only</label>
+<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-hotels&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Freezeout confirmed only</label>
+<span class="count" data-count-for="tbl-hotels"></span>
 </div>
-<h3>What tax rate to use</h3>
-<div class="tw"><table class="t"><thead><tr><th>Property</th><th>Room tax published?</th><th>Source</th></tr></thead><tbody>
-<tr><td>The Venetian / Palazzo</td><td>Yes — 13.38% Clark County Room Tax</td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">Venetian Hotel Terms &amp; Conditions (13.38% room tax, parking, incidentals)</a></td></tr>
-<tr><td>Wynn / Encore</td><td><span class="blank">No percentage printed</span></td><td><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">Wynn Resort Policies &amp; Information page ($55 plus tax resort fee)</a></td></tr>
-<tr><td>Bellagio</td><td><span class="blank">No percentage printed</span></td><td><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">Bellagio Hotel Reservation Terms &amp; Conditions</a></td></tr>
-<tr><td>MGM Grand</td><td><span class="blank">No percentage printed</span></td><td><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">MGM Grand Hotel Reservation Terms &amp; Conditions</a></td></tr>
-<tr><td>Caesars Palace / Horseshoe</td><td><span class="blank">No official page retrieved</span></td><td>—</td></tr>
-</tbody></table></div>
-<p class="note">Applying 13.38% to a non-Venetian property would be an inference. It is flagged as
-<a href="flagged.html">F-05</a>.</p>
-
-<h3>Parking as published (Venetian)</h3>
-<ul class="tick">
-<li>Registered hotel guests: $20/day, seven days a week.</li>
-<li>Non-hotel guests: $20 Monday–Thursday, $25 Friday–Sunday.</li>
-<li>Valet: $40/day.</li>
-<li>Venetian Rewards Sapphire and above: complimentary self-parking; Ruby and above: complimentary valet.</li>
-<li>Non-registered guests who play three hours or more in tournaments or cash games: complimentary self-parking (poker room page).</li>
-<li>Incidental hold: $150 per night for non-Signature Suites.</li>
+<table class="data" id="tbl-hotels"><thead><tr><th>Hotel</th><th>Address</th><th>Latest logged rate</th><th>Resort fee</th><th>Tax</th><th>Parking</th><th>True cost / night</th><th>Walking time (30-min limit)</th><th>Sources / last checked</th></tr></thead><tbody><tr data-cat="hotel" data-walk-ok="0">
+<td><strong>The Venetian Resort Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3355 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td>$119 <small class="note">from-price, conditional poker player rate · logged 2026-11-16</small></td><td>$55 /night<small class="note">$55 plus applicable tax per night (official resort-fee page)</small></td><td>13.38%<small class="note">Clark County Room Tax of 13.38% (official hotel terms). Applying it to the resort fee is a computation to confirm at checkout.</small></td>
+<td>$20/day for hotel guests (official hotel terms).</td>
+<td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="20.0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/book" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>The Palazzo at The Venetian</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3325 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td>$209 <small class="note">from-price, conditional poker player rate · logged 2026-11-16</small></td><td>$55 /night<small class="note">$55 plus applicable tax per night (official resort-fee page, shared with Venetian)</small></td><td>13.38%<small class="note">Same Clark County room tax disclosure as The Venetian.</small></td>
+<td>$20/day for hotel guests (official hotel terms).</td>
+<td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="20.0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/book" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>Wynn Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3131 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per room night (official resort-information page)</small></td><td><span class="badge b-warn">blank</span><small class="note">Wynn terms say “plus tax” with no published rate. The 13.38% Clark County rate comes from Venetian’s terms — applying it here is unverified (flag).</small></td>
+<td>Self-parking for up to two vehicles is included in the resort fee (official).</td>
+<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" rel="noopener" target="_blank">schedule</a> · <a href="https://www.wynnlasvegas.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>ARIA Resort &amp; Casino</strong><small class="note">Strip</small></td>
+<td>3730 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://aria.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>Bellagio</strong><small class="note">Strip</small></td>
+<td>3600 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="55.0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://bellagio.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>MGM Grand</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3799 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td>$50 /night<small class="note">$50 plus applicable tax per night (official hotel terms)</small></td><td><span class="badge b-warn">blank</span><small class="note">Tax rate not captured from an official MGM page — blank.</small></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="50.0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://mgmgrand.mgmresorts.com/en/hotel.html" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>Horseshoe Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3645 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td><span class="badge b-warn">blank</span></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=BLV" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr>
+<tr data-cat="hotel" data-walk-ok="0">
+<td><strong>Caesars Palace</strong><small class="note">Strip (venue hotel)</small></td>
+<td>3570 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td><span class="badge b-warn">blank</span></td>
+<td>—</td>
+<td><div data-hotel-calc data-fee="0" data-tax="0" data-parking="0">
+<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<div class="hc-out small note"></div></div></td>
+<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=CP" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+</tr></tbody></table>
+<h2>Dated rate logs</h2>
+<details><summary>The Venetian Resort Las Vegas</summary><ul class='tight'><li><strong>2026-11-16</strong>: $119 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>The Palazzo at The Venetian</summary><ul class='tight'><li><strong>2026-11-16</strong>: $209 — from-price, conditional poker player rate · Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies. · <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">source</a></li></ul></details><details><summary>Wynn Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>ARIA Resort &amp; Casino</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Bellagio</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>MGM Grand</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Horseshoe Las Vegas</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details><details><summary>Caesars Palace</summary><p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p></details>
+<div class="panel"><h2>What is still missing</h2>
+<ul class="tight">
+<li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
+<li>Verified walking times per hotel–venue pair (30-minute limit). Use the maps links in each row to capture them.</li>
+<li>Official resort-fee amounts for Caesars properties (shown in the official booking flow at checkout; Diamond+ waives).</li>
 </ul>
-<p class="mini">Source: <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">Venetian Hotel Terms &amp; Conditions (13.38% room tax, parking, incidentals)</a> · <a href="https://www.venetianlasvegas.com/resort/casino/poker.html" target="_blank" rel="noopener">Venetian Poker Room page (location: Palazzo level 2)</a></p>
-</section>
-
-<footer><p>Independent research dashboard. Official linked pages are authoritative and can change.
-Sources were retrieved on 2026-11-16. Verify again before paying for anything non-refundable.</p>
-<p><a href="flagged.html">Flagged for review</a> · <a href="sources.html">Source register</a></p></footer>
-</main></div>
+<p class="note">The trip calculator on the <a href="planner.html">Trip Planner</a> uses the same formula, per hotel, over your stay.</p></div>
+</main>
+<footer class="site">
+  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
+  <a href="COORDINATION.md">COORDINATION.md</a> ·
+  Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a>
+  <br>Guarantee ÷ entry-fee figures are descriptive ratios, not forecasts. Nothing here is financial advice.
+</footer>
 <script src="assets/site.js"></script>
-</body></html>
+</body>
+</html>
