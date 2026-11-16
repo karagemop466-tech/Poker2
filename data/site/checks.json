@@ -1,0 +1,9 @@
+{
+ "last_run": null,
+ "monitored": 23,
+ "changed_this_run": 0,
+ "never_checked": 23,
+ "errors": 0,
+ "note": "Baseline placeholder. scripts/recheck_sources.py replaces this with real HTTP status codes and content hashes on the next scheduled run, and appends every later run to the log.",
+ "runs": []
+}

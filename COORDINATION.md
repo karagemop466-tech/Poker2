@@ -175,3 +175,43 @@ Scope rules for this session:
 
 Task log:
 - 2026-11-16: Board re-read; all prior tasks `done`. Claim committed before any research or edits.
+
+### Session arena/7a4b09e2-poker2 — completion record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Claim board + repo review | done | arena/7a4b09e2-poker2 | `COORDINATION.md`, `repo-review.html` |
+| T2 Structure-sheet sweep: all 37 official Venetian DSE IV sheets + schedule PDF, structured rule fields with source + retrieval date | done | arena/7a4b09e2-poker2 | `scripts/dataset.py`, `data/site/*.json` |
+| T3 Venue pages (Venetian, Wynn, Bellagio, Caesars Palace, MGM Grand, Horseshoe) with events and hotels | done | arena/7a4b09e2-poker2 | `venues.html`, `venues/*.html` |
+| T4 Hotel true-cost log (dated), resort fees, tax, parking | done (walk times and dated totals remain blank) | arena/7a4b09e2-poker2 | `hotels.html` |
+| T5 Trip-cost calculator, date filter, single-entry toggle, cross-table search, overlap/fallback schedule | done | arena/7a4b09e2-poker2 | `index.html`, `tournaments.html`, `schedule.html`, `assets/site.js`, `assets/site.css` |
+| T6 Scheduled official-URL re-check with change marking | done (baseline only in this sandbox; first live fetch happens in Actions) | arena/7a4b09e2-poker2 | `scripts/recheck_sources.py`, `.github/workflows/recheck.yml`, `data/site/checks.json` |
+| T7 Executive summary, questions, suggestions, flagged, sources, repo review | done | arena/7a4b09e2-poker2 | `summary.html`, `questions.html`, `suggestions.html`, `flagged.html`, `sources.html` |
+| T8 Build/link verification, PR, merge, Pages confirmation | in progress | arena/7a4b09e2-poker2 | this section |
+
+Sources re-read and verified in this session (all 2026-11-16):
+
+- Venetian DSE IV **schedule PDF** (`dse-nov-2026-schedule.pdf`) — full read, both pages of the table. It **does** print registration-close times, starting chips and level lengths, which corrects the earlier board note that said those values are absent from official sources (flag F-14).
+- All **37** Venetian structure sheets (`dse_nov_2026-structure_1.pdf` … `_37.pdf`) — read individually; event-number ownership matched to schedule rows rather than assumed from the URL.
+- Venetian event page, series overview, poker room page, resort fee page, hotel terms, 2026 poker suite rates.
+- Wynn WPT schedule PDF and structures PDF (general terms, $600/$400K, TORSE, PLO $400, Mixed Triple Draw read; the $800/$1M, Prime and Super Gold Million event terms were not re-read — flag F-13).
+- Wynn daily poster + daily structures PDF (Mon–Thu, Fri rebuy/add-on, Sat–Sun), Wynn resort policies.
+- Bellagio poker page + Friday $600 terms + hotel reservation terms.
+- Caesars Palace daily NLH flyer 2026 + casino page; Horseshoe casino page (no retrievable tournament document — flag F-12).
+- MGM Grand poker page, $120 structure, weekly schedule PDF, hotel terms.
+
+New verified findings not on the board before:
+
+1. **RaceDay Stack resolved.** Sheet 18 states $200 buy-in, 30,000 chips, 20/15-minute levels, registration closes after level 6 + break (~12:25 PM), $35 withheld, no re-entry/rebuy/add-on language. It remains *unconfirmed* rather than confirmed single-entry.
+2. **Registration-close and chip values are official.** They come from the schedule PDF and, per event, from the structure sheets; the two agree.
+3. **No confirmed single-entry event anywhere.** Wynn ($600/$400K, TORSE, PLO $400, Mon–Thu and Sat–Sun dailies), Bellagio Friday $600, Caesars Palace dailies, the Wynn Friday rebuy event and MGM Grand all publish permissive or silent text.
+4. **Wynn daily events are suspended during the WPT series** (Wynn poker page), which covers Nov 27 – Dec 21.
+5. **MGM Grand's $11 "voluntary" gratuity buys 10,000 extra chips** — excluded from the no-add-on group.
+6. **Venetian publishes a 13.38% Clark County Room Tax**; Wynn, Bellagio and MGM Grand publish only "current tax rates". Applying 13.38% to them would be an inference, so it is not done.
+7. **Earliest verified start is 09:10 AM** (Venetian Event 46, Dec 12). No 08:00 AM tournament exists in any retrieved schedule.
+
+Verification performed: `python3 scripts/build.py` (96 event rows, 23 sources, 8 hotel records, 14 flags); `python3 scripts/check_links.py` → 18 pages, 1,098 hrefs, 0 broken internal links, 0 non-official external hosts; the build aborts if any row cites a non-official host. No value was inferred: every blank is reproduced on `flagged.html` with its reason.
+
+Irregularities and open items (published on `flagged.html`, do not block merge): F-01 no confirmed single-entry event; F-02 Venetian sheets silent on re-entry; F-03 no official walking times; F-04 no dated hotel totals; F-05 tax rate published only by the Venetian; F-06 MGM schedule PDF titled August with no year; F-07 MGM $11 gratuity buys chips; F-08 Venetian series page still labels the previous series "Current Series"; F-09 schedule PDF date-cell text corruption; F-10 no 08:00 AM start; F-11 Wynn dailies suspended in the WPT window; F-12 Horseshoe publishes no retrievable structure; F-13 three WPT event terms not re-read; F-14 earlier board note about missing chip/reg-close values is superseded.
+
+Conflict and coexistence handling: no other session has an active claim; every earlier task on this board is `done`. Legacy dashboards (`docs/`, `verified/`, `pages/`, `planning.html`) and the earlier `data/*.json` datasets were **not** deleted or rewritten. New data lives in `data/site/`, generated from `scripts/dataset.py`. The legacy `style.css` / `styles.css` / `app.js` are untouched; the new site uses `assets/site.css` and `assets/site.js`.
