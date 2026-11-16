@@ -563,7 +563,7 @@ HOTELS = [
          quality="Wynn Tower Suites hold a Forbes Travel Guide Five-Star rating (tower suites only, not standard rooms)",
          srcs=["WINFO", "WPOKER"], walk_min=None, addr="3131 S Las Vegas Blvd, Las Vegas, NV 89109"),
     dict(id="encore", name="Encore at Wynn Las Vegas", tower="Encore Tower",
-         poker_room="Poker room is in Encore (0 floors / same tower per official Wynn poker terms)",
+         poker_room="Poker room is inside Encore at Wynn Las Vegas, per the official Wynn poker room page",
          resort_fee=55, resort_fee_note="plus tax, per room night",
          tax_rate=None, tax_note="Room tax rate not stated on the official pages read (unverified)",
          base_rate=None, poker_rate=None, poker_rate_note="Not published.",
