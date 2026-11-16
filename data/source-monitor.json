@@ -1,0 +1,9 @@
+{
+  "last_checked": null,
+  "schedule": "Daily GitHub Actions check (07:00 UTC; may be delayed by GitHub Actions)",
+  "comparison": "SHA-256 of the successful HTTP response body; a difference is a review flag, not proof that a tournament value changed.",
+  "first_run_note": "First successful check per URL establishes a baseline. Changes are flagged on later successful checks.",
+  "changed_count": 0,
+  "unavailable_count": 0,
+  "sources": []
+}

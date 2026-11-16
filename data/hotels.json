@@ -13,7 +13,43 @@
         "V_HOTEL_TC",
         "V_POKER"
       ],
-      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Qualifying-play conditions and availability apply. Dated quote and walking time not captured."
+      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Qualifying-play conditions and availability apply. Dated quote and walking time not captured.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.venetianlasvegas.com/resort/resort-fee.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+            "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker.html"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.venetianlasvegas.com/resort/resort-fee.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+            "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker.html"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     },
     {
       "name": "The Palazzo",
@@ -26,7 +62,41 @@
         "V_POKER_RATES",
         "V_POKER"
       ],
-      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Same resort poker room, but walk duration not published."
+      "notes": "Official 2026 poker-rate page states starting rates of $119 and $209 for Venetian or Palazzo suites, but does not explicitly map each amount to a hotel in its wording; treat both property rates as unverified until directly quoted. Same resort poker room, but walk duration not published.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.venetianlasvegas.com/resort/resort-fee.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker.html"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.venetianlasvegas.com/resort/resort-fee.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+            "https://www.venetianlasvegas.com/resort/casino/poker.html"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     },
     {
       "name": "Wynn Las Vegas",
@@ -38,7 +108,39 @@
         "W_RESORT_INFO",
         "W_QUALITY"
       ],
-      "notes": "Official resort information page fetched: $55 plus tax per room night. Wynn Tower Suites has a 20th consecutive Forbes Travel Guide Five-Star rating statement for 2026; applies to Tower Suites only. Rate and walk time blank."
+      "notes": "Official resort information page fetched: $55 plus tax per room night. Wynn Tower Suites has a 20th consecutive Forbes Travel Guide Five-Star rating statement for 2026; applies to Tower Suites only. Rate and walk time blank.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.wynnlasvegas.com/about-us/resort-information",
+            "https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://www.wynnlasvegas.com/about-us/resort-information",
+            "https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     },
     {
       "name": "ARIA Resort & Casino",
@@ -49,7 +151,37 @@
       "src": [
         "A_TC"
       ],
-      "notes": "Gold+ waives the fee. Incidental $150–$500/day by room type."
+      "notes": "Gold+ waives the fee. Incidental $150–$500/day by room type.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     },
     {
       "name": "Bellagio",
@@ -60,7 +192,37 @@
       "src": [
         "B_TC"
       ],
-      "notes": "Gold+ waives the fee. $150/day incidental."
+      "notes": "Gold+ waives the fee. $150/day incidental.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     },
     {
       "name": "MGM Grand",
@@ -73,7 +235,41 @@
         "MGM_HOTEL",
         "MGM_POKER"
       ],
-      "notes": "Official hotel terms state $50 plus tax and possible Gold+ fee waiver for eligible reservations. Daily poker tournaments are published at the same resort; exact room-to-poker walk time and dated room rate remain blank."
+      "notes": "Official hotel terms state $50 plus tax and possible Gold+ fee waiver for eligible reservations. Daily poker tournaments are published at the same resort; exact room-to-poker walk time and dated room rate remain blank.",
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": [
+        {
+          "venue": "The Venetian poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+            "https://mgmgrand.mgmresorts.com/en/hotel.html",
+            "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          ],
+          "venue_address_source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        },
+        {
+          "venue": "Wynn Las Vegas poker room",
+          "walk_minutes": null,
+          "within_30_minutes": null,
+          "status": "UNVERIFIED",
+          "hotel_address_source_urls": [
+            "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+            "https://mgmgrand.mgmresorts.com/en/hotel.html",
+            "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          ],
+          "venue_address_source_url": "https://www.wynnlasvegas.com/casino/poker",
+          "route_provider": "",
+          "route_url": "",
+          "checked_at": ""
+        }
+      ]
     }
   ],
   "note": "Hotel rates and walking distances are not published for unspecified trip dates and were not verified. The 30-minute walk test and cost ranking remain blank. Resort fees are from current official property terms. Venetian/Palazzo poker-rate starting prices are not assigned to one property absent an explicit mapping or dated quote."

@@ -18,7 +18,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V34"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -37,7 +91,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V11"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -56,7 +164,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V17"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -75,7 +237,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V7"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -94,7 +310,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V11"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -113,7 +383,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V17"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -132,7 +456,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V7"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -151,7 +529,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V11"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -170,7 +602,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V7"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -189,7 +675,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V6"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -208,7 +748,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -227,7 +821,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -246,7 +894,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -265,7 +967,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -284,7 +1040,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -303,7 +1113,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -322,7 +1186,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -341,7 +1259,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -360,7 +1332,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V15"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -379,7 +1405,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V8"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -398,7 +1478,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V8"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -417,7 +1551,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V30"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -436,7 +1624,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -455,7 +1697,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -474,7 +1770,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -493,7 +1843,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -512,7 +1916,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -531,7 +1989,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -550,7 +2062,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -569,7 +2135,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -588,7 +2208,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -607,7 +2281,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -626,7 +2354,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -645,7 +2427,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V1"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -664,7 +2500,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V18"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -683,7 +2573,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V18"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -702,7 +2646,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V18"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -721,7 +2719,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V29"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     }
   ],
   "flighted_or_reentry_unverified": [
@@ -742,7 +2794,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V10"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -761,7 +2867,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V2"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -780,7 +2940,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V3"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -799,7 +3013,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V12"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -818,7 +3086,57 @@
         "V_EVENT",
         "V_SCHED",
         "S_V32"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -837,7 +3155,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V21"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -856,7 +3228,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V20"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -875,7 +3301,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V35"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -894,7 +3374,61 @@
         "V_EVENT",
         "V_SCHED",
         "S_V4"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     }
   ],
   "review_unverified_venetian": [
@@ -914,7 +3448,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -932,7 +3516,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -950,7 +3584,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -968,7 +3652,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -986,7 +3720,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1004,7 +3788,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1022,7 +3856,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1040,7 +3924,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1058,7 +3992,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1076,7 +4060,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     }
   ],
   "satellites": [
@@ -1096,7 +4130,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1114,7 +4198,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1132,7 +4266,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1150,7 +4334,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1168,7 +4402,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1186,7 +4470,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Venetian / Palazzo (DSE IV)",
@@ -1204,7 +4538,57 @@
       "src": [
         "V_EVENT",
         "V_SCHED"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+            "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     }
   ],
   "spending_advantage_or_reentry": [
@@ -1225,7 +4609,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1244,7 +4682,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1263,7 +4755,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1282,7 +4828,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1301,7 +4901,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1320,7 +4974,61 @@
         "W_POKER",
         "W_WPT_SCHED",
         "W_WPT_STRUCT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+            "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1337,7 +5045,53 @@
       "notes": "Entry rules NOT verified. Flagged: buy-in and rules must be checked on the official structures sheet.",
       "src": [
         "W_POKER"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (WPT World Championship)",
@@ -1354,7 +5108,53 @@
       "notes": "Re-entry and dates NOT verified. Named on Wynn poker page; details not in verified notes.",
       "src": [
         "W_POKER"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (Daily)",
@@ -1372,7 +5172,57 @@
       "src": [
         "W_POKER",
         "W_DAILY"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (Daily)",
@@ -1389,7 +5239,53 @@
       "notes": "Re-entry NOT verified. Guarantee not captured in verified notes.",
       "src": [
         "W_DAILY"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Wynn Las Vegas (Daily)",
@@ -1407,7 +5303,57 @@
       "src": [
         "W_POKER",
         "W_DAILY"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://www.wynnlasvegas.com/casino/poker",
+            "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Bellagio",
@@ -1424,7 +5370,53 @@
       "notes": "Buy-in and re-enter through end of Level 8.",
       "src": [
         "B_FRI"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Bellagio",
@@ -1441,7 +5433,53 @@
       "notes": "Buy-in and re-enter through end of Level 8.",
       "src": [
         "B_SUN"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     },
     {
       "venue": "Bellagio",
@@ -1458,7 +5496,53 @@
       "notes": "Re-entry NOT verified (flagged). Conflicting title ($1,100 vs $1,000) and a level 3 blind typo in the sheet. Flagged.",
       "src": [
         "B_SAT"
-      ]
+      ],
+      "last_checked": "2026-11-16",
+      "rule_evidence": {
+        "single_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+          ]
+        },
+        "re_entry": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+          ]
+        },
+        "add_on": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+          ]
+        },
+        "fee": {
+          "value": null,
+          "source_excerpt": "",
+          "retrieval_date": "",
+          "status": "UNVERIFIED",
+          "source_urls": [
+            "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+          ]
+        }
+      },
+      "schedule_fit": {
+        "late_registration_cutoff": "",
+        "finish_time": "",
+        "plausible_duration": "",
+        "overlap_status": "UNVERIFIED",
+        "daily_role": "UNASSIGNED"
+      }
     }
   ]
 }

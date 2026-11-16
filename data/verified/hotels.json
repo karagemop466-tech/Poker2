@@ -24,9 +24,18 @@
       "true_cost_per_night": "",
       "true_cost_status": "UNVERIFIED — needs an official nightly room rate. Formula once the rate is known: room rate + resort fee + tax (13.38% on the room rate per the county rule; the fee tax is an assumption). Parking and deposit excluded.",
       "sources": [
-        {"label": "The Venetian — Hotel Terms & Conditions (resort fee, 13.38% room tax, parking, deposit)", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"},
-        {"label": "The Venetian — DeepStack Poker Series overview", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"}
-      ]
+        {
+          "label": "The Venetian — Hotel Terms & Conditions (resort fee, 13.38% room tax, parking, deposit)",
+          "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+        },
+        {
+          "label": "The Venetian — DeepStack Poker Series overview",
+          "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+        }
+      ],
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": []
     },
     {
       "id": "H-WYN",
@@ -50,9 +59,18 @@
       "true_cost_per_night": "",
       "true_cost_status": "UNVERIFIED — needs an official nightly room rate. Same formula as The Venetian.",
       "sources": [
-        {"label": "Wynn Las Vegas — Terms (resort fee, parking, deposit; a 2026 promotion page, see flag F16)", "url": "https://www.visitwynn.com/tc/index.cfm?term_id=850250"},
-        {"label": "Wynn Las Vegas — Poker room page", "url": "https://www.wynnlasvegas.com/casino/poker"}
-      ]
+        {
+          "label": "Wynn Las Vegas — Terms (resort fee, parking, deposit; a 2026 promotion page, see flag F16)",
+          "url": "https://www.visitwynn.com/tc/index.cfm?term_id=850250"
+        },
+        {
+          "label": "Wynn Las Vegas — Poker room page",
+          "url": "https://www.wynnlasvegas.com/casino/poker"
+        }
+      ],
+      "last_checked": "2026-11-16",
+      "rate_log": [],
+      "walking_routes": []
     }
   ]
 }
