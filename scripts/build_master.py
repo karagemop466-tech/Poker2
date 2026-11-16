@@ -160,13 +160,15 @@ for row in check["single_entry"]:
     else:
         cat = "single"
         rules = dict(
-            single_entry="freezeout-confirmed",
-            re_entry="none \u2014 no re-entry clause in sheet",
-            add_on="none \u2014 no add-on clause in sheet",
+            single_entry="not stated \u2014 sheet is silent on re-entry",
+            re_entry="no re-entry clause printed on the sheet; silence, not a prohibition",
+            add_on="no add-on clause printed on the sheet; silence, not a prohibition",
             excerpt=(sheet or {}).get("excerpt") or row.get("entry_rules", ""),
             retrieved=(sheet or {}).get("retrieved", AS_OF),
         )
-        notes = ""
+        notes = ("Structure sheet read in full 2026-11-16. It prints no re-entry, rebuy or add-on "
+                 "mechanism, but it also never says 'no re-entry', so this row is recorded as "
+                 "sheet-silent rather than confirmed single-entry.")
     ev = ven_common(row, cat, rules)
     if ev_no in (3, 4, 5):
         ev["notes"] = (ev["notes"] + " " if ev["notes"] else "") + \
@@ -527,9 +529,10 @@ master = dict(
     as_of=AS_OF,
     generated_by="scripts/build_master.py",
     policy=("Every row links to an official source. Values not confirmed from an official "
-            "source are left blank and flagged. \u2018freezeout-confirmed\u2019 means the official "
-            "structure sheet was fully read and contains no re-entry, rebuy or add-on mechanism; "
-            "it is not an express \u2018single entry\u2019 clause (see flag IR-8234-02)."),
+            "source are left blank and flagged. \u2018sheet silent on re-entry\u2019 means the official "
+            "structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. That is "
+            "NOT the same as a published no-re-entry rule: no Las Vegas room in this dataset publishes one, "
+            "so no event is labelled confirmed single-entry (see flag IR-8234-02)."),
     events=events,
     hotels=hotels,
     questions=questions.get("items", []),
