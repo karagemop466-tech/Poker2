@@ -68,3 +68,27 @@ Integration result (arena/acd81e67-poker2 → main):
 - Live check: https://karagemop466-tech.github.io/Poker2/docs/single-entry.html fetched and served the merged content. Root site https://karagemop466-tech.github.io/Poker2/ is the other session's page and was not changed.
 - Known issue for review: this branch was force-updated once (a broken merge commit was amended before PR #7 was merged); no other session's commits were rewritten.
 - Flagged items (do not block merge): see `docs/flagged.html` F-01…F-22, and the notes above on main's `reg_closes`/`chips`/`level` values.
+
+## Session arena/a22d577b-poker2 — claims and record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Repo review + irregularity log | done | arena/a22d577b-poker2 | `data/verified/flags.json` |
+| T2 Single-entry data — The Venetian (DeepStack IV, Nov 18 – Dec 23 2026) | done | arena/a22d577b-poker2 | `data/verified/tournaments.json` |
+| T3 Excluded / unverified data — Wynn daily + WPT | done (WPT structure chunks 1–7 unread; rows stay UNVERIFIED) | arena/a22d577b-poker2 | `data/verified/tournaments.json` |
+| T4 Hotels: resort-fee verification (Venetian, Wynn) | done (room rates and walk times not verified; blank) | arena/a22d577b-poker2 | `data/verified/hotels.json` |
+| T5 Executive summary, questions, suggestions, sources | done | arena/a22d577b-poker2 | `data/verified/{summary,questions,suggestions,sources}.json` |
+| T6 Site build (generator with official-source and link checks) | done | arena/a22d577b-poker2 | `scripts/build.mjs`, `verified/**` |
+| T7 Integration: merge, Pages check, record | in progress | arena/a22d577b-poker2 | this section |
+
+Coexistence with main (no overwrites):
+- Main's `data/*.json` and root pages (`index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `pages/*`, `docs/*`) belong to other sessions and were NOT changed.
+- This session's data is under `data/verified/` and its site under `verified/` (live at `/Poker2/verified/`). Two overlapping dashboards therefore exist on main plus this one. Consolidating them is a suggestion for the user (see `verified/suggestions/index.html`, S-items), not applied here.
+- Branch name deviation: the task spec asks for `session-<id>/<task>`, but this session's branch is `arena/a22d577b-poker2` (fixed for the session). Recorded as flag F02.
+
+Task log (this session):
+- 2026-11-16: Claimed T1–T7 on the board. Committed `data/tournaments.json` (32 verified Venetian single-entry rows; Venetian 15 + Wynn 17 excluded; Venetian 17 + Wynn WPT 49 unverified).
+- 2026-11-16: Built hotels, flags, questions, suggestions, summary and sources data. Built the site with `scripts/build.mjs` (11 pages). The build fails if any table row lacks an official-host source; internal link check passed.
+- 2026-11-16: Corrected drafts. Removed unsupported claims (a Wynn phone number, an Encore location, WPT re-entry text, an unverified Wynn tax rate, aggregator resort-fee figures). Confirmed the Venetian structure URL pattern (sheet 16 resolves and confirms the Event 36 facts).
+- 2026-11-16: First merge attempt (PR #11) conflicted with main's new data and root pages. Resolved by moving this session's files to `data/verified/` and `verified/` and merging main, keeping main's COORDINATION.md and appending this section. No other session's files were overwritten.
+- Conflicts logged: COORDINATION.md (add/add) — resolved by keeping main's board and appending this section. `data/*.json` and root site names — avoided by relocation.
