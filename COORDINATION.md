@@ -2,6 +2,10 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Extend scheduled source checks to include each of the 37 individual Venetian structure-sheet URLs | in progress | arena/96765ae0-poker2 | `COORDINATION.md`, `scripts/dataset.py`, `scripts/recheck_sources.py`, `README.md`, `sources.html`, `data/site/*` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
 
