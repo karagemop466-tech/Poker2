@@ -2,6 +2,10 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Extend scheduled source checks to include each of the 37 individual Venetian structure-sheet URLs | done (monitor report awaits first live run) | arena/96765ae0-poker2 | `COORDINATION.md`, `scripts/dataset.py`, `scripts/recheck_sources.py`, `README.md`, `sources.html`, `summary.html`, `index.html`, `data/site/*` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
 
@@ -251,3 +255,12 @@ Defects found and fixed by reading the deployed pages, which the build could not
 8. The 30-minute walking constraint was never addressed head-on on the hotels page.
 
 Known limitations, unchanged and published: no confirmed single-entry event (F-01), no dated hotel total (F-04), no official walking time (F-03), no tax percentage for four of six properties (F-05), and three WPT event terms not re-read (F-13). The scheduled monitor's first live run will happen in GitHub Actions, not here.
+
+## Session arena/96765ae0-poker2 — source-monitor coverage follow-up (2026-11-16)
+
+- Main moved ahead during initial feature work: PRs [#19](https://github.com/karagemop466-tech/Poker2/pull/19) and [#21](https://github.com/karagemop466-tech/Poker2/pull/21) integrated the requested dashboard features and official schedule verification while this branch was in progress. Duplicate PR [#20](https://github.com/karagemop466-tech/Poker2/pull/20) was closed without merge to avoid overwriting that newer integration.
+- Re-read the merged monitor registry and found that the initial scheduled monitor covered 23 source keys but represented the 37 Venetian structure PDFs only as a separate source list. Added one official registry key per PDF (`VSTRUCT01`…`VSTRUCT37`); the scheduled checker now covers 60 official URLs total.
+- Strengthened change detection for PDFs: HTML uses normalized visible text; PDF responses use raw-body SHA-256 so PDF-content changes are not lost by text decoding.
+- Updated generated dataset/source page and baseline placeholder to state 60 URLs / 60 pending first checks. No fetch result is claimed: `data/site/checks.json` deliberately remains `last_run: null`, with 60 awaiting first check.
+- Verification: `python3 scripts/build.py` generated 96 event rows and 60 official sources; `python3 scripts/audit.py` passed 83 Venetian + 13 other rows / 8 hotels / 60 sources; `python3 scripts/check_links.py` passed 18 pages / 1,232 links / 0 broken internal links / 0 non-official external hosts. Local HTML-link audit passed. Unit checks verified normalized HTML stability, raw PDF change detection, and all 37 numbered PDF URLs.
+- Monitoring cannot be manually dispatched from this session: GitHub returned HTTP 403 `Resource not accessible by integration` for Actions workflow dispatch. The existing daily 06:00 UTC schedule remains enabled; first live baseline is pending. Official sheet sources are enumerated on the [Source register](https://karagemop466-tech.github.io/Poker2/sources.html).
