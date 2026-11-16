@@ -1,0 +1,64 @@
+{
+  "as_of": "2026-11-16",
+  "hotels": [
+    {
+      "name": "The Venetian",
+      "address": "3355 S. Las Vegas Blvd (Strip)",
+      "resort_fee": "$55 plus tax per night",
+      "rate": "from $119 (poker suite, conditional; before fee and tax)",
+      "walk": null,
+      "src": [
+        "V_RESORT_FEE",
+        "V_POKER_RATES",
+        "V_HOTEL_TC"
+      ],
+      "notes": "Poker suite rate is conditional on qualifying play each night and on availability; blackout dates may apply. Dated quote not captured. Walking time not verified."
+    },
+    {
+      "name": "The Palazzo",
+      "address": "3325 S. Las Vegas Blvd (Strip)",
+      "resort_fee": "$55 plus tax per night",
+      "rate": "from $209 (poker suite, conditional; before fee and tax)",
+      "walk": null,
+      "src": [
+        "V_RESORT_FEE",
+        "V_POKER_RATES"
+      ],
+      "notes": "Same poker-suite conditions as the Venetian. Dated quote not captured. Walking time not verified."
+    },
+    {
+      "name": "Wynn Las Vegas",
+      "address": "3131 S. Las Vegas Blvd (Strip)",
+      "resort_fee": "$55 plus tax per room night",
+      "rate": null,
+      "walk": null,
+      "src": [
+        "W_TC"
+      ],
+      "notes": "Fee from search snippet of official terms; full page not fetched. Rate and walk time blank."
+    },
+    {
+      "name": "ARIA Resort & Casino",
+      "address": "3730 S. Las Vegas Blvd (Strip)",
+      "resort_fee": "$55 plus tax per night; $50 plus tax extra occupant",
+      "rate": null,
+      "walk": null,
+      "src": [
+        "A_TC"
+      ],
+      "notes": "Gold+ waives the fee. Incidental $150–$500/day by room type."
+    },
+    {
+      "name": "Bellagio",
+      "address": "3600 S. Las Vegas Blvd (Strip)",
+      "resort_fee": "$55 plus tax per night; $50 plus tax extra occupant",
+      "rate": null,
+      "walk": null,
+      "src": [
+        "B_TC"
+      ],
+      "notes": "Gold+ waives the fee. $150/day incidental."
+    }
+  ],
+  "note": "Hotel rates and walking distances are not published on official pages and were not verified. The 30-minute walk test and cost ranking are therefore left blank."
+}
