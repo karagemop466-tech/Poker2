@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rate log — Vegas Poker Planner</title>
+<meta name="description" content="Dated log of every hotel rate observation with its basis, occupancy and source.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
+  <a class="nav" href="index.html"><span aria-hidden="true">▦</span>Dashboard</a><a class="nav" href="events.html"><span aria-hidden="true">♠</span>All events</a><a class="nav" href="ranking.html"><span aria-hidden="true">★</span>Best value</a><a class="nav" href="dayplan.html"><span aria-hidden="true">◷</span>Day plan</a><a class="nav" href="trip-cost.html"><span aria-hidden="true">∑</span>Trip cost</a><a class="nav" href="hotels.html"><span aria-hidden="true">⌂</span>Hotels</a><a class="nav active" href="rates.html"><span aria-hidden="true">≡</span>Rate log</a><a class="nav" href="walking.html"><span aria-hidden="true">⇢</span>Walking</a><a class="nav" href="venues/index.html"><span aria-hidden="true">◈</span>Venues</a><a class="nav" href="questions.html"><span aria-hidden="true">?</span>Questions</a><a class="nav" href="suggestions.html"><span aria-hidden="true">✦</span>Suggestions</a><a class="nav" href="flagged.html"><span aria-hidden="true">⚑</span>Flagged</a><a class="nav" href="sources.html"><span aria-hidden="true">☰</span>Sources</a><a class="nav" href="repo-review.html"><span aria-hidden="true">▤</span>Repo review</a><p class="side-label">Archive</p><a class="nav" href="archive/index.html"><span aria-hidden="true">▣</span>Superseded sites</a>
+</aside>
+<main>
+
+<div class="pagehead">
+  <div><div class="eyebrow">A log, never a single overwritten value</div><h1>Rate log</h1>
+  <p class="note" style="max-width:76ch">Every rate observation is its own row, with the date it was
+  observed, what it is (a published starting rate, a mandatory fee, a tax rate or a dated quote), the stay
+  dates it applies to, the occupancy basis and the source. Nothing here is ever overwritten, so a rate that
+  changes shows up as a second row rather than silently replacing the first.</p></div>
+  <div class="stamp">observations<br><b class="count">8</b><br>0 dated quotes</div>
+</div>
+
+<section class="panel">
+<h2>Why a log instead of a rate column</h2>
+<p>A single "rate" cell conflates four different things that look alike and behave differently: a
+published <i>starting</i> rate, a mandatory <i>fee</i>, a <i>tax percentage</i> and a real
+<i>dated quote</i>. Overwriting one with another loses the distinction, and the distinction is the whole
+decision. The $119 Venetian figure is a starting rate conditional on six hours of play per night; a $174
+checkout total for 6–10 December would be a quote. They belong in the same log and must never occupy the
+same cell.</p>
+<p>The log also gives you the audit trail for a dispute: if a property changes a fee, the earlier
+observation stays visible with its own date and its own link.</p>
+</section>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Logged</th><th>Property</th><th>Kind</th><th>Amount</th><th>Basis</th>
+<th>Stay dates</th><th>Occupancy</th><th>Note</th><th>Source</th></tr></thead>
+<tbody><tr>
+<td class="tight">2026-11-16</td>
+<td>Bellagio</td>
+<td>mandatory resort fee</td>
+<td class="num">$55.00</td>
+<td class="note">per night, plus applicable tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">per room</td>
+<td class="note">Waived for MGM Rewards Gold+ on eligible reservations.</td>
+<td><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener" class="src" title="Hotel Reservation Terms and Conditions — Daily resort fee of $55 plus applicable tax; extra-occupant charge $50 plus tax; 72-hour cancellation; $150/day incidental authorisation.">Bellagio T&amp;Cs ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>Caesars Palace</td>
+<td>dated room quote</td>
+<td class="num"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">—</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">—</td>
+<td class="note">No dated checkout quote could be captured. The Venetian and Caesars booking engines render placeholder &#x27;$XXX&#x27; prices to a non-browser client, so no room total is recorded for any date.</td>
+<td><span class="blank">no source</span></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>MGM Grand Las Vegas</td>
+<td>mandatory resort fee</td>
+<td class="num">$50.00</td>
+<td class="note">per night, plus applicable tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">per room</td>
+<td class="note">Waived for MGM Rewards Gold+ on eligible reservations.</td>
+<td><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener" class="src" title="Hotel Reservation Terms and Conditions — Daily resort fee of $50 plus applicable tax; extra-occupant charge $40 plus tax; 72-hour cancellation; $100/day incidental authorisation.">MGM Grand T&amp;Cs ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>The Palazzo (same resort as The Venetian)</td>
+<td>published starting rate</td>
+<td class="num">$209.00</td>
+<td class="note">nightly room rate before resort fee and tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">single/double</td>
+<td class="note">Same page as the $119 figure; the page does not explicitly say which property each number belongs to. Unmapped.</td>
+<td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener" class="src" title="2026 Special Suite Rates — Poker Suite Rate Information Guide — Published poker starting rates ($119 and $209), $55 resort fee, qualifying-play requirement, 150-day booking window, EPOKR25 code.">Venetian poker suite rates ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>The Venetian Resort</td>
+<td>mandatory resort fee</td>
+<td class="num">$55.00</td>
+<td class="note">per night, plus tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">per suite</td>
+<td class="note">Unchanged on both the resort-fee page and the hotel terms page.</td>
+<td><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener" class="src" title="Resort Fee — Daily resort fee of $55 plus tax per night and its inclusions.">Venetian resort fee ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>The Venetian Resort</td>
+<td>published starting rate</td>
+<td class="num">$119.00</td>
+<td class="note">nightly room rate before resort fee and tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">single/double (Luxury King Suite)</td>
+<td class="note">Official page wording: poker suite rates &#x27;will start as low as $119 and $209 and can be higher&#x27;. Not a dated quote; requires 6 hours of live cash play or a $300+ tournament buy-in per night.</td>
+<td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener" class="src" title="2026 Special Suite Rates — Poker Suite Rate Information Guide — Published poker starting rates ($119 and $209), $55 resort fee, qualifying-play requirement, 150-day booking window, EPOKR25 code.">Venetian poker suite rates ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>The Venetian Resort</td>
+<td>room tax rate</td>
+<td class="num"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">13.38% Clark County Room Tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">—</td>
+<td class="note">Printed as a percentage, so no currency amount is recorded.</td>
+<td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener" class="src" title="Hotel Terms and Conditions — Clark County room tax of 13.38%, resort fee, parking fees, check-in/out times, deposit and cancellation terms.">Venetian hotel T&amp;Cs ↗</a></td>
+</tr><tr>
+<td class="tight">2026-11-16</td>
+<td>Wynn Las Vegas</td>
+<td>mandatory resort fee</td>
+<td class="num">$55.00</td>
+<td class="note">per room night, plus tax</td>
+<td class="tight"><span class="blank" title="Not stated by any official source read">—</span></td>
+<td class="note">per room</td>
+<td class="note">Wynn does not print the tax percentage on this page.</td>
+<td><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener" class="src" title="Resort Policies &amp; Information — Daily resort fee of $55 plus tax; check-in 3 p.m. / check-out 12 p.m.; one night deposit.">Wynn resort information ↗</a></td>
+</tr></tbody></table></div>
+
+<section class="panel warnbox">
+<h2>How to append a real quote</h2>
+<ol>
+<li>Open the property's own booking page in a browser (not a script) for the exact arrival and departure
+dates and the exact occupancy.</li>
+<li>Walk to the final checkout screen. Capture: the room subtotal, the nightly average, the mandatory
+resort fee line, the tax line, any parking line, the cancellation deadline, and the timestamp of the
+capture.</li>
+<li>Append it to <code>data/poker/dataset.json</code> under <code>rates</code> with
+<code>kind: "dated_quote"</code>, the <code>stay_dates</code>, the <code>occupancy</code>, and the URL you
+read it from. Run <code>python3 scripts/build_dashboard.py</code>.</li>
+<li>Compare like-for-like: the same dates, the same occupancy, the same tax treatment. A prepaid
+non-refundable total is not comparable to a flexible rate, so record the cancellation terms on the row.</li>
+</ol>
+<p class="note">Nothing in this repository can do step 1 for you — every booking engine read returned
+placeholders to a non-browser client, which is recorded as flag
+<a href="flagged.html">F-03</a>.</p>
+</section>
+
+<footer>
+<p><b>Verification rule for this site.</b> Every table row links to the official page, PDF or structure sheet the value came from, and shows the date that source was last read (2026-11-16). A cell showing <span class="blank">—</span> means no official source stated the value. Nothing is inferred or filled in. Guarantee ÷ entry fee is a descriptive ratio, not a forecast of winnings.</p>
+<p>Research snapshot 2026-11-16 (UTC). Not an offer to sell rooms or tournament entries. Schedules, fees and rules change without notice — re-check the linked official page before paying anything.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

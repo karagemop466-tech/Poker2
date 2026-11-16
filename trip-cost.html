@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trip cost calculator — Vegas Poker Planner</title>
+<meta name="description" content="Entries × buy-ins + nights × true hotel cost, with every default traced to an official source.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
+  <a class="nav" href="index.html"><span aria-hidden="true">▦</span>Dashboard</a><a class="nav" href="events.html"><span aria-hidden="true">♠</span>All events</a><a class="nav" href="ranking.html"><span aria-hidden="true">★</span>Best value</a><a class="nav" href="dayplan.html"><span aria-hidden="true">◷</span>Day plan</a><a class="nav active" href="trip-cost.html"><span aria-hidden="true">∑</span>Trip cost</a><a class="nav" href="hotels.html"><span aria-hidden="true">⌂</span>Hotels</a><a class="nav" href="rates.html"><span aria-hidden="true">≡</span>Rate log</a><a class="nav" href="walking.html"><span aria-hidden="true">⇢</span>Walking</a><a class="nav" href="venues/index.html"><span aria-hidden="true">◈</span>Venues</a><a class="nav" href="questions.html"><span aria-hidden="true">?</span>Questions</a><a class="nav" href="suggestions.html"><span aria-hidden="true">✦</span>Suggestions</a><a class="nav" href="flagged.html"><span aria-hidden="true">⚑</span>Flagged</a><a class="nav" href="sources.html"><span aria-hidden="true">☰</span>Sources</a><a class="nav" href="repo-review.html"><span aria-hidden="true">▤</span>Repo review</a><p class="side-label">Archive</p><a class="nav" href="archive/index.html"><span aria-hidden="true">▣</span>Superseded sites</a>
+</aside>
+<main>
+
+<div class="pagehead">
+  <div><div class="eyebrow">Entries × buy-ins + nights × true hotel cost</div><h1>Trip cost</h1>
+  <p class="note" style="max-width:76ch">A working calculator, not a quote. Every input starts at a value
+  that was actually read from an official source, and each one is labelled with where it came from. Change
+  anything. The output is exact arithmetic on your inputs — it is only as good as the numbers you put in,
+  and the room rate is the one number nobody publishes for a specific date.</p></div>
+  <div class="stamp">defaults from<br><b>2026-11-16</b><br>official pages</div>
+</div>
+
+<section class="panel">
+<h2>The formula and the true-cost definition</h2>
+<p><b>Total</b> = (entries × buy-in) + (nights × room rate) + (nights × resort fee) +
+(room rate + resort fee) × tax rate × nights + (parking days × daily parking) + other.</p>
+<p><b>True cost per night</b> = room rate + mandatory resort fee + tax on both. Taxes are applied to the
+resort fee as well as the room rate, because the Clark County room tax applies to the total room charge —
+the Venetian's own terms state the 13.38% room tax and the $55-plus-tax fee separately, and the fee is
+taxable.</p>
+</section>
+
+<section class="panel">
+<h2>Inputs</h2>
+<div class="controls" style="margin-top:0">
+  <div class="field"><label for="c_nights">Nights</label>
+    <input type="number" id="c_nights" value="7" min="0" step="1"></div>
+  <div class="field"><label for="c_entries">Tournament entries</label>
+    <input type="number" id="c_entries" value="7" min="0" step="1"></div>
+  <div class="field"><label for="c_buyin">Average buy-in ($)</label>
+    <input type="number" id="c_buyin" value="600" min="0" step="50"></div>
+  <div class="field"><label for="c_rate">Room rate / night ($)</label>
+    <input type="number" id="c_rate" value="119" min="0" step="1"></div>
+  <div class="field"><label for="c_fee">Resort fee / night ($)</label>
+    <input type="number" id="c_fee" value="55" min="0" step="1"></div>
+  <div class="field"><label for="c_tax">Room tax (%)</label>
+    <input type="number" id="c_tax" value="13.38" min="0" step="0.01"></div>
+  <div class="field"><label for="c_park">Parking / day ($)</label>
+    <input type="number" id="c_park" value="20" min="0" step="1"></div>
+  <div class="field"><label for="c_parknights">Parking days</label>
+    <input type="number" id="c_parknights" value="7" min="0" step="1"></div>
+  <div class="field"><label for="c_other">Other ($)</label>
+    <input type="number" id="c_other" value="0" min="0" step="10"></div>
+</div>
+<p class="note" style="margin-top:10px">Defaults: <b>$119</b> is the Venetian's published <i>poker starting
+rate</i> — conditional on six hours of live cash play or a $300+ tournament buy-in per night, and not a
+dated quote. <b>$55</b> is the Venetian resort fee. <b>13.38%</b> is the Clark County room tax printed on
+the Venetian's hotel terms. <b>$20/day</b> is the Venetian's registered-guest self-parking rate. Change the
+room rate to a real quote the moment you have one.</p>
+</section>
+
+<div class="calc">
+<section class="card">
+  <h3>Result</h3>
+  <div class="row"><span>True cost per night</span><span id="o_night">—</span></div>
+  <div class="row"><span>Room subtotal</span><span id="o_room">—</span></div>
+  <div class="row"><span>Resort fees</span><span id="o_fee">—</span></div>
+  <div class="row"><span>Tax on room + fee</span><span id="o_tax">—</span></div>
+  <div class="row"><span><b>Hotel total</b></span><span><b id="o_hotel">—</b></span></div>
+  <div class="row"><span>Parking</span><span id="o_park">—</span></div>
+  <div class="row"><span>Tournament entries</span><span id="o_tourn">—</span></div>
+  <div class="row"><span>Other</span><span id="o_other">—</span></div>
+  <div class="row" style="border-top:1px solid #2a3a4d;margin-top:6px;padding-top:10px">
+    <span><b>Trip total</b></span><span class="total" id="o_total">—</span></div>
+  <div class="row"><span>Per night, all-in</span><span id="o_perday">—</span></div>
+  <div class="row"><span>Per tournament entry, all-in</span><span id="o_perentry">—</span></div>
+</section>
+<section class="card">
+  <h3>What the calculator refuses to do</h3>
+  <ul class="clean" style="font-size:.86rem">
+    <li><b>It will not guess a room rate.</b> The $119 default is a published starting rate, and it is
+    conditional. Every booking engine read in this session returned a <code>$XXX</code> placeholder to a
+    non-browser client, so no dated total exists.</li>
+    <li><b>It will not add the extra-occupant charge.</b> Both MGM properties charge $40–$50 plus tax per
+    night above two occupants. If you are travelling as a pair, that line is zero; as a group, add it to
+    <i>Other</i>.</li>
+    <li><b>It will not model the poker rate's condition.</b> The $119 rate requires six hours of live cash
+    play <i>or</i> a $300+ tournament buy-in per night, else the rate reverts to the prevailing rate. If
+    you plan rest days, use the public rate instead.</li>
+    <li><b>It will not count a "voluntary" gratuity as optional.</b> Several events sell chips for a
+    gratuity (Bellagio $40 for +15,000; MGM Grand $11 for +10,000). Declining it puts you at a real chip
+    disadvantage, so treat it as part of the entry cost where the fields are competitive.</li>
+  </ul>
+</section>
+</div>
+
+<section class="panel">
+<h2>Worked examples using only verified numbers</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Stay</th><th>Room rate source</th><th>Resort fee</th><th>Tax</th><th>True cost / night</th><th>Verified?</th></tr></thead>
+<tbody>
+<tr><td>The Venetian, 7 nights, published poker starting rate</td>
+<td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener" class="src" title="2026 Special Suite Rates — Poker Suite Rate Information Guide — Published poker starting rates ($119 and $209), $55 resort fee, qualifying-play requirement, 150-day booking window, EPOKR25 code.">Venetian poker suite rates ↗</a> $119</td><td>$55</td><td>13.38%</td>
+<td class="num">$119 + $55 + 13.38% × $174 = <b>$197.29</b></td>
+<td><span class="tag warn">rate conditional</span></td></tr>
+<tr><td>The Venetian, 7 nights, no poker-rate qualification (prevailing rate)</td>
+<td><span class="blank">—</span></td><td>$55</td><td>13.38%</td>
+<td class="num"><span class="blank">cannot compute — no rate</span></td>
+<td><span class="tag bad">unverified</span></td></tr>
+<tr><td>Wynn, 7 nights</td><td><span class="blank">—</span></td><td>$55</td><td><span class="blank">—</span></td>
+<td class="num"><span class="blank">cannot compute</span></td><td><span class="tag bad">unverified</span></td></tr>
+<tr><td>Bellagio, 7 nights</td><td><span class="blank">—</span></td><td>$55</td><td><span class="blank">—</span></td>
+<td class="num"><span class="blank">cannot compute</span></td><td><span class="tag bad">unverified</span></td></tr>
+<tr><td>MGM Grand, 7 nights</td><td><span class="blank">—</span></td><td>$50</td><td><span class="blank">—</span></td>
+<td class="num"><span class="blank">cannot compute</span></td><td><span class="tag bad">unverified</span></td></tr>
+<tr><td>Caesars Palace, 7 nights</td><td><span class="blank">—</span></td><td><span class="blank">—</span></td><td><span class="blank">—</span></td>
+<td class="num"><span class="blank">cannot compute</span></td><td><span class="tag bad">unverified</span></td></tr>
+</tbody></table></div>
+<p class="note">Only one row of six can be computed at all, and even that one rests on a conditional
+starting rate. That is the honest state of the hotel data — see
+<a href="questions.html">Questions</a> Q-09 and <a href="flagged.html">Flagged</a> F-03.</p>
+</section>
+
+<section class="panel">
+<h2>Tournament side: cheapest way to fill seven days</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Approach</th><th>Events used</th><th>Entry total</th><th>Caveat</th></tr></thead>
+<tbody>
+<tr><td>Seven Caesars Palace $100 dailies (10:00 AM or 6:00 PM)</td><td>7 × $100</td><td class="num">$700</td>
+<td>Each carries a $50 add-on that buys 15,000 chips — declining it is a real disadvantage. Re-entry permitted.</td></tr>
+<tr><td>Seven Venetian $200 daily bounties (5:10 PM)</td><td>7 × $200</td><td class="num">$1,400</td>
+<td>Bounty guarantees include bounties, so the headline is not a plain prize pool. Entry limit not stated.</td></tr>
+<tr><td>Seven Venetian $600 1-day events</td><td>7 × $600</td><td class="num">$4,200</td>
+<td>Highest guarantee-per-buy-in in the dataset. Structure sheet silent on entry limits.</td></tr>
+<tr><td>Seven Wynn daily $200 events (Mon–Thu, Sat–Sun)</td><td>7 × $200</td><td class="num">$1,400</td>
+<td>Re-entry plus a $100 add-on. Suspended Nov 27 – Dec 21 for the WPT series.</td></tr>
+<tr><td>Seven Bellagio $600 Fridays</td><td>7 × $600</td><td class="num">$4,200</td>
+<td>Only runs on Fridays; $40 gratuity buys +15,000 chips. Re-entry through level 8.</td></tr>
+</tbody></table></div>
+<p class="note">Entry totals only — they exclude the hotel side entirely. Combine them with the calculator
+once you have a real room rate.</p>
+</section>
+
+<footer>
+<p><b>Verification rule for this site.</b> Every table row links to the official page, PDF or structure sheet the value came from, and shows the date that source was last read (2026-11-16). A cell showing <span class="blank">—</span> means no official source stated the value. Nothing is inferred or filled in. Guarantee ÷ entry fee is a descriptive ratio, not a forecast of winnings.</p>
+<p>Research snapshot 2026-11-16 (UTC). Not an offer to sell rooms or tournament entries. Schedules, fees and rules change without notice — re-check the linked official page before paying anything.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

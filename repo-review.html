@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo review — Vegas Poker Planner</title>
+<meta name="description" content="Line-by-line review of this repository: duplicates, unsourced claims and what was corrected.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
+  <a class="nav" href="index.html"><span aria-hidden="true">▦</span>Dashboard</a><a class="nav" href="events.html"><span aria-hidden="true">♠</span>All events</a><a class="nav" href="ranking.html"><span aria-hidden="true">★</span>Best value</a><a class="nav" href="dayplan.html"><span aria-hidden="true">◷</span>Day plan</a><a class="nav" href="trip-cost.html"><span aria-hidden="true">∑</span>Trip cost</a><a class="nav" href="hotels.html"><span aria-hidden="true">⌂</span>Hotels</a><a class="nav" href="rates.html"><span aria-hidden="true">≡</span>Rate log</a><a class="nav" href="walking.html"><span aria-hidden="true">⇢</span>Walking</a><a class="nav" href="venues/index.html"><span aria-hidden="true">◈</span>Venues</a><a class="nav" href="questions.html"><span aria-hidden="true">?</span>Questions</a><a class="nav" href="suggestions.html"><span aria-hidden="true">✦</span>Suggestions</a><a class="nav" href="flagged.html"><span aria-hidden="true">⚑</span>Flagged</a><a class="nav" href="sources.html"><span aria-hidden="true">☰</span>Sources</a><a class="nav active" href="repo-review.html"><span aria-hidden="true">▤</span>Repo review</a><p class="side-label">Archive</p><a class="nav" href="archive/index.html"><span aria-hidden="true">▣</span>Superseded sites</a>
+</aside>
+<main>
+
+<div class="pagehead">
+  <div><div class="eyebrow">Line by line, including the parts that were wrong</div>
+  <h1>Repo review</h1>
+  <p class="note" style="max-width:76ch">The brief asked for the repository to be reviewed line by line,
+  with official links, flagging irregularities. This page is that review, applied to the repository itself
+  rather than to the casinos: what was duplicated, what was asserted without a source, what has been
+  corrected, and what is still standing.</p></div>
+  <div class="stamp">tracked files<br><b class="count">51</b><br>findings: 13</div>
+</div>
+
+<section class="panel badbox">
+<h2 style="margin-top:0">The one that mattered</h2>
+<p>Earlier revisions of this repository described the MGM Grand $120 daily as the best confirmed
+<b>single-entry</b> candidate, on the grounds that its structure sheet never mentions re-entry. That is an
+inference from silence, and it is the exact failure mode the brief forbids. A sheet that does not mention
+re-entry is silent; a sheet that says "re-entry is not allowed" is evidence. Only the second one confirms
+anything.</p>
+<p>The dataset now encodes that distinction as a field value rather than a footnote:
+<code>entry_rule = "not_stated"</code> is separate from any confirmed rule, the single-entry filter returns
+zero rows, and the <a href="ranking.html">ranking page</a> explains the zero instead of hiding it.</p>
+</section>
+
+<h2 style="margin-top:26px">Findings</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Severity</th><th>Finding</th><th>What was wrong</th><th>What was done</th></tr></thead>
+<tbody><tr><td><span class="tag bad">high</span></td>
+<td><b>Duplicate dashboards</b></td><td class="note">Three complete dashboards existed in one repository, each with its own copy of the event numbers and its own navigation. The same tournament appeared with different values in different files.</td><td class="note">Fixed in this build: a single dataset module (<code>scripts/poker_data.py</code>) and a single generator. The three older trees are moved under <code>archive/</code> with a banner, not deleted.</td></tr><tr><td><span class="tag bad">high</span></td>
+<td><b>Numbers typed into HTML</b></td><td class="note">Every previous dashboard hard-coded buy-ins and guarantees inside HTML or a JS array. Nothing could be traced back to a source, and nothing could be re-verified without re-reading the page.</td><td class="note">Fixed: all numbers live in one Python module with a source key per row, and every table cell renders a link to that key.</td></tr><tr><td><span class="tag bad">high</span></td>
+<td><b>No per-row provenance</b></td><td class="note">No previous page carried a source link or a last-checked date on a row. A reader could not tell a verified value from a plausible one.</td><td class="note">Fixed: every table row has a source link and a last-checked date; blanks are typographic, not silently filled.</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>Unverified values presented as facts</b></td><td class="note">Earlier revisions listed Horseshoe buy-ins and a Caesars Palace resort fee that no official page states. They were plausible round numbers, which is exactly what makes them dangerous.</td><td class="note">Fixed: those cells are now blank and the gaps are listed as flags F-07 and F-08.</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>Single-entry claim never substantiated</b></td><td class="note">An early reading treated MGM Grand&#x27;s $120 as a confirmed single-entry event on the grounds that its structure sheet mentions no re-entry. That is an inference from silence.</td><td class="note">Reversed. <code>entry_rule="not_stated"</code> is now a distinct value from a confirmed single-entry rule, and the toggle returns zero rows by design (F-01).</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>Stale series banner left live</b></td><td class="note">The Venetian poker page still advertises &#x27;WPT Fall Festival, Oct 28 – Nov 15, 2026&#x27; while its own schedule page runs DeepStack IV from Nov 16. A reader landing on the poker page would plan around a finished series.</td><td class="note">Flagged F-07/F-09 and handled by linking the schedule page rather than the poker page for dates.</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>MGM Grand schedule header names the wrong month</b></td><td class="note">The daily schedule PDF&#x27;s header reads &#x27;August&#x27; while its rows list November events. The times are usable; the header is not.</td><td class="note">Flagged F-06. Times are used with the flag attached.</td></tr><tr><td><span class="tag bad">high</span></td>
+<td><b>Bellagio Saturday sheet contradicts itself</b></td><td class="note">The $1,100 Saturday structure sheet promises a $50,000 guarantee but allocates $600 per player to the prize pool — arithmetically incompatible.</td><td class="note">Flagged F-05. The event is excluded from the ranking rather than guessed at.</td></tr><tr><td><span class="tag bad">high</span></td>
+<td><b>No dated hotel rate anywhere</b></td><td class="note">All four booking flows read returned placeholders to a non-browser client. The published $119/$209 are starting rates conditional on six hours of play per night.</td><td class="note">Flagged F-03. The trip-cost calculator defaults to the published starting rate and says so in the adjacent paragraph, rather than presenting it as a quote.</td></tr><tr><td><span class="tag plain">low</span></td>
+<td><b>Walking times from a routing service</b></td><td class="note">Google Maps is not a casino policy page; its property pin is not the lobby door.</td><td class="note">Labelled as a measurement, with the in-building caveat stated on the walking page (F-11).</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>23 of 37 structure sheets unread</b></td><td class="note">The Venetian links 37 structure PDFs; 14 were read. The other 23 events appear with a buy-in and a blank fee.</td><td class="note">Stated explicitly on the <a href='sources.html'>Sources</a> page and reflected in the ranking, which only ranks events with a read sheet.</td></tr><tr><td><span class="tag bad">high</span></td>
+<td><b>A derived event length was invented, then removed</b></td><td class="note">An intermediate version of this build computed a &#x27;derived maximum length&#x27; for every event from a hard-coded table of levels-per-event and minutes-per-level. That table was written from memory of the structure sheets, not transcribed from them — it was plausible, internally consistent, and not something any casino published.</td><td class="note">Removed outright rather than corrected, because correcting it would still mean asserting a number the sources do not contain. The day plan now builds its fallback test on late-registration closes, which <i>are</i> published, and states plainly that no finish time exists anywhere.</td></tr><tr><td><span class="tag warn">medium</span></td>
+<td><b>Mixed source authority in one table</b></td><td class="note">Horseshoe&#x27;s six start times come from a Caesars corporate article; every other timing comes from a room&#x27;s own flyer. Mixing them in one table without distinction would overstate the Horseshoe rows.</td><td class="note">Fixed: sources are classed official / official-editorial / routing, and the class is rendered next to the link on the Sources page.</td></tr></tbody></table></div>
+
+<h2 style="margin-top:28px">The four dashboards</h2>
+<p class="note">Counts are files in each tree at build time. The first three are superseded and now sit
+under <a href="archive/index.html">archive/</a> with a banner at the top of every page.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tree</th><th>Entry point</th><th>Files</th><th>Notes</th></tr></thead>
+<tbody><tr><td><b>root /</b></td><td class="mono">index.html</td>
+<td class="num">26</td><td class="note">First dashboard. Single-page, tabs, hard-coded event array.</td></tr><tr><td><b>docs/</b></td><td class="mono">docs/index.html</td>
+<td class="num">0</td><td class="note">Second subsite. Separate nav, separate numbers, no source links.</td></tr><tr><td><b>verified/</b></td><td class="mono">verified/index.html</td>
+<td class="num">0</td><td class="note">Third subsite, generated from data/verified/*.json.</td></tr><tr><td><b>new /</b></td><td class="mono">index.html</td>
+<td class="num">0</td><td class="note">This build. Generated from data/poker/dataset.json by scripts/build_dashboard.py.</td></tr></tbody></table></div>
+
+<h2 style="margin-top:28px">Repository inventory</h2>
+<p class="note">Computed by walking the working tree during this build, so it cannot drift from reality.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Directory</th><th>Files</th><th>Size</th></tr></thead>
+<tbody><tr><td class="mono">.</td><td class="num">17</td>
+<td class="num">714 KB</td></tr><tr><td class="mono">data</td><td class="num">9</td>
+<td class="num">101 KB</td></tr><tr><td class="mono">data/verified</td><td class="num">7</td>
+<td class="num">77 KB</td></tr><tr><td class="mono">scripts</td><td class="num">7</td>
+<td class="num">292 KB</td></tr><tr><td class="mono">venues</td><td class="num">7</td>
+<td class="num">349 KB</td></tr><tr><td class="mono">.github/workflows</td><td class="num">1</td>
+<td class="num">1 KB</td></tr><tr><td class="mono">data/poker</td><td class="num">1</td>
+<td class="num">216 KB</td></tr><tr><td class="mono">reports</td><td class="num">1</td>
+<td class="num">13 KB</td></tr><tr><td class="mono">research</td><td class="num">1</td>
+<td class="num">6 KB</td></tr></tbody></table></div>
+
+<section class="panel">
+<h2>What is still wrong, and is not fixed here</h2>
+<ul class="clean">
+<li><b>Four trees still exist.</b> The old dashboards are archived, not deleted. Deleting them is a
+repository-history decision, not a research decision, and it belongs to whoever owns the repo.</li>
+<li><b>Two JSON datasets still overlap.</b> <code>data/tournaments.json</code> and
+<code>data/verified/*.json</code> are still on disk. They are no longer linked from the live site, but they
+are still there and still hold older values.</li>
+<li><b>The generator is not scheduled.</b> Nothing re-checks a source automatically. Every "last checked"
+date on this site is the date of a human-driven read, and it ages from the moment of the build.</li>
+<li><b>Two venue pages have almost nothing on them.</b> Bellagio has two events and Horseshoe has six rows
+with no buy-in at all. That is the true state of the research, not a rendering bug.</li>
+</ul>
+</section>
+
+<section class="panel">
+<h2>How to re-run everything</h2>
+<pre class="mono" style="background:var(--panel2);padding:12px;border-radius:8px;overflow-x:auto;font-size:.8rem">python3 scripts/poker_data.py        # data/poker/dataset.json  (the numbers)
+python3 scripts/build_dashboard.py   # index.html, events.html, … (the pages)
+python3 scripts/check_links.py       # optional: resolve every outbound link</pre>
+<p class="note">The generator is deterministic. Rebuilding without changing the data produces byte-identical
+HTML, which is what makes a diff in a pull request meaningful.</p>
+</section>
+
+<footer>
+<p><b>Verification rule for this site.</b> Every table row links to the official page, PDF or structure sheet the value came from, and shows the date that source was last read (2026-11-16). A cell showing <span class="blank">—</span> means no official source stated the value. Nothing is inferred or filled in. Guarantee ÷ entry fee is a descriptive ratio, not a forecast of winnings.</p>
+<p>Research snapshot 2026-11-16 (UTC). Not an offer to sell rooms or tournament entries. Schedules, fees and rules change without notice — re-check the linked official page before paying anything.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

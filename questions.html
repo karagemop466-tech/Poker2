@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions and missing information — Vegas Poker Planner</title>
+<meta name="description" content="The twelve questions that must be answered before booking, with who can answer each and what changes.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
+  <a class="nav" href="index.html"><span aria-hidden="true">▦</span>Dashboard</a><a class="nav" href="events.html"><span aria-hidden="true">♠</span>All events</a><a class="nav" href="ranking.html"><span aria-hidden="true">★</span>Best value</a><a class="nav" href="dayplan.html"><span aria-hidden="true">◷</span>Day plan</a><a class="nav" href="trip-cost.html"><span aria-hidden="true">∑</span>Trip cost</a><a class="nav" href="hotels.html"><span aria-hidden="true">⌂</span>Hotels</a><a class="nav" href="rates.html"><span aria-hidden="true">≡</span>Rate log</a><a class="nav" href="walking.html"><span aria-hidden="true">⇢</span>Walking</a><a class="nav" href="venues/index.html"><span aria-hidden="true">◈</span>Venues</a><a class="nav active" href="questions.html"><span aria-hidden="true">?</span>Questions</a><a class="nav" href="suggestions.html"><span aria-hidden="true">✦</span>Suggestions</a><a class="nav" href="flagged.html"><span aria-hidden="true">⚑</span>Flagged</a><a class="nav" href="sources.html"><span aria-hidden="true">☰</span>Sources</a><a class="nav" href="repo-review.html"><span aria-hidden="true">▤</span>Repo review</a><p class="side-label">Archive</p><a class="nav" href="archive/index.html"><span aria-hidden="true">▣</span>Superseded sites</a>
+</aside>
+<main>
+
+<div class="pagehead">
+  <div><div class="eyebrow">The information that must exist before a booking decision</div>
+  <h1>Questions</h1>
+  <p class="note" style="max-width:76ch">Twelve questions, each traceable to a specific missing value in the
+  data rather than a generic worry. <b>5</b> of them <b>block</b> a decision: until they are
+  answered, the only honest recommendation is not to book. The rest change the shape of the trip rather
+  than its viability.</p></div>
+  <div class="stamp">questions<br><b class="count">12</b><br>blocking: 5</div>
+</div>
+
+<section class="panel badbox">
+<h2 style="margin-top:0">The blocking questions, at a glance</h2>
+<ul class="clean">
+<li><b>Q-01 — What are the exact trip dates and the number of nights?</b> Nothing in the repo fixes a stay window. Room totals, walk-day routing and event choices are all date-specific.</li><li><b>Q-02 — Is a maximum of one entry per event actually required, and would the player accept a re-entry event if it were cheap?</b> Whether the user&#x27;s &#x27;single entry only&#x27; rule is hard (never play a re-entry event) or soft (prefer single-entry, accept a capped event).</li><li><b>Q-03 — What is the maximum total buy-in per day and for the trip?</b> No bankroll or per-day cap was supplied, so the ranking cannot apply a cost ceiling.</li><li><b>Q-04 — What hotel quality floor is acceptable, and is the poker rate (which requires 6 hours of play per night) acceptable?</b> Whether the player can meet the six-hour condition on every night, and whether a 4-star or 5-star floor is required.</li><li><b>Q-05 — Is a 10:00 AM start acceptable, given that no 8 AM tournament exists?</b> Whether the 8 AM requirement is a hard constraint.</li>
+</ul>
+</section>
+
+<h2 style="margin-top:26px">Before you book a room</h2>
+<details>
+<summary><span class="tag bad">blocking</span>
+Q-01 — What are the exact trip dates and the number of nights?</summary>
+<p><b>What the official sources do say.</b> The verified Strip calendar runs Nov 16 – Dec 23, 2026 (Venetian DSE IV) and Nov 27 – Dec 21 (Wynn WPT).</p>
+<p><b>What is missing.</b> Nothing in the repo fixes a stay window. Room totals, walk-day routing and event choices are all date-specific.</p>
+<p><b>How to close it.</b> Pick a 7-night window inside Nov 25 – Dec 23, 2026 (the only window where two properties both publish schedules).</p>
+<p><b>What it changes.</b> Hotel cost, trip cost, day plan</p>
+</details>
+<details>
+<summary><span class="tag bad">blocking</span>
+Q-03 — What is the maximum total buy-in per day and for the trip?</summary>
+<p><b>What the official sources do say.</b> Verified buy-ins in the window range from $100 (Caesars Palace daily) to $25,800 (Wynn High Roller).</p>
+<p><b>What is missing.</b> No bankroll or per-day cap was supplied, so the ranking cannot apply a cost ceiling.</p>
+<p><b>How to close it.</b> State a per-day and a trip maximum.</p>
+<p><b>What it changes.</b> Ranking, day plan, trip cost</p>
+</details>
+<details>
+<summary><span class="tag bad">blocking</span>
+Q-04 — What hotel quality floor is acceptable, and is the poker rate (which requires 6 hours of play per night) acceptable?</summary>
+<p><b>What the official sources do say.</b> Venetian publishes a poker rate from $119/$209 that requires six hours of live cash play or a $300+ tournament buy-in per night, or the rate reverts to the prevailing rate.</p>
+<p><b>What is missing.</b> Whether the player can meet the six-hour condition on every night, and whether a 4-star or 5-star floor is required.</p>
+<p><b>How to close it.</b> Choose a star floor and decide whether to book the poker rate or the public rate.</p>
+<p><b>What it changes.</b> True nightly cost, hotel ranking</p>
+</details>
+<details>
+<summary><span class="tag warn">medium</span>
+Q-09 — What does a room actually cost for the chosen dates, all-in?</summary>
+<p><b>What the official sources do say.</b> Resort fees are $50–$55 plus tax at every property that publishes one; the Clark County room tax is 13.38% on the Venetian page.</p>
+<p><b>What is missing.</b> Every dated room rate. Booking engines return placeholders to a non-browser client.</p>
+<p><b>How to close it.</b> Capture a checkout total in a browser for the chosen dates and occupancy, and record the rate timestamp.</p>
+<p><b>What it changes.</b> True nightly cost, trip cost</p>
+</details>
+<details>
+<summary><span class="tag warn">medium</span>
+Q-10 — Do the walk times hold at the actual times of day, and from the actual hotel tower?</summary>
+<p><b>What the official sources do say.</b> Google Maps walking times were measured for 14 hotel→room pairs on 2026-11-16.</p>
+<p><b>What is missing.</b> Times are point-to-point and measured at one moment; they exclude in-building walking and do not account for crowd levels.</p>
+<p><b>How to close it.</b> Add 5–10 minutes per walk and re-measure on arrival.</p>
+<p><b>What it changes.</b> Hotel shortlist, day plan</p>
+</details><h2 style="margin-top:26px">Before you trust a ranking</h2>
+<details>
+<summary><span class="tag bad">blocking</span>
+Q-02 — Is a maximum of one entry per event actually required, and would the player accept a re-entry event if it were cheap?</summary>
+<p><b>What the official sources do say.</b> Zero events are confirmed single-entry. Every property that states a rule states re-entry, rebuy or a paid add-on.</p>
+<p><b>What is missing.</b> Whether the user&#x27;s &#x27;single entry only&#x27; rule is hard (never play a re-entry event) or soft (prefer single-entry, accept a capped event).</p>
+<p><b>How to close it.</b> Answer the constraint question. If hard, the dataset yields no bookable event and the trip is not possible on official information.</p>
+<p><b>What it changes.</b> Everything on the ranking page</p>
+</details>
+<details>
+<summary><span class="tag warn">high</span>
+Q-06 — Does the Venetian/Venetian-Palazzo poker room publish a maximum-entry rule anywhere not yet read?</summary>
+<p><b>What the official sources do say.</b> 14 of 37 DSE IV structure sheets were read in full and none states an entry cap.</p>
+<p><b>What is missing.</b> 23 structure sheets unread; no Venetian tournament-rules page could be found (the /tournament-rules.html path returns 404).</p>
+<p><b>How to close it.</b> Read the remaining 23 sheets, or ask lv_cas_poker@venetianlasvegas.com in writing.</p>
+<p><b>What it changes.</b> Whether any event can ever be marked single-entry</p>
+</details>
+<details>
+<summary><span class="tag warn">high</span>
+Q-07 — What is the all-in entry cost per event, including staff gratuities that buy chips?</summary>
+<p><b>What the official sources do say.</b> Fee splits are verified for 14 Venetian sheets, 6 Wynn WPT events, all four Caesars Palace dailies, all four Wynn dailies and both Bellagio weeklies.</p>
+<p><b>What is missing.</b> Several Bellagio and MGM Grand events attach a *voluntary* gratuity that buys extra chips. Whether to count that as part of the entry cost is an open modelling choice, since not paying it puts you at a chip disadvantage.</p>
+<p><b>How to close it.</b> Decide whether &#x27;entry cost&#x27; means the mandatory minimum or the cost of a competitive stack (mandatory + gratuity).</p>
+<p><b>What it changes.</b> True cost per event, ranking ratio</p>
+</details>
+<details>
+<summary><span class="tag warn">low</span>
+Q-12 — Does the Bellagio and MGM Grand &#x27;voluntary&#x27; gratuity change the effective rake?</summary>
+<p><b>What the official sources do say.</b> Bellagio $40 gratuity buys +15,000 (Fri) or +20,000 (Sat) chips on top of 30,000/40,000. MGM Grand $11 buys +10,000 on top of 15,000.</p>
+<p><b>What is missing.</b> Whether declining the gratuity is realistic in a competitive field.</p>
+<p><b>How to close it.</b> Model entry cost twice: minimum and with-gratuity.</p>
+<p><b>What it changes.</b> Cost per event</p>
+</details><h2 style="margin-top:26px">Before you commit to a schedule</h2>
+<details>
+<summary><span class="tag bad">blocking</span>
+Q-05 — Is a 10:00 AM start acceptable, given that no 8 AM tournament exists?</summary>
+<p><b>What the official sources do say.</b> Earliest verified start is 10:00 AM (Caesars Palace) / 10:10 AM (Venetian). Horseshoe shows 9:00 AM on an editorial page only.</p>
+<p><b>What is missing.</b> Whether the 8 AM requirement is a hard constraint.</p>
+<p><b>How to close it.</b> Accept 10 AM, or verify Horseshoe&#x27;s 9 AM slot directly with the room.</p>
+<p><b>What it changes.</b> Day plan feasibility</p>
+</details>
+<details>
+<summary><span class="tag warn">medium</span>
+Q-11 — Which event should be the primary on each day, given that a long 1-day event blocks an evening event?</summary>
+<p><b>What the official sources do say.</b> Venetian 1-day structures run up to 28 levels at 30 minutes plus seven 15-minute breaks, i.e. a derived ceiling of 15 h 45 min from the 11:10 AM start.</p>
+<p><b>What is missing.</b> Actual finish times and field sizes.</p>
+<p><b>How to close it.</b> Treat the day plan&#x27;s &#x27;conditional fallback&#x27; as contingent on a bust before the fallback&#x27;s late-registration close, and check the close time on the day.</p>
+<p><b>What it changes.</b> Day plan</p>
+</details><h2 style="margin-top:26px">Before you decide anything else</h2>
+<details>
+<summary><span class="tag warn">high</span>
+Q-08 — Is the published guarantee actually reachable in the field sizes these events draw?</summary>
+<p><b>What the official sources do say.</b> Guaranteed pool and prize-pool-per-entry are both known for most events, so the number of entries needed to fund the guarantee can be computed exactly.</p>
+<p><b>What is missing.</b> Actual field sizes are not published before the event. No historical attendance was retrieved.</p>
+<p><b>How to close it.</b> Use the computed &#x27;entries needed to fund the guarantee&#x27; as the comparison, and check the property&#x27;s published results pages for past field sizes.</p>
+<p><b>What it changes.</b> Guarantee ÷ entry ratio interpretation</p>
+</details>
+
+<section class="panel">
+<h2>How to ask</h2>
+<p>Every question above can be answered by one of four routes, in descending order of authority:
+<b>(1)</b> the property's poker-room email or phone — the Venetian publishes
+<code>lv_cas_poker@venetianlasvegas.com</code> and <code>702.414.7657</code>, the Wynn publishes
+<code>poker.reservations@wynnlasvegas.com</code> and <code>702-770-7654</code>, Bellagio publishes
+<code>pcohen@bellagioresort.com</code> and <code>702.693.7291</code>, MGM Grand publishes
+<code>702.891.7434</code>; <b>(2)</b> a named tournament director's written statement;
+<b>(3)</b> the property's own booking flow, screenshot with timestamp; <b>(4)</b> a third-party aggregator —
+which is how most of the existing web answers to these questions were produced, and why they cannot be
+used as evidence here.</p>
+<p class="note">When an answer arrives, record it in this repository with the name of the person who gave
+it, the date, and the channel. An email is a citable source; a phone call is a citable source if you note
+who you spoke to.</p>
+</section>
+
+<footer>
+<p><b>Verification rule for this site.</b> Every table row links to the official page, PDF or structure sheet the value came from, and shows the date that source was last read (2026-11-16). A cell showing <span class="blank">—</span> means no official source stated the value. Nothing is inferred or filled in. Guarantee ÷ entry fee is a descriptive ratio, not a forecast of winnings.</p>
+<p>Research snapshot 2026-11-16 (UTC). Not an offer to sell rooms or tournament entries. Schedules, fees and rules change without notice — re-check the linked official page before paying anything.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

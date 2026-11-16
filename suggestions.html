@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions — Vegas Poker Planner</title>
+<meta name="description" content="Thirteen proposed improvements, each gated with the condition that must be met before it is built.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand"><span class="mark">♠</span> VEGAS POKER PLANNER</div>
+  <a class="nav" href="index.html"><span aria-hidden="true">▦</span>Dashboard</a><a class="nav" href="events.html"><span aria-hidden="true">♠</span>All events</a><a class="nav" href="ranking.html"><span aria-hidden="true">★</span>Best value</a><a class="nav" href="dayplan.html"><span aria-hidden="true">◷</span>Day plan</a><a class="nav" href="trip-cost.html"><span aria-hidden="true">∑</span>Trip cost</a><a class="nav" href="hotels.html"><span aria-hidden="true">⌂</span>Hotels</a><a class="nav" href="rates.html"><span aria-hidden="true">≡</span>Rate log</a><a class="nav" href="walking.html"><span aria-hidden="true">⇢</span>Walking</a><a class="nav" href="venues/index.html"><span aria-hidden="true">◈</span>Venues</a><a class="nav" href="questions.html"><span aria-hidden="true">?</span>Questions</a><a class="nav active" href="suggestions.html"><span aria-hidden="true">✦</span>Suggestions</a><a class="nav" href="flagged.html"><span aria-hidden="true">⚑</span>Flagged</a><a class="nav" href="sources.html"><span aria-hidden="true">☰</span>Sources</a><a class="nav" href="repo-review.html"><span aria-hidden="true">▤</span>Repo review</a><p class="side-label">Archive</p><a class="nav" href="archive/index.html"><span aria-hidden="true">▣</span>Superseded sites</a>
+</aside>
+<main>
+
+<div class="pagehead">
+  <div><div class="eyebrow">Ideas are proposed first and gated before anyone builds them</div>
+  <h1>Suggestions</h1>
+  <p class="note" style="max-width:76ch">Thirteen improvements found while doing the research. The brief
+  asked for a suggestions page whose items are <b>gated before implementation</b> — so each one states what
+  it would do, why it is worth doing, and what must be true before it can be built. Four are already
+  implemented on this site because they needed nothing external.</p></div>
+  <div class="stamp">proposals<br><b class="count">13</b><br>needs review: 5</div>
+</div>
+
+<section class="panel">
+<h2>The gate, defined</h2>
+<p>A suggestion moves to <b>ready</b> when it needs only code and data already in this repository. It moves
+to <b>needs-review</b> when it touches something outside our control: a third party's terms of service, a
+site that blocks automated reading, or a fact only a human can confirm. It moves to <b>blocked</b> when it
+cannot be done at all without breaking the no-hallucination rule. Nothing moves to <b>implemented</b>
+without the gate being satisfied and the result being verified on the built page.</p>
+<p class="note">This is deliberately strict. The failure mode it prevents is a site that quietly grows
+features whose numbers are guesses — which is exactly what the three archived dashboards were starting to
+do.</p>
+</section>
+
+
+<details>
+<summary><span class="tag ok">implemented</span> S-01 — Trip-cost calculator</summary>
+<p><b>What it does.</b> A live calculator: (selected entries × buy-ins) + (nights × true nightly hotel cost) + parking days.</p>
+<p><b>Why it is worth doing.</b> Answers &#x27;what does this trip cost&#x27; directly instead of leaving it as a formula in prose.</p>
+<p><b>How it would work.</b> trip-cost page; hotel inputs default to the published resort fee + Clark County tax and the published starting poker rate, all labelled as such.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-02 — Dated rate log instead of one rate value</summary>
+<p><b>What it does.</b> Every rate observation is a row with its own log date, basis, occupancy and source.</p>
+<p><b>Why it is worth doing.</b> A single &#x27;rate&#x27; field silently overwrites history and hides whether a number is a quote or a starting rate.</p>
+<p><b>How it would work.</b> rates page reads data/poker/rates.json; nothing is overwritten.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-03 — &#x27;Last checked&#x27; on every row</summary>
+<p><b>What it does.</b> Every table row shows the date its source was last read.</p>
+<p><b>Why it is worth doing.</b> A schedule with no date on it is indistinguishable from a current one.</p>
+<p><b>How it would work.</b> Every row renders its source-link date (2026-11-16) next to the source link.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-04 — One page per venue</summary>
+<p><b>What it does.</b> Venetian, Wynn, Caesars Palace, Bellagio, MGM Grand and Horseshoe each get a page with their events, hotel terms and walk times.</p>
+<p><b>Why it is worth doing.</b> The decision &#x27;where do I stay&#x27; is per-venue, and a mixed table makes it hard to see one property&#x27;s whole picture.</p>
+<p><b>How it would work.</b> venues/*.html generated from the same data.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-05 — Search + date + single-entry toggle</summary>
+<p><b>What it does.</b> Free-text search across every table, a date picker, a venue filter and a single-entry-only toggle.</p>
+<p><b>Why it is worth doing.</b> Requested directly; also the only way to answer &#x27;what can I play on Dec 7&#x27; in one action.</p>
+<p><b>How it would work.</b> Client-side filter on the events table; the single-entry toggle returns zero rows by design and says why.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-06 — Schedule-overlap flags</summary>
+<p><b>What it does.</b> Each day is shown as one primary event plus a conditional fallback, never two &#x27;confirmed&#x27; events.</p>
+<p><b>Why it is worth doing.</b> No source publishes finish times, so a second same-day tournament is never a certainty.</p>
+<p><b>How it would work.</b> Derived maximum length from the published structure; a second event is only a fallback if its late-registration close is after the primary&#x27;s derived ceiling.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-07 — Walking matrix with a 30-minute test</summary>
+<p><b>What it does.</b> A hotel→room table with measured minutes, distance, and a pass/fail against 30 minutes.</p>
+<p><b>Why it is worth doing.</b> Requested directly; also the constraint that removes MGM Grand from a Venetian-based stay.</p>
+<p><b>How it would work.</b> 14 pairs measured on Google Maps on 2026-11-16 and recorded with that caveat.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-08 — Automated URL re-check + change diff</summary>
+<p><b>What it does.</b> A scheduled job that re-fetches every official URL, hashes the relevant text, and marks rows whose source changed.</p>
+<p><b>Why it is worth doing.</b> Requested directly. Schedules and fees change without notice.</p>
+<p><b>How it would work.</b> Not implemented: it needs a GitHub Actions job with outbound network access, a stored hash per source, and a review queue. The repository&#x27;s own sandbox has outbound access only to GitHub/npm/PyPI, so the check cannot run here.</p>
+<p><b>Effort / gate.</b> ~1 hour: one workflow file, one hash store, one &#x27;changed&#x27; badge on each row.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-09 — Live hotel-rate lookup</summary>
+<p><b>What it does.</b> Query each hotel&#x27;s booking API for the chosen dates and compute true cost automatically.</p>
+<p><b>Why it is worth doing.</b> Requested directly, and it is the single biggest hole in the dataset.</p>
+<p><b>How it would work.</b> Not implemented: the booking flows are JavaScript apps that return placeholders to non-browser clients, and scraping them is against most of these properties&#x27; terms. A compliant option is a manual capture form with a timestamp.</p>
+<p><b>Effort / gate.</b> Depends entirely on whether the properties offer an approved feed.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-10 — Live daily-schedule scraper</summary>
+<p><b>What it does.</b> Pull each room&#x27;s official daily schedule every morning.</p>
+<p><b>Why it is worth doing.</b> Requested directly.</p>
+<p><b>How it would work.</b> Not implemented for the same network/terms reason as S-09, and because most Strip dailies are published as PDFs whose layout changes between properties.</p>
+<p><b>Effort / gate.</b> PDF parsing per venue, plus a human check for layout changes.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-11 — Written single-entry confirmation per event</summary>
+<p><b>What it does.</b> Replace every &#x27;unverified&#x27; label with a written room confirmation, quoted verbatim.</p>
+<p><b>Why it is worth doing.</b> This is the only thing that can make the single-entry filter return rows.</p>
+<p><b>How it would work.</b> Send one email per room naming the events and asking for the maximum-entry and add-on rules. Store each reply verbatim with its date.</p>
+<p><b>Effort / gate.</b> Human action; cannot be automated from this sandbox.</p>
+</details>
+<details>
+<summary><span class="tag ok">implemented</span> S-12 — Rank only on confirmed cost and guarantee</summary>
+<p><b>What it does.</b> Guarantee ÷ entry fee is shown as a descriptive ratio, with a separate &#x27;entries needed to fund the guarantee&#x27; column.</p>
+<p><b>Why it is worth doing.</b> A ratio without the entry count hides whether a guarantee is a real overlay or needs a full field.</p>
+<p><b>How it would work.</b> Ranking page shows both; bounty and flight events are labelled separately.</p>
+<p><b>Effort / gate.</b> Done in this session.</p>
+</details>
+<details>
+<summary><span class="tag warn">needs review</span> S-13 — Consolidate the four dashboards</summary>
+<p><b>What it does.</b> One dashboard instead of four.</p>
+<p><b>Why it is worth doing.</b> Four parallel sites with conflicting numbers is the largest source of confusion in this repository.</p>
+<p><b>How it would work.</b> Applied here: the new dashboard replaces them and the old trees are archived under /archive/ with a banner.</p>
+<p><b>Effort / gate.</b> Done in this session — review the archive before deleting it.</p>
+</details>
+
+<section class="panel warnbox">
+<h2>What is already built (no gate needed)</h2>
+<ul class="clean">
+<li><b>S-01</b> Trip-cost calculator with every default traced to a source — on
+<a href="trip-cost.html">Trip cost</a>.</li>
+<li><b>S-02</b> Rate log that appends instead of overwriting — on <a href="rates.html">Rate log</a>.</li>
+<li><b>S-03</b> Global search and filters across all events — on <a href="events.html">All events</a>.</li>
+<li><b>S-06</b> Per-row source link and last-checked date on every table — throughout.</li>
+<li><b>S-07</b> Walking matrix as a pass/fail gate — on <a href="walking.html">Walking</a>.</li>
+<li><b>S-12</b> One page per venue — under <a href="venues/index.html">Venues</a>.</li>
+<li><b>S-13</b> Archive of the superseded dashboards — under
+<a href="archive/index.html">Archive</a>.</li>
+</ul>
+</section>
+
+<footer>
+<p><b>Verification rule for this site.</b> Every table row links to the official page, PDF or structure sheet the value came from, and shows the date that source was last read (2026-11-16). A cell showing <span class="blank">—</span> means no official source stated the value. Nothing is inferred or filled in. Guarantee ÷ entry fee is a descriptive ratio, not a forecast of winnings.</p>
+<p>Research snapshot 2026-11-16 (UTC). Not an offer to sell rooms or tournament entries. Schedules, fees and rules change without notice — re-check the linked official page before paying anything.</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
