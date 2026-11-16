@@ -151,3 +151,27 @@ Task log:
 - Validation: `python3 scripts/check_links.py` passed (131/131 rows cited); custom check found no broken relative links in 20 root/pages HTML documents; `git diff --check` passed; CSVs parse and all data rows have official HTTPS source links; local preview returned HTTP 200.
 - Existing Pages workflow deploys repository root on push to `main`; no workflow change was needed. PR [#16](https://github.com/karagemop466-tech/Poker2/pull/16) merged on 2026-11-16 at merge commit `b484eb08d580e3035d4b538dba0c33f5dc555cb0`.
 - Deployment verified: Pages workflow run [43933521465](https://github.com/karagemop466-tech/Poker2/actions/runs/43933521465) completed successfully; Pages API reports `built` for `b484eb08d580e3035d4b538dba0c33f5dc555cb0`. Public Pages URL: https://karagemop466-tech.github.io/Poker2/.
+
+## Session arena/7a4b09e2-poker2 — consolidated dashboard + feature build (2026-11-16)
+
+This session operates as the **final integration session** for shared outputs (root site, index/navigation, combined tables) per the repo's stated rule that only an integration session changes those files. All prior tasks on this board are `done`; no other session holds an active claim.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Claim board + repo review | in progress | arena/7a4b09e2-poker2 | `COORDINATION.md` |
+| T2 Structure-sheet sweep: all 37 official Venetian DSE IV sheets, structured rule fields + source excerpt + retrieval date | in progress | arena/7a4b09e2-poker2 | `data/site/*.json` (new) |
+| T3 Venue pages (Venetian, Wynn, Horseshoe/Caesars, Bellagio, MGM Grand, Resorts World) with events + hotels | in progress | arena/7a4b09e2-poker2 | `venues/*.html` (new) |
+| T4 Hotel true-cost log (dated), resort fees, tax | in progress | arena/7a4b09e2-poker2 | `data/site/hotels.json` (new) |
+| T5 Trip-cost calculator, date filter, single-entry toggle, search, overlap/fallback schedule | in progress | arena/7a4b09e2-poker2 | `assets/site.js`, `index.html` |
+| T6 Scheduled official-URL re-check with change detection | in progress | arena/7a4b09e2-poker2 | `scripts/recheck_sources.py`, `.github/workflows/recheck.yml`, `data/site/checks.json` |
+| T7 Executive summary, questions log, suggestions, flagged-for-review, repo review | in progress | arena/7a4b09e2-poker2 | `summary.html`, `questions.html`, `suggestions.html`, `flagged.html`, `repo-review.html` |
+| T8 Build/link verification, PR to main, merge, Pages deploy confirmation | in progress | arena/7a4b09e2-poker2 | this section |
+
+Scope rules for this session:
+- New canonical site is written to the **repository root** (`index.html` plus category subpages) with its own stylesheet `assets/site.css` and script `assets/site.js`. The legacy stylesheets `style.css` / `styles.css` are left untouched so legacy pages still render.
+- Legacy dashboards (`docs/`, `verified/`, root `tournaments.html`, `planning.html`, `pages/*`) are **not deleted**; they are listed as superseded in the Repo review page so no existing link breaks.
+- Existing `data/*.json` datasets owned by earlier sessions are not rewritten; new consolidated data goes to `data/site/`.
+- Verification standard: every displayed fact carries a link to an official host. Unconfirmed cells stay blank and appear on `flagged.html`.
+
+Task log:
+- 2026-11-16: Board re-read; all prior tasks `done`. Claim committed before any research or edits.
