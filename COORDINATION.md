@@ -215,3 +215,39 @@ Verification performed: `python3 scripts/build.py` (96 event rows, 23 sources, 8
 Irregularities and open items (published on `flagged.html`, do not block merge): F-01 no confirmed single-entry event; F-02 Venetian sheets silent on re-entry; F-03 no official walking times; F-04 no dated hotel totals; F-05 tax rate published only by the Venetian; F-06 MGM schedule PDF titled August with no year; F-07 MGM $11 gratuity buys chips; F-08 Venetian series page still labels the previous series "Current Series"; F-09 schedule PDF date-cell text corruption; F-10 no 08:00 AM start; F-11 Wynn dailies suspended in the WPT window; F-12 Horseshoe publishes no retrievable structure; F-13 three WPT event terms not re-read; F-14 earlier board note about missing chip/reg-close values is superseded.
 
 Conflict and coexistence handling: no other session has an active claim; every earlier task on this board is `done`. Legacy dashboards (`docs/`, `verified/`, `pages/`, `planning.html`) and the earlier `data/*.json` datasets were **not** deleted or rewritten. New data lives in `data/site/`, generated from `scripts/dataset.py`. The legacy `style.css` / `styles.css` / `app.js` are untouched; the new site uses `assets/site.css` and `assets/site.js`.
+
+### T8 completion — verification, PRs, deploy (2026-11-16)
+
+Every task on this board is now `done`. Delivery record:
+
+| PR | Contents | Result |
+|---|---|---|
+| [#18](https://github.com/karagemop466-tech/Poker2/pull/18) | Consolidated site: 96 event rows, 23 sources, 8 hotel records, 14 flags, calculators, 6 venue subpages, source monitoring + CI | merged, Pages built |
+| [#19](https://github.com/karagemop466-tech/Poker2/pull/19) | Strict chronological ordering in every event table; audit asserts ordering, date coverage and row count | merged, Pages built |
+| [#21](https://github.com/karagemop466-tech/Poker2/pull/21) | Rebuy/add-on rule column completed for every event; audit rejects empty or bare-number rule cells | merged, Pages built |
+| [#22](https://github.com/karagemop466-tech/Poker2/pull/22) | Rank one row per event, not per starting flight; corrected the ranking caption | merged, Pages built |
+| [#23](https://github.com/karagemop466-tech/Poker2/pull/23) | Explicit 30-minute walking-rule table; fixed garbled Encore cell; guard against ragged tables | merged, Pages built |
+
+Live site: <https://karagemop466-tech.github.io/Poker2/> — Pages build `053083b` reported `built` after the final merge.
+
+Verification actually performed (not asserted):
+
+- `scripts/audit.py` — 83 Venetian + 13 other rows, 8 hotels, 23 sources. Per row: cited structure sheet must list that event number, buy-in − withheld fee must equal the sheet's pool money, registration close must follow the start, guarantee must match the printed figure, multi-flight rows must carry the official note 8 wording, published rows must be strictly date/time ordered, and no rebuy/add-on cell may be empty or a bare number.
+- `scripts/check_links.py` — 18 pages, 1,123 hrefs, 0 broken internal links, 0 non-official hosts, every table's cell count consistent with its header.
+- `scripts/recheck_sources.py` — exercised end-to-end against a simulated network, not just imported: run 1 records 23 first checks; run 2 correctly flags 1 changed hash, 1 HTTP 404 and 1 timeout, keeps history newest-first and preserves earlier runs. The baseline in `data/site/checks.json` was then restored to its honest "no live fetch yet" state, because the sandbox cannot reach these hosts and writing simulated results as though they were real would be a fabrication.
+- Trip-cost calculator order of operations checked arithmetically: $200 rate + $55 resort fee at 13.38% = $289.12/night; 5 nights plus $20/day parking = $1,545.60 of lodging. Tax is applied to rate + fee; parking is added after tax.
+- `assets/site.js` parses and initialises under a stub DOM.
+- CI workflow `verify` passed on all five PRs.
+
+Defects found and fixed by reading the deployed pages, which the build could not catch on its own:
+
+1. `Thu Nov 26` rendered between `Nov 18` and `Nov 19` — rows inherited dataset insertion order.
+2. The entry-rules table had an empty "Short form" column for all Venetian rows, and rebuy/add-on values for other venues were keyword-guessed from prose, which inverts meaning on text like "Re-entry is NOT allowed".
+3. Three Caesars Palace dailies said "not stated" although the same flyer's terms apply to all four.
+4. Twenty-eight Venetian rows said "None stated" where the structure sheet is simply silent.
+5. Both summary ranking tables were filled by one multi-flight event repeated per starting flight.
+6. The ranking caption claimed the list was "dominated by bounty events". It was not.
+7. The Encore hotel row contained the garbled text "(0 floors / same tower ...)".
+8. The 30-minute walking constraint was never addressed head-on on the hotels page.
+
+Known limitations, unchanged and published: no confirmed single-entry event (F-01), no dated hotel total (F-04), no official walking time (F-03), no tax percentage for four of six properties (F-05), and three WPT event terms not re-read (F-13). The scheduled monitor's first live run will happen in GitHub Actions, not here.
