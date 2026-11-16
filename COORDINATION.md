@@ -2,6 +2,7 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Interactive trip planner, per-venue pages, structured verification/last-checked fields, and scheduled official-source monitoring | in progress | arena/7bfc074b-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `app.js`, `styles.css`, `planner.html`, `venues/*.html`, `table-tools.js`, `data/sources.json`, `data/rule-audit.json`, `data/hotel-rates.json`, `data/hotel-routes.json`, `data/schedule-feeds.json`, `data/source-monitor.json`, `scripts/check_sources.py`, `scripts/build_venue_pages.py`, `scripts/build_search_index.py`, `scripts/audit_data.py`, `data/table-search-index.json`, `.github/workflows/monitor-official-sources.yml`, `.github/workflows/pages.yml` |
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
 
