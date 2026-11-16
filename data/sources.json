@@ -238,5 +238,11 @@
     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
     "publisher": "The Venetian Las Vegas (official)",
     "type": "Official structure sheet"
+  },
+  "V_POKER_RATES": {
+    "label": "Venetian 2026 poker suite rates",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "publisher": "The Venetian Resort Las Vegas",
+    "type": "Official rate page"
   }
 }

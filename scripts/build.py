@@ -136,10 +136,10 @@ SPENDING = [
 
 # ---------------------------------------------------------------- Hotels
 HOTELS = [
-    dict(name="The Venetian", address="3355 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per night", rate=None,
-         walk=None, src=["V_RESORT_FEE", "V_HOTEL_TC"], notes="Resort fee verified. Nightly rate and walking time NOT in verified notes."),
-    dict(name="The Palazzo", address="3325 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per night", rate=None,
-         walk=None, src=["V_RESORT_FEE"], notes="Resort fee from Venetian policy page; confirm Palazzo-specific terms."),
+    dict(name="The Venetian", address="3355 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per night", rate="from $119 (poker suite, conditional; before fee and tax)",
+         walk=None, src=["V_RESORT_FEE", "V_POKER_RATES", "V_HOTEL_TC"], notes="Poker suite rate is conditional on qualifying play each night and on availability; blackout dates may apply. Dated quote not captured. Walking time not verified."),
+    dict(name="The Palazzo", address="3325 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per night", rate="from $209 (poker suite, conditional; before fee and tax)",
+         walk=None, src=["V_RESORT_FEE", "V_POKER_RATES"], notes="Same poker-suite conditions as the Venetian. Dated quote not captured. Walking time not verified."),
     dict(name="Wynn Las Vegas", address="3131 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per room night", rate=None,
          walk=None, src=["W_TC"], notes="Fee from search snippet of official terms; full page not fetched. Rate and walk time blank."),
     dict(name="ARIA Resort & Casino", address="3730 S. Las Vegas Blvd (Strip)", resort_fee="$55 plus tax per night; $50 plus tax extra occupant", rate=None,
@@ -202,10 +202,11 @@ a{color:#166534}
 .small{font-size:12px;color:#555}
 """
 
-NAV = [("index.html", "Dashboard"), ("pages/single-entry.html", "Single-entry"),
-       ("pages/spending.html", "Re-entry / Spending"), ("pages/schedule.html", "8 AM Schedule"),
-       ("pages/hotels.html", "Hotels"), ("pages/summary.html", "Summary"),
-       ("pages/flagged.html", "Flagged for Review"), ("pages/improvements.html", "Site improvements"),
+NAV = [("index.html", "Main dashboard"), ("tournaments.html", "Full event table"), ("hotels.html", "Hotel comparison"),
+       ("flagged.html", "Evidence review"), ("pages/single-entry.html", "Single-entry candidates"),
+       ("pages/spending.html", "Re-entry / spending"), ("pages/schedule.html", "8 AM schedule"),
+       ("pages/hotel-costs.html", "Hotel cost detail"), ("pages/summary.html", "Summary"),
+       ("pages/flagged-rows.html", "Flagged rows"), ("pages/improvements.html", "Site improvements"),
        ("pages/questions.html", "Questions"), ("pages/repo-review.html", "Repo review")]
 
 def page(path, title, body):
@@ -263,25 +264,10 @@ cards = f"""<div class="cards">
 <div class="card"><div class="n">{n_flag}</div>Flagged or unverified items</div>
 <div class="card"><div class="n">{resort_verified}</div>Hotels with a verified resort fee</div></div>"""
 
-index_body = cards + f"""
-<div class="note"><b>Scope.</b> Strip poker events on official schedules as of {TODAY}. Single-entry means only events with a verified structure sheet and no re-entry language. Everything else is in a separate section. Hotel rates and walking times are not verified and are blank.</div>
-<h2>Start here</h2>
-<ul>
-<li><a href="pages/single-entry.html">Single-entry tournaments</a> — ranked by buy-in, then guarantee.</li>
-<li><a href="pages/spending.html">Re-entry and spending-advantage events</a> — separate, not single-entry.</li>
-<li><a href="pages/schedule.html">8 AM all-day schedule</a> — entry plan and registration deadlines.</li>
-<li><a href="pages/hotels.html">Hotels</a> — official resort fees; rates blank.</li>
-<li><a href="pages/summary.html">Executive summary and analysis</a></li>
-<li><a href="pages/flagged.html">Flagged for Review</a> — everything unverified.</li>
-<li><a href="pages/improvements.html">Site-improvement suggestions</a> — awaiting your choice; no changes made.</li>
-<li><a href="pages/questions.html">Questions and missing information</a></li>
-<li><a href="pages/repo-review.html">Repo review</a></li>
-</ul>"""
-page("index.html", "Las Vegas Strip Poker — Dashboard", index_body)
 
 # Single-entry
-page("pages/single-entry.html", "Single-entry tournaments (Strip)",
-     '<div class="note">Single-entry status here means the official structure sheet was read and has no re-entry or rebuy language. It does not confirm the rules at the table. Confirm before you register.</div>'
+page("pages/single-entry.html", "Single-entry candidates (not confirmed)",
+     '<div class="note"><b>Candidates only — none is confirmed single-entry.</b> Each row is a 1-day Venetian event whose official structure sheet was read, and that sheet contains no re-entry or rebuy language. Absence of language is not confirmation. Confirm the rules with the poker room before you register.</div>'
      + tourney_table(SINGLE, COLS))
 
 # Spending/re-entry
@@ -291,7 +277,7 @@ page("pages/spending.html", "Re-entry and spending-advantage events (separate)",
                                 ("Guarantee", "gtd", money), ("Fee", "fee", None), ("Re-entry / rules", "notes", None)]))
 
 # Flighted + review + satellites are shown on Flagged page and a spending-adjacent note.
-page("pages/flagged.html", "Flagged for Review",
+page("pages/flagged-rows.html", "Flagged for Review — row detail",
      '<div class="note">Flagged items do not block merge. They are unverified and must be checked before use.</div>'
      + '<h2>Flighted events (re-entry not confirmed)</h2>' + tourney_table(FLIGHTED, COLS)
      + '<h2>Events with unread structure sheets</h2>' + tourney_table(REVIEW_VENETIAN, COLS)
@@ -321,22 +307,23 @@ for h in HOTELS:
                   f"<td class='blank flag'>⚑ unverified</td><td class='blank flag'>⚑ unverified</td><td>{esc(h['notes'])}</td><td>{srcs(h['src'])}</td></tr>"
 hotel_body = f"""<div class="note">{esc(ROOM_NOTE)} Resort fees are shown as the official terms state them. Clark County lodging tax is unverified and left blank.</div>
 <table><thead><tr><th>Hotel</th><th>Address</th><th>Resort fee</th><th>Nightly rate</th><th>Walk to poker (30 min?)</th><th>Notes</th><th>Official source</th></tr></thead><tbody>{hotel_rows}</tbody></table>"""
-page("pages/hotels.html", "Hotels near the Strip poker rooms", hotel_body)
+page("pages/hotel-costs.html", "Hotel cost detail", hotel_body)
 
 # Summary
 summary = f"""<h2>Executive summary</h2>
 <ul>
-<li><b>Single-entry field is thin.</b> Only {n_single} Venetian 1-day events (Nov 18–Dec 23, 2026) had a structure sheet read with no re-entry language. All are on the Strip (The Palazzo poker room). Most are $200–$600 buy-ins.</li>
-<li><b>Largest verified guarantee among single-entry events:</b> the $1,100 PKO (Event 52, Dec 15, $75,000 GTD). Top buy-in is $1,100. The Venetian's largest flighted events are on the separate list.</li>
+<li><b>No event is confirmed single-entry.</b> {n_single} Venetian 1-day events (Nov 18–Dec 23, 2026) have a structure sheet read with no re-entry language. They are candidates only, consistent with the main site.</li>
+<li><b>Largest guarantee among candidates:</b> the $1,100 PKO (Event 52, Dec 15, $75,000 GTD, official schedule).</li>
 <li><b>Wynn WPT and most Bellagio events allow re-entry</b> (Wynn: unlimited per flight, Prime: one re-entry). They are kept in the separate spending section.</li>
-<li><b>Hotel ranking is not possible yet.</b> Official resort fees are $55 plus tax per night at the Venetian, Palazzo, Wynn, ARIA and Bellagio (Gold+ waives for ARIA and Bellagio). Nightly rates and walking distances are not published on official pages.</li>
+<li><b>Hotel ranking is partial.</b> Official resort fees are $55 plus tax per night at the Venetian, Palazzo, Wynn, ARIA and Bellagio. The Venetian and Palazzo publish poker suite rates from $119 and $209 per night, before the $55 fee and tax. Those rates require qualifying play each night (six hours of cash, or a $300+ tournament buy-in). Walking distances and dated quotes are not verified.</li>
 <li><b>Clark County tax is unverified</b> and left blank.</li>
 </ul>
 <h2>Analysis</h2>
 <ul>
-<li>Strip single-entry events are concentrated at The Palazzo / Venetian. The 5:10 PM $200 and $300 bounty events are the cheapest single-entry options.</li>
+<li>Candidate events are concentrated at The Venetian / Palazzo. The cheapest candidates are $200 events at 5:10 PM.</li>
+<li>The poker suite rate requires a $300+ tournament buy-in each night (or six hours of cash). Candidate $300+ events therefore also satisfy that requirement, subject to the rate terms.</li>
 <li>For the 8 AM plan, 11:10 AM events (reg closes 4:55 PM) and 5:10 PM events (reg closes 9:40 PM) do not overlap on start time. Event length is unpublished, so overlap cannot be ruled out.</li>
-<li>Re-entry events carry an advantage for players who can spend more. They are excluded from the single-entry ranking.</li>
+<li>Re-entry events carry an advantage for players who can spend more. They are excluded from the candidate list.</li>
 </ul>
 <h2>Method</h2>
 <p>Schedule data from the official Venetian DSE IV PDF (fetched 2026-11-16). Structure sheets were used for fees and re-entry language. Wynn values come from its official PDFs read earlier; the Wynn schedule PDF failed on re-fetch. Bellagio values come from its dated PDFs. Aggregator sites were not used.</p>"""

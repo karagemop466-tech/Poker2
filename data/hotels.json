@@ -5,24 +5,26 @@
       "name": "The Venetian",
       "address": "3355 S. Las Vegas Blvd (Strip)",
       "resort_fee": "$55 plus tax per night",
-      "rate": null,
+      "rate": "from $119 (poker suite, conditional; before fee and tax)",
       "walk": null,
       "src": [
         "V_RESORT_FEE",
+        "V_POKER_RATES",
         "V_HOTEL_TC"
       ],
-      "notes": "Resort fee verified. Nightly rate and walking time NOT in verified notes."
+      "notes": "Poker suite rate is conditional on qualifying play each night and on availability; blackout dates may apply. Dated quote not captured. Walking time not verified."
     },
     {
       "name": "The Palazzo",
       "address": "3325 S. Las Vegas Blvd (Strip)",
       "resort_fee": "$55 plus tax per night",
-      "rate": null,
+      "rate": "from $209 (poker suite, conditional; before fee and tax)",
       "walk": null,
       "src": [
-        "V_RESORT_FEE"
+        "V_RESORT_FEE",
+        "V_POKER_RATES"
       ],
-      "notes": "Resort fee from Venetian policy page; confirm Palazzo-specific terms."
+      "notes": "Same poker-suite conditions as the Venetian. Dated quote not captured. Walking time not verified."
     },
     {
       "name": "Wynn Las Vegas",
