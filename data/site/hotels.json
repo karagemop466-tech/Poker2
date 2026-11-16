@@ -1,0 +1,442 @@
+[
+ {
+  "addr": "3355 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "Deposit of first night (or full prepay) billed at booking; prepaid offers are non-cancellable and non-refundable. A cancellation deadline for flexible rates is not stated on the pages read.",
+  "checkin": "3:00 PM",
+  "checkout": "11:00 AM",
+  "id": "venetian",
+  "incidental": 150,
+  "name": "The Venetian Resort",
+  "parking": "Registered hotel guests $20/day, 7 days a week. Non-hotel guests $20 Mon-Thu, $25 Fri-Sun. Valet $40/day. Free self-parking for Venetian Rewards Sapphire+.",
+  "poker_rate": 119,
+  "poker_rate_note": "Poker suite rates 'start as low as $119 and $209' for The Venetian or The Palazzo; page does not map each price to a property. Conditional on six hours of active live cash play or a $300+ tournament buy-in per night, else the prevailing rate applies.",
+  "poker_room": "Palazzo, level 2, Grand Canal Shoppes (same resort complex)",
+  "quality": "No official star/diamond rating read for standard suites",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus applicable tax, per night",
+    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "value": "$55"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Clark County Room Tax 13.38% (official Venetian hotel terms)",
+    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "value": "13.38%"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "Poker suite rates 'start as low as $119 and $209' for The Venetian or The Palazzo; page does not map each price to a property. Conditional on six hours of active live cash play or a $300+ tournament buy-in per night, else the prevailing rate applies.",
+    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "value": "from $119"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 55,
+  "resort_fee_note": "plus applicable tax, per night",
+  "srcs": [
+   "VFEE",
+   "VTC",
+   "VRATES"
+  ],
+  "tax_note": "Clark County Room Tax 13.38% (official Venetian hotel terms)",
+  "tax_rate": 13.38,
+  "tower": "Venetian Tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3325 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "Same Venetian hotel terms.",
+  "checkin": "3:00 PM",
+  "checkout": "11:00 AM",
+  "id": "palazzo",
+  "incidental": 150,
+  "name": "The Palazzo (Venetian Resort)",
+  "parking": "Same Venetian resort parking terms ($20/day registered guests; valet $40/day).",
+  "poker_rate": 209,
+  "poker_rate_note": "Same Venetian poker suite-rate page: 'as low as $119 and $209'; property mapping is not given. Conditional on qualifying play per night.",
+  "poker_room": "Palazzo, level 2, Grand Canal Shoppes (same building as poker room)",
+  "quality": "No official star/diamond rating read",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus applicable tax, per night",
+    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "value": "$55"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Clark County Room Tax 13.38% (official Venetian hotel terms)",
+    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "value": "13.38%"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "Same Venetian poker suite-rate page: 'as low as $119 and $209'; property mapping is not given. Conditional on qualifying play per night.",
+    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "value": "from $209"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 55,
+  "resort_fee_note": "plus applicable tax, per night",
+  "srcs": [
+   "VFEE",
+   "VTC",
+   "VRATES"
+  ],
+  "tax_note": "Clark County Room Tax 13.38% (official Venetian hotel terms)",
+  "tax_rate": 13.38,
+  "tower": "Palazzo Tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "One night's room rate and tax is charged at the time of booking; a flexible-rate cancellation deadline is not stated.",
+  "checkin": "3:00 PM",
+  "checkout": "12:00 PM",
+  "id": "wynn",
+  "incidental": null,
+  "name": "Wynn Las Vegas",
+  "parking": "Complimentary self-parking for up to two vehicles included in the resort fee.",
+  "poker_rate": null,
+  "poker_rate_note": "No official poker-room rate published on the pages read.",
+  "poker_room": "Poker room is located in Encore at Wynn Las Vegas",
+  "quality": "Wynn Tower Suites hold a Forbes Travel Guide Five-Star rating (tower suites only, not standard rooms)",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus tax, per room night",
+    "source": "https://www.wynnlasvegas.com/about-us/resort-information",
+    "value": "$55"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Room tax rate not stated on the official pages read (unverified)",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "No official poker-room rate published on the pages read.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 55,
+  "resort_fee_note": "plus tax, per room night",
+  "srcs": [
+   "WINFO",
+   "WPOKER"
+  ],
+  "tax_note": "Room tax rate not stated on the official pages read (unverified)",
+  "tax_rate": null,
+  "tower": "Wynn Tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3121 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "One night's room rate and tax charged at booking; flexible-rate deadline not stated.",
+  "checkin": "3:00 PM",
+  "checkout": "12:00 PM",
+  "id": "encore",
+  "incidental": null,
+  "name": "Encore at Wynn Las Vegas",
+  "parking": "Complimentary self-parking for up to two vehicles included in the resort fee.",
+  "poker_rate": null,
+  "poker_rate_note": "Not published.",
+  "poker_room": "Poker room is in Encore (0 floors / same tower per official Wynn poker terms)",
+  "quality": "No official rating read for Encore standard rooms",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus tax, per room night",
+    "source": "https://www.wynnlasvegas.com/about-us/resort-information",
+    "value": "$55"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Room tax rate not stated on the official pages read (unverified)",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "Not published.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 55,
+  "resort_fee_note": "plus tax, per room night",
+  "srcs": [
+   "WINFO",
+   "WPOKER"
+  ],
+  "tax_note": "Room tax rate not stated on the official pages read (unverified)",
+  "tax_rate": null,
+  "tower": "Encore Tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "First night's deposit refundable if cancellation notice reaches Room Reservations at least 72 hours before arrival.",
+  "checkin": "3:00 PM",
+  "checkout": "11:00 AM",
+  "id": "bellagio",
+  "incidental": 150,
+  "name": "Bellagio",
+  "parking": "Not stated on the pages read.",
+  "poker_rate": null,
+  "poker_rate_note": "No official poker rate published.",
+  "poker_room": "North side of casino, next to the sportsbook",
+  "quality": "No official star/diamond rating read",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus applicable tax",
+    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "value": "$55"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Terms say taxes are estimated at current rates without stating a percentage (unverified)",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "No official poker rate published.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 55,
+  "resort_fee_note": "plus applicable tax",
+  "srcs": [
+   "BTC",
+   "BPOKER"
+  ],
+  "tax_note": "Terms say taxes are estimated at current rates without stating a percentage (unverified)",
+  "tax_rate": null,
+  "tower": "Main tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "First night's deposit refundable if cancellation notice reaches Room Reservations at least 72 hours before arrival.",
+  "checkin": "3:00 PM",
+  "checkout": "11:00 AM",
+  "id": "mgm-grand",
+  "incidental": 100,
+  "name": "MGM Grand",
+  "parking": "Not stated on the pages read.",
+  "poker_rate": null,
+  "poker_rate_note": "No official poker rate published.",
+  "poker_room": "Dedicated non-smoking poker room, open 24 hours",
+  "quality": "No official star/diamond rating read",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "plus applicable tax",
+    "source": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+    "value": "$50"
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Terms say taxes are estimated at current rates without stating a percentage (unverified)",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "No official poker rate published.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": 50,
+  "resort_fee_note": "plus applicable tax",
+  "srcs": [
+   "MGMTC",
+   "MGMPOK"
+  ],
+  "tax_note": "Terms say taxes are estimated at current rates without stating a percentage (unverified)",
+  "tax_rate": null,
+  "tower": "Main tower",
+  "walk_min": null
+ },
+ {
+  "addr": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "Unverified",
+  "checkin": "Unverified",
+  "checkout": "Unverified",
+  "id": "caesars-palace",
+  "incidental": null,
+  "name": "Caesars Palace",
+  "parking": "Unverified",
+  "poker_rate": null,
+  "poker_rate_note": "Not published.",
+  "poker_room": "Poker room open 24/7 with daily tournaments",
+  "quality": "AAA Five Diamond designation applies to THE VILLAS Caesars Palace (suite product, not standard rooms); Nobu Hotel at Caesars Palace holds AAA Four Diamond",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "No resort-fee figure could be retrieved from an official Caesars source (unverified)",
+    "source": "https://www.caesars.com/caesars-palace/casino",
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Unverified",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "Not published.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": null,
+  "resort_fee_note": "No resort-fee figure could be retrieved from an official Caesars source (unverified)",
+  "srcs": [
+   "CPAGE"
+  ],
+  "tax_note": "Unverified",
+  "tax_rate": null,
+  "tower": "Main towers",
+  "walk_min": null
+ },
+ {
+  "addr": "3645 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "base_rate": null,
+  "cancel": "Official page advertises FREE 48-hour cancellation on its direct-booking banner",
+  "checkin": "Unverified",
+  "checkout": "Unverified",
+  "id": "horseshoe",
+  "incidental": null,
+  "name": "Horseshoe Las Vegas",
+  "parking": "Unverified",
+  "poker_rate": null,
+  "poker_rate_note": "Not published.",
+  "poker_room": "Hall of Fame Poker Room, 20 tables; 6 tournament times daily",
+  "quality": "No official star/diamond rating read",
+  "rate_log": [
+   {
+    "checked": "2026-11-16",
+    "field": "resort_fee",
+    "note": "No resort-fee figure could be retrieved from an official Caesars source (unverified)",
+    "source": "https://www.caesars.com/horseshoe-las-vegas/casino",
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "room_tax_rate",
+    "note": "Unverified",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "poker_rate",
+    "note": "Not published.",
+    "source": null,
+    "value": null
+   },
+   {
+    "checked": "2026-11-16",
+    "field": "dated_checkout_total",
+    "note": "No dated checkout quote captured; a total requires exact dates, occupancy and a live booking query.",
+    "source": null,
+    "value": null
+   }
+  ],
+  "resort_fee": null,
+  "resort_fee_note": "No resort-fee figure could be retrieved from an official Caesars source (unverified)",
+  "srcs": [
+   "HSHOE"
+  ],
+  "tax_note": "Unverified",
+  "tax_rate": null,
+  "tower": "Main tower",
+  "walk_min": null
+ }
+]
