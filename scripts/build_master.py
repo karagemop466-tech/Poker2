@@ -547,6 +547,201 @@ for k, v in check["sources"].items():
 master["sources"]["session_updates"] = {"label": "Session arena/8234a824-poker2 official reads",
                                         "url": "https://github.com/karagemop466-tech/Poker2", "publisher": "this repo", "type": "log"}
 
+# ---------------------------------------------------------------------------
+# arena/e1c079dc-poker2 additive findings (data/session-updates-e1c079dc.json)
+# Merged, never overwritten: values already present win, new keys are added.
+# ---------------------------------------------------------------------------
+E1C = load("data/session-updates-e1c079dc.json")
+
+master["county_room_tax"] = E1C["county_room_tax"]
+master["wynn_wpt_fee_splits"] = E1C["wynn_wpt_fee_splits"]
+master["wynn_event_terms"] = E1C["wynn_event_terms"]
+master["wynn_unstructured_events"] = E1C["wynn_unstructured_events"]
+master["bellagio_sunday_horse"] = E1C["bellagio_sunday_horse"]
+master["bellagio_saturday_warning"] = E1C["bellagio_saturday"]
+master["mgm_grand_daily_structure"] = E1C["mgm_grand_daily"]
+master["horseshoe_daily_times"] = E1C["horseshoe_daily_times"]
+master["westgate_room"] = E1C["westgate"]
+master["south_point"] = E1C["south_point"]
+master["aria"] = E1C["aria"]
+master["westgate_resort_fee_conflict"] = E1C["westgate_resort_fee_conflict"]
+master["caesars_resort_fee_range"] = E1C["caesars_resort_fee_range"]
+master["walking_check"] = E1C["walking_check"]
+master["rate_log_e1c"] = E1C["rate_log"]
+master["venetian_series_label"] = E1C["venetian_series_label"]
+
+# rooms that host tournaments but had no hotel record yet (official fee/hours from
+# Westgate's own terms page and South Point's own poker page; rate/walk stay blank)
+def add_e1c_hotel(**kw):
+    hotels.append(kw)
+
+add_e1c_hotel(
+    id="H-WG", venue_id="westgate", area="Off-Strip (Paradise Rd)",
+    name="Westgate Las Vegas Resort & Casino", venue="Westgate Las Vegas",
+    address="3000 Paradise Rd, Las Vegas, NV 89109",
+    resort_fee_value=49.99,
+    resort_fee_text="$49.99 plus tax per night (terms page); the resort-fee FAQ also states $36.99 in its structured answer",
+    resort_fee_src=E1C["westgate_resort_fee_conflict"]["url"],
+    tax_rate=0.1338, tax_note="Clark County transient lodging tax, per the county licensing guide.",
+    parking_value=None, parking="", deposit="", cancellation="", quality="", booking_url="", rate_log=[],
+    notes="Poker room: 7 tables, 9-handed, Mon-Fri 12:00 PM / Sat-Sun 10:00 AM, (702) 732-5223. No tournament schedule published.",
+    sources=[E1C["westgate_resort_fee_conflict"]["url"], E1C["westgate"]["url"]],
+    retrieved=AS_OF,
+)
+add_e1c_hotel(
+    id="H-SP", venue_id="southpoint", area="South of the Strip (about 8 miles)",
+    name="South Point Hotel, Casino & Spa", venue="South Point",
+    address="9777 S. Las Vegas Blvd, Las Vegas, NV 89183",
+    resort_fee_value=None, resort_fee_text=None, resort_fee_src=None,
+    tax_rate=0.1338, tax_note="Clark County transient lodging tax, per the county licensing guide.",
+    parking_value=None, parking="Self-parking is free (stated on the poker page)", deposit="",
+    cancellation="", quality="30-table 24-hour room; about 8 miles south of the Strip.",
+    booking_url="", rate_log=[],
+    walk_min=None,
+    notes="Cannot satisfy the 30-minute walk rule from any Strip hotel. No official resort fee captured.",
+    sources=[E1C["south_point"]["url"]],
+    retrieved=AS_OF,
+)
+
+# hotel fee splits / corroboration reach the hotels that care about them
+for h in hotels:
+    name = str(h.get("name", ""))
+    if "Westgate" in name:
+        h.setdefault("fee_conflict", E1C["westgate_resort_fee_conflict"])
+    if "Caesars Palace" in name:
+        h.setdefault("fee_range", E1C["caesars_resort_fee_range"])
+
+# flags: append the new ones, never drop an existing flag
+existing_flag_ids = {str(f.get("id")) for f in flags if isinstance(f, dict)}
+for ir in E1C["irregularities"]:
+    if ir["id"] not in existing_flag_ids:
+        flags.append({
+            "id": ir["id"],
+            "severity": ir["severity"],
+            "item": ir["item"],
+            "where": ir.get("where", ""),
+            "detail": ir["detail"] + (" Next step: " + ir["action"] if ir.get("action") else ""),
+            # the renderer links flag["url"]; use the first official document behind it
+            "url": (ir["sources"][0] if ir.get("sources") else ""),
+            "source": "arena/e1c079dc-poker2, " + AS_OF,
+            "action": ir["action"],
+            "sources": ir["sources"],
+            "session": "arena/e1c079dc-poker2",
+            "retrieved": AS_OF,
+        })
+
+master["sources"]["cc_bl_guide_e1c"] = {
+    "label": "Clark County Dept. of Business License: transient lodging guide (13.38% rate)",
+    "url": E1C["county_room_tax"]["url"], "publisher": "Clark County, Nevada (official)", "type": "official",
+}
+master["sources"]["session_updates_e1c"] = {
+    "label": "Session arena/e1c079dc-poker2 official reads",
+    "url": "https://github.com/karagemop466-tech/Poker2", "publisher": "this repo", "type": "log",
+}
+
+# ---------------------------------------------------------------------------
+# arena/e1c079dc-poker2: promote Wynn rows whose OFFICIAL structure sheet was
+# read in full on 2026-11-16. These sheets all print an explicit re-entry
+# clause, so the "unverified" label is replaced with the verified terms.
+# ---------------------------------------------------------------------------
+WPT_STRUCT_URL = E1C["wynn_wpt_fee_splits"][0]["url"]
+WPT_REENTRY_L9 = ("Unlimited re-entry until the start of level 9. "
+                  "Official Wynn WPT structures PDF, read in full 2026-11-16.")
+WPT_REENTRY_L10 = ("Re-entry permitted until level 10. "
+                   "Official Wynn WPT structures PDF, read in full 2026-11-16.")
+
+# id -> (chips, level_min, re-entry excerpt, fee split or None)
+WYNN_STRUCTURED = {
+    "U-WPT01": (35000, "", WPT_REENTRY_L9, None),
+    "U-WPT02": (30000, "", WPT_REENTRY_L9, None),
+    "U-WPT03": (35000, "", WPT_REENTRY_L9, None),
+    "U-WPT04": (35000, "", WPT_REENTRY_L9, None),
+    "U-WPT05": (35000, "", WPT_REENTRY_L9, None),
+    "U-WPT06": (30000, "", WPT_REENTRY_L9, None),
+    "U-WPT07": (35000, "", WPT_REENTRY_L9, None),
+    "U-WPT08": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT09": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT12": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT13": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT17": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT20": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT25": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT42": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT46": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT48": (30000, "20", WPT_REENTRY_L9, None),
+    "U-WPT45": (35000, "", WPT_REENTRY_L9, None),
+    "X-WPT03": (40000, "40", WPT_REENTRY_L10, "$1,430 prize pool + $120 house fee + $50 staff gratuity"),
+    "X-WPT05": (None, "", WPT_REENTRY_L10, "$930 prize pool + $500 bounty + $120 house fee + $50 staff gratuity"),
+}
+
+promoted = 0
+for ev in events:
+    spec = WYNN_STRUCTURED.get(ev["id"])
+    if not spec:
+        continue
+    chips, level_min, excerpt, split = spec
+    ev["chips"] = chips
+    ev["level_min"] = level_min
+    ev["category"] = "spend-more"
+    ev["struct_url"] = WPT_STRUCT_URL
+    ev["rules"] = {
+        "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
+        "re_entry": excerpt,
+        "add_on": "not stated on the structure sheet",
+        "excerpt": excerpt,
+        "retrieved": AS_OF,
+    }
+    ev["notes"] = ("Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is "
+                   "excluded from the single-entry ranking and kept in the spend-more section.")
+    if split:
+        ev["notes"] += " Buy-in split: " + split + "."
+    ev["last_checked"] = AS_OF
+    promoted += 1
+print("promoted %d Wynn rows from unverified to verified-re-entry" % promoted)
+
+# ---------------------------------------------------------------------------
+# arena/e1c079dc-poker2: Wynn series events that appear on the OFFICIAL schedule
+# but were missing from this dataset. Buy-in / date / time / guarantee are from
+# the official WPT schedule PDF; every rule field stays unverified because the
+# structures PDF covers only 13 events and these are not among them.
+# ---------------------------------------------------------------------------
+WPT_SCHEDULE_ONLY = [
+    ("E1C-WY-01", "PLO $500 Bounty $1,600 $100K GTD", 1600, 100000, "2026-12-07", "1:00 PM", ["bounty"]),
+    ("E1C-WY-02", "PLO $1,000 Bounty $3,000 $250K GTD", 3000, 250000, "2026-12-09", "1:00 PM", ["bounty"]),
+    ("E1C-WY-03", "PLO Turbo $1,100 $100K GTD", 1100, 100000, "2026-12-14", "7:00 PM", ["turbo"]),
+    ("E1C-WY-04", "Big O $1,100", 1100, None, "2026-12-15", "12:00 PM", ["mixed"]),
+    ("E1C-WY-05", "PLO Progressive Bounty (PKO) $3,000 $250K GTD", 3000, 250000, "2026-12-15", "1:00 PM", ["bounty", "pko"]),
+    ("E1C-WY-06", "NLH $500 Bounty Turbo $1,600 $100K GTD", 1600, 100000, "2026-12-15", "7:00 PM", ["bounty", "turbo"]),
+    ("E1C-WY-07", "Wynn Mixed Championship (2 Day) $1,600", 1600, None, "2026-12-17", "11:00 AM", ["mixed"]),
+    ("E1C-WY-08", "NLH High Roller (2 Day) $25,800", 25800, None, "2026-12-17", "1:00 PM", ["high-roller"]),
+    ("E1C-WY-09", "HORSE $800", 800, None, "2026-12-18", "1:00 PM", ["mixed"]),
+    ("E1C-WY-10", "NLH Turbo $1,100 $100K GTD", 1100, 100000, "2026-12-18", "6:00 PM", ["turbo"]),
+    ("E1C-WY-11", "Seniors High Roller (3 Day) $5,000 $250K GTD", 5000, 250000, "2026-12-19", "11:00 AM", ["high-roller", "seniors"]),
+    ("E1C-WY-12", "TORSE Championship (2 Day) $1,600", 1600, None, "2026-12-19", "1:00 PM", ["mixed"]),
+]
+existing_ids = {e["id"] for e in events}
+for rid, name, buy, gtd, date, start, tags in WPT_SCHEDULE_ONLY:
+    if rid in existing_ids:
+        continue
+    events.append({
+        "id": rid, "venue_id": "wynn", "venue": "Wynn Las Vegas", "name": name, "game": "",
+        "date": date, "start": start, "buy_in": buy, "fee": None, "pool_per_entry": None,
+        "gtd": gtd, "format": "one-day", "category": "unverified", "tags": tags,
+        "chips": None, "level_min": "", "late_reg": "",
+        "rules": {"single_entry": "unverified", "re_entry": "unverified", "add_on": "unverified",
+                  "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
+                  "retrieved": AS_OF},
+        "last_checked": AS_OF,
+        "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+        "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+        "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
+        "gtd_includes_bounties": ("bounty" in name.lower()) if gtd else None,
+        "bounty": ("bounty" in name.lower()) if gtd else None,
+        "total_entry_fee": buy if gtd else None,
+        "gtd_ratio": round(gtd / buy, 1) if (gtd and buy) else None,
+    })
+print("added %d schedule-verified Wynn events" % len(WPT_SCHEDULE_ONLY))
+
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
