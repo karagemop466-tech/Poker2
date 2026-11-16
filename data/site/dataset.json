@@ -3,7 +3,7 @@
   "events": 96,
   "sheets": 37,
   "single_confirmed": 0,
-  "sources": 23
+  "sources": 60
  },
  "events": [
   {
@@ -3970,6 +3970,154 @@
   "VSERIES": {
    "label": "Venetian DeepStack series overview page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+  },
+  "VSTRUCT01": {
+   "label": "Venetian DSE IV official structure sheet 1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+  },
+  "VSTRUCT02": {
+   "label": "Venetian DSE IV official structure sheet 2",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+  },
+  "VSTRUCT03": {
+   "label": "Venetian DSE IV official structure sheet 3",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+  },
+  "VSTRUCT04": {
+   "label": "Venetian DSE IV official structure sheet 4",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+  },
+  "VSTRUCT05": {
+   "label": "Venetian DSE IV official structure sheet 5",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+  },
+  "VSTRUCT06": {
+   "label": "Venetian DSE IV official structure sheet 6",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+  },
+  "VSTRUCT07": {
+   "label": "Venetian DSE IV official structure sheet 7",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+  },
+  "VSTRUCT08": {
+   "label": "Venetian DSE IV official structure sheet 8",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+  },
+  "VSTRUCT09": {
+   "label": "Venetian DSE IV official structure sheet 9",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+  },
+  "VSTRUCT10": {
+   "label": "Venetian DSE IV official structure sheet 10",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+  },
+  "VSTRUCT11": {
+   "label": "Venetian DSE IV official structure sheet 11",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+  },
+  "VSTRUCT12": {
+   "label": "Venetian DSE IV official structure sheet 12",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+  },
+  "VSTRUCT13": {
+   "label": "Venetian DSE IV official structure sheet 13",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+  },
+  "VSTRUCT14": {
+   "label": "Venetian DSE IV official structure sheet 14",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
+  },
+  "VSTRUCT15": {
+   "label": "Venetian DSE IV official structure sheet 15",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+  },
+  "VSTRUCT16": {
+   "label": "Venetian DSE IV official structure sheet 16",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+  },
+  "VSTRUCT17": {
+   "label": "Venetian DSE IV official structure sheet 17",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+  },
+  "VSTRUCT18": {
+   "label": "Venetian DSE IV official structure sheet 18",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+  },
+  "VSTRUCT19": {
+   "label": "Venetian DSE IV official structure sheet 19",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+  },
+  "VSTRUCT20": {
+   "label": "Venetian DSE IV official structure sheet 20",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+  },
+  "VSTRUCT21": {
+   "label": "Venetian DSE IV official structure sheet 21",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+  },
+  "VSTRUCT22": {
+   "label": "Venetian DSE IV official structure sheet 22",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
+  },
+  "VSTRUCT23": {
+   "label": "Venetian DSE IV official structure sheet 23",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+  },
+  "VSTRUCT24": {
+   "label": "Venetian DSE IV official structure sheet 24",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+  },
+  "VSTRUCT25": {
+   "label": "Venetian DSE IV official structure sheet 25",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+  },
+  "VSTRUCT26": {
+   "label": "Venetian DSE IV official structure sheet 26",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
+  },
+  "VSTRUCT27": {
+   "label": "Venetian DSE IV official structure sheet 27",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
+  },
+  "VSTRUCT28": {
+   "label": "Venetian DSE IV official structure sheet 28",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
+  },
+  "VSTRUCT29": {
+   "label": "Venetian DSE IV official structure sheet 29",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+  },
+  "VSTRUCT30": {
+   "label": "Venetian DSE IV official structure sheet 30",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+  },
+  "VSTRUCT31": {
+   "label": "Venetian DSE IV official structure sheet 31",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
+  },
+  "VSTRUCT32": {
+   "label": "Venetian DSE IV official structure sheet 32",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+  },
+  "VSTRUCT33": {
+   "label": "Venetian DSE IV official structure sheet 33",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
+  },
+  "VSTRUCT34": {
+   "label": "Venetian DSE IV official structure sheet 34",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+  },
+  "VSTRUCT35": {
+   "label": "Venetian DSE IV official structure sheet 35",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+  },
+  "VSTRUCT36": {
+   "label": "Venetian DSE IV official structure sheet 36",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+  },
+  "VSTRUCT37": {
+   "label": "Venetian DSE IV official structure sheet 37",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
   },
   "VTC": {
    "label": "Venetian Hotel Terms & Conditions (13.38% room tax, parking, incidentals)",

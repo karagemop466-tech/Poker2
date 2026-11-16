@@ -91,6 +91,16 @@ def vsheet(n):
     return VSTRUCT_BASE % n
 
 
+# Register every structure-sheet URL individually so the scheduled monitor does not
+# only re-check the event summary page. These 37 PDFs were individually read for this
+# dataset and are separately monitored by key.
+for _sheet_no in range(1, 38):
+    SOURCES["VSTRUCT%02d" % _sheet_no] = (
+        "Venetian DSE IV official structure sheet %d" % _sheet_no,
+        vsheet(_sheet_no),
+    )
+
+
 # ---------------------------------------------------------------------------
 # Venetian DSE IV events
 # kind: 1day | multi-flight | multi-day | satellite

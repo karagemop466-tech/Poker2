@@ -1170,11 +1170,11 @@ official event page.</p>
 <h2>Automated change monitoring</h2>
 %s
 <p>A GitHub Actions workflow runs <code>scripts/recheck_sources.py</code> on a schedule, fetches every
-official URL above, hashes the normalised text of each page, and appends any change to
+official URL above (including all 37 Venetian structure PDFs), hashes normalised HTML text and raw PDF bytes, and appends any change to
 <code>data/site/checks.json</code>. The workflow fails nothing on a content change: a change is
 recorded, not guessed at.</p>
 <div class="tw"><table class="t"><thead><tr><th>What is monitored</th><th>How a change is surfaced</th></tr></thead><tbody>
-<tr><td>Every URL in the register above</td><td>Text hash comparison per run; changed rows are listed in <code>data/site/checks.json</code> with the old and new hash and a timestamp.</td></tr>
+<tr><td>Every URL in the register above</td><td>Normalised HTML-text or raw-PDF-byte hash comparison per run; changed rows are listed in <code>data/site/checks.json</code> with the old and new hash and a timestamp.</td></tr>
 <tr><td>HTTP failures (404 / 500 / timeouts)</td><td>Recorded as a fetch error, which is itself a flag: a moved page can invalidate a cited value.</td></tr>
 <tr><td>Schedule cadence</td><td>Daily at 06:00 UTC, plus manual dispatch from the Actions tab.</td></tr>
 </tbody></table></div>
