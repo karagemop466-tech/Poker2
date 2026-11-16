@@ -1,65 +1,74 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Suggestions · Vegas Poker Planner</title>
-<meta name="description" content="Review options and choose a path before anything changes.">
-<link rel="stylesheet" href="assets/site.css">
-</head><body>
-<header class="top"><a class="brand" href="index.html">♠ VEGAS POKER PLANNER</a>
-<span class="stamp">Every value sourced · retrieved 2026-11-16</span>
-<button class="menu-btn" onclick="document.body.classList.toggle('nav-open')">Menu</button></header>
-<div class="shell">
-<nav class="side">
-<p class="lbl">SECTIONS</p>
-<a href="index.html">Dashboard</a>
-<a href="tournaments.html">All events</a>
-<a href="schedule.html">Day plan</a>
-<a href="hotels.html">Hotels &amp; true cost</a>
-<a href="venues.html">Venues</a>
-<a href="single-entry.html">Entry rules</a>
-<a href="summary.html">Executive summary</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions · Las Vegas Poker Trip Planner</title>
+<meta name="description" content="Suggestions">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+<header class="site">
+  <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+</header>
+<nav class="site"><a href="index.html">Dashboard</a>
+<a href="summary.html">Executive Summary</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="venue-venetian.html">Venetian</a>
+<a href="venue-wynn.html">Wynn</a>
+<a href="venue-others.html">Other Venues</a>
+<a href="hotels.html">Hotels</a>
+<a href="planner.html">Trip Planner</a>
+<a href="ranking.html">Ranking</a>
+<a href="rules.html">Entry Rules</a>
+<a href="monitor.html">Source Monitor</a>
+<a href="flagged.html">Flagged</a>
 <a href="questions.html">Questions</a>
-<a href="suggestions.html" class="on">Suggestions</a>
-<a href="flagged.html">Flagged for review</a>
-<a href="sources.html">Sources &amp; monitoring</a>
-<a href="repo-review.html">Repo review</a>
-<p class="lbl">NOTE</p>
-<p class="mini">Blank cells are unverified, not zero. Nothing here is an offer.</p>
-</nav>
+<a href="suggestions.html" class="active">Suggestions</a>
+<a href="repo-review.html">Repo Review</a></nav>
 <main>
 
-<section class="hero small"><div class="eyebrow">REVIEW BEFORE IMPLEMENTING</div>
-<h1>Suggestions, with a decision attached</h1>
-<p class="lede">This page exists so you can choose a direction instead of receiving changes you did not
-ask for. Each row states the problem, the effort, the impact and the exact decision it needs from you.
-Rows already marked <em>Implemented in this build</em> are ones the build did because they were
-unambiguous requests; everything else waits.</p></section>
-<section class="block"><div class="tw"><table class="t"><thead><tr><th>Suggestion</th>
-<th>Why it matters</th><th>Effort</th><th>Impact</th><th>Decision needed</th><th>Status</th></tr></thead>
-<tbody><tr id="S-01"><td><b>Ask the card room for written entry rules before trusting any single-entry label</b></td><td class="mini">Every single-entry claim on this site is blocked by the same gap: no organiser publishes an explicit one-entry-only rule. A written answer from the room unlocks the whole recommendation.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">High</span></td><td class="mini">Send one email to each of the five poker rooms; publish the replies.</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr><tr id="S-02"><td><b>Buy the hotel rate as a dated log, not a number</b></td><td class="mini">Rates move daily. A single stored value goes stale silently; a dated observation with a source link stays auditable.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">High</span></td><td class="mini">Accept the dated-log layout already used on the Hotels page.</td><td><span class="badge ok">Implemented in this build</span></td></tr><tr id="S-03"><td><b>Price two candidate weeks and compare like-for-like</b></td><td class="mini">A trip-cost comparison is only meaningful for identical dates, nights and occupancy. Two candidate weeks would let you compare cost per tournament played.</td><td><span class="badge block">Medium</span></td><td><span class="badge warn">High</span></td><td class="mini">Choose two date windows; enter their live rates in the estimator.</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr><tr id="S-04"><td><b>Treat any same-day second event as a conditional fallback, never a plan</b></td><td class="mini">No official source publishes expected finish times. Committing to a 5:10 PM event after an 11:10 AM event assumes a bust that may not happen.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">Medium</span></td><td class="mini">Accept the primary-plus-conditional layout on the Day plan page.</td><td><span class="badge ok">Implemented in this build</span></td></tr><tr id="S-05"><td><b>Keep spend-advantage events in their own section, not deleted</b></td><td class="mini">Rebuy, add-on and unlimited re-entry events are not bad value; they are bad for a fixed-budget comparison. Separating them keeps the comparison honest without hiding options.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">Medium</span></td><td class="mini">Keep the separation as published.</td><td><span class="badge ok">Implemented in this build</span></td></tr><tr id="S-06"><td><b>Label guarantee ÷ buy-in as a description, never as an edge</b></td><td class="mini">A guarantee is a floor the organiser must pay, not an expectation. Showing it as a ratio invites over-reading it as a forecast.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">Medium</span></td><td class="mini">Accept the 'descriptive only' label.</td><td><span class="badge ok">Implemented in this build</span></td></tr><tr id="S-07"><td><b>Measure the two walks that matter, once, on foot</b></td><td class="mini">The 30-minute filter cannot be applied from official sources because none states a walking time. Two on-site measurements would unblock the entire hotel filter.</td><td><span class="badge block">Medium</span></td><td><span class="badge warn">High</span></td><td class="mini">Record Palazzo-to-Venetian-lobby and Venetian-to-Wynn times on the trip.</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr><tr id="S-08"><td><b>Decide whether the trip is about volume or about one big event</b></td><td class="mini">The best 'value' event and the best 'volume' schedule point in different directions: the $2,200 $1M Championship is the largest advertised pool, while the $200/$300 one-day events maximise entries per day.</td><td><span class="badge block">Low</span></td><td><span class="badge warn">High</span></td><td class="mini">Pick a primary objective; the day plan can then be rebuilt around it.</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr><tr id="S-09"><td><b>Consolidate the four overlapping dashboards that earlier sessions left in the repo</b></td><td class="mini">The repository currently publishes a root dashboard, a /docs subsite and a /verified subsite built by different sessions. Duplicate dashboards are the main source of contradiction risk.</td><td><span class="badge block">Medium</span></td><td><span class="badge warn">Medium</span></td><td class="mini">Approve keeping the legacy pages as archived documents (current state) or removing them after review.</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr><tr id="S-10"><td><b>Add a change-alert digest instead of relying on a page nobody reloads</b></td><td class="mini">The source monitor records changes but nothing pushes them to you. A weekly digest of changed pages turns monitoring into a decision input.</td><td><span class="badge block">Medium</span></td><td><span class="badge warn">Medium</span></td><td class="mini">Choose an alert destination (e.g. issue comment on this repo).</td><td><span class="badge rev">Proposed - needs your choice</span></td></tr></tbody></table></div></section>
-
-<section class="block">
-<h2>What was implemented, and how it maps to the request</h2>
-<div class="tw"><table class="t"><thead><tr><th>Requested capability</th><th>Where it lives</th><th>Status</th></tr></thead><tbody>
-<tr><td>Trip cost calculator: entries × buy-ins + nights × true hotel cost</td><td><a href="index.html#calc">Dashboard</a>, <a href="hotels.html">Hotels</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Date filter showing only events on chosen days</td><td><a href="tournaments.html">All events</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Search box across all tables</td><td>Every table page</td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Single-entry / freezeout confirmed toggle</td><td><a href="tournaments.html">All events</a></td><td><span class="badge ok">Done</span> (0 rows, by evidence)</td></tr>
-<tr><td>Structured rule fields: single-entry, re-entry, add-on, fee, each with source and retrieval date</td><td><a href="single-entry.html">Entry rules</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Schedule overlap check with primary + conditional fallback</td><td><a href="schedule.html">Day plan</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Last-checked date on each row</td><td>Every table</td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Rates as a dated log, not one value</td><td><a href="hotels.html">Hotels</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>One page per venue with its events and hotels</td><td><a href="venues.html">Venues</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Scheduled re-check of each official URL with change marking</td><td><a href="sources.html">Sources &amp; monitoring</a></td><td><span class="badge ok">Done</span></td></tr>
-<tr><td>Walking-time verification with a 30-minute filter</td><td><a href="hotels.html">Hotels</a></td><td><span class="badge block">Blocked</span> — no official figure exists</td></tr>
-<tr><td>Live hotel rate lookup</td><td><a href="hotels.html">Hotels</a></td><td><span class="badge block">Blocked</span> — needs a dated quote from you</td></tr>
-<tr><td>Live-data scraper of each room's daily schedule</td><td><a href="sources.html">Sources &amp; monitoring</a></td><td><span class="badge block">Blocked</span> — change detection runs on a schedule; a full per-room scraper needs sites that expose machines-readable schedules</td></tr>
-</tbody></table></div>
-</section>
-
-<footer><p>Independent research dashboard. Official linked pages are authoritative and can change.
-Sources were retrieved on 2026-11-16. Verify again before paying for anything non-refundable.</p>
-<p><a href="flagged.html">Flagged for review</a> · <a href="sources.html">Source register</a></p></footer>
-</main></div>
-<script src="assets/site.js"></script>
-</body></html>
+<h1>Suggestions — review before implementing</h1>
+<p class="lead">Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off. Each item lists options and the trade-off so you can choose a
+path. Nothing here has been implemented.</p>
+<table class="data"><thead><tr><th>#</th><th>Suggestion</th><th>Options</th><th>Trade-off</th><th>Status</th></tr></thead>
+<tbody><tr><td>S01</td><td><strong>Add the remaining Strip properties</strong><small class="note">Coverage</small></td>
+<td>A) Add MGM / Mandalay Bay, Caesars properties and Resorts World next (official poker pages and structure sheets).<br>B) Add only the properties with 2+ single-entry events in the next two weeks.<br>C) Keep the scope at Venetian and Wynn.</td>
+<td>A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S02</td><td><strong>Automate structure-sheet classification</strong><small class="note">Verification</small></td>
+<td>A) Script that reads each official structure PDF and flags re-entry, rebuy, add-on and flight words automatically.<br>B) Keep manual review with a checklist per row.<br>C) Manual review plus a second reviewer.</td>
+<td>A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S03</td><td><strong>Capture dated snapshots of every official source</strong><small class="note">Evidence</small></td>
+<td>A) Save a PDF or HTML copy of each official source with the date checked.<br>B) Save links only (current approach).<br>C) Snapshot only the sources behind single-entry rows.</td>
+<td>A and C protect against changes; B is simplest but links can change silently.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S04</td><td><strong>Add a nightly-rate capture step</strong><small class="note">Hotels</small></td>
+<td>A) Record an official nightly rate for each hotel on the chosen dates, with the date and tax shown.<br>B) Ask the user for a quoted rate.<br>C) Show resort fees only (current state).</td>
+<td>A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S05</td><td><strong>Choose a quality measure for hotels</strong><small class="note">Hotels</small></td>
+<td>A) AAA Diamond rating (official AAA listing).<br>B) Forbes Travel Guide star rating.<br>C) The user&#x27;s own criteria (for example room size, reviews).</td>
+<td>A and B are third-party rating bodies with official listings. C is personal and needs the user to define it.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S06</td><td><strong>Walking-time method</strong><small class="note">Hotels</small></td>
+<td>A) Use a map routing service and record the date checked.<br>B) Use each resort&#x27;s own map or concierge.<br>C) Estimate from straight-line distance (not recommended; cannot be verified).</td>
+<td>A and B are verifiable; C is an estimate and conflicts with the &#x27;never infer&#x27; rule.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S07</td><td><strong>Add interactive filters</strong><small class="note">Usability</small></td>
+<td>A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).<br>B) Keep static tables sorted by value.<br>C) Add a day planner that builds an 8 AM–close schedule from verified start times.</td>
+<td>A and C add real decision value. B is what is built now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S08</td><td><strong>Monitor for changes</strong><small class="note">Maintenance</small></td>
+<td>A) Scheduled job that re-fetches each official page weekly and flags changed rows.<br>B) Manual re-check before each trip.<br>C) No automation.</td>
+<td>A keeps data current but needs hosting; B is cheap; C risks stale data.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S09</td><td><strong>Name the single-entry standard in one place</strong><small class="note">Clarity</small></td>
+<td>A) Keep the current definition (no re-entry, rebuy or add-on stated in the official structure sheet).<br>B) Require poker-room confirmation for every row before it counts as single-entry.<br>C) Use both: sheet-based by default, confirmation for events the user will play.</td>
+<td>A is clear but depends on documents; B is strongest but slow; C balances both.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S10</td><td><strong>Fix the repo setup</strong><small class="note">Repo</small></td>
+<td>A) Keep Pages on main, path &#x27;/&#x27; (current; site files are at the root).<br>B) Move the site into /docs and switch Pages to /docs.<br>C) Use a GitHub Actions build (needs a workflow file).</td>
+<td>A is in place now. B keeps the root clean. C allows a build step but adds a workflow.</td><td><span class="badge b-info">Awaiting decision</span></td></tr></tbody></table>
+<div class="panel"><h2>Added by this session</h2>
+<ul class="tight">
+<li><strong>S-A (Decision quality):</strong> Require a dated checkout quote + verified walk time before any event/hotel pair leaves the “candidate” list. Options: A) hard gate in the planner (recommended) · B) warning badge only · C) manual checklist. Trade-off: A prevents bad bookings but blocks planning until quotes exist.</li>
+<li><strong>S-B (Ranking honesty):</strong> Keep bounty guarantees out of the main ratio table (implemented on the Ranking page) and add an overlay tracker once real attendance data exists. Options: A) leave ratio as the only metric · B) add historical field sizes per event · C) add EV model. Trade-off: B is data-heavy; C needs assumptions you may not trust.</li>
+<li><strong>S-C (Consolidation):</strong> Retire the archived /docs and /verified dashboards once this master site is accepted, so there is one source of truth. Options: A) keep archives visible · B) unpublish but keep in git history (recommended) · C) delete. Trade-off: A causes confusion; C loses browsable history.</li>
+<li><strong>S-D (Monitoring depth):</strong> Extend the daily source monitor to diff parsed values (buy-in, guarantee) instead of page hashes. Options: A) hash-only (current) · B) parsed diff for the 4 key pages · C) full parser for every PDF. Trade-off: B/C catch silent edits but need maintenance when layouts change.</li>
+</ul></div>
+</main>
+<footer class="site">
+  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
+  <a href="COORDINATION.md">COORDINATION.md</a> ·
+  Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
+  <br>Guarantee ÷ entry-fee figures are descriptive ratios, not forecasts. Nothing here is financial advice.
+</footer>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

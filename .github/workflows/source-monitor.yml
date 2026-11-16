@@ -1,0 +1,32 @@
+name: Source monitor
+
+# Re-check every official URL on a schedule and mark rows whose source changed.
+# Runs daily at 07:00 Las Vegas time (PST, UTC-8 → 15:00 UTC).
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Re-check official URLs (hash compare + daily snapshots)
+        run: python3 scripts/monitor.py
+
+      - name: Rebuild site (rows with changed sources get flagged)
+        run: python3 scripts/build_master.py && python3 scripts/build_site.py
+
+      - name: Commit monitoring results
+        run: |
+          git config user.name "poker2-source-monitor"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/source_monitor.json data/monitor-report.md data/snapshots data/master.json
+          git add -A '*.html' || true
+          git diff --cached --quiet || git commit -m "Source monitor: re-check official URLs $(date -u +%F)"
+          git push

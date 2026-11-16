@@ -1,0 +1,362 @@
+{
+  "session": "arena/8234a824-poker2",
+  "as_of": "2026-11-16",
+  "note": "Verification facts confirmed directly from official pages/PDFs by this session on 2026-11-16. Applied on top of data/venetian-dse4-official-check.json and data/verified/tournaments.json when generating data/master.json. Every excerpt below was read from the linked official source.",
+  "structure_sheet_reads": {
+    "18": {
+      "events": [3, 4, 5],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+      "title": "$200 No Limit Hold'em (1Day) — RaceDay Stack",
+      "start": "10:10 AM",
+      "chips": 30000,
+      "level_min": "20/15",
+      "late_reg": "6 levels + Break (~12:25 PM)",
+      "fee": 35,
+      "pool_per_entry": 165,
+      "pays": "12.5% of the field",
+      "guarantee": null,
+      "entry_language": "none",
+      "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. … Late Registration: 6 levels + Break (~ 12:25 PM).",
+      "retrieved": "2026-11-16"
+    },
+    "29": {
+      "events": [6],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+      "title": "$200 No Limit Hold'em (1Day)",
+      "start": "11:10 AM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + Break (~3:40 PM)",
+      "fee": 40,
+      "pool_per_entry": 160,
+      "pays": "12.5% of the field",
+      "guarantee": null,
+      "entry_language": "none",
+      "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $160 of every $200 Buy In. … Late Registration: 8 levels + Break (~ 3:40 PM).",
+      "retrieved": "2026-11-16"
+    },
+    "30": {
+      "events": [8],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+      "title": "$200 No Limit Hold'em (1Day) — Progressive Knock-Out Bounty (PKO)",
+      "start": "5:10 PM",
+      "chips": 25000,
+      "level_min": 30,
+      "late_reg": "8 levels + Break (9:40 PM)",
+      "fee": 40,
+      "pool_per_entry": 160,
+      "pays": "12.5% of the field",
+      "guarantee": "$8,000 (prize pool + total bounties)",
+      "entry_language": "none",
+      "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. … Players start the event as a $50 bounty. … A Prize Pool of $8,000 is guaranteed … which consists of the actual prize pool plus the total amount of bounty prize money.",
+      "retrieved": "2026-11-16"
+    },
+    "26": {
+      "events": [17],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+      "title": "$400 Pot Limit Omaha Bounty (1Day)",
+      "start": "12:10 PM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + break (~4:40 PM)",
+      "fee": 60,
+      "pool_per_entry": 340,
+      "pays": "12.5% of the field (8-handed)",
+      "guarantee": "$15,000 (prize pool + total bounties)",
+      "entry_language": "none",
+      "excerpt": "$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In. … Players receive a $100 Bounty for each player they eliminate … A total prize pool of $15,000 is guaranteed … plus the total amount of $100 bounties.",
+      "retrieved": "2026-11-16"
+    },
+    "8": {
+      "events": [18, 58],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+      "title": "$200 No Limit Hold'em Valuetown Bounty (1Day) — PokerAtlas PRO Member $20 Rake Discount",
+      "start": "5:10 PM",
+      "chips": 25000,
+      "level_min": 30,
+      "late_reg": "8 levels + Break (9:40 PM)",
+      "fee": 40,
+      "pool_per_entry": 160,
+      "pays": "12.5% of the field",
+      "guarantee": "$20,000 (prize pool + total bounties)",
+      "entry_language": "ambiguous",
+      "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. … PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only … All subsequent buy in's after the initial buy in will be $200.",
+      "retrieved": "2026-11-16",
+      "irregularity": "Note 7 refers to 'All subsequent buy in's after the initial buy in', which implies more than one buy-in may be possible, although the sheet contains no re-entry procedure. Treat entry limit as ambiguous; confirm with the poker room."
+    },
+    "22": {
+      "events": [20],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+      "title": "$300 Pot Limit Omaha — Double Board Bomb Pot (1Day)",
+      "start": "12:10 PM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + break (~4:40 PM)",
+      "fee": 58,
+      "pool_per_entry": 242,
+      "pays": "12.5% of the field (8-handed)",
+      "guarantee": "$10,000",
+      "entry_language": "none",
+      "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In. … Guarantee: $10,000.",
+      "retrieved": "2026-11-16"
+    },
+    "17": {
+      "events": [24, 32],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+      "title": "$600 No Limit Hold'em Seniors (1Day) — MUST BE 50+",
+      "start": "10:10 AM",
+      "chips": 40000,
+      "level_min": 30,
+      "late_reg": "10 levels + Break (~3:55 PM)",
+      "fee": 90,
+      "pool_per_entry": 510,
+      "pays": "15% of the field",
+      "guarantee": "$40,000",
+      "entry_language": "none",
+      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. … Guarantee: $40,000.",
+      "retrieved": "2026-11-16"
+    },
+    "28": {
+      "events": [27],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+      "title": "$600 BIG O (1Day)",
+      "start": "12:10 PM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + break (~4:40 PM)",
+      "fee": 90,
+      "pool_per_entry": 510,
+      "pays": "12.5% of the field (8-handed)",
+      "guarantee": "$25,000",
+      "entry_language": "none",
+      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake - Staff). Prize pool consists of $510 of every $600 Buy In. … Guarantee: $25,000.",
+      "retrieved": "2026-11-16"
+    },
+    "31": {
+      "events": [35],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+      "title": "$600 No Limit Hold'em (1Day) — LIPS Poker Jingle Tag Team Event",
+      "start": "10:10 AM",
+      "chips": 40000,
+      "level_min": 30,
+      "late_reg": "8 levels + Break (~2:40 PM)",
+      "fee": 80,
+      "extra_fee": "$10 flat fee for Vegas Connected, INC, DBA LIPS",
+      "pool_per_entry": 510,
+      "pays": "12.5% of the field",
+      "guarantee": "$10,000",
+      "entry_language": "none",
+      "teams": "Female / Female OR Female / Male; players rotate every level",
+      "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
+      "retrieved": "2026-11-16"
+    },
+    "32": {
+      "events": [39],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+      "title": "$800 NLH LIPS Ladies (2Day) — Women in Poker Main Event",
+      "start": "10:10 AM (Day 1, Dec 10); Day 2 Dec 11 10:00 AM",
+      "chips": 40000,
+      "level_min": 40,
+      "late_reg": "9 levels + Break (~4:55 PM)",
+      "fee": 90,
+      "extra_fee": "$20 flat fee for Vegas Connected, INC, DBA LIPS",
+      "pool_per_entry": 690,
+      "pays": "to ~12.5% after Day 1; streamed final table",
+      "guarantee": "$40,000",
+      "entry_language": "none",
+      "eligibility": "Must be a female 21+ years of age",
+      "excerpt": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
+      "retrieved": "2026-11-16"
+    },
+    "33": {
+      "events": [43],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+      "title": "$600 No Limit Hold'em LIPS (1Day) — Kings and Queens Bounty, open to all",
+      "start": "11:10 AM",
+      "chips": 40000,
+      "level_min": 30,
+      "late_reg": "10 levels + Break (4:55 PM)",
+      "fee": 80,
+      "extra_fee": "$10 flat fee for Vegas Connected, INC, DBA LIPS",
+      "pool_per_entry": 510,
+      "pays": "12.5% of the field",
+      "guarantee": "$30,000 (prize pool + total bounties)",
+      "entry_language": "none",
+      "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In … for … (LIPS). Prize pool consists of $510 of every $600 Buy In. … Players receive $200 Bounty for each player they eliminate.",
+      "retrieved": "2026-11-16"
+    },
+    "23": {
+      "events": [57],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "title": "$600 Pot Limit Omaha — Double Board Bomb Pot (1Day)",
+      "start": "12:10 PM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + break (~4:40 PM)",
+      "fee": 90,
+      "pool_per_entry": 510,
+      "pays": "12.5% of the field (8-handed)",
+      "guarantee": "$25,000",
+      "entry_language": "none",
+      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. … Guarantee: $25,000.",
+      "retrieved": "2026-11-16"
+    },
+    "27": {
+      "events": [40],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+      "title": "$600 Pot Limit Omaha Bounty (1Day)",
+      "start": "12:10 PM",
+      "chips": 30000,
+      "level_min": 30,
+      "late_reg": "8 levels + break (~4:40 PM)",
+      "fee": 90,
+      "pool_per_entry": 510,
+      "pays": "12.5% of the field (8-handed)",
+      "guarantee": "$25,000 (prize pool + total bounties)",
+      "entry_language": "none",
+      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. … Players receive a $200 Bounty for each player they eliminate … A total prize pool of $25,000 is guaranteed … plus the total amount of $200 bounties.",
+      "retrieved": "2026-11-16"
+    },
+    "9": {
+      "events": [1],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+      "title": "$300 No Limit Hold'em — Day B+D (Event 01, multi-flight)",
+      "late_reg": "6 levels + Break (~8:40 PM)",
+      "fee": 60,
+      "pool_per_entry": 240,
+      "guarantee": "$75,000",
+      "entry_language": "multi-flight confirmed",
+      "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. … $60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In.",
+      "retrieved": "2026-11-16"
+    },
+    "2": {
+      "events": [7],
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+      "title": "$400 No Limit Hold'em — Day A+B (Event 07, multi-flight)",
+      "late_reg": "9 levels + Break (5:55 PM)",
+      "fee": 70,
+      "pool_per_entry": 330,
+      "guarantee": "$75,000",
+      "entry_language": "multi-flight confirmed",
+      "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. … $70 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $330 of every $400 Buy In.",
+      "retrieved": "2026-11-16"
+    }
+  },
+  "wynn_wpt_rules_read": {
+    "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "schedule_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+    "page_url": "https://www.wynnlasvegas.com/casino/poker",
+    "retrieved": "2026-11-16",
+    "verified_in_session": "arena/e3cb221d-poker2 (documented in research/e3cb221d-official-follow-up.md); schedule page re-checked by arena/8234a824-poker2 on 2026-11-16",
+    "rules": {
+      "wpt_600nlh_400k": "unlimited re-entry for each starting flight until the start of level 9; a player who advances to Day 2 may not enter a later starting flight; fee split $510 prize pool + $65 tournament fee + $25 staff service charge = $600",
+      "wpt_800nlh_1m": "unlimited re-entry per starting flight until level 9; advancing to Day 2 prevents entry into a later starting flight; fee split $695 prize pool + $72 tournament fee + $33 staff service charge = $800",
+      "wpt_prime_1100": "one entry and one re-entry per starting flight until level 10; a Day 2 player may not enter another starting flight; fee split $970 prize pool + $90 tournament fee + $40 staff service charge = $1,100",
+      "wpt_600nlh_turbo_50k": "unlimited re-entry until level 9; one-day 9 PM events listed Dec 5–9, 12, 14, plus Dec 21 at 6 PM"
+    }
+  },
+  "caesars_recurring": {
+    "guide_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "flyer_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "retrieved": "2026-11-16",
+    "caesars_palace": {
+      "excerpt": "four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes … a $50 add-on at the first break gives you an extra 15,000 chips",
+      "times": ["10:00 AM", "2:00 PM", "6:00 PM", "9:00 PM"],
+      "buy_in": 100,
+      "gtd": 1000,
+      "chips": 20000,
+      "level_min": 20,
+      "addon": "$50 add-on for 15,000 chips at the first break",
+      "entry_rules": "Add-on available (spend-more mechanism confirmed). Re-entry not stated on the guide."
+    },
+    "horseshoe": {
+      "excerpt": "six daily No-Limit Hold'em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. … A mixture of buy-ins, levels and guarantees caters to all participants",
+      "times": ["9:00 AM", "11:00 AM", "2:00 PM", "5:00 PM", "8:00 PM", "11:00 PM"],
+      "buy_in": null,
+      "gtd": null,
+      "entry_rules": "Not stated on the guide. Buy-ins, levels and guarantees vary and are not published on the official guide page."
+    }
+  },
+  "mgm_grand_daily": {
+    "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+    "weekly_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
+    "structures_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf",
+    "retrieved": "2026-11-16",
+    "excerpt": "Daily Texas Hold'em Tournaments — 11:00am, 7:00pm and 11:00pm",
+    "times": ["11:00 AM", "7:00 PM", "11:00 PM"],
+    "buy_in": null,
+    "entry_rules": "Not stated on the poker page. Buy-ins are on the official weekly-schedule PDF (not re-read this session)."
+  },
+  "golden_nugget_daily": {
+    "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+    "retrieved": "2026-11-16",
+    "location_note": "Downtown Las Vegas (Fremont Street), not on the Strip",
+    "excerpt": "15,000 Starting Chips • 15 Minute Levels. Daily at 10AM • 5PM • 2AM. … Players may Add-On an additional 10,000 in tournament chips for a $20 twice at anytime before the end of registration. … On-Site Registration and unlimited Re-Entries are available until the start of Level 5",
+    "times": ["10:00 AM", "5:00 PM", "2:00 AM"],
+    "buy_in": null,
+    "chips": 15000,
+    "level_min": 15,
+    "entry_rules": "Unlimited re-entries until level 5; up to two $20 add-ons (10,000 chips each). Spend-more mechanisms confirmed. Buy-in not stated on the official page."
+  },
+  "wynn_daily_page_note": {
+    "url": "https://www.wynnlasvegas.com/casino/poker",
+    "retrieved": "2026-11-16",
+    "excerpt": "Our popular slate of daily tournaments runs twice a day during non-event timeframes, offering a total of $200,000 in guaranteed prize pools weekly. Tournaments include the $40,000 guaranteed NLH Rebuy on Friday and a $10,000 guaranteed event every evening at 6 p.m. … the Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series."
+  },
+  "hotel_facts": {
+    "venetian_tax_rate": {
+      "value": 0.1338,
+      "excerpt": "Clark County Room Tax of 13.38%",
+      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "retrieved": "2026-11-16"
+    },
+    "wynn_resort_fee": {
+      "value": 55,
+      "excerpt": "a daily resort fee of $55 plus tax",
+      "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+      "retrieved": "2026-11-16"
+    },
+    "caesars_diamond_waiver": {
+      "excerpt": "No resort fees on any hotel stay (Caesars Rewards Diamond and up)",
+      "url": "https://www.caesars.com/myrewards/benefits-overview",
+      "retrieved": "2026-11-16"
+    },
+    "horseshoe_cancellation": {
+      "excerpt": "FREE 48-Hour Cancellation (official Horseshoe hotel page banner)",
+      "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+      "retrieved": "2026-11-16"
+    }
+  },
+  "irregularities_found_this_session": [
+    {
+      "id": "IR-8234-01",
+      "item": "Venetian structure sheet 8 (Events 18 & 58, Valuetown Bounty)",
+      "detail": "Note 7 says 'All subsequent buy in's after the initial buy in will be $200', implying more than one buy-in may be possible, yet the sheet has no re-entry procedure. Entry limit is ambiguous; not confirmed single-entry.",
+      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+    },
+    {
+      "id": "IR-8234-02",
+      "item": "Venetian structure sheets generally",
+      "detail": "No Venetian DSE IV structure sheet read to date contains an express 'single entry / freezeout / no re-entry' clause. Classification as single-entry rests on the absence of any re-entry, rebuy or add-on mechanism in a fully read sheet that enumerates exactly one fee split and one late-registration window. Absence of language is not an express confirmation; confirm with the poker room before nonrefundable payment.",
+      "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "IR-8234-03",
+      "item": "Caesars Palace daily $100 event",
+      "detail": "The official guide confirms a $50 add-on for 15,000 chips at the first break — a spend-more mechanism. Re-entry is not addressed on the guide.",
+      "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    },
+    {
+      "id": "IR-8234-04",
+      "item": "Golden Nugget daily tournaments",
+      "detail": "Official page confirms unlimited re-entries until level 5 and up to two $20 add-ons, but does not state the buy-in amount. Buy-in left blank.",
+      "source_url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/"
+    },
+    {
+      "id": "IR-8234-05",
+      "item": "MGM Grand daily tournaments",
+      "detail": "Official poker page lists daily tournament times (11:00am, 7:00pm, 11:00pm) but no buy-ins or guarantees; those live on the weekly-schedule PDF. Rows carry times only, with buy-in blank until the PDF is re-read.",
+      "source_url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+    }
+  ]
+}
