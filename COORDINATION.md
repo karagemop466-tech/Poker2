@@ -97,7 +97,7 @@ Task log (this session):
 
 - **Owner/session identifier:** `arena/704e2a25-poker2` (current Arena branch; no separate session ID was exposed in the checkout).
 - **Branch:** `arena/704e2a25-poker2` (the active branch provided for this session).
-- **Initial repository review:** the repository contained only `README.md` (`# Poker2`); no `COORDINATION.md` or other task claims existed.
+- **Initial repository review (at fork):** the branch began with only `README.md` (`# Poker2`) and no coordination board. After rebase, `origin/main` contained several merged dashboard implementations and an existing Pages workflow.
 - **Concurrency note:** this board was created because none existed. No other claims were visible at claim time. This checkout exposes no mechanism to enumerate other live Arena sessions, so avoid overlapping edits if another contributor appears.
 - **Branch constraint:** work stays on the provided branch; do not create or switch branches.
 
@@ -105,11 +105,12 @@ Task log (this session):
 
 | Task | Status | Owner | File scope |
 | --- | --- | --- | --- |
-| Research and verify official tournament/hotel information; build the decision-support site; test and publish via GitHub Pages | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `site/`, `.github/workflows/` |
+| Build an isolated cross-venue evidence dashboard; keep the strict single-entry shortlist empty and avoid changing other sessions’ dashboards | in progress | `arena/704e2a25-poker2` | `COORDINATION.md`, `README.md`, `site/*` |
 
 ## Completion log
 
-_No tasks completed yet._
+- 2026-11-16: Implemented the isolated, responsive cross-venue dashboard under `site/` with 25 source-linked event records, 32 official/Forbes Travel Guide sources, an explicitly empty strict single-entry shortlist, a start-time guide, conditional hotel-rate context, and open trip inputs. Existing root/`pages/`/`docs/`/`verified/` dashboards and datasets were left unchanged.
+- Verification: JavaScript syntax checks passed; a DOM-mock render check produced all 25 rows, correctly filtered the four Caesars entries and nine extra-spend records, and rendered all three hotel cards and the source registry. HTML anchor/local-link audit and `git diff --check` passed. Preview server returned HTTP 200 for the page, stylesheet, and both scripts. Remote push is pending.
 
 ## Sources and verification log
 

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Source-audited Las Vegas Strip poker tournament and hotel planning. Strict single-entry rules and date-specific hotel totals are not guessed.">
+  <meta name="theme-color" content="#101c2d">
+  <title>Vegas Poker Planner — Verified research</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="research-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Site navigation">
+      <a class="brand" href="#overview" aria-label="Vegas Poker Planner home">
+        <span class="brand-mark" aria-hidden="true">♠</span>
+        <span><strong>VEGAS</strong><small>POKER PLANNER</small></span>
+      </a>
+      <div class="sidebar-rule"></div>
+      <p class="nav-caption">RESEARCH DESK</p>
+      <nav class="side-nav">
+        <a class="nav-link active" href="#overview"><span class="nav-icon">▦</span>Overview</a>
+        <a class="nav-link" href="#events"><span class="nav-icon">♠</span>Tournament evidence</a>
+        <a class="nav-link" href="#schedule"><span class="nav-icon">◷</span>Start-time plan</a>
+        <a class="nav-link" href="#lodging"><span class="nav-icon">⌂</span>Hotels &amp; true cost</a>
+        <a class="nav-link" href="#decisions"><span class="nav-icon">?</span>Open decisions</a>
+        <a class="nav-link" href="#sources"><span class="nav-icon">↗</span>Source registry</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="live-dot"></span>
+        <div><b>Evidence snapshot</b><small>16 Nov 2026 · UTC</small></div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Planning workspace</span><span class="crumb-sep">/</span><strong>Las Vegas Strip</strong></div>
+        <div class="topbar-right"><span class="snapshot-pill"><span class="status-dot"></span>RESEARCH SNAPSHOT · 16 NOV 2026</span></div>
+      </header>
+
+      <main id="main">
+        <section class="hero" id="overview" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span>TOURNAMENT + LODGING INTELLIGENCE</div>
+            <h1 id="hero-title">Plan the trip.<br><em>Verify the format.</em></h1>
+            <p class="hero-lead">A source-linked view of upcoming Strip poker schedules and hotel terms. One-day labels are not treated as single-entry rules, and missing prices stay blank.</p>
+            <div class="hero-meta"><span>Las Vegas, Nevada</span><span class="meta-dot">·</span><span>Primary window: Nov–Dec 2026</span></div>
+          </div>
+          <div class="hero-stamp" aria-label="Zero tournaments confirmed as strict single-entry">
+            <span class="stamp-ring">RULES<br>FIRST</span>
+            <strong>0</strong>
+            <small>strict single-entry<br>events confirmed</small>
+          </div>
+        </section>
+
+        <section class="decision-banner" aria-labelledby="decision-title">
+          <div class="decision-icon" aria-hidden="true">!</div>
+          <div>
+            <strong id="decision-title">Shortlist status: no confirmed single-entry event.</strong>
+            <p>Venetian one-day structures reviewed do not establish a one-entry-only format. Caesars Palace’s official flyer permits re-entry and an add-on; several Wynn and Bellagio events also allow additional spend. Keep every unverified event out of a strict single-entry recommendation.</p>
+          </div>
+          <a href="#events" class="text-link">Review evidence <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="metric-grid" aria-label="Research snapshot statistics">
+          <article class="metric-card metric-highlight">
+            <div class="metric-top"><span>STRICT SINGLE-ENTRY</span><span class="metric-icon">♠</span></div>
+            <div class="metric-value">0 <small>confirmed</small></div>
+            <p>None established from the official rules reviewed.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>VENETIAN DSE IV</span><span class="metric-icon">▣</span></div>
+            <div class="metric-value">Nov 16 <small>— Dec 23</small></div>
+            <p>2026 schedule · $3.6M+ advertised series guarantee.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>EARLIEST RECURRING START</span><span class="metric-icon">◷</span></div>
+            <div class="metric-value">9:00 <small>AM</small></div>
+            <p>Horseshoe daily time listing; entry terms unknown. No verified 8 AM start.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>DATED HOTEL TOTALS</span><span class="metric-icon">⌂</span></div>
+            <div class="metric-value">0 <small>quotes</small></div>
+            <p>Exact stay dates and occupancy were not supplied; booking totals were not retrievable.</p>
+          </article>
+        </section>
+
+        <section class="content-section" id="events" aria-labelledby="events-title">
+          <div class="section-heading">
+            <div><div class="section-kicker">01 / TOURNAMENT EVIDENCE</div><h2 id="events-title">What the official terms actually say</h2></div>
+            <span class="section-count" id="event-total">Loading events…</span>
+          </div>
+          <div class="intro-row">
+            <p>“1 day” describes the scheduled duration, not the number of entries a player may buy. Use this evidence table as a research lead—not as an entry recommendation.</p>
+            <a class="small-link" href="#method">Read the classification rule <span aria-hidden="true">↘</span></a>
+          </div>
+          <div class="filter-panel">
+            <div class="filter-label"><span class="filter-symbol">⌕</span><label for="event-search">Find an event</label></div>
+            <input id="event-search" type="search" placeholder="Try ‘Caesars’, ‘$600’ or ‘re-entry’" autocomplete="off">
+            <div class="filter-label filter-label-select"><span class="filter-symbol">≡</span><label for="status-filter">Evidence status</label></div>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="unconfirmed">Single-entry unconfirmed</option>
+              <option value="spend">Re-entry / extra spend confirmed</option>
+              <option value="unknown">Entry terms or schedule unclear</option>
+              <option value="inactive">Closed / not current</option>
+            </select>
+            <span class="result-count" id="event-results" aria-live="polite"></span>
+          </div>
+          <div class="table-shell">
+            <table class="evidence-table">
+              <thead><tr><th scope="col">Date / recurrence</th><th scope="col">Start</th><th scope="col">Venue</th><th scope="col">Event / verified details</th><th scope="col">Buy-in</th><th scope="col">Guarantee</th><th scope="col">Entry-format finding</th><th scope="col">Official sources</th></tr></thead>
+              <tbody id="event-rows"><tr><td colspan="8" class="empty-state">Enable JavaScript to view the evidence table.</td></tr></tbody>
+            </table>
+          </div>
+          <div class="table-footnote"><span class="footnote-mark">i</span><span>A published guarantee is not an expected return. Ratios, where shown, are descriptive only; no payout odds or expected value are implied. Amounts and times are venue-published unless a row says they are unknown.</span></div>
+        </section>
+
+        <section class="content-section schedule-section" id="schedule" aria-labelledby="schedule-title">
+          <div class="section-heading">
+            <div><div class="section-kicker">02 / START-TIME PLAN</div><h2 id="schedule-title">An 8 AM day is not on the verified schedule</h2></div>
+            <span class="status-badge badge-warn">No 8:00 AM start confirmed</span>
+          </div>
+          <p class="section-description">The earliest recurring official start found is 9:00 AM at Horseshoe. That listing does not include buy-ins or entry rules. A start time is not a promise that one event will finish before another begins.</p>
+          <div class="timeline" id="timeline"></div>
+          <div class="schedule-caveat"><strong>Do not chain events by start time alone.</strong> Registration cutoffs, event duration, and late-registration terms vary. No finish-time estimate or back-to-back itinerary is represented as verified.</div>
+        </section>
+
+        <section class="content-section lodging-section" id="lodging" aria-labelledby="lodging-title">
+          <div class="section-heading">
+            <div><div class="section-kicker">03 / LODGING</div><h2 id="lodging-title">Good on-site candidates; no dated price winner</h2></div>
+            <span class="section-count muted-count">Quotes require your dates</span>
+          </div>
+          <div class="intro-row lodging-intro">
+            <p>Forbes Travel Guide lists Venetian, Palazzo, and Wynn as Four-Star for 2026. Venetian / Palazzo and Wynn are the on-property candidates for the two published series in this research window. A property’s star rating does not establish affordability.</p>
+            <a class="small-link" href="#cost-method">See true-cost method <span aria-hidden="true">↘</span></a>
+          </div>
+          <div class="hotel-grid" id="hotel-grid"></div>
+          <div class="cost-method" id="cost-method">
+            <div class="cost-method-title"><span class="cost-icon">$</span><div><strong>Compare the checkout total, not the teaser rate</strong><small>Same dates · same occupancy · same cancellation terms</small></div></div>
+            <div class="cost-equation"><span>Room subtotal</span><b>+</b><span>mandatory fees</span><b>+</b><span>taxes</span><b>÷ nights</b><span class="equation-result">= true nightly cost</span></div>
+            <p>Venetian terms state 13.38% room tax and a standard $55 plus applicable tax nightly resort fee. Whether the room tax applies to the fee was not independently resolved here. The poker-player rates are conditional starting prices, not date-specific quotes.</p>
+          </div>
+        </section>
+
+        <section class="content-section decisions-section" id="decisions" aria-labelledby="decisions-title">
+          <div class="section-heading">
+            <div><div class="section-kicker">04 / OPEN DECISIONS</div><h2 id="decisions-title">What is needed to make this bookable</h2></div>
+          </div>
+          <div class="question-grid" id="question-grid"></div>
+          <div class="classification-note" id="method">
+            <div class="classification-number">01</div>
+            <div><strong>Strict single-entry classification</strong><p>An event is promoted only when an official structure or registration rule explicitly establishes the entry limit. A one-day label, a missing re-entry clause, or a single displayed buy-in is not proof. Unknowns stay flagged; confirmed re-entry, rebuy, add-on, and multi-flight formats stay separate.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section sources-section" id="sources" aria-labelledby="sources-title">
+          <div class="section-heading">
+            <div><div class="section-kicker">05 / SOURCE REGISTER</div><h2 id="sources-title">Official evidence, linked at the point of use</h2></div>
+            <span class="source-count" id="source-total"></span>
+          </div>
+          <p class="section-description">Links below are official venue, hotel, or rating sources. Schedule pages can change; verify with the venue before travel or registration. The snapshot date is 16 November 2026.</p>
+          <div class="source-grid" id="source-grid"></div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="footer-brand"><span class="brand-mark small-mark" aria-hidden="true">♠</span><span><strong>VEGAS POKER PLANNER</strong><small>Independent research · Not affiliated with casinos or tours</small></span></div>
+          <p>Research snapshot: 16 Nov 2026 · Times are as printed by venues (Las Vegas local time). Always re-check schedules, terms, rates, and eligibility before booking or entering. 21+.</p>
+          <a href="../README.md">Project notes <span aria-hidden="true">↗</span></a>
+        </footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

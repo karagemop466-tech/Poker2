@@ -19,3 +19,7 @@ See [COORDINATION.md](COORDINATION.md) for scope and verification log. Use the s
 ## Category pages (added)
 
 Detail pages live in `pages/`: single-entry candidates, re-entry/spending events (kept separate), 8 AM schedule, hotel cost detail, summary, flagged rows, site-improvement suggestions (awaiting your choice; no changes made), questions, and repo review. Regenerate them with `python3 scripts/build.py`. Data lives in `data/`. Blank cells are unverified and are listed on the flagged pages.
+
+## Extended research view
+
+The cross-venue evidence dashboard for the 2026 research snapshot is available at [`site/index.html`](site/index.html) (served on GitHub Pages at `/Poker2/site/`). It incorporates official source checks for Caesars Palace, Horseshoe, Venetian, Wynn/WPT, Bellagio, MGM Grand, SAHARA, and hotel terms without replacing the existing root dashboard.
