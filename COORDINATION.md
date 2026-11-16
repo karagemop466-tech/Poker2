@@ -113,3 +113,7 @@ Integration request (no owner-owned file edited): please update the existing `da
 
 Publication coordination: the integrated site has already been merged by prior sessions; their PRs #2, #4, #7 and #11 and Pages build records are in earlier entries above. This session did not merge its duplicate PR or change the live site's owned pages.
 - Branch synchronization note (2026-11-16): before pushing the current-branch integration, `git pull --rebase origin arena/e3cb221d-poker2` began replaying the old branch history and conflicted on the `COORDINATION.md` add/add record from already-integrated main. Aborted that rebase rather than rewriting the merged main history; the resolved local branch is a fast-forward descendant of the remote session branch and will be pushed as-is. Conflict was coordination-only; all upstream main site/data files remain intact.
+
+### Subsequent integration record from upstream main
+- Existing integration PR [#11](https://github.com/karagemop466-tech/Poker2/pull/11) (`arena/a22d577b-poker2` → `main`) merged with merge commit `c83d13e`; Pages workflow run [43932308394](https://github.com/karagemop466-tech/Poker2/actions/runs/43932308394) completed successfully. Pages status was `built`; live content was checked at `/verified/` and `/verified/flagged/`.
+- Upstream finalization for PR #11 and its Pages deployment was preserved from main rather than overwritten by this session's board entry.
