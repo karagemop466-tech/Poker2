@@ -31,13 +31,13 @@
 
 <h1>All tournaments</h1>
 <p class="lead">Every row links to an official schedule page and, where read, its official structure sheet.
-Use the search box, the date selector and the “Freezeout confirmed only” toggle.</p>
+Use the search box, the date selector and the “sheet silent on re-entry only” toggle.</p>
 <div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="tbl-tournaments">
 <select data-bind-date="tbl-tournaments"><option value="">All dates</option><option value="2026-11-16">2026-11-16</option><option value="2026-11-17">2026-11-17</option><option value="2026-11-18">2026-11-18</option><option value="2026-11-19">2026-11-19</option><option value="2026-11-20">2026-11-20</option><option value="2026-11-21">2026-11-21</option><option value="2026-11-22">2026-11-22</option><option value="2026-11-23">2026-11-23</option><option value="2026-11-24">2026-11-24</option><option value="2026-11-25">2026-11-25</option><option value="2026-11-26">2026-11-26</option><option value="2026-11-27">2026-11-27</option><option value="2026-11-28">2026-11-28</option><option value="2026-11-29">2026-11-29</option><option value="2026-11-30">2026-11-30</option><option value="2026-12-01">2026-12-01</option><option value="2026-12-02">2026-12-02</option><option value="2026-12-03">2026-12-03</option><option value="2026-12-04">2026-12-04</option><option value="2026-12-05">2026-12-05</option><option value="2026-12-06">2026-12-06</option><option value="2026-12-07">2026-12-07</option><option value="2026-12-08">2026-12-08</option><option value="2026-12-09">2026-12-09</option><option value="2026-12-10">2026-12-10</option><option value="2026-12-11">2026-12-11</option><option value="2026-12-12">2026-12-12</option><option value="2026-12-13">2026-12-13</option><option value="2026-12-14">2026-12-14</option><option value="2026-12-15">2026-12-15</option><option value="2026-12-16">2026-12-16</option><option value="2026-12-17">2026-12-17</option><option value="2026-12-18">2026-12-18</option><option value="2026-12-19">2026-12-19</option><option value="2026-12-20">2026-12-20</option><option value="2026-12-21">2026-12-21</option><option value="2026-12-22">2026-12-22</option><option value="2026-12-23">2026-12-23</option></select>
-<select data-bind-cat="tbl-tournaments"><option value="">All categories</option><option value="single">Freezeout confirmed</option><option value="ambiguous">Entry limit ambiguous</option><option value="spend-more">Spend-more (re-entry/add-on)</option><option value="multi-flight">Multi-flight</option><option value="satellite">Satellite</option><option value="team">Team</option><option value="unverified">Unverified</option></select>
+<select data-bind-cat="tbl-tournaments"><option value="">All categories</option><option value="single">Sheet silent on re-entry</option><option value="ambiguous">Entry limit ambiguous</option><option value="spend-more">Spend-more (re-entry/add-on)</option><option value="multi-flight">Multi-flight</option><option value="satellite">Satellite</option><option value="team">Team</option><option value="unverified">Unverified</option></select>
 
-<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-tournaments&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Freezeout confirmed only</label>
+<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-tournaments&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Sheet silent on re-entry only</label>
 <span class="count" data-count-for="tbl-tournaments"></span>
 </div>
 <table class="data" id="tbl-tournaments"><thead><tr><th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th><th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th><th>Sources / last checked</th><th>Trip</th></tr></thead><tbody><tr data-date="2026-11-16" data-cat="multi-flight" data-tags="">
@@ -72,35 +72,35 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-18</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$300 No LImit Hold&#x27;em $10K GTD (1Day)</strong></td>
 <td>$300 <small class="note">fee $58 · pool $242/entry</small></td><td>$10,000</td><td>33.33×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-11-19" data-cat="single" data-tags="raceday">
 <td>2026-11-19</td><td>10:10 AM</td><td>The Venetian</td>
 <td><strong>$200 NLH RaceDay Stack (1Day), Race to finish before the Race</strong><span class="badge b-chip">raceday</span></td>
 <td>$200 <small class="note">fee $35 · pool $165/entry</small></td><td><span class="badge b-chip">none published</span></td><td>—</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-20" data-cat="single" data-tags="raceday">
 <td>2026-11-20</td><td>10:10 AM</td><td>The Venetian</td>
 <td><strong>$200 NLH RaceDay Stack (1Day), Race to finish before the Race</strong><span class="badge b-chip">raceday</span></td>
 <td>$200 <small class="note">fee $35 · pool $165/entry</small></td><td><span class="badge b-chip">none published</span></td><td>—</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-21" data-cat="single" data-tags="raceday">
 <td>2026-11-21</td><td>10:10 AM</td><td>The Venetian</td>
 <td><strong>$200 NLH RaceDay Stack (1Day), Race to finish before the Race</strong><span class="badge b-chip">raceday</span></td>
 <td>$200 <small class="note">fee $35 · pool $165/entry</small></td><td><span class="badge b-chip">none published</span></td><td>—</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-22" data-cat="single" data-tags="">
 <td>2026-11-22</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$200 No LImit Hold&#x27;em (1Day)</strong></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td><span class="badge b-chip">none published</span></td><td>—</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-23" data-cat="multi-flight" data-tags="">
@@ -114,7 +114,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-23</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em $8K GTD (1Day), Progressive Knock-Out Bounty (PKO)</strong><span class="badge b-chip">bounty</span> <span class="badge b-chip">pko</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000 <span class="badge b-chip">incl. bounties</span></td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-24" data-cat="multi-flight" data-tags="">
@@ -128,42 +128,42 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-24</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000 <span class="badge b-chip">incl. bounties</span></td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-25" data-cat="single" data-tags="">
 <td>2026-11-25</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$400 No LImit Hold&#x27;em $15K GTD (1Day)</strong></td>
 <td>$400 <small class="note">fee $65 · pool $335/entry</small></td><td>$15,000</td><td>37.50×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="400"></td></tr>
 <tr data-date="2026-11-25" data-cat="single" data-tags="bounty">
 <td>2026-11-25</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-26" data-cat="single" data-tags="">
 <td>2026-11-26</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$300 No LImit Hold&#x27;em $10K GTD (1Day)</strong></td>
 <td>$300 <small class="note">fee $58 · pool $242/entry</small></td><td>$10,000</td><td>33.33×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-11-26" data-cat="single" data-tags="bounty">
 <td>2026-11-26</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-27" data-cat="single" data-tags="">
 <td>2026-11-27</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em $30K GTD (1Day)</strong></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$30,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-11-27" data-cat="spend-more" data-tags="mixed">
@@ -184,14 +184,14 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-27</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-28" data-cat="single" data-tags="bounty">
 <td>2026-11-28</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em Bounty $30K GTD (1Day), $200 bounties to start &amp; $500 bounties in the money</strong><span class="badge b-chip">bounty</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$30,000 <span class="badge b-chip">incl. bounties</span></td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-11-28" data-cat="spend-more" data-tags="mixed">
@@ -205,7 +205,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-28</td><td>12:10 PM</td><td>The Venetian</td>
 <td><strong>$400 Pot Limit Omaha Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span> <span class="badge b-chip">mixed</span> <span class="badge b-chip">plo</span></td>
 <td>$400 <small class="note">fee $60 · pool $340/entry</small></td><td>$15,000 <span class="badge b-chip">incl. bounties</span></td><td>37.50×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="400"></td></tr>
 <tr data-date="2026-11-28" data-cat="ambiguous" data-tags="bounty">
@@ -226,14 +226,14 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-29</td><td>12:10 PM</td><td>The Venetian</td>
 <td><strong>$300 Pot Limit Omaha $10K GTD (1Day), Double Board Bomb Pot</strong><span class="badge b-chip">mixed</span> <span class="badge b-chip">plo</span></td>
 <td>$300 <small class="note">fee $58 · pool $242/entry</small></td><td>$10,000</td><td>33.33×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-11-29" data-cat="single" data-tags="bounty">
 <td>2026-11-29</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-11-30" data-cat="multi-flight" data-tags="">
@@ -254,7 +254,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-11-30</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-01" data-cat="multi-flight" data-tags="">
@@ -282,21 +282,21 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-01</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-02" data-cat="single" data-tags="seniors">
 <td>2026-12-02</td><td>10:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em Seniors $40K GTD (1Day), must be 50+</strong><span class="badge b-chip">seniors</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$40,000</td><td>66.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-02" data-cat="single" data-tags="bounty">
 <td>2026-12-02</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-03" data-cat="multi-flight" data-tags="">
@@ -310,7 +310,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-03</td><td>12:10 PM</td><td>The Venetian</td>
 <td><strong>$600 BIG O $25K GTD (1Day)</strong><span class="badge b-chip">plo</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$25,000</td><td>41.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-03" data-cat="multi-flight" data-tags="">
@@ -366,14 +366,14 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-06</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em $40K GTD (1Day)</strong></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$40,000</td><td>66.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-06" data-cat="single" data-tags="bounty">
 <td>2026-12-06</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000 <span class="badge b-chip">incl. bounties</span></td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-06" data-cat="spend-more" data-tags="turbo">
@@ -394,7 +394,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-07</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em Bounty $40K GTD (1Day), $200 bounties to start &amp; $500 bounties in the money</strong><span class="badge b-chip">bounty</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$40,000</td><td>66.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-07" data-cat="unverified" data-tags="bounty plo">
@@ -415,7 +415,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-07</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-07" data-cat="spend-more" data-tags="turbo">
@@ -429,7 +429,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-08</td><td>10:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em Seniors $40K GTD (1Day), must be 50+</strong><span class="badge b-chip">seniors</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$40,000</td><td>66.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-08" data-cat="satellite" data-tags="ladies milestone satellite">
@@ -443,7 +443,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-08</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-08" data-cat="spend-more" data-tags="turbo">
@@ -471,7 +471,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-09</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$800 No Limit Hold&#x27;em Bounty $75K GTD (1Day), $200 bounties to start &amp; $500 bounties in the money</strong><span class="badge b-chip">bounty</span></td>
 <td>$800 <small class="note">fee $100 · pool $700/entry</small></td><td>$75,000</td><td>93.75×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="800"></td></tr>
 <tr data-date="2026-12-09" data-cat="unverified" data-tags="bounty plo">
@@ -506,7 +506,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-09</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-09" data-cat="spend-more" data-tags="turbo">
@@ -527,7 +527,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-10</td><td>12:10 PM</td><td>The Venetian</td>
 <td><strong>$600 Pot Limit Omaha Bounty $25K GTD (1Day)</strong><span class="badge b-chip">bounty</span> <span class="badge b-chip">mixed</span> <span class="badge b-chip">plo</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$25,000 <span class="badge b-chip">incl. bounties</span></td><td>41.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-10" data-cat="satellite" data-tags="milestone satellite">
@@ -541,14 +541,14 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-10</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-11" data-cat="single" data-tags="bounty ladies">
 <td>2026-12-11</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em LIPS $30K GTD (1Day), KINGS and QUEENS Bounty - open to all players</strong><span class="badge b-chip">bounty</span> <span class="badge b-chip">ladies</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$30,000 <span class="badge b-chip">incl. bounties</span></td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-11" data-cat="satellite" data-tags="milestone satellite">
@@ -639,7 +639,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-13</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-14" data-cat="multi-flight" data-tags="seniors">
@@ -660,7 +660,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-14</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-14" data-cat="unverified" data-tags="plo turbo">
@@ -688,7 +688,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-15</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$1,100 No Limit Hold&#x27;em $75K GTD (1Day), Progressive Knock-Out Bounty (PKO)</strong><span class="badge b-chip">bounty</span> <span class="badge b-chip">pko</span></td>
 <td>$1,100 <small class="note">fee $130 · pool $970/entry</small></td><td>$75,000</td><td>68.18×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="1100"></td></tr>
 <tr data-date="2026-12-15" data-cat="unverified" data-tags="plo">
@@ -723,7 +723,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-15</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-15" data-cat="unverified" data-tags="bounty mixed turbo">
@@ -744,14 +744,14 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-16</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em Bounty $50K GTD (1Day), $200 bounties to start &amp; $500 bounties in the money</strong><span class="badge b-chip">bounty</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$50,000</td><td>83.33×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-16" data-cat="single" data-tags="bounty">
 <td>2026-12-16</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$300 No Limit Hold&#x27;em Bounty $15K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$300 <small class="note">fee $50 · pool $250/entry</small></td><td>$15,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="300"></td></tr>
 <tr data-date="2026-12-17" data-cat="multi-flight" data-tags="">
@@ -786,7 +786,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-17</td><td>12:10 PM</td><td>The Venetian</td>
 <td><strong>$600 Pot Limit Omaha $25K GTD (1Day), Double Board Bomb Pot</strong><span class="badge b-chip">mixed</span> <span class="badge b-chip">plo</span></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$25,000</td><td>41.67×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-17" data-cat="unverified" data-tags="high-roller">
@@ -982,7 +982,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-20</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-20" data-cat="spend-more" data-tags="plo turbo">
@@ -1010,7 +1010,7 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-21</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-21" data-cat="spend-more" data-tags="turbo">
@@ -1031,21 +1031,21 @@ Use the search box, the date selector and the “Freezeout confirmed only” tog
 <td>2026-12-22</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="2026-12-23" data-cat="single" data-tags="">
 <td>2026-12-23</td><td>11:10 AM</td><td>The Venetian</td>
 <td><strong>$600 No Limit Hold&#x27;em $30K GTD (1Day)</strong></td>
 <td>$600 <small class="note">fee $90 · pool $510/entry</small></td><td>$30,000</td><td>50.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="600"></td></tr>
 <tr data-date="2026-12-23" data-cat="single" data-tags="bounty">
 <td>2026-12-23</td><td>5:10 PM</td><td>The Venetian</td>
 <td><strong>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</strong><span class="badge b-chip">bounty</span></td>
 <td>$200 <small class="note">fee $40 · pool $160/entry</small></td><td>$8,000</td><td>40.00×</td>
-<td><span class="badge b-good">Freezeout confirmed</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
+<td><span class="badge b-warn">Sheet silent on re-entry</span> <span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
 <td><input type="checkbox" data-buyin="200"></td></tr>
 <tr data-date="Dec 10 – Dec 11, 2026" data-cat="multi-flight" data-tags="bounty">
