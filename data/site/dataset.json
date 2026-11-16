@@ -7,7 +7,7 @@
  },
  "events": [
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 30000,
@@ -25,7 +25,7 @@
    "pool": 240,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 10,
@@ -40,7 +40,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 30000,
@@ -58,7 +58,7 @@
    "pool": 240,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "20:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 9,
@@ -73,7 +73,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 30000,
@@ -91,7 +91,7 @@
    "pool": 240,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 10,
@@ -106,7 +106,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 300,
    "chips": 30000,
@@ -124,7 +124,7 @@
    "pool": 240,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "20:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 9,
@@ -299,7 +299,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -317,7 +317,7 @@
    "pool": 330,
    "ratio": 187.5,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 2,
@@ -364,7 +364,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -382,7 +382,7 @@
    "pool": 330,
    "ratio": 187.5,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 2,
@@ -557,7 +557,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "Not stated",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -574,7 +574,7 @@
    "pool": 510,
    "ratio": 666.67,
    "re_entry": "Unlimited re-entry for each starting flight until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Not stated",
    "reg_close": "start of level 9",
    "rule": "Unlimited re-entry for each starting flight until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight.",
    "rule_note": "Unlimited re-entry per flight",
@@ -623,7 +623,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "Not stated",
    "bounty": false,
    "buy_in": 600,
    "chips": 35000,
@@ -640,7 +640,7 @@
    "pool": 510,
    "ratio": null,
    "re_entry": "Unlimited re-entry will be available until the start of level 9",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Not stated",
    "reg_close": "start of level 9",
    "rule": "Unlimited re-entry will be available until the start of level 9",
    "rule_note": "Unlimited re-entry",
@@ -657,7 +657,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "Not stated",
    "bounty": false,
    "buy_in": 400,
    "chips": 30000,
@@ -674,7 +674,7 @@
    "pool": 337,
    "ratio": null,
    "re_entry": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Not stated",
    "reg_close": "start of level 9 (~5:30 PM)",
    "rule": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
    "rule_note": "Unlimited re-entry",
@@ -820,7 +820,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -838,7 +838,7 @@
    "pool": 330,
    "ratio": 187.5,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 3,
@@ -917,7 +917,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -935,7 +935,7 @@
    "pool": 330,
    "ratio": 187.5,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 3,
@@ -982,7 +982,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 400,
    "chips": 40000,
@@ -1000,7 +1000,7 @@
    "pool": 330,
    "ratio": 187.5,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 3,
@@ -1112,7 +1112,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1130,7 +1130,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 12,
@@ -1177,7 +1177,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1195,7 +1195,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "20:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 13,
@@ -1210,7 +1210,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1228,7 +1228,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 12,
@@ -1243,7 +1243,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1261,7 +1261,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "20:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 13,
@@ -1276,7 +1276,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1294,7 +1294,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "15:40",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 12,
@@ -1309,7 +1309,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1328,7 +1328,7 @@
    "pool": 690,
    "ratio": 625.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "19:25",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 14,
@@ -1705,7 +1705,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 800,
    "chips": 40000,
@@ -1724,7 +1724,7 @@
    "promo": "$20 of the $800 buy-in withheld as a flat fee for LIPS",
    "ratio": 50.0,
    "re_entry": "Not stated; single Day 1 (no flights listed)",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "restriction": "Female players only",
    "rule_note": "Female players only. Single Day 1, single re-entry policy not stated.",
@@ -1975,7 +1975,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 2200,
    "chips": 40000,
@@ -1993,7 +1993,7 @@
    "pool": 1975,
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 21,
@@ -2042,7 +2042,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 2200,
    "chips": 40000,
@@ -2060,7 +2060,7 @@
    "pool": 1975,
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "23:10",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 37,
@@ -2075,7 +2075,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2093,7 +2093,7 @@
    "pool": 960,
    "ratio": 272.73,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "restriction": "Must be 50+",
    "rule_note": "Must be 50+. Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
@@ -2141,7 +2141,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2159,7 +2159,7 @@
    "pool": 960,
    "ratio": 272.73,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "restriction": "Must be 50+",
    "rule_note": "Must be 50+. Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
@@ -2335,7 +2335,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2354,7 +2354,7 @@
    "promo": "$40 rake discount for entries registered before 10:10 AM on Day 1A",
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 35,
@@ -2401,7 +2401,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2420,7 +2420,7 @@
    "promo": "$40 rake discount for entries registered before 6:10 PM on Day 1B",
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "23:10",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 36,
@@ -2435,7 +2435,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2453,7 +2453,7 @@
    "pool": 960,
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 35,
@@ -2468,7 +2468,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2486,7 +2486,7 @@
    "pool": 960,
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "23:10",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 36,
@@ -2501,7 +2501,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 1100,
    "chips": 40000,
@@ -2519,7 +2519,7 @@
    "pool": 960,
    "ratio": 454.55,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "16:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 35,
@@ -2567,7 +2567,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -2586,7 +2586,7 @@
    "promo": "$20 rake discount for entries registered before 11:10 AM on Day 1A",
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 4,
@@ -2633,7 +2633,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -2651,7 +2651,7 @@
    "pool": 505,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 4,
@@ -2698,7 +2698,7 @@
    "view": "The Venetian"
   },
   {
-   "add_on": "None stated",
+   "add_on": "Not stated on the structure sheet",
    "bounty": false,
    "buy_in": 600,
    "chips": 40000,
@@ -2716,7 +2716,7 @@
    "pool": 505,
    "ratio": 250.0,
    "re_entry": "Not stated; structure note 8: any player who bags chips for Day 2 may not play a subsequent flight",
-   "rebuy": "None stated",
+   "rebuy": "Not stated on the structure sheet",
    "reg_close": "17:55",
    "rule_note": "Separate starting flights; official note 8 bars a player who bags chips from entering a later flight, so a busted flight can be followed by another buy-in. No maximum entry count is stated.",
    "sheet": 4,
@@ -2897,7 +2897,7 @@
    "view": "MGM Grand"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "$50 for 15,000 chips, only at the first break",
    "bounty": false,
    "buy_in": 160,
    "chips": 20000,
@@ -2914,7 +2914,7 @@
    "pool": 115,
    "ratio": 6.25,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Re-entry by paying the entry fee after elimination within the first break",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -2931,7 +2931,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "$50 for 15,000 chips, only at the first break",
    "bounty": false,
    "buy_in": 100,
    "chips": 20000,
@@ -2948,7 +2948,7 @@
    "pool": 70,
    "ratio": 10.0,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Re-entry by paying the entry fee after elimination within the first break",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -2965,7 +2965,7 @@
    "view": "Caesars Palace"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "$50 for 15,000 chips, only at the first break",
    "bounty": false,
    "buy_in": 160,
    "chips": 20000,
@@ -2982,7 +2982,7 @@
    "pool": 115,
    "ratio": 6.25,
    "re_entry": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Re-entry by paying the entry fee after elimination within the first break",
    "reg_close": "start of level 7",
    "rule": "Same flyer terms: re-entry upon elimination within the first break; $50 add-on for 15,000 chips at the first break.",
    "rule_note": "Re-entry within first break + $50 add-on",
@@ -3102,7 +3102,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "Not stated",
    "bounty": false,
    "buy_in": 200,
    "chips": 25000,
@@ -3120,7 +3120,7 @@
    "pool": 162,
    "ratio": 50.0,
    "re_entry": "The Tournament entry fee, as well as the re-entry fee, is $200",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Re-entry at the same $200 entry fee",
    "reg_close": "start of level 9 (~4:30 PM)",
    "rule": "The Tournament entry fee, as well as the re-entry fee, is $200",
    "rule_note": "Re-entry permitted",
@@ -3137,7 +3137,7 @@
    "view": "Wynn"
   },
   {
-   "add_on": "Not stated in the official document",
+   "add_on": "Not stated",
    "bounty": false,
    "buy_in": 200,
    "chips": 25000,
@@ -3154,7 +3154,7 @@
    "pool": 162,
    "ratio": 125.0,
    "re_entry": "The Tournament entry fee, as well as the re-entry fee, is $200",
-   "rebuy": "Not stated in the official document",
+   "rebuy": "Re-entry at the same $200 entry fee",
    "reg_close": "start of level 9",
    "rule": "The Tournament entry fee, as well as the re-entry fee, is $200",
    "rule_note": "Re-entry permitted",
