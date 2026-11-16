@@ -1,0 +1,181 @@
+{
+ "urls": [
+  {
+   "id": "venetian-dse4-schedule",
+   "label": "Venetian DSE IV schedule page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "venetian-series",
+   "label": "Venetian DeepStack series overview",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "venetian-poker",
+   "label": "Venetian poker room page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "venetian-resort-fee",
+   "label": "Venetian resort-fee page",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "venetian-hotel-terms",
+   "label": "Venetian hotel terms (13.38% tax)",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "venetian-poker-rates",
+   "label": "Venetian poker suite rates",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-poker",
+   "label": "Wynn poker room page (daily + WPT)",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-wpt-schedule",
+   "label": "Wynn WPT World Championship schedule PDF",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-wpt-structures",
+   "label": "Wynn WPT World Championship structures PDF",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-daily-poster",
+   "label": "Wynn daily tournament poster PDF",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-daily-structures",
+   "label": "Wynn daily tournament structures PDF",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "wynn-resort-info",
+   "label": "Wynn resort information (resort fee)",
+   "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "caesars-poker-guide",
+   "label": "Caesars Las Vegas poker tournaments guide",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "caesars-daily-flyer",
+   "label": "Caesars Palace daily NLH flyer PDF",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "caesars-benefits",
+   "label": "Caesars Rewards benefits (fee waiver)",
+   "url": "https://www.caesars.com/myrewards/benefits-overview",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "mgm-grand-poker",
+   "label": "MGM Grand poker page (daily times)",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "mgm-grand-weekly",
+   "label": "MGM Grand weekly tournament schedule PDF",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "mgm-grand-terms",
+   "label": "MGM Grand hotel terms (resort fee)",
+   "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "aria-terms",
+   "label": "ARIA hotel terms (resort fee)",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "bellagio-terms",
+   "label": "Bellagio hotel terms (resort fee)",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "golden-nugget-daily",
+   "label": "Golden Nugget daily tournaments page",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  },
+  {
+   "id": "horseshoe-hotel",
+   "label": "Horseshoe Las Vegas hotel page",
+   "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+   "sha256": null,
+   "last_checked": null,
+   "status": "never checked (first scheduled run establishes the hash)"
+  }
+ ],
+ "note": "Scheduled official-URL re-check (change monitoring + daily snapshots).\n\nReads data/source_monitor.json, fetches every registered official URL,\nhashes the normalized content, compares with the stored h Hashes are established on the first scheduled Actions run."
+}

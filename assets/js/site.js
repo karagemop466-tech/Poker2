@@ -181,6 +181,7 @@
   if ($("tbl-se") || $("tbl-flag") || $("tbl-excl") || $("tbl-unv")) applyFilters();
   if ($("walktbl")) filterWalk();
   if ($("hoteltbl") && $("q")) { $("q").addEventListener("input", function () { filterSimple("hoteltbl"); }); filterSimple("hoteltbl"); }
+  if ($("wpttbl") && $("q")) { $("q").addEventListener("input", function () { filterSimple("wpttbl"); }); filterSimple("wpttbl"); }
   fillHotels();
   calc();
   calendar();

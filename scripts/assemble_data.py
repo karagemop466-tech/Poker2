@@ -612,7 +612,7 @@ events = {
   "verification_method": "Every Venetian structure sheet (1-37) and the complete Wynn WPT structures PDF (8 chunks) were read in full on 2026-11-16. Classification: 'single_entry_confirmed' = official sheet read in full, no re-entry/rebuy/add-on clause; 'flagged_ambiguous' = sheet read but wording leaves entry count unsettled; 'excluded' = re-entry/rebuy/add-on/multi-flight/satellite/team/spend-more confirmed or event type not a cash freezeout; 'unverified' = entry terms not published in the sources read. Values are copied from official sources only; null = not stated on the source.",
   "events": E,
 }
-with open(os.path.join(OUT, "events.json"), "w") as f:
+with open(os.path.join(OUT, "events-f0816fab.json"), "w") as f:
     json.dump(events, f, indent=1)
 print("events:", len(E))
 from collections import Counter

@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Questions — Vegas Poker Trip Planner</title>
-<link rel="stylesheet" href="assets/css/site.css"></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions · Las Vegas Poker Trip Planner</title>
+<meta name="description" content="Questions">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
 <body>
-<header><div class="wrap"><h1><a href="index.html">Vegas Poker Trip Planner</a></h1>
-<div class="sub">Verified single-entry tournaments · hotels · walking times · trip cost — data as of 2026-11-16</div></div></header>
-<nav><div class="wrap navrow"><a href="index.html">Summary</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plan</a><a href="trip.html">Trip calculator</a><a href="hotels.html">Hotels &amp; rates</a><a href="walking.html">Walking times</a><a href="venues/venetian.html">Venetian</a><a href="venues/wynn.html">Wynn</a><a href="venues/others.html">Other venues</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="monitor.html">Monitor</a><a href="archive.html">Archive</a></div></nav>
-<main class="wrap"><h2>Questions, information and answers</h2><p>Questions that must be answered before money is committed. &#x27;Answered&#x27; = settled from an official source this session; &#x27;Open&#x27; = the sources do not answer it; the How-to-find column names the discovery step.</p><div class="qitem"><h3>[Q01] Which tournaments are confirmed single-entry freezeouts (no re-entry, rebuy or add-on)?</h3><p><b>Status:</b> Answered for Venetian DSE IV</p><p>46 Venetian events are confirmed after reading every official structure sheet (1–37) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous &#x27;subsequent buy in&#x27;s&#x27; wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).</p><p><b>How to find the missing part:</b> Remaining work: ask the Wynn poker room for written entry terms on the 33 unverified WPT rows; ask the Venetian whether Events 18/58 permit subsequent buy-ins.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank">source</a> <a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf" target="_blank">source</a></p></div><div class="qitem"><h3>[Q02] Can a player start play at 8:00 AM with confirmed single-entry events?</h3><p><b>Status:</b> Answered (no)</p><p>No verified event starts at 8:00 AM anywhere in the dataset. Earliest confirmed single-entry starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).</p><p><b>How to find the missing part:</b> Check other rooms&#x27; official daily schedules (Palms, South Point, Orleans, Golden Nugget) for earlier starts.</p><p class="tiny"><a href="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip" target="_blank">source</a></p></div><div class="qitem"><h3>[Q03] What is the true nightly hotel cost for the trip dates?</h3><p><b>Status:</b> Open (needs dated quotes)</p><p>Resort fees, tax rate and the conditional Venetian poker player rates are verified and in the dated rate log. No dated room quote for Dec 6–13, 2026 was captured — live quotes require each hotel&#x27;s booking engine (dynamic pricing).</p><p><b>How to find the missing part:</b> Open each hotel&#x27;s official booking link for Dec 6–13 2026 and record the checkout total (rate + resort fee + 13.38% tax), cancellation deadline and quote timestamp in the rate log. The trip calculator accepts these numbers.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank">source</a> <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank">source</a></p></div><div class="qitem"><h3>[Q04] Is each hotel within a 30-minute walk of the tournament venues?</h3><p><b>Status:</b> Answered (routing estimates)</p><p>Walking times for 21 hotels × 6 venue poker rooms were computed from official addresses with the OSRM foot profile (routing estimates) and each row links to Google Maps walking directions for confirmation. 16 hotels are within 30 minutes of the Venetian; Golden Nugget, Mandalay Bay, NYNY, Westgate fail the test to at least one venue.</p><p><b>How to find the missing part:</b> Confirm the rows you plan to rely on by opening the Google Maps links (walking mode) before booking.</p><p class="tiny"><a href="https://routing.openstreetmap.de/routed-foot" target="_blank">source</a> <a href="https://nominatim.openstreetmap.org" target="_blank">source</a></p></div><div class="qitem"><h3>[Q05] Which events can be combined in one day of play?</h3><p><b>Status:</b> Answered (plan + flags)</p><p>1-Day events run to a winner; the evening event on the same date is a conditional fallback only. The day plan shows primary + fallback per day with overlap flags; verified finish times are not published (durations estimated from level counts).</p><p><b>How to find the missing part:</b> Ask the tournament desk for typical finish times of 1-Day events to tighten the estimates.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf" target="_blank">source</a></p></div><div class="qitem"><h3>[Q06] Is the Venetian poker rate $119/$209 mapping to Venetian/Palazzo correct?</h3><p><b>Status:</b> Open (flagged)</p><p>The official poker-rate page publishes both amounts but its wording does not explicitly bind each amount to a property. The site records them as separate dated rate-log entries with the ambiguity flagged.</p><p><b>How to find the missing part:</b> Confirm at reservation or with the poker room host.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank">source</a></p></div><div class="qitem"><h3>[Q07] What is the exact tax on the resort fee?</h3><p><b>Status:</b> Open (assumption flagged)</p><p>Venetian terms state 13.38% Clark County room tax on the room rate and &#x27;plus applicable tax&#x27; on the resort fee. Applying 13.38% to the fee is an assumption in the calculator.</p><p><b>How to find the missing part:</b> Confirm the fee tax rate at check-in or from a folio.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank">source</a></p></div><div class="qitem"><h3>[Q08] Do any events cap entries (maximum-entry rules)?</h3><p><b>Status:</b> Open</p><p>No official sheet states a maximum number of entries for the confirmed freezeouts; freezeout structure implies one entry but the sheets are silent on caps. WPT events explicitly allow re-entry (terms captured).</p><p><b>How to find the missing part:</b> Ask the poker room for written maximum-entry statements before relying on single-entry economics.</p><p class="tiny"></p></div><div class="qitem"><h3>[Q09] Which schedule discrepancies exist between official sources?</h3><p><b>Status:</b> Answered (flagged)</p><p>1) WPT Dec 21 turbo listed at 6 PM in event terms vs 8 PM on the schedule row. 2) The $1,600 NLH $1M terms are dated Dec 3–5 while a schedule row shows a $1,600 2-Day $1M on Dec 9. 3) Venetian series overview labels the WPT Fall Festival &#x27;Current Series&#x27; while listing DSE IV as &#x27;Next Series&#x27; (stale label). 4) Venetian resort-fee page says &#x27;Rates include a daily Resort Fee of $55 plus tax&#x27; while the poker-rate page lists it separately — confirm which applies to poker rates.</p><p><b>How to find the missing part:</b> Ask each venue to reconcile; monitor.py flags future changes to these pages automatically.</p><p class="tiny"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html" target="_blank">source</a></p></div></main>
-<footer><div class="wrap">Compiled from official sources only, retrieved 2026-11-16. Unconfirmed values are left blank and flagged.
-Follow-up sessions: see <a href="flagged.html">Flagged for Review</a>. Sources are re-checked automatically — see <a href="monitor.html">Monitor</a>.</div></footer>
-<script src="assets/js/data.js"></script><script src="assets/js/site.js"></script>
-</body></html>
+<header class="site">
+  <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+</header>
+<nav class="site"><a href="index.html">Dashboard</a>
+<a href="summary.html">Executive Summary</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="venue-venetian.html">Venetian</a>
+<a href="venue-wynn.html">Wynn</a>
+<a href="venue-others.html">Other Venues</a>
+<a href="hotels.html">Hotels</a>
+<a href="planner.html">Trip Planner</a>
+<a href="ranking.html">Ranking</a>
+<a href="rules.html">Entry Rules</a>
+<a href="monitor.html">Source Monitor</a>
+<a href="flagged.html">Flagged</a>
+<a href="questions.html" class="active">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="repo-review.html">Repo Review</a>
+<a href="walking.html">Walking Times</a>
+<a href="wpt-terms.html">WPT Terms</a>
+<a href="rate-log.html">Rate Log</a>
+<a href="trip.html">Trip Plan</a>
+<a href="archive.html">Archive</a></nav>
+<main>
+
+<h1>Questions — what must be answered before deciding</h1>
+<p class="lead">Questions that need answers before a decision. &#x27;Open&#x27; means the data does not answer it. The &#x27;How to find it&#x27; column lists where to look. These are the gaps between what we have verified and what a
+booking/registration decision needs. Suggestions for discovering the missing information live on the
+<a href="suggestions.html">suggestions page</a>.</p>
+<table class="data"><thead><tr><th>#</th><th>Question</th><th>Current answer</th><th>Status</th><th>What is needed / how to find it</th></tr></thead>
+<tbody><tr><td>Q01</td><td>Which tournaments are single-entry, one-day events with no re-entry, rebuy or add-on?</td>
+<td>32 Venetian events are verified single-entry from official structure sheets. No Wynn daily event qualifies. Wynn WPT events are unverified or excluded.</td><td><span class="badge b-warn">Partly answered</span></td>
+<td>Review the structure sheets for the 17 unverified Venetian rows and the unverified Wynn WPT rows.</td></tr><tr><td>Q02</td><td>Can a player start play at 8:00 AM with verified single-entry events?</td>
+<td>No. The earliest verified single-entry start at The Venetian is 11:10 AM. No event in this site starts at 8:00 AM.</td><td><span class="badge b-warn">Answered (no, for these two properties)</span></td>
+<td>Check whether any other Strip room runs an 8:00 AM or earlier event.</td></tr><tr><td>Q03</td><td>What is the true nightly cost of each hotel for the user&#x27;s dates?</td>
+<td>Resort fee verified: $55 plus tax per night at The Venetian and Wynn (official). Nightly room rates were NOT captured, so the true cost is blank.</td><td><span class="badge b-warn">Open</span></td>
+<td>Travel dates, room type, and an official nightly rate for each hotel, with tax.</td></tr><tr><td>Q04</td><td>Is each hotel within a 30-minute walk of the tournament venue?</td>
+<td>Walking times were NOT verified for any hotel.</td><td><span class="badge b-warn">Open</span></td>
+<td>Walking time from each hotel to each tournament venue, from a map or official source.</td></tr><tr><td>Q05</td><td>What are the user&#x27;s travel dates, party size and budget?</td>
+<td>Not provided. Venetian single-entry rows run Nov 18 – Dec 23, 2026. Wynn WPT runs Nov 27 – Dec 21, 2026.</td><td><span class="badge b-warn">Open</span></td>
+<td>Dates, nights, budget per night and per entry, and maximum buy-in.</td></tr><tr><td>Q06</td><td>How is hotel quality measured?</td>
+<td>No quality rating was verified. The brief asks for quality to be weighted above distance, so this field matters.</td><td><span class="badge b-warn">Open</span></td>
+<td>A chosen rating source (for example AAA Diamond or Forbes Travel Guide) or the user&#x27;s own criteria.</td></tr><tr><td>Q07</td><td>Do Wynn daily events run during the WPT World Championship (Nov 27 – Dec 21)?</td>
+<td>Not stated in the sources read.</td><td><span class="badge b-warn">Open</span></td>
+<td>A Wynn statement about the daily schedule during the WPT.</td></tr><tr><td>Q08</td><td>Do the Venetian poker room&#x27;s contact details and hours match the official site?</td>
+<td>Not captured in this pass.</td><td><span class="badge b-warn">Open</span></td>
+<td>Venetian poker room contact details and hours from the official site.</td></tr><tr><td>Q09</td><td>Does the poker room confirm single-entry status for each event the user plans to play?</td>
+<td>Single-entry status here means the official structure sheet states no re-entry, rebuy or add-on. It is not a poker-room confirmation.</td><td><span class="badge b-warn">Open</span></td>
+<td>Poker-room confirmation for each planned event.</td></tr><tr><td>Q10</td><td>Which other Strip rooms should be included?</td>
+<td>Only The Venetian and Wynn have been verified. MGM Grand&#x27;s poker page could not be reached (see Flagged for Review).</td><td><span class="badge b-warn">Open</span></td>
+<td>A user decision on scope, then a new research pass.</td></tr><tr><td>Q11</td><td>Does the user accept bounty and PKO formats?</td>
+<td>Several verified single-entry events are bounty or PKO formats. Their guarantees include bounty money.</td><td><span class="badge b-warn">Open</span></td>
+<td>The user&#x27;s preference on bounty formats.</td></tr><tr><td>Q12</td><td>Are the official structure sheets and schedules current?</td>
+<td>Venetian pages are for the 2026 series. Wynn daily and WPT PDFs carry 2025 version stamps (see flags F04 and F05).</td><td><span class="badge b-warn">Open</span></td>
+<td>Re-check each official document before travel.</td></tr></tbody></table>
+<div class="panel"><h2>Added by this session</h2><ul class="tight">
+<li><strong>Q-A:</strong> What is the dated checkout total (with tax and resort fee) for the exact trip dates at Venetian, Palazzo and Wynn? — Open. Use the official booking links on the <a href="hotels.html">hotels page</a>; log the quote with its timestamp in the rate log.</li>
+<li><strong>Q-B:</strong> What are the verified walking times between each hotel and each venue (30-minute limit)? — Open. Use the per-row Google Maps walking links and record the minutes.</li>
+<li><strong>Q-C:</strong> Do the Venetian DSE sheets’ “no re-entry clause” silence and the Valuetown “subsequent buy in’s” note mean unlimited re-entry is allowed after all? — Open. Only the poker room can settle it (flag IR-8234-01/02).</li>
+<li><strong>Q-D:</strong> Which Caesars Palace daily buy-in figure is current — $100 (official guide) or $160 at 2 PM/9 PM (official flyer)? — Open; two official sources disagree.</li>
+<li><strong>Q-E:</strong> What are the Horseshoe and MGM Grand daily buy-ins and guarantees? — Open; not published on their official pages (Horseshoe) or only on the weekly PDF (MGM).</li>
+</ul></div>
+</main>
+<footer class="site">
+  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
+  <a href="COORDINATION.md">COORDINATION.md</a> ·
+  Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
+  <br>Guarantee ÷ entry-fee figures are descriptive ratios, not forecasts. Nothing here is financial advice.
+</footer>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

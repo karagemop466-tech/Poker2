@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Summary — Vegas Poker Trip Planner</title>
-<link rel="stylesheet" href="assets/css/site.css"></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Las Vegas Poker Trip Planner</title>
+<meta name="description" content="Dashboard">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
 <body>
-<header><div class="wrap"><h1><a href="index.html">Vegas Poker Trip Planner</a></h1>
-<div class="sub">Verified single-entry tournaments · hotels · walking times · trip cost — data as of 2026-11-16</div></div></header>
-<nav><div class="wrap navrow"><a href="index.html">Summary</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plan</a><a href="trip.html">Trip calculator</a><a href="hotels.html">Hotels &amp; rates</a><a href="walking.html">Walking times</a><a href="venues/venetian.html">Venetian</a><a href="venues/wynn.html">Wynn</a><a href="venues/others.html">Other venues</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="monitor.html">Monitor</a><a href="archive.html">Archive</a></div></nav>
-<main class="wrap">
-<section class="hero"><h2>Executive summary — Las Vegas Strip single-entry tournament trip planner</h2><p>Venetian DSE IV (Nov 16 – Dec 23, 2026), Wynn WPT World Championship (Nov 27 – Dec 21, 2026) and Wynn/Caesars/MGM recurring dailies. Every Venetian structure sheet (1–37) and the full WPT structures document were read first-hand on 2026-11-16. Values appear only where an official source states them.</p>
-<p class="pill">Trip window (fixed by rule): <b>2026-11-22 → 2026-11-29</b> ·
-nightly true-cost target <b>$250</b> ·
-quality floor <b>4-star-and-up class resort</b> · walk limit <b>30 min</b></p></section>
-<section class="kpis"><div class="card"><div class="kpi">46</div><div class="lbl">Confirmed single-entry events (Venetian DSE IV)</div><div class="note">Structure sheets read in full; no re-entry/rebuy/add-on clauses. Includes 3 bounty types and 1 PKO, labeled separately.</div></div><div class="card"><div class="kpi">2</div><div class="lbl">Flagged (ambiguous entry wording)</div><div class="note">Valuetown events 18/58 — &#x27;subsequent buy in&#x27;s&#x27; phrasing.</div></div><div class="card"><div class="kpi">42</div><div class="lbl">Excluded (spend-more / multi-flight / satellite / team)</div><div class="note">Includes all 12 WPT event types with published terms (all allow re-entry), 4 Wynn dailies, 8 Venetian multi-flights, 7 satellites, 1 team event, Caesars add-on and MGM loyalty events.</div></div><div class="card"><div class="kpi">33 WPT rows + Horseshoe dailies</div><div class="lbl">Unverified (entry terms not published)</div><div class="note">Blank rule fields; flagged; excluded from ranking.</div></div><div class="card"><div class="kpi">fixed by rule — see trip plan</div><div class="lbl">Recommended trip window</div><div class="note">The consecutive 7-night window with the most confirmed single-entry events open to all players (ties → earliest). Age/gender-gated events shown separately.</div></div><div class="card"><div class="kpi">9:00 AM (Horseshoe daily, rules unverified)</div><div class="lbl">Earliest verified start</div><div class="note">No 8:00 AM start found in any checked official source.</div></div><div class="card"><div class="kpi">Event 36 — 93.75×</div><div class="lbl">Best confirmed value ratio (gtd ÷ buy-in)</div><div class="note">$800 bounty, $75K guarantee (includes bounties), Dec 9 11:10 AM. Descriptive ratio only — not a forecast.</div></div><div class="card"><div class="kpi">≤ 30 minutes</div><div class="lbl">Walk-time rule</div><div class="note">OSRM foot-routing estimates from official addresses; Google Maps confirmation links per pair.</div></div><div class="card"><div class="kpi">rate + resort fee, taxed 13.38%</div><div class="lbl">True hotel cost/night</div><div class="note">Verified fee/tax inputs; dated room rates still to be logged (flagged).</div></div></section>
-<section><h2>Findings</h2><div class="finding"><h3>Single-entry confirmation is now sheet-level</h3><p>All 37 Venetian DSE IV structure sheets were read in full. 46 one-day (plus one two-day) events contain no re-entry, re-buy or add-on clause and are confirmed under the site&#x27;s documented standard. The two Valuetown events are held back on their &#x27;subsequent buy in&#x27;s&#x27; wording.</p></div><div class="finding"><h3>Wynn WPT is a re-entry series</h3><p>Every WPT event whose terms are published in the official structures document allows re-entry (unlimited per flight until level 9–10, or one re-entry per flight for WPT Prime). The 12 documented event types are excluded from the single-entry list. 33 schedule rows have no published terms and stay unverified.</p></div><div class="finding"><h3>Value ranking (descriptive ratio)</h3><p>Ranked by guarantee ÷ buy-in among confirmed events with a printed guarantee: Event 36 $800 bounty $75K (93.75×), Event 54 $600 bounty $50K (83.33×), Event 52 $1,100 PKO $75K (68.18×). Bounty guarantees include bounty money — read the ratio as description, not EV.</p></div><div class="finding"><h3>Plan one seat per day, evenings conditional</h3><p>For Dec 6–13 the plan gives each day a primary confirmed event and, where a second exists, a conditional evening fallback. 1-Day events run to a winner, so back-to-back seats are flagged as overlapping.</p></div><div class="finding"><h3>Walkability</h3><p>Venetian/Palazzo are on-site for DSE IV. Harrah&#x27;s/LINQ/Flamingo/Cromwell are 9–17 min from the Venetian. Wynn/Encore guests are 0–13 min from the WPT room (in Encore). Golden Nugget (83 min), Westgate (39 min), Mandalay Bay (52 min) fail the 30-minute rule to the Venetian.</p></div><div class="finding"><h3>Hotel economics</h3><p>Verified: Venetian/Palazzo/Wynn/Encore resort fee $55+tax; MGM Grand $50+tax; ARIA/Bellagio $55+tax; conditional Venetian poker rates from $119/$209 per night; 13.38% room tax; Venetian parking $20/day. Not verified: dated room quotes, cancellation deadlines, parking elsewhere — all blank and flagged.</p></div></section>
-<section><h2>How to use this planner</h2>
-<ol class="steps">
-<li><b>Fix dates & budget</b> — already set above (adjustable in the <a href="trip.html">trip calculator</a>).</li>
-<li><b>Filter to single-entry events</b> — <a href="tournaments.html">Tournaments</a> → toggle “Confirmed single-entry only”. Events with any spend-more mechanic sit in their own section.</li>
-<li><b>Compare</b> — guarantee ÷ entry-fee ratio (descriptive, not a forecast), stack, level length and day fit. Bounty/flight events are labeled.</li>
-<li><b>Hotels</b> — <a href="hotels.html">Hotels & rates</a> for the dated rate log and true cost/night formula; <a href="walking.html">Walking times</a> for the ≤30-minute test with Google Maps confirmation links.</li>
-<li><b>Day plan</b> — <a href="schedule.html">Day plan</a> gives each day a primary event and a conditional evening fallback with overlap flags.</li>
-<li><b>Reconfirm before paying</b> — the <a href="monitor.html">Monitor</a> re-checks every official URL daily and flags changed sources; re-verify schedules and rates before any nonrefundable payment.</li>
-</ol></section>
+<header class="site">
+  <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+</header>
+<nav class="site"><a href="index.html" class="active">Dashboard</a>
+<a href="summary.html">Executive Summary</a>
+<a href="tournaments.html">Tournaments</a>
+<a href="venue-venetian.html">Venetian</a>
+<a href="venue-wynn.html">Wynn</a>
+<a href="venue-others.html">Other Venues</a>
+<a href="hotels.html">Hotels</a>
+<a href="planner.html">Trip Planner</a>
+<a href="ranking.html">Ranking</a>
+<a href="rules.html">Entry Rules</a>
+<a href="monitor.html">Source Monitor</a>
+<a href="flagged.html">Flagged</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="repo-review.html">Repo Review</a>
+<a href="walking.html">Walking Times</a>
+<a href="wpt-terms.html">WPT Terms</a>
+<a href="rate-log.html">Rate Log</a>
+<a href="trip.html">Trip Plan</a>
+<a href="archive.html">Archive</a></nav>
+<main>
+
+<h1>Dashboard</h1>
+<p class="lead">A verified-source planner for live tournament poker on and near the Las Vegas Strip.
+Start with the <a href="summary.html">executive summary</a>, filter the <a href="tournaments.html">tournament table</a>
+to <em>freezeout confirmed</em>, then price the stay on the <a href="hotels.html">hotels page</a> and
+build the trip in the <a href="planner.html">trip planner</a>.</p>
+<div class="cards">
+  <div class="card"><div class="k">Freezeout-confirmed events</div><div class="v">45</div>
+    <div class="s">sheet read; no re-entry/rebuy/add-on mechanism</div></div>
+  <div class="card"><div class="k">Entry limit ambiguous</div><div class="v">2</div>
+    <div class="s">sheet wording conflicts (see flagged)</div></div>
+  <div class="card"><div class="k">Spend-more events</div><div class="v">25</div>
+    <div class="s">re-entry / rebuy / add-on confirmed — kept separate</div></div>
+  <div class="card"><div class="k">Unverified rows</div><div class="v">48</div>
+    <div class="s">schedule confirmed, entry rules not</div></div>
+  <div class="card"><div class="k">Hotels tracked</div><div class="v">8</div>
+    <div class="s">official fees where published</div></div>
+  <div class="card"><div class="k">Flags for review</div><div class="v">31</div>
+    <div class="s">published on the Flagged page</div></div>
+</div>
+<div class="panel">
+<h2>How to read this site</h2>
+<ul class="tight">
+<li><span class="badge b-good">Freezeout confirmed</span> — the official structure sheet was fully read and offers no re-entry, rebuy or add-on. It is <strong>not</strong> an express “single entry” clause (see <a href="flagged.html">flag IR-8234-02</a>).</li>
+<li><span class="badge b-warn">Entry limit ambiguous</span> — sheet read, but wording suggests possible extra buy-ins.</li>
+<li><span class="badge b-bad">Spend-more</span> — a verified way to buy more chips or entries. Kept out of the main ranking.</li>
+<li><span class="badge b-warn">UNVERIFIED</span> — the value or rule could not be confirmed from an official source. Left blank, never inferred.</li>
+</ul>
+<p class="note">Pool ÷ fee figures are descriptive ratios of published numbers only, not forecasts of value or ROI.</p>
+</div>
+<div class="panel">
+<h2>Quick tools</h2>
+<ul class="tight">
+<li><a href="planner.html">Trip cost calculator</a> — entries × buy-ins + nights × true hotel cost.</li>
+<li><a href="planner.html#dayplan">Day-by-day plan</a> — primary event + conditional fallback per day, overlap flags.</li>
+<li><a href="hotels.html">True hotel cost/night</a> — room rate + resort fee + tax, logged as dated entries.</li>
+<li><a href="monitor.html">Source monitor</a> — scheduled re-checks of every official URL; changed sources are flagged.</li>
+<li><a href="ranking.html">Descriptive ranking</a> — guarantee ÷ total entry fee, bounty/flight events labeled separately.</li>
+</ul>
+</div>
 </main>
-<footer><div class="wrap">Compiled from official sources only, retrieved 2026-11-16. Unconfirmed values are left blank and flagged.
-Follow-up sessions: see <a href="flagged.html">Flagged for Review</a>. Sources are re-checked automatically — see <a href="monitor.html">Monitor</a>.</div></footer>
-<script src="assets/js/data.js"></script><script src="assets/js/site.js"></script>
-</body></html>
+<footer class="site">
+  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
+  <a href="COORDINATION.md">COORDINATION.md</a> ·
+  Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
+  <br>Guarantee ÷ entry-fee figures are descriptive ratios, not forecasts. Nothing here is financial advice.
+</footer>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

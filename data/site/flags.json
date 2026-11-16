@@ -1,131 +1,148 @@
-{
- "as_of": "2026-11-16",
- "items": [
-  {
-   "id": "F01",
-   "item": "Venetian Events 18/58 (Valuetown) 'subsequent buy in's' wording",
-   "where": "Structure sheet 8, note 07",
-   "detail": "The sheet says the PokerAtlas PRO discount applies to 'their initial $200 buy in only' and 'All subsequent buy in's after the initial buy in will be $200', implying possible further entries. No explicit re-entry clause. Kept out of the confirmed single-entry list.",
-   "severity": "medium"
-  },
-  {
-   "id": "F02",
-   "item": "WPT Dec 21 Turbo start-time discrepancy",
-   "where": "WPT structures terms vs schedule row",
-   "detail": "Event terms list Dec 21 at 6 PM; the schedule row shows 8:00 PM.",
-   "severity": "low"
-  },
-  {
-   "id": "F03",
-   "item": "$1,600 NLH $1M date discrepancy",
-   "where": "WPT structures terms (Dec 3\u20135) vs schedule row U-WPT14 (Dec 9)",
-   "detail": "Possibly two separate events or a source error. Both are re-entry; no effect on the single-entry list.",
-   "severity": "low"
-  },
-  {
-   "id": "F04",
-   "item": "WPT schedule text 'NIH' where NLH is expected",
-   "where": "WPT schedule rows for Dec 13, Dec 14, Dec 15 events",
-   "detail": "Printed as 'NIH' in the official schedule PDF. Presumed typo but shown as printed.",
-   "severity": "low"
-  },
-  {
-   "id": "F05",
-   "item": "Venetian series overview stale status label",
-   "where": "Venetian DSE series overview page",
-   "detail": "Labels the WPT Fall Festival (Oct 28\u2013Nov 15) 'Current Series' while showing DSE IV (from Nov 16) as 'Next Series' on the same snapshot date.",
-   "severity": "low"
-  },
-  {
-   "id": "F06",
-   "item": "Venetian resort-fee wording ambiguity",
-   "where": "Venetian resort-fee page vs poker-rate page",
-   "detail": "Resort-fee page: 'Rates include a daily Resort Fee of $55 plus tax.' Poker-rate page presents the $55 fee separately. Confirm at reservation.",
-   "severity": "medium"
-  },
-  {
-   "id": "F07",
-   "item": "Venetian poker rate $119/$209 property mapping",
-   "where": "Venetian poker suite-rates page",
-   "detail": "Both amounts published with conditional play requirements; the page does not bind each amount to one property. Recorded as separate dated entries; flagged.",
-   "severity": "medium"
-  },
-  {
-   "id": "F08",
-   "item": "Hotel true cost uses assumed 13.38% tax on the resort fee",
-   "where": "Trip calculator",
-   "detail": "The 13.38% rate is verified for the room rate (Venetian hotel terms). Applying it to the fee is an assumption to confirm.",
-   "severity": "medium"
-  },
-  {
-   "id": "F09",
-   "item": "Walk times are routing estimates, not Google/Apple Maps measurements",
-   "where": "Walking matrix",
-   "detail": "Computed with the OSRM foot profile from geocoded official addresses; Google Maps links included per pair for confirmation. \u00b110\u201315% error possible.",
-   "severity": "medium"
-  },
-  {
-   "id": "F10",
-   "item": "No dated hotel room quotes captured for Dec 6\u201313, 2026",
-   "where": "Hotel rate log",
-   "detail": "Dynamic booking-engine pricing cannot be captured by a static fetch; official booking links provided. True-cost cells stay blank until quotes are logged.",
-   "severity": "high"
-  },
-  {
-   "id": "F11",
-   "item": "Caesars Palace daily buy-in alternates $100/$160 by start",
-   "where": "Caesars official flier vs guide page",
-   "detail": "The guide page states $100; the flier shows $160 for some starts. Both recorded; per-start buy-in needs confirmation.",
-   "severity": "low"
-  },
-  {
-   "id": "F12",
-   "item": "MGM Saturday event free-entry loyalty mechanic",
-   "where": "MGM Grand poker page",
-   "detail": "Five $120 dailies earn a free Saturday entry \u2014 a spend-more mechanic; event kept in the separate section. Re-entry status unverified.",
-   "severity": "low"
-  },
-  {
-   "id": "F13",
-   "item": "33 WPT rows have no published entry terms",
-   "where": "Wynn WPT structures PDF",
-   "detail": "The official structures document covers 13 event types; the remaining schedule rows have no terms in any official document read. Rows stay unverified.",
-   "severity": "high"
-  },
-  {
-   "id": "F14",
-   "item": "Westgate $70 freezeout lead is aggregator-sourced",
-   "where": "Third-party calendars (VegasPokerCalendar/PokerAtlas)",
-   "detail": "'Freezeout / No rebuy / No add-on' wording found on an aggregator detail page only; not confirmed with the Westgate poker room. Not used in any ranking.",
-   "severity": "medium"
-  },
-  {
-   "id": "F15",
-   "item": "Sahara Las Vegas not geocoded",
-   "where": "Walking matrix",
-   "detail": "Nominatim returned only the monorail stop for the address; Sahara omitted from the matrix rather than guessed.",
-   "severity": "low"
-  },
-  {
-   "id": "F16",
-   "item": "Event finish times are estimates",
-   "where": "Day plan / overlap flags",
-   "detail": "No official finish times exist. Durations estimated from level counts (28 levels \u00d7 30 min + breaks \u2248 12\u201314 h). Overlap flags are conservative.",
-   "severity": "medium"
-  },
-  {
-   "id": "F17",
-   "item": "Hotel quality classes are assumptions",
-   "where": "Hotel table",
-   "detail": "No official AAA/Forbes listing captured except the Wynn Tower Suites Five-Star statement. Classes marked as assumptions.",
-   "severity": "low"
-  },
-  {
-   "id": "F18",
-   "item": "Maximum-entry caps not published for Venetian freezeouts",
-   "where": "Venetian sheets 1\u201337",
-   "detail": "Freezeout classification rests on the absence of re-entry/rebuy/add-on clauses; sheets do not state entry caps explicitly.",
-   "severity": "medium"
-  }
- ]
-}
+[
+ {
+  "detail": "A strict single-entry screen requires the organiser to state that only one entry, no rebuy and no add-on are permitted. No official document retrieved states that. Venetian single-day structure sheets are silent on re-entry. Wynn, Bellagio, Caesars Palace and Wynn daily terms all state re-entry or rebuy rights explicitly. MGM Grand states neither.",
+  "id": "F-01",
+  "sev": "high",
+  "srcs": [
+   "VEVENT",
+   "WPSTRUCT",
+   "BFRI",
+   "CPCAL",
+   "WDAILYST"
+  ],
+  "title": "No event anywhere is confirmed single-entry by an official source"
+ },
+ {
+  "detail": "All 37 DSE IV structure sheets list buy-in allocation, late registration, starting chips and level length. None states whether a player may re-enter after elimination, except the multi-flight sheets, which state that a player who bags chips may not play a later flight. Absence of a prohibition is not a confirmation of single entry.",
+  "id": "F-02",
+  "sev": "high",
+  "srcs": [
+   "VEVENT"
+  ],
+  "title": "Venetian structure sheets do not state a re-entry, rebuy or add-on policy"
+ },
+ {
+  "detail": "No official Venetian, Wynn, Bellagio, MGM Grand or Caesars page states a pedestrian walking time between a hotel tower and its poker room. Google/Apple Maps distances were not used because they are not official property sources. The 30-minute filter therefore cannot be applied to any row and remains empty.",
+  "id": "F-03",
+  "sev": "high",
+  "srcs": [
+   "VPOKER",
+   "WPOKER",
+   "BPOKER"
+  ],
+  "title": "Zero verified walking times for any hotel-to-poker-room pair"
+ },
+ {
+  "detail": "A true nightly cost needs a dated quote for specific dates and occupancy. Only resort fees and one property's room-tax rate are published. All room-rate cells are blank; the trip estimator asks the user for a live rate rather than inventing one.",
+  "id": "F-04",
+  "sev": "high",
+  "srcs": [
+   "VFEE",
+   "VTC",
+   "WINFO",
+   "BTC",
+   "MGMTC"
+  ],
+  "title": "No dated hotel checkout total for any property"
+ },
+ {
+  "detail": "Venetian hotel terms state a 13.38% Clark County Room Tax. Wynn, Bellagio and MGM Grand terms say taxes are estimated at current rates without printing a percentage. Applying 13.38% to those properties would be an inference, so the estimator applies it only to the Venetian.",
+  "id": "F-05",
+  "sev": "medium",
+  "srcs": [
+   "VTC",
+   "WINFO",
+   "BTC",
+   "MGMTC"
+  ],
+  "title": "Venetian room tax is verified only for the Venetian; other properties' rates are unstated"
+ },
+ {
+  "detail": "The official poker page advertises 11 AM, 7 PM and 11 PM daily starts, but the linked schedule PDF is headed 'MGM Grand August Tournament Schedule' and lists 11:10 AM, 7:10 PM and 11:10 PM. The current applicability of those times is unconfirmed.",
+  "id": "F-06",
+  "sev": "medium",
+  "srcs": [
+   "MGMPOK",
+   "MGMSCH"
+  ],
+  "title": "MGM Grand weekly schedule PDF is titled August with no year"
+ },
+ {
+  "detail": "The $120 NLH structure allocates $92 to the prize pool, $13 house fee, $4 promotions, and a one-time voluntary $11 staff gratuity that grants 10,000 additional chips (15,000 + 10,000 = 25,000). That is money for an in-event advantage, so the event is excluded from the no-add-on group.",
+  "id": "F-07",
+  "sev": "medium",
+  "srcs": [
+   "MGM120"
+  ],
+  "title": "MGM Grand $11 gratuity buys 10,000 extra chips"
+ },
+ {
+  "detail": "The poker room page and the series overview page both label the WPT Fall Festival (Oct 28 - Nov 15, 2026) as 'Current Series' and DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026) as 'Next Series', although the DSE IV event page is live with results columns. Event facts were taken from the dedicated DSE IV schedule.",
+  "id": "F-08",
+  "sev": "medium",
+  "srcs": [
+   "VPOKER",
+   "VSERIES",
+   "VEVENT"
+  ],
+  "title": "Venetian series page still labels the previous series as 'Current Series'"
+ },
+ {
+  "detail": "In the official schedule PDF text, event 32's date cell renders as 'LIPS CHAMPIONSHIP CHAMPIES CHAMPIES CHAMPIES' rather than a date, and several row labels are truncated. Dates were taken from the HTML event page where the PDF row label was unusable; both agree elsewhere.",
+  "id": "F-09",
+  "sev": "low",
+  "srcs": [
+   "VSCHED",
+   "VEVENT"
+  ],
+  "title": "Venetian schedule PDF text layer mislabels some date cells"
+ },
+ {
+  "detail": "The earliest start found in any official source is 09:10 AM (Venetian Event 46, Dec 12 turbo satellite). Wynn WPT Day 1As start at 10:00 AM (Super Gold Million, Dec 10-11). Caesars Palace's earliest daily event is 10:00 AM. An 08:00 AM start is not available in any retrieved official schedule.",
+  "id": "F-10",
+  "sev": "medium",
+  "srcs": [
+   "VSCHED",
+   "WPSCHED",
+   "CPCAL"
+  ],
+  "title": "First verified start time is 09:10 AM; no 08:00 AM tournament exists"
+ },
+ {
+  "detail": "The Wynn poker page states the daily tournament schedule is suspended during each Wynn Signature, Wynn Millions and Classic tournament series. The WPT World Championship runs Nov 27 - Dec 21, 2026, which covers most of the Venetian festival window, so Wynn daily events should not be assumed to run then.",
+  "id": "F-11",
+  "sev": "medium",
+  "srcs": [
+   "WPOKER"
+  ],
+  "title": "Wynn daily tournaments are suspended during the WPT series"
+ },
+ {
+  "detail": "The official Horseshoe page states the Hall of Fame Poker Room runs '6 exciting tournament times daily' but no schedule, buy-in, guarantee or entry-limit document could be retrieved. The room is therefore listed as unverified with no event rows.",
+  "id": "F-12",
+  "sev": "low",
+  "srcs": [
+   "HSHOE"
+  ],
+  "title": "Horseshoe Las Vegas publishes no retrievable tournament structure"
+ },
+ {
+  "detail": "This session read the WPT structures PDF chunks covering general terms, $600/$400K, TORSE, PLO $400 and Mixed Triple Draw. The $800/$1M, WPT Prime and Super Gold Million event-specific terms were not re-read, so their entry limits are shown as unverified here even though earlier sessions reported re-entry language for two of them.",
+  "id": "F-13",
+  "sev": "low",
+  "srcs": [
+   "WPSTRUCT",
+   "WPSCHED"
+  ],
+  "title": "Wynn $800 / $1M and Super Gold Million entry rules were not re-read in this session"
+ },
+ {
+  "detail": "An earlier session recorded that registration-close times and chip counts are not on the official schedule page. They are on the official schedule PDF, which this session read in full. The values are now sourced to that PDF.",
+  "id": "F-14",
+  "sev": "low",
+  "srcs": [
+   "VSCHED"
+  ],
+  "title": "Chip counts and level lengths were previously reported as absent from official sources"
+ }
+]

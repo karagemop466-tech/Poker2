@@ -222,13 +222,13 @@ hotels = {
  ],
  "rate_log": rate_log,
 }
-json.dump(hotels, open(os.path.join(OUT, "hotels.json"), "w"), indent=1)
+json.dump(hotels, open(os.path.join(OUT, "hotels-f0816fab.json"), "w"), indent=1)
 
 # ---------------------------------------------------------------------------
 # Trip plan. Dates fixed by rule: the 7-night window (Dec 6–13, 2026) with the
 # most confirmed single-entry events, chosen programmatically from events.json.
 # ---------------------------------------------------------------------------
-events = json.load(open(os.path.join(OUT, "events.json")))["events"]
+events = json.load(open(os.path.join(OUT, "events-f0816fab.json")))["events"]
 from datetime import date, timedelta
 playable = [e for e in events if e["classification"] == "single_entry_confirmed"]
 open_play = [e for e in playable if e.get("eligibility", "").startswith("21+")]
@@ -394,7 +394,7 @@ flags = {
    "detail": "Freezeout classification rests on the absence of re-entry/rebuy/add-on clauses; sheets do not state entry caps explicitly.", "severity": "medium"},
  ],
 }
-json.dump(flags, open(os.path.join(OUT, "flags.json"), "w"), indent=1)
+json.dump(flags, open(os.path.join(OUT, "flags-f0816fab.json"), "w"), indent=1)
 
 summary = {
  "as_of": R,
@@ -446,14 +446,4 @@ for n in range(1, 38):
     sources[f"V_S{n}"] = {"label": f"Venetian DSE IV structure sheet {n} (PDF)", "url": f"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{n}.pdf", "publisher": "The Venetian Las Vegas (official)", "type": "Official structure PDF"}
 json.dump(sources, open(os.path.join(OUT, "sources.json"), "w"), indent=1)
 
-# Monitor seed: one entry per unique URL the monitor re-checks on schedule.
-seen, mon = set(), []
-for sid, s in sorted(sources.items()):
-    if s["url"] not in seen:
-        seen.add(s["url"])
-        mon.append({"source_id": sid, "url": s["url"], "label": s["label"],
-                    "last_checked": None, "last_changed": None, "status": "not yet checked", "sha256": None, "changed": False})
-monitor = {"as_of": R, "schedule": "daily 16:00 UTC (08:00 America/Los_Angeles) via .github/workflows/monitor.yml",
-           "note": "Each run fetches every official URL, stores a SHA-256 snapshot, appends to the dated check log, and flags rows whose source content changed since the previous run.", "rows": mon}
-json.dump(monitor, open(os.path.join(OUT, "monitor.json"), "w"), indent=1)
 print("data/site written:", sorted(os.listdir(OUT)))
