@@ -1,0 +1,547 @@
+{
+ "as_of": "2026-11-16",
+ "schedule": "daily 16:00 UTC (08:00 America/Los_Angeles) via .github/workflows/monitor.yml",
+ "note": "Each run fetches every official URL, stores a SHA-256 snapshot, appends to the dated check log, and flags rows whose source content changed since the previous run.",
+ "rows": [
+  {
+   "source_id": "CAESARS",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "label": "Caesars Las Vegas poker tournaments guide",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "CAESARS_FLIER",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "label": "Caesars Palace daily NLH flier PDF",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "GEOCODE",
+   "url": "https://nominatim.openstreetmap.org",
+   "label": "OpenStreetMap Nominatim geocoder (official-address coordinates)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "MGM_POKER",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "label": "MGM Grand poker tables page",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "MGM_TC",
+   "url": "https://www.mgmresorts.com/en/hotel/terms-and-conditions.html",
+   "label": "MGM Resorts hotel terms & conditions",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "OSRM_FOOT",
+   "url": "https://routing.openstreetmap.de/routed-foot",
+   "label": "OSRM foot-routing server (walking durations)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_HOTEL_TC",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "label": "Venetian hotel terms & conditions (13.38% room tax, parking, deposit)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_PAGE",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "label": "Venetian DSE IV event page (Nov 16 \u2013 Dec 23, 2026)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_POKER",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "label": "Venetian poker room page",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_RESORT_FEE",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "label": "Venetian resort fee page ($55 plus tax)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "label": "Venetian DSE IV structure sheet 1 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S10",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "label": "Venetian DSE IV structure sheet 10 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S11",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "label": "Venetian DSE IV structure sheet 11 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S12",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "label": "Venetian DSE IV structure sheet 12 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S13",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "label": "Venetian DSE IV structure sheet 13 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S14",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+   "label": "Venetian DSE IV structure sheet 14 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S15",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "label": "Venetian DSE IV structure sheet 15 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S16",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "label": "Venetian DSE IV structure sheet 16 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S17",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "label": "Venetian DSE IV structure sheet 17 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S18",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "label": "Venetian DSE IV structure sheet 18 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S19",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "label": "Venetian DSE IV structure sheet 19 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S2",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "label": "Venetian DSE IV structure sheet 2 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S20",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "label": "Venetian DSE IV structure sheet 20 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S21",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "label": "Venetian DSE IV structure sheet 21 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S22",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "label": "Venetian DSE IV structure sheet 22 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S23",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+   "label": "Venetian DSE IV structure sheet 23 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S24",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "label": "Venetian DSE IV structure sheet 24 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S25",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "label": "Venetian DSE IV structure sheet 25 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S26",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+   "label": "Venetian DSE IV structure sheet 26 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S27",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+   "label": "Venetian DSE IV structure sheet 27 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S28",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+   "label": "Venetian DSE IV structure sheet 28 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S29",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "label": "Venetian DSE IV structure sheet 29 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S3",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "label": "Venetian DSE IV structure sheet 3 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S30",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "label": "Venetian DSE IV structure sheet 30 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S31",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "label": "Venetian DSE IV structure sheet 31 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S32",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+   "label": "Venetian DSE IV structure sheet 32 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S33",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+   "label": "Venetian DSE IV structure sheet 33 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S34",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "label": "Venetian DSE IV structure sheet 34 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S35",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "label": "Venetian DSE IV structure sheet 35 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S36",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "label": "Venetian DSE IV structure sheet 36 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S37",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+   "label": "Venetian DSE IV structure sheet 37 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S4",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "label": "Venetian DSE IV structure sheet 4 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S5",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "label": "Venetian DSE IV structure sheet 5 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S6",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "label": "Venetian DSE IV structure sheet 6 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S7",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "label": "Venetian DSE IV structure sheet 7 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S8",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "label": "Venetian DSE IV structure sheet 8 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_S9",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "label": "Venetian DSE IV structure sheet 9 (PDF)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_SCHED",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+   "label": "Venetian DSE IV schedule PDF",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "V_SUITE_RATES",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "label": "Venetian poker suite/player rates page",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "W_DAILY",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "label": "Wynn daily tournament structures PDF",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "W_POKER",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "label": "Wynn poker room page",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "W_RESORT_INFO",
+   "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "label": "Wynn resort information ($55 plus tax resort fee)",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "W_SCHED",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "label": "Wynn WPT World Championship schedule PDF",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  },
+  {
+   "source_id": "W_STRUCT",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "label": "Wynn WPT World Championship terms & structures PDF",
+   "last_checked": null,
+   "last_changed": null,
+   "status": "not yet checked",
+   "sha256": null,
+   "changed": false
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "S_V8B": {
+    "label": "Venetian structure sheet: $600 NLH Days 1A (fee discount rule) \u2014 Event 59 uses structure 4",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "S_V17B": {
+    "label": "Venetian structure sheet: $600 NLH Seniors (1Day) \u2014 Event 32 (same sheet as 17)",
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "publisher": "The Venetian Las Vegas (official)",
+    "type": "Official structure sheet"
+  },
+  "THIRD_PARTY_TAX": {
+    "label": "Third-party only: 13.38% Clark County lodging tax (casino.org) \u2014 NOT an official source; flagged",
+    "url": "https://www.casino.org/news/las-vegas-tourism-officials-expect-decline-room-tax-revenue/",
+    "publisher": "casino.org (secondary)",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_VENETIAN_FEE": {
+    "label": "Third-party (conflicting-data check): unleashvegas.com Venetian page",
+    "url": "https://unleashvegas.com/hotels/venetian",
+    "publisher": "Third party",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_RESORT_FEES": {
+    "label": "Third-party (conflicting-data check): Las Vegas resort fee tracker (lists Bellagio $51, Aria $51, Wynn $51)",
+    "url": "https://www.thingsvegas.com/guides/las-vegas-resort-fees/",
+    "publisher": "Third party",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_ARIA_FEE": {
+    "label": "Third-party (conflicting-data check): smartvegasdeals.com ARIA page ($51)",
+    "url": "https://www.smartvegasdeals.com/hotels/aria-resort-casino",
+    "publisher": "Third party",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_BELLAGIO_FEE": {
+    "label": "Third-party (conflicting-data check): unleashvegas.com Bellagio page ($50 pre-tax; $62.36 with tax)",
+    "url": "https://unleashvegas.com/hotels/bellagio",
+    "publisher": "Third party",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_PA_VENETIAN": {
+    "label": "Third-party (conflicting-data check): PokerAtlas Venetian tournaments calendar",
+    "url": "https://www.pokeratlas.com/poker-room/venetian-las-vegas/tournaments",
+    "publisher": "PokerAtlas (third party)",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_PA_ARIA": {
+    "label": "Third-party (conflicting-data check): PokerAtlas ARIA tournaments calendar (shows $200 NLH daily)",
+    "url": "https://www.pokeratlas.com/poker-room/aria-las-vegas/tournaments",
+    "publisher": "PokerAtlas (third party)",
+    "type": "Secondary \u2014 not used as verified value"
+  },
+  "TP_WESTGATE": {
+    "label": "Third-party (aggregator): Westgate $70 NLH freezeouts at 5:05 PM & 9:05 PM \u2014 detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026. NOT confirmed with Westgate poker room; not used as a verified value.",
+    "url": "https://vegaspokercalendar.com/tournaments/westgate/2026-11-16/westgate-las-vegas-5-05pm-70-nl-holdem-70-freezeout-no-limit-texas-hold-em-307171-2026-11-16",
+    "publisher": "VegasPokerCalendar (third-party aggregator)",
+    "type": "Secondary \u2014 not used as verified value"
+  }
+}

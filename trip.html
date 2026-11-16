@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip calculator — Vegas Poker Trip Planner</title>
+<link rel="stylesheet" href="assets/css/site.css"></head>
+<body>
+<header><div class="wrap"><h1><a href="index.html">Vegas Poker Trip Planner</a></h1>
+<div class="sub">Verified single-entry tournaments · hotels · walking times · trip cost — data as of 2026-11-16</div></div></header>
+<nav><div class="wrap navrow"><a href="index.html">Summary</a><a href="tournaments.html">Tournaments</a><a href="schedule.html">Day plan</a><a href="trip.html">Trip calculator</a><a href="hotels.html">Hotels &amp; rates</a><a href="walking.html">Walking times</a><a href="venues/venetian.html">Venetian</a><a href="venues/wynn.html">Wynn</a><a href="venues/others.html">Other venues</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="monitor.html">Monitor</a><a href="archive.html">Archive</a></div></nav>
+<main class="wrap">
+<h2>Estimated trip cost calculator</h2>
+<p class="formula">estimated cost of a trip = <b>entries × buy-ins</b> + <b>nights × true hotel cost/night</b><br>
+true hotel cost/night = (room rate + resort fee) × (1 + 13.38% tax) · tax on the fee is an assumption (<a href="flagged.html">F08</a>).</p>
+<div class="calc">
+<label>Entries planned <input type="number" id="cEntries" value="8" min="0"></label>
+<label>Average buy-in ($) <input type="number" id="cBuyin" value="400" min="0" step="10"></label>
+<label>Nights <input type="number" id="cNights" value="7" min="1"></label>
+<label>Hotel
+<select id="cHotel"><option value="">— choose —</option></select>
+</label>
+<label>Room rate ($/night, before fee & tax) <input type="number" id="cRate" placeholder="log a dated quote" step="1"></label>
+<label>Resort fee ($/night) <input type="number" id="cFee" step="1"></label>
+<label><input type="checkbox" id="cParking"> Add parking ($20/day at Venetian/Palazzo; elsewhere blank/flagged)</label>
+<div id="cOut" class="calcOut"></div>
+</div>
+<h3>Planning assumptions (fixed for this plan)</h3>
+<ul>
+<li>Trip dates: <b>2026-11-22, 2026-11-23, 2026-11-24, 2026-11-25, 2026-11-26, 2026-11-27, 2026-11-28, 2026-11-29</b> — Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most confirmed single-entry events open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: 13 open-to-all entries (13 incl. gated).</li>
+<li>Nightly true-cost target: <b>$250</b>; quality floor: <b>4-star-and-up class resort</b>. Planning assumptions set for this plan (step 1 of the decision workflow). Adjustable in the calculator below; cost and quality outrank distance, hard limit = 30-minute walk.</li>
+<li>Dated room rates are not captured (dynamic booking engines) — enter a logged rate above; the dated log is on the <a href="hotels.html">Hotels & rates</a> page.</li>
+</ul>
+</main>
+<footer><div class="wrap">Compiled from official sources only, retrieved 2026-11-16. Unconfirmed values are left blank and flagged.
+Follow-up sessions: see <a href="flagged.html">Flagged for Review</a>. Sources are re-checked automatically — see <a href="monitor.html">Monitor</a>.</div></footer>
+<script src="assets/js/data.js"></script><script src="assets/js/site.js"></script>
+</body></html>

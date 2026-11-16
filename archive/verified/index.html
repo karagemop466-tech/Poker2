@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home · Las Vegas Strip Poker Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><a href="index.html">Las Vegas Strip Poker Dashboard</a><span class="asof">Data as of 2026-11-16</span></div>
+  <nav><a href="index.html" class="on">Home</a><a href="tournaments/single-entry.html" class="">Single-entry</a><a href="tournaments/excluded.html" class="">Excluded</a><a href="tournaments/unverified.html" class="">Unverified</a><a href="schedule/index.html" class="">Venetian schedule</a><a href="hotels/index.html" class="">Hotels</a><a href="summary/index.html" class="">Summary</a><a href="questions/index.html" class="">Questions</a><a href="suggestions/index.html" class="">Suggestions</a><a href="flagged/index.html" class=" flagnav">Flagged for Review</a><a href="sources/index.html" class="">Sources</a></nav>
+</header>
+<main>
+
+<section class="hero">
+  <h1>Las Vegas Strip poker: single-entry tournaments and hotel costs</h1>
+  <p class="lede">A verified dashboard of live poker tournaments at The Venetian and Wynn Las Vegas, with a separate section for re-entry, rebuy, add-on and multi-flight events. Every row links to an official source. Unverified values are blank and flagged.</p>
+  <p class="note">Coverage in this release: The Venetian and Wynn Las Vegas only. Other Strip rooms are not yet covered (see Flagged for Review).</p>
+</section>
+<section class="cards">
+  <a class="card" href="tournaments/single-entry.html"><span class="k">32</span><span class="t">Verified single-entry events</span><span class="s">The Venetian, Nov 18 – Dec 23, 2026</span></a>
+  <a class="card" href="tournaments/excluded.html"><span class="k">32</span><span class="t">Excluded (re-entry, rebuy, multi-flight, satellites)</span><span class="s">Separate section, not ranked</span></a>
+  <a class="card" href="tournaments/unverified.html"><span class="k">66</span><span class="t">Unverified tournament rows</span><span class="s">Official schedule value; rules not checked</span></a>
+  <a class="card" href="schedule/index.html"><span class="k">11:10 AM</span><span class="t">Earliest verified single-entry start</span><span class="s">No verified 8 AM start exists</span></a>
+  <a class="card" href="hotels/index.html"><span class="k">$55 + tax</span><span class="t">Resort fee at The Venetian and Wynn</span><span class="s">Official terms; room rates unverified</span></a>
+  <a class="card" href="summary/index.html"><span class="k">→</span><span class="t">Executive summary</span><span class="s">Key findings and sources</span></a>
+  <a class="card" href="questions/index.html"><span class="k">12</span><span class="t">Questions to answer</span><span class="s">What is missing before deciding</span></a>
+  <a class="card" href="suggestions/index.html"><span class="k">10</span><span class="t">Suggestions (awaiting decision)</span><span class="s">Nothing implemented yet</span></a>
+  <a class="card flag" href="flagged/index.html"><span class="k">20</span><span class="t">Flagged for Review</span><span class="s">Irregularities and unverified items, with sources</span></a>
+  <a class="card" href="sources/index.html"><span class="k">24</span><span class="t">Official sources</span><span class="s">Every link used</span></a>
+</section>
+<section>
+  <h2>How to use this site</h2>
+  <ol>
+    <li>Start with <a href="tournaments/single-entry.html">Single-entry</a>. Rows are ranked by guarantee divided by buy-in (computed from official figures).</li>
+    <li>Check <a href="tournaments/excluded.html">Excluded</a> for events with re-entry, rebuys, add-ons or extra flights. They are kept out of the ranking.</li>
+    <li>Use <a href="schedule/index.html">Venetian schedule</a> to plan a day. Start times are official; event length is not verified.</li>
+    <li>Answer the open items on <a href="questions/index.html">Questions</a> before booking. Review <a href="flagged/index.html">Flagged for Review</a> for irregularities.</li>
+  </ol>
+</section>
+
+</main>
+<footer>
+  <p>Every table row links to an official source. Values that could not be confirmed from an official source are left blank and marked UNVERIFIED. Not a betting or financial product. Confirm with the venue before paying.</p>
+  <p>Built from <code>data/verified/*.json</code> by <code>scripts/build.mjs</code>. Repo: <a href="https://github.com/karagemop466-tech/Poker2">karagemop466-tech/Poker2</a>.</p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

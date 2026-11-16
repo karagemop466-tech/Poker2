@@ -1,0 +1,175 @@
+{
+ "as_of": "2026-11-16",
+ "trip_dates": {
+  "play_days": [
+   "2026-11-22",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
+   "2026-11-28",
+   "2026-11-29"
+  ],
+  "nights": 7,
+  "rule": "Fixed by the stated planning rule: the consecutive 7-night window (8 play days) with the most confirmed single-entry events open to all players (ties broken by earliest start). Age/gender-gated events are counted separately. Selected window: 13 open-to-all entries (13 incl. gated)."
+ },
+ "budget_quality_floor": {
+  "nightly_true_cost_target_usd": 250,
+  "quality_floor": "4-star-and-up class resort",
+  "note": "Planning assumptions set for this plan (step 1 of the decision workflow). Adjustable in the calculator below; cost and quality outrank distance, hard limit = 30-minute walk."
+ },
+ "tax_rate": 0.1338,
+ "day_plan": [
+  {
+   "date": "2026-11-22",
+   "primary": {
+    "id": "V-E06",
+    "name": "$200 No Limit Hold'em (1Day)",
+    "start": "11:10 AM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": null,
+   "extra": [],
+   "overlap_flags": []
+  },
+  {
+   "date": "2026-11-23",
+   "primary": {
+    "id": "V-E08",
+    "name": "$200 No Limit Hold'em PKO Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": null,
+   "extra": [],
+   "overlap_flags": []
+  },
+  {
+   "date": "2026-11-24",
+   "primary": {
+    "id": "V-E09",
+    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": null,
+   "extra": [],
+   "overlap_flags": []
+  },
+  {
+   "date": "2026-11-25",
+   "primary": {
+    "id": "V-E10",
+    "name": "$400 No Limit Hold'em $15K GTD (1Day)",
+    "start": "11:10 AM",
+    "buy_in": 400,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": {
+    "id": "V-E11",
+    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card",
+    "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."
+   },
+   "extra": [],
+   "overlap_flags": [
+    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+   ]
+  },
+  {
+   "date": "2026-11-26",
+   "primary": {
+    "id": "V-E12",
+    "name": "$300 No Limit Hold'em $10K GTD (1Day)",
+    "start": "11:10 AM",
+    "buy_in": 300,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": {
+    "id": "V-E13",
+    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card",
+    "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."
+   },
+   "extra": [],
+   "overlap_flags": [
+    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+   ]
+  },
+  {
+   "date": "2026-11-27",
+   "primary": {
+    "id": "V-E14",
+    "name": "$600 No Limit Hold'em $30K GTD (1Day)",
+    "start": "11:10 AM",
+    "buy_in": 600,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": {
+    "id": "V-E15",
+    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card",
+    "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."
+   },
+   "extra": [],
+   "overlap_flags": [
+    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+   ]
+  },
+  {
+   "date": "2026-11-28",
+   "primary": {
+    "id": "V-E16",
+    "name": "$600 No Limit Hold'em Bounty $30K GTD (1Day)",
+    "start": "11:10 AM",
+    "buy_in": 600,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": {
+    "id": "V-E17",
+    "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
+    "start": "12:10 PM",
+    "buy_in": 400,
+    "eligibility": "21+ with Venetian Rewards card",
+    "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."
+   },
+   "extra": [],
+   "overlap_flags": [
+    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "primary": {
+    "id": "V-E20",
+    "name": "$300 Pot Limit Omaha $10K GTD (1Day) \u2014 Double Board Bomb Pot",
+    "start": "12:10 PM",
+    "buy_in": 300,
+    "eligibility": "21+ with Venetian Rewards card"
+   },
+   "fallback": {
+    "id": "V-E21",
+    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+    "start": "5:10 PM",
+    "buy_in": 200,
+    "eligibility": "21+ with Venetian Rewards card",
+    "condition": "Conditional: only if the player exits the earlier event before this start (and before its late-registration cutoff)."
+   },
+   "extra": [],
+   "overlap_flags": [
+    "Two confirmed events share this day and their play windows overlap by design (a 1-Day event runs to a winner). The later start is a fallback only."
+   ]
+  }
+ ],
+ "overlap_method": "For each day: the confirmed single-entry event with the earliest start is the primary. The evening event is listed as a conditional fallback (playable only if the player exits the earlier event). A 1-Day event at the Venetian runs to a winner (typically 10\u201314 hours from start; sheets list 28 levels) so the same-day evening event cannot be scheduled back-to-back \u2014 it is a fallback, not a second seat time. Durations are estimates from level counts on the official sheets, not published finish times (flagged)."
+}

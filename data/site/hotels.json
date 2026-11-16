@@ -1,0 +1,328 @@
+{
+ "as_of": "2026-11-16",
+ "tax_note": "Clark County room tax 13.38% is disclosed in the Venetian hotel terms (operator disclosure; no independent county page captured). The same rate is applied to the resort fee as an assumption \u2014 confirm at booking. Wynn terms say only 'plus tax'.",
+ "true_cost_formula": "true cost per night = (room rate + resort fee) \u00d7 1.1338  [tax on both components is an assumption to confirm]. Parking optional add-on. Security deposit is not a cost unless charged.",
+ "quality_floor": "Planning assumption: 4-star-and-up class resort (user's quality priority). Quality labels are classes, not third-party ratings \u2014 no official rating body listing was captured (flagged).",
+ "budget_floor": "Planning assumption: nightly true-cost target \u2264 $250 (adjustable in the trip calculator).",
+ "parking_verified": {
+  "H-VEN": "$20/day for hotel guests (Venetian hotel terms)",
+  "H-PAL": "$20/day for hotel guests (Venetian hotel terms)"
+ },
+ "cancellation_note": "Cancellation deadlines are rate-specific and are captured only at booking (no official deadline captured \u2014 blank/flagged).",
+ "rows": [
+  {
+   "id": "H-VEN",
+   "name": "The Venetian",
+   "address": "3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per night (official resort-fee page)",
+   "parking": "$20/day hotel guests; $150/night incidental hold (official hotel terms)",
+   "booking_url": "https://www.venetianlasvegas.com/book",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Home of DSE IV \u2014 zero walk to the tournament room. Poker player rates in the dated rate log (conditional)."
+  },
+  {
+   "id": "H-PAL",
+   "name": "The Palazzo",
+   "address": "3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per night (official resort-fee page)",
+   "parking": "$20/day hotel guests (official hotel terms)",
+   "booking_url": "https://www.venetianlasvegas.com/book",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Same tower complex as the Venetian poker room."
+  },
+  {
+   "id": "H-WYN",
+   "name": "Wynn Las Vegas",
+   "address": "3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per room night (official resort information page)",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.wynnlasvegas.com/",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Wynn Tower Suites holds a 20th consecutive Forbes Travel Guide Five-Star rating statement for 2026 (applies to Tower Suites only)."
+  },
+  {
+   "id": "H-ENC",
+   "name": "Encore Las Vegas",
+   "address": "3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per room night (official resort information page)",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.wynnlasvegas.com/",
+   "quality_class": "5-star class (assumption)",
+   "notes": "The Wynn poker room is inside Encore (WPT general terms, note 3). Best WPT location."
+  },
+  {
+   "id": "H-CP",
+   "name": "Caesars Palace",
+   "address": "3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/caesars-palace",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Host of the daily $100/$160 NLH with the $50 add-on."
+  },
+  {
+   "id": "H-HS",
+   "name": "Horseshoe Las Vegas",
+   "address": "3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/horseshoe-las-vegas",
+   "quality_class": "3-star class (assumption)",
+   "notes": "Budget-friendly; hosts the earliest verified daily start (9 AM)."
+  },
+  {
+   "id": "H-ARI",
+   "name": "ARIA Resort & Casino",
+   "address": "3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per night; $50 plus tax extra occupant (MGM terms)",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://aria.mgmresorts.com/",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Gold+ MGM Rewards may waive the resort fee."
+  },
+  {
+   "id": "H-BEL",
+   "name": "Bellagio",
+   "address": "3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 55,
+   "resort_fee_txt": "$55 plus tax per night; $50 plus tax extra occupant (MGM terms)",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://bellagio.mgmresorts.com/",
+   "quality_class": "5-star class (assumption)",
+   "notes": "Central Strip location; hosts weekly tournaments per its poker page."
+  },
+  {
+   "id": "H-MGM",
+   "name": "MGM Grand",
+   "address": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": 50,
+   "resort_fee_txt": "$50 plus applicable tax per night (MGM hotel terms)",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://mgmgrand.mgmresorts.com/",
+   "quality_class": "4-star class (assumption)",
+   "notes": "Home of the Saturday $150/$2K event."
+  },
+  {
+   "id": "H-HAR",
+   "name": "Harrah's Las Vegas",
+   "address": "3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/harrahs-las-vegas",
+   "quality_class": "3-star class (assumption)",
+   "notes": "Budget-friendly center-north Strip."
+  },
+  {
+   "id": "H-LIN",
+   "name": "The LINQ",
+   "address": "3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/linq",
+   "quality_class": "3-star class (assumption)",
+   "notes": "Budget-friendly."
+  },
+  {
+   "id": "H-FLA",
+   "name": "Flamingo Las Vegas",
+   "address": "3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/flamingo-las-vegas",
+   "quality_class": "3-star class (assumption)",
+   "notes": "Central; short walk to Caesars/Horseshoe."
+  },
+  {
+   "id": "H-CRO",
+   "name": "The Cromwell",
+   "address": "3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/cromwell",
+   "quality_class": "4-star class (assumption)",
+   "notes": "Boutique; closest Caesars-area hotel to the Horseshoe."
+  },
+  {
+   "id": "H-PAR",
+   "name": "Paris Las Vegas",
+   "address": "3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/paris-las-vegas",
+   "quality_class": "4-star class (assumption)",
+   "notes": ""
+  },
+  {
+   "id": "H-PH",
+   "name": "Planet Hollywood",
+   "address": "3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.caesars.com/planet-hollywood",
+   "quality_class": "4-star class (assumption)",
+   "notes": ""
+  },
+  {
+   "id": "H-PMG",
+   "name": "Park MGM",
+   "address": "3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://parkmgm.mgmresorts.com/",
+   "quality_class": "4-star class (assumption)",
+   "notes": "Non-smoking resort."
+  },
+  {
+   "id": "H-RW",
+   "name": "Resorts World Las Vegas",
+   "address": "3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.resortsworldlv.com/",
+   "quality_class": "5-star class (assumption)",
+   "notes": "North Strip; convenient for the Wynn/WPT side."
+  },
+  {
+   "id": "H-WG",
+   "name": "Westgate Las Vegas",
+   "address": "2901 Paradise Rd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.westgateresorts.com/las-vegas/",
+   "quality_class": "3-star class (assumption)",
+   "notes": "Off-Strip east of the Convention Center; own poker room (aggregator-sourced $70 freezeout lead \u2014 flagged, not verified)."
+  },
+  {
+   "id": "H-NYN",
+   "name": "New York-New York",
+   "address": "3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://newyorknewyork.mgmresorts.com/",
+   "quality_class": "4-star class (assumption)",
+   "notes": ""
+  },
+  {
+   "id": "H-MB",
+   "name": "Mandalay Bay",
+   "address": "3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://mandalaybay.mgmresorts.com/",
+   "quality_class": "4-star class (assumption)",
+   "notes": "South Strip \u2014 outside the 30-minute walk to Venetian."
+  },
+  {
+   "id": "H-GN",
+   "name": "Golden Nugget (downtown)",
+   "address": "129 E. Fremont St, Las Vegas, NV 89101",
+   "resort_fee": null,
+   "resort_fee_txt": "not captured from an official page \u2014 flagged",
+   "parking": "not captured \u2014 flagged",
+   "booking_url": "https://www.goldennugget.com/las-vegas/",
+   "quality_class": "4-star class (assumption)",
+   "notes": "Downtown \u2014 well outside the 30-minute walk to any Strip venue."
+  }
+ ],
+ "rate_log": [
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-VEN",
+   "kind": "poker player rate (conditional)",
+   "value_usd": 119,
+   "unit": "per night, from",
+   "conditions": "Official 2026 poker-rate page: from $119 (Venetian suites). Requires 6 hours live cash or a $300+ tournament buy-in per night; availability applies. Not a dated quote.",
+   "source": "V_SUITE_RATES"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-PAL",
+   "kind": "poker player rate (conditional)",
+   "value_usd": 209,
+   "unit": "per night, from",
+   "conditions": "Official 2026 poker-rate page: from $209 (Palazzo suites). Same qualifying-play conditions. Not a dated quote. Page wording lists both amounts together; property mapping follows the page's presentation order and is flagged for confirmation at reservation.",
+   "source": "V_SUITE_RATES"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-VEN",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "Payable at check-in; includes fitness access for two, in-suite internet, boarding pass printing, local calls, PressReader.",
+   "source": "V_RESORT_FEE"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-PAL",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "Same resort-fee page covers Venetian and Palazzo.",
+   "source": "V_RESORT_FEE"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-WYN",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "Wynn resort information page: daily resort fee $55 plus tax.",
+   "source": "W_RESORT_INFO"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-ENC",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "Wynn resort information page covers the resort (Wynn and Encore towers).",
+   "source": "W_RESORT_INFO"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-MGM",
+   "kind": "resort fee",
+   "value_usd": 50,
+   "unit": "per night, plus tax",
+   "conditions": "MGM Grand hotel terms: $50 plus applicable tax; eligible MGM Rewards Gold+ reservations may qualify for a waiver.",
+   "source": "MGM_TC"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-ARI",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "MGM Resorts hotel terms list $55 plus tax for ARIA ($50 plus tax extra occupant); Gold+ may waive.",
+   "source": "MGM_TC"
+  },
+  {
+   "date": "2026-11-16",
+   "hotel_id": "H-BEL",
+   "kind": "resort fee",
+   "value_usd": 55,
+   "unit": "per night, plus tax",
+   "conditions": "MGM Resorts hotel terms list $55 plus tax for Bellagio ($50 plus tax extra occupant); Gold+ may waive.",
+   "source": "MGM_TC"
+  }
+ ]
+}
