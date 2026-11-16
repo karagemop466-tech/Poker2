@@ -424,18 +424,20 @@ function calcTrip(){
   var tourn=entries*buyin;
   var total=hotel+parking+tourn+other;
 
+  var m2=function(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var m0=function(n){return '$'+n.toLocaleString('en-US',{maximumFractionDigits:0})};
   var set=function(id,v){var el=document.getElementById(id); if(el) el.textContent=v;};
-  set('o_night','$'+fmt(perNight||0));
-  set('o_room','$'+fmt(roomTotal||0));
-  set('o_fee','$'+fmt(feeTotal||0));
-  set('o_tax','$'+fmt(taxTotal||0));
-  set('o_hotel','$'+fmt(hotel||0));
-  set('o_park','$'+fmt(parking||0));
-  set('o_tourn','$'+fmt(tourn||0));
-  set('o_other','$'+fmt(other||0));
-  set('o_total','$'+fmt(total||0));
-  set('o_perday', nights>0 ? '$'+fmt(total/nights) : '—');
-  set('o_perentry', entries>0 ? '$'+fmt(total/entries) : '—');
+  set('o_night',m2(perNight||0));
+  set('o_room',m2(roomTotal||0));
+  set('o_fee',m2(feeTotal||0));
+  set('o_tax',m2(taxTotal||0));
+  set('o_hotel',m2(hotel||0));
+  set('o_park',m2(parking||0));
+  set('o_tourn',m0(tourn||0));
+  set('o_other',m2(other||0));
+  set('o_total',m2(total||0));
+  set('o_perday', nights>0 ? m2(total/nights) : '—');
+  set('o_perentry', entries>0 ? m2(total/entries) : '—');
 }
 document.addEventListener('DOMContentLoaded',function(){
   var c=document.getElementById('c_nights');
@@ -1209,7 +1211,7 @@ room rate to a real quote the moment you have one.</p>
 <tbody>
 <tr><td>The Venetian, 7 nights, published poker starting rate</td>
 <td>{src_link('V_SUITE_RATES')} $119</td><td>$55</td><td>13.38%</td>
-<td class="num">$119 + $55 + 13.38% × $174 = <b>$197.29</b></td>
+<td class="num">$119 + $55 + 13.38% × $174 = <b>$197.28</b></td>
 <td><span class="tag warn">rate conditional</span></td></tr>
 <tr><td>The Venetian, 7 nights, no poker-rate qualification (prevailing rate)</td>
 <td><span class="blank">—</span></td><td>$55</td><td>13.38%</td>
