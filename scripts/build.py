@@ -624,6 +624,29 @@ is inside Encore. That is a description of the location, not a walking time.</p>
 </section>
 
 <section class="block">
+<div class="head"><h2>The 30-minute walking rule</h2>
+<p>The constraint was that a hotel must be within a 30-minute walk of a tournament. Here is
+exactly how far that constraint can be enforced from official sources today.</p></div>
+<div class="tw"><table class="t"><thead><tr><th>Step in the rule</th><th>What official sources give us</th>
+<th>Status</th></tr></thead><tbody>
+<tr><td>Is the poker room in the hotel?</td><td>Published for all six venues, with the room's floor or
+wing (column 2 above). The Venetian and Palazzo towers share one complex with the poker room; Wynn's
+poker room sits inside Encore.</td><td>%s</td></tr>
+<tr><td>How long is the walk?</td><td>Nothing. No retrieved official page states a walking duration,
+distance or route between a Strip hotel and a poker room.</td><td>%s</td></tr>
+<tr><td>Apply the 30-minute cap</td><td>Cannot be applied mechanically without the previous step.
+Applying it would mean inventing the number the cap is applied to.</td><td>%s</td></tr>
+<tr><td>Practical consequence</td><td>Every property on this page is either in the same building as a
+poker room or directly connected to one, so none is plausibly beyond a 30-minute indoor walk — but
+<i>plausibly</i> is the site owner's inference, not a verified fact, and it is therefore not used to
+rank anything.</td><td>%s</td></tr>
+</tbody></table></div>
+<p class="note">To close this: time one walk per hotel–room pair, record the date, the route and
+whether it was indoors, and the cap becomes checkable. That is Q-05 on the
+<a href="questions.html">Questions</a> page and F-03 on <a href="flagged.html">Flagged</a>.</p>
+</section>
+
+<section class="block">
 <div class="head"><h2>Dated rate log</h2>
 <p>Rates are stored as observations with a date and a source, never as a single remembered value.
 A new check appends a row; nothing is silently overwritten.</p></div>
@@ -668,7 +691,10 @@ calculator applies the fees and tax that the official pages publish for the prop
 </ul>
 <p class="mini">Source: %s · %s</p>
 </section>
-""" % ("".join(rows), "".join(logrows),
+""" % ("".join(rows),
+       badge("published", "ok"), badge("not published", "rev"),
+       badge("blocked", "warn"), badge("unverified", "rev"),
+       "".join(logrows),
        src_link("VTC"), src_link("WINFO"), src_link("BTC"), src_link("MGMTC"),
        src_link("VTC"), src_link("VPOKER"))
     h += foot()

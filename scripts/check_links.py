@@ -22,6 +22,33 @@ PAGES = [
 HREF = re.compile(r'href="([^"]+)"')
 
 
+
+def check_tables(files):
+    """Every generated table must have a consistent column count.
+
+    A mis-ordered %-argument tuple produces a table whose rows have the right
+    NUMBER of cells but the wrong CONTENT — the one class of error a build
+    cannot crash on. This catches ragged tables; scripts/audit.py catches the
+    semantic side (blank or nonsense cell values).
+    """
+    import re
+    problems = []
+    for path in files:
+        html = open(path, encoding="utf-8").read()
+        for t_i, table in enumerate(re.findall(r"<table[^>]*>.*?</table>", html, re.S)):
+            head = re.search(r"<thead>.*?</thead>", table, re.S)
+            if not head:
+                continue
+            ncols = len(re.findall(r"<th[ >]", head.group(0)))
+            body = table[head.end():]
+            for r_i, row in enumerate(re.findall(r"<tr[^>]*>.*?</tr>", body, re.S)):
+                cells = len(re.findall(r"<td[ >]", row))
+                if cells and cells != ncols:
+                    problems.append("%s: table %d row %d has %d cells, header has %d"
+                                    % (path, t_i, r_i, cells, ncols))
+    return problems
+
+
 def main():
     pages = list(PAGES)
     vdir = os.path.join(ROOT, "venues")
@@ -35,6 +62,8 @@ def main():
             errors.append("missing page: " + page)
             continue
         html = open(path, encoding="utf-8").read()
+        for p in check_tables([path]):
+            errors.append(p)
         base = os.path.dirname(page)
         ids = set(re.findall(r'id="([^"]+)"', html))
         for href in HREF.findall(html):

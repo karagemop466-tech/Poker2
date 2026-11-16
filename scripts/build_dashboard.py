@@ -1496,6 +1496,24 @@ the return leg is the same distance, though Google reports slightly different ti
 <div class="tablewrap"><table>
 <thead><tr><th>From ↓ / To →</th>{head}</tr></thead><tbody>{mrows}</tbody></table></div>
 
+<section class="panel warnbox">
+<h2>The strongest objection to this page, stated fairly</h2>
+<p>A parallel session working on the same brief refused to apply the 30-minute cap at all, on the grounds
+that <b>no casino publishes a walking duration, distance or route</b> between a Strip hotel and a poker
+room — so any number you put in the table would be an invention wearing a number's clothes. That session
+recorded the constraint as <i>blocked</i> rather than measured, and its reasoning is sound: a routing
+service is not a property policy.</p>
+<p><b>Why this page measures anyway.</b> The brief requires a walking-route check with a 30-minute limit.
+Refusing to measure leaves the requirement unanswered; measuring with the source class stated gives you
+something you can check yourself in thirty seconds by opening the same route. So every row here carries
+the class <span class="tag warn">routing</span>, the caveat that it excludes the in-building walk, and a
+direct link to the route used. If you would rather hold the stricter line, read the numbers as a rough
+gate and nothing more — the MGM Grand pair at 39 minutes fails under either reading, and that is the one
+result the two approaches agree on.</p>
+<p class="note">The honest summary: <b>distance is measured, authority is not.</b> No casino's own page
+will confirm these figures, and none is claimed to.</p>
+</section>
+
 <section class="panel">
 <h2>What the matrix says about where to stay</h2>
 <p><b>If the trip is Venetian-based</b> (the property with the largest and most completely catalogued
