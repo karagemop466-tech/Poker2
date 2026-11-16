@@ -46,11 +46,13 @@ jobs:
                   f.write("changed=%d\n" % len(changed))
           EOF
         id: summary
+      - name: Audit every row against its official source
+        run: python3 scripts/audit.py
       - name: Rebuild the site against the fresh data
         run: |
           python3 scripts/build.py
           python3 scripts/check_links.py
-      - name: Commit the dated check log and any rebuilt pages
+      - name: Commit the dated check log
         run: |
           git config user.name  "source-monitor"
           git config user.email "actions@users.noreply.github.com"

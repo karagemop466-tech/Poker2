@@ -435,13 +435,16 @@ def rows_events(events, limit=None):
         out.append(
             '<tr data-date="%s" data-class="%s" data-buyin="%s" data-single="%s">'
             '<td class="nowrap">%s</td><td class="nowrap">%s</td><td>%s</td><td>%s</td>'
-            '<td class="num">%s</td><td class="num">%s</td><td class="num">%s</td>'
+            '<td class="num">%s</td><td class="num">%s%s</td><td class="num">%s</td>'
             '<td><span class="badge %s">%s</span></td><td class="src">%s</td></tr>' % (
                 esc(e.get("date")), esc(e["entry_class"]), esc(e.get("buy_in") or ""),
                 "yes" if e["single_confirmed"] else "no",
                 date_cell, esc(pretty_time(e["start"]) if re.match(r"^\d", str(e["start"])) else e["start"]),
                 esc(e["venue"]), esc(e["name"]),
-                money(e.get("buy_in")), money(e.get("fee")), money(e.get("gtd")) or "—",
+                money(e.get("buy_in")),
+                money(e.get("fee")),
+                ('<br><span class="mini">%s</span>' % esc(e["fee_note"])) if e.get("fee_note") else "",
+                money(e.get("gtd")) or "—",
                 cls, esc(e["entry_class"]), srcs))
     return "\n".join(out)
 
@@ -468,9 +471,11 @@ official structure sheet the fee and rule text came from.</p></section>
 <thead><tr><th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th class="num">Buy-in</th>
 <th class="num">Fee withheld</th><th class="num">GTD</th><th>Entry type</th><th>Official source</th></tr></thead>
 <tbody>%s</tbody></table></div>
-<p class="note"><b>Fee withheld</b> is the amount the official structure sheet says is withheld from the
-buy-in for house fees (rake + staff). For the Wynn and Bellagio rows it combines the tournament fee and
-the poker staff service charge so the columns stay comparable.</p>
+<p class="note"><b>Fee withheld</b> is the total the official structure sheet says is deducted from the
+buy-in, i.e. buy-in minus the amount allocated to the prize pool, so the column reconciles exactly with
+the published pool money. Where an organiser's own breakdown includes a third-party series fee or an
+optional gratuity inside that total, the breakdown is printed under the figure (LIPS events, Bellagio,
+MGM Grand). Wynn rows combine the tournament fee and the poker staff service charge for the same reason.</p>
 """ % (len(EVENTS),
        "".join('<option value="%s">%s</option>' % (d, pretty_date(d)) for d in sorted(BY_DATE)),
        "".join('<option value="%s">%s</option>' % (c, c) for c in sorted(set(e["entry_class"] for e in EVENTS))),
@@ -520,9 +525,14 @@ the same day is always conditional, never a plan.</p></section>
 
 <section class="block">
 <div class="head"><h2>The planner</h2>
-<p>Primary = the event with the largest advertised guarantee that day (multi-flight, satellite and
-team events excluded, because they cannot be swapped mid-day). Fallback = the next later event whose
-late-registration close still leaves a realistic chance of entering after a bust.</p></div>
+<p><b>Primary</b> = a one-day event that starts before 3:00 PM, so the day is used from the morning;
+among those, the largest advertised guarantee wins and ties break earlier. If a date has no daytime
+one-day event, the primary becomes the largest-guarantee event of any start time and the row says so —
+presenting an evening-only day as a full day would be misleading. Multi-flight, satellite, restricted
+and restart events are excluded from the primary slot because they cannot be freely swapped once a
+flight has been played. <b>Fallback</b> = a later one-day event whose late-registration close still
+leaves a realistic chance of entering after a bust, so it is usable if the primary sells out at the
+cage.</p></div>
 <div class="tw"><table class="t"><thead><tr><th>Date</th><th>Primary event</th>
 <th>Conditional fallback</th><th>Overlap / sequencing note</th></tr></thead><tbody>
 %s</tbody></table></div>

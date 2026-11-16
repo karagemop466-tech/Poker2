@@ -1,0 +1,43 @@
+name: Verify site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit every row against the official document it cites
+        run: python3 scripts/audit.py
+      - name: Build
+        run: python3 scripts/build.py
+      - name: No broken internal links, no non-official external hosts
+        run: python3 scripts/check_links.py
+      - name: Generated pages are committed and up to date
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Generated files are out of date. Run scripts/build.py and commit."
+            git status --porcelain
+            git diff --stat
+            exit 1
+          fi
+          echo "Generated output matches the committed dataset."
+      - name: Dataset shape
+        run: |
+          python3 - <<'PY'
+          import json
+          for f in ("dataset", "events", "hotels", "flags"):
+              d = json.load(open("data/site/%s.json" % f))
+              n = len(d) if isinstance(d, list) else len(d.get("events", d) or [])
+              print("%-8s %s entries" % (f, n))
+          PY
