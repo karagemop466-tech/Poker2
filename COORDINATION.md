@@ -2,6 +2,10 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Add trip-cost tool, site-wide table/date filters, row check dates, and scheduled official-source change monitoring | in progress | arena/96765ae0-poker2 | `COORDINATION.md`, `trip-cost.html`, `source-monitor.html`, `site-tools.js`, `source-monitor.js`, `scripts/monitor_sources.py`, `.github/workflows/source-monitor.yml`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `data/tournaments.json`, `data/hotels.json`, `data/verified/tournaments.json`, `data/verified/hotels.json` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
 
