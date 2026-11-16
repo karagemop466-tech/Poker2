@@ -1,7 +1,7 @@
 {
  "as_of": "2026-11-16",
  "generated_by": "scripts/build_master.py",
- "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018freezeout-confirmed\u2019 means the official structure sheet was fully read and contains no re-entry, rebuy or add-on mechanism; it is not an express \u2018single entry\u2019 clause (see flag IR-8234-02).",
+ "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018sheet silent on re-entry\u2019 means the official structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. That is NOT the same as a published no-re-entry rule: no Las Vegas room in this dataset publishes one, so no event is labelled confirmed single-entry (see flag IR-8234-02).",
  "events": [
   {
    "id": "V-02",
@@ -22,9 +22,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -58,9 +58,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -94,9 +94,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -130,9 +130,9 @@
    "level_min": "20/15",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
@@ -164,9 +164,9 @@
    "level_min": 30,
    "late_reg": "8 levels + Break (~3:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Late Registration: 8 levels + Break (~ 3:40 PM).",
     "retrieved": "2026-11-16"
    },
@@ -201,9 +201,9 @@
    "level_min": 30,
    "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Players start the event as a $50 bounty. \u2026 A Prize Pool of $8,000 is guaranteed \u2026 which consists of the actual prize pool plus the total amount of bounty prize money.",
     "retrieved": "2026-11-16"
    },
@@ -237,9 +237,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -271,9 +271,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -307,9 +307,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -341,9 +341,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "NOT VERIFIED: structure sheet not yet read",
     "retrieved": "2026-11-16"
    },
@@ -377,9 +377,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -411,9 +411,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -447,9 +447,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -483,9 +483,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -521,9 +521,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In. \u2026 Players receive a $100 Bounty for each player they eliminate \u2026 A total prize pool of $15,000 is guaranteed \u2026 plus the total amount of $100 bounties.",
     "retrieved": "2026-11-16"
    },
@@ -594,9 +594,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In. \u2026 Guarantee: $10,000.",
     "retrieved": "2026-11-16"
    },
@@ -630,9 +630,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -666,9 +666,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -702,9 +702,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -738,9 +738,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (~3:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
     "retrieved": "2026-11-16"
    },
@@ -774,9 +774,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -810,9 +810,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake - Staff). Prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
     "retrieved": "2026-11-16"
    },
@@ -844,9 +844,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -880,9 +880,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -916,9 +916,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -952,9 +952,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -988,9 +988,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (~3:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
     "retrieved": "2026-11-16"
    },
@@ -1024,9 +1024,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1060,9 +1060,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1096,9 +1096,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1134,9 +1134,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Players receive a $200 Bounty for each player they eliminate \u2026 A total prize pool of $25,000 is guaranteed \u2026 plus the total amount of $200 bounties.",
     "retrieved": "2026-11-16"
    },
@@ -1170,9 +1170,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1207,9 +1207,9 @@
    "level_min": 30,
    "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In \u2026 for \u2026 (LIPS). Prize pool consists of $510 of every $600 Buy In. \u2026 Players receive $200 Bounty for each player they eliminate.",
     "retrieved": "2026-11-16"
    },
@@ -1243,9 +1243,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1279,9 +1279,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1316,9 +1316,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1352,9 +1352,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1388,9 +1388,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1424,9 +1424,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1461,9 +1461,9 @@
    "level_min": 30,
    "late_reg": "8 levels + break (~4:40 PM)",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
     "retrieved": "2026-11-16"
    },
@@ -1533,9 +1533,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1569,9 +1569,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1605,9 +1605,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1639,9 +1639,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -1675,9 +1675,9 @@
    "level_min": "",
    "late_reg": "",
    "rules": {
-    "single_entry": "freezeout-confirmed",
-    "re_entry": "none \u2014 no re-entry clause in sheet",
-    "add_on": "none \u2014 no add-on clause in sheet",
+    "single_entry": "not stated \u2014 sheet is silent on re-entry",
+    "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
+    "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
@@ -6996,7 +6996,9 @@
    "source": "data/flags.json",
    "item": "Clark County transient lodging tax",
    "where": "All hotels",
-   "detail": "Secondary sources conflict (13.38% vs 10.5%\u201313.38%). No official county source found. Left blank."
+   "detail": "Resolved 2026-11-16 by arena/e1c079dc-poker2: Clark County's Department of Business License guide for transient lodging establishments prints a 13.38% transient lodging tax rate for hotel/motel licences, and the county's combined transient lodging tax return shows the 8.5% + 4.5% county components. The Venetian and Cosmopolitan hotel terms state 13.38% verbatim. The rate is now entered with the county document as its source.",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "resolved": "2026-11-16"
   },
   {
    "source": "data/flags.json",
