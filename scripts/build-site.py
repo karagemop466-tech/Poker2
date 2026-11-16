@@ -87,6 +87,32 @@ def badge(text, kind="warn"):
     return '<span class="badge b-' + kind + '">' + esc(text) + "</span>"
 
 
+def minutes12(v):
+    """build-events.py stores derived clock values as minutes since midnight (1045 = 17:25),
+    while published times are "HH:MM" strings; this renders either one correctly."""
+    if v is None or v == "":
+        return "&mdash;"
+    if isinstance(v, str) and ":" in v:
+        return t12(v)
+    if isinstance(v, str) and re.fullmatch(r"\d{3,4}", v.strip()):
+        v = int(v)  # an HHMM value written as a string
+    if isinstance(v, (int, float)) and v < 24 * 60:
+        h, mm = divmod(int(v), 60)
+        return t12("{:02d}:{:02d}".format(h, mm))
+    return clock(v)
+
+
+def clock(v):
+    """Render a published time in 12-hour form. Accepts "16:55", "1655" and the integer 1655
+    that build-events.py stores for derived clock values."""
+    if v is None or v == "":
+        return "&mdash;"
+    if isinstance(v, int) or (isinstance(v, str) and re.fullmatch(r"\d{3,4}", v.strip())):
+        digits = str(int(v)).zfill(4)
+        v = digits[:2] + ":" + digits[2:]
+    return t12(v)
+
+
 def t12(s):
     if not s:
         return "&mdash;"
@@ -171,7 +197,7 @@ for e in events:
         flag = "yes"
     rows_all.append({
         "key": e["id"], "venue": e["venue"], "property": e["property"], "date": e["date"],
-        "dow": e["dow"], "start": e["start"], "start_lbl": t12(e["start"]),
+        "dow": e["dow"], "start": e["start"], "start_lbl": clock(e["start"]),
         "event_no": e["event_no"], "name": e["name"], "cat": cat, "cats": cats,
         "buy_in": e["buy_in"], "fee": e["fee"], "pool": e["pool_per_entry"], "gtd": e["gtd"],
         "ratio": e["ratio_gtd_to_buyin"], "chips": e["chips"], "level": e["level_min"],
@@ -292,7 +318,9 @@ def event_row(r):
         srcs += "<div>" + srclink(u, lab) + "</div>"
     excerpt = ""
     if r.get("excerpt"):
-        extra = ('<div class="sm">' + esc(r["extra"]) + "</div>") if r.get("extra") else ""
+        extra = ""
+        if r.get("extra") and r["extra"].strip() != r["excerpt"].strip():
+            extra = '<div class="sm">' + esc(r["extra"]) + "</div>"
         excerpt = ('<details><summary class="sm">official rule excerpt</summary><blockquote>'
                    + esc(r["excerpt"]) + "</blockquote>" + extra + "</details>")
     attrs = [
@@ -302,9 +330,7 @@ def event_row(r):
         ("data-search", ((r["property"] or "") + " " + (r["name"] or "") + " " + str(r["event_no"]) + " "
                          + (r["date"] or "") + " " + r["cat"]).lower()),
     ]
-    finish = t12(str(r["finish"]).zfill(4)) if isinstance(r["finish"], int) else esc(r["finish"] or "&mdash;")
-    if not r["finish"]:
-        finish = "&mdash;"
+    finish = minutes12(r["finish"])
     cells = [
         '<td class="nowrap">' + esc(r["date"] or "recurring") + '<div class="sm">' + esc(r["dow"] or "") + "</div></td>",
         "<td>" + esc(r["property"]) + "</td>",
@@ -318,7 +344,7 @@ def event_row(r):
         '<td class="num">' + ratio(r["ratio"]) + "</td>",
         '<td class="num">' + num(r["chips"]) + "</td>",
         '<td class="num">' + (str(r["level"]) + " min" if r["level"] else "&mdash;") + "</td>",
-        '<td class="nowrap">' + t12(r["reg_close"]) + "</td>",
+        '<td class="nowrap">' + clock(r["reg_close"]) + "</td>",
         '<td class="nowrap">' + finish + '<div class="sm">derived</div></td>',
         '<td class="change-cell">' + esc(r["last_checked"]) + "</td>",
         "<td>" + srcs + "</td>",
@@ -537,8 +563,8 @@ def p_schedule():
         flags = "".join('<div class="sm">&#9888; ' + esc(fl["text"]) + "</div>" for fl in d["flags"])
         if f:
             fcell = ('<a href="tournaments.html#' + esc(f["id"]) + '">Event ' + esc(f["event_no"]) + "</a> &middot; "
-                     + esc(f["name"]) + '<div class="sm">start ' + t12(f["start"]) + " &middot; reg closes "
-                     + t12(f["reg_close"]) + " &middot; usable only if you are out before then</div>")
+                     + esc(f["name"]) + '<div class="sm">start ' + clock(f["start"]) + " &middot; reg closes "
+                     + clock(f["reg_close"]) + " &middot; usable only if you are out before then</div>")
             both = p["buy_in"] + f["buy_in"]
         else:
             fcell = '<span class="muted">none that qualifies</span>'
@@ -551,8 +577,8 @@ def p_schedule():
                     + '<td class="nowrap">' + esc(k) + '<div class="sm">' + esc(d["dow"]) + "</div></td>"
                     + '<td class="num">' + str(d["qualifying_events"]) + "</td>"
                     + '<td><a href="tournaments.html#' + esc(p["id"]) + '">Event ' + esc(p["event_no"]) + "</a> &middot; "
-                    + esc(p["name"]) + '<div class="sm">start ' + t12(p["start"]) + " &middot; reg closes "
-                    + t12(p["reg_close"]) + " &middot; earliest plausible finish " + esc(p["earliest_plausible_finish"])
+                    + esc(p["name"]) + '<div class="sm">start ' + clock(p["start"]) + " &middot; reg closes "
+                    + clock(p["reg_close"]) + " &middot; earliest plausible finish " + esc(p["earliest_plausible_finish"])
                     + " &middot; " + num(p["chips"]) + " chips / " + str(p["level_min"]) + "-min levels</div>"
                     + flags + "</td>"
                     + '<td class="num">' + money(p["buy_in"]) + "</td>"
@@ -593,8 +619,8 @@ highest published guarantee-per-entry that starts before noon, so the day is act
 exists, an evening event that is usable only as a fallback because its registration is still open when you would
 bust out.</p>
 <div class="note"><b>The 8 AM question.</b> The earliest start published anywhere in the series is
-""" + t12(SCH["earliest_start_in_series"]) + """ (a Dec 12 satellite) and the earliest cash-prize start is
-""" + t12(SCH["earliest_day_start"]) + """. A day cannot be planned earlier than the schedule, so each day starts as
+""" + clock(SCH["earliest_start_in_series"]) + """ (a Dec 12 satellite) and the earliest cash-prize start is
+""" + clock(SCH["earliest_day_start"]) + """. A day cannot be planned earlier than the schedule, so each day starts as
 early as the series does; the 10:10 AM RaceDay format is the only verified second-shot option.</div>
 <ol class="sm">""" + rules + """</ol>
 <h2>All """ + str(len(SCH["days"])) + """ planned days</h2>
@@ -768,8 +794,8 @@ def p_tripcost():
     for d in days:
         p = d["primary"]
         entry_rows += ('<div class="line"><span>' + esc(d["date"]) + " &middot; Event " + esc(p["event_no"])
-                       + " &mdash; " + esc(p["name"]) + ' <span class="sm">start ' + t12(p["start"])
-                       + ", reg closes " + t12(p["reg_close"]) + "</span></span><b>" + money(p["buy_in"]) + "</b></div>")
+                       + " &mdash; " + esc(p["name"]) + ' <span class="sm">start ' + clock(p["start"])
+                       + ", reg closes " + clock(p["reg_close"]) + "</span></span><b>" + money(p["buy_in"]) + "</b></div>")
     lodging = per_night * rec["nights"]
     total = rec["entry_cost"] + lodging
     opt = ""
