@@ -189,9 +189,7 @@ The build refuses to publish a row whose source is not an official host.
 
 ## Monitoring
 
-`.github/workflows/recheck.yml` runs daily at 06:00 UTC: it re-fetches every official URL, hashes
-the normalised text, appends the run to `data/site/checks.json`, rebuilds the site and commits.
-A changed hash means a cited value may have moved — the site reports it rather than guessing.
+`.github/workflows/recheck.yml` runs daily at 06:00 UTC: it re-fetches every registered official URL, including each of the 37 Venetian structure PDFs, appends the run to `data/site/checks.json`, rebuilds the site and commits. HTML is compared using normalised text; PDFs are compared using raw response-byte SHA-256 hashes. A changed hash is a review flag, not proof that a cited value changed — the site reports it rather than guessing.
 
 ## Legacy pages
 

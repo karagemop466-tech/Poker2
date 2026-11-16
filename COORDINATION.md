@@ -2,6 +2,10 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Extend scheduled source checks to include each of the 37 individual Venetian structure-sheet URLs | done (monitor report awaits first live run) | arena/96765ae0-poker2 | `COORDINATION.md`, `scripts/dataset.py`, `scripts/recheck_sources.py`, `README.md`, `sources.html`, `summary.html`, `index.html`, `data/site/*` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Integrated research dashboard, source audit, and GitHub Pages site | done | arena/dc12202f-poker2 | `COORDINATION.md`, `README.md`, `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
 | Official structure-level event analysis, Venetian resort-fee/player-rate detail, organized subpages and source verification integration | done | arena/b9936cd9-poker2 | `COORDINATION.md`, `index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `style.css` |
 
@@ -252,6 +256,15 @@ Defects found and fixed by reading the deployed pages, which the build could not
 
 Known limitations, unchanged and published: no confirmed single-entry event (F-01), no dated hotel total (F-04), no official walking time (F-03), no tax percentage for four of six properties (F-05), and three WPT event terms not re-read (F-13). The scheduled monitor's first live run will happen in GitHub Actions, not here.
 
+## Session arena/96765ae0-poker2 — source-monitor coverage follow-up (2026-11-16)
+
+- Main moved ahead during initial feature work: PRs [#19](https://github.com/karagemop466-tech/Poker2/pull/19) and [#21](https://github.com/karagemop466-tech/Poker2/pull/21) integrated the requested dashboard features and official schedule verification while this branch was in progress. Duplicate PR [#20](https://github.com/karagemop466-tech/Poker2/pull/20) was closed without merge to avoid overwriting that newer integration.
+- Re-read the merged monitor registry and found that the initial scheduled monitor covered 23 source keys but represented the 37 Venetian structure PDFs only as a separate source list. Added one official registry key per PDF (`VSTRUCT01`…`VSTRUCT37`); the scheduled checker now covers 60 official URLs total.
+- Strengthened change detection for PDFs: HTML uses normalized visible text; PDF responses use raw-body SHA-256 so PDF-content changes are not lost by text decoding.
+- Updated generated dataset/source page and baseline placeholder to state 60 URLs / 60 pending first checks. No fetch result is claimed: `data/site/checks.json` deliberately remains `last_run: null`, with 60 awaiting first check.
+- Verification: `python3 scripts/build.py` generated 96 event rows and 60 official sources; `python3 scripts/audit.py` passed 83 Venetian + 13 other rows / 8 hotels / 60 sources; `python3 scripts/check_links.py` passed 18 pages / 1,232 links / 0 broken internal links / 0 non-official external hosts. Local HTML-link audit passed. Unit checks verified normalized HTML stability, raw PDF change detection, and all 37 numbered PDF URLs.
+- Monitoring cannot be manually dispatched from this session: GitHub returned HTTP 403 `Resource not accessible by integration` for Actions workflow dispatch. The existing daily 06:00 UTC schedule remains enabled; first live baseline is pending. Official sheet sources are enumerated on the [Source register](https://karagemop466-tech.github.io/Poker2/sources.html).
+
 ## Session arena/8234a824-poker2 — integration + feature session (2026-11-16)
 
 | Task | Status | Owner | Files |
@@ -288,3 +301,15 @@ Conflict resolution during rebase onto main (2026-11-16):
 - `git pull --rebase origin main` hit conflicts with session arena/7a4b09e2-poker2's merged root site (PRs #18–#23): both sessions generated `index.html`, `tournaments.html`, `hotels.html`, `flagged.html`, `questions.html`, `summary.html`, `suggestions.html`, `repo-review.html`, `assets/site.css`, `assets/site.js`, plus `COORDINATION.md`/`README.md` rewrites.
 - Resolution preserved BOTH sessions' work: arena/7a4b09e2-poker2's root pages are archived verbatim under `archive/arena-7a4b09e2/`; all of that session's non-conflicting outputs (`venues/*.html`, `schedule.html`, `single-entry.html`, `sources.html`, `data/site/*.json`, `scripts/{build,dataset,audit,recheck_sources,check_links}.py`, CI workflow) remain untouched and live. The arena/8234a824-poker2 integration pages are the live root dashboard; `COORDINATION.md` is the union of both records.
 - Second rebase (same day): main advanced again via PR #25 (session arena/7a4b09e2-poker2 docs update). COORDINATION.md conflicted again and was resolved the same way — union of main's board plus this session's section above; no other file conflicts. Asset collision resolved by keeping arena/7a4b09e2-poker2's `assets/site.css`/`site.js` for their live pages and moving this dashboard to `assets/dashboard.css`/`dashboard.js`.
+=======
+## Session arena/96765ae0-poker2 — source-monitor coverage follow-up (2026-11-16)
+
+- Main moved ahead during initial feature work: PRs [#19](https://github.com/karagemop466-tech/Poker2/pull/19) and [#21](https://github.com/karagemop466-tech/Poker2/pull/21) integrated the requested dashboard features and official schedule verification while this branch was in progress. Duplicate PR [#20](https://github.com/karagemop466-tech/Poker2/pull/20) was closed without merge to avoid overwriting that newer integration.
+- Re-read the merged monitor registry and found that the initial scheduled monitor covered 23 source keys but represented the 37 Venetian structure PDFs only as a separate source list. Added one official registry key per PDF (`VSTRUCT01`…`VSTRUCT37`); the scheduled checker now covers 60 official URLs total.
+- Strengthened change detection for PDFs: HTML uses normalized visible text; PDF responses use raw-body SHA-256 so PDF-content changes are not lost by text decoding.
+- Updated generated dataset/source page and baseline placeholder to state 60 URLs / 60 pending first checks. No fetch result is claimed: `data/site/checks.json` deliberately remains `last_run: null`, with 60 awaiting first check.
+- Verification: `python3 scripts/build.py` generated 96 event rows and 60 official sources; `python3 scripts/audit.py` passed 83 Venetian + 13 other rows / 8 hotels / 60 sources; `python3 scripts/check_links.py` passed 18 pages / 1,232 links / 0 broken internal links / 0 non-official external hosts. Local HTML-link audit passed. Unit checks verified normalized HTML stability, raw PDF change detection, and all 37 numbered PDF URLs.
+- Monitoring cannot be manually dispatched from this session: GitHub returned HTTP 403 `Resource not accessible by integration` for Actions workflow dispatch. The existing daily 06:00 UTC schedule remains enabled; first live baseline is pending. Official sheet sources are enumerated on the [Source register](https://karagemop466-tech.github.io/Poker2/sources.html).
+>>>>>>> origin/main
+
+- Third merge (2026-11-16): PR #26 (session arena/96765ae0-poker2) touched root `index.html`/`summary.html` while adding structure-sheet source monitoring. Their page versions are archived under `archive/arena-96765ae0/`; their monitoring data and coordination record merged cleanly and are live.

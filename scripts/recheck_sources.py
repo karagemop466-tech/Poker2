@@ -3,7 +3,7 @@
 
 Runs on a schedule (see .github/workflows/recheck.yml). For each URL:
   * fetch it with a browser-like User-Agent and a timeout;
-  * strip HTML tags / normalise whitespace so trivial markup churn is ignored;
+  * strip HTML tags / normalise whitespace for HTML; hash PDFs as raw bytes;
   * store a SHA-256 short hash plus the HTTP status;
   * compare with the previous run and append a change record when the hash moves.
 
@@ -19,6 +19,7 @@ import sys
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
+from urllib.parse import urlsplit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -35,6 +36,17 @@ def normalise(raw):
     text = re.sub(r"(?s)<[^>]+>", " ", text)
     text = text.replace("&nbsp;", " ").replace("&amp;", "&")
     return re.sub(r"\s+", " ", text).strip()
+
+
+def content_hash(url, raw):
+    """Return a short SHA-256 and method; preserve all PDF bytes, normalise HTML text."""
+    if urlsplit(url).path.lower().endswith(".pdf"):
+        body = raw
+        method = "raw PDF bytes"
+    else:
+        body = normalise(raw).encode("utf-8")
+        method = "normalised HTML text"
+    return hashlib.sha256(body).hexdigest()[:16], method
 
 
 def fetch(url):
@@ -62,10 +74,9 @@ def main():
         row = dict(key=key, label=label, url=url)
         try:
             code, raw = fetch(url)
-            body = normalise(raw)
             row["status"] = code
-            row["hash"] = hashlib.sha256(body.encode("utf-8")).hexdigest()[:16]
-            row["chars"] = len(body)
+            row["hash"], row["hash_method"] = content_hash(url, raw)
+            row["bytes"] = len(raw)
             old = previous.get(key)
             if old is None:
                 row["change"] = "first check"
@@ -89,8 +100,8 @@ def main():
         changed_this_run=len(changed),
         never_checked=sum(1 for r in results if r["change"] == "first check"),
         errors=sum(1 for r in results if r["change"] == "fetch error"),
-        note=("Content hashes of the normalised text of each official source. "
-              "A 'CHANGED' row means the official page moved; the corresponding site "
+        note=("HTML is hashed from normalised visible text; PDFs are hashed as raw response bytes. "
+              "A 'CHANGED' row means the official response moved; the corresponding site "
               "value must be re-read before it is relied on."),
         runs=history,
     )
