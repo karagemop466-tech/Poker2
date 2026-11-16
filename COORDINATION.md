@@ -313,3 +313,9 @@ Conflict resolution during rebase onto main (2026-11-16):
 >>>>>>> origin/main
 
 - Third merge (2026-11-16): PR #26 (session arena/96765ae0-poker2) touched root `index.html`/`summary.html` while adding structure-sheet source monitoring. Their page versions are archived under `archive/arena-96765ae0/`; their monitoring data and coordination record merged cleanly and are live.
+
+### Integration result — session arena/8234a824-poker2 (2026-11-16)
+- Integration PR: [#27](https://github.com/karagemop466-tech/Poker2/pull/27) (arena/8234a824-poker2 → main), merged 2026-11-16 with a merge commit. Contents: consolidated verified dashboard (15 pages), unified `data/master.json` (166 events / 8 hotels / 31 flags), structure-sheet verification pass (15 Venetian PDFs), trip calculator, day plan with overlap flags, descriptive ranking, structured rule fields, dated hotel rate logs, and the scheduled source monitor.
+- GitHub Pages: `Deploy static site to GitHub Pages` workflow run [43941774453](https://github.com/karagemop466-tech/Poker2/actions/runs/43941774453) completed `success` for the merge commit; `pages build and deployment` reported `built`. Live site: https://karagemop466-tech.github.io/Poker2/
+- `Verify site` check failed after the merge because scripts/build.py (arena/7a4b09e2-poker2) regenerates root filenames owned by the integration dashboard ("Generated files are out of date"). Fixed by scoping the freshness check to build.py-owned outputs and restoring integration-owned pages before the comparison (`.github/workflows/verify.yml`), plus scoping the source-monitor commit list to integration-owned pages. Follow-up merged via the PR recorded below.
+- Follow-up PR (CI ownership fix + this record): see next line once merged.

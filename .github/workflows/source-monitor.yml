@@ -27,6 +27,8 @@ jobs:
           git config user.name "poker2-source-monitor"
           git config user.email "actions@users.noreply.github.com"
           git add data/source_monitor.json data/monitor-report.md data/snapshots data/master.json
-          git add -A '*.html' || true
+          git add index.html summary.html tournaments.html venue-venetian.html venue-wynn.html \
+                  venue-others.html hotels.html planner.html planning.html ranking.html rules.html \
+                  monitor.html flagged.html questions.html suggestions.html repo-review.html
           git diff --cached --quiet || git commit -m "Source monitor: re-check official URLs $(date -u +%F)"
           git push
