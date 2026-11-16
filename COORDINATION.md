@@ -68,3 +68,20 @@ Integration result (arena/acd81e67-poker2 → main):
 - Live check: https://karagemop466-tech.github.io/Poker2/docs/single-entry.html fetched and served the merged content. Root site https://karagemop466-tech.github.io/Poker2/ is the other session's page and was not changed.
 - Known issue for review: this branch was force-updated once (a broken merge commit was amended before PR #7 was merged); no other session's commits were rewritten.
 - Flagged items (do not block merge): see `docs/flagged.html` F-01…F-22, and the notes above on main's `reg_closes`/`chips`/`level` values.
+
+
+## Session arena-poker-agent-1 — claims and record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Parallel full build: dashboard, single-entry table, advantage events, hotels, schedule, summary, suggestions, questions, flagged review | done; integrated into main via cross-links | arena-poker-agent-1 | `index.html` (cross-links added), `pages/tournaments.html`, `pages/advantage-tournaments.html`, `pages/executive-summary.html`, `pages/hotels.html`, `pages/schedule.html` (conflict → main's retained), `pages/suggestions.html`, `pages/questions.html` (conflict → main's retained), `pages/flagged-review.html`, `assets/css/style.css`, `COORDINATION.md` |
+
+Notes for integration (2026-11-16):
+- This session branched from main at 058cd54 (the initial commit) on branch `arena/f1bedfe3-poker2`; main had since been integrated by sessions arena/dc12202f-poker2, arena/b9936cd9-poker2, arena/f743ae5a-poker2, arena/acd81e67-poker2 (PRs #2–#7) and already carries a deployed GitHub Pages site at https://karagemop466-tech.github.io/Poker2/.
+- Merge conflict on PR #10: add/add on `COORDINATION.md`, `index.html`, `pages/questions.html`, `pages/schedule.html`. Resolved by keeping main's versions of the four conflicted files (no other session's work discarded) and adding my unique pages to main's `index.html` navigation under "PARALLEL SESSION arena/f1bedfe3-poker2 (additional pages; main pages above retained)".
+- Research date: Mon, Nov 16, 2026. Official sources verified: Venetian DSE IV listing + per-event structure sheets (venetianlasvegas.com), Wynn daily poster + All_Daily_Structures.pdf + WPT World Championship schedule PDF (wynnlasvegas.com / wynnresorts.com CDN), aria.mgmresorts.com, bellagio.mgmresorts.com, caesars.com, Wynn/Venetian official terms (resort fees $55 + tax confirmed for Wynn and Venetian/Palazzo).
+- Verification standard: every table row links to an official source; unverifiable values left blank and flagged (never inferred); internal link audit passed (0 missing); external official links fetched successfully.
+- Flagged items: Venetian in-flight re-entry policy; Wynn daily suspension during WPT Nov 27–Dec 21; Aria/Bellagio/Caesars schedules; all room rates (dynamic booking engines); most resort fees; walking times are estimates; 8 AM start has no verified event (earliest verified 10:10 AM). Full list: `pages/flagged-review.html` (this branch) and `docs/flagged.html` / `pages/flagged-rows.html` (main).
+- PR #10: `arena/f1bedfe3-poker2` → `main`; MERGED 2026-11-16 (merge commit c7deb19e) — https://github.com/karagemop466-tech/Poker2/pull/10
+- GitHub Pages: live at https://karagemop466-tech.github.io/Poker2/ (source: branch main, path /); latest build `built` at 2026-11-16T18:46:49Z. Homepage and /pages/tournaments.html verified rendering live with all internal links resolving.
+- T10 (integration) marked done. All task records preserved; no other session's work was discarded.
