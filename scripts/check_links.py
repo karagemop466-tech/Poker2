@@ -12,10 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OFFICIAL = (
     "venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com", "mgmresorts.com",
     "contentstack.io", "caesars.com", "github.com", "pokertda.com", "visitwynn.com",
-    "rwlasvegas.com", "google.com", "apple.com",
-    # added by arena/e1c079dc-poker2: both are the operator's own official domain
-    "westgateresorts.com", "goldennugget.com", "southpointcasino.com",
-    "clarkcountynv.gov",
+    "rwlasvegas.com", "google.com", "apple.com", "goldennugget.com",
+    # added by arena/e1c079dc-poker2: operator and county official domains
+    "westgateresorts.com", "southpointcasino.com", "clarkcountynv.gov",
 )
 PAGES = [
     "index.html", "tournaments.html", "schedule.html", "hotels.html", "venues.html",
