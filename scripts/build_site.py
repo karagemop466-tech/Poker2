@@ -116,9 +116,9 @@ def se_row(i, r):
 
 se_table = "\n".join(se_row(i+1, r) for i, r in enumerate(ranked))
 se_body = f"""<h2>Single-entry live tournaments (Venetian DeepStack Extravaganza IV)</h2>
-<div class="box"><b>Ranking:</b> highest buy-in first, then highest prize pool. Single-entry only. Dates Nov 16 – Dec 23, 2026.
+<div class="box"><b>Ranking:</b> highest buy-in first, then highest prize pool. Listed as single-entry per the official schedule (no multi-flight, team, or satellite format). Dates Nov 16 – Dec 23, 2026.
 <br><span class="note">Fee = venue fee per official structure sheet where read; blank if not verified. Times are local Las Vegas.
-Re-entry and add-on rules were read on the structure sheet for each row marked "no re-entry or add-on clause"; the other rows are flagged.</span></div>
+Entry rules column: "no re-entry or add-on clause" means the structure sheet we read does not mention re-entry or add-ons. It is an absence, not an express single-entry confirmation (the other branch's review reached the same conclusion for E2/E10). Rows marked NOT VERIFIED have no structure sheet read yet.</span></div>
 <table><tr><th>Rank</th><th>Date</th><th>Time</th><th>Event</th><th>Name (official)</th><th>Buy-in</th><th>GTD</th><th>Fee</th><th>Prize pool each</th><th>Starting chips</th><th>Entry rules</th><th>Sources</th></tr>
 {se_table}</table>
 <p class="note">Sources: official Venetian DeepStack IV schedule page (<a href="{esc(S['venetian_schedule_page'])}">link</a>) and per-event structure PDFs linked on each row. Satellites, team events, multi-flight and two-day events are on the <a href="excluded.html">Excluded / special</a> page.</p>"""
@@ -196,13 +196,13 @@ sched_body = f"""<h2>Daily single-entry schedule (all Venetian, 8:00 AM onward)<
 hot_rows = []
 for h in H["hotels"]:
     fee_src = h["resort_fee_source"]
-    poker_src = {"The Venetian Resort": S["venetian_schedule_page"], "Wynn Las Vegas": S["wynn_poker_page"], "Caesars Palace": S["caesars_poker_page"]}[h["name"]]
+    poker_src = {"The Venetian Resort": S["venetian_schedule_page"], "The Palazzo at The Venetian": S["venetian_schedule_page"], "Wynn Las Vegas": S["wynn_poker_page"], "Caesars Palace": S["caesars_poker_page"]}[h["name"]]
     check_source(poker_src, f"hotel poker {h['name']}")
     if fee_src: check_source(fee_src, f"hotel fee {h['name']}")
     fl = ["F-12", "F-13", "F-14"] if h["flags"] else []
     hot_rows.append(f"""<tr><td>{esc(h['name'])}</td><td>{esc(h['poker_link'])}</td>
 <td>{val(money(h['resort_fee_per_night']) if h['resort_fee_per_night'] != '' else '', 'F-18' if h['name']=='Wynn Las Vegas' else ('F-02' if 'Caesars' in h['name'] else ''))}</td>
-<td>{esc(h['resort_fee_note'])}</td><td>{val(h['room_rate_per_night'],'F-07' if 'Venetian' in h['name'] else 'F-12')}</td>
+<td>{esc(h['resort_fee_note'])}</td><td>{val(money(h['room_rate_per_night']) + ' (starting, conditional)' if h['room_rate_per_night'] else '', 'F-07' if 'Venetian' in h['name'] else 'F-12')} {('· ' + link(h['rate_source'],'rate source')) if h.get('rate_source') else ''}</td>
 <td>{val(h['all_in_cost_per_night'],'F-12')}</td><td>{val(h['walking_minutes'],'F-14')}</td>
 <td>{link(fee_src,'fee') if fee_src else '<span class="unv">fee: no official link</span>'} · {link(poker_src,'poker page')}</td></tr>""")
 hot_table = "\n".join(hot_rows)
@@ -232,7 +232,7 @@ summary_body = f"""<h2>Executive summary</h2>
 <li><b>Top single-entry buy-in:</b> E52 $1,100 NLH PKO, $75K GTD, Dec 15 11:10 AM (official). Fee $130, pool $970 (structure sheet read earlier).</li>
 <li><b>Largest verified guarantee (single-entry):</b> E36 $800 bounty, $75K GTD, Dec 9, 11:10 AM. Largest guarantee overall is a multi-flight event (E47, $1M GTD).</li>
 <li><b>Other venues:</b> Wynn daily ($200 noon, $240 Friday rebuy with $40K GTD, $160 at 6 PM per official poster); Caesars Palace daily ($100 and $160 at 10 AM / 2 PM / 6 PM / 9 PM per flyer, re-entry and add-on rules partly unverified); MGM Grand ($120 daily; times conflict, flagged); Golden Nugget (downtown; buy-in not published).</li>
-<li><b>Hotels:</b> Only resort fees are verified (Venetian $55 + tax, Wynn $55 + tax from an earlier session but link not re-located). Caesars fee conflicts. No nightly rate or walking time is verified, so no hotel can yet be ranked against the 30-minute rule.</li>
+<li><b>Hotels:</b> Official Venetian poker suite rates start at $119 (Venetian) and $209 (Palazzo), plus a $55 resort fee per night, conditional on poker play and not a dated quote. Caesars fee conflicts. Walking times and room tax are unverified, so no hotel can yet be confirmed inside the 30-minute walking rule.</li>
 <li><b>Schedule:</b> Venetian single-entry starts run from 10:10 AM to 5:10 PM daily, with many days offering 2–3 starts. Your travel dates are needed to build a vacation plan.</li>
 <li><b>Honest limits:</b> Registration close times, several structure sheets, multi-flight Day 2 rules and the Wynn WPT schedule are not verified. See <a href="flagged.html">Flagged</a>.</li>
 </ul></div>
@@ -316,6 +316,6 @@ if ERRORS:
 DOCS.mkdir(exist_ok=True)
 for name, (title, body) in PAGES.items():
     (DOCS / name).write_text(page(title, body, name))
-(DOCS / ".nojekyll").write_text("")
-(ROOT / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=docs/index.html"><a href="docs/index.html">Open the poker dashboard</a>')
+
+# root index.html belongs to the main-branch site; not written here
 print("built", len(PAGES), "pages into docs/")

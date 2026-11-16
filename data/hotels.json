@@ -1,49 +1,94 @@
 {
-  "as_of": "2026-11-16",
-  "rule": "A value appears only when an official source link was read this session. Blank = not verified (flagged). Nightly rates, room tax, and walking time are NOT verified.",
-  "hotels": [
-    {
-      "name": "The Venetian Resort",
-      "poker_link": "Hosts DeepStack Extravaganza IV (poker room on level 2, Grand Canal Shoppes, per official poker page)",
-      "address": "",
-      "resort_fee_per_night": 55,
-      "resort_fee_note": "$55 plus tax per night (official resort-fee page)",
-      "resort_fee_source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-      "room_rate_per_night": "",
-      "room_tax_note": "",
-      "all_in_cost_per_night": "",
-      "walking_minutes": "",
-      "quality_rating": "",
-      "flags": ["F-12", "F-13", "F-14"]
-    },
-    {
-      "name": "Wynn Las Vegas",
-      "poker_link": "Runs daily tournaments (re-entry, Friday rebuy) and WPT World Championship Nov 27 – Dec 21, 2026",
-      "address": "",
-      "resort_fee_per_night": "",
-      "resort_fee_note": "Official Wynn resort-fee terms were read in an earlier session but the exact link was not re-located; left blank until re-verified",
-      "resort_fee_source": "",
-      "room_rate_per_night": "",
-      "room_tax_note": "",
-      "all_in_cost_per_night": "",
-      "walking_minutes": "",
-      "quality_rating": "",
-      "flags": ["F-12", "F-13", "F-14", "F-18"]
-    },
-    {
-      "name": "Caesars Palace",
-      "poker_link": "Daily NLH tournaments (10 AM, 2 PM, 6 PM, 9 PM) and 24/7 poker room",
-      "address": "",
-      "resort_fee_per_night": "",
-      "resort_fee_note": "Official Caesars fee not located; third-party sources conflict",
-      "resort_fee_source": "",
-      "room_rate_per_night": "",
-      "room_tax_note": "",
-      "all_in_cost_per_night": "",
-      "walking_minutes": "",
-      "quality_rating": "",
-      "flags": ["F-02", "F-12", "F-13", "F-14"]
-    }
-  ],
-  "not_yet_checked": ["ARIA Resort & Casino","Planet Hollywood (site returned HTTP 500)","Resorts World Las Vegas (page 404)","Bellagio","Encore at Wynn","Horseshoe Las Vegas (official page has no times)","MGM Grand (poker page verified; room data not checked)","Golden Nugget (downtown; outside Strip)"]
+ "as_of": "2026-11-16",
+ "rule": "A value appears only when an official source link was read this session. Blank = not verified (flagged). Nightly rates, room tax, and walking time are NOT verified.",
+ "hotels": [
+  {
+   "name": "The Venetian Resort",
+   "poker_link": "Hosts DeepStack Extravaganza IV (poker room on level 2, Grand Canal Shoppes, per official poker page)",
+   "address": "",
+   "resort_fee_per_night": 55,
+   "resort_fee_note": "$55 plus tax per night (official resort-fee page)",
+   "resort_fee_source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "room_rate_per_night": 119,
+   "room_tax_note": "Starting poker suite rate 'as low as $119' (Venetian) per official page; conditional on 6 hrs live cash play or a $300+ tournament buy-in each night; not a dated quote; tax not included",
+   "all_in_cost_per_night": "",
+   "walking_minutes": "",
+   "quality_rating": "",
+   "flags": [
+    "F-12",
+    "F-13",
+    "F-14"
+   ],
+   "rate_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+  },
+  {
+   "name": "The Palazzo at The Venetian",
+   "poker_link": "Poker room official location text (Grand Canal Shoppes level 2); suite rates offered for The Palazzo too",
+   "address": "",
+   "resort_fee_per_night": 55,
+   "resort_fee_note": "$55 resort fee per night stayed (official poker suite-rate page)",
+   "resort_fee_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "room_rate_per_night": 209,
+   "room_tax_note": "Starting poker suite rate 'as low as $209' (Palazzo) per official page; same conditions; not a dated quote; tax not included",
+   "rate_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "all_in_cost_per_night": "",
+   "walking_minutes": "",
+   "quality_rating": "",
+   "flags": [
+    "F-12",
+    "F-13",
+    "F-14"
+   ]
+  },
+  {
+   "name": "Wynn Las Vegas",
+   "poker_link": "Runs daily tournaments (re-entry, Friday rebuy) and WPT World Championship Nov 27 – Dec 21, 2026",
+   "address": "",
+   "resort_fee_per_night": "",
+   "resort_fee_note": "Official Wynn resort-fee terms were read in an earlier session but the exact link was not re-located; left blank until re-verified",
+   "resort_fee_source": "",
+   "room_rate_per_night": "",
+   "room_tax_note": "",
+   "all_in_cost_per_night": "",
+   "walking_minutes": "",
+   "quality_rating": "",
+   "flags": [
+    "F-12",
+    "F-13",
+    "F-14",
+    "F-18"
+   ],
+   "rate_source": ""
+  },
+  {
+   "name": "Caesars Palace",
+   "poker_link": "Daily NLH tournaments (10 AM, 2 PM, 6 PM, 9 PM) and 24/7 poker room",
+   "address": "",
+   "resort_fee_per_night": "",
+   "resort_fee_note": "Official Caesars fee not located; third-party sources conflict",
+   "resort_fee_source": "",
+   "room_rate_per_night": "",
+   "room_tax_note": "",
+   "all_in_cost_per_night": "",
+   "walking_minutes": "",
+   "quality_rating": "",
+   "flags": [
+    "F-02",
+    "F-12",
+    "F-13",
+    "F-14"
+   ],
+   "rate_source": ""
+  }
+ ],
+ "not_yet_checked": [
+  "ARIA Resort & Casino",
+  "Planet Hollywood (site returned HTTP 500)",
+  "Resorts World Las Vegas (page 404)",
+  "Bellagio",
+  "Encore at Wynn",
+  "Horseshoe Las Vegas (official page has no times)",
+  "MGM Grand (poker page verified; room data not checked)",
+  "Golden Nugget (downtown; outside Strip)"
+ ]
 }
