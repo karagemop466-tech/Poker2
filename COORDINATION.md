@@ -40,3 +40,29 @@ Task log:
 Integration (this session is the integration session for shared outputs):
 - Branch: `arena/f743ae5a-poker2` → PR #6 into `main`.
 - Pages deploy and merge result: recorded below after merge.
+
+
+## Session arena/acd81e67-poker2 — claims and record (2026-11-16)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Official-check dataset for Venetian DSE IV (single-entry, multi-flight, team, satellite, re-entry/add-on, other venues) | done (rows re-read from official page) | arena/acd81e67-poker2 | `data/venetian-dse4-official-check.json` |
+| Hotel official-check dataset (resort fees; Venetian/Palazzo conditional starting rates) | done; walk times, room tax and Caesars fee blank | arena/acd81e67-poker2 | `data/hotels-official-check.json` |
+| Dashboard subsite (schedule, excluded/special, hotels, summary, questions, suggestions, repo review, flagged) | done; served under `/docs/` | arena/acd81e67-poker2 | `docs/*`, `scripts/build_site.py`, `scripts/check_links.py` |
+| Integration/PR for this branch | in progress (see below) | arena/acd81e67-poker2 | — |
+
+Notes for integration (2026-11-16):
+- Main already contained `data/tournaments.json` and `data/hotels.json` from PR #6 (arena/f743ae5a-poker2). This branch leaves those files unchanged and writes its own data under distinct names so neither dataset is overwritten.
+- Values in main's `data/tournaments.json` such as `reg_closes`, `chips` and `level` were NOT reproduced from the official pages read in this session (registration close times and chip counts are not on the official schedule page). They are not used in `docs/`. Flagged for review, not verified here.
+- Root site (`index.html`, `tournaments.html`, `hotels.html`, `planning.html`, `flagged.html`, `pages/*`) is untouched by this branch.
+- Two dashboards now exist: the root site (main) and `/docs/` (this branch). Consolidating them is a suggestion for user review, not applied.
+
+Task log (this session):
+- Re-read the official Venetian DSE IV schedule page in full (4 chunks). Each row's name, date, time, event number and structure PDF number was taken from that table. Earlier drafts had reg-close times and chip counts that were not on the page; removed.
+- Read the official poker suite-rate page: from $119 (Venetian) and $209 (Palazzo), $55 resort fee per night, conditional on 6 hours live cash or a $300+ tournament per night. Recorded as conditional starting rates, not dated quotes.
+- Verification: 131/131 data rows have an official or repo https source; 0 broken internal links in `docs/`.
+
+Integration result (PR for arena/acd81e67-poker2 → main):
+- PR: (recorded below)
+- Merge: (recorded below)
+- Pages deploy: (recorded below)
