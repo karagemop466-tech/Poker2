@@ -27,6 +27,9 @@ NAV = [
     ("monitor.html", "Source Monitor"), ("flagged.html", "Flagged"),
     ("questions.html", "Questions"), ("suggestions.html", "Suggestions"),
     ("repo-review.html", "Repo Review"),
+    ("walking.html", "Walking Times"), ("wpt-terms.html", "WPT Terms"),
+    ("rate-log.html", "Rate Log"), ("trip.html", "Trip Plan"),
+    ("archive.html", "Archive"),
 ]
 
 def esc(s):

@@ -1,0 +1,131 @@
+{
+ "as_of": "2026-11-16",
+ "items": [
+  {
+   "id": "F01",
+   "item": "Venetian Events 18/58 (Valuetown) 'subsequent buy in's' wording",
+   "where": "Structure sheet 8, note 07",
+   "detail": "The sheet says the PokerAtlas PRO discount applies to 'their initial $200 buy in only' and 'All subsequent buy in's after the initial buy in will be $200', implying possible further entries. No explicit re-entry clause. Kept out of the confirmed single-entry list.",
+   "severity": "medium"
+  },
+  {
+   "id": "F02",
+   "item": "WPT Dec 21 Turbo start-time discrepancy",
+   "where": "WPT structures terms vs schedule row",
+   "detail": "Event terms list Dec 21 at 6 PM; the schedule row shows 8:00 PM.",
+   "severity": "low"
+  },
+  {
+   "id": "F03",
+   "item": "$1,600 NLH $1M date discrepancy",
+   "where": "WPT structures terms (Dec 3\u20135) vs schedule row U-WPT14 (Dec 9)",
+   "detail": "Possibly two separate events or a source error. Both are re-entry; no effect on the single-entry list.",
+   "severity": "low"
+  },
+  {
+   "id": "F04",
+   "item": "WPT schedule text 'NIH' where NLH is expected",
+   "where": "WPT schedule rows for Dec 13, Dec 14, Dec 15 events",
+   "detail": "Printed as 'NIH' in the official schedule PDF. Presumed typo but shown as printed.",
+   "severity": "low"
+  },
+  {
+   "id": "F05",
+   "item": "Venetian series overview stale status label",
+   "where": "Venetian DSE series overview page",
+   "detail": "Labels the WPT Fall Festival (Oct 28\u2013Nov 15) 'Current Series' while showing DSE IV (from Nov 16) as 'Next Series' on the same snapshot date.",
+   "severity": "low"
+  },
+  {
+   "id": "F06",
+   "item": "Venetian resort-fee wording ambiguity",
+   "where": "Venetian resort-fee page vs poker-rate page",
+   "detail": "Resort-fee page: 'Rates include a daily Resort Fee of $55 plus tax.' Poker-rate page presents the $55 fee separately. Confirm at reservation.",
+   "severity": "medium"
+  },
+  {
+   "id": "F07",
+   "item": "Venetian poker rate $119/$209 property mapping",
+   "where": "Venetian poker suite-rates page",
+   "detail": "Both amounts published with conditional play requirements; the page does not bind each amount to one property. Recorded as separate dated entries; flagged.",
+   "severity": "medium"
+  },
+  {
+   "id": "F08",
+   "item": "Hotel true cost uses assumed 13.38% tax on the resort fee",
+   "where": "Trip calculator",
+   "detail": "The 13.38% rate is verified for the room rate (Venetian hotel terms). Applying it to the fee is an assumption to confirm.",
+   "severity": "medium"
+  },
+  {
+   "id": "F09",
+   "item": "Walk times are routing estimates, not Google/Apple Maps measurements",
+   "where": "Walking matrix",
+   "detail": "Computed with the OSRM foot profile from geocoded official addresses; Google Maps links included per pair for confirmation. \u00b110\u201315% error possible.",
+   "severity": "medium"
+  },
+  {
+   "id": "F10",
+   "item": "No dated hotel room quotes captured for Dec 6\u201313, 2026",
+   "where": "Hotel rate log",
+   "detail": "Dynamic booking-engine pricing cannot be captured by a static fetch; official booking links provided. True-cost cells stay blank until quotes are logged.",
+   "severity": "high"
+  },
+  {
+   "id": "F11",
+   "item": "Caesars Palace daily buy-in alternates $100/$160 by start",
+   "where": "Caesars official flier vs guide page",
+   "detail": "The guide page states $100; the flier shows $160 for some starts. Both recorded; per-start buy-in needs confirmation.",
+   "severity": "low"
+  },
+  {
+   "id": "F12",
+   "item": "MGM Saturday event free-entry loyalty mechanic",
+   "where": "MGM Grand poker page",
+   "detail": "Five $120 dailies earn a free Saturday entry \u2014 a spend-more mechanic; event kept in the separate section. Re-entry status unverified.",
+   "severity": "low"
+  },
+  {
+   "id": "F13",
+   "item": "33 WPT rows have no published entry terms",
+   "where": "Wynn WPT structures PDF",
+   "detail": "The official structures document covers 13 event types; the remaining schedule rows have no terms in any official document read. Rows stay unverified.",
+   "severity": "high"
+  },
+  {
+   "id": "F14",
+   "item": "Westgate $70 freezeout lead is aggregator-sourced",
+   "where": "Third-party calendars (VegasPokerCalendar/PokerAtlas)",
+   "detail": "'Freezeout / No rebuy / No add-on' wording found on an aggregator detail page only; not confirmed with the Westgate poker room. Not used in any ranking.",
+   "severity": "medium"
+  },
+  {
+   "id": "F15",
+   "item": "Sahara Las Vegas not geocoded",
+   "where": "Walking matrix",
+   "detail": "Nominatim returned only the monorail stop for the address; Sahara omitted from the matrix rather than guessed.",
+   "severity": "low"
+  },
+  {
+   "id": "F16",
+   "item": "Event finish times are estimates",
+   "where": "Day plan / overlap flags",
+   "detail": "No official finish times exist. Durations estimated from level counts (28 levels \u00d7 30 min + breaks \u2248 12\u201314 h). Overlap flags are conservative.",
+   "severity": "medium"
+  },
+  {
+   "id": "F17",
+   "item": "Hotel quality classes are assumptions",
+   "where": "Hotel table",
+   "detail": "No official AAA/Forbes listing captured except the Wynn Tower Suites Five-Star statement. Classes marked as assumptions.",
+   "severity": "low"
+  },
+  {
+   "id": "F18",
+   "item": "Maximum-entry caps not published for Venetian freezeouts",
+   "where": "Venetian sheets 1\u201337",
+   "detail": "Freezeout classification rests on the absence of re-entry/rebuy/add-on clauses; sheets do not state entry caps explicitly.",
+   "severity": "medium"
+  }
+ ]
+}

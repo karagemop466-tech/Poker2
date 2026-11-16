@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions · Las Vegas Strip Poker Dashboard</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><a href="../index.html">Las Vegas Strip Poker Dashboard</a><span class="asof">Data as of 2026-11-16</span></div>
+  <nav><a href="../index.html" class="">Home</a><a href="../tournaments/single-entry.html" class="">Single-entry</a><a href="../tournaments/excluded.html" class="">Excluded</a><a href="../tournaments/unverified.html" class="">Unverified</a><a href="../schedule/index.html" class="">Venetian schedule</a><a href="../hotels/index.html" class="">Hotels</a><a href="../summary/index.html" class="">Summary</a><a href="../questions/index.html" class="">Questions</a><a href="../suggestions/index.html" class="on">Suggestions</a><a href="../flagged/index.html" class=" flagnav">Flagged for Review</a><a href="../sources/index.html" class="">Sources</a></nav>
+</header>
+<main>
+
+<h1>Suggestions (review before any change)</h1>
+<p class="note">Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off. Nothing on this page has been implemented.</p>
+<section class="sugg"><h3>S01 · Add the remaining Strip properties <span class="pill">Coverage</span></h3>
+<ul><li>A) Add MGM / Mandalay Bay, Caesars properties and Resorts World next (official poker pages and structure sheets).</li><li>B) Add only the properties with 2+ single-entry events in the next two weeks.</li><li>C) Keep the scope at Venetian and Wynn.</li></ul>
+<p class="small"><b>Trade-off:</b> A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S02 · Automate structure-sheet classification <span class="pill">Verification</span></h3>
+<ul><li>A) Script that reads each official structure PDF and flags re-entry, rebuy, add-on and flight words automatically.</li><li>B) Keep manual review with a checklist per row.</li><li>C) Manual review plus a second reviewer.</li></ul>
+<p class="small"><b>Trade-off:</b> A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S03 · Capture dated snapshots of every official source <span class="pill">Evidence</span></h3>
+<ul><li>A) Save a PDF or HTML copy of each official source with the date checked.</li><li>B) Save links only (current approach).</li><li>C) Snapshot only the sources behind single-entry rows.</li></ul>
+<p class="small"><b>Trade-off:</b> A and C protect against changes; B is simplest but links can change silently. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S04 · Add a nightly-rate capture step <span class="pill">Hotels</span></h3>
+<ul><li>A) Record an official nightly rate for each hotel on the chosen dates, with the date and tax shown.</li><li>B) Ask the user for a quoted rate.</li><li>C) Show resort fees only (current state).</li></ul>
+<p class="small"><b>Trade-off:</b> A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S05 · Choose a quality measure for hotels <span class="pill">Hotels</span></h3>
+<ul><li>A) AAA Diamond rating (official AAA listing).</li><li>B) Forbes Travel Guide star rating.</li><li>C) The user's own criteria (for example room size, reviews).</li></ul>
+<p class="small"><b>Trade-off:</b> A and B are third-party rating bodies with official listings. C is personal and needs the user to define it. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S06 · Walking-time method <span class="pill">Hotels</span></h3>
+<ul><li>A) Use a map routing service and record the date checked.</li><li>B) Use each resort's own map or concierge.</li><li>C) Estimate from straight-line distance (not recommended; cannot be verified).</li></ul>
+<p class="small"><b>Trade-off:</b> A and B are verifiable; C is an estimate and conflicts with the 'never infer' rule. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S07 · Add interactive filters <span class="pill">Usability</span></h3>
+<ul><li>A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).</li><li>B) Keep static tables sorted by value.</li><li>C) Add a day planner that builds an 8 AM–close schedule from verified start times.</li></ul>
+<p class="small"><b>Trade-off:</b> A and C add real decision value. B is what is built now. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S08 · Monitor for changes <span class="pill">Maintenance</span></h3>
+<ul><li>A) Scheduled job that re-fetches each official page weekly and flags changed rows.</li><li>B) Manual re-check before each trip.</li><li>C) No automation.</li></ul>
+<p class="small"><b>Trade-off:</b> A keeps data current but needs hosting; B is cheap; C risks stale data. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S09 · Name the single-entry standard in one place <span class="pill">Clarity</span></h3>
+<ul><li>A) Keep the current definition (no re-entry, rebuy or add-on stated in the official structure sheet).</li><li>B) Require poker-room confirmation for every row before it counts as single-entry.</li><li>C) Use both: sheet-based by default, confirmation for events the user will play.</li></ul>
+<p class="small"><b>Trade-off:</b> A is clear but depends on documents; B is strongest but slow; C balances both. · <b>Status:</b> Awaiting decision</p></section><section class="sugg"><h3>S10 · Fix the repo setup <span class="pill">Repo</span></h3>
+<ul><li>A) Keep Pages on main, path '/' (current; site files are at the root).</li><li>B) Move the site into /docs and switch Pages to /docs.</li><li>C) Use a GitHub Actions build (needs a workflow file).</li></ul>
+<p class="small"><b>Trade-off:</b> A is in place now. B keeps the root clean. C allows a build step but adds a workflow. · <b>Status:</b> Awaiting decision</p></section>
+
+</main>
+<footer>
+  <p>Every table row links to an official source. Values that could not be confirmed from an official source are left blank and marked UNVERIFIED. Not a betting or financial product. Confirm with the venue before paying.</p>
+  <p>Built from <code>data/verified/*.json</code> by <code>scripts/build.mjs</code>. Repo: <a href="https://github.com/karagemop466-tech/Poker2">karagemop466-tech/Poker2</a>.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

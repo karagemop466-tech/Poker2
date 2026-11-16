@@ -1,0 +1,97 @@
+{
+ "as_of": "2026-11-16",
+ "intro": "Questions that must be answered before money is committed. 'Answered' = settled from an official source this session; 'Open' = the sources do not answer it; the How-to-find column names the discovery step.",
+ "items": [
+  {
+   "id": "Q01",
+   "question": "Which tournaments are confirmed single-entry freezeouts (no re-entry, rebuy or add-on)?",
+   "status": "Answered for Venetian DSE IV",
+   "answer": "46 Venetian events are sheet-silent single-entry candidates after reading every official structure sheet (explicit confirmation outstanding) (1\u201337) in full on 2026-11-16. 2 Valuetown events are flagged (ambiguous 'subsequent buy in's' wording). 42 events are excluded (re-entry/rebuy/add-on/multi-flight/satellite/team confirmed). 33 WPT rows stay unverified (terms not published in the structures document).",
+   "how_to_find": "Remaining work: ask the Wynn poker room for written entry terms on the 33 unverified WPT rows; ask the Venetian whether Events 18/58 permit subsequent buy-ins.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+   ]
+  },
+  {
+   "id": "Q02",
+   "question": "Can a player start play at 8:00 AM with confirmed single-entry events?",
+   "status": "Answered (no)",
+   "answer": "No listed event starts at 8:00 AM anywhere in the dataset. Earliest candidate starts are 10:10 AM (Venetian). Horseshoe runs a recurring 9:00 AM daily NLH (entry rules unverified).",
+   "how_to_find": "Check other rooms' official daily schedules (Palms, South Point, Orleans, Golden Nugget) for earlier starts.",
+   "sources": [
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   ]
+  },
+  {
+   "id": "Q03",
+   "question": "What is the true nightly hotel cost for the trip dates?",
+   "status": "Open (needs dated quotes)",
+   "answer": "Resort fees, tax rate and the conditional Venetian poker player rates are verified and in the dated rate log. No dated room quote for Dec 6\u201313, 2026 was captured \u2014 live quotes require each hotel's booking engine (dynamic pricing).",
+   "how_to_find": "Open each hotel's official booking link for Dec 6\u201313 2026 and record the checkout total (rate + resort fee + 13.38% tax), cancellation deadline and quote timestamp in the rate log. The trip calculator accepts these numbers.",
+   "sources": [
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+   ]
+  },
+  {
+   "id": "Q04",
+   "question": "Is each hotel within a 30-minute walk of the tournament venues?",
+   "status": "Answered (routing estimates)",
+   "answer": "Walking times for 21 hotels \u00d7 6 venue poker rooms were computed from official addresses with the OSRM foot profile (routing estimates) and each row links to Google Maps walking directions for confirmation. 16 hotels are within 30 minutes of the Venetian; Golden Nugget, Mandalay Bay, NYNY, Westgate fail the test to at least one venue.",
+   "how_to_find": "Confirm the rows you plan to rely on by opening the Google Maps links (walking mode) before booking.",
+   "sources": [
+    "https://routing.openstreetmap.de/routed-foot",
+    "https://nominatim.openstreetmap.org"
+   ]
+  },
+  {
+   "id": "Q05",
+   "question": "Which events can be combined in one day of play?",
+   "status": "Answered (plan + flags)",
+   "answer": "1-Day events run to a winner; the evening event on the same date is a conditional fallback only. The day plan shows primary + fallback per day with overlap flags; verified finish times are not published (durations estimated from level counts).",
+   "how_to_find": "Ask the tournament desk for typical finish times of 1-Day events to tighten the estimates.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
+   ]
+  },
+  {
+   "id": "Q06",
+   "question": "Is the Venetian poker rate $119/$209 mapping to Venetian/Palazzo correct?",
+   "status": "Open (flagged)",
+   "answer": "The official poker-rate page publishes both amounts but its wording does not explicitly bind each amount to a property. The site records them as separate dated rate-log entries with the ambiguity flagged.",
+   "how_to_find": "Confirm at reservation or with the poker room host.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+   ]
+  },
+  {
+   "id": "Q07",
+   "question": "What is the exact tax on the resort fee?",
+   "status": "Open (assumption flagged)",
+   "answer": "Venetian terms state 13.38% Clark County room tax on the room rate and 'plus applicable tax' on the resort fee. Applying 13.38% to the fee is an assumption in the calculator.",
+   "how_to_find": "Confirm the fee tax rate at check-in or from a folio.",
+   "sources": [
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+   ]
+  },
+  {
+   "id": "Q08",
+   "question": "Do any events cap entries (maximum-entry rules)?",
+   "status": "Open",
+   "answer": "No official sheet states a maximum number of entries for the confirmed freezeouts; freezeout structure implies one entry but the sheets are silent on caps. WPT events explicitly allow re-entry (terms captured).",
+   "how_to_find": "Ask the poker room for written maximum-entry statements before relying on single-entry economics.",
+   "sources": []
+  },
+  {
+   "id": "Q09",
+   "question": "Which schedule discrepancies exist between official sources?",
+   "status": "Answered (flagged)",
+   "answer": "1) WPT Dec 21 turbo listed at 6 PM in event terms vs 8 PM on the schedule row. 2) The $1,600 NLH $1M terms are dated Dec 3\u20135 while a schedule row shows a $1,600 2-Day $1M on Dec 9. 3) Venetian series overview labels the WPT Fall Festival 'Current Series' while listing DSE IV as 'Next Series' (stale label). 4) Venetian resort-fee page says 'Rates include a daily Resort Fee of $55 plus tax' while the poker-rate page lists it separately \u2014 confirm which applies to poker rates.",
+   "how_to_find": "Ask each venue to reconcile; monitor.py flags future changes to these pages automatically.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+   ]
+  }
+ ]
+}
