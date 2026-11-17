@@ -521,13 +521,13 @@ collides with the numeric IDs already used by `data/master.json` and the `/plan/
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| T-A1 Re-transcribe the official Venetian DSE IV schedule page and diff all three existing datasets against it | done | arena/a6eb923e-poker2 | `verify/official-venetian-dse4-2026-11-17.tsv`, `verify/verify_events.py` |
-| T-A2 Re-read official structure sheets; fill fee / chips / level duration / late-registration / pays-% that were blank | in progress | arena/a6eb923e-poker2 | `data/audit/*.json`, `verify/notes/*.md` |
-| T-A3 Walking-time matrix (33/55/66 hotel pairs) from a published routing source | in progress | arena/a6eb923e-poker2 | `data/audit/walking.json` |
-| T-A4 Dated official hotel rate log (checkout totals) | in progress — engine is JS-only on every official site; see FD-* | arena/a6eb923e-poker2 | `data/audit/rates.json` |
-| T-A5 `/audit/` surface: dashboard, events, hotels, schedule, cost calculator, rate log, venue pages, questions, suggestions, flagged, sources | in progress | arena/a6eb923e-poker2 | `audit/**`, `scripts/audit_build.py` |
-| T-A6 Scheduled official-source re-check that records a per-URL status for this surface's sources | in progress | arena/a6eb923e-poker2 | `.github/workflows/audit-recheck.yml`, `scripts/audit_recheck.py` |
-| T-A7 Integration: PR to main, merge, Pages deploy verify | not started | arena/a6eb923e-poker2 | `COORDINATION.md` |
+| T-A1 Re-transcribe the official Venetian DSE IV schedule page and diff all three existing datasets against it | **done** | arena/a6eb923e-poker2 | `verify/official-venetian-dse4-2026-11-17.tsv` (94 rows, tracked), `verify/verify_events.py` |
+| T-A2 Re-read official structure sheets; fill fee / chips / level duration / late-registration / pays-% that were blank | **done for 12 of 37 sheets** — 48 of 94 rows carry structure data; the other 25 sheets are named on `/audit/sources.html` and `/audit/flagged.html#FD-04` | arena/a6eb923e-poker2 | `data/audit/sheets.py`, `data/audit/events.json` |
+| T-A3 Walking-time matrix (33/55/66 hotel pairs) from a published routing source | **11 legs measured, 4 unmatched properties skipped** — basis is third-party routing, not a venue page; see FD-08 | arena/a6eb923e-poker2 | `data/audit/walking.json` |
+| T-A4 Dated official hotel rate log (checkout totals) | **blocked** — every official booking engine is JavaScript-only and no dated quote is obtainable from a fetch; the log records the attempt and the failure rather than a guessed rate; see FD-05 | arena/a6eb923e-poker2 | `data/audit/rates.json` |
+| T-A5 `/audit/` surface: dashboard, events, hotels, schedule, cost calculator, rate log, venue pages, questions, suggestions, flagged, sources, monitor | **done** — 15 pages, source+link gates and a 34-check DOM test run inside the build | arena/a6eb923e-poker2 | `audit/**`, `scripts/audit_build.py`, `scripts/audit_dom_test.js` |
+| T-A6 Scheduled official-source re-check that records a per-URL status for this surface's sources | **written but never observed running** — every cron in this repo has zero runs since creation; the workflow is not evidence that a check happened; see FD-01 | arena/a6eb923e-poker2 | `.github/workflows/audit-recheck.yml`, `scripts/audit_recheck.py` |
+| T-A7 Integration: PR to main, merge, Pages deploy verify | **in progress** | arena/a6eb923e-poker2 | `COORDINATION.md` |
 
 **Coexistence — no other session's file is edited.** This session does **not** run, modify or regenerate
 `scripts/build.py`, `scripts/build_site.py`, `scripts/build_master.py`, `data/master.json`, `data/site/*`,
