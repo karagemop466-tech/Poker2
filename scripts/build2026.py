@@ -155,6 +155,19 @@ def build_events():
         group, reason = classify(ev_no, rows, sheet)
         entry_rows = [r for r in rows if "restart" not in (r[10] or "")]
         starts = sorted({r[3] for r in entry_rows})
+        # A multi-flight event prints one schedule row per flight, each titled "... 1A", "... 1B".
+        # The tournament table shows one row per event, so the flight suffix is stripped from the
+        # displayed title and the flight list is carried separately.
+        flights = []
+        for r in entry_rows:
+            fm = re.search(r"\b1([A-Z])\b", r[8])
+            if fm:
+                flights.append(fm.group(1))
+        base = entry_rows[0][8] if entry_rows else rows[0][8]
+        if len(flights) > 1:
+            # strip the flight token wherever it sits in the official title
+            base = re.sub(r"\s+", " ", re.sub(r"\s+1[A-Z](?=\s|$)", " ", base)).strip() or base
+            flights = sorted(flights)
         gtds = sorted({r[5] for r in entry_rows if r[5]})
         # per-event guarantee: prefer the structure sheet, fall back to the schedule row
         gtd = None
@@ -168,12 +181,13 @@ def build_events():
         buy_in = sheet.get("buy_in") if sheet else None
         events.append(dict(
             event_no=ev_no,
-            name=entry_rows[0][8] if entry_rows else rows[0][8],
+            name=base,
+            flights=flights,
             official_name=rows[0][8],
             group=group,
             group_label=GROUP_LABEL[group],
             reason=reason,
-            dates=[r[0] for r in entry_rows],
+            dates=sorted({r[0] for r in entry_rows}),
             all_dates=[r[0] for r in rows],
             starts=starts,
             first_date=entry_rows[0][0] if entry_rows else rows[0][0],
@@ -218,6 +232,10 @@ def build_days(events):
             d = r[0]
             days.setdefault(d, []).append(dict(
                 event_no=ev["event_no"], name=ev["name"], group=ev["group"],
+                # the official schedule prints one row per flight, and the flight letter lives in
+                # the row title ("$300 NO LIMIT HOLD'EM 1A"). Collapsing to the event name would
+                # print the same flight twice on a day that runs 1A and 1B.
+                label=r[8], flight=r[10] or "", row_gtd=r[5] or "",
                 start=r[3], start_m=tminutes(r[3]), reg_close=r[4],
                 reg_close_m=tminutes(r[4]) if r[4] else None,
                 buy_in=ev["buy_in"], gtd=ev["gtd"], sheet_url=ev["sheet_url"],
@@ -229,6 +247,7 @@ def build_days(events):
                 continue
             days.setdefault(r[0], []).append(dict(
                 event_no=ev["event_no"], name=ev["name"], group=ev["group"],
+                label=r[8], flight=r[10] or "", row_gtd="",
                 start=r[3], start_m=tminutes(r[3]), reg_close="", reg_close_m=None,
                 buy_in=None, gtd=None, sheet_url=ev["sheet_url"],
                 date=r[0], dow=r[1], restart=True,
@@ -241,15 +260,20 @@ def build_days(events):
         fallbacks = []
         for f in entries[1:]:
             if primary and f["reg_close_m"] and f["reg_close_m"] > primary["start_m"]:
-                note = ("Conditional: only if you are out of event #%d before #%d's registration closes "
-                        "at %s (official)." % (primary["event_no"], f["event_no"], f["reg_close"]))
+                note = ("Conditional: only if you are out of #%d %s before #%d %s's registration "
+                        "closes at %s (official)."
+                        % (primary["event_no"], entry_title(primary),
+                           f["event_no"], entry_title(f), f["reg_close"]))
                 verdict = "conditional fallback"
             elif primary and f["reg_close_m"]:
-                note = ("Registration for #%d closes at %s, before #%d even starts at %s. You cannot "
-                        "start both." % (f["event_no"], f["reg_close"], primary["event_no"], primary["start"]))
+                note = ("Registration for #%d %s closes at %s, before #%d %s even starts at %s. "
+                        "You cannot start both."
+                        % (f["event_no"], entry_title(f), f["reg_close"],
+                           primary["event_no"], entry_title(primary), primary["start"]))
                 verdict = "cannot be sequenced"
             else:
-                note = "No official registration close published for #%d." % f["event_no"]
+                note = "No official registration close published for #%d %s." % (
+                    f["event_no"], entry_title(f))
                 verdict = "unknown"
             fallbacks.append(dict(item=f, note=note, verdict=verdict))
         out.append(dict(date=d, dow=entries[0]["dow"] if entries else (restarts[0]["dow"] if restarts else ""),
@@ -267,7 +291,7 @@ NAV = [
     ("tournaments.html", "Tournaments"),
     ("entry-rules.html", "Entry rules"),
     ("schedule.html", "Day plan"),
-    ("hotels.html", "Hotels &amp; true cost"),
+    ("hotels.html", "Hotels \u0026amp; true cost"),
     ("walking.html", "Walking times"),
     ("trip.html", "Trip cost"),
     ("venues.html", "Venues"),
@@ -397,6 +421,7 @@ def page(title, body, active, extra_head="", subnav=None):
     if subnav:
         sub = '<div class="pill-row" style="margin-bottom:12px">' + "".join(
             '<a class="pill" href="%s">%s</a>' % (h, lab) for h, lab in subnav) + "</div>"
+    title = html.escape(title).replace("&amp;#", "&#")
     out = """<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
@@ -424,7 +449,7 @@ before you pay anything non-refundable. This <code>/2026/</code> surface is gene
 do not share a generator.</p>
 </div></footer>
 </body></html>
-""" % (html.escape(title), "", extra_head, nav, sub, body, RETRIEVED)
+""" % (title, "", extra_head, nav, sub, body, RETRIEVED)
     if depth_prefix(active):
         out = relink(out)
     return out
@@ -432,6 +457,41 @@ do not share a generator.</p>
 
 def depth_prefix(active):
     return "../" if active.startswith("venues/") else ""
+
+
+def entry_title(x):
+    """Official schedule row title, de-duplicated against the collapsed event name."""
+    return (x.get("label") or x["name"]).strip()
+
+
+def gtd_cell(e):
+    """Guarantee as printed, but never the wording of a sheet that covers several events.
+
+    Some structure sheets serve more than one event number and print the guarantee as
+    '30000 FOR EVENT #14 AND #63; 40000 FOR EVENT #28'. That wording belongs to the sheet, not
+    to this row, so the row shows the guarantee parsed for this event number instead.
+    """
+    t = (e.get("gtd_text") or "").strip()
+    if t:
+        # '30000 (#16) 40000 (#30) 50000 (#54) - PRIZE POOL + TOTAL BOUNTIES': one sheet, three
+        # events. Show the figure printed against this event number, never all three.
+        per_event = re.findall(r"([\d,]{3,})\s*\(#(\d+)\)", t)
+        if per_event:
+            for val, no in per_event:
+                if int(no) == e["event_no"]:
+                    return "$" + format(int(val.replace(",", "")), ",")
+            return '<span class="blank">see sheet</span>'
+        if "EVENT #" in t.upper():
+            t = ""      # sheet-wide wording, not this row's figure
+        else:
+            m = re.match(r"^\$?([\d,]+)\s*\((.+)\)$", t)
+            if m:
+                return ("$" + format(int(m.group(1).replace(",", "")), ",")
+                        + " <span class='note'>(%s)</span>" % esc(m.group(2).lower()))
+            return money(t)
+    if e.get("gtd"):
+        return "$" + format(e["gtd"], ",")
+    return '<span class="blank">none published</span>'
 
 
 def esc(s):
@@ -482,7 +542,7 @@ def p_index(events, days):
         "<td class='num'>$%s</td><td class='num'>%s</td><td class='num'>%s</td>"
         "<td class='num'>%s</td><td>%s</td></tr>"
         % (i + 1, e["event_no"], esc(e["name"][:64]), format(e["buy_in"], ","),
-           money(e["gtd_text"] or (("$" + format(e["gtd"], ",")) if e["gtd"] else None)),
+           gtd_cell(e),
            "$" + format(e["fee"], ",") if e["fee"] else "&mdash;",
            "%.1f&times;" % e["ratio"] if e["ratio"] else "&mdash;",
            ", ".join("<span class='note'>%s</span>" % d[5:] for d in e["dates"]))
@@ -587,8 +647,7 @@ def p_tournaments(events):
     dates = sorted({d for e in events for d in e["all_dates"]})
     rowshtml = []
     for e in events:
-        gtdcell = money(e["gtd_text"]) if e["gtd_text"] else (
-            ("$" + format(e["gtd"], ",")) if e["gtd"] else '<span class="blank">none published</span>')
+        gtdcell = gtd_cell(e)
         rowshtml.append(
             '<tr id="ev%(no)d" data-group="%(g)s" data-dates="%(dates)s" '
             'data-buyin="%(bi)s" data-gtd="%(gtdv)s" data-search="%(search)s">'
@@ -619,13 +678,14 @@ def p_tournaments(events):
                 else '<span class="blank">no sheet</span>',
                 checked=RETRIEVED,
                 name=esc(e["name"][:90]),
-                meta=esc("; ".join(x for x in [
+                meta=(("<span class='tag t-warn'>flights %s</span> " % ",".join(e["flights"]))
+                      if e.get("flights") else "") + esc("; ".join(x for x in [
                     e["payout_pct"],
                     e["late_reg"] and ("late reg: " + e["late_reg"]),
                     e["eligibility"],
                 ] if x)),
                 search=esc((" ".join([e["name"], e["official_name"], str(e["event_no"]),
-                                      e["group_label"]])).lower()),
+                                      e["group_label"]] + e.get("flights", []))).lower()),
             ))
     opts = "".join('<option value="%s">%s</option>' % (d, d) for d in dates)
     pills = "".join('<span class="pill" data-g="%s">%s</span>' % (k, esc(v.split(" (")[0]))
@@ -706,23 +766,23 @@ not among them. That is strong for a one-day event, and it is still not the same
 you cannot buy in twice. Flag <a href="flagged.html#F-01">F-01</a>.</div>
 """ % dict(ret=RETRIEVED)
 
-    body += block("Group A &mdash; best single-entry candidates", "candidate",
-                  "One-day events with a single starting day, no bounty, no satellite seat, no team format, and "
+    body += block("Group A \u2014 best single-entry candidates", "candidate",
+                  "Events with one starting day, no bounty, no satellite seat, no team format, and "
                   "no re-entry, rebuy or add-on clause printed anywhere on the official structure sheet.")
-    body += block("Group B &mdash; bounty and progressive knock-out", "bounty",
+    body += block("Group B \u2014 bounty and progressive knock-out", "bounty",
                   "These do not let you buy extra chips, but the published guarantee includes bounty money, so "
                   "the cash prize pool is smaller than the headline number. Ranked separately on purpose.")
-    body += block("Group C &mdash; multi-flight events", "multiflight",
+    body += block("Group C \u2014 multi-flight events", "multiflight",
                   "More than one starting flight. Entering a second flight costs a second buy-in. Every one of "
                   "these sheets carries the same sentence: any player who bags chips for Day 2 may not play a "
-                  "subsequent flight. That blocks a player who has advanced &mdash; it does not block a player "
+                  "subsequent flight. That blocks a player who has advanced \u2014 it does not block a player "
                   "who busted in flight A from buying into flight B.")
-    body += block("Group D &mdash; satellites", "satellite",
+    body += block("Group D \u2014 satellites", "satellite",
                   "The prize is direct entry into another event, not prize money. Not comparable to a cash event.")
-    body += block("Group E &mdash; team events", "team",
+    body += block("Group E \u2014 team events", "team",
                   "Two players share one entry and must alternate every level, so a single player cannot play "
                   "the event alone.")
-    body += block("Group F &mdash; spend-to-advantage", "spend",
+    body += block("Group F \u2014 spend-to-advantage", "spend",
                   "The official sheet prices a second buy-in, so more than one buy-in per player is "
                   "contemplated. These are the events the brief asks to keep in a separate section.")
 
@@ -744,14 +804,18 @@ def p_schedule(days, events):
         prim = d["primary"]
         lines = []
         if prim:
+            gtd = prim["gtd"] or prim.get("row_gtd") or ""
+            gtd = ("$" + format(gtd, ",")) if isinstance(gtd, int) else gtd
             lines.append(
-                "<div class='day'><h3>Primary &mdash; #%d %s</h3>"
+                "<div class='day'><h3>Primary &mdash; #%d %s%s</h3>"
                 "<div class='meta'>Start %s &middot; registration closes %s &middot; entry %s &middot; guarantee %s</div>"
                 "<p class='note'>%s</p>%s</div>"
-                % (prim["event_no"], esc(prim["name"][:70]), esc(prim["start"]),
+                % (prim["event_no"], esc(entry_title(prim)[:70]),
+                   (" <span class='tag t-warn'>%s</span>" % esc(prim["flight"])) if prim["flight"] else "",
+                   esc(prim["start"]),
                    esc(prim["reg_close"] or "not published"),
                    ("$" + format(prim["buy_in"], ",")) if prim["buy_in"] else "not published",
-                   ("$" + format(prim["gtd"], ",")) if prim["gtd"] else "none published",
+                   esc(gtd) if gtd else "none published",
                    esc(next(e["reason"] for e in events if e["event_no"] == prim["event_no"])),
                    srclink(prim["sheet_url"], "structure sheet")))
         else:
@@ -763,12 +827,12 @@ def p_schedule(days, events):
                 "<div class='day'><h3>Fallback &mdash; #%d %s <span class='tag %s'>%s</span></h3>"
                 "<div class='meta'>Start %s &middot; registration closes %s &middot; entry %s</div>"
                 "<p class='note'>%s</p></div>"
-                % (it["event_no"], esc(it["name"][:70]), cls, esc(fb["verdict"]), esc(it["start"]),
+                % (it["event_no"], esc(entry_title(it)[:70]), cls, esc(fb["verdict"]), esc(it["start"]),
                    esc(it["reg_close"] or "not published"),
                    ("$" + format(it["buy_in"], ",")) if it["buy_in"] else "not published",
                    esc(fb["note"])))
         if d["restarts"]:
-            rs = ", ".join("#%d %s &mdash; %s" % (x["event_no"], esc(x["name"][:44]), x["start"])
+            rs = ", ".join("#%d %s &mdash; %s" % (x["event_no"], esc(entry_title(x)[:44]), x["start"])
                            for x in d["restarts"])
             lines.append("<div class='day'><h3>Continuations</h3><p class='note'>%s<br>"
                          "<span class='small'>A Day 2 / Day 3 restart costs nothing extra but occupies the "
@@ -915,7 +979,7 @@ other promotional rate, and the page does not state a cancellation deadline.</p>
 """ % dict(rows="".join(rows), log=log, calc=calc, ret=RETRIEVED,
            srcrates=srclink("https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
            defs=defs)
-    return page("Hotels &amp; true cost", body, "hotels.html")
+    return page("Hotels & true cost", body, "hotels.html")
 
 
 def p_walking():
@@ -1404,7 +1468,7 @@ def p_sources(events):
                          "Note irregularity X-01."))
     for n in sorted(SHEETS):
         s = SHEETS[n]
-        srcs.append(dict(kind="Structure sheet", name="Sheet %d &mdash; %s" % (n, s["title"]),
+        srcs.append(dict(kind="Structure sheet", name="Sheet %d \u2014 %s" % (n, s["title"]),
                          url=s["url"], date=s.get("retrieved", RETRIEVED),
                          use="Events %s. Buy-in split, late registration, stack, level length, payout share, "
                              "and the re-entry / add-on / rebuy finding."
@@ -1430,7 +1494,7 @@ def p_sources(events):
                          date=RETRIEVED if "this session" in v["provenance"] else "2026-11-16",
                          use=v["verdict"]))
         for f in v["earlier_findings"]:
-            srcs.append(dict(kind="Other venue", name="%s &mdash; %s" % (v["name"], f["url"].rsplit("/", 1)[-1][:44]),
+            srcs.append(dict(kind="Other venue", name="%s \u2014 %s" % (v["name"], f["url"].rsplit("/", 1)[-1][:44]),
                              url=f["url"], date=f["retrieved"], use=f["text"]))
     rows = "".join(
         "<tr><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td><td class='note'>%s</td></tr>"
