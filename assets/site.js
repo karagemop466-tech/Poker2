@@ -141,9 +141,34 @@
     render();
   }
 
+  /* ------------------------------------------------- per-table search --- */
+  /* Generic text search: <input class="search" data-filter-table="#tid">
+     filters every tbody row of that table by its text content. Used on the
+     day-plan, overlap, entry-rules and source-register tables so every data
+     table on the site has a search box. */
+  function initTableSearch() {
+    $$("input.search[data-filter-table]").forEach(function (input) {
+      var table = $(input.getAttribute("data-filter-table"));
+      if (!table) return;
+      var rows = $$("tbody tr", table);
+      input.addEventListener("input", function () {
+        var term = input.value.trim().toLowerCase();
+        var shown = 0;
+        rows.forEach(function (tr) {
+          var ok = !term || tr.textContent.toLowerCase().indexOf(term) !== -1;
+          tr.style.display = ok ? "" : "none";
+          if (ok) shown++;
+        });
+        var status = input.parentNode && input.parentNode.querySelector(".search-status");
+        if (status) status.textContent = term ? shown + " of " + rows.length + " rows" : "";
+      });
+    });
+  }
+
   /* ------------------------------------------------------------- prices --- */
   document.addEventListener("DOMContentLoaded", function () {
     initFilters();
+    initTableSearch();
     initCalc();
   });
 })();

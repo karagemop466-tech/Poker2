@@ -1,0 +1,95 @@
+{
+ "session": "arena/594db405-poker2",
+ "retrieved": "2026-11-17",
+ "how_read": "Each page below was opened live on 2026-11-17 (UTC) through the page-fetch tool (sandbox curl cannot reach casino hosts) and the quoted text was copied from the fetched page itself. Full transcript: research/594db405-verification-sweep.md. No value in this file is inferred or taken from an aggregator.",
+ "change_records": {
+  "caesars_resort_fee_range": {
+   "url": "https://www.caesars.com/corporate/disclaimer",
+   "section": "Hotel Disclaimer",
+   "previous_text": "$45-$50 plus applicable tax",
+   "previous_retrieved": "2026-11-16",
+   "text": "$45-$60 plus applicable tax",
+   "excerpt": "Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.",
+   "retrieved": "2026-11-17",
+   "change": "The upper bound moved from $50 to $60 between the 2026-11-16 read (session arena/e1c079dc-poker2) and the 2026-11-17 read of the same section. Search engine snippets still show the old $45-$50 text; the live page fetch is authoritative.",
+   "note": "Only a range is published, so no single Caesars Palace or Horseshoe fee value is entered. Both property rows keep blank fee cells."
+  }
+ },
+ "confirmed_reads": {
+  "H-VEN": {
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee", "tax_rate", "incidentals", "parking", "extra_guest", "early_departure", "prepaid_cancellation"],
+   "note": "Read end to end (both chunks). Every tracked value matched: 13.38% Clark County Room Tax, $55 fee, $150/night incidentals, $20 guest self-park / $25 non-guest Fri-Sun / $40 valet, $50 extra guest 13+, $100 early departure, prepaid offers non-refundable."
+  },
+  "H-PAL": {
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee", "tax_rate", "incidentals", "parking", "extra_guest", "early_departure", "prepaid_cancellation"],
+   "note": "Same shared Venetian Resort terms page as H-VEN; also cross-checked the poker suite-rate page ($119/$209, code EPOKR25, '$55 resort fee per night stayed', six-hour play or $300+ tournament per night)."
+  },
+  "H-WYN": {
+   "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee", "parking"],
+   "note": "'Reservations will be charged a daily resort fee of $55 plus tax' and 'Complimentary self-parking for up to two vehicles' (Tower Suites: valet or self-parking). Match."
+  },
+  "H-ARIA": {
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee", "incidentals", "additional_occupant", "cancellation", "check_in_out"],
+   "note": "Word-for-word match with the row's evidence: $55.00 fee, $150/day Deluxe incidentals, $50/occupant above 2, first-night deposit refundable with 72-hour notice (866.359.7757), 3pm/11am."
+  },
+  "H-MGM": {
+   "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee", "incidentals", "additional_occupant", "cancellation", "check_in_out"],
+   "note": "Match: $50.00 fee, $100/day incidentals, $40/occupant above 2, 72-hour cancellation (877.880.0880), 3pm/11am."
+  },
+  "H-WG": {
+   "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["resort_fee"],
+   "note": "Page body prints '$49.99 plus tax per night, though special discounts and exceptions may apply throughout the year'. The $36.99 figure attributed to this page by an earlier note does not appear in the body read today."
+  },
+  "H-HS": {
+   "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["cancellation"],
+   "note": "Official page advertises 'FREE 48-Hour Cancellation*' and 'Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in.' No resort-fee amount is published on the property page; fee cell stays blank. The corporate disclaimer range (see change_records) is the only official figure available."
+  },
+  "H-SP": {
+   "url": "https://southpointcasino.com/casino/poker-room",
+   "retrieved": "2026-11-17",
+   "fields_confirmed": ["parking", "daily_slate"],
+   "note": "'Room rates are available with 4 hours of cash play for our out-of-town guests and parking is always free!' and 'tournaments daily with aggressive guarantees at 10:10 am, 2:10 pm, 6:10 pm and 10:10 pm with buy-ins of $120 and $300'. The daily-tournament-schedule page is image-only (JPG poster + JPG rules sheets) so per-time buy-in mapping stays unpublished."
+  }
+ },
+ "wynn_guarantee_note": {
+  "hotel_id": "H-WYN",
+  "standard_policy_excerpt": "A valid credit card is required to confirm your reservation. One night's room rate and tax will be charged at time of booking.",
+  "standard_policy_url": "https://www.wynnlasvegas.com/about-us/resort-information",
+  "retrieved": "2026-11-17",
+  "note": "The row's existing 'full deposit of all room nights and tax' quote is from three official offer-terms pages (terms-and-conditions/850257, /848703, /849723) and is offer-specific. The general guarantee policy charges one night. Both readings are kept: deposit exposure depends on the rate booked."
+ },
+ "horseshoe_cancellation_quote": {
+  "hotel_id": "H-HS",
+  "excerpt": "Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in. Terms apply.",
+  "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+  "retrieved": "2026-11-17"
+ },
+ "structure_sheet_spot_checks": [
+  {
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "event_ids": ["V-02"],
+   "result": "match",
+   "fields": ["buy_in 300", "fee 58", "pool_per_entry 242", "gtd 10000", "chips 40000", "level_min 30", "start 11:10 AM", "late_reg '10 levels + Break (~ 4:55 PM)'", "pays 12.5% of the field", "no re-entry/rebuy/add-on clause"]
+  },
+  {
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "event_ids": ["V-10"],
+   "result": "match",
+   "fields": ["buy_in 400", "fee 65", "pool_per_entry 335", "gtd 15000", "chips 40000", "level_min 30", "start 11:10 AM", "late_reg '10 levels + Break (~ 4:55 PM)'", "pays 12.5% of the field", "no re-entry/rebuy/add-on clause"]
+  }
+ ]
+}

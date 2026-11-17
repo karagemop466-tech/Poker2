@@ -14205,7 +14205,22 @@
      "route_official": null,
      "route_source": null
     }
-   ]
+   ],
+   "verification_594db405": {
+    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee",
+     "tax_rate",
+     "incidentals",
+     "parking",
+     "extra_guest",
+     "early_departure",
+     "prepaid_cancellation"
+    ],
+    "note": "Read end to end (both chunks). Every tracked value matched: 13.38% Clark County Room Tax, $55 fee, $150/night incidentals, $20 guest self-park / $25 non-guest Fri-Sun / $40 valet, $50 extra guest 13+, $100 early departure, prepaid offers non-refundable.",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-PAL",
@@ -14429,7 +14444,22 @@
      "route_official": null,
      "route_source": null
     }
-   ]
+   ],
+   "verification_594db405": {
+    "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee",
+     "tax_rate",
+     "incidentals",
+     "parking",
+     "extra_guest",
+     "early_departure",
+     "prepaid_cancellation"
+    ],
+    "note": "Same shared Venetian Resort terms page as H-VEN; also cross-checked the poker suite-rate page ($119/$209, code EPOKR25, '$55 resort fee per night stayed', six-hour play or $300+ tournament per night).",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-WYN",
@@ -14539,7 +14569,13 @@
      "https://www.wynnlasvegas.com/terms-and-conditions/848703",
      "https://www.wynnlasvegas.com/terms-and-conditions/849723"
     ],
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "standard_policy_note": {
+     "excerpt": "A valid credit card is required to confirm your reservation. One night's room rate and tax will be charged at time of booking.",
+     "source_url": "https://www.wynnlasvegas.com/about-us/resort-information",
+     "retrieved": "2026-11-17",
+     "note": "The row's existing 'full deposit of all room nights and tax' quote is from three official offer-terms pages (terms-and-conditions/850257, /848703, /849723) and is offer-specific. The general guarantee policy charges one night. Both readings are kept: deposit exposure depends on the rate booked."
+    }
    },
    "walk_pairs": [
     {
@@ -14662,7 +14698,17 @@
      "route_official": null,
      "route_source": null
     }
-   ]
+   ],
+   "verification_594db405": {
+    "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee",
+     "parking"
+    ],
+    "note": "'Reservations will be charged a daily resort fee of $55 plus tax' and 'Complimentary self-parking for up to two vehicles' (Tower Suites: valet or self-parking). Match.",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-ARIA",
@@ -14731,9 +14777,10 @@
     "retrieved": "2026-11-17"
    },
    "cancellation_evidence": {
-    "status": "superseded_by_reread",
-    "note": "an earlier pass recorded that this page had not been read; the value on this row now comes from the 2026-11-17 read of https://aria.mgmresorts.com/en/terms-and-conditions.html",
-    "superseded_excerpt_of": null
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before arrival (and no shows) forfeit the first night's deposit.",
+    "status": "verified_official",
+    "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "walk_pairs": [
     {
@@ -14871,7 +14918,20 @@
    "cancellation_fee": "$165 mid-week or $200 weekend (Friday, Saturday or Sunday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
    "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (subject to eligibility and other terms and conditions available at https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)",
    "retrieved": "2026-11-17",
-   "fee_last_checked": "2026-11-17"
+   "fee_last_checked": "2026-11-17",
+   "verification_594db405": {
+    "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee",
+     "incidentals",
+     "additional_occupant",
+     "cancellation",
+     "check_in_out"
+    ],
+    "note": "Word-for-word match with the row's evidence: $55.00 fee, $150/day Deluxe incidentals, $50/occupant above 2, first-night deposit refundable with 72-hour notice (866.359.7757), 3pm/11am.",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-BEL",
@@ -14940,9 +15000,10 @@
     "retrieved": "2026-11-17"
    },
    "cancellation_evidence": {
-    "status": "superseded_by_reread",
-    "note": "an earlier pass recorded that this page had not been read; the value on this row now comes from the 2026-11-17 read of https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-    "superseded_excerpt_of": null
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before arrival (and no shows) forfeit the first night's deposit.",
+    "status": "verified_official",
+    "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "walk_pairs": [
     {
@@ -15245,7 +15306,20 @@
    "early_checkout": "Checking out before the confirmed departure date is charged the applicable rate and taxes for the night departed (early departure assessment).",
    "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible MGM Rewards Program members with Gold+ Tier Level status with eligible reservations",
    "retrieved": "2026-11-17",
-   "fee_last_checked": "2026-11-17"
+   "fee_last_checked": "2026-11-17",
+   "verification_594db405": {
+    "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee",
+     "incidentals",
+     "additional_occupant",
+     "cancellation",
+     "check_in_out"
+    ],
+    "note": "Match: $50.00 fee, $100/day incidentals, $40/occupant above 2, 72-hour cancellation (877.880.0880), 3pm/11am.",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-HS",
@@ -15259,7 +15333,7 @@
    "tax_note": "Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). Re-read 2026-11-17: the guide's licensed-property schedule lists \u201cBally\u2019s Las Vegas, 3645 Las Vegas Blvd S\u201d at 13.38% \u2014 this property's address \u2014 while the property now trades as Horseshoe Las Vegas (per the official Caesars guide). The property's own terms do not print a rate.",
    "parking": "",
    "deposit": "",
-   "cancellation": "Free 48-hour cancellation advertised on the official hotel page (2026-11-16).",
+   "cancellation": "Free 48-hour cancellation advertised on the official hotel page (2026-11-17, arena/594db405-poker2 live read).",
    "booking_url": "https://www.caesars.com/book/?propcode=BLV",
    "rate_log": [],
    "notes": "Resort-fee amount is NOT published on the official pages captured; it appears in the official booking flow at checkout. Blank + flagged. Caesars Rewards Diamond+ waives resort fees (official benefits page). Hall of Fame Poker Room (daily tournaments).",
@@ -15301,7 +15375,11 @@
     "status": "not_read_official_page"
    },
    "cancellation_evidence": {
-    "status": "not_read_official_page"
+    "status": "verified_official",
+    "rule": "Free cancellation up to 48 hours before check-in (advertised on the official hotel page).",
+    "excerpt": "Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in. Terms apply.",
+    "source_url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+    "retrieved": "2026-11-17"
    },
    "walk_pairs": [
     {
@@ -15430,6 +15508,27 @@
     "retrieved": "2026-11-17",
     "finding": "The official Caesars Palace hotel page publishes no nightly resort-fee figure. What it does state, in its own 'Why Book With Us' panel, is 'FREE 48-Hour Cancellation*' (asterisked, terms not on the page) and a Best Rate Guarantee. No resort fee, tax, parking or checkout total is published here, so those cells stay blank.",
     "cancellation_marketing": "FREE 48-Hour Cancellation* (as printed on the official property page; the asterisked terms are not on the page)"
+   },
+   "fee_range": {
+    "text": "$45-$60 plus applicable tax",
+    "excerpt": "Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.",
+    "url": "https://www.caesars.com/corporate/disclaimer",
+    "retrieved": "2026-11-17",
+    "previous_value": {
+     "text": "$45-$50 plus applicable tax",
+     "retrieved": "2026-11-16"
+    },
+    "change_detected": true,
+    "note": "Only a range is published, so no single Caesars Palace or Horseshoe fee value is entered. Both property rows keep blank fee cells."
+   },
+   "verification_594db405": {
+    "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "cancellation"
+    ],
+    "note": "Official page advertises 'FREE 48-Hour Cancellation*' and 'Reserve now. Pay at hotel. Free cancellation up to 48 hours before check-in.' No resort-fee amount is published on the property page; fee cell stays blank. The corporate disclaimer range (see change_records) is the only official figure available.",
+    "transcript": "research/594db405-verification-sweep.md"
    }
   },
   {
@@ -15476,11 +15575,16 @@
     "within_30_min": true
    },
    "fee_range": {
-    "text": "$45-$50 plus applicable tax",
-    "excerpt": "Caesars corporate disclaimer: 'Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.'",
+    "text": "$45-$60 plus applicable tax",
+    "excerpt": "Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.",
     "url": "https://www.caesars.com/corporate/disclaimer",
-    "retrieved": "2026-11-16",
-    "note": "Only a range is published, so no single Caesars Palace fee value is entered."
+    "retrieved": "2026-11-17",
+    "previous_value": {
+     "text": "$45-$50 plus applicable tax",
+     "retrieved": "2026-11-16"
+    },
+    "change_detected": true,
+    "note": "Only a range is published, so no single Caesars Palace or Horseshoe fee value is entered. Both property rows keep blank fee cells."
    },
    "fee_evidence": {
     "amount": null,
@@ -15778,7 +15882,16 @@
     "source_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
     "retrieved": "2026-11-17"
    },
-   "fee_last_checked": "2026-11-17"
+   "fee_last_checked": "2026-11-17",
+   "verification_594db405": {
+    "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "resort_fee"
+    ],
+    "note": "Page body prints '$49.99 plus tax per night, though special discounts and exceptions may apply throughout the year'. The $36.99 figure attributed to this page by an earlier note does not appear in the body read today.",
+    "transcript": "research/594db405-verification-sweep.md"
+   }
   },
   {
    "id": "H-SP",
@@ -15817,6 +15930,16 @@
     "within_30_to_wynn": null,
     "status_to_wynn": "not routed \u2014 open the maps link for a manual check",
     "osrm_venetian_min": null
+   },
+   "verification_594db405": {
+    "url": "https://southpointcasino.com/casino/poker-room",
+    "retrieved": "2026-11-17",
+    "fields_confirmed": [
+     "parking",
+     "daily_slate"
+    ],
+    "note": "'Room rates are available with 4 hours of cash play for our out-of-town guests and parking is always free!' and 'tournaments daily with aggressive guarantees at 10:10 am, 2:10 pm, 6:10 pm and 10:10 pm with buy-ins of $120 and $300'. The daily-tournament-schedule page is image-only (JPG poster + JPG rules sheets) so per-time buy-in mapping stays unpublished.",
+    "transcript": "research/594db405-verification-sweep.md"
    }
   }
  ],
@@ -16596,6 +16719,15 @@
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
    "severity": "high",
    "id": "VR-32a4-04"
+  },
+  {
+   "source": "arena/594db405-poker2 re-read 2026-11-17",
+   "item": "Caesars corporate disclaimer fee range changed on the official page",
+   "where": "Hotels (Horseshoe / Caesars Palace rows), caesars_resort_fee_range",
+   "detail": "The Hotel Disclaimer section of https://www.caesars.com/corporate/disclaimer printed \u201cbetween $45-$50 plus applicable tax\u201d when read 2026-11-16 and prints \u201cbetween $45-$60 plus applicable tax\u201d when read 2026-11-17. The dataset now carries the live text with both readings; any estimate that used the old upper bound understates the worst case by $10/night before tax. Property-level fee cells stay blank: the page publishes a range only.",
+   "url": "https://www.caesars.com/corporate/disclaimer",
+   "severity": "high",
+   "id": "VR-594-01"
   }
  ],
  "summary": {
@@ -17311,11 +17443,16 @@
   "retrieved": "2026-11-16"
  },
  "caesars_resort_fee_range": {
-  "text": "$45-$50 plus applicable tax",
-  "excerpt": "Caesars corporate disclaimer: 'Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.'",
+  "text": "$45-$60 plus applicable tax",
+  "excerpt": "Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.",
   "url": "https://www.caesars.com/corporate/disclaimer",
-  "retrieved": "2026-11-16",
-  "note": "Only a range is published, so no single Caesars Palace fee value is entered."
+  "retrieved": "2026-11-17",
+  "previous_value": {
+   "text": "$45-$50 plus applicable tax",
+   "retrieved": "2026-11-16"
+  },
+  "change_detected": true,
+  "note": "Only a range is published, so no single Caesars Palace or Horseshoe fee value is entered. Both property rows keep blank fee cells."
  },
  "walking_check": {
   "osrm_as_of": "2026-11-16",

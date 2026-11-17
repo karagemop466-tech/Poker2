@@ -389,6 +389,15 @@ def hotel_table(hotels, table_id, show_calc=True):
                          f'{esc(c.get("note") or c.get("conflict") or c)}</small>')
         elif h.get("fee_last_read") and h.get("resort_fee_src"):
             fee_cell += f'<small class="excerpt note">read on the linked official page · {esc(h["fee_last_read"])}</small>'
+        fr = h.get("fee_range") or {}
+        if fr.get("text"):
+            _prev = fr.get("previous_value") or {}
+            _chg = (f' · <b>changed</b> from {_prev.get("text")} (read {esc(_prev.get("retrieved"))})'
+                    if _prev.get("text") else "")
+            fee_cell += (f'<small class="excerpt note"><span class="badge b-info">official range only</span> '
+                         f'&ldquo;{esc(fr.get("excerpt") or fr["text"])}&rdquo; '
+                         f'<a href="{esc(fr.get("url"))}" target="_blank" rel="noopener">official disclaimer</a>'
+                         f' · read {esc(fr.get("retrieved"))}{_chg}</small>')
         tax = h.get("tax_rate")
         tax_cell = (f"{tax*100:.2f}%" if tax else '<span class="badge b-warn">blank</span>')
         if h.get("tax_note"):
@@ -1308,6 +1317,31 @@ property's own terms page states them, with the date that page was read. This is
 <h1>Trip planner</h1>
 <p class="lead">Estimated cost of a trip = <strong>entries × buy-ins + nights × true hotel cost</strong>,
 where true hotel cost/night = (rate + resort fee) × (1 + tax) + parking. Enter values only from verified rows or your own dated quote.</p>
+<div class="panel" id="decision-workflow">
+<h2>Decision workflow — do these in order</h2>
+<ol class="steps">
+<li><strong>Fix trip dates and a nightly budget / quality floor first.</strong> Every later comparison is
+meaningless until the stay is fixed; hotel quotes are date-specific and quality is
+<a href="hotels.html">unrated by official sources</a>, so the floor is yours to set.</li>
+<li><strong>For each candidate event, get the official structure sheet and the written entry rules.</strong>
+Remove any event that does not match the single-entry policy (no re-entry, no rebuy, no add-on, no
+second buy-in). Today <a href="single-entry.html">no room publishes that rule</a> — so the removal test
+is instead: drop every event whose sheet prices a second buy-in, runs multiple flights, pays bounties,
+or awards seats.</li>
+<li><strong>Compare only the survivors</strong> on guaranteed pool, total entry fee, starting stack and
+blind duration, payout structure, and daily schedule fit. Rank by guarantee ÷ entry fee only after the
+fee and guarantee are both confirmed — and read it as a
+<a href="ranking.html">descriptive ratio, not a forecast</a>.</li>
+<li><strong>Obtain itemized hotel totals for the same stay</strong> (checkout total, nightly average,
+resort fee, tax, parking, cancellation deadline, rate timestamp) and
+<a href="walking.html">check the walking route is under 30 minutes</a> from each hotel to the venue.</li>
+<li><strong>Build one event per day first.</strong> Add an evening event only where you can realistically
+exit the earlier one — no organiser publishes a finish time, so a second event is always a
+<a href="schedule.html#dayplan">conditional fallback</a>, never a plan.</li>
+<li><strong>Reconfirm official schedules, rates, and policies before any nonrefundable payment.</strong>
+Every row carries a last-checked date and a source link; re-open it the day you pay.</li>
+</ol>
+</div>
 <div class="panel" id="trip-calc">
 <h2>Trip cost calculator</h2>
 <div class="form-grid">

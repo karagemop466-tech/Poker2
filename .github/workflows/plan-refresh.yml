@@ -45,10 +45,10 @@ jobs:
           # outcome is carried into scripts/commit-refresh.sh, which opens a review PR instead of
           # ending the run with no artefacts.
           rc=0
-          { python3 scripts/build-events.py --check
-            && python3 scripts/build-schedule.py --check
-            && python3 scripts/build-walk.py --check
-            && python3 scripts/build-site.py --check
+          { python3 scripts/build-events.py --check \
+            && python3 scripts/build-schedule.py --check \
+            && python3 scripts/build-walk.py --check \
+            && python3 scripts/build-site.py --check \
             && python3 scripts/check_plan_fresh.py --strict ; } > /tmp/pristine.log 2>&1 || rc=$?
           cat /tmp/pristine.log
           {
@@ -100,12 +100,26 @@ jobs:
           # `--check` on build-events/build-schedule/build-walk still tells us whether the
           # transcriptions still match; build-site is checked by the freshness gate below,
           # which compares against the tree *after* this run's own re-render.
-          { python3 scripts/build-events.py --check
-            && python3 scripts/build-schedule.py --check
-            && python3 scripts/build-walk.py --check
-            && node scripts/scrape-schedule.mjs --selftest ; } > /tmp/verify.log 2>&1 \
-            || echo failed > /tmp/verify.failed
+          #
+          # (This block used to be written as `{ cmd \n && cmd ; }` - a bash syntax error,
+          # because a newline before `&&` terminates the command - so the step died with
+          # exit 2 on every run (43943838443, 44124782058) and every later step was skipped.
+          # Re-verified on bash 5.2 with a minimal script file; see COORDINATION.md,
+          # session arena/594db405-poker2. Runs 43943838443 / 44124782058 also predate
+          # the re-render step below, so the drift fix and the syntax fix are both needed.)
+          set +e
+          {
+            python3 scripts/build-events.py --check \
+              && python3 scripts/build-schedule.py --check \
+              && python3 scripts/build-walk.py --check \
+              && node scripts/scrape-schedule.mjs --selftest
+          } > /tmp/verify.log 2>&1
+          verify_status=$?
+          set -e
           cat /tmp/verify.log
+          if [ "$verify_status" -ne 0 ]; then
+            echo failed > /tmp/verify.failed
+          fi
           cat /tmp/verify.log /tmp/pristine.log 2>/dev/null > /tmp/verify.all || true
           if [ -f /tmp/verify.failed ]; then
             echo "GENERATOR CHECK FAILED: official text no longer matches the transcription (or the " \
