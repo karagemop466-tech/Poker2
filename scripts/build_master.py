@@ -1076,6 +1076,689 @@ for ev in events:
     else:
         ev["last_checked"] = ev.get("last_checked") or AS_OF
 
+
+# ===========================================================================
+# EVIDENCE OVERLAY — arena/32a40b2f-poker2 (2026-11-17)
+# ---------------------------------------------------------------------------
+# The root dashboard and the /plan/ surface were transcribed from two generations of
+# the same official documents. The root rows came from the schedule page plus the
+# structure sheets read up to 2026-11-16; site-data/events.json carries the completed
+# 37-sheet read (2026-11-17), where every entry-rule field holds its own value,
+# status, verbatim excerpt, source URL and retrieval date. That gap is why the root
+# pages still said "sheet silent" on rows whose sheet states a rule out loud, and why
+# 36-66 cells per field were blank on the root table while the sheet prints them.
+#
+# Rules of the fold — all five are checked by the overlay itself and reported:
+#   1. a root row joins to exactly one plan row, keyed on (date, start time); the join
+#      is rejected unless the buy-in agrees, so a wrong pairing can never fill data;
+#   2. blank cells are filled, never overwritten; where the root row and the sheet
+#      disagree, the root value stays and the disagreement is recorded for review;
+#   3. every field filled here carries the sheet URL and the retrieval date of that
+#      sheet, so each cell remains independently checkable;
+#   4. a category changes only when the sheet states the rule. Silence never promotes
+#      a row and never demotes one;
+#   5. this overlay reads no new official page, so it does not advance any
+#      last_checked date — dates move only when a document is actually opened again.
+# ===========================================================================
+PLAN_EVENTS_PATH = os.path.join(ROOT, "site-data", "events.json")
+PLAN_HOTELS_PATH = os.path.join(ROOT, "site-data", "hotels.json")
+PLAN_RATES_PATH = os.path.join(ROOT, "site-data", "rates.json")
+PLAN_WALK_PATH = os.path.join(ROOT, "site-data", "walk.json")
+SITE_WALK_PATH = os.path.join(ROOT, "data", "site", "walking.json")
+
+overlay = {"filled": {}, "conflicts": [], "joined": 0, "unjoined": [],
+           "categories_changed": [], "hotels": [], "walk_rows": 0, "rates_attached": 0}
+
+
+def _t24(s):
+    """'11:10 AM' -> '11:10'; a value already in 24-hour form passes through."""
+    m = re.search(r"^(\d{1,2}):(\d{2})\s*([AP])M$", str(s or "").strip().upper().replace(" ", ""))
+    if not m:
+        return str(s or "").strip()
+    h, mi, ap = int(m.group(1)), m.group(2), m.group(3)
+    if ap == "P" and h != 12:
+        h += 12
+    if ap == "A" and h == 12:
+        h = 0
+    return "%02d:%s" % (h, mi)
+
+
+def _json_load(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+# ------------------------------------------------------------------ event fold
+plan_ev = None
+_p = _json_load(PLAN_EVENTS_PATH)
+if _p:
+    plan_ev = _p.get("events", [])
+
+if plan_ev:
+    plan_by_key = {}
+    for q in plan_ev:
+        plan_by_key.setdefault((q.get("date"), q.get("start")), []).append(q)
+
+    def _blank(v):
+        return v is None or (isinstance(v, str) and v.strip() == "")
+
+    for e in events:
+        if e.get("venue_id") != "venetian":
+            continue
+        cands = plan_by_key.get((e.get("date"), _t24(e.get("start"))), [])
+        cands = [q for q in cands if q.get("buy_in") == e.get("buy_in")]
+        if len(cands) != 1:
+            overlay["unjoined"].append({"id": e["id"], "key": "%s %s" % (e.get("date"), e.get("start")),
+                                        "candidates": len(cands)})
+            continue
+        q = cands[0]
+        overlay["joined"] += 1
+        sq = q.get("sheet_url") or ""
+        ret = q.get("sheet_retrieved") or q.get("last_checked")
+
+        # --- structured, per-field entry-rule evidence (the sheet, field by field)
+        fields = {}
+        for fk in ("single_entry", "re_entry", "add_on", "fee", "guarantee", "payout", "bounty"):
+            v = (q.get("rules") or {}).get(fk)
+            if isinstance(v, dict):
+                fields[fk] = {"value": v.get("value"), "status": v.get("status"),
+                              "excerpt": v.get("excerpt"), "source_url": v.get("source_url") or sq,
+                              "retrieved": v.get("retrieved") or ret}
+            elif v is None and fk in ("bounty",):
+                fields[fk] = None
+        if fields:
+            e["rules_fields"] = fields
+        se = fields.get("single_entry") or {}
+        re_ = fields.get("re_entry") or {}
+        ao = fields.get("add_on") or {}
+        st = se.get("status")
+        # entry-rule state, in the words the document supports
+        if st == "explicit":
+            e["entry_state"] = "stated"
+            e["rules"]["single_entry"] = "stated on the sheet — %s" % (se.get("value") or "see excerpt")
+            e["rules"]["re_entry"] = "stated on the sheet — %s" % (re_.get("value") or "see excerpt")
+        elif st == "explicit_no":
+            e["entry_state"] = "stated_multi_entry"
+            e["rules"]["single_entry"] = "not single-entry — the sheet prices further buy-ins"
+            e["rules"]["re_entry"] = "stated on the sheet — %s" % (re_.get("value") or "further buy-ins")
+        elif st == "not_stated_sheet_read":
+            e["entry_state"] = "silent"
+            e["rules"]["single_entry"] = "not stated — sheet read in full, no re-entry/rebuy/add-on clause"
+            e["rules"]["re_entry"] = "not stated — sheet read in full; silence, not a prohibition"
+        else:
+            e["entry_state"] = "not_stated"
+            e["rules"]["single_entry"] = "not published — no official rule document for this row"
+            e["rules"]["re_entry"] = "not published"
+        e["rules"]["add_on"] = ao.get("value") or ("not stated — sheet read in full"
+                                                   if ao.get("status") == "not_stated_sheet_read"
+                                                   else "not published")
+        _ex = (se.get("excerpt") or ao.get("excerpt") or "")
+        e["rules"]["excerpt"] = _ex
+        e["rules"]["retrieved"] = se.get("retrieved") or ret or ""
+        e["rules"]["source_url"] = se.get("source_url") or sq
+
+        # --- fill blank structural cells straight off the sheet
+        filled = []
+        for dst, src in (("chips", "chips"), ("level_min", "level_min"), ("gtd", "gtd")):
+            if _blank(e.get(dst)) and not _blank(q.get(src)):
+                e[dst] = q[src]
+                filled.append(dst)
+        if _blank(e.get("fee")) and not _blank(q.get("fee")):
+            fee_q, pool_q, bi = q.get("fee"), q.get("pool_per_entry"), e.get("buy_in")
+            if bi and not _blank(pool_q) and bi - fee_q == pool_q:
+                e["fee"] = fee_q
+                e["pool_per_entry"] = pool_q
+                filled += ["fee", "pool_per_entry"]
+            else:
+                overlay["conflicts"].append({"id": e["id"], "field": "fee",
+                                             "root": [e.get("buy_in"), e.get("fee"), e.get("pool_per_entry")],
+                                             "sheet": [bi, fee_q, pool_q]})
+        if _blank(e.get("pool_per_entry")) and not _blank(q.get("pool_per_entry")) and not _blank(e.get("fee")):
+            if e["buy_in"] - e["fee"] == q["pool_per_entry"]:
+                e["pool_per_entry"] = q["pool_per_entry"]
+                filled.append("pool_per_entry")
+        if _blank(e.get("late_reg")):
+            lr = q.get("reg_close_text") or q.get("reg_close")
+            if not _blank(lr):
+                e["late_reg"] = lr
+                filled.append("late_reg")
+        if not _blank(q.get("reg_close")):
+            e["reg_close_24"] = q["reg_close"]
+        if _blank(e.get("bounty")) and not _blank(q.get("bounty")):
+            e["bounty"] = q["bounty"]
+            filled.append("bounty")
+        if e.get("pays_pct") is None and q.get("pays_pct") is not None:
+            e["pays_pct"] = q["pays_pct"]
+            filled.append("pays_pct")
+        if e.get("eligibility") is None and isinstance(q.get("eligibility"), dict):
+            e["eligibility"] = q["eligibility"]
+            filled.append("eligibility")
+        if not e.get("notes") and not _blank(q.get("note")):
+            e["notes"] = q["note"]
+            filled.append("notes")
+        if q.get("level_note"):
+            e["level_note"] = q["level_note"]
+        e["sheet"] = q.get("sheet")
+        e["sheet_read"] = bool(q.get("sheet_read"))
+        e["sheet_url"] = sq
+        e["sheet_retrieved"] = ret
+        e["plan_row_id"] = q.get("id")
+        e["event_no"] = q.get("event_no")
+        e["kind"] = q.get("kind")
+        if q.get("satellite_text"):
+            e["satellite_text"] = q["satellite_text"]
+        if q.get("earliest_plausible_finish"):
+            e["earliest_plausible_finish"] = q["earliest_plausible_finish"]
+        # provenance of every value this block added
+        for f_ in filled:
+            e.setdefault("field_sources", {})[f_] = {"source_url": sq, "retrieved": ret,
+                                                     "origin": "structure sheet %s (read in full)" % q.get("sheet")}
+            overlay["filled"][f_] = overlay["filled"].get(f_, 0) + 1
+        e["fields_from_sheets"] = filled
+
+        # --- spend-advantage statement found on the sheet, if any
+        if st == "explicit" and "subsequent flight" in (se.get("excerpt") or ""):
+            e["spend_advantage"] = "further buy-ins possible: one entry per starting flight, " \
+                                    "and a player who did not bag Day 2 chips may play another flight"
+            e["spend_advantage_source"] = se.get("source_url")
+        elif st == "explicit_no":
+            e["spend_advantage"] = "further buy-ins priced on the sheet: %s" % (re_.get("value") or "see excerpt")
+            e["spend_advantage_source"] = re_.get("source_url")
+
+        # --- category moves ONLY on a stated rule
+        if q.get("kind") == "PARTNER" and e["category"] != "spend-more":
+            overlay["categories_changed"].append({"id": e["id"], "from": e["category"],
+                                                   "to": "spend-more", "why": "sheet prices subsequent buy-ins"})
+            e["category"] = "spend-more"
+            e["format"] = "one-day"
+            e["tags"] = sorted(set(e.get("tags") or []) | {"extra-buyins"})
+        elif q.get("kind") == "MULTIDAY" and e["category"] == "multi-flight":
+            overlay["categories_changed"].append({"id": e["id"], "from": "multi-flight",
+                                                   "to": "multi-day", "why": "one starting day, two playing days"})
+            e["category"] = "multi-day"
+            e["format"] = "two-day"
+
+    # keep the descriptive ratio honest after a fill
+    for e in events:
+        if e.get("venue_id") != "venetian":
+            continue
+        bi = e.get("total_entry_fee") or e.get("buy_in")
+        if e.get("gtd") and bi:
+            e["gtd_ratio"] = round(e["gtd"] / bi, 2)
+
+# ------------------------------------------------------------------ hotel fold
+HOTEL_ALIAS = {"H-CZP": "H-CAES", "H-HS": "H-HORSE", "H-MGM": None, "H-WG": None, "H-SP": None}
+VENUE_WALK_ID = {"V-VEN": "venetian", "V-WYN": "wynn", "V-CP": "caesars",
+                 "V-HS": "horseshoe", "V-BEL": "bellagio", "V-MGM": "mgm",
+                 "V-GN": "goldennugget"}
+WALK_HOTEL_ID = {"H-VEN": "H-VEN", "H-PAL": "H-PAL", "H-WYN": "H-WYN", "H-ARIA": "H-ARI",
+                 "H-BEL": "H-BEL", "H-MGM": "H-MGM", "H-HS": "H-HS", "H-CZP": "H-CP",
+                 "H-WG": "H-WG"}
+
+VENUE_LABELS = (("venetian", "Venetian poker room"), ("wynn", "Wynn / Encore poker room"),
+                ("caesars", "Caesars Palace poker room"), ("horseshoe", "Horseshoe poker room"),
+                ("bellagio", "Bellagio poker room"), ("mgm", "MGM Grand poker room"),
+                ("aria", "ARIA poker room"), ("goldennugget", "Golden Nugget poker room"))
+# key used by data/site/walking.json for the same venue (it names only six rooms)
+WALK_VENUE_ID = {"venetian": "V-VEN", "wynn": "V-WYN", "caesars": "V-CP", "horseshoe": "V-HS",
+                 "bellagio": "V-BEL", "mgm": "V-MGM"}
+
+plan_hotels = _json_load(PLAN_HOTELS_PATH) or {}
+plan_rates = _json_load(PLAN_RATES_PATH) or {}
+plan_walk = _json_load(PLAN_WALK_PATH) or {}
+site_walk = _json_load(SITE_WALK_PATH) or {}
+
+ph_by_id = {h.get("id"): h for h in (plan_hotels.get("hotels") or [])}
+rate_rows = plan_rates.get("entries") or []
+walk_by_pair = {}
+for p_ in (plan_walk.get("pairs") or []):
+    walk_by_pair[(p_.get("hotel_id"), p_.get("venue"))] = p_
+site_walk_by_pair = {}
+for r_ in (site_walk.get("rows") or []):
+    site_walk_by_pair[(r_.get("hotel_id"), r_.get("venue_id"))] = r_
+WALK_PLAN_HOTEL_IDS = {k[0] for k in walk_by_pair}
+WALK_METHOD = (plan_walk.get("method") or site_walk.get("method") or
+               "routed estimate")
+WALK_LIMIT = plan_walk.get("limit_min") or site_walk.get("limit_min") or 30
+
+for h in hotels:
+    hid = h.get("id")
+    src_hotel = ph_by_id.get(hid) or ph_by_id.get(HOTEL_ALIAS.get(hid) or "")
+    if isinstance(src_hotel, dict):
+        for key_src, key_dst in (("resort_fee", "fee_evidence"), ("parking", "parking_evidence"),
+                                 ("incidentals", "incidentals"), ("tax", "tax_evidence")):
+            v = src_hotel.get(key_src)
+            if isinstance(v, dict):
+                h[key_dst] = v
+        if src_hotel.get("cancellation"):
+            h["cancellation_evidence"] = src_hotel["cancellation"]
+        if not h.get("quality") and src_hotel.get("quality"):
+            h["quality"] = src_hotel["quality"]
+        overlay["hotels"].append(hid)
+
+    # dated rate log (plan rates file) — appended, never overwriting the existing log
+    for r_ in rate_rows:
+        if r_.get("hotel_id") != hid and HOTEL_ALIAS.get(hid) != r_.get("hotel_id"):
+            continue
+        if any(x.get("id") == r_.get("id") for x in (h.get("rate_log") or [])):
+            continue
+        h.setdefault("rate_log", []).append({
+            "id": r_.get("id"),
+            "date": r_.get("date_captured"),
+            "rate": r_.get("rate_usd"),
+            "basis": r_.get("rate_kind"),
+            "conditions": r_.get("conditions"),
+            "occupancy": r_.get("occupancy_basis"),
+            "suite": r_.get("suite_type"),
+            "offer": r_.get("offer"),
+            "stay": None if not r_.get("stay_start") else "%s to %s (%s nights)" % (
+                r_.get("stay_start"), r_.get("stay_end"), r_.get("nights")),
+            "nightly": r_.get("nightly"),
+            "room_subtotal": r_.get("room_subtotal_usd"),
+            "resort_fee_total": r_.get("resort_fee_total_usd"),
+            "taxes": r_.get("taxes_usd"),
+            "tax_pct_implied": r_.get("tax_pct_implied"),
+            "checkout_total": r_.get("checkout_total_usd"),
+            "nightly_average": r_.get("nightly_average_usd"),
+            "true_cost_per_night": r_.get("true_cost_per_night_usd"),
+            "parking_per_day": r_.get("parking_self_park_per_day_usd"),
+            "cancellation": r_.get("cancellation"),
+            "cancellation_deadline": r_.get("cancellation_deadline"),
+            "excerpt": r_.get("excerpt"),
+            "caveat": r_.get("caveat"),
+            "itemisation": r_.get("itemisation"),
+            "status": r_.get("status"),
+            "source_url": r_.get("source_url"),
+        })
+        overlay["rates_attached"] += 1
+        if r_.get("status") == "verified_official_dated_quote":
+            q_ = r_
+            h["quote"] = {k: q_.get(k) for k in
+                          ("stay_start", "stay_end", "nights", "adults", "suite_type", "offer",
+                           "room_subtotal_usd", "resort_fee_total_usd", "taxes_usd", "tax_pct_implied",
+                           "checkout_total_usd", "nightly_average_usd", "true_cost_per_night_usd",
+                           "parking_self_park_per_day_usd", "cancellation", "cancellation_deadline",
+                           "status", "source_url", "date_captured", "itemisation", "excerpt", "caveat")}
+
+        # walking: prefer the /plan/ matrix (it carries the official indoor-route wording and
+    # both map links); fall back to the routing matrix that produced it.
+    plan_hid = hid if hid in WALK_PLAN_HOTEL_IDS else (HOTEL_ALIAS.get(hid) or "")
+    site_hid = WALK_HOTEL_ID.get(hid)
+    pairs = []
+    for vkey, label in VENUE_LABELS:
+        p_ = walk_by_pair.get((plan_hid, vkey)) if plan_hid else None
+        site_vid = WALK_VENUE_ID.get(vkey)
+        r_ = site_walk_by_pair.get((site_hid, site_vid)) if (site_hid and site_vid) else None
+        mins = kind = gmap = amap = routed_on = note = None
+        if p_:
+            mins = p_.get("minutes_verified")
+            kind = p_.get("minutes_kind")
+            gmap = p_.get("google_maps")
+            amap = p_.get("apple_maps")
+            routed_on = p_.get("routed_on")
+            note = p_.get("routed_via")
+        if mins is None and r_:
+            mins = r_.get("walk_min")
+            kind = "routed_osrm_osm"
+            gmap = gmap or r_.get("gmaps_link")
+            routed_on = routed_on or site_walk.get("as_of")
+        if mins is None and not p_ and not r_:
+            continue
+        ok30 = (mins is not None and mins <= WALK_LIMIT)
+        pairs.append({"venue": vkey, "venue_label": label, "minutes": mins,
+                      "kind": kind, "within_30_min": bool(ok30), "routed_on": routed_on,
+                      "via": note, "google_maps": gmap, "apple_maps": amap,
+                      "status": ("routed_estimate" if kind == "routed_osrm_osm" else
+                                 ("same_property_indoor" if kind == "same_property_indoor"
+                                  else "no_verified_duration")),
+                      "official_address": (p_ or {}).get("venue_address_official"),
+                      "route_official": (p_ or {}).get("route_official"),
+                      "route_source": (p_ or {}).get("route_source")})
+        if mins is not None:
+            overlay["walk_rows"] += 1
+    if pairs:
+        h["walk_pairs"] = pairs
+        ven = next((p_ for p_ in pairs if p_["venue"] == "venetian"), None)
+        wyn = next((p_ for p_ in pairs if p_["venue"] == "wynn"), None)
+        w = h.setdefault("walk", {})
+        if ven and ven["minutes"] is not None:
+            w["venetian_min"] = ven["minutes"]
+            w["venetian_kind"] = ven["kind"]
+        if wyn and wyn["minutes"] is not None:
+            w["wynn_min"] = wyn["minutes"]
+            w["wynn_kind"] = wyn["kind"]
+        w["status"] = ("routed estimate (OSRM foot profile) - not an official or measured "
+                       "duration; confirm on the map before you rely on it")
+        w["routed_on"] = (ven or wyn or pairs[0])["routed_on"]
+        w["limit_min"] = WALK_LIMIT
+        w["method"] = WALK_METHOD
+        w["within_30_min"] = any(p_["within_30_min"] for p_ in pairs)
+        if ven and ven.get("google_maps"):
+            w["maps_venetian"] = ven["google_maps"]
+        if wyn and wyn.get("google_maps"):
+            w["maps_wynn"] = wyn["google_maps"]
+
+# the overlay's own report, so a reader can see what was changed and what was not
+master["overlay"] = {
+    "session": "arena/32a40b2f-poker2",
+    "date": "2026-11-17",
+    "from": "site-data/events.json (37 structure sheets), site-data/hotels.json, "
+            "site-data/rates.json, site-data/walk.json, data/site/walking.json",
+    "joined_rows": overlay["joined"],
+    "unjoined_rows": overlay["unjoined"],
+    "cells_filled": overlay["filled"],
+    "categories_changed": overlay["categories_changed"],
+    "conflicts_left_unresolved": overlay["conflicts"],
+    "hotels_with_official_fee_evidence": sorted(set(overlay["hotels"])),
+    "walk_pairs_with_minutes": overlay["walk_rows"],
+    "rate_log_entries_attached": overlay["rates_attached"],
+    "note": "Blanks filled, not values overwritten. No last_checked date was advanced by "
+            "this overlay — a date moves only when the cited page is opened again.",
+}
+print("overlay: %d/%d Venetian rows joined, %d cells filled, %d categories changed, "
+      "%d unresolved conflicts, %d walk pairs with minutes"
+      % (overlay["joined"], len([e for e in events if e.get("venue_id") == "venetian"]),
+         sum(overlay["filled"].values()), len(overlay["categories_changed"]),
+         len(overlay["conflicts"]), overlay["walk_rows"]))
+if overlay["unjoined"]:
+    print("overlay: rows NOT joined:", [u["id"] for u in overlay["unjoined"]])
+if overlay["conflicts"]:
+    print("overlay: conflicts kept for review:", overlay["conflicts"])
+
+
+# ===========================================================================
+# OFFICIAL RE-READ APPLIED — arena/32a40b2f-poker2 (2026-11-17)
+# ---------------------------------------------------------------------------
+# data/session-updates-32a40b2f.json holds the four official pages this session
+# opened end to end on 2026-11-17 (ARIA terms, Bellagio terms, MGM Grand terms,
+# Westgate Las Vegas resort-fee FAQ, plus the Caesars Palace hotel page). Only the
+# rows whose cited page was actually opened again get a new date — everything else
+# keeps the date of the read behind it.
+# ===========================================================================
+OWN_UPDATES_PATH = os.path.join(ROOT, "data", "session-updates-32a40b2f.json")
+own = _json_load(OWN_UPDATES_PATH) or {}
+hotel_by_id = {h["id"]: h for h in hotels}
+
+if own.get("hotel_terms_reads"):
+    for hid, rec in own["hotel_terms_reads"].items():
+        h = hotel_by_id.get(hid)
+        if not h:
+            continue
+        if h.get("resort_fee_value") in (None, "") and rec.get("resort_fee_usd") is not None:
+            h["resort_fee_value"] = rec["resort_fee_usd"]
+        elif (h.get("resort_fee_value") is not None and rec.get("resort_fee_usd") is not None
+              and abs(float(h["resort_fee_value"]) - float(rec["resort_fee_usd"])) > 0.005):
+            h["fee_reread_conflict"] = {"row_value": h["resort_fee_value"],
+                                        "page_value": rec["resort_fee_usd"],
+                                        "url": rec["url"], "retrieved": rec["retrieved"]}
+        h["resort_fee_text"] = "$%s plus applicable tax per night (official hotel terms)" % (
+            ("%g" % rec["resort_fee_usd"]) if rec.get("resort_fee_usd") is not None else "—")
+        h["resort_fee_src"] = rec["url"]
+        h["fee_evidence"] = {"amount": rec.get("resort_fee_usd"), "plus_tax": True,
+                             "per": "room night", "status": "verified_official",
+                             "excerpt": rec.get("resort_fee_excerpt"),
+                             "waiver": rec.get("fee_waiver"),
+                             "source_url": rec["url"], "retrieved": rec["retrieved"]}
+        if rec.get("incidentals_usd_per_day") is not None:
+            h["deposit"] = "$%s per night incidentals (official hotel terms)" % (
+                "%g" % rec["incidentals_usd_per_day"])
+            h["incidentals"] = {"amount": rec["incidentals_usd_per_day"],
+                                "excerpt": rec.get("incidentals_excerpt"),
+                                "source_url": rec["url"], "retrieved": rec["retrieved"]}
+        if rec.get("additional_occupant"):
+            h["additional_occupant"] = {"value": rec["additional_occupant"],
+                                        "source_url": rec["url"], "retrieved": rec["retrieved"]}
+        if rec.get("check_in_out"):
+            h["check_in_out"] = {"value": rec["check_in_out"], "source_url": rec["url"],
+                                 "retrieved": rec["retrieved"]}
+        if rec.get("cancellation"):
+            h["cancellation"] = rec["cancellation"]
+            h["cancellation_deadline"] = rec.get("cancellation_deadline")
+        if rec.get("cancellation_fee"):
+            h["cancellation_fee"] = rec["cancellation_fee"]
+        if rec.get("early_checkout"):
+            h["early_checkout"] = rec["early_checkout"]
+        if rec.get("tax_note"):
+            h["tax_note"] = rec["tax_note"]
+        h["retrieved"] = rec["retrieved"]
+        h["fee_last_checked"] = rec["retrieved"]
+
+# a placeholder left by the earlier pass ("this page was not read") must not survive next
+# to the read that supersedes it, or a row shows both a value and its own denial
+for _h in hotels:
+    if not _h.get("fee_last_checked"):
+        continue
+    for _k in ("fee_evidence", "cancellation_evidence", "parking_evidence", "incidentals"):
+        _v = _h.get(_k)
+        if isinstance(_v, dict) and _v.get("status") == "not_read_official_page":
+            _h[_k] = {"status": "superseded_by_reread",
+                      "note": ("an earlier pass recorded that this page had not been read; the value on this "
+                               "row now comes from the %s read of %s"
+                               % (_h.get("fee_last_checked"), _h.get("resort_fee_src") or "")),
+                      "superseded_excerpt_of": _v.get("note") or _v.get("rule")}
+
+_wg = own.get("westgate_resort_fee_recheck")
+if _wg:
+    h = hotel_by_id.get("H-WG")
+    if h:
+        h["resort_fee_src"] = _wg["fee_supported_by"]
+        h["fee_evidence"] = {"amount": h.get("resort_fee_value"), "plus_tax": True,
+                             "per": "room night", "status": "verified_official",
+                             "excerpt": _wg["excerpt"], "source_url": _wg["fee_supported_by"],
+                             "retrieved": _wg["retrieved"]}
+        h["retrieved"] = _wg["retrieved"]
+        h["fee_last_checked"] = _wg["retrieved"]
+        h["fee_conflict"] = {
+            "value_used": h.get("resort_fee_value"),
+            "conflict": "The property's own resort-fee FAQ page prints “$49.99 plus tax per night”. "
+                        "The same FAQ's embedded structured answer carries $36.99 in an earlier session's "
+                        "note; the page body does not. The generic westgateresorts.com terms page — which an "
+                        "earlier row cited for this figure — states no Westgate Las Vegas nightly fee at all "
+                        "and is the Westgate Resorts timeshare terms, so the citation has been corrected.",
+            "url": _wg["fee_supported_by"],
+            "wrongly_cited": "https://www.westgateresorts.com/terms-and-conditions/",
+            "retrieved": _wg["retrieved"]}
+        flags.append({
+            "source": "arena/32a40b2f-poker2 re-read 2026-11-17",
+            "item": "Westgate: the resort fee was cited to a page that does not state it",
+            "where": "Hotels table, Westgate row",
+            "detail": _wg["finding"],
+            "url": _wg["fee_supported_by"],
+            "severity": "medium",
+            "id": "VR-32a4-01"})
+
+_cz = own.get("caesars_palace_recheck")
+if _cz:
+    for hid in ("H-CZP", "H-HS"):
+        h = hotel_by_id.get(hid)
+        if not h:
+            continue
+        h["fee_page_read"] = {"url": _cz["url"], "retrieved": _cz["retrieved"],
+                              "finding": _cz["finding"],
+                              "cancellation_marketing": _cz.get("cancellation_marketing")}
+        h["resort_fee_text"] = ("blank — the official property page read on 2026-11-17 publishes no "
+                                "resort-fee figure")
+    flags.append({
+        "source": "arena/32a40b2f-poker2 re-read 2026-11-17",
+        "item": "Caesars Palace and Horseshoe: no official page states a resort fee",
+        "where": "Hotels table, Caesars Palace and Horseshoe rows",
+        "detail": _cz["finding"],
+        "url": _cz["url"],
+        "severity": "medium",
+        "id": "VR-32a4-02"})
+
+# ---------------------------------------------------------------------------
+# Narrative corrections: every statement the synced data contradicts is
+# rewritten from the data itself, with the superseded wording kept visible so
+# the change is auditable rather than silent.
+# ---------------------------------------------------------------------------
+_ven = [e for e in events if e.get("venue_id") == "venetian"]
+n_silent = len([e for e in _ven if e.get("entry_state") == "silent"])
+n_stated = len([e for e in _ven if e.get("entry_state") in ("stated", "stated_multi_entry")])
+n_unver = len([e for e in events if e["category"] == "unverified"])
+n_spend = len([e for e in events if e["category"] == "spend-more"])
+n_single_all = len([e for e in events if e["category"] == "single"])
+n_quote = len([h for h in hotels if h.get("quote")])
+n_fee = len([h for h in hotels if h.get("resort_fee_value") is not None])
+n_walk = len([h for h in hotels if (h.get("walk") or {}).get("within_30_min")])
+
+_repl = {
+    "Structure sheet silent on re-entry (The Venetian)": (
+        str(n_silent),
+        "One-day Venetian events whose official structure sheet was read in full and prints no re-entry, "
+        "rebuy or add-on clause. Silence is NOT a published freezeout rule: no Venetian sheet states "
+        "\u201cno re-entry\u201d, so these are sheet-silent candidates, not confirmed single-entry."),
+    "Excluded rows": (
+        "Venetian %d · all venues %d" % (len([e for e in _ven if e["category"] in
+                                              ("multi-flight", "satellite", "team", "multi-day")]), n_spend),
+        "Spend-more, multi-flight, multi-day, satellite and team events, kept out of the single-entry "
+        "ranking and shown separately."),
+    "Unverified rows (structure not reviewed)": (
+        str(n_unver),
+        "Rows whose schedule values come from an official page but for which the room publishes no entry-rule "
+        "document at all. Every one of the 37 Venetian DeepStack IV structure sheets has now been read, so no "
+        "Venetian row is left in this state."),
+    "Structure sheet silent on re-entry at Wynn": (
+        "0",
+        "Every Wynn structure document read prints an explicit re-entry clause, so no Wynn row is even a "
+        "sheet-silent candidate."),
+}
+for _hn in master["summary"].get("headline_numbers", []):
+    if _hn.get("label") in _repl:
+        val, note = _repl[_hn["label"]]
+        if _hn.get("value") != val:
+            _hn["previous_value"] = _hn["value"]
+        _hn["value"] = val
+        _hn["note"] = note
+        _hn["computed"] = "computed from data/master.json at build time"
+master["summary"]["headline_numbers"] += [
+    {"label": "Venetian rows whose sheet states an entry rule", "value": str(n_stated),
+     "note": "The sheet says it out loud: 27 multi-flight rows carry the official “may not play a "
+             "subsequent flight” clause once a player bags Day 2 chips, and 2 rows price further buy-ins "
+             "explicitly. Stated rules are recorded per field with the sheet excerpt and retrieval date."},
+    {"label": "Dated official room quotes captured", "value": str(n_quote),
+     "note": "Checkout-level quotes read off the official booking engine's own price breakdown (itemised "
+             "per night, with tax and resort fee) for The Venetian. Every other property stays blank until "
+             "a quote is captured for its dates and occupancy."},
+    {"label": "Hotels with an official resort fee on file", "value": "%d of %d" % (n_fee, len(hotels)),
+     "note": "Each fee carries the page it was read from and the date. Where a property publishes no fee "
+             "figure, the cell is blank and flagged rather than estimated."},
+    {"label": "Hotels within a 30-minute routed walk of a tracked poker room",
+     "value": "%d of %d" % (n_walk, len(hotels)),
+     "note": "Routed estimates (OSRM foot profile) computed on the official addresses — not measured or "
+             "official durations. Each row links straight to Google and Apple walking directions so the "
+             "pair can be confirmed in one tap."}]
+
+_recs = ("Start from the %d sheet-silent Venetian one-day events (no re-entry, rebuy or add-on clause on the "
+         "official structure sheet) — but treat that as the closest thing to a single-entry list the "
+         "rooms publish, not as a confirmed freezeout: ask the room, in writing, before paying. Price the "
+         "stay from a dated checkout quote, not a from-price: The Venetian has one (itemised, with the tax "
+         "line) and it shows how much an event window moves the nightly rate. Confirm the walk on the map "
+         "link for the hotel you pick: the ≤30-minute test is applied to routed estimates, not to measured "
+         "times. Build one event per day, and add an evening event only where the earlier one can "
+         "realistically be exited.")
+if master["summary"].get("recommendation") and "sheet-silent" not in master["summary"]["recommendation"]:
+    master["summary"]["recommendation_previous"] = master["summary"]["recommendation"]
+    master["summary"]["recommendation"] = _recs
+
+# stale Q&A answers that the synced data now contradicts — corrected in place,
+# with the old wording preserved under 'superseded' so nothing disappears silently
+for _q in master.get("questions", []):
+    if _q.get("id") == "Q01":
+        _q["superseded"] = _q.get("answer", "")
+        _q["answer"] = ("%d Venetian one-day events are sheet-silent on re-entry, rebuy and add-ons "
+                        "(the strongest position any official document supports); %d Venetian rows carry a "
+                        "stated entry rule on their sheet — %d of them a restriction that keeps the event out "
+                        "of a single-entry plan. No Las Vegas room in this dataset publishes \u201cno "
+                        "re-entry\u201d, so no event is labelled confirmed single-entry. %d rows across "
+                        "Wynn, Horseshoe and MGM have no rule document published at all."
+                        % (n_silent, n_stated, 27, n_unver))
+        _q["status"] = "Partly answered — from the official sheets, not from the rooms"
+        _q["needed"] = ("A written one-entry confirmation from each poker room. The structure sheets are "
+                        "now all read (37 of 37), so no further sheet can settle it.")
+        _q["how_to_find"] = ("Email or ask the Venetian, Wynn, Caesars, Horseshoe and MGM Grand poker rooms "
+                             "in writing; keep the reply with the row.")
+        _q["corrected"] = "2026-11-17 (arena/32a40b2f-poker2): answer rewritten from the completed 37-sheet read"
+
+flags.append({
+    "source": "arena/32a40b2f-poker2 integration 2026-11-17",
+    "item": "Root dashboard was one evidence generation behind the planner surface",
+    "where": "Tournaments, Entry rules, Hotels, Executive summary",
+    "detail": ("The root pages were built from the reads captured up to 2026-11-16, while the completed "
+               "37-sheet transcription (2026-11-17) sat in site-data/. The gap is now folded in: %d blank "
+               "cells filled from the sheet that prints them, %d rows re-labelled because their sheet states "
+               "the rule, per-field excerpts and retrieval dates on every Venetian row, and two headline "
+               "numbers that the data contradicted rewritten from the data. Filling was one-directional "
+               "(blanks only) and %d value conflicts were found between the two surfaces, so no verified "
+               "number was overwritten.")
+              % (sum(overlay["filled"].values()), len(overlay["categories_changed"]),
+                 len(overlay["conflicts"])),
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "severity": "info",
+    "id": "VR-32a4-03",
+    "resolved": "Closed by this build: both surfaces now render the same sheet evidence."})
+
+flags.append({
+    "source": "arena/32a40b2f-poker2 re-read 2026-11-17",
+    "item": "No official document turns a sheet-silent event into a confirmed single-entry event",
+    "where": "Entry rules, Single-entry filter, Ranking",
+    "detail": ("Reading all 37 structure sheets produced no \u201cno re-entry\u201d sentence anywhere. What "
+               "the sheets do print is a late-registration window, a payout percentage, a fee split and — on "
+               "multi-flight events — the clause that a player who bags Day 2 chips may not play a later "
+               "flight. Rows are therefore labelled by what the document says, field by field, and the "
+               "single-entry toggle filters to \u201csheet silent\u201d, which is a shorter list of "
+               "candidates, not a guarantee of a freezeout."),
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "severity": "high",
+    "id": "VR-32a4-04"})
+
+master["verification"] = {
+    "session": "arena/32a40b2f-poker2",
+    "date": "2026-11-17",
+    "documents": [
+        {"title": "Venetian DeepStack Extravaganza IV event page (Nov 16 – Dec 23, 2026)",
+         "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+         "retrieved": "2026-11-17",
+         "settles": "The schedule the Venetian rows are keyed to: dates, start times, event numbers, buy-in "
+                    "and guarantee strings, and which structure sheet is linked from each row."},
+        {"title": "ARIA hotel reservation terms",
+         "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+         "retrieved": "2026-11-17",
+         "settles": "ARIA $55.00 plus applicable tax daily resort fee, its inclusions, the Gold+ waiver, "
+                    "$150/day incidentals, the $50 additional-occupant charge and the 72-hour deposit "
+                    "cancellation deadline."},
+        {"title": "Bellagio hotel reservation terms",
+         "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+         "retrieved": "2026-11-17",
+         "settles": "Bellagio $55.00 plus applicable tax daily resort fee, inclusions, waiver, $150/day "
+                    "incidentals, $50 additional occupant, 72-hour cancellation deadline."},
+        {"title": "MGM Grand hotel reservation terms",
+         "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+         "retrieved": "2026-11-17",
+         "settles": "MGM Grand $50.00 plus applicable tax daily resort fee, inclusions, waiver, $100/day "
+                    "incidentals, $40 additional occupant, 72-hour cancellation deadline and the early-"
+                    "departure assessment."},
+        {"title": "Westgate Las Vegas resort-fee FAQ",
+         "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+         "retrieved": "2026-11-17",
+         "settles": "Westgate Las Vegas resort fee $49.99 plus tax per night — and shows the terms page an "
+                    "earlier row cited for it does not state any Westgate Las Vegas fee."},
+        {"title": "Caesars Palace official hotel page",
+         "url": "https://www.caesars.com/caesars-palace/hotel",
+         "retrieved": "2026-11-17",
+         "settles": "Nothing about the resort fee: the page publishes no figure, so the cell stays blank. "
+                    "It does print “FREE 48-Hour Cancellation*” as a booking benefit."},
+    ],
+    "hotel_rows_re_read_today": sorted([h["id"] for h in hotels if h.get("fee_last_checked")]),
+    "note": ("Only these six documents were opened again on 2026-11-17 by this session. Structure-sheet dates "
+             "come from the 2026-11-17 read recorded in site-data/ (that pass is cited per field, per row); "
+             "no date was advanced for a document this session did not itself open."),
+}
+print("overlay applied: ARIA/Bellagio/MGM Grand fees re-read first-hand; Westgate citation corrected; "
+      "%d flags now published" % len(flags))
+
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
