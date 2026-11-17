@@ -391,6 +391,16 @@ FLAGS = [
                  "schedule, buy-in or entry rule can be read for the WPT World Championship host room."),
          impact="Any Wynn figure on this site is historical provenance, not a current citation.",
          source="https://www.wynnlasvegas.com/casino/poker-room"),
+    dict(id="X-08", area="Monitoring gap",
+         title="The scheduled re-check reports fetch errors for pages that do load in a browser",
+         detail=("The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 "
+                 "returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of "
+                 "them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then "
+                 "fetched successfully by hand on 2026-11-17 and are quoted elsewhere on this site, so those "
+                 "pages are live and the error is the job's request being refused, not a missing page."),
+         impact=("A 'monitor could not fetch' badge is a gap in monitoring, not a change to the source. Do not "
+                 "read it as the page having moved, and re-check those pages by hand before paying."),
+         source="data/verified2026/checks.json (committed by .github/workflows/recheck.yml)"),
     dict(id="F-11", area="Coverage",
          title="Two rooms publish schedules that are not in the ranked tables",
          detail=("Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish "

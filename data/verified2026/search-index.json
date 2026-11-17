@@ -4347,6 +4347,14 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
+  "a": "X-08",
+  "h": "X-08",
+  "x": "X-08 | Monitoring gap | The scheduled re-check reports fetch errors for pages that do load in a browser The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then fetched successful"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
   "a": "F-11",
   "h": "F-11",
   "x": "F-11 | Coverage | Two rooms publish schedules that are not in the ranked tables Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages i"

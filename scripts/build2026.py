@@ -720,6 +720,7 @@ def check_badge(*urls):
         return "<span class='note'>document not in the monitor</span>"
     if any(h.get("change") == "CHANGED" for h in hits):
         return "<span class='tag t-bad' title='The official document changed after this value was transcribed'>source changed</span>"
+<<<<<<< HEAD
     errs = [h for h in hits if h.get("change") == "fetch error"]
     if errs:
         # Say which kind of failure it was: a property that refuses a datacenter runner is not a
@@ -729,6 +730,12 @@ def check_badge(*urls):
         return ("<span class='tag t-warn' title='The scheduled re-check could not open this document, "
                 "so nothing about it is proven for this run. The value keeps its own last verified "
                 "date.'>%s</span>" % esc(lab))
+=======
+    if any(h.get("change") == "fetch error" for h in hits):
+        return ("<span class='tag t-warn' title='The scheduled job could not fetch this page. That is a "
+                "gap in the monitor, not evidence the page changed - several of these pages load "
+                "normally in a browser. See flag X-08.'>monitor could not fetch</span>")
+>>>>>>> 55e1087 (COORDINATION: record verification and new venue data for arena/7cc9ee65-poker2)
     if all(h.get("change") == "first check" for h in hits):
         return "<span class='tag t-info'>baseline set</span>"
     return "<span class='tag t-ok'>unchanged</span>"

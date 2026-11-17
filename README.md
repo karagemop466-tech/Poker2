@@ -33,7 +33,7 @@ expressly price a second buy-in, run multiple flights, pay bounties, or award se
 | Resort fees | Venetian/Palazzo $55, Wynn/Encore $55, Bellagio $55, MGM Grand $50 — each with its official page |
 | Poker suite rate | From $119 (Venetian) / $209 (Palazzo), code `EPOKR25`, phone only, with the qualifying-play condition |
 | Room tax | 13.38%, from Clark County's own transient lodging guide |
-| Seven other poker rooms | Checked. None publishes enough to rank even one event |
+| Seven other poker rooms | Checked. **Two do publish official schedules** — Caesars Palace (four daily NLH events) and Bellagio (three weekly events), both read live on 2026-11-17 and published on their venue pages. Every one of those events prints re-entry or a paid add-on, so none is single-entry |
 
 ## What is not verified, and is left blank
 
@@ -96,8 +96,17 @@ python3 scripts/build2026.py          # regenerate 2026/*.html + data/verified20
 python3 scripts/check2026.py          # no broken links, no non-official external hosts
 python3 scripts/build2026.py --check  # CI: fail if committed pages differ from the data
 python3 scripts/recheck2026.py        # re-fetch every official URL, hash it, log changes
+python3 scripts/check_sheet_readings.py  # diff the sheets against a live transcription
 python3 -m http.server 8000           # then open /2026/index.html
 ```
+
+### Independent re-read of all 37 sheets (2026-11-17)
+
+Every structure sheet was read again from `venetianlasvegas.com` and transcribed to
+`research/sheet-readings-7cc9ee65.csv`, field by field. `check_sheet_readings.py` diffs that
+transcription against what the site ships: **37 sheets, 481 field comparisons, 0 mismatches,
+0 sheets containing a single-entry clause.** The check exits 1 on any difference, so the claim
+is re-runnable rather than asserted.
 
 `build2026.py` **aborts** rather than publishing a row whose structure sheet was not read, or whose
 citation points at a non-official host.
