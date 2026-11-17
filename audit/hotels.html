@@ -302,6 +302,32 @@
   <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
   It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
 </footer>
+<script>
+document.querySelectorAll('.bar').forEach(function(bar){
+  var table = bar.parentElement.querySelector('table.data');
+  if(!table) return;
+  var q = bar.querySelector('[data-q]'),
+      d = bar.querySelector('[data-date]'),
+      c = bar.querySelector('[data-count]'),
+      rows = Array.prototype.slice.call(table.tBodies[0].rows);
+  function apply(){
+    var text = (q && q.value || '').toLowerCase(),
+        date = (d && d.value) || '',
+        n = 0;
+    rows.forEach(function(r){
+      var ok = true;
+      if(text && r.textContent.toLowerCase().indexOf(text) === -1) ok = false;
+      if(date && (r.getAttribute('data-date') || '') !== date) ok = false;
+      r.style.display = ok ? '' : 'none';
+      if(ok) n++;
+    });
+    if(c) c.textContent = n + ' of ' + rows.length + ' rows';
+  }
+  if(q) q.addEventListener('input', apply);
+  if(d) d.addEventListener('change', apply);
+  apply();
+});
+</script>
 
 </body>
 </html>

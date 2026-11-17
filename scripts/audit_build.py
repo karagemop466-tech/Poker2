@@ -71,6 +71,23 @@ def num(v, dash="&mdash;"):
     return dash if v in (None, "") else esc(v)
 
 
+def chips(v):
+    if v in (None, ""):
+        return "&mdash;"
+    return "{:,}".format(int(v))
+
+
+def clock(hhmm):
+    """2400 clock as printed on the sheet -> the same time in the sheet's 12-hour style."""
+    if not hhmm or ":" not in str(hhmm):
+        return hhmm or "&mdash;"
+    h, m = str(hhmm).split(":")[:2]
+    h = int(h)
+    ap = "AM" if h < 12 else "PM"
+    h12 = h % 12 or 12
+    return "%d:%s %s" % (h12, m, ap)
+
+
 def pill(text, kind=""):
     return '<span class="p %s">%s</span>' % (kind, esc(text))
 
@@ -102,10 +119,38 @@ def link(url, label=None):
     return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(url), esc(label or host))
 
 
+FILTER_JS = """<script>
+document.querySelectorAll('.bar').forEach(function(bar){
+  var table = bar.parentElement.querySelector('table.data');
+  if(!table) return;
+  var q = bar.querySelector('[data-q]'),
+      d = bar.querySelector('[data-date]'),
+      c = bar.querySelector('[data-count]'),
+      rows = Array.prototype.slice.call(table.tBodies[0].rows);
+  function apply(){
+    var text = (q && q.value || '').toLowerCase(),
+        date = (d && d.value) || '',
+        n = 0;
+    rows.forEach(function(r){
+      var ok = true;
+      if(text && r.textContent.toLowerCase().indexOf(text) === -1) ok = false;
+      if(date && (r.getAttribute('data-date') || '') !== date) ok = false;
+      r.style.display = ok ? '' : 'none';
+      if(ok) n++;
+    });
+    if(c) c.textContent = n + ' of ' + rows.length + ' rows';
+  }
+  if(q) q.addEventListener('input', apply);
+  if(d) d.addEventListener('change', apply);
+  apply();
+});
+</script>"""
+
+
 def page(title, active, body, desc="", extra_head="", extra_js=""):
     nav = "\n".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h == active else "", l)
                     for h, l in NAV)
-    return f"""<!DOCTYPE html>
+    out = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -136,10 +181,12 @@ def page(title, active, body, desc="", extra_head="", extra_js=""):
   <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
   It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
 </footer>
+{FILTER_JS}
 {extra_js}
 </body>
 </html>
 """
+    return out.replace("{FILTER_JS}", FILTER_JS)
 
 
 def table(headers, rows, tid=None, cls="data"):
@@ -203,9 +250,9 @@ def ev_rows(rows, show_sheet=True):
             money(e["fee"]),
             money(e["gtd"]),
             chip_basis(e["gtd_basis"]),
-            num(e["chips"]),
+            chips(e["chips"]),
             num(e["level_min"]),
-            e["late_reg_time"] or "&mdash;",
+            clock(e["late_reg_time"]),
             chip_rule(e["single_entry"]),
             money(e["gtd_ratio_descriptive"]) if e["gtd_ratio_descriptive"] else "&mdash;",
             e["last_checked"],
@@ -218,6 +265,8 @@ def ev_rows(rows, show_sheet=True):
 
 
 def render_ev_table(rows, tid="t-events"):
+    """Each call must pass a unique tid: the filter script binds bar -> nearest .tw table."""
+    assert tid, "a table needs an id"
     """The table wrapper carries data-date on each row so the date filter works."""
     heads = ["Date", "Start", "Ev#", "Name", "Buy-in", "Fee", "GTD", "GTD basis",
              "Chips", "Min/level", "Late reg closes", "Entry rule", "GTD &divide; fee",
@@ -314,14 +363,16 @@ def build_events():
     singles_read = [e for e in singles if e["structure_read"]]
 
     agg = ""
-    for label, rows, kind in [
-        ('One-day events whose sheet was read', singles_read, "warn"),
-        ('Multi-flight, satellite and team rows', [e for e in EV if e["category"] in ("multi_flight", "satellite", "team")], "muted"),
-        ('One-day events whose sheet was not read', [e for e in singles if not e["structure_read"]], "muted"),
-    ]:
-        agg += '<h2>%s &mdash; %d rows</h2>' % (label, len(rows))
-        agg += toolbar("x", dates)
-        agg += render_ev_table(sorted_events(rows))
+    sections = [
+        ("s-read", 'One-day events whose structure sheet was read', singles_read),
+        ("s-flights", 'Multi-flight, satellite and team rows',
+         [e for e in EV if e["category"] in ("multi_flight", "satellite", "team")]),
+        ("s-unread", 'One-day events whose structure sheet was not read',
+         [e for e in singles if not e["structure_read"]]),
+    ]
+    for tid, label, rows in sections:
+        agg += ('<section class="panel"><h2>%s &mdash; %d rows</h2>%s%s</section>'
+                % (label, len(rows), toolbar(tid, dates), render_ev_table(sorted_events(rows), tid)))
 
     body = f"""
 <section class="hero">
@@ -345,14 +396,20 @@ def build_events():
 def build_schedule():
     dates = sorted({e["date"] for e in EV})
     plan = []
+    def enterable(e):
+        """A row a player can still buy into today. Day 2/3 restarts and final tables
+        are continuations of an event already in progress, not new entries."""
+        n = e["name"].lower()
+        return not ("day 2" in n or "day 3" in n or "restart" in n or "final table" in n)
+
     for d in dates:
         day = [e for e in EV if e["date"] == d]
-        singles = sorted([e for e in day if e["category"] == "single"], key=lambda e: e["start"])
-        flights = [e for e in day if e["category"] != "single"]
-        primary = singles[0] if singles else (flights[0] if flights else None)
-        second = singles[1] if len(singles) > 1 else (flights[0] if singles and flights else None)
+        cand = sorted([e for e in day if enterable(e)], key=lambda e: e["start"])
+        singles = [e for e in cand if e["category"] == "single"]
+        primary = (singles or cand or [None])[0]
         if not primary:
             continue
+        second = next((e for e in cand if e is not primary and e["start"] >= primary["start"]), None)
         # overlap test: can the player enter the second event after the first?
         verdict, reason = "", ""
         if not second:
@@ -365,8 +422,9 @@ def build_schedule():
                 verdict, reason = ("clash", "same start time &mdash; cannot play both")
             elif p_close and s_close:
                 verdict, reason = ("conditional",
-                    "enter the %s only if you are out of the %s before %s (its late registration close)"
-                    % (second["start_text"], primary["start_text"], s_close[0:2] + ":" + s_close[2:]))
+                    "enter the %s row only if you are out of the %s row before %s, when the second "
+                    "one's late registration closes"
+                    % (second["start_text"], primary["start_text"], clock(s_close)))
             elif s_close:
                 verdict, reason = ("conditional",
                     "second event's late registration closes at %s; the first event's close is not published for this row"
@@ -384,9 +442,9 @@ def build_schedule():
             '<span class="nowrap">%s<small>%s</small></span>' % (d, p["dow"]),
             "%s &middot; %s" % (esc(p["start_text"]), esc(p["name"])),
             money(p["buy_in_nominal"]),
-            p["late_reg_time"] or "&mdash;",
+            clock(p["late_reg_time"]),
             ("%s &middot; %s" % (esc(s["start_text"]), esc(s["name"]))) if s else "&mdash;",
-            (s.get("late_reg_time") if s and s.get("late_reg_time") else "&mdash;") if s else "&mdash;",
+            clock(s.get("late_reg_time")) if s else "&mdash;",
             pill(v, kind),
             why,
         ])
