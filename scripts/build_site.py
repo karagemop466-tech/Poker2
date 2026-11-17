@@ -326,6 +326,10 @@ def hotel_table(hotels, table_id, show_calc=True):
         # --- the rate cell: a dated QUOTE first, then a dated from-price, then a logged attempt.
         #     These are different kinds of claim and are labelled as such; a from-price is never
         #     presented as what a room costs.
+        _fee_when = ((h.get("fee_evidence") or {}).get("retrieved") or h.get("fee_last_checked")
+                     or h.get("fee_last_read"))
+        fee_when = ('fee page read %s' % esc(_fee_when)) if _fee_when else \
+            '<span class="badge b-warn">fee not re-read since it was recorded</span>'
         rl_all = h.get("rate_log") or []
         rl = [x for x in rl_all if x.get("rate") is not None]
         shared = (MASTER.get("rate_log_shared") or {})
@@ -333,27 +337,48 @@ def hotel_table(hotels, table_id, show_calc=True):
         prefill = ""
         prefill_src = ""
         if quote.get("checkout_total_usd") is not None:
-            rate_cell = (f'<strong>{money(quote["nightly_average_usd"])}</strong>'
-                         f'<small class="note">/night average of the itemised official quote · '
-                         f'{esc(quote.get("stay_start"))} → {esc(quote.get("stay_end"))} · '
-                         f'{quote.get("nights")} nights · {esc(str(quote.get("adults")))} adults · '
-                         f'{esc(quote.get("suite_type"))}</small>'
+            # the quote's own `nightly_average_usd` is (room + resort fee) / nights, so the
+            # room-only figure is derived from the itemisation and the two are labelled apart —
+            # a reader comparing two properties must know which one the resort fee is inside
+            _nights = quote.get("nights") or 0
+            _room_avg = (round(quote["room_subtotal_usd"] / _nights, 2)
+                         if quote.get("room_subtotal_usd") and _nights else None)
+            _suite = re.sub(r"^[a-z][a-z0-9_-]*\s+(?=[A-Z(])", "", str(quote.get("suite_type") or "")).strip()
+            rate_cell = (f'<strong>{money(_room_avg) if _room_avg is not None else money(quote.get("nightly_average_usd"))}</strong>'
+                         f'<small class="note">/night room only ({_nights} nights, subtotal '
+                         f'{money(quote.get("room_subtotal_usd"))}) · the quote\'s own average, which already '
+                         f'includes the resort fee, is {money(quote.get("nightly_average_usd"))}/night</small>'
+                         f'<small class="note">{esc(quote.get("stay_start"))} → {esc(quote.get("stay_end"))} · '
+                         f'{_nights} nights · {esc(str(quote.get("adults")))} adults · {esc(_suite)}'
+                         + (f' · {esc(quote.get("offer"))}' if quote.get("offer") else "") + '</small>'
                          f'<small class="note">checkout total {money(quote["checkout_total_usd"])} = '
                          f'room {money(quote.get("room_subtotal_usd"))} + resort fee '
                          f'{money(quote.get("resort_fee_total_usd"))} + tax {money(quote.get("taxes_usd"))}'
                          + (f' ({quote["tax_pct_implied"]}%)' if quote.get("tax_pct_implied") else "")
                          + '</small>'
-                         + (f'<small class="excerpt note">{esc(quote.get("rate_caveat"))}</small>'
-                            if quote.get("rate_caveat") else "")
-                         + (f'<small class="note">true cost/night {money(quote.get("true_cost_per_night_usd"))}'
-                            + (f' (+{money(quote.get("parking_per_day_usd"))}/day parking, not in the engine total)'
-                               if quote.get("parking_per_day_usd") else "") + '</small>'
+                         + (f'<small class="excerpt">&ldquo;{esc(quote.get("excerpt"))}&rdquo;</small>'
+                            if quote.get("excerpt") else "")
+                         + (f'<small class="excerpt note">{esc(quote.get("itemisation"))}</small>'
+                            if quote.get("itemisation") else "")
+                         + (f'<small class="excerpt note"><strong>Caveat:</strong> {esc(quote.get("caveat"))}</small>'
+                            if quote.get("caveat") else "")
+                         + (f'<small class="note">true cost/night {money(quote.get("true_cost_per_night_usd"))} '
+                            f'before parking'
+                            + (f'; parking is {money(_pk)}/day on top'
+                               if (_pk := quote.get("parking_self_park_per_day_usd")) else "")
+                            + '</small>'
                             if quote.get("true_cost_per_night_usd") is not None else "")
-                         + f'<small class="note">quoted {esc(quote.get("retrieved"))}</small>')
-            prefill = (round(quote["room_subtotal_usd"] / quote["nights"], 2)
-                       if quote.get("room_subtotal_usd") and quote.get("nights") else "")
+                         + (f'<small class="note"><strong>Cancellation:</strong> {esc(quote.get("cancellation"))}'
+                            + (f' (deadline: {esc(quote["cancellation_deadline"])})'
+                               if quote.get("cancellation_deadline") else ' (no fixed deadline published)')
+                            + '</small>' if quote.get("cancellation") else "")
+                         + f'<small class="note">quoted {esc(quote.get("date_captured") or quote.get("retrieved"))}'
+                           f' · <a href="{esc(quote.get("source_url"))}" target="_blank" rel="noopener">'
+                           f'official booking engine</a></small>')
+            prefill = _room_avg or ""
             if prefill:
-                prefill_src = "prefilled from the dated official quote (room subtotal ÷ nights)"
+                prefill_src = ("prefilled with the quote's room-only nightly average "
+                               "(the calculator then adds the resort fee, tax and parking)")
         elif rl:
             latest = rl[-1]
             rate_cell = (f'{money(latest["rate"])} <small class="note">{esc(latest["basis"])} · logged '
@@ -394,24 +419,30 @@ def hotel_table(hotels, table_id, show_calc=True):
         # every other poker room the routing matrix covers, so a hotel can be shortlisted
         # against a series the reader may actually be playing
         pairs = h.get("walk_pairs") or []
+        # the two headline legs above already cover venetian/wynn, so the badge row is the
+        # remaining rooms; minutes are rounded because a routing engine reporting 0.1 min is
+        # precision the source does not have
         timed = [p for p in pairs if p.get("minutes") is not None
-                 and p.get("venue_id") not in ("V-VEN", "V-WYN")]
+                 and p.get("venue") not in ("venetian", "wynn")]
         if timed:
             chips = " ".join(
                 f'<span class="badge {"b-good" if p.get("within_30_min") else "b-warn"}" '
-                f'title="{esc(p.get("venue"))} · {esc(p.get("kind") or "routed")}">'
-                f'{esc(p.get("venue").replace("Las Vegas", "").replace(" The ", " ").strip())} '
-                f'{p["minutes"]:g}{"′"}</span>'
+                f'title="{esc(p.get("venue_label") or p.get("venue"))} · '
+                f'{esc(p.get("kind") or "routed estimate")} · routed {esc(p.get("routed_on") or "")}">'
+                f'{esc((p.get("venue_label") or p.get("venue")).replace(" poker room", ""))} '
+                f'{round(p["minutes"])} min</span>'
                 for p in sorted(timed, key=lambda x: x["minutes"]))
-            walk_cell += f'<div class="walk-leg small">{chips}</div>'
+            walk_cell += (f'<div class="walk-leg small">{chips}</div>'
+                          '<div class="small note">other rooms, routed estimate only</div>')
         _pair_links = [p for p in pairs if p.get("google_maps")
-                       and p.get("venue_id") in ("V-CP", "V-HS", "V-BEL", "V-MGM")]
+                       and p.get("venue") not in ("venetian", "wynn")][:4]
         if walk.get("maps_venetian") or walk.get("maps_wynn"):
             walk_cell += (f'<small class="note"><a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">Venetian route ↗</a>'
                           f' · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">Wynn route ↗</a></small>')
         if _pair_links:
-            walk_cell += ('<div class="small note">' + " · ".join(
-                f'<a href="{esc(p["google_maps"])}" target="_blank" rel="noopener">{esc(p["venue"].split()[0])} ↗</a>'
+            walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(
+                f'<a href="{esc(p["google_maps"])}" target="_blank" rel="noopener">{esc((p.get("venue_label") or p["venue"]).split()[0])} Google</a>'
+                + f' · <a href="{esc(p["apple_maps"])}" target="_blank" rel="noopener">Apple</a>'
                 for p in _pair_links) + "</div>")
         # the ≤30-min filter is honest only if it reads the same evidence the cell shows: a hotel
         # qualifies when either main venue, or any routed pair, is inside the limit
@@ -424,7 +455,7 @@ def hotel_table(hotels, table_id, show_calc=True):
 <td>{esc(h.get('parking','')) or '—'}</td>
 <td>{calc}</td>
 <td>{walk_cell}</td>
-<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">fee re-read {esc(h.get('fee_last_checked') or h.get('fee_last_read') or h.get('retrieved') or AS_OF)}</small></td>
+<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">{fee_when}</small></td>
 </tr>""")
     head = ("<th>Hotel</th><th>Address</th><th>Dated quote / latest logged rate</th><th>Resort fee</th><th>Tax</th>"
             "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
@@ -1000,8 +1031,9 @@ source does not publish that value; blanks are listed on the <a href="flagged.ht
         "number. A quote only enters the log with its check-in, check-out, occupancy, room type, resort fee, tax line, "
         "parking, cancellation deadline and the timestamp it was read.</p>"
         % (len(_quoted), len(hotels),
-           ", ".join("%s — %s nights from %s at %s/night" % (
+           ", ".join("%s — %s nights from %s, room %s/night (%s/night with the resort fee)" % (
                h["name"], (h.get("quote") or {}).get("nights"), (h.get("quote") or {}).get("stay_start"),
+               money(round((h.get("quote")["room_subtotal_usd"] or 0) / h["quote"]["nights"], 2)),
                money((h.get("quote") or {}).get("nightly_average_usd")))
                for h in _quoted) or "none yet",
            len(hotels) - len(_quoted)))
