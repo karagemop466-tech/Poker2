@@ -72,7 +72,7 @@
   },
   {
    "title": "No 8:00 AM start can be confirmed",
-   "text": "The earliest verified single-entry start at The Venetian is 11:10 AM. The earliest start on the schedule is 10:10 AM, and that event is excluded (multi-flight). A play-all-day plan from 8:00 AM cannot be built from verified single-entry events at these two properties.",
+   "text": "The earliest verified sheet-silent (single-entry candidate) event starts at 10:10 AM: the $200 NLH RaceDay Stack on Nov 19, 20 and 21 and the $600 Seniors on Dec 2 (structure sheet 18 and 17, both read). The earliest start anywhere in the dataset is 9:00 AM \u2014 the Horseshoe daily No-Limit Hold'em \u2014 but that room publishes no buy-in, guarantee or entry rule, so it is an unverified row, not a candidate. No official schedule read for this dataset prints an 8:00 AM tournament, so an 8:00 AM start cannot be planned from verified events.",
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -80,7 +80,7 @@
   },
   {
    "title": "Days with two or more verified single-entry events",
-   "text": "Nine of the 23 days with Venetian rows have two or more verified single-entry events (typically one 11:10 AM event and one 5:10 PM event). A full single-entry day is therefore possible on those nine days, but the gap between events is not verified because event lengths are not stated.",
+   "text": "14 of the 31 dated days in the dataset have two or more sheet-silent (single-entry candidate) events. The common shape is a 10:10 AM or 11:10 AM event plus a 5:10 PM event. A two-event day is therefore possible on those 14 days, but the gap between them is NOT verified: no official structure sheet states an expected finish time, so overlap is flagged as unknown rather than assumed to fit.",
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
    ]

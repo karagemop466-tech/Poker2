@@ -102,3 +102,16 @@ summary { cursor: pointer; font-weight: 600; }
 @media (max-width: 760px) {
   table.data { display: block; overflow-x: auto; }
 }
+
+/* site-wide table search (arena/5dcf101f-poker2) */
+.globalsearch {
+  display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+  margin: 0 auto; max-width: 1180px; padding: .75rem 1.25rem;
+}
+.globalsearch input[type="search"] {
+  flex: 1 1 22rem; min-width: 14rem; padding: .6rem .8rem;
+  border: 1px solid var(--line, #d8dde5); border-radius: .5rem; font: inherit;
+}
+.globalsearch input[type="search"]:focus {
+  outline: 2px solid var(--accent, #3b6ea5); outline-offset: 1px;
+}

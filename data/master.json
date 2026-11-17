@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "generated_by": "scripts/build_master.py",
  "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018sheet silent on re-entry\u2019 means the official structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. That is NOT the same as a published no-re-entry rule: no Las Vegas room in this dataset publishes one, so no event is labelled confirmed single-entry (see flag IR-8234-02).",
  "events": [
@@ -28,14 +28,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 33.33
+   "gtd_ratio": 33.33,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-03",
@@ -64,14 +66,16 @@
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
    "notes": "Official subtitle: \u201cRace to finish before the Race\u201d \u2014 hard finish constraint; no guarantee published.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-04",
@@ -100,14 +104,16 @@
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
    "notes": "Official subtitle: \u201cRace to finish before the Race\u201d \u2014 hard finish constraint; no guarantee published.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-05",
@@ -136,14 +142,16 @@
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
    "notes": "Official subtitle: \u201cRace to finish before the Race\u201d \u2014 hard finish constraint; no guarantee published.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-06",
@@ -177,7 +185,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-08",
@@ -214,7 +223,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-09",
@@ -243,14 +253,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-10",
@@ -284,7 +296,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 400,
-   "gtd_ratio": 37.5
+   "gtd_ratio": 37.5,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-11",
@@ -313,14 +326,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-12",
@@ -347,14 +362,16 @@
     "excerpt": "NOT VERIFIED: structure sheet not yet read",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 33.33
+   "gtd_ratio": 33.33,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-13",
@@ -383,14 +400,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-14",
@@ -424,7 +443,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-15",
@@ -453,14 +473,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-16",
@@ -489,14 +511,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
    "notes": "",
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-17",
@@ -534,7 +558,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 400,
-   "gtd_ratio": 37.5
+   "gtd_ratio": 37.5,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-18",
@@ -570,7 +595,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 100.0
+   "gtd_ratio": 100.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-20",
@@ -608,7 +634,7 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 33.33,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-21",
@@ -637,14 +663,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-22",
@@ -673,14 +701,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-23",
@@ -709,14 +739,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-24",
@@ -753,7 +785,7 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-25",
@@ -782,14 +814,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-27",
@@ -825,7 +859,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 41.67
+   "gtd_ratio": 41.67,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-28",
@@ -859,7 +894,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 66.67
+   "gtd_ratio": 66.67,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-29",
@@ -888,14 +924,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-30",
@@ -924,14 +962,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 66.67
+   "gtd_ratio": 66.67,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-31",
@@ -960,14 +1000,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-32",
@@ -1004,7 +1046,7 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-34",
@@ -1033,14 +1075,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-36",
@@ -1077,7 +1121,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 93.75,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-38",
@@ -1106,14 +1150,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-40",
@@ -1151,7 +1197,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 41.67
+   "gtd_ratio": 41.67,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-42",
@@ -1180,14 +1227,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-43",
@@ -1224,7 +1273,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-50",
@@ -1253,14 +1303,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-51",
@@ -1289,14 +1341,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-52",
@@ -1333,7 +1387,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 68.18
+   "gtd_ratio": 68.18,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-53",
@@ -1362,14 +1417,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-54",
@@ -1398,14 +1455,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 83.33
+   "gtd_ratio": 83.33,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-55",
@@ -1434,14 +1493,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-57",
@@ -1478,7 +1539,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 41.67
+   "gtd_ratio": 41.67,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-58",
@@ -1514,7 +1576,8 @@
    "gtd_includes_bounties": true,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 100.0
+   "gtd_ratio": 100.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-60",
@@ -1543,14 +1606,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-61",
@@ -1579,14 +1644,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-62",
@@ -1615,14 +1682,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-63",
@@ -1656,7 +1725,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-64",
@@ -1685,14 +1755,16 @@
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
     "retrieved": "2026-11-16"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
    "notes": "",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 40.0
+   "gtd_ratio": 40.0,
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17"
   },
   {
    "id": "V-MF01-11-16-11:10AM",
@@ -1726,7 +1798,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 250.0
+   "gtd_ratio": 250.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF01-11-16-5:10PM",
@@ -1761,7 +1834,7 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF01-11-17-11:10AM",
@@ -1795,7 +1868,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 300,
-   "gtd_ratio": 250.0
+   "gtd_ratio": 250.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF01-11-17-5:10PM",
@@ -1830,7 +1904,7 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF07-11-23-11:10AM",
@@ -1865,7 +1939,7 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF07-11-24-11:10AM",
@@ -1900,7 +1974,7 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF19-11-29-11:10AM",
@@ -1935,7 +2009,7 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF19-11-30-11:10AM",
@@ -1970,7 +2044,7 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF19-12-01-11:10AM",
@@ -2005,7 +2079,7 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-03-11:10AM",
@@ -2040,7 +2114,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-03-5:10PM",
@@ -2075,7 +2149,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-04-11:10AM",
@@ -2110,7 +2184,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-04-5:10PM",
@@ -2145,7 +2219,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-05-11:10AM",
@@ -2180,7 +2254,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF26-12-05-5:10PM",
@@ -2217,7 +2291,7 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF47-12-12-10:10AM",
@@ -2252,7 +2326,7 @@
    "bounty": null,
    "total_entry_fee": 2200,
    "gtd_ratio": 454.55,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF47-12-12-6:10PM",
@@ -2286,7 +2360,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 2200,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF49-12-13-10:10AM",
@@ -2323,7 +2398,7 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 272.73,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF49-12-14-10:10AM",
@@ -2360,7 +2435,7 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 272.73,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF39-12-10-10:10AM",
@@ -2396,7 +2471,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 800,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF56-12-17-10:10AM",
@@ -2430,7 +2506,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF56-12-17-6:10PM",
@@ -2464,7 +2541,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF56-12-18-10:10AM",
@@ -2498,7 +2576,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF56-12-18-6:10PM",
@@ -2532,7 +2611,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF56-12-19-10:10AM",
@@ -2566,7 +2646,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
-   "gtd_ratio": 454.55
+   "gtd_ratio": 454.55,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF59-12-20-11:10AM",
@@ -2601,7 +2682,7 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF59-12-21-11:10AM",
@@ -2636,7 +2717,7 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-MF59-12-22-11:10AM",
@@ -2671,7 +2752,7 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X35",
@@ -2708,7 +2789,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
-   "gtd_ratio": 16.67
+   "gtd_ratio": 16.67,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X33",
@@ -2747,7 +2829,7 @@
    "bounty": null,
    "total_entry_fee": 100,
    "gtd_ratio": null,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X37",
@@ -2786,7 +2868,7 @@
    "bounty": null,
    "total_entry_fee": 100,
    "gtd_ratio": null,
-   "reverified": "2026-11-17"
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X41",
@@ -2823,7 +2905,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 260,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X44",
@@ -2860,7 +2943,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 260,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X45",
@@ -2898,7 +2982,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 260,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X46",
@@ -2936,7 +3021,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 260,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "V-X48",
@@ -2974,7 +3060,8 @@
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 260,
-   "gtd_ratio": null
+   "gtd_ratio": null,
+   "schedule_checked": "2026-11-17"
   },
   {
    "id": "U-WPT01",
@@ -3241,8 +3328,8 @@
    "date": "2026-12-05",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3253,16 +3340,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3277,8 +3364,8 @@
    "date": "2026-12-06",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3289,16 +3376,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3386,8 +3473,8 @@
    "date": "2026-12-07",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3398,16 +3485,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3422,8 +3509,8 @@
    "date": "2026-12-08",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3434,16 +3521,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3566,8 +3653,8 @@
    "date": "2026-12-09",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3578,16 +3665,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -3672,8 +3759,8 @@
    "date": "2026-12-12",
    "start": "9:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -3684,16 +3771,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4714,8 +4801,8 @@
    "date": "2026-12-21",
    "start": "8:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 85,
+   "pool_per_entry": 515,
    "gtd": 50000,
    "format": "one-day",
    "category": "spend-more",
@@ -4726,16 +4813,16 @@
    "level_min": "20",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Unlimited re-entry until the start of level 9. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4769,11 +4856,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY: the official structure sheet says the entry fee and re-entry fee are both $200. The official poster does not mention re-entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W02",
@@ -4803,11 +4891,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "REBUY and ADD-ON: the official structure sheet offers unlimited $200 rebuys and a $100 add-on. Re-entry is not allowed; rebuys must be made from the original seat.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 240,
-   "gtd_ratio": 166.67
+   "gtd_ratio": 166.67,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W03",
@@ -4837,11 +4926,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY and ADD-ON: the structure sheet allows re-entries and one $100 add-on per entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 125.0
+   "gtd_ratio": 125.0,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W04",
@@ -4871,11 +4961,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY and ADD-ON: the structure sheet allows re-entries and one $100 add-on per entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 160,
-   "gtd_ratio": 62.5
+   "gtd_ratio": 62.5,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-WPT01",
@@ -4886,26 +4977,26 @@
    "date": "Nov 27 \u2013 Nov 29, 2026 (Day 2 Nov 30)",
    "start": "11:00 AM / 5:00 PM / 6:00 PM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 90,
+   "pool_per_entry": 510,
    "gtd": 400000,
    "format": "multi-flight",
    "category": "spend-more",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "30 (1A-1E) / 20 (1F) / 40 (Day 2)",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry per starting flight",
-    "re_entry": "unlimited re-entry for each starting flight until the start of level 9; a player who advances to Day 2 may not enter a later starting flight; fee split $510 prize pool + $65 tournament fee + $25 staff service charge = $600",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry for each starting flight until the start of level 9; a player who advances to Day 2 may not enter a later starting flight; fee split $510 prize pool + $65 tournament fee + $25 staff service charge = $600",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry for each starting flight will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting flight will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "RE-ENTRY and MULTI-FLIGHT: the official structure sheet says unlimited re-entry is available for each starting flight until level 9. A player who advances to Day 2 may not enter a later flight.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 600,
@@ -4920,26 +5011,26 @@
    "date": "Nov 30 \u2013 Dec 2, 2026 (Day 2 Nov 30 1 PM)",
    "start": "11:00 AM / 5:00 PM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 105,
+   "pool_per_entry": 695,
    "gtd": 1000000,
    "format": "multi-flight",
    "category": "spend-more",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "30 (1A-1E) / 20 (1F) / 40 (Day 2)",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 unlimited re-entry per starting flight",
-    "re_entry": "unlimited re-entry per starting flight until level 9; advancing to Day 2 prevents entry into a later starting flight; fee split $695 prize pool + $72 tournament fee + $33 staff service charge = $800",
-    "add_on": "none stated",
-    "excerpt": "unlimited re-entry per starting flight until level 9; advancing to Day 2 prevents entry into a later starting flight; fee split $695 prize pool + $72 tournament fee + $33 staff service charge = $800",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry for each starting flight will be available until the start of level 9.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting flight will be available until the start of level 9.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "MULTI-FLIGHT by official naming (Day 1A\u20131F). Structure sheet NOT reviewed for re-entry, so treat as excluded until checked.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 800,
@@ -4954,8 +5045,8 @@
    "date": "Dec 3 \u2013 Dec 4, 2026 (Day 2 Dec 3 1 PM)",
    "start": "11:00 AM",
    "buy_in": 1600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 170,
+   "pool_per_entry": 1430,
    "gtd": 1000000,
    "format": "multi-flight",
    "category": "spend-more",
@@ -4964,16 +5055,16 @@
    "level_min": "40",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 re-entry allowed by the official structure sheet",
-    "re_entry": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "add_on": "not stated on the structure sheet",
-    "excerpt": "Re-entry permitted until level 10. Official Wynn WPT structures PDF, read in full 2026-11-16.",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 re-entry permitted",
+    "re_entry": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting flight will be available until the start of level 10.",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Structure sheet read in full 2026-11-16: re-entry is allowed, so this event is excluded from the single-entry ranking and kept in the spend-more section. Buy-in split: $1,430 prize pool + $120 house fee + $50 staff gratuity.",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1600,
@@ -4988,26 +5079,26 @@
    "date": "Dec 5 \u2013 Dec 8, 2026",
    "start": "11:00 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 130,
+   "pool_per_entry": 970,
    "gtd": 5000000,
    "format": "multi-flight",
    "category": "spend-more",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "40 (Day 1) / 60",
    "late_reg": "",
    "rules": {
-    "single_entry": "no \u2014 one re-entry per starting flight",
-    "re_entry": "one entry and one re-entry per starting flight until level 10; a Day 2 player may not enter another starting flight; fee split $970 prize pool + $90 tournament fee + $40 staff service charge = $1,100",
-    "add_on": "none stated",
-    "excerpt": "one entry and one re-entry per starting flight until level 10; a Day 2 player may not enter another starting flight; fee split $970 prize pool + $90 tournament fee + $40 staff service charge = $1,100",
-    "retrieved": "2026-11-16"
+    "single_entry": "no \u2014 1 entry + 1 re-entry",
+    "re_entry": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.).",
+    "add_on": "no add-on clause printed for this event on the official structures PDF",
+    "excerpt": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge). Registration: One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.).",
+    "retrieved": "2026-11-17"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "MULTI-FLIGHT by official naming (Day 1A\u20131D). The schedule also has a 'Day 2' row on Dec 5 that carries a $1,100 buy-in and $5M GTD (see flags).",
+   "notes": "Entry-fee split, starting stack, level length and registration clause transcribed from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, so the event sits in the spend-more group; it is not single-entry.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 1100,
@@ -5949,441 +6040,6 @@
    "bounty": null,
    "total_entry_fee": null,
    "gtd_ratio": null
-  },
-  {
-   "id": "E1C-WY-01",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "PLO $500 Bounty $1,600 $100K GTD",
-   "game": "",
-   "date": "2026-12-07",
-   "start": "1:00 PM",
-   "buy_in": 1600,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 100000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "bounty"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": true,
-   "bounty": true,
-   "total_entry_fee": 1600,
-   "gtd_ratio": 62.5
-  },
-  {
-   "id": "E1C-WY-02",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "PLO $1,000 Bounty $3,000 $250K GTD",
-   "game": "",
-   "date": "2026-12-09",
-   "start": "1:00 PM",
-   "buy_in": 3000,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 250000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "bounty"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": true,
-   "bounty": true,
-   "total_entry_fee": 3000,
-   "gtd_ratio": 83.3
-  },
-  {
-   "id": "E1C-WY-03",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "PLO Turbo $1,100 $100K GTD",
-   "game": "",
-   "date": "2026-12-14",
-   "start": "7:00 PM",
-   "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 100000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "turbo"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": false,
-   "bounty": false,
-   "total_entry_fee": 1100,
-   "gtd_ratio": 90.9
-  },
-  {
-   "id": "E1C-WY-04",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "Big O $1,100",
-   "game": "",
-   "date": "2026-12-15",
-   "start": "12:00 PM",
-   "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": null,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "mixed"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": null,
-   "bounty": null,
-   "total_entry_fee": null,
-   "gtd_ratio": null
-  },
-  {
-   "id": "E1C-WY-05",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "PLO Progressive Bounty (PKO) $3,000 $250K GTD",
-   "game": "",
-   "date": "2026-12-15",
-   "start": "1:00 PM",
-   "buy_in": 3000,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 250000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "bounty",
-    "pko"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": true,
-   "bounty": true,
-   "total_entry_fee": 3000,
-   "gtd_ratio": 83.3
-  },
-  {
-   "id": "E1C-WY-06",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "NLH $500 Bounty Turbo $1,600 $100K GTD",
-   "game": "",
-   "date": "2026-12-15",
-   "start": "7:00 PM",
-   "buy_in": 1600,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 100000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "bounty",
-    "turbo"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": true,
-   "bounty": true,
-   "total_entry_fee": 1600,
-   "gtd_ratio": 62.5
-  },
-  {
-   "id": "E1C-WY-07",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "Wynn Mixed Championship (2 Day) $1,600",
-   "game": "",
-   "date": "2026-12-17",
-   "start": "11:00 AM",
-   "buy_in": 1600,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": null,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "mixed"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": null,
-   "bounty": null,
-   "total_entry_fee": null,
-   "gtd_ratio": null
-  },
-  {
-   "id": "E1C-WY-08",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "NLH High Roller (2 Day) $25,800",
-   "game": "",
-   "date": "2026-12-17",
-   "start": "1:00 PM",
-   "buy_in": 25800,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": null,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "high-roller"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": null,
-   "bounty": null,
-   "total_entry_fee": null,
-   "gtd_ratio": null
-  },
-  {
-   "id": "E1C-WY-09",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "HORSE $800",
-   "game": "",
-   "date": "2026-12-18",
-   "start": "1:00 PM",
-   "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": null,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "mixed"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": null,
-   "bounty": null,
-   "total_entry_fee": null,
-   "gtd_ratio": null
-  },
-  {
-   "id": "E1C-WY-10",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "NLH Turbo $1,100 $100K GTD",
-   "game": "",
-   "date": "2026-12-18",
-   "start": "6:00 PM",
-   "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 100000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "turbo"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": false,
-   "bounty": false,
-   "total_entry_fee": 1100,
-   "gtd_ratio": 90.9
-  },
-  {
-   "id": "E1C-WY-11",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "Seniors High Roller (3 Day) $5,000 $250K GTD",
-   "game": "",
-   "date": "2026-12-19",
-   "start": "11:00 AM",
-   "buy_in": 5000,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": 250000,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "high-roller",
-    "seniors"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": false,
-   "bounty": false,
-   "total_entry_fee": 5000,
-   "gtd_ratio": 50.0
-  },
-  {
-   "id": "E1C-WY-12",
-   "venue_id": "wynn",
-   "venue": "Wynn Las Vegas",
-   "name": "TORSE Championship (2 Day) $1,600",
-   "game": "",
-   "date": "2026-12-19",
-   "start": "1:00 PM",
-   "buy_in": 1600,
-   "fee": null,
-   "pool_per_entry": null,
-   "gtd": null,
-   "format": "one-day",
-   "category": "unverified",
-   "tags": [
-    "mixed"
-   ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
-   "rules": {
-    "single_entry": "unverified",
-    "re_entry": "unverified",
-    "add_on": "unverified",
-    "excerpt": "No structure sheet published: the official WPT structures PDF covers 13 other events.",
-    "retrieved": "2026-11-16"
-   },
-   "last_checked": "2026-11-16",
-   "source_url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "struct_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
-   "notes": "Buy-in, date, time and guarantee are verified on the official WPT schedule. Entry rules, chips, level length and fee split are NOT published, so they stay blank.",
-   "gtd_includes_bounties": null,
-   "bounty": null,
-   "total_entry_fee": null,
-   "gtd_ratio": null
   }
  ],
  "hotels": [
@@ -6661,8 +6317,9 @@
    "resort_fee_value": null,
    "resort_fee_text": null,
    "resort_fee_src": null,
-   "tax_rate": 0.1338,
-   "tax_note": "Clark County transient lodging tax, per the county licensing guide.",
+   "tax_rate": 0.13,
+   "tax_note": "Clark County transient lodging tax 13.00% \u2014 the county licensing guide lists \u201cSouth Point Hotel and Casino, 9777 Las Vegas Blvd S\u201d at 13.00% (Resort Hotel, Stadium District outside Primary Gaming Corridor), not the 13.38% PGC rate.",
+   "tax_src": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "parking_value": null,
    "parking": "Self-parking is free (stated on the poker page)",
    "deposit": "",
@@ -6937,85 +6594,115 @@
    "source": "data/flags.json",
    "item": "Venetian: Re-entry/add-on rules",
    "where": "All Venetian events",
-   "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying."
+   "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-001"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Structure sheets not read",
    "where": "Events 2, 12, 17, 20, 27, 36, 39, 40, 43, 57, 35 and satellites",
-   "detail": "Fee and rules left blank."
+   "detail": "Fee and rules left blank.",
+   "resolved": "Superseded 2026-11-17: all 37 Venetian DSE IV structure sheets are now cited by at least one published row, so the events named in this flag do have official sheets behind them. Any remaining blank fee or rule is per-event and listed separately.",
+   "severity": "info",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-002"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Event 19 fee",
    "where": "Event 19",
-   "detail": "Only GTD confirmed; fee not in verified notes."
+   "detail": "Only GTD confirmed; fee not in verified notes.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "id": "VR-003"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: RaceDay Stack guarantee",
    "where": "Events 3, 4, 5",
-   "detail": "No guarantee printed on schedule or sheet."
+   "detail": "No guarantee printed on schedule or sheet.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "id": "VR-004"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Event 6 guarantee",
    "where": "Event 6",
-   "detail": "No guarantee printed."
+   "detail": "No guarantee printed.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "id": "VR-005"
   },
   {
    "source": "data/flags.json",
    "item": "Bellagio: Saturday re-entry",
    "where": "Saturday $1,100 NLH",
-   "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet."
+   "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet.",
+   "url": "https://www.bellagio.com/casino/poker.html",
+   "id": "VR-006"
   },
   {
    "source": "data/flags.json",
    "item": "Bellagio: Dates",
    "where": "Friday, Saturday, Sunday",
-   "detail": "Dates not captured from PDFs. Recurring schedule only."
+   "detail": "Dates not captured from PDFs. Recurring schedule only.",
+   "url": "https://www.bellagio.com/casino/poker.html",
+   "id": "VR-007"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: WPT World Championship $10,400",
    "where": "Dec 13",
-   "detail": "Entry rules unverified."
+   "detail": "Entry rules unverified.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-008"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: Super Gold Million $400",
    "where": "Dec 10\u201312; Days 1A\u20131D (schedule PDF)",
-   "detail": "$400 buy-in, $3,000,000 guarantee, and multi-flight dates/start times verified in official WPT schedule. Event-specific re-entry rules / full entry-fee split were not verified; not single-entry approved."
+   "detail": "$400 buy-in, $3,000,000 guarantee, and multi-flight dates/start times verified in official WPT schedule. Event-specific re-entry rules / full entry-fee split were not verified; not single-entry approved.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-009"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: Schedule PDF",
    "where": "WPT schedule",
-   "detail": "Re-fetched successfully on 2026-11-16 and read through official PDF chunks 1\u20137. Relevant event-level re-entry terms are now confirmed; do not carry forward the earlier HTTP 500 re-fetch note."
+   "detail": "Re-fetched successfully on 2026-11-16 and read through official PDF chunks 1\u20137. Relevant event-level re-entry terms are now confirmed; do not carry forward the earlier HTTP 500 re-fetch note.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-010"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn daily 12pm $200 NLH",
    "where": "Mon\u2013Thu, Sat, Sun",
-   "detail": "Guarantee and re-entry not verified."
+   "detail": "Guarantee and re-entry not verified.",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "id": "VR-011"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: nightly rates",
    "where": "All hotels",
-   "detail": "Exact-date official rate quotes not captured. Venetian poker-rate page gives $119 and $209 as starting rates for Venetian/Palazzo suites but does not explicitly map the amounts to each property; no mapping or total assumed."
+   "detail": "Exact-date official rate quotes not captured. Venetian poker-rate page gives $119 and $209 as starting rates for Venetian/Palazzo suites but does not explicitly map the amounts to each property; no mapping or total assumed.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "id": "VR-012"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: walking distances",
    "where": "All hotels",
-   "detail": "No official walking distances captured. 30-minute test not verified."
+   "detail": "No official walking distances captured. 30-minute test not verified.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "id": "VR-013"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: Encore and others",
    "where": "Encore, others",
-   "detail": "Wynn resort information page fetched directly and confirms $55 plus tax per room night. MGM Grand hotel terms fetched directly and confirm $50 plus tax (eligible Gold+ reservations may qualify for waiver). Room rates and walk times remain blank."
+   "detail": "Wynn resort information page fetched directly and confirms $55 plus tax per room night. MGM Grand hotel terms fetched directly and confirm $50 plus tax (eligible Gold+ reservations may qualify for waiver). Room rates and walk times remain blank.",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "id": "VR-014"
   },
   {
    "source": "data/flags.json",
@@ -7023,112 +6710,136 @@
    "where": "All hotels",
    "detail": "Resolved 2026-11-16 by arena/e1c079dc-poker2: Clark County's Department of Business License guide for transient lodging establishments prints a 13.38% transient lodging tax rate for hotel/motel licences, and the county's combined transient lodging tax return shows the 8.5% + 4.5% county components. The Venetian and Cosmopolitan hotel terms state 13.38% verbatim. The rate is now entered with the county document as its source.",
    "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-   "resolved": "2026-11-16"
+   "resolved": "2026-11-16",
+   "id": "VR-015"
   },
   {
    "source": "data/flags.json",
    "item": "Golden Nugget Grand Poker Series",
    "where": "Downtown; June 2026",
-   "detail": "Excluded: not on Strip and dates passed."
+   "detail": "Excluded: not on Strip and dates passed.",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+   "id": "VR-016"
   },
   {
    "source": "data/flags.json",
    "item": "Aria poker schedule",
    "where": "ARIA",
-   "detail": "Official schedule not captured in verified notes. Not listed."
+   "detail": "Official schedule not captured in verified notes. Not listed.",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "id": "VR-017"
   },
   {
    "source": "data/flags.json",
    "item": "Westgate: $70 NLH freezeouts (5:05 PM & 9:05 PM)",
    "where": "Westgate Las Vegas poker room",
-   "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying."
+   "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying.",
+   "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/",
+   "id": "VR-018"
   },
   {
    "source": "data/flags.json",
    "item": "MGM daily schedule: date/time inconsistency",
    "where": "MGM Grand daily tournaments",
-   "detail": "Current official poker page lists 11:00 AM, 7:00 PM, 11:00 PM and links to a schedule PDF titled August (year not stated), listing 11:10 AM, 7:10 PM and 11:10 PM. Do not treat the August buy-in/guarantee as current November terms without MGM confirmation. Sources: MGM_POKER, MGM_TOURNEY_SCHED."
+   "detail": "Current official poker page lists 11:00 AM, 7:00 PM, 11:00 PM and links to a schedule PDF titled August (year not stated), listing 11:10 AM, 7:10 PM and 11:10 PM. Do not treat the August buy-in/guarantee as current November terms without MGM confirmation. Sources: MGM_POKER, MGM_TOURNEY_SCHED.",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-019"
   },
   {
    "source": "data/flags.json",
    "item": "MGM $120 NLH: paid-stack advantage / cost ambiguity",
    "where": "Linked $120 NLH structure",
-   "detail": "Official structure says a voluntary $11 staff gratuity gives 10,000 additional chips; its fee allocation sums to the $120 posted entry, but does not clearly say whether the $11 is above the $120 or a portion of it. Keep separate and confirm exact cost/stack choice. Source: MGM_120_STRUCT."
+   "detail": "Official structure says a voluntary $11 staff gratuity gives 10,000 additional chips; its fee allocation sums to the $120 posted entry, but does not clearly say whether the $11 is above the $120 or a portion of it. Keep separate and confirm exact cost/stack choice. Source: MGM_120_STRUCT.",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-020"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian series module mismatch",
    "where": "General poker page versus series overview",
-   "detail": "General room page says Current Series WPT Fall Festival Oct 28\u2013Nov 15, while official series overview lists DeepStack Extravaganza IV Nov 16\u2013Dec 23. Treat detailed event schedule as source for event details and confirm changes."
+   "detail": "General room page says Current Series WPT Fall Festival Oct 28\u2013Nov 15, while official series overview lists DeepStack Extravaganza IV Nov 16\u2013Dec 23. Treat detailed event schedule as source for event details and confirm changes.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "id": "VR-021"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn $600 NLH $400K re-entry",
    "where": "Nov 27\u201330 WPT event",
-   "detail": "Official WPT structure confirms unlimited re-entry in each starting flight until Level 9; not a single-entry event. Players advancing to Day 2 cannot enter later flights."
+   "detail": "Official WPT structure confirms unlimited re-entry in each starting flight until Level 9; not a single-entry event. Players advancing to Day 2 cannot enter later flights.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "id": "VR-022"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian structure sheet 8 (Events 18 & 58, Valuetown Bounty)",
    "where": "IR-8234-01",
    "detail": "Note 7 says 'All subsequent buy in's after the initial buy in will be $200', implying more than one buy-in may be possible, yet the sheet has no re-entry procedure. Entry limit is ambiguous; not confirmed single-entry.",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "id": "VR-023"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian structure sheets generally",
    "where": "IR-8234-02",
    "detail": "No Venetian DSE IV structure sheet read to date contains an express 'single entry / freezeout / no re-entry' clause. Classification as single-entry rests on the absence of any re-entry, rebuy or add-on mechanism in a fully read sheet that enumerates exactly one fee split and one late-registration window. Absence of language is not an express confirmation; confirm with the poker room before nonrefundable payment.",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-024"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Caesars Palace daily $100 event",
    "where": "IR-8234-03",
    "detail": "The official guide confirms a $50 add-on for 15,000 chips at the first break \u2014 a spend-more mechanism. Re-entry is not addressed on the guide.",
-   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "id": "VR-025"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Golden Nugget daily tournaments",
    "where": "IR-8234-04",
    "detail": "Official page confirms unlimited re-entries until level 5 and up to two $20 add-ons, but does not state the buy-in amount. Buy-in left blank.",
-   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/"
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+   "id": "VR-026"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "MGM Grand daily tournaments",
    "where": "IR-8234-05",
    "detail": "Official poker page lists daily tournament times (11:00am, 7:00pm, 11:00pm) but no buy-ins or guarantees; those live on the weekly-schedule PDF. Rows carry times only, with buy-in blank until the PDF is re-read.",
-   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-027"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Caesars Palace daily buy-ins \u2014 official sources disagree",
    "where": "Caesars Palace daily NLH rows",
    "detail": "The official Caesars guide says every daily event carries a $100 buy-in; the official daily flyer (read 2026-11-16 by arena/acd81e67-poker2) lists $160 at 2 PM and 9 PM. Not reconciled; rows show the guide value and this flag.",
-   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "id": "VR-028"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Wynn \u2018NIH\u2019 event naming",
    "where": "Wynn WPT rows: \u2018Ladies NIH Championship\u2019, \u2018NIH Turbo\u2019, \u2018NIH $500 Bounty Turbo\u2019",
    "detail": "The official WPT schedule text uses \u2018NIH\u2019 where \u2018NLH\u2019 is presumably intended. Kept as printed; not corrected.",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-029"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Hotel walking times and dated room totals",
    "where": "All hotel rows",
    "detail": "No official walking-time source and no dated checkout quote have been captured. Walk minutes and checkout totals are blank; use the official booking links and maps links to capture them for exact trip dates before booking.",
-   "url": ""
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "id": "VR-030"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian poker-rate wording ambiguity",
    "where": "Venetian resort-fee page vs poker-suite-rate page",
    "detail": "The resort-fee page says \u2018Rates include a daily Resort Fee of $55 plus tax\u2019 while the poker-rate page lists the fee separately in its conditions; exact meaning for the poker offer should be confirmed at reservation.",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "id": "VR-031"
   },
   {
    "id": "IR-E1C-01",
@@ -7273,7 +6984,7 @@
    "item": "Treasure Island resort fee unverified",
    "where": "",
    "detail": "Only third-party pages state a TI resort fee ($49.95 plus tax); no official TI page could be reached in this pass, so the field stays blank. Next step: Open treasureisland.com terms in a browser and log the fee.",
-   "url": "",
+   "url": "https://treasureisland.com/",
    "source": "arena/e1c079dc-poker2, 2026-11-16",
    "action": "Open treasureisland.com terms in a browser and log the fee.",
    "sources": [],
@@ -7385,7 +7096,7 @@
    },
    {
     "title": "No 8:00 AM start can be confirmed",
-    "text": "The earliest verified single-entry start at The Venetian is 11:10 AM. The earliest start on the schedule is 10:10 AM, and that event is excluded (multi-flight). A play-all-day plan from 8:00 AM cannot be built from verified single-entry events at these two properties.",
+    "text": "The earliest verified sheet-silent (single-entry candidate) event starts at 10:10 AM: the $200 NLH RaceDay Stack on Nov 19, 20 and 21 and the $600 Seniors on Dec 2 (structure sheet 18 and 17, both read). The earliest start anywhere in the dataset is 9:00 AM \u2014 the Horseshoe daily No-Limit Hold'em \u2014 but that room publishes no buy-in, guarantee or entry rule, so it is an unverified row, not a candidate. No official schedule read for this dataset prints an 8:00 AM tournament, so an 8:00 AM start cannot be planned from verified events.",
     "sources": [
      "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
      "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -7393,7 +7104,7 @@
    },
    {
     "title": "Days with two or more verified single-entry events",
-    "text": "Nine of the 23 days with Venetian rows have two or more verified single-entry events (typically one 11:10 AM event and one 5:10 PM event). A full single-entry day is therefore possible on those nine days, but the gap between events is not verified because event lengths are not stated.",
+    "text": "14 of the 31 dated days in the dataset have two or more sheet-silent (single-entry candidate) events. The common shape is a 10:10 AM or 11:10 AM event plus a 5:10 PM event. A two-event day is therefore possible on those 14 days, but the gap between them is NOT verified: no official structure sheet states an expected finish time, so overlap is flagged as unknown rather than assumed to fit.",
     "sources": [
      "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
     ]

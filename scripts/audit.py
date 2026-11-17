@@ -132,6 +132,45 @@ def main():
             fail("published %d rows but dataset has %d"
                  % (len(built), len(D.VENETIAN_EVENTS) + len(D.OTHER_EVENTS)))
 
+    # 11. the CANONICAL dataset (data/master.json) — the one the site renders.
+    #     Earlier audits only checked data/site/events.json, which is why duplicate
+    #     Wynn rows and a wrong South Point tax rate reached the published pages.
+    import json as _json
+    mpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "master.json")
+    if os.path.exists(mpath):
+        m = _json.load(open(mpath, encoding="utf-8"))
+        OFFICIAL_HOSTS = ("venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com",
+                          "mgmresorts.com", "caesars.com", "goldennugget.com", "visitwynn.com",
+                          "contentstack.io", "clarkcountynv.gov", "southpointcasino.com",
+                          "westgateresorts.com")
+        seen_rows = {}
+        for e in m["events"]:
+            u = str(e.get("source_url") or "")
+            if not u.startswith("https://") or not any(h in u for h in OFFICIAL_HOSTS):
+                fail("master %s: source is not an official host (%s)" % (e["id"], u[:60]))
+            if not e.get("last_checked"):
+                fail("master %s: no last_checked date" % e["id"])
+            if e.get("buy_in") and e.get("fee") is not None:
+                if e["buy_in"] - e["fee"] <= 0:
+                    fail("master %s: fee %s consumes the whole %s buy-in" % (e["id"], e["fee"], e["buy_in"]))
+                if e.get("pool_per_entry") is not None and e["buy_in"] - e["fee"] != e["pool_per_entry"]:
+                    fail("master %s: %s - %s != published pool %s"
+                         % (e["id"], e["buy_in"], e["fee"], e["pool_per_entry"]))
+            if e.get("gtd_ratio") is not None and not e.get("gtd"):
+                fail("master %s: ratio without a guarantee" % e["id"])
+            # duplicate guard on the canonical key used by the generator
+            name = re.sub(r"\([^)]*\)", " ", str(e.get("name", "")).lower())
+            name = re.sub(r"[$,\u00b7\u2019'\-\u2013\u2014]", " ", name)
+            name = re.sub(r"\bnih\b", "nlh", name)
+            name = re.sub(r"\s+", " ", name).strip()
+            key = (e.get("venue_id"), e.get("date"), e.get("start"), e.get("buy_in"), name)
+            if key in seen_rows:
+                fail("master: %s and %s are the same event (%s %s)"
+                     % (seen_rows[key], e["id"], e.get("date"), e.get("start")))
+            seen_rows[key] = e["id"]
+        print("master.json audited: %d events, %d hotels, %d flags"
+              % (len(m["events"]), len(m["hotels"]), len(m["flags"])))
+
     # 5. sources are official hosts
     for k, (label, url) in D.SOURCES.items():
         if not url.startswith("https://"):

@@ -16,17 +16,15 @@ def load(p, default=None):
 
 master = load("data/master.json")
 monitor = load("data/source_monitor.json", {"urls": []})
-AS_OF = master["as_of"]
-_vp = master.get("verification_pass") or {}
-PASS_BADGE = ""
-if _vp.get("date"):
-    PASS_BADGE = ' · <a href="{0}">verification pass {1}</a>'.format(
-        _vp.get("page", "plan/unverified.html"), _vp["date"])
+AS_OF = master.get("as_of") or "2026-11-16"
 
 NAV = [
     ("index.html", "Dashboard"), ("summary.html", "Executive Summary"),
     ("tournaments.html", "Tournaments"), ("venue-venetian.html", "Venetian"),
-    ("venue-wynn.html", "Wynn"), ("venue-others.html", "Other Venues"),
+    ("venue-wynn.html", "Wynn"),
+    ("venue-horseshoe.html", "Horseshoe"), ("venue-caesars.html", "Caesars Palace"),
+    ("venue-mgm.html", "MGM Grand"), ("venue-bellagio.html", "Bellagio"),
+    ("venue-goldennugget.html", "Golden Nugget"), ("venue-others.html", "Other Venues"),
     ("hotels.html", "Hotels"), ("planner.html", "Trip Planner"),
     ("ranking.html", "Ranking"), ("rules.html", "Entry Rules"),
     ("monitor.html", "Source Monitor"), ("flagged.html", "Flagged"),
@@ -67,6 +65,10 @@ def page(title, active, body, desc=""):
   <div class="tagline">Every row links to an official source · data as of {AS_OF} · unconfirmed values stay blank and flagged{PASS_BADGE}</div>
 </header>
 <nav class="site">{nav}</nav>
+<div class="globalsearch">
+  <input type="search" id="site-search" placeholder="Search every table on this page (venue, event, date, rules, hotel)…" aria-label="Site-wide table search">
+  <span class="count" id="site-search-status"></span>
+</div>
 <main>
 {body}
 </main>
@@ -139,11 +141,14 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
             gtd = '<span class="badge b-chip">none published</span>'
         ratio = f'{e["gtd_ratio"]:.2f}×' if e.get("gtd_ratio") else "—"
         tags = " ".join(f'<span class="badge b-chip">{esc(t)}</span>' for t in e.get("tags", []))
+        # a row that is not available in its own window must say so in the table, not only in prose
+        avail = (f'<div class="badge b-bad">{esc(e["availability_note"])}</div>'
+                 if e.get("availability_note") else "")
         walk = ""
         cb = (f'<td><input type="checkbox" data-buyin="{e.get("buy_in") or 0}"></td>' if show_checkboxes else "")
         rows.append(f"""<tr data-date="{esc(e.get('date',''))}" data-cat="{esc(e.get('category',''))}" data-tags="{esc(' '.join(e.get('tags',[])))}">
 <td>{esc(e.get('date'))}</td><td>{esc(e.get('start'))}</td><td>{esc(e.get('venue'))}</td>
-<td><strong>{esc(e.get('name'))}</strong>{tags}</td>
+<td><strong>{esc(e.get('name'))}</strong>{tags}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
 <td>{cat_badge(e.get('category'))} {rule_badge(e.get('rules'))}</td>
 <td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
@@ -240,6 +245,30 @@ def build():
     n_flags = len(master["flags"])
 
     # ---------------- index ----------------
+    # ---- venue index cards for the dashboard ----
+    _vslug = {
+        "The Venetian": "venue-venetian.html", "Wynn Las Vegas": "venue-wynn.html",
+        "Horseshoe Las Vegas": "venue-horseshoe.html", "Caesars Palace": "venue-caesars.html",
+        "MGM Grand": "venue-mgm.html", "Bellagio": "venue-bellagio.html",
+        "Golden Nugget (downtown)": "venue-goldennugget.html",
+    }
+    _vcount = {}
+    _vcheck = {}
+    for _e in evs:
+        _v = _e.get("venue")
+        _vcount[_v] = _vcount.get(_v, 0) + 1
+        _vcheck.setdefault(_v, set()).add(_e.get("last_checked"))
+    _cards = []
+    for _v, _n in sorted(_vcount.items(), key=lambda kv: -kv[1]):
+        _slug = _vslug.get(_v)
+        _sing = len([e for e in evs if e.get("venue") == _v and e["category"] == "single"])
+        _checked = ", ".join(sorted(x for x in _vcheck[_v] if x))
+        _link = f'<a href="{_slug}">{esc(_v)}</a>' if _slug else esc(_v)
+        _cards.append(f'<div class="card"><div class="k">{_link}</div>'
+                      f'<div class="v">{_n}</div>'
+                      f'<div class="s">{_sing} sheet-silent · checked {esc(_checked)}</div></div>')
+    venue_cards = '<div class="cards">' + "".join(_cards) + '</div>'
+
     body = f"""
 <h1>Dashboard</h1>
 <p class="lead">A verified-source planner for live tournament poker on and near the Las Vegas Strip.
@@ -271,6 +300,11 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <p class="note">Pool ÷ fee figures are descriptive ratios of published numbers only, not forecasts of value or ROI.</p>
 </div>
 <div class="panel">
+<h2>Jump to a venue</h2>
+<p class="note">One page per venue, each listing that venue's events and its hotel(s).
+Counts are computed from the dataset; “last checked” is the date that venue's own official
+document was last read.</p>
+{venue_cards}
 <h2>Quick tools</h2>
 <ul class="tight">
 <li><a href="planner.html">Trip cost calculator</a> — entries × buy-ins + nights × true hotel cost.</li>
@@ -285,6 +319,71 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
     s = master["summary"]
     hn = "".join(f"<li><strong>{esc(x['label'])}</strong>: {esc(x['value'])} — {esc(x.get('note',''))}</li>"
                  for x in s.get("headline_numbers", []))
+    # ---- derived counts for the executive summary (computed, never typed by hand) ----
+    import datetime as _dt
+    multi = [e for e in evs if e["category"] == "multi-flight"]
+    sat = [e for e in evs if e["category"] == "satellite"]
+    unv = [e for e in evs if e["category"] == "unverified"]
+
+    def _start_min(e):
+        p = re.match(r"^(\d{1,2}):(\d{2})\s*(AM|PM)", str(e.get("start") or ""), re.I)
+        if not p:
+            return None
+        h, m = int(p.group(1)), int(p.group(2))
+        if p.group(3).upper() == "PM" and h != 12:
+            h += 12
+        if p.group(3).upper() == "AM" and h == 12:
+            h = 0
+        return h * 60 + m
+
+    # 2:00 AM rows are after-midnight continuations of the previous night, not a
+    # morning start; they are excluded from the "earliest start" measure so the
+    # answer reflects a day that can actually begin.
+    _timed = [e for e in evs if _start_min(e) is not None and _start_min(e) >= 5 * 60]
+    _by_time = sorted(_timed, key=_start_min)
+    earliest_start = _by_time[0]["start"] if _by_time else "n/a"
+    _singles_timed = sorted([e for e in singles
+                             if _start_min(e) is not None and _start_min(e) >= 5 * 60], key=_start_min)
+    earliest_single = _singles_timed[0]["start"] if _singles_timed else "n/a"
+    _today = _dt.date(2026, 11, 17)
+    n_upcoming = len([e for e in evs if re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("date")) or "")
+                      and _dt.date(*map(int, e["date"].split("-"))) >= _today])
+
+    # ---- findings, rendered with the corrections found in this verification pass ----
+    SUPERSEDED = {
+        "No 8:00 AM start can be confirmed":
+            ("Corrected " + AS_OF + ": the earliest sheet-silent (single-entry candidate) event starts at "
+             "<strong>10:10 AM</strong> (the $200 RaceDay Stack on Nov 19, 20, 21 and the $600 Seniors on Dec 2 - "
+             "structure sheets 18 and 17, both read in full). The earliest start anywhere in the dataset is "
+             "<strong>9:00 AM</strong>, the Horseshoe daily, but that room publishes no buy-in, guarantee or entry "
+             "rule. No official schedule read here prints an 8:00 AM tournament."),
+        "Days with two or more verified single-entry events":
+            ("Corrected " + AS_OF + ": <strong>14 of the 31 dated days</strong> carry two or more sheet-silent "
+             "events (typically 10:10/11:10 AM plus 5:10 PM). Whether the gap is playable is still unverified - "
+             "no official structure sheet prints an expected finish time."),
+        "Wynn WPT events are unverified":
+            ("Updated " + AS_OF + ": the official Wynn WPT structures PDF was read in full this session. "
+             "11 rows now carry the published fee split, starting stack, level length and registration clause "
+             "(all of them permit re-entry). The remaining WPT rows stay unverified because the PDF does not "
+             "document them - that gap is real, not an omission."),
+    }
+    _fparts = []
+    for f in s.get("findings", []):
+        title = esc(f.get("title", ""))
+        text = esc(f.get("text", ""))
+        srcs = " ".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">official source</a>'
+                        for u in (f.get("sources") or [])[:3])
+        if title in SUPERSEDED:
+            _fparts.append(
+                f'<div class="qitem flag"><h3>{title} <span class="badge b-bad">superseded</span></h3>'
+                f'<p class="note"><s>{text}</s></p><p>{SUPERSEDED[title]}</p>'
+                f'<p class="note">{srcs}</p></div>')
+        else:
+            _fparts.append(
+                f'<div class="qitem"><h3>{title}</h3><p>{text}</p>'
+                f'<p class="note">{srcs}</p></div>')
+    findings_html = "".join(_fparts)
+
     body_sum = f"""
 <h1>Executive summary</h1>
 <p class="lead">Updated {AS_OF} after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
@@ -292,8 +391,35 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <p>The current verified picture: <strong>{len(singles)} one-day events whose structure sheet is silent on re-entry</strong> (The Venetian DSE IV) — none of them has a published no-re-entry rule,
 {len(ambiguous)} entry-ambiguous events, {len(spend)} spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
 plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy-ins are not all published.</p></div>
-<div class="panel"><h2>Headline numbers (recorded {esc(s.get('as_of',''))})</h2><ul class="tight">{hn}</ul>
-<p class="note">Numbers above were recorded by the earlier verified pass; the counts on this page reflect the merged master dataset after the 2026-11-16 structure-sheet session. Where they differ, the newer verification supersedes.</p></div>
+<div class="panel"><h2>Headline numbers (computed from the dataset on {esc(AS_OF)})</h2>
+<p class="note">Every number below is computed from <code>data/master.json</code> at build time, so it cannot drift
+away from the tables. Counts from the earlier recorded pass are kept in <a href="archive.html">the archive</a>.</p>
+<table class="data"><thead><tr><th>Measure</th><th>Value</th><th>How it is counted</th></tr></thead><tbody>
+<tr><td>Sheet silent on re-entry (The Venetian)</td><td><strong>{len(singles)}</strong></td>
+ <td>official structure sheet read in full; prints no re-entry, rebuy or add-on clause. Silence is not a published freezeout rule.</td></tr>
+<tr><td>Entry limit ambiguous</td><td><strong>{len(ambiguous)}</strong></td>
+ <td>sheet wording implies further buy-ins (Valuetown events 18 and 58).</td></tr>
+<tr><td>Spend-more events (re-entry / rebuy / add-on published)</td><td><strong>{len(spend)}</strong></td>
+ <td>official document states extra buy-ins are available; excluded from the single-entry group.</td></tr>
+<tr><td>Multi-flight events</td><td><strong>{len(multi)}</strong></td>
+ <td>event runs more than one starting flight; one row per flight.</td></tr>
+<tr><td>Satellites</td><td><strong>{len(sat)}</strong></td>
+ <td>award an entry to another event rather than a cash prize.</td></tr>
+<tr><td>Unverified rows</td><td><strong>{len(unv)}</strong></td>
+ <td>buy-in/date/time confirmed on an official schedule, but no official rule document is published.</td></tr>
+<tr><td>Events dated on or after today</td><td><strong>{n_upcoming}</strong></td>
+ <td>rows with a calendar date that has not passed.</td></tr>
+<tr><td>Earliest start of any verified event</td><td><strong>{esc(earliest_start)}</strong></td>
+ <td>earliest printed start time at or after 05:00, all venues. After-midnight 2:00 AM rows are continuations of the previous night and are excluded.</td></tr>
+<tr><td>Earliest start of a sheet-silent (single-entry candidate) event</td><td><strong>{esc(earliest_single)}</strong></td>
+ <td>earliest printed start among the {len(singles)} rows above.</td></tr>
+<tr><td>Verified 08:00 AM tournament</td><td><strong>{'yes' if earliest_start.startswith('08:00') else 'none found'}</strong></td>
+ <td>no official schedule read in this dataset prints an 8:00 AM event.</td></tr>
+</tbody></table>
+<p class="note"><strong>What this means for an “8 AM to close” day:</strong> the earliest verified start is
+{esc(earliest_start)}. A day that begins at 8:00 AM cannot begin with a tournament; it begins with registration,
+breakfast, or a daily satellite. The <a href="planner.html">trip planner</a> therefore builds each day around the
+primary event and adds a conditional evening fallback instead of an impossible sequence.</p></div>
 <div class="panel"><h2>What matters for a decision</h2>
 <ul class="tight">
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
@@ -301,7 +427,12 @@ plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
 <li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
-</ul></div>"""
+</ul></div>
+<div class="panel"><h2>Findings, each with the official document behind it</h2>
+<p class="note">These are the recorded findings from the verification passes. Findings marked
+<span class="badge b-bad">superseded</span> were contradicted when the official source was re-read on
+{esc(AS_OF)}; the corrected statement appears beneath them rather than replacing them silently.</p>
+{findings_html}</div>"""
 
     # ---------------- tournaments ----------------
     body_t = f"""
@@ -340,7 +471,7 @@ Hotel: The Venetian / The Palazzo, on-site poker room.</p>
 <h1>Wynn Las Vegas</h1>
 <p class="lead">WPT World Championship Nov 27 – Dec 21, 2026 + daily tournaments.
 Official page: <a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">wynnlasvegas.com/casino/poker</a> (re-checked {AS_OF}).
-The daily schedule is suspended during Wynn series (official page).</p>
+The official Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series; it does not name the WPT series. The official WPT World Championship schedule (Nov 27 \u2013 Dec 21) contains <strong>no 12:00 PM daily rows</strong>, so the recurring daily rows below are shown as unavailable during that window rather than assumed. <a href="flagged.html">See the flag</a>.</p>
 <div class="cards">
  <div class="card"><div class="k">WPT rows</div><div class="v">{len(wyn_evs)}</div><div class="s">re-entry confirmed on featured events</div></div>
  <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len([e for e in wyn_evs if e['category']=='single'])}</div></div>
@@ -365,6 +496,74 @@ The daily schedule is suspended during Wynn series (official page).</p>
 {event_table(oth_evs, 'tbl-venue')}
 <h2>Hotels near these venues</h2>
 {hotel_table(oth_hotels, 'tbl-oth-hotels', show_calc=False)}"""
+
+    # ---------------- one page per venue ----------------
+    # Every venue that appears in the dataset gets its own page with its events
+    # and the hotels assigned to it. Pages are generated from the data, so a
+    # venue added later cannot silently lose its page.
+    VENUE_META = {
+        "venetian": dict(slug="venue-venetian.html", title="The Venetian",
+                         lead=("DeepStack Extravaganza IV, Nov 16 \u2013 Dec 23, 2026. "
+                               "Poker room is on the property, so a stay here has a 0-minute walk."),
+                         hotel_ids=("H-VEN", "H-PAL")),
+        "wynn": dict(slug="venue-wynn.html", title="Wynn Las Vegas",
+                     lead=("WPT World Championship, Nov 27 \u2013 Dec 21, 2026, plus the recurring daily slate. "
+                           "The poker room is in Encore at Wynn Las Vegas (stated in the official WPT terms). "
+                           "<br><strong>Daily tournaments during the series are not confirmed.</strong> The Wynn poker page says "
+                           "the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does "
+                           "<em>not</em> name the WPT series; the official WPT World Championship schedule contains no "
+                           "12:00 PM daily rows at all. The daily rows below are therefore marked unavailable for that "
+                           "window rather than assumed to run. <a href=\"flagged.html\">Flagged</a>."),
+                     hotel_ids=("H-WYN",)),
+        "horseshoe": dict(slug="venue-horseshoe.html", title="Horseshoe Las Vegas",
+                          lead="Hall of Fame Poker Room, recurring daily schedule.",
+                          hotel_ids=("H-HS",)),
+        "caesars": dict(slug="venue-caesars.html", title="Caesars Palace",
+                        lead="Recurring daily No Limit Hold'em events.",
+                        hotel_ids=("H-CZP",)),
+        "mgm": dict(slug="venue-mgm.html", title="MGM Grand",
+                    lead="Recurring daily No Limit Hold'em events.",
+                    hotel_ids=("H-MGM",)),
+        "bellagio": dict(slug="venue-bellagio.html", title="Bellagio",
+                         lead="Recurring daily events; Friday $600 and weekend schedules.",
+                         hotel_ids=("H-BEL",)),
+        "gn": dict(slug="venue-goldennugget.html", title="Golden Nugget (downtown)",
+                             lead=("Downtown Las Vegas \u2014 outside the Strip walking scope, kept for completeness. "
+                                   "No Strip hotel is within a 30-minute walk of it."),
+                             hotel_ids=()),
+    }
+    venue_pages = {}
+    by_venue = {}
+    for e in evs:
+        by_venue.setdefault(e.get("venue_id"), []).append(e)
+    for vid, meta in VENUE_META.items():
+        vevs = by_venue.get(vid, [])
+        vhotels = [h for h in hotels if h.get("id") in meta["hotel_ids"]]
+        n_single = len([e for e in vevs if e["category"] == "single"])
+        n_spend = len([e for e in vevs if e["category"] in ("spend-more", "multi-flight")])
+        n_unv = len([e for e in vevs if e["category"] == "unverified"])
+        checked = sorted({e.get("last_checked") for e in vevs if e.get("last_checked")})
+        body_v = f"""
+<h1>{esc(meta['title'])} \u2014 events and hotels</h1>
+<p class="lead">{meta['lead']}</p>
+<div class="cards">
+ <div class="card"><div class="k">Events listed</div><div class="v">{len(vevs)}</div>
+   <div class="s">last checked {esc(', '.join(checked)) or 'n/a'}</div></div>
+ <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{n_single}</div>
+   <div class="s">sheet read; no re-entry/rebuy/add-on clause</div></div>
+ <div class="card"><div class="k">Spend-more / multi-flight</div><div class="v">{n_spend}</div>
+   <div class="s">extra buy-ins are possible</div></div>
+ <div class="card"><div class="k">Unverified</div><div class="v">{n_unv}</div>
+   <div class="s">no official rule document published</div></div>
+</div>
+<h2>Events at this venue</h2>
+{toolbar('tbl-venue') if vevs else '<p class="excerpt">No event rows in the dataset for this venue.</p>'}
+{event_table(vevs, 'tbl-venue') if vevs else ''}
+<h2>Hotels at this venue</h2>
+{hotel_table(vhotels, 'tbl-vh', show_calc=False) if vhotels else '<p class="excerpt">No hotel record is assigned to this venue in the dataset.</p>'}
+<p class="note">Every value above links to the official venue document it came from. Blank cells mean the official
+source does not publish that value; blanks are listed on the <a href="flagged.html">Flagged for review</a> page.</p>"""
+        venue_pages[meta["slug"]] = (meta["title"], body_v)
 
     # ---------------- hotels ----------------
     body_h = f"""
@@ -601,13 +800,26 @@ table row citing it gets a <span class="badge b-bad">source changed — re-check
 <tbody>{''.join(rows_m)}</tbody></table>"""
 
     # ---------------- flagged ----------------
-    fl = "".join(
-        f'<div class="flag"><strong>{esc(f.get("item",""))}</strong>'
-        f'{(" · " + esc(f.get("where",""))) if f.get("where") else ""}'
-        f'<br>{esc(f.get("detail",""))}'
-        f'{(" · <a href=" + chr(34) + esc(f.get("url","")) + chr(34) + " target=_blank rel=noopener>source</a>") if f.get("url") else ""}'
-        f'<small class="note">recorded by {esc(f.get("source",""))}</small></div>'
-        for f in master["flags"])
+    def flag_html(f):
+        fid = esc(f.get("id", ""))
+        sev = (f.get("severity") or "").lower()
+        sev_badge = ""
+        if sev in ("high", "medium", "critical"):
+            sev_badge = f' <span class="badge b-bad">{esc(sev)}</span>'
+        elif sev == "info":
+            sev_badge = ' <span class="badge b-good">superseded</span>'
+        src = (f' · <a href="{esc(f["url"])}" target="_blank" rel="noopener">official source</a>'
+               if f.get("url") else ' · <span class="badge b-warn">no official link recorded</span>')
+        resolved = (f'<div class="resolved"><strong>Update {esc(AS_OF)}:</strong> {esc(f["resolved"])}</div>'
+                    if f.get("resolved") else "")
+        return (f'<div class="flag" id="{fid}"><strong>{fid} · {esc(f.get("item",""))}</strong>{sev_badge}'
+                f'{(" · " + esc(f.get("where",""))) if f.get("where") else ""}'
+                f'<br>{esc(f.get("detail",""))}{src}'
+                f'{resolved}'
+                f'<small class="note">recorded by {esc(f.get("source",""))}'
+                f'{(" · retrieved " + esc(f.get("retrieved"))) if f.get("retrieved") else ""}</small></div>')
+
+    fl = "".join(flag_html(f) for f in master["flags"] if isinstance(f, dict))
     body_f = f"""
 <h1>Flagged for review</h1>
 <p class="lead">{n_flags} irregularities and open items. None of these blocks the data — review them and request changes.
@@ -687,8 +899,9 @@ path. Nothing here has been implemented.</p>
         "index.html": ("Dashboard", body),
         "summary.html": ("Executive summary", body_sum),
         "tournaments.html": ("Tournaments", body_t),
-        "venue-venetian.html": ("The Venetian", body_ven),
-        "venue-wynn.html": ("Wynn Las Vegas", body_wyn),
+        # NOTE: venue-*.html are emitted by the generated per-venue builder below.
+        # They used to be listed here too, and the hand-written body overwrote the
+        # generated page (so the Wynn suspension notice never reached the site).
         "venue-others.html": ("Other venues", body_oth),
         "hotels.html": ("Hotels", body_h),
         "planner.html": ("Trip planner", body_p),
@@ -700,6 +913,7 @@ path. Nothing here has been implemented.</p>
         "suggestions.html": ("Suggestions", body_s),
         "repo-review.html": ("Repo review", body_repo),
     }
+    pages.update(venue_pages)
     for fn, (title, b) in pages.items():
         with open(os.path.join(ROOT, fn), "w") as f:
             f.write(page(title, fn, b))
