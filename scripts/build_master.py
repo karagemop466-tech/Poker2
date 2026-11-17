@@ -1028,6 +1028,25 @@ for _f in flags:
     if not _f.get("url"):
         _f["url"] = _FLAG_SOURCE.get(str(_f.get("item", "")), "")
 
+# ---------------------------------------------------------------------------
+# Wynn daily-vs-series conflict (arena/5dcf101f-poker2, 2026-11-17).
+# The Wynn poker page says the daily slate "will be suspended during each Wynn
+# Signature, Wynn Millions, and Classic tournament series" and does NOT name the
+# WPT series. The official WPT World Championship schedule (Nov 27 - Dec 21)
+# contains no 12:00 PM $200/$240/$200 daily rows at all. The daily rows below are
+# therefore marked as running only in non-series windows and flagged, rather than
+# presented as available during the trip window.
+# ---------------------------------------------------------------------------
+WPT_WINDOW = ("2026-11-27", "2026-12-21")
+for _e in events:
+    if str(_e.get("id", "")).startswith("X-W0"):
+        _e["notes"] = ("Recurring daily event in non-series windows. The Wynn poker page states the daily slate is "
+                       "suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT "
+                       "series; the official WPT World Championship schedule (" + WPT_WINDOW[0] + " to " +
+                       WPT_WINDOW[1] + ") contains no 12:00 PM daily rows. Treat these as unavailable during the "
+                       "WPT window until the poker room confirms.")
+        _e["availability_note"] = "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
+
 # stable ids + a source link on every flag
 for _i, _f in enumerate(flags, 1):
     if isinstance(_f, dict):

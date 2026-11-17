@@ -4856,11 +4856,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY: the official structure sheet says the entry fee and re-entry fee are both $200. The official poster does not mention re-entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 50.0
+   "gtd_ratio": 50.0,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W02",
@@ -4890,11 +4891,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "REBUY and ADD-ON: the official structure sheet offers unlimited $200 rebuys and a $100 add-on. Re-entry is not allowed; rebuys must be made from the original seat.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 240,
-   "gtd_ratio": 166.67
+   "gtd_ratio": 166.67,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W03",
@@ -4924,11 +4926,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY and ADD-ON: the structure sheet allows re-entries and one $100 add-on per entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 200,
-   "gtd_ratio": 125.0
+   "gtd_ratio": 125.0,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-W04",
@@ -4958,11 +4961,12 @@
    "last_checked": "2026-11-16",
    "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "struct_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
-   "notes": "RE-ENTRY and ADD-ON: the structure sheet allows re-entries and one $100 add-on per entry.",
+   "notes": "Recurring daily event in non-series windows. The Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does not name the WPT series; the official WPT World Championship schedule (2026-11-27 to 2026-12-21) contains no 12:00 PM daily rows. Treat these as unavailable during the WPT window until the poker room confirms.",
    "gtd_includes_bounties": null,
    "bounty": null,
    "total_entry_fee": 160,
-   "gtd_ratio": 62.5
+   "gtd_ratio": 62.5,
+   "availability_note": "not shown on the official WPT schedule; suspended per the Wynn daily-tournament policy"
   },
   {
    "id": "X-WPT01",

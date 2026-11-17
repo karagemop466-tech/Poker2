@@ -141,11 +141,14 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
             gtd = '<span class="badge b-chip">none published</span>'
         ratio = f'{e["gtd_ratio"]:.2f}×' if e.get("gtd_ratio") else "—"
         tags = " ".join(f'<span class="badge b-chip">{esc(t)}</span>' for t in e.get("tags", []))
+        # a row that is not available in its own window must say so in the table, not only in prose
+        avail = (f'<div class="badge b-bad">{esc(e["availability_note"])}</div>'
+                 if e.get("availability_note") else "")
         walk = ""
         cb = (f'<td><input type="checkbox" data-buyin="{e.get("buy_in") or 0}"></td>' if show_checkboxes else "")
         rows.append(f"""<tr data-date="{esc(e.get('date',''))}" data-cat="{esc(e.get('category',''))}" data-tags="{esc(' '.join(e.get('tags',[])))}">
 <td>{esc(e.get('date'))}</td><td>{esc(e.get('start'))}</td><td>{esc(e.get('venue'))}</td>
-<td><strong>{esc(e.get('name'))}</strong>{tags}</td>
+<td><strong>{esc(e.get('name'))}</strong>{tags}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
 <td>{cat_badge(e.get('category'))} {rule_badge(e.get('rules'))}</td>
 <td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
@@ -439,7 +442,7 @@ Hotel: The Venetian / The Palazzo, on-site poker room.</p>
 <h1>Wynn Las Vegas</h1>
 <p class="lead">WPT World Championship Nov 27 – Dec 21, 2026 + daily tournaments.
 Official page: <a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">wynnlasvegas.com/casino/poker</a> (re-checked {AS_OF}).
-The daily schedule is suspended during Wynn series (official page).</p>
+The official Wynn poker page states the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series; it does not name the WPT series. The official WPT World Championship schedule (Nov 27 \u2013 Dec 21) contains <strong>no 12:00 PM daily rows</strong>, so the recurring daily rows below are shown as unavailable during that window rather than assumed. <a href="flagged.html">See the flag</a>.</p>
 <div class="cards">
  <div class="card"><div class="k">WPT rows</div><div class="v">{len(wyn_evs)}</div><div class="s">re-entry confirmed on featured events</div></div>
  <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len([e for e in wyn_evs if e['category']=='single'])}</div></div>
@@ -470,13 +473,18 @@ The daily schedule is suspended during Wynn series (official page).</p>
     # and the hotels assigned to it. Pages are generated from the data, so a
     # venue added later cannot silently lose its page.
     VENUE_META = {
-        "venetian": dict(slug="venue-venetian-only.html", title="The Venetian",
+        "venetian": dict(slug="venue-venetian.html", title="The Venetian",
                          lead=("DeepStack Extravaganza IV, Nov 16 \u2013 Dec 23, 2026. "
                                "Poker room is on the property, so a stay here has a 0-minute walk."),
                          hotel_ids=("H-VEN", "H-PAL")),
         "wynn": dict(slug="venue-wynn.html", title="Wynn Las Vegas",
-                     lead=("WPT World Championship, Nov 27 \u2013 Dec 21, 2026, plus the daily schedule. "
-                           "The poker room is in Encore at Wynn Las Vegas (stated in the official WPT terms)."),
+                     lead=("WPT World Championship, Nov 27 \u2013 Dec 21, 2026, plus the recurring daily slate. "
+                           "The poker room is in Encore at Wynn Las Vegas (stated in the official WPT terms). "
+                           "<br><strong>Daily tournaments during the series are not confirmed.</strong> The Wynn poker page says "
+                           "the daily slate is suspended during Wynn Signature, Wynn Millions and Classic series and does "
+                           "<em>not</em> name the WPT series; the official WPT World Championship schedule contains no "
+                           "12:00 PM daily rows at all. The daily rows below are therefore marked unavailable for that "
+                           "window rather than assumed to run. <a href=\"flagged.html\">Flagged</a>."),
                      hotel_ids=("H-WYN",)),
         "horseshoe": dict(slug="venue-horseshoe.html", title="Horseshoe Las Vegas",
                           lead="Hall of Fame Poker Room, recurring daily schedule.",
@@ -858,8 +866,9 @@ path. Nothing here has been implemented.</p>
         "index.html": ("Dashboard", body),
         "summary.html": ("Executive summary", body_sum),
         "tournaments.html": ("Tournaments", body_t),
-        "venue-venetian.html": ("The Venetian", body_ven),
-        "venue-wynn.html": ("Wynn Las Vegas", body_wyn),
+        # NOTE: venue-*.html are emitted by the generated per-venue builder below.
+        # They used to be listed here too, and the hand-written body overwrote the
+        # generated page (so the Wynn suspension notice never reached the site).
         "venue-others.html": ("Other venues", body_oth),
         "hotels.html": ("Hotels", body_h),
         "planner.html": ("Trip planner", body_p),
