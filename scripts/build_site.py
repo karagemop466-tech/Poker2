@@ -430,6 +430,108 @@ def hotel_table(hotels, table_id, show_calc=True):
             "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
     return f'<table class="data" id="{table_id}"><thead><tr>{head}</tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>"
 
+def _ev(value):
+    """One evidence cell: a plain sentence, or a structured record with its own excerpt, URL and
+    retrieval date. A record that says the page was not read stays visibly unverified — it is never
+    rendered as if it were a finding."""
+    if value in (None, "", {}, []):
+        return None
+    if not isinstance(value, dict):
+        return esc(str(value))
+    bits = []
+    if value.get("value"):
+        bits.append(esc(str(value["value"])))
+    if value.get("rule"):
+        bits.append(esc(str(value["rule"])))
+    if value.get("amount") is not None:
+        unit = value.get("per") or "night"
+        bits.append("%s per %s" % (money(value["amount"]), esc(unit)))
+    for k in ("guest_self_per_day", "valet_per_day", "non_guest"):
+        if value.get(k) is not None:
+            label = {"guest_self_per_day": "self-parking, guest",
+                     "valet_per_day": "valet"}.get(k, k.replace("_", " "))
+            v = value[k]
+            bits.append("%s %s" % (esc(label), money(v) if isinstance(v, (int, float)) else esc(str(v))))
+    st = value.get("status")
+    if st == "verified_official":
+        bits.append('<span class="badge b-good">stated on the official page</span>')
+    elif st in ("not_read_official_page", "not_stated_officially", "page_does_not_state"):
+        bits.append('<span class="badge b-warn">not read / not stated officially</span>')
+    elif st == "superseded_by_reread":
+        bits.append('<span class="badge b-chip">placeholder superseded by a later read</span>')
+    elif st:
+        bits.append('<span class="badge b-chip">%s</span>' % esc(str(st)))
+    if value.get("excerpt"):
+        bits.append('<span class="excerpt">&ldquo;%s&rdquo;</span>' % esc(str(value["excerpt"])))
+    if value.get("note"):
+        bits.append('<span class="note">%s</span>' % esc(str(value["note"])))
+    if value.get("conflict") or value.get("conflicting_figures"):
+        bits.append('<span class="badge b-bad">conflicting figures on the official pages</span>')
+    src, ret = value.get("source_url"), value.get("retrieved")
+    if src:
+        bits.append('<a href="%s" target="_blank" rel="noopener">source</a>%s'
+                    % (esc(src), (" · read " + esc(str(ret))) if ret else ""))
+    elif value.get("source_url_to_read"):
+        bits.append('to be read on: <a href="%s" target="_blank" rel="noopener">official page</a>'
+                    % esc(value["source_url_to_read"]))
+    return " ".join(b if not b.startswith("<") else b for b in bits if b) or None
+
+
+def hotel_terms_html(h):
+    """Everything the property's own terms page states about what a stay costs besides the room:
+    deposit hold, incidentals, extra occupant, check-in/out, cancellation and its fee, parking,
+    smoking and early departure. Each line keeps its own source and date, and an unread page is
+    shown as unread."""
+    fields = [("Resort fee", h.get("fee_evidence") or {"amount": h.get("resort_fee_value"),
+                                                      "excerpt": None}),
+              ("Cancellation policy", None),
+              ("Cancellation deadline", h.get("cancellation_deadline")),
+              ("Cancellation / no-show fee", h.get("cancellation_fee")),
+              ("Deposit hold", h.get("deposit")),
+              ("Incidentals", h.get("incidentals")),
+              ("Additional occupant", h.get("additional_occupant")),
+              ("Check-in / check-out", h.get("check_in_out")),
+              ("Parking", h.get("parking_evidence") or h.get("parking")),
+              ("Smoking / early departure", h.get("smoking") or h.get("early_checkout")),
+              ("Resort-fee waiver", h.get("fee_waiver")),
+              ("Room tax", {"value": h.get("tax_note"), "source_url": None}),
+              ("Quality rating", h.get("quality"))]
+    # a cancellation rule can be recorded twice on the same row: a real one, and an earlier pass's
+    # "page not read" placeholder. The rule wins; the placeholder is never shown on its own next to
+    # a read that supersedes it.
+    _ce, _cr = h.get("cancellation_evidence") or {}, h.get("cancellation")
+    _can = None
+    if isinstance(_ce, dict) and (_ce.get("rule") or _ce.get("value")):
+        _can = dict(_ce)
+    elif _cr:
+        _can = {"value": _cr,
+                "source_url": (_ce.get("source_url") if isinstance(_ce, dict) else None)
+                or h.get("resort_fee_src"),
+                "status": (_ce.get("status") if isinstance(_ce, dict) and _ce.get("status") == "verified_official"
+                           else None),
+                "retrieved": (_ce.get("retrieved") if isinstance(_ce, dict) else None)
+                or h.get("fee_last_checked") or h.get("retrieved")}
+        if isinstance(_ce, dict) and _ce.get("note"):
+            _can["note"] = _ce["note"]
+    elif isinstance(_ce, dict):
+        _can = _ce
+    fields[1] = ("Cancellation policy", _can)
+    items = []
+    for label, val in fields:
+        cell = _ev(val)
+        if cell:
+            items.append("<li><strong>%s:</strong> %s</li>" % (esc(label), cell))
+    if h.get("notes"):
+        items.append("<li><strong>Reading note:</strong> %s</li>" % esc(h["notes"]))
+    if not items:
+        return ""
+    return ('<ul class="tight terms">' + "".join(items) + "</ul>"
+            "<p class=\"note\">Every line above is this property's own page, quoted with the date it was read; "
+            "a field whose page could not be read stays marked unread rather than assumed. "
+            "Resort fees are quoted per night plus tax and are never included in an advertised room rate; "
+            "the tax percentage is the county transient-lodging rate, not a hotel figure.</p>")
+
+
 def rate_log_html(h):
     """A rate log, not a rate: every entry keeps the date it was captured, the dates it applies
     to, the occupancy and room type it was quoted for, and the page it came from. Entries are
@@ -952,7 +1054,11 @@ page, with the date that page was read.</p></div>
 {walking_check_html()}
 <h2>Dated rate logs</h2>
 {shared_rate_log_html()}
-{''.join(f'<details><summary>{esc(h["name"])}</summary>{rate_log_html(h)}</details>' for h in hotels)}
+<h2>Reservation terms, field by field</h2>
+<p class="note">Fee, deposit, incidentals, extra-occupant charge, check-in/out, cancellation and parking as each
+property's own terms page states them, with the date that page was read. This is what a nightly rate does
+<em>not</em> include, so it is the second half of the true-cost figure above.</p>
+{''.join(f'<details><summary>{esc(h["name"])} — dated rate log</summary>{rate_log_html(h)}<h4>Reservation terms</h4>{hotel_terms_html(h)}</details>' for h in hotels)}
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>

@@ -14869,6 +14869,7 @@
    },
    "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
    "cancellation_fee": "$165 mid-week or $200 weekend (Friday, Saturday or Sunday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
+   "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (subject to eligibility and other terms and conditions available at https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)",
    "retrieved": "2026-11-17",
    "fee_last_checked": "2026-11-17"
   },
@@ -15077,6 +15078,7 @@
    },
    "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
    "cancellation_fee": "$165 mid-week or $200 weekend (Friday or Saturday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
+   "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)",
    "retrieved": "2026-11-17",
    "fee_last_checked": "2026-11-17"
   },
@@ -15241,6 +15243,7 @@
    "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
    "cancellation_fee": "$110 mid-week or $155 weekend (Friday, Saturday or Sunday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
    "early_checkout": "Checking out before the confirmed departure date is charged the applicable rate and taxes for the night departed (early departure assessment).",
+   "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible MGM Rewards Program members with Gold+ Tier Level status with eligible reservations",
    "retrieved": "2026-11-17",
    "fee_last_checked": "2026-11-17"
   },

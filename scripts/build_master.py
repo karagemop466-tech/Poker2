@@ -1659,6 +1659,8 @@ if own.get("hotel_terms_reads"):
             h["cancellation_fee"] = rec["cancellation_fee"]
         if rec.get("early_checkout"):
             h["early_checkout"] = rec["early_checkout"]
+        if rec.get("fee_waiver"):
+            h["fee_waiver"] = rec["fee_waiver"]
         if rec.get("tax_note"):
             h["tax_note"] = rec["tax_note"]
         h["retrieved"] = rec["retrieved"]
