@@ -562,3 +562,14 @@ New irregularities (flagged, not blocking the merge):
 Corrections made in this session: the Event 36 / Event 38 sentence in `site-data/summary.json` no longer asserts an unreachable event. It now says the sheets do not show how long a player lasts, so the Event 38 timing is unknown and not planned.
 
 Remaining open items: `FG-02` (single-entry answer in writing), `S-02` (structure-sheet reading now done; automation awaits the owner's choice), `f743ae5a` (walking distances and lodging tax, unverified).
+
+### Integration record — arena/8b1f0fd8-poker2 (2026-11-17)
+
+- Integration PR: [#48](https://github.com/karagemop466-tech/Poker2/pull/48) (`arena/8b1f0fd8-poker2` → `main`), head `feb5afb`.
+- Checks on the PR head: `Verify site` success and `Plan: generated pages match their data` success.
+- Merge: **merged** (`gh pr merge 48 --merge`) at 2026-11-17 00:40:19 UTC, merge commit `2c2105d5f7292f1fd629bd8f79212a6d2631bdfb`.
+- Post-merge checks on `2c2105d`: `Verify site` success, `Plan: generated pages match their data` success, `pages build and deployment` success. The Pages API reports `built` at `2c2105d`.
+- Live confirmation: `https://karagemop466-tech.github.io/Poker2/plan/flagged.html` shows the updated FG-03 ("All 37 structure sheets read"). The sandbox cannot reach `github.io` directly, so this was read with the page fetcher.
+- Claim status: T1, T2 and T4 done and merged. T3 superseded by `f4e82c6f` (README already repaired on `main`). T5 remains unclaimed and blocked.
+- Force-push note: the branch's claim commit was rewritten during rebase onto `main`, which had moved (PRs #43–47). The branch was force-pushed once with `--force-with-lease` pinned to the session's own previous tip `e14c3d6`. No other session's commits were rewritten.
+- Open irregularities (not blocking, all on `/plan/flagged.html`): FG-02, FG-30, FG-31, FG-04/04b, FG-05/05b, FG-06, FG-07.
