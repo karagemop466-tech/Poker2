@@ -46,72 +46,23 @@
 <h1>Source monitor</h1>
 <p class="lead">A scheduled GitHub Actions job re-fetches every official URL on this list, compares a content hash with
 the stored one, saves daily snapshots under <code>data/snapshots/</code>, and marks rows whose source changed.
-Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.
-The list itself is generated — <code>python3 scripts/build_monitor_registry.py</code> rebuilds it from every URL cited by
-an event row, a hotel row or the source register, plus all 37 Venetian structure sheets, so a row can never be published
-without its source being watched. A second job (<code>.github/workflows/recheck.yml</code>, 06:00 UTC) and the
-<code>/plan/</code> surface's <code>plan-refresh.yml</code> (06:30 UTC) watch the same sources from the other pipeline.</p>
+Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.</p>
 <div class="panel"><strong>Current state:</strong> 82 URLs registered ·
 0 changed ·
 0 unchanged.
 Hashes are established on the first scheduled run; after that, any hash mismatch marks the URL “changed” and every
 table row citing it gets a <span class="badge b-bad">source changed — re-check</span> badge.</div>
 <table class="data"><thead><tr><th>Source</th><th>URL</th><th>Last checked</th><th>Status</th><th>Rows citing it</th></tr></thead>
-<tbody><tr><td>Venetian DSE IV schedule page</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extrava…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>83</td></tr><tr><td>Venetian DeepStack series overview</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extrava…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Venetian poker room page</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/resort/casino/poker.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Venetian resort-fee page</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/resort/resort-fee.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>2</td></tr><tr><td>Venetian hotel terms (13.38% tax)</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Venetian poker suite rates</td>
-<td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Wynn poker room page (daily + WPT)</td>
-<td class="src"><a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">https://www.wynnlasvegas.com/casino/poker…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Wynn WPT World Championship schedule PDF</td>
-<td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_fi…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>62</td></tr><tr><td>Wynn WPT World Championship structures PDF</td>
-<td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_fi…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>62</td></tr><tr><td>Wynn daily tournament poster PDF</td>
-<td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_fi…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>Wynn daily tournament structures PDF</td>
-<td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_fi…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>8</td></tr><tr><td>Wynn resort information (resort fee)</td>
-<td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" target="_blank" rel="noopener">https://www.wynnlasvegas.com/about-us/resort-information…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>1</td></tr><tr><td>Caesars Las Vegas poker tournaments guide</td>
-<td class="src"><a href="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip" target="_blank" rel="noopener">https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>10</td></tr><tr><td>Caesars Palace daily NLH flyer PDF</td>
-<td class="src"><a href="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf" target="_blank" rel="noopener">https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>4</td></tr><tr><td>Caesars Rewards benefits (fee waiver)</td>
-<td class="src"><a href="https://www.caesars.com/myrewards/benefits-overview" target="_blank" rel="noopener">https://www.caesars.com/myrewards/benefits-overview…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>0</td></tr><tr><td>MGM Grand poker page (daily times)</td>
-<td class="src"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html" target="_blank" rel="noopener">https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>4</td></tr><tr><td>MGM Grand weekly tournament schedule PDF</td>
-<td class="src"><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf" target="_blank" rel="noopener">https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f2527…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>4</td></tr><tr><td>MGM Grand hotel terms (resort fee)</td>
-<td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html…</a></td>
-<td></td><td><span class="badge b-chip">never checked (first scheduled run establishes the hash)</span></td>
-<td>1</td></tr><tr><td>ARIA hotel terms (resort fee)</td>
+<tbody><tr><td>ARIA: Poker page (states daily tournaments are not listed; call for current info)</td>
+<td class="src"><a href="https://aria.mgmresorts.com/en/casino/poker.html" target="_blank" rel="noopener">https://aria.mgmresorts.com/en/casino/poker.html…</a></td>
+<td></td><td><span class="badge b-chip">never checked</span></td>
+<td>0</td></tr><tr><td>ARIA Resort &amp; Casino: booking / rate page</td>
+<td class="src"><a href="https://aria.mgmresorts.com" target="_blank" rel="noopener">https://aria.mgmresorts.com…</a></td>
+<td></td><td><span class="badge b-chip">never checked</span></td>
+<td>1</td></tr><tr><td>ARIA: Resort FAQ (resort fee inclusions)</td>
+<td class="src"><a href="https://aria.mgmresorts.com/en/faq.html" target="_blank" rel="noopener">https://aria.mgmresorts.com/en/faq.html…</a></td>
+<td></td><td><span class="badge b-chip">never checked</span></td>
+<td>0</td></tr><tr><td>ARIA: Hotel Reservation Terms ($55 plus tax resort fee; $150/night deluxe incidental hold)</td>
 <td class="src"><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">https://aria.mgmresorts.com/en/terms-and-conditions.html…</a></td>
 <td></td><td><span class="badge b-chip">never checked</span></td>
 <td>1</td></tr><tr><td>Bellagio: Sunday $400 H.O.R.S.E. terms (PDF)</td>
@@ -162,7 +113,7 @@ table row citing it gets a <span class="badge b-bad">source changed — re-check
 <td>1</td></tr><tr><td>Wynn: WPT World Championship terms &amp; structures (PDF)</td>
 <td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_fi…</a></td>
 <td></td><td><span class="badge b-chip">never checked</span></td>
-<td>74</td></tr><tr><td>Wynn: Daily tournaments poster (PDF; file date suggests June 2026 — see Flagged)</td>
+<td>62</td></tr><tr><td>Wynn: Daily tournaments poster (PDF; file date suggests June 2026 — see Flagged)</td>
 <td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_fi…</a></td>
 <td></td><td><span class="badge b-chip">never checked</span></td>
 <td>0</td></tr><tr><td>wynn_daily_structures</td>
@@ -171,7 +122,7 @@ table row citing it gets a <span class="badge b-bad">source changed — re-check
 <td>8</td></tr><tr><td>Wynn: WPT World Championship schedule (PDF, Nov 27 – Dec 21, 2026)</td>
 <td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf" target="_blank" rel="noopener">https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_fi…</a></td>
 <td></td><td><span class="badge b-chip">never checked</span></td>
-<td>74</td></tr><tr><td>Clark County Dept. of Business License: transient lodging guide (13.38% rate)</td>
+<td>62</td></tr><tr><td>Clark County Dept. of Business License: transient lodging guide (13.38% rate)</td>
 <td class="src"><a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf" target="_blank" rel="noopener">https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-…</a></td>
 <td></td><td><span class="badge b-chip">never checked</span></td>
 <td>0</td></tr><tr><td>golden_nugget_page</td>

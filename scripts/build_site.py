@@ -62,7 +62,7 @@ def page(title, active, body, desc=""):
 <body>
 <header class="site">
   <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
-  <div class="tagline">Every row links to an official source · data as of {AS_OF} · unconfirmed values stay blank and flagged{PASS_BADGE}</div>
+  <div class="tagline">Every row links to an official source · data as of {AS_OF} · unconfirmed values stay blank and flagged</div>
 </header>
 <nav class="site">{nav}</nav>
 <div class="globalsearch">
@@ -786,11 +786,7 @@ source excerpt and retrieval date. Excerpts are quoted from the official structu
 <h1>Source monitor</h1>
 <p class="lead">A scheduled GitHub Actions job re-fetches every official URL on this list, compares a content hash with
 the stored one, saves daily snapshots under <code>data/snapshots/</code>, and marks rows whose source changed.
-Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.
-The list itself is generated — <code>python3 scripts/build_monitor_registry.py</code> rebuilds it from every URL cited by
-an event row, a hotel row or the source register, plus all 37 Venetian structure sheets, so a row can never be published
-without its source being watched. A second job (<code>.github/workflows/recheck.yml</code>, 06:00 UTC) and the
-<code>/plan/</code> surface's <code>plan-refresh.yml</code> (06:30 UTC) watch the same sources from the other pipeline.</p>
+Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.</p>
 <div class="panel"><strong>Current state:</strong> {len(monitor.get('urls', []))} URLs registered ·
 {sum(1 for u in monitor.get('urls', []) if u.get('status') == 'changed')} changed ·
 {sum(1 for u in monitor.get('urls', []) if u.get('status') == 'unchanged')} unchanged.
