@@ -319,6 +319,15 @@ def hotel_table(hotels, table_id, show_calc=True):
                          f'{esc(c.get("note") or c.get("conflict") or c)}</small>')
         elif h.get("fee_last_read") and h.get("resort_fee_src"):
             fee_cell += f'<small class="excerpt note">read on the linked official page · {esc(h["fee_last_read"])}</small>'
+        fr = h.get("fee_range") or {}
+        if fr.get("text"):
+            _prev = fr.get("previous_value") or {}
+            _chg = (f' · <b>changed</b> from {_prev.get("text")} (read {esc(_prev.get("retrieved"))})'
+                    if _prev.get("text") else "")
+            fee_cell += (f'<small class="excerpt note"><span class="badge b-info">official range only</span> '
+                         f'&ldquo;{esc(fr.get("excerpt") or fr["text"])}&rdquo; '
+                         f'<a href="{esc(fr.get("url"))}" target="_blank" rel="noopener">official disclaimer</a>'
+                         f' · read {esc(fr.get("retrieved"))}{_chg}</small>')
         tax = h.get("tax_rate")
         tax_cell = (f"{tax*100:.2f}%" if tax else '<span class="badge b-warn">blank</span>')
         if h.get("tax_note"):

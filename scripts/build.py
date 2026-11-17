@@ -541,7 +541,8 @@ and restart events are excluded from the primary slot because they cannot be fre
 flight has been played. <b>Fallback</b> = a later one-day event whose late-registration close still
 leaves a realistic chance of entering after a bust, so it is usable if the primary sells out at the
 cage.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Date</th><th>Primary event</th>
+<div class="toolbar"><input class="search" type="search" data-filter-table="#dayplan" placeholder="Search the day plan (date, event, note)…" aria-label="Search the day plan"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="dayplan"><thead><tr><th>Date</th><th>Primary event</th>
 <th>Conditional fallback</th><th>Overlap / sequencing note</th></tr></thead><tbody>
 %s</tbody></table></div>
 </section>
@@ -551,7 +552,8 @@ cage.</p></div>
 <p>Every same-day pair of one-day Venetian events, tested against the official registration close.
 A pair is <em>sequence-blocked</em> when the earlier event's registration shuts before the later one
 starts — you then cannot be in the later event unless you busted out of the earlier one in time.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Date</th><th>Event A</th><th>Event B</th>
+<div class="toolbar"><input class="search" type="search" data-filter-table="#overlaps" placeholder="Search overlapping pairs (date, event, verdict)…" aria-label="Search overlapping pairs"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="overlaps"><thead><tr><th>Date</th><th>Event A</th><th>Event B</th>
 <th>Verdict</th><th>Why</th></tr></thead><tbody>
 %s</tbody></table></div>
 </section>
@@ -748,7 +750,8 @@ counted in the sheet-silent group instead of the confirmed group above.</p></div
 <div class="head"><h2>What the official text actually says</h2>
 <p>Rows below quote or summarise the organiser's own words. Where the official text is silent, the row
 says silent — it does not say "single entry".</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Venue / event</th><th>Entry verdict</th>
+<div class="toolbar"><input class="search" type="search" data-filter-table="#entry-verdict" placeholder="Search entry verdicts (venue, event, rule text)…" aria-label="Search entry verdicts"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="entry-verdict"><thead><tr><th>Venue / event</th><th>Entry verdict</th>
 <th>Official rule text</th><th class="num">Buy-in</th><th>Rebuy / add-on</th><th>Source</th></tr></thead>
 <tbody>%s</tbody></table></div>
 </section>
@@ -775,7 +778,8 @@ returns %d rows today. It will start returning rows the moment an official rule 
 <div class="head"><h2>The unresolved Venetian family</h2>
 <p>These are the events that would qualify if the room confirms a one-entry rule. They are shown
 individually rather than as a recommendation, because the rule is unconfirmed.</p></div>
-<div class="tw"><table class="t"><thead><tr><th>Date</th><th>Start</th><th>Event</th>
+<div class="toolbar"><input class="search" type="search" data-filter-table="#entry-family" placeholder="Search the unresolved family (date, event)…" aria-label="Search the unresolved Venetian family"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="entry-family"><thead><tr><th>Date</th><th>Start</th><th>Event</th>
 <th class="num">Buy-in</th><th class="num">To prize pool</th><th class="num">GTD</th>
 <th class="num">GTD ÷ buy-in</th><th>Late reg closes</th><th class="num">Stack</th>
 <th class="num">Level (min)</th><th>Source</th></tr></thead><tbody>%s</tbody></table></div>
@@ -1164,14 +1168,16 @@ def page_sources():
 <p class="lede">%d sources, all retrieved on %s. Each has a link you can open to check the value
 yourself. The "manual check" column is the same URL — nothing here is a cached copy.</p></section>
 
-<section class="block"><div class="tw"><table class="t"><thead><tr><th>Key</th><th>Source</th>
+<section class="block"><div class="toolbar"><input class="search" type="search" data-filter-table="#source-register" placeholder="Search the source register (key, source, URL)…" aria-label="Search the source register"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="source-register"><thead><tr><th>Key</th><th>Source</th>
 <th>URL</th><th>Retrieved</th><th>Verify</th></tr></thead><tbody>%s</tbody></table></div></section>
 
 <section class="block">
 <h2>Venetian structure sheets</h2>
 <p>All 37 were read. Sheet numbers match the numbers printed in the "Structures" column of the
 official event page.</p>
-<div class="tw"><table class="t"><thead><tr><th>Sheet</th><th>Official PDF</th><th>Retrieved</th></tr></thead>
+<div class="toolbar"><input class="search" type="search" data-filter-table="#sheet-register" placeholder="Search the structure-sheet register…" aria-label="Search the structure-sheet register"><span class="search-status"></span></div>
+<div class="tw"><table class="t" id="sheet-register"><thead><tr><th>Sheet</th><th>Official PDF</th><th>Retrieved</th></tr></thead>
 <tbody>%s</tbody></table></div>
 </section>
 
