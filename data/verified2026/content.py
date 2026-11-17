@@ -70,6 +70,7 @@ OTHER_VENUES = [
     dict(
         name="Caesars Palace",
         poker_room="Caesars Palace Poker Room",
+<<<<<<< HEAD
         status_this_session=("Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily "
                              "tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at "
                              "10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with "
@@ -77,13 +78,29 @@ OTHER_VENUES = [
                              "minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That "
                              "is the first time this site has an official buy-in, stack, guarantee and level length "
                              "for a Caesars daily; it is still not a structure sheet, and the add-on is decisive."),
+=======
+        status_this_session=("Re-read live on 2026-11-17 (session arena/7cc9ee65-poker2). The casino page now "
+                             "links an official daily tournament flyer PDF, which was read in full: four NLH "
+                             "events a day at 10 AM ($100), 2 PM ($160), 6 PM ($100) and 9 PM ($160), each with "
+                             "a $1,000 guarantee, 20,000 chips, 20-minute levels and an optional $50 add-on."),
+>>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
         url="https://www.caesars.com/caesars-palace/casino",
         checked="2026-11-17",
         earlier_findings=[
             dict(text="Caesars' corporate disclaimer publishes only a resort-fee range: 'a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.' No single property value is published.",
                  url="https://www.caesars.com/corporate/disclaimer",
                  retrieved="2026-11-16"),
+            dict(text="Read live 2026-11-17 from the official daily flyer: 'All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven.'",
+                 url="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+                 retrieved="2026-11-17"),
+            dict(text="Read live 2026-11-17: '3. Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.'",
+                 url="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+                 retrieved="2026-11-17"),
+            dict(text="Read live 2026-11-17: '6. Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.' and '7. Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.'",
+                 url="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+                 retrieved="2026-11-17"),
         ],
+<<<<<<< HEAD
         verdict=("Excluded from the single-entry table on the operator's own words: the published $50 add-on is a "
                  "second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a "
                  "separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed "
@@ -91,11 +108,19 @@ OTHER_VENUES = [
                  "and the buy-in still conflicts with the property's own daily flyer ($160 at 2 p.m. / 9 p.m., "
                  "read 2026-11-16) - see F-14."),
         provenance="read first-hand 2026-11-17 on the operator's own page; the flyer conflict is carried from 2026-11-16",
+=======
+        verdict=("Publishes four dated daily events with buy-in, guarantee and entry rule. Excluded from the "
+                 "single-entry ranking: the official flyer prints a $50 add-on and expressly permits re-entry. "
+                 "Rows are published on the Caesars Palace venue page."),
+        provenance="read live on 2026-11-17 by arena/7cc9ee65-poker2; the resort-fee range remains an earlier session's reading",
+>>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
     ),
     dict(
         name="Bellagio",
         poker_room="Bellagio Poker Room",
-        status_this_session="Not re-read in this session.",
+        status_this_session=("Re-read live on 2026-11-17 (session arena/7cc9ee65-poker2). The poker page now "
+                             "links three official weekly structure sheets - Friday $600 NLH, Saturday NLH and "
+                             "Sunday $400 H.O.R.S.E., all at 11:00 AM - each of which was read in full."),
         url="https://bellagio.mgmresorts.com/en/casino/poker.html",
         earlier_findings=[
             dict(text="The official Sunday $400 H.O.R.S.E. structure sheet states: 'Players may buy-in and re-enter through the end of level 8 (Including Break)' and that a voluntary $25 staff gratuity at registration grants an additional 15,000 starting chips.",
@@ -105,13 +130,17 @@ OTHER_VENUES = [
                  url="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
                  retrieved="2026-11-16"),
         ],
-        verdict="Excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity on the verified sheet.",
-        provenance="cited from an earlier session's reading",
+        verdict=("Publishes three weekly events with official structure sheets. Excluded from the single-entry "
+                 "ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 "
+                 "extra starting chips. Rows are published on the Bellagio venue page."),
+        provenance="re-read live on 2026-11-17 by arena/7cc9ee65-poker2; the Saturday sheet still contradicts itself (X-04)",
     ),
     dict(
         name="MGM Grand",
         poker_room="MGM Grand Poker Room",
-        status_this_session="Not re-read in this session.",
+        status_this_session=("Re-requested live on 2026-11-17 (session arena/7cc9ee65-poker2): the poker page "
+                             "now returns 'Oops! We can't find that page', so the earlier $120-sheet reading "
+                             "can no longer be re-verified against a live official page. Irregularity X-06."),
         url="https://mgmgrand.mgmresorts.com/en/casino/poker.html",
         earlier_findings=[
             dict(text="The official $120 daily structure sheet prints: '$92 to Prize Pool, $13 House Fee and a once-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.'",
@@ -325,6 +354,52 @@ FLAGS = [
                  "(Nov 16 - Dec 23, 2026)."),
          impact="Do not rely on that page's 'Current Series' label; use the dated event page and schedule PDF.",
          source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"),
+    dict(id="X-03", area="Official page defect",
+         title="Bellagio's poker page gives a resume date whose weekday does not exist",
+         detail=("The official page says 'Tournament play will resume on Saturday, July 26, beginning with the "
+                 "$300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the "
+                 "weekday and the date on the page disagree. The three weekly structure sheets are treated as "
+                 "the operative schedule instead."),
+         impact="Do not plan around that resume date; confirm the day with the room.",
+         source="https://bellagio.mgmresorts.com/en/casino/poker.html"),
+    dict(id="X-04", area="Official document defect",
+         title="Bellagio's Saturday sheet prints two different buy-ins",
+         detail=("The sheet is headlined 'NLH $1100 BUY-IN' while its own rule 7 splits '[t]he $600 Buy-in' into "
+                 "$510 prize pool, $50 admin fees and $40 optional staff gratuity. Read 2026-11-17. No buy-in is "
+                 "published for that event: the two figures are shown side by side and left blank."),
+         impact="The Saturday event cannot be costed or ranked until the room says which figure is current.",
+         source="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"),
+    dict(id="X-05", area="Official document defect",
+         title="Bellagio's Saturday sheet names a final-day date that has already passed",
+         detail=("The same sheet prints 'Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio'. That "
+                 "date was already past when the sheet was read on 2026-11-17, so the document may be a stale "
+                 "series sheet rather than the current weekly event."),
+         impact="Treat the Saturday event as unconfirmed until the room republishes the sheet.",
+         source="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"),
+    dict(id="X-06", area="Official page unavailable",
+         title="MGM Grand's poker page no longer resolves",
+         detail=("https://mgmgrand.mgmresorts.com/en/casino/poker.html returned 'Oops! We can't find that page' "
+                 "when requested live on 2026-11-17. An earlier session had read a $120 daily structure sheet "
+                 "from this room, with a $11 gratuity that buys 10,000 extra chips."),
+         impact=("The MGM Grand finding is published as historical provenance only. It cannot be re-verified "
+                 "against a live official page, so it is not used as a current citation."),
+         source="https://mgmgrand.mgmresorts.com/en/casino/poker.html"),
+    dict(id="X-07", area="Official page unavailable",
+         title="Wynn's poker-room page still returns a not-found page",
+         detail=("https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' "
+                 "when requested live on 2026-11-17, the same result an earlier session recorded. No dated "
+                 "schedule, buy-in or entry rule can be read for the WPT World Championship host room."),
+         impact="Any Wynn figure on this site is historical provenance, not a current citation.",
+         source="https://www.wynnlasvegas.com/casino/poker-room"),
+    dict(id="F-11", area="Coverage",
+         title="Two rooms publish schedules that are not in the ranked tables",
+         detail=("Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish "
+                 "official schedule documents, read live on 2026-11-17. Every one of those events is a "
+                 "re-entry or add-on event on the face of its own sheet, so none of them can enter the "
+                 "single-entry ranking; they are published on their venue pages instead."),
+         impact=("The ranked table stays Venetian-only not because other rooms publish nothing, but because "
+                 "the rooms that do publish are not single-entry. That is a finding, not a coverage gap."),
+         source="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
 ]
 
 # Look-up used by the per-room venue pages. Keys match ROOM_META in scripts/build2026.py.

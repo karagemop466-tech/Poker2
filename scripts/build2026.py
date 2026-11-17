@@ -27,6 +27,7 @@ import part1, part2, part3, part4, part5, part6          # noqa: E402  (register
 import schedule as sched                                  # noqa: E402
 import hotels as hotelsmod                                # noqa: E402
 import content as contentmod                              # noqa: E402
+import other_rooms as othermod                            # noqa: E402  (other Strip rooms)
 
 SHEETS = part1.SHEETS
 BASE = part1.BASE
@@ -1556,14 +1557,18 @@ ROOM_META = {
         walk_key="V-CP",
         title="Caesars Palace",
         room="Caesars Palace poker room",
-        desc="Publishes a daily NLH flyer PDF; no per-event structure sheet could be read.",
+        desc=("Four daily NLH events at 10 AM, 2 PM, 6 PM and 9 PM, published as an official "
+              "daily flyer PDF. Re-entry and a $50 add-on are printed on it, so none of them is "
+              "single-entry. Read 2026-11-17."),
         page="venues/caesars-palace.html",
     ),
     "bellagio": dict(
         walk_key="V-BEL",
         title="Bellagio",
         room="Bellagio poker room",
-        desc="Publishes a hotel-terms page with a resort fee and a 72-hour cancellation window; no dated tournament schedule read.",
+        desc=("Three weekly events with official structure sheets: Friday $600 NLH, Saturday NLH "
+              "and Sunday $400 H.O.R.S.E., all at 11:00 AM. Each sheet prints re-entry and a "
+              "gratuity that buys extra chips. Read 2026-11-17."),
         page="venues/bellagio.html",
     ),
     "mgm-grand": dict(
@@ -1617,6 +1622,105 @@ Within 30 minutes only</label><span class="note" id="wc"></span></div>
            rows=trs))
 
 
+def other_room_schedule(key):
+    """Official schedule table for a non-Venetian room that publishes one.
+
+    Added 2026-11-17 by session arena/7cc9ee65-poker2: Caesars Palace and Bellagio both
+    publish official tournament documents, so their rows are rendered here instead of the
+    room page saying the room publishes nothing. Every row cites the room's own PDF and is
+    kept out of the single-entry ranking, because every one of these events is a re-entry or
+    add-on event on the face of its own sheet.
+    """
+    if key == "caesars-palace":
+        sched_data = othermod.CAESARS_SCHEDULE
+        head = ("<tr><th>Start</th><th class='num'>Buy-in</th><th class='num'>House fee</th>"
+                "<th class='num'>To prize pool</th><th>Add-on</th><th class='num'>Chips</th>"
+                "<th class='num'>Levels</th><th class='num'>Guarantee</th></tr>")
+        rows = "".join(
+            "<tr><td>%s</td><td class='num'>$%s</td><td class='num'>$%s</td>"
+            "<td class='num'>$%s</td><td>$%d add-on &middot; %s chips at the first break</td>"
+            "<td class='num'>%s</td><td class='num'>%d min</td><td class='num'>%s</td></tr>"
+            % (esc(r["start"]), format(r["buy_in"], ","), format(r["house_fee"], ","),
+               format(r["to_pool"], ","), r["add_on"], format(r["add_on_chips"], ","),
+               format(r["chips"], ","), r["level_min"],
+               "$" + format(r["guarantee"], ",") if r["guarantee"] else "&mdash;")
+            for r in sched_data["rows"])
+        doc_link = srclink(sched_data["source"], "official daily tournament flyer (PDF)")
+    elif key == "bellagio":
+        sched_data = othermod.BELLAGIO_SCHEDULE
+        head = ("<tr><th>Day</th><th>Start</th><th>Event</th><th class='num'>Buy-in</th>"
+                "<th class='num'>House fee</th><th>Gratuity buys chips</th>"
+                "<th class='num'>Starting chips</th><th class='num'>Levels</th>"
+                "<th class='num'>Guarantee</th><th>Structure sheet</th></tr>")
+        rows = ""
+        for r in sched_data["events"]:
+            buy = ("$" + format(r["buy_in"], ",")) if r["buy_in"] else (
+                "<span class='blank-cell'>conflict &mdash; see X-04</span>")
+            rows += (
+                "<tr><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td>"
+                "<td class='num'>$%s</td><td>$%d &rarr; +%s chips</td>"
+                "<td class='num'>%s without &middot; %s with</td><td class='num'>%d min</td>"
+                "<td class='num'>%s</td><td>%s</td></tr>"
+                % (esc(r["day"]), esc(r["start"]), esc(r["name"]), buy,
+                   format(r["house_fee"], ","), r["gratuity"],
+                   format(r["gratuity_chips"], ","),
+                   format(r["chips_without_gratuity"], ","),
+                   format(r["chips_with_gratuity"], ","), r["level_min"],
+                   ("$" + format(r["guarantee"], ",")) if r["guarantee"] else "&mdash;",
+                   srclink(r["source"], "PDF")))
+        doc_link = srclink(sched_data["room_page"], "official Bellagio poker page")
+    else:
+        return ""
+
+    quotes = "".join(
+        '<div class="quote"><strong>%s.</strong> %s</div>' % (esc(t), esc(q))
+        for t, q in (sched_data.get("quotes") or []))
+    if key == "bellagio":
+        quotes = "".join(
+            '<div class="panel"><h3>%s &mdash; %s</h3>%s<div class="note">%s</div>'
+            '<ul class="tight">%s</ul></div>'
+            % (esc(r["day"]), esc(r["name"]),
+               "".join('<div class="quote"><strong>%s.</strong> %s</div>' % (esc(t), esc(q))
+                       for t, q in r["quotes"]),
+               srclink(r["source"], "official structure sheet (PDF)"),
+               "".join("<li>%s</li>" % esc(g) for g in r["gaps"]))
+            for r in sched_data["events"])
+
+    gaps = "".join("<li>%s</li>" % esc(g) for g in sched_data.get("gaps") or [])
+    if gaps:
+        gaps = ("<div class='panel'><h3>What the official document does not print</h3>"
+                "<ul class='tight'>%s</ul></div>" % gaps)
+
+    irr = [i for i in othermod.IRREGULARITIES if i["room"] == sched_data["room"]]
+    irr_html = ""
+    if irr:
+        irr_html = ("<div class='panel'><h3>Irregularities in the official document</h3>"
+                    "<table><thead><tr><th class='num'>ID</th><th>What the document says</th>"
+                    "<th>Why it matters</th><th>Source</th></tr></thead><tbody>%s</tbody></table>"
+                    "</div>" % "".join(
+                        "<tr id='%s'><td class='num'>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
+                        % (esc(i["id"]), esc(i["id"]), esc(i["what"]), esc(i["why_it_matters"]),
+                           srclink(i["source"], "official page"))
+                        for i in irr))
+
+    return """
+<div class="panel"><h2>Official tournament schedule</h2>
+<p>Transcribed line by line from the room's own document, read %s. These rows are
+<strong>not</strong> in the single-entry ranking: the sheet for each one prints re-entry or a
+paid add-on, which is the class of event the brief asks to keep separate. The Venetian table
+stays the only ranked table, because it is the only room that publishes a dated schedule
+<em>and</em> a per-event structure sheet.</p>
+<p class="note">Source: %s &middot; cadence: %s</p>
+<div class="tbl-scroll"><table><thead>%s</thead><tbody>%s</tbody></table></div>
+<p><strong>Verdict.</strong> %s</p>
+</div>
+%s
+<div class="panel"><h3>What the official document says, in its own words</h3>%s</div>
+%s
+""" % (esc(sched_data["retrieved"]), doc_link, esc(sched_data["cadence"]), head, rows,
+       esc(sched_data["verdict"]), gaps, quotes, irr_html)
+
+
 def p_venue_room(key, events):
     meta = ROOM_META[key]
     own = contentmod.OTHER_VENUES_BY_ID.get(key)
@@ -1631,6 +1735,10 @@ def p_venue_room(key, events):
                    'transcribed, so this table is intentionally empty. The reason is recorded below '
                    'with the source that was checked.</p>')
         hotel_count = None
+    if key in ("caesars-palace", "bellagio"):
+        # These two rooms do publish an official schedule document; render it instead of the
+        # empty-state paragraph. Read 2026-11-17, session arena/7cc9ee65-poker2.
+        ev_html = other_room_schedule(key)
     whats = ""
     if own:
         finds = "".join(
@@ -1692,20 +1800,27 @@ def p_venue_other():
                esc(v["verdict"]), esc(v["provenance"]), srclink(v["url"])))
     return page("Other rooms", """
 <div class="hero"><h1>Other Strip poker rooms</h1>
-<p class="lede">Seven other rooms in and around the Strip area were checked. None of them publishes
-enough to rank a single tournament. This page records exactly what each one does publish, so the gap is
-documented rather than filled.</p></div>
+<p class="lede">Seven other rooms in and around the Strip area were checked. Two of them &mdash;
+Caesars Palace and Bellagio &mdash; do publish official tournament documents, read live on
+%(ret)s, and their rows are on their own venue pages. None of the seven publishes a
+<em>single-entry</em> event, so none of them can enter the ranked table. This page records
+exactly what each one publishes, so the gap is documented rather than filled.</p></div>
 
-<div class="banner"><strong>Why the ranked tables are Venetian-only.</strong> This is a coverage limit,
-not a preference. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
-entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule.
-Horseshoe publishes six start times and nothing else. Resorts World's poker page redirects to a dining
-page. Westgate publishes room hours. Wynn's live page states a Friday rebuy and prints no daily buy-in.
-Flag
-<a href="flagged.html#F-10">F-10</a>.</div>
+<div class="banner"><strong>Why the ranked tables are Venetian-only.</strong> This is a finding, not
+a coverage limit. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
+entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule
+<em>and</em> stays silent on re-entry. Caesars Palace publishes four daily events and Bellagio three
+weekly ones, but every sheet prints re-entry or a paid add-on, so they sit in the
+spending-more-money section instead. Horseshoe publishes six start times and nothing else.
+Resorts World's poker page redirects to a dining page. Westgate publishes room hours. Wynn's live
+page states a $10,000 guaranteed event every evening at 6 p.m. and prints no buy-in for any daily
+event. MGM Grand's poker page returned a not-found page on %(ret)s
+(<a href="flagged.html#X-06">X-06</a>); the URL this site used to cite for Wynn does too
+(<a href="flagged.html#X-07">X-07</a>). Flag
+<a href="flagged.html#F-10">F-10</a>, <a href="flagged.html#F-11">F-11</a>.</div>
 
-%s
-""" % "".join(blocks), "venues/other.html", subnav=VENUE_SUBNAV)
+%(blocks)s
+""" % dict(blocks="".join(blocks), ret=RETRIEVED), "venues/other.html", subnav=VENUE_SUBNAV)
 
 
 def p_summary(events, days):
@@ -1767,8 +1882,11 @@ schedule PDF, which prints registration-close times, chip counts and level lengt
 not. The two agree on every row.</li>
 <li><strong>The hotel numbers</strong> come from the official resort-fee page and the official poker
 suite-rate page, both read on %(ret)s.</li>
-<li><strong>Seven other poker rooms</strong> were checked. None publishes enough to rank even one
-event.</li>
+<li><strong>Seven other poker rooms</strong> were checked. Two of them &mdash; Caesars Palace and
+Bellagio &mdash; publish official schedules, read live on %(ret)s, but every event on those sheets
+prints re-entry or a paid add-on (<a href="flagged.html#X-03">X-03</a>&ndash;<a
+href="flagged.html#X-05">X-05</a>, <a href="flagged.html#F-11">F-11</a>). None publishes a
+single-entry event, which is why the ranked table is Venetian-only.</li>
 </ul></div>
 
 <div class="panel"><h2>What could not be verified</h2>

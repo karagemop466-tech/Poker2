@@ -4,8 +4,8 @@
   "pl": "Dashboard",
   "t": "# Event Entry Guarantee",
   "a": "",
-  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "1 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | $90 | 66.7\u00d7 | 12-06"
+  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
+  "x": "1 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-02"
  },
  {
   "p": "index.html",
@@ -13,7 +13,15 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "2 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
+  "x": "2 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | $90 | 66.7\u00d7 | 12-06"
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
+  "x": "3 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-08"
  },
  {
   "p": "index.html",
@@ -21,7 +29,23 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "3 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 12-23"
+  "x": "4 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN E",
+  "x": "5 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN E | $800 | $40,000 | $90 | 50.0\u00d7 | 12-10"
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
+  "x": "6 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 12-23"
  },
  {
   "p": "index.html",
@@ -29,7 +53,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 BIG O (1DAY)",
-  "x": "4 | $600 BIG O (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-03"
+  "x": "7 | $600 BIG O (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-03"
  },
  {
   "p": "index.html",
@@ -37,7 +61,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "5 | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-17"
+  "x": "8 | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-17"
  },
  {
   "p": "index.html",
@@ -45,7 +69,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$400 NO LIMIT HOLD'EM (1DAY)",
-  "x": "6 | $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | $65 | 37.5\u00d7 | 11-25"
+  "x": "9 | $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | $65 | 37.5\u00d7 | 11-25"
  },
  {
   "p": "index.html",
@@ -53,7 +77,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "7 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-18"
+  "x": "10 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-18"
  },
  {
   "p": "index.html",
@@ -61,7 +85,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "8 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-26"
+  "x": "11 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-26"
  },
  {
   "p": "index.html",
@@ -69,7 +93,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "9 | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-29"
+  "x": "12 | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-29"
  },
  {
   "p": "index.html",
@@ -110,22 +134,6 @@
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
   "x": "5 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | 11-18"
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
-  "x": "1 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in."
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
-  "x": "2 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in."
  },
  {
   "p": "tournaments.html",
@@ -317,7 +325,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev24",
   "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Bre",
-  "x": "24 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize mone"
+  "x": "24 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in. | 2026-12-02 | 10:10 "
  },
  {
   "p": "tournaments.html",
@@ -381,7 +389,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev32",
   "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Bre",
-  "x": "32 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize mone"
+  "x": "32 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in. | 2026-12-08 | 10:10 "
  },
  {
   "p": "tournaments.html",
@@ -389,7 +397,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev33",
   "h": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid",
-  "x": "33 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); 21+ with a Venetian Rewards card (property rule) -- Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-08 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | "
+  "x": "33 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-08 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | sheet 19 | 2026-11-17 | baseline set"
  },
  {
   "p": "tournaments.html",
@@ -421,7 +429,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev37",
   "h": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid",
-  "x": "37 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); 21+ with a Venetian Rewards card (property rule) -- Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-09 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | "
+  "x": "37 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-09 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | sheet 19 | 2026-11-17 | baseline set"
  },
  {
   "p": "tournaments.html",
@@ -437,7 +445,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev39",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-s",
-  "x": "39 | Multi-flight | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 | $40,000 "
+  "x": "39 | Best single-entry candidates | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 | $40,000 | 50.0\u00d7 | sheet 32 | 2026-11-17 | ba"
  },
  {
   "p": "tournaments.html",
@@ -517,7 +525,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev49",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE each flight plays to ~15% remaining; Day 2 combi",
-  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM | $1,100 | $140 | $"
+  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM | $1,100 | $140 | $960 | $300,000 | 272.7\u00d7 | sheet 20 | 2026-11-17 | ba"
  },
  {
   "p": "tournaments.html",
@@ -758,6 +766,14 @@
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
   "x": "63 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | silent | silent | silent | $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. | sheet 7"
+ },
+ {
+  "p": "entry-rules.html",
+  "pl": "Entry rules",
+  "t": "# Event Entry Re-entry clause",
+  "a": "",
+  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32"
  },
  {
   "p": "entry-rules.html",
@@ -1044,14 +1060,6 @@
   "pl": "Entry rules",
   "t": "# Event Entry Re-entry clause",
   "a": "",
-  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32"
- },
- {
-  "p": "entry-rules.html",
-  "pl": "Entry rules",
-  "t": "# Event Entry Re-entry clause",
-  "a": "",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO",
   "x": "49 | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO | $1,100 | silent on re-entry between flights | silent | silent | $140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. | sheet 20"
  },
@@ -1254,22 +1262,6 @@
   "a": "",
   "h": "venetian",
   "x": "2026-11-17 | venetian | resort_fee | $55 per night + tax | www.venetianlasvegas.com | read this session"
- },
- {
-  "p": "hotels.html",
-  "pl": "Hotels &amp; true cost",
-  "t": "Date read Property Field Value",
-  "a": "",
-  "h": "venetian",
-  "x": "2026-11-17 | venetian | resort_fee | $55 plus tax per night, payable upon check-in | www.venetianlasvegas.com | re-read first-hand 2026-11-17 by arena/7be88b38-poker2; the page lists the inclusions (Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader)"
- },
- {
-  "p": "hotels.html",
-  "pl": "Hotels &amp; true cost",
-  "t": "Date read Property Field Value",
-  "a": "",
-  "h": "venetian",
-  "x": "2026-11-17 | venetian | room_tax | 13.38% transient lodging tax, resort-hotel rate (Paradise Commercial Zone) | www.clarkcountynv.gov | county licence register row 'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino ... 13.38% ... Resort Hotel (PGC)', read 2026-11-17; see flag F-15 on the document's own date"
  },
  {
   "p": "hotels.html",
@@ -2749,7 +2741,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Multi-flight"
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Best single-entry candidates"
  },
  {
   "p": "venues/venetian.html",
@@ -3290,6 +3282,38 @@
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "10:00 AM",
+  "x": "10:00 AM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "2:00 PM",
+  "x": "2:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "6:00 PM",
+  "x": "6:00 PM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "9:00 PM",
+  "x": "9:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
   "h": "Caesars Palace",
@@ -3454,6 +3478,54 @@
   "a": "",
   "h": "Golden Nugget (downtown)",
   "x": "Golden Nugget (downtown) | 97.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Fridays",
+  "x": "Fridays | 11:00 AM | NLH $600 buy-in | $600 | $50 | $40 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Saturdays",
+  "x": "Saturdays | 11:00 AM | NLH (sheet headline: $1,100 buy-in) | conflict \u2014 see X-04 | $50 | $40 \u2192 +20,000 chips | 20,000 without \u00b7 40,000 with | 30 min | $50,000 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Sundays",
+  "x": "Sundays | 11:00 AM | $400 H.O.R.S.E. Tournament | $400 | $35 | $25 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-03",
+  "h": "X-03",
+  "x": "X-03 | The official poker page says \u201cTournament play will resume on Saturday, July 26\u201d, but 26 July 2026 is a Sunday. | The day-of-week on the page disagrees with the calendar, so the resume date cannot be taken as printed. The three weekly structure sheets are read as the operative schedule instead. | official page"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-04",
+  "h": "X-04",
+  "x": "X-04 | The Saturday sheet is headlined \u201cNLH $1100 BUY-IN\u201d while its own rule 7 splits \u201c[t]he $600 Buy-in\u201d. | The buy-in is the number the whole ranking rests on, and the official document gives two different ones. No figure is published; both are shown so the room can be asked which is current. | official page"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-05",
+  "h": "X-05",
+  "x": "X-05 | The Saturday sheet prints \u201cCombined Final Day 2 (9/13/26)\u201d, a date that had already passed when the sheet was read on 2026-11-17. | A sheet naming a past final day may be a stale series document. Treat the Saturday event as unconfirmed until the room republishes it. | official page"
  },
  {
   "p": "venues/bellagio.html",
@@ -3797,7 +3869,7 @@
   "t": "Group Events What it means",
   "a": "",
   "h": "Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official ",
-  "x": "Best single-entry candidates | 15 | Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official sheet."
+  "x": "Best single-entry candidates | 16 | Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official sheet."
  },
  {
   "p": "summary.html",
@@ -3813,7 +3885,7 @@
   "t": "Group Events What it means",
   "a": "",
   "h": "More than one starting flight. A second flight is a second buy-in.",
-  "x": "Multi-flight | 9 | More than one starting flight. A second flight is a second buy-in."
+  "x": "Multi-flight | 8 | More than one starting flight. A second flight is a second buy-in."
  },
  {
   "p": "summary.html",
@@ -3876,8 +3948,16 @@
   "pl": "Executive summary",
   "t": "# Event Entry Guarantee",
   "a": "",
+  "h": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER",
+  "x": "5 | #39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER | $800 | $40,000 | 50.0\u00d7 | 12-10"
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "# Event Entry Guarantee",
+  "a": "",
   "h": "#63 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "5 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
+  "x": "6 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
  },
  {
   "p": "summary.html",
@@ -3885,7 +3965,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#27 $600 BIG O (1DAY)",
-  "x": "6 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
+  "x": "7 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
  },
  {
   "p": "summary.html",
@@ -3893,15 +3973,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "7 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
- },
- {
-  "p": "summary.html",
-  "pl": "Executive summary",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "#10 $400 NO LIMIT HOLD'EM (1DAY)",
-  "x": "8 | #10 $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | 37.5\u00d7 | 11-25"
+  "x": "8 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
  },
  {
   "p": "questions.html",
@@ -4189,7 +4261,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-09",
   "h": "F-09",
-  "x": "F-09 | Other venues | The Wynn poker citation on this site pointed at a page that no longer exists https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17"
+  "x": "F-09 | Other venues | Wynn's poker page is currently unavailable https://www.wynnlasvegas.com/casino/poker-room returned a not-found page on 2026-11-17. Wynn findings on this site are carried from an earlier session's reading of the official WPT structures PDF on 2026-11-16 and are labelled as such. | Wynn rows are marked 'cited, not re-read' and are not presented as current. | www.wynnlasvegas.co"
  },
  {
   "p": "flagged.html",
@@ -4227,30 +4299,6 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
-  "a": "F-14",
-  "h": "F-14",
-  "x": "F-14 | Other venues | Two official Caesars documents print different daily buy-ins for the same room Caesars' poker-tournaments page, re-read first-hand on 2026-11-17, prints '$100 buy-in ... $1,000 guaranteed prize pool' for the four daily Caesars Palace events. The property's own daily NLH flyer, read 2026-11-16, prints $160 for the 2 p.m. and 9 p.m. starts. Both are official; neither corrects t"
- },
- {
-  "p": "flagged.html",
-  "pl": "Flagged for review",
-  "t": "ID Area Issue Why it matters",
-  "a": "F-15",
-  "h": "F-15",
-  "x": "F-15 | Taxes | The county tax guide's own title and its URL disagree by three years The Clark County transient-lodging guide the room-tax figure is cited from is served at a slug ending 'july-2021.pdf' while the document's internal title reads 'Genl Info Guide for TLEs Sept 2018'. The rate itself was confirmed first-hand on 2026-11-17 from the licence register inside that document, which lists the"
- },
- {
-  "p": "flagged.html",
-  "pl": "Flagged for review",
-  "t": "ID Area Issue Why it matters",
-  "a": "F-16",
-  "h": "F-16",
-  "x": "F-16 | Monitoring | Ten of the cited documents could not be read by the scheduled monitor The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not (Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn poker-room URL 404s). Recheck2026.py "
- },
- {
-  "p": "flagged.html",
-  "pl": "Flagged for review",
-  "t": "ID Area Issue Why it matters",
   "a": "X-02",
   "h": "X-02",
   "x": "X-02 | Official page defect | The Venetian series overview still labels an ended series as 'Current Series' The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, 2026' even though today is 2026-11-17 and the live series is DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026). | Do not rely on that page's 'Current Series' label; use the dated event page and sc"
@@ -4259,89 +4307,49 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
-  "a": "F-14",
-  "h": "F-14",
-  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+  "a": "X-03",
+  "h": "X-03",
+  "x": "X-03 | Official page defect | Bellagio's poker page gives a resume date whose weekday does not exist The official page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the weekday and the date on the page disagree. The three weekly structure sheets are treated as the operative schedule ins"
  },
  {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "bellagio.mgmresorts.com",
-  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-04",
+  "h": "X-04",
+  "x": "X-04 | Official document defect | Bellagio's Saturday sheet prints two different buy-ins The sheet is headlined 'NLH $1100 BUY-IN' while its own rule 7 splits '[t]he $600 Buy-in' into $510 prize pool, $50 admin fees and $40 optional staff gratuity. Read 2026-11-17. No buy-in is published for that event: the two figures are shown side by side and left blank. | The Saturday event cannot be costed or"
  },
  {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-05",
+  "h": "X-05",
+  "x": "X-05 | Official document defect | Bellagio's Saturday sheet names a final-day date that has already passed The same sheet prints 'Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio'. That date was already past when the sheet was read on 2026-11-17, so the document may be a stale series sheet rather than the current weekly event. | Treat the Saturday event as unconfirmed until the room r"
  },
  {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-06",
+  "h": "X-06",
+  "x": "X-06 | Official page unavailable | MGM Grand's poker page no longer resolves https://mgmgrand.mgmresorts.com/en/casino/poker.html returned 'Oops! We can't find that page' when requested live on 2026-11-17. An earlier session had read a $120 daily structure sheet from this room, with a $11 gratuity that buys 10,000 extra chips. | The MGM Grand finding is published as historical provenance only. It "
  },
  {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "mgmgrand.mgmresorts.com",
-  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-07",
+  "h": "X-07",
+  "x": "X-07 | Official page unavailable | Wynn's poker-room page still returns a not-found page https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' when requested live on 2026-11-17, the same result an earlier session recorded. No dated schedule, buy-in or entry rule can be read for the WPT World Championship host room. | Any Wynn figure on this site is historical"
  },
  {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "bellagio.mgmresorts.com",
-  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "mgmgrand.mgmresorts.com",
-  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "assets.contentstack.io",
-  "x": "assets.contentstack.io | 422 | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.wynnlasvegas.com",
-  "x": "www.wynnlasvegas.com | 404 | not found | the official URL no longer serves a document - the citation itself needs correcting"
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-11",
+  "h": "F-11",
+  "x": "F-11 | Coverage | Two rooms publish schedules that are not in the ranked tables Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages i"
  },
  {
   "p": "sources.html",
@@ -4708,104 +4716,8 @@
   "pl": "Sources",
   "t": "Kind Document URL Retrieved",
   "a": "",
-  "h": "Hotel",
-  "x": "Hotel | The Venetian Resort resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Venetian Resort."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | The Venetian Resort parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Venetian Resort."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | The Palazzo resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Palazzo."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | The Palazzo parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Palazzo."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Wynn Las Vegas resort fee source | www.wynnlasvegas.com |  | The resort fee this site publishes for Wynn Las Vegas."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Wynn Las Vegas parking source | www.wynnlasvegas.com |  | The parking this site publishes for Wynn Las Vegas."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Encore at Wynn Las Vegas resort fee source | www.wynnlasvegas.com |  | The resort fee this site publishes for Encore at Wynn Las Vegas."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Encore at Wynn Las Vegas parking source | www.wynnlasvegas.com |  | The parking this site publishes for Encore at Wynn Las Vegas."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Bellagio resort fee source | bellagio.mgmresorts.com |  | The resort fee this site publishes for Bellagio."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | MGM Grand resort fee source | mgmgrand.mgmresorts.com |  | The resort fee this site publishes for MGM Grand."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Caesars Palace resort fee source | www.caesars.com |  | The resort fee this site publishes for Caesars Palace."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Hotel",
-  "x": "Hotel | Horseshoe Las Vegas resort fee source | www.caesars.com |  | The resort fee this site publishes for Horseshoe Las Vegas."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
   "h": "Other venue",
-  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-17 | Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on e"
+  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-16 | Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry."
  },
  {
   "p": "sources.html",
@@ -4845,7 +4757,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-17 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed and priced, but it cannot be compared like-for-lik"
+  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-16 | Publishes four dated daily events with buy-in, guarantee and entry rule. Excluded from the single-entry ranking: the official flyer prints a $50 add-on and expressly permits re-entry. Rows are published on the Caesars Palace venue page."
  },
  {
   "p": "sources.html",
@@ -4861,7 +4773,31 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | Excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity on the verified sheet."
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17 from the official daily flyer: 'All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17: '3. Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17: '6. Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.' and '7. Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | Publishes three weekly events with official structure sheets. Excluded from the single-entry ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 extra starting chips. Rows are published on the Bellagio venue page."
  },
  {
   "p": "sources.html",
@@ -4909,7 +4845,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-16 | No tournament data published on the official page."
+  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-17 | No tournament data published on the official page."
  },
  {
   "p": "sources.html",
