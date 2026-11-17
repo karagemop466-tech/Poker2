@@ -440,10 +440,21 @@ def hotel_table(hotels, table_id, show_calc=True):
             walk_cell += (f'<small class="note"><a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">Venetian route ↗</a>'
                           f' · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">Wynn route ↗</a></small>')
         if _pair_links:
-            walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(
-                f'<a href="{esc(p["google_maps"])}" target="_blank" rel="noopener">{esc((p.get("venue_label") or p["venue"]).split()[0])} Google</a>'
-                + f' · <a href="{esc(p["apple_maps"])}" target="_blank" rel="noopener">Apple</a>'
-                for p in _pair_links) + "</div>")
+            # a pair can have a Google route and no Apple one (19 of 68 in the matrix); an empty
+            # url must never become href="", which silently links the page to itself
+            def _ml(url, label):
+                if not url:
+                    return None
+                return ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(url), esc(label)))
+
+            _lnk = []
+            for p in _pair_links:
+                _vn = (p.get("venue_label") or p["venue"]).split()[0]
+                _one = [x for x in (_ml(p.get("google_maps"), _vn + " Google"),
+                                    _ml(p.get("apple_maps"), _vn + " Apple")) if x]
+                _lnk.extend(_one)
+            if _lnk:
+                walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(_lnk) + "</div>")
         # the ≤30-min filter is honest only if it reads the same evidence the cell shows: a hotel
         # qualifies when either main venue, or any routed pair, is inside the limit
         walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")

@@ -58,6 +58,23 @@ def check_tables(files):
     return problems
 
 
+def check_empty_hrefs(files):
+    """An empty or bare-hash href is not an unverified value, it is a broken affordance: the browser
+    resolves href=\"\" to the current page, so the cell looks like a working map link and reloads the
+    dashboard instead. A field the sources do not provide must render as text, never as a dead link.
+    """
+    import re
+    problems = []
+    for path in files:
+        html = open(path, encoding="utf-8").read()
+        for m in re.finditer(r'<a\s[^>]*href="(\s*|\s*#\s*)"', html):
+            line = html[:m.start()].count("\n") + 1
+            snippet = re.sub(r"\s+", " ", html[m.start():m.start() + 120])
+            problems.append("%s:%d: anchor with an empty href (links to this page): %s"
+                            % (path, line, snippet[:100]))
+    return problems
+
+
 def main():
     pages = list(PAGES)
     vdir = os.path.join(ROOT, "venues")
@@ -71,7 +88,7 @@ def main():
             errors.append("missing page: " + page)
             continue
         html = open(path, encoding="utf-8").read()
-        for p in check_tables([path]):
+        for p in check_tables([path]) + check_empty_hrefs([path]):
             errors.append(p)
         base = os.path.dirname(page)
         ids = set(re.findall(r'id="([^"]+)"', html))
