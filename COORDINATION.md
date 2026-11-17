@@ -1,5 +1,19 @@
 # Coordination board
 
+## Session arena/65e813b2-poker2 — post-merge evidence-integrity pass (2026-11-17)
+
+Base: current `main` at `98ca770` (PR #53). The prior integration is already part of this base; this claim is limited to defects found in the published root dashboard and its retained `/plan/` schedule.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Make strict single-entry confirmation explicit; keep sheet-silent/ambiguous rows out of any confirmed-only plan and expose an actual confirmed-only filter | in progress | arena/65e813b2-poker2 | `scripts/build_site.py`, `scripts/build-schedule.py`, `assets/dashboard.js`, `planner.html`, `ranking.html`, `plan/**`, `site-data/schedule.json`, `site-data/summary-stats.json` |
+| K2 Prevent hotel calculator totals from treating undated starting rates or unknown fee/tax/parking as zero; retain official booking links and dated rate log | in progress | arena/65e813b2-poker2 | `scripts/build_site.py`, `assets/dashboard.js`, `data/master.json`, `hotels.html`, `planner.html`, `rate-log.html` |
+| K3 Show a source-change badge when either an event's schedule or structure source changes; display row-level hotel/event last-checked dates accurately | in progress | arena/65e813b2-poker2 | `scripts/build_site.py`, `scripts/build_master.py`, `data/master.json`, `monitor.html`, event/venue pages |
+| K4 Strengthen row-source and evidence-shape checks for generated data pages and record local/CI verification | in progress | arena/65e813b2-poker2 | `scripts/audit.py`, `scripts/check_site.mjs`, `COORDINATION.md` |
+| K5 Integrate, open PR to `main`, merge after checks pass, verify GitHub Pages deployment, and record result | in progress | arena/65e813b2-poker2 | `COORDINATION.md`, GitHub |
+
+The source monitor's registry has 82 official URLs but no baseline hashes yet. Its next successful scheduled run will seed them; the checkout itself cannot reach venue sources, so this session will not claim a live re-fetch or invent hotel quotes / single-entry confirmations. `COORDINATION.md` and the current root dashboard are the shared coordination/integration surface; no alternate branch or worktree is being used.
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
