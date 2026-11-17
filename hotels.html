@@ -64,13 +64,14 @@ target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026,
 instead, labelled as such. Google Maps walking directions were read on 2026-11-17 for eight hotels' trips to The Venetian
 Poker Room, and an independent OSRM foot-profile matrix (computed 2026-11-16 from geocoded official addresses) covers
 twenty-one hotels. The two agree on the 30-minute verdict everywhere both cover, which is why the filter below can be
-applied. Routes to the Wynn poker room have not been read and stay blank.</p></div>
+applied. The Wynn side rests on the OSRM matrix alone, so those figures are labelled "1 router" rather than
+quoted as confirmed.</p></div>
 <div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="tbl-hotels">
 <select data-bind-date="tbl-hotels"><option value="">All dates</option></select>
 
 <label><input type="checkbox" data-bind-walk="tbl-hotels"> ≤30-min walk verified only</label>
-<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-hotels&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Sheet silent on re-entry only</label>
+
 <span class="count" data-count-for="tbl-hotels"></span>
 </div>
 <table class="data" id="tbl-hotels"><thead><tr><th>Hotel</th><th>Address</th><th>Latest logged rate</th><th>Resort fee</th><th>Tax</th><th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th></tr></thead><tbody><tr data-cat="hotel" data-walk-ok="1">

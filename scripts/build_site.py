@@ -183,12 +183,18 @@ def toolbar(table_id, dates=None, with_walk=False, cat_options=True):
             '<option value="unverified">Unverified</option>')
     walk = ('<label><input type="checkbox" data-bind-walk="' + table_id + '"> ≤30-min walk verified only</label>'
             if with_walk else "")
+    silent_box = ""
+    if cat_options:
+        silent_box = (
+            '<label><input type="checkbox" onchange="var s=document.querySelector(\'[data-bind-cat=&quot;'
+            + table_id + '&quot;]\');if(s){s.value=this.checked?\'single\':\'\';'
+              's.dispatchEvent(new Event(\'change\'));}"> Sheet silent on re-entry only</label>')
     return f"""<div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="{table_id}">
 <select data-bind-date="{table_id}"><option value="">All dates</option>{opts}</select>
 {f'<select data-bind-cat="{table_id}">{cats}</select>' if cat_options else ''}
 {walk}
-<label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;{table_id}&quot;]');if(s){{s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}}"> Sheet silent on re-entry only</label>
+{silent_box}
 <span class="count" data-count-for="{table_id}"></span>
 </div>"""
 
@@ -677,7 +683,8 @@ target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026,
 instead, labelled as such. Google Maps walking directions were read on 2026-11-17 for eight hotels' trips to The Venetian
 Poker Room, and an independent OSRM foot-profile matrix (computed 2026-11-16 from geocoded official addresses) covers
 twenty-one hotels. The two agree on the 30-minute verdict everywhere both cover, which is why the filter below can be
-applied. Routes to the Wynn poker room have not been read and stay blank.</p></div>
+applied. The Wynn side rests on the OSRM matrix alone, so those figures are labelled "1 router" rather than
+quoted as confirmed.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
 {walking_check_html()}
