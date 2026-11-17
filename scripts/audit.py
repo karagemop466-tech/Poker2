@@ -171,6 +171,69 @@ def main():
         print("master.json audited: %d events, %d hotels, %d flags"
               % (len(m["events"]), len(m["hotels"]), len(m["flags"])))
 
+    # 12. every Venetian row must reconcile with the verified transcription of the
+    #     structure sheet it cites (data/structure-sheets.json) and with the official
+    #     schedule page rows transcribed for this build.
+    import json as _j
+    spath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                         "data", "structure-sheets.json")
+    if os.path.exists(spath):
+        sheets = {s["sheet"]: s for s in _j.load(open(spath, encoding="utf-8"))["sheets"]}
+        if len(sheets) != 37:
+            fail("structure-sheets.json covers %d sheets, expected 37" % len(sheets))
+        mpath2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                              "data", "master.json")
+        m2 = _j.load(open(mpath2, encoding="utf-8"))
+        checked = 0
+        for e in m2["events"]:
+            if e.get("venue_id") != "venetian":
+                continue
+            mm = re.search(r"structure_(\d+)\.pdf", str(e.get("struct_url") or ""))
+            if not mm:
+                fail("%s: no structure sheet in struct_url" % e["id"])
+                continue
+            sh = sheets.get(int(mm.group(1)))
+            if sh is None:
+                fail("%s: cites sheet %s which is not in the registry" % (e["id"], mm.group(1)))
+                continue
+            # event number must be one the sheet covers
+            mid = e["id"]
+            evn = re.match(r"V-(?:MF|X)?0*(\d+)", mid)
+            if evn and int(evn.group(1)) not in sh["events"]:
+                fail("%s: sheet %d does not cover event %s (covers %s)"
+                     % (mid, sh["sheet"], evn.group(1), sh["events"]))
+            # buy-in - fee must equal the pool the sheet prints
+            if sh.get("fee") is not None and e.get("fee") is not None:
+                if e["fee"] != sh["fee"]:
+                    if not (e["id"].startswith("V-3") or "LIPS" in str(e.get("name"))):
+                        fail("%s: fee %s but sheet %d prints %s"
+                             % (e["id"], e["fee"], sh["sheet"], sh["fee"]))
+            if sh.get("chips") and e.get("chips") and e["chips"] != sh["chips"]:
+                fail("%s: chips %s but sheet %d prints %s"
+                     % (e["id"], e["chips"], sh["sheet"], sh["chips"]))
+            if sh.get("late_reg") and e.get("late_reg") != sh["late_reg"]:
+                fail("%s: late_reg %r but sheet %d prints %r"
+                     % (e["id"], e.get("late_reg"), sh["sheet"], sh["late_reg"]))
+            # the printed clock time in late_reg must equal reg_close_end
+            if e.get("reg_close_end"):
+                pm = re.search(r"(\d{1,2}):(\d{2})\s*([AP]M)", str(e.get("late_reg")))
+                if pm:
+                    h, mi = int(pm.group(1)), int(pm.group(2))
+                    if pm.group(3) == "PM" and h != 12:
+                        h += 12
+                    if pm.group(3) == "AM" and h == 12:
+                        h = 0
+                    if "%02d:%02d" % (h, mi) != e["reg_close_end"]:
+                        fail("%s: reg_close_end %s contradicts the printed %s"
+                             % (e["id"], e["reg_close_end"], pm.group(0)))
+            # guarantee: when the sheet prints one guarantee for every event it
+            # covers, the row must not claim a different number
+            if sh.get("gtd") is not None and e.get("gtd") is not None and e["gtd"] != sh["gtd"]:
+                fail("%s: guarantee %s but sheet %d prints %s"
+                     % (e["id"], e["gtd"], sh["sheet"], sh["gtd"]))
+            checked += 1
+        print("structure-sheet reconciliation: %d Venetian rows checked against 37 sheets" % checked)
+
     # 5. sources are official hosts
     for k, (label, url) in D.SOURCES.items():
         if not url.startswith("https://"):

@@ -1,0 +1,125 @@
+{
+ "_comment": "Hand-verified per-pair detail captured by an earlier session (arena/8b1f0fd8-poker2 and before), preserved verbatim because scripts/build-walk.py cannot regenerate it: the routed-via service name, the date each route was routed, the routed distance, and the official interior-route wording with its source. build-walk.py merges this over the OSRM matrix in data/site/walking.json, preferring the longer official route text.",
+ "pairs": [
+  {
+   "hotel_id": "H-PAL",
+   "venue": "venetian",
+   "minutes_kind": "same_property_indoor",
+   "routed_on": "2026-11-16",
+   "routed_via": "Same building/resort: no outdoor route applies; official indoor route text is on the row",
+   "distance_verified": null,
+   "route_official": "Indoor, same building: \"Proceed across The Palazzo Casino Floor to the self-parking elevators. Take the elevator up to level 2, Grand Canal Shoppes. Enter Grand Canal Shoppes and take a left at Liam's Den and Bubble Bar. The Poker Room will be straight ahead.\"",
+   "route_source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  {
+   "hotel_id": "H-VEN",
+   "venue": "venetian",
+   "minutes_kind": "same_property_indoor",
+   "routed_on": "2026-11-16",
+   "routed_via": "Same building/resort: no outdoor route applies; official indoor route text is on the row",
+   "distance_verified": null,
+   "route_official": "Indoor, same resort: \"Proceed across The Venetian casino floor, to Restaurant Row. Enter the Waterfall Atrium. Look for the escalator by the Waterfall Atrium. Take the escalator up to level 2, Grand Canal Shoppes. Make a u-turn and take the hallway to the right. Turn right at EJ Pretty and The Poker Room will be on your right.\"",
+   "route_source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+  },
+  {
+   "hotel_id": "H-PMGM",
+   "venue": "venetian",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-ARIA",
+   "venue": "venetian",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-COSMO",
+   "venue": "venetian",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-17",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": "Cosmopolitan is connected to Bellagio and Vdara by an interior walkway (see W-7); the crossing to the Venetian side is not described in the pages read.",
+   "route_source": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+  },
+  {
+   "hotel_id": "H-BEL",
+   "venue": "venetian",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-BEL",
+   "venue": "cosmopolitan",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-17",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": "\"Our interior bridge allows you to stroll effortlessly between Bellagio, The Cosmopolitan of Las Vegas, and Vdara, connecting you directly to world-class dining, gaming, and entertainment without having to step outside.\"",
+   "route_source": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+  },
+  {
+   "hotel_id": "H-WYN",
+   "venue": "wynn",
+   "minutes_kind": "same_property_indoor",
+   "routed_on": "2026-11-16",
+   "routed_via": "Same building/resort: no outdoor route applies; official indoor route text is on the row",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-WYN",
+   "venue": "venetian",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-CAES",
+   "venue": "caesars",
+   "minutes_kind": "same_property_indoor",
+   "routed_on": "2026-11-16",
+   "routed_via": "Same building/resort: no outdoor route applies; official indoor route text is on the row",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-PARIS",
+   "venue": "caesars",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  },
+  {
+   "hotel_id": "H-HORSE",
+   "venue": "caesars",
+   "minutes_kind": "routed_osrm_osm",
+   "routed_on": "2026-11-16",
+   "routed_via": "OSRM foot profile (FOSSGIS routing server) on OpenStreetMap Nominatim geocodes of official addresses",
+   "distance_verified": null,
+   "route_official": null,
+   "route_source": null
+  }
+ ]
+}

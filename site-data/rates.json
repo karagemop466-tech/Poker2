@@ -1,8 +1,138 @@
 {
- "as_of": "2026-11-16",
- "why_a_log": "Rates move every day, so a single number is never honest. Each entry records what was published, on what date, for which dates, under which conditions, and with which source excerpt. Rows never overwrite each other.",
- "live_lookup_limit": "The official booking engines (venetianlasvegas.com/book, wynnlasvegas.com/book, MGM property sites) render date-specific prices only inside JavaScript. A static site with no server cannot read them, and this workspace has no outbound access to those hosts, so no dated room quote is claimed. Booking deep links below open the official engine with the stay dates already filled in.",
+ "as_of": "2026-11-17",
+ "why_a_log": "Rates move every day, so a single number is never honest. Each entry records what was published, on what date, for which dates, under which conditions, and with which source excerpt. Rows never overwrite each other. The first two entries in this log are full dated quotes: the Venetian's own booking engine publishes an itemised breakdown (each night's rate, each night's resort fee, the tax line, the checkout total) for a specific arrival/departure pair, and both were captured on 2026-11-17.",
+ "live_lookup_limit": "Which engines can be read without a browser: The Venetian's own booking engine (venetianlasvegas.com/booking?...&view=calendar) renders a complete itemised breakdown in its HTML, so dated quotes for The Venetian / The Palazzo are capturable and are logged below as of 2026-11-17. Wynn (wynnlasvegas.com/book) and the MGM property sites return an empty shell or a 404 for every dated URL tried on 2026-11-17 - their prices are built by XHR after load - so no quote is claimed for them. Quotes also fail to render for some date ranges even at the Venetian (a Dec 9-12 and a Dec 9-16 request both returned the calendar with no rate block), so a failed render is recorded as no quote, never as a price.",
  "entries": [
+  {
+   "hotel_id": "H-VEN",
+   "date_captured": "2026-11-17",
+   "stay_start": "2026-11-18",
+   "stay_end": "2026-11-22",
+   "nights": 4,
+   "adults": 2,
+   "children": 0,
+   "suite_type": "venetian Newly Remodeled Luxury Two Queen (approx. 750 sq ft)",
+   "offer": "Best Available Rate & Suite / 'Book Direct: Up to 25% Off'",
+   "nightly": [
+    {
+     "date": "2026-11-18",
+     "room_rate_usd": 204.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-19",
+     "room_rate_usd": 524.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-20",
+     "room_rate_usd": 899.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-21",
+     "room_rate_usd": 1199.25,
+     "resort_fee_usd": 55.0
+    }
+   ],
+   "room_subtotal_usd": 2827.0,
+   "resort_fee_total_usd": 220,
+   "taxable_total_usd": 3047.0,
+   "taxes_usd": 407.69,
+   "tax_pct_implied": 13.38,
+   "checkout_total_usd": 3454.69,
+   "nightly_average_usd": 761.75,
+   "true_cost_per_night_usd": 863.67,
+   "parking_self_park_per_day_usd": 20,
+   "parking_note": "Venetian hotel terms: 'The daily fee for registered hotel guests is $20/day, seven days a week.' Not included in the booking-engine total; added as a separate line. The poker room page also advertises complimentary self-parking for players, and the two statements are not reconciled on any official page (flag FG-07).",
+   "cancellation": "Venetian hotel terms: deposit for the stay charged at reservation (first night, or the whole stay for prepaid offers); prepaid offers are non-cancellable and non-refundable. No fixed cut-off hour is published - it is offer-dependent. Early checkout costs $100 plus tax.",
+   "cancellation_deadline": null,
+   "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar",
+   "status": "verified_official_dated_quote",
+   "itemisation": "Read off the official booking engine's own 'See full price breakdown' panel for these exact dates, occupancy and suite type: each night's room rate, each night's resort fee, and the tax line. Nothing is inferred - the four/five figures add to the stated total.",
+   "id": "R-VEN-QUOTE-20261118-4N",
+   "rate_usd": 761.75,
+   "rate_kind": "dated official quote - nightly average of (room rate + resort fee), excl. tax",
+   "caveat": "Thu 19 - Sat 21 Nov 2026 price far above the surrounding nights ($524 / $899 / $1,199 room rate before the $55 fee). The engine gives no reason; treat this window as event-priced. Sun 22 Nov drops back to $164-ish, so a Sunday-Thursday stay is materially cheaper for the same room.",
+   "occupancy_basis": "2 adults, 0 children",
+   "conditions": "Best Available Rate & Suite / 'Book Direct: Up to 25% Off' - venetian Newly Remodeled Luxury Two Queen (approx. 750 sq ft)",
+   "applies_to_dates": "2026-11-18 to 2026-11-22 (4 nights)",
+   "excerpt": "Booking engine price breakdown: room $2,827.00 + resort fee $220.00 + taxes $407.69 = $3,454.69. Engine footnote: *Pricing shown is best available suite and rate, includes daily resort fee, excludes taxes",
+   "search_text": "h-ven dated official quote - nightly average of (room rate + resort fee), excl. tax venetian newly remodeled luxury two queen (approx. 750 sq ft) best available rate & suite / 'book direct: up to 25% off' - venetian newly remodeled luxury two queen (approx. 750 sq ft) 2026-11-18 to 2026-11-22 (4 nights)"
+  },
+  {
+   "hotel_id": "H-VEN",
+   "date_captured": "2026-11-17",
+   "stay_start": "2026-11-18",
+   "stay_end": "2026-11-25",
+   "nights": 7,
+   "adults": 2,
+   "children": 0,
+   "suite_type": "venetian Newly Remodeled Luxury King (approx. 650 sq ft)",
+   "offer": "Best Available Rate & Suite / 'Book Direct: Up to 25% Off'",
+   "nightly": [
+    {
+     "date": "2026-11-18",
+     "room_rate_usd": 164.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-19",
+     "room_rate_usd": 614.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-20",
+     "room_rate_usd": 1011.75,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-21",
+     "room_rate_usd": 1311.75,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-22",
+     "room_rate_usd": 164.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-23",
+     "room_rate_usd": 164.25,
+     "resort_fee_usd": 55.0
+    },
+    {
+     "date": "2026-11-24",
+     "room_rate_usd": 164.25,
+     "resort_fee_usd": 55.0
+    }
+   ],
+   "room_subtotal_usd": 3594.75,
+   "resort_fee_total_usd": 385,
+   "taxable_total_usd": 3979.75,
+   "taxes_usd": 532.51,
+   "tax_pct_implied": 13.3805,
+   "checkout_total_usd": 4512.26,
+   "nightly_average_usd": 568.54,
+   "true_cost_per_night_usd": 644.61,
+   "parking_self_park_per_day_usd": 20,
+   "parking_note": "Venetian hotel terms: 'The daily fee for registered hotel guests is $20/day, seven days a week.' Not included in the booking-engine total; added as a separate line. The poker room page also advertises complimentary self-parking for players, and the two statements are not reconciled on any official page (flag FG-07).",
+   "cancellation": "Venetian hotel terms: deposit for the stay charged at reservation (first night, or the whole stay for prepaid offers); prepaid offers are non-cancellable and non-refundable. No fixed cut-off hour is published - it is offer-dependent. Early checkout costs $100 plus tax.",
+   "cancellation_deadline": null,
+   "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
+   "status": "verified_official_dated_quote",
+   "itemisation": "Read off the official booking engine's own 'See full price breakdown' panel for these exact dates, occupancy and suite type: each night's room rate, each night's resort fee, and the tax line. Nothing is inferred - the four/five figures add to the stated total.",
+   "id": "R-VEN-QUOTE-20261118-7N",
+   "rate_usd": 568.54,
+   "rate_kind": "dated official quote - nightly average of (room rate + resort fee), excl. tax",
+   "cross_check": "The two quotes caught on the same day from the same engine are internally consistent with a 13.3804% tax: 407.69 / 3,047.00 = 13.3804% and 532.51 / 3,979.75 = 13.3804%. That is an independent, live confirmation of the published Clark County 13.38% combined rate, and it proves the resort fee is itself taxed - which is the assumption the trip-cost calculator uses.",
+   "caveat": "A King and a Two Queen are not the same room type, so do not read the 4-night and 7-night averages as a price change for one room. Compare like-for-like: same suite type, same dates.",
+   "occupancy_basis": "2 adults, 0 children",
+   "conditions": "Best Available Rate & Suite / 'Book Direct: Up to 25% Off' - venetian Newly Remodeled Luxury King (approx. 650 sq ft)",
+   "applies_to_dates": "2026-11-18 to 2026-11-25 (7 nights)",
+   "excerpt": "Booking engine price breakdown: room $3,594.75 + resort fee $385.00 + taxes $532.51 = $4,512.26. Engine footnote: *Pricing shown is best available suite and rate, includes daily resort fee, excludes taxes",
+   "search_text": "h-ven dated official quote - nightly average of (room rate + resort fee), excl. tax venetian newly remodeled luxury king (approx. 650 sq ft) best available rate & suite / 'book direct: up to 25% off' - venetian newly remodeled luxury king (approx. 650 sq ft) 2026-11-18 to 2026-11-25 (7 nights)"
+  },
   {
    "id": "R-VEN-POKER",
    "hotel_id": "H-VEN",
@@ -67,10 +197,30 @@
   }
  ],
  "booking_links": [
-  { "hotel_id": "H-VEN", "label": "Venetian/Palazzo official booking - 4 nights from Wed 2026-11-18", "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar" },
-  { "hotel_id": "H-VEN", "label": "Venetian/Palazzo official booking - 4 nights from Sun 2026-12-13", "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-13&children[]=0&departure_date=2026-12-17&view=calendar" },
-  { "hotel_id": "H-WYN", "label": "Wynn official booking start (fill dates in the engine)", "url": "https://www.wynnlasvegas.com/book" },
-  { "hotel_id": "H-PMGM", "label": "Park MGM official hotel page (fill dates in the engine)", "url": "https://parkmgm.mgmresorts.com/en/hotel.html" },
-  { "hotel_id": "H-ARIA", "label": "ARIA official hotel page (fill dates in the engine)", "url": "https://aria.mgmresorts.com/en/hotel.html" }
+  {
+   "hotel_id": "H-VEN",
+   "label": "Venetian/Palazzo official booking - 4 nights from Wed 2026-11-18",
+   "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar"
+  },
+  {
+   "hotel_id": "H-VEN",
+   "label": "Venetian/Palazzo official booking - 4 nights from Sun 2026-12-13",
+   "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-13&children[]=0&departure_date=2026-12-17&view=calendar"
+  },
+  {
+   "hotel_id": "H-WYN",
+   "label": "Wynn official booking start (fill dates in the engine)",
+   "url": "https://www.wynnlasvegas.com/book"
+  },
+  {
+   "hotel_id": "H-PMGM",
+   "label": "Park MGM official hotel page (fill dates in the engine)",
+   "url": "https://parkmgm.mgmresorts.com/en/hotel.html"
+  },
+  {
+   "hotel_id": "H-ARIA",
+   "label": "ARIA official hotel page (fill dates in the engine)",
+   "url": "https://aria.mgmresorts.com/en/hotel.html"
+  }
  ]
 }

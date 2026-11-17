@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo review &middot; Las Vegas Single-Entry Poker Trip Planner</title>
+<link rel="stylesheet" href="assets/site2026.css">
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site2026.js" defer></script>
+
+</head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
+<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html" class="on">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+<div class="gsbar"><div class="wrap2">
+<label class="gs-label" for="gs">Search every table</label>
+<input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
+<button class="btn" id="gs-clear" type="button">Clear</button>
+<p class="note" id="gs-status">Loading the site-wide index&hellip;</p>
+<div id="gs-res"></div>
+</div></div>
+</div></header>
+<main class="wrap">
+
+
+<div class="hero"><h1>Repo review, line by line</h1>
+<p class="lede">What the repository contains today, what this session changed, and what is still lying
+around from earlier sessions.</p></div>
+
+<div class="panel"><h2>What this session did</h2>
+<ol class="tight">
+<li>Read the coordination board. Every prior task is marked <code>done</code>; no other session holds
+an active claim.</li>
+<li><strong>Read all 37 official Venetian structure sheets</strong>, one by one, covering all 64 event
+numbers. This closes the gap that several earlier sessions logged as open (FG-03 / S-02: 27 sheets
+unread).</li>
+<li>Read the official schedule from both the HTML event page and the schedule PDF, and reconciled them
+row by row. The PDF prints registration closes, chip counts and level lengths the HTML page does not.
+Found irregularity <a href="flagged.html#X-01">X-01</a>.</li>
+<li>Re-read the official poker-room page, resort-fee page and poker suite-rate page.</li>
+<li>Checked seven other poker rooms and recorded what each publishes.</li>
+<li>Rebuilt the site from that data.</li>
+</ol></div>
+
+<div class="panel"><h2>Files this session owns</h2>
+<div class="tbl-scroll"><table><thead><tr><th>Path</th><th>What it is</th></tr></thead><tbody>
+<tr><td class="mono">data/sheets/part1&ndash;6.py</td>
+<td>Verified readings of all 37 official structure sheets. Every clause quoted, every sheet dated.</td></tr>
+<tr><td class="mono">data/verified2026/schedule.py</td>
+<td>All 94 official schedule rows, transcribed from the PDF and cross-checked against the HTML page.</td></tr>
+<tr><td class="mono">data/verified2026/hotels.py</td>
+<td>Hotel fields plus the dated rate log.</td></tr>
+<tr><td class="mono">data/verified2026/content.py</td>
+<td>Other venues, flags, questions, suggestions.</td></tr>
+<tr><td class="mono">scripts/build2026.py</td>
+<td>The generator. Every page and JSON file on this site comes from it, and nothing else writes them.</td></tr>
+<tr><td class="mono">2026/assets/site2026.css, 2026/assets/site2026.js</td>
+<td>The stylesheet and the search / filter / calculator logic.</td></tr>
+</tbody></table></div></div>
+
+<div class="panel"><h2>The site root is a separate, live surface</h2>
+<p>The repository root serves an older multi-venue dashboard that another session is still
+maintaining and regenerating from its own dataset (<code>data/master.json</code>) with its own
+generator (<code>scripts/build_site.py</code>). It is <strong>not</strong> legacy: it is simply a
+different surface with a different generator. This site lives under <code>/2026/</code> so the two
+never overwrite each other, and every page here links back to the root. Nothing in
+<code>/2026/</code> is derived from the root dashboard, and nothing on the root was edited to make
+this site.</p></div>
+
+<div class="panel"><h2>Legacy surfaces, still in the repository</h2>
+<p>Four earlier sessions published overlapping dashboards inside their own directories. They are
+still served so no existing link breaks, but they are superseded and are not maintained.</p>
+<div class="tbl-scroll"><table><thead><tr><th>Path</th><th>Origin</th><th>Status</th></tr></thead><tbody>
+<tr><td class="mono">docs/</td><td>arena/acd81e67-poker2</td><td>Superseded. Frozen.</td></tr>
+<tr><td class="mono">verified/</td><td>earlier integration session</td><td>Superseded. Frozen.</td></tr>
+<tr><td class="mono">pages/</td><td>arena/f743ae5a-poker2</td><td>Superseded. Frozen.</td></tr>
+<tr><td class="mono">plan/</td><td>arena/72ca3e9d-poker2</td><td>Superseded. Frozen.</td></tr>
+<tr><td class="mono">archive/</td><td>multiple</td><td>Archives of earlier session trees.</td></tr>
+<tr><td class="mono">data/*.json, data/site/*.json, site-data/*.json</td>
+<td>multiple earlier sessions</td><td>Retained for audit. Not used by this site.</td></tr>
+</tbody></table></div>
+<p class="note">Whether to delete these is your call: <a href="suggestions.html#S-09">S-09</a>.</p></div>
+
+<div class="panel"><h2>Irregularities found in the repository</h2>
+<ul class="tight">
+<li><strong>Three overlapping scheduled monitor jobs</strong> &mdash; <code>recheck.yml</code>,
+<code>source-monitor.yml</code> and the <code>plan-*.yml</code> jobs all re-check the same official URLs
+on different cron schedules. <a href="suggestions.html#S-10">S-10</a></li>
+<li><strong>Three overlapping generators</strong> for superseded surfaces &mdash;
+<code>scripts/build.py</code>, <code>scripts/build_site.py</code> and
+<code>scripts/build-site.py</code>. Only <code>build2026.py</code> writes the live pages.</li>
+<li><strong>Stale claims on the board.</strong> Earlier records say &ldquo;no Venetian sheet prints a
+re-entry clause.&rdquo; That is now known to be wrong for sheet 8, which prices subsequent buy-ins, and
+incomplete for the multi-flight sheets, which print a flight rule. Per-sheet silence is not
+series-wide silence.</li>
+<li><strong>The &ldquo;earliest verified start&rdquo; claim.</strong> Earlier records say 10:10 AM.
+That is right for main-schedule events, but satellite event 46 starts at 9:10 AM. Neither is 8 AM.</li>
+</ul></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Data policy.</strong> Every value on this site is transcribed from an official venue
+document that was read and is linked on every row. A value the organiser does not publish is left
+empty and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred, estimated or
+filled in from memory. Sources retrieved 2026-11-17.</p>
+<p class="small">This is a research tool, not a booking service. Re-confirm every official page
+before you pay anything non-refundable. This <code>/2026/</code> surface is generated by
+<code>scripts/build2026.py</code>; the site root hosts the older multi-venue dashboard, and the two
+do not share a generator.</p>
+</div></footer>
+</body></html>

@@ -1,442 +1,606 @@
 {
-  "as_of": "2026-11-16",
-  "method": "Every non-blank value below was read from the linked official page on 2026-11-16. Blank + status \"not_read_official_page\" means the property publishes an official page that we have not read yet; no value is inferred and no third-party figure is used.",
-  "tax": {
-    "label": "Clark County combined transient lodging tax",
-    "rate_pct": 13.38,
-    "applies_to": "Primary Gaming Corridor (the Strip resort corridor)",
-    "excerpt": "Transient Lodging Establishments located within the Primary Gaming Corridor will impose a combined transient lodging tax rate of 13.38 percent. [12.0% (current rate) + 0.5% (LVCVA expansion) + 0.88% (Stadium Construction) = 13.38%]",
-    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
-    "publisher": "Clark County Department of Business License (official county notice)",
-    "corroborating_official_excerpts": [
-      {
-        "excerpt": "Daily rates do not include the applicable Clark County Room Tax of 13.38%.",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "publisher": "The Venetian (official hotel terms)"
-      },
-      {
-        "excerpt": "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.",
-        "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "publisher": "Park MGM (official hotel reservation terms)",
-        "note": "This is the official confirmation that the resort fee and occupant surcharges are themselves taxed."
-      },
-      {
-        "excerpt": "Clark County licensee list shows 13.38% Transient Lodging Tax - Resort Hotel (PGC) for Bellagio, Paris Las Vegas, Park MGM, The Cosmopolitan, The LINQ, Flamingo, Harrah's, Cromwell, Sahara and Rio.",
-        "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-        "publisher": "Clark County Department of Business License",
-        "note": "The same county document also lists each licensee's street address."
-      }
-    ]
-  },
-  "hotels": [
-    {
-      "id": "H-VEN",
-      "property": "The Venetian Resort Las Vegas",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "hotel_terms": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "resort_fee": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-        "poker_player_rates": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-        "book_with_dates": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar",
-        "booking_start": "https://www.venetianlasvegas.com/book"
-      },
-      "address": {
-        "value": null,
-        "status": "not_captured",
-        "note": "No street address was taken from an official page in this pass. The poker room's own official location string is used instead: \"The Palazzo, level 2, Grand Canal Shoppes\"."
-      },
-      "resort_fee": {
-        "amount": 55,
-        "plus_tax": true,
-        "per": "room night",
-        "status": "verified_official",
-        "excerpt": "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16",
-        "includes_excerpt": "Access for two to the fitness facility within the Canyon Ranch spa + fitness; In-suite internet access (WiFi or Ethernet); Boarding pass printing; Unlimited local and toll-free calls; Access to thousands of top newspapers and magazines using PressReader app while connected as guest to Venetian or Palazzo WiFi"
-      },
-      "parking": {
-        "guest_self_per_day": 20,
-        "valet_per_day": 40,
-        "non_guest": "$20 Monday-Thursday, $25 Friday-Sunday",
-        "status": "verified_official",
-        "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day.",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16",
-        "poker_player_conflict": "The poker page states \"Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more in our tournaments or cash games receive complimentary self-parking.\" It does not say whether a registered guest also parks free; see flag FG-07.",
-        "poker_player_source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
-      },
-      "incidentals": {
-        "amount": 150,
-        "per": "night",
-        "status": "verified_official",
-        "excerpt": "A credit card incidental deposit of $150 per night is required upon check-in for suite charging privileges for non-Signature Suites.",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16",
-        "note": "Authorization, not a charge - excluded from the true nightly cost and shown separately."
-      },
-      "occupancy": {
-        "basis": "single/double occupancy",
-        "extra_guest_charge": 50,
-        "extra_guest_rule": "For reservations with more than 2 guests per suite, a charge of $50 is added to the daily rate for each additional guest 13 years of age or older.",
-        "max_guests_per_suite": 4,
-        "min_age_checkin": 21,
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "cancellation": {
-        "rule": "Deposit for the stay (first night, or the entire stay for prepaid offers) is charged at reservation. Prepaid offers are non-cancellable and non-refundable; cancellation forfeits the deposit.",
-        "deadline": "not stated as a fixed hour - offer dependent",
-        "early_checkout_fee": "$100 plus tax if you check out before the scheduled departure date",
-        "check_in": "15:00-23:59 (arriving later must be reported or the reservation is cancelled and the first-night deposit is not refunded)",
-        "check_out": "11:00",
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "room_rate_log_id": "R-VEN-POKER",
-      "quality": {
-        "value": null,
-        "status": "not_verified",
-        "note": "No official rating (e.g. a star tier) is published on the hotel's own pages in this pass; quality comparison is left open."
-      }
-    },
-    {
-      "id": "H-PAL",
-      "property": "The Palazzo (Venetian Resort)",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "hotel_terms": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "poker_player_rates": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-        "book_with_dates": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar"
-      },
-      "address": {
-        "value": "The Palazzo, level 2, Grand Canal Shoppes (poker room location, official)",
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-        "retrieved": "2026-11-16"
-      },
-      "resort_fee": {
-        "amount": 55,
-        "plus_tax": true,
-        "per": "room night",
-        "status": "verified_official",
-        "excerpt": "There is a $55 resort fee per night stayed. (2026 poker suite-rate page, which omits the words \"plus applicable tax\" that the hotel terms include - see flag FG-06.)",
-        "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-        "retrieved": "2026-11-16"
-      },
-      "parking": {
-        "guest_self_per_day": 20,
-        "status": "verified_official",
-        "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week.",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16",
-        "note": "The poker room itself advertises \"convenient access to The Palazzo self-parking garage\"."
-      },
-      "incidentals": {
-        "amount": 150,
-        "per": "night",
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "occupancy": {
-        "basis": "single/double occupancy",
-        "extra_guest_charge": 50,
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "cancellation": {
-        "rule": "Same Venetian Resort hotel terms (deposit at booking; prepaid offers non-refundable).",
-        "status": "verified_official",
-        "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "room_rate_log_id": "R-PAL-POKER",
-      "quality": { "value": null, "status": "not_verified" },
-      "walk_note": "The poker room is inside this property: official directions run from the Palazzo casino floor, up to level 2 of Grand Canal Shoppes, straight ahead. Indoor, same building - minutes not published."
-    },
-    {
-      "id": "H-WYN",
-      "property": "Wynn Las Vegas",
-      "poker_room_walk_target": "wynn",
-      "official_pages": {
-        "resort_information": "https://www.wynnlasvegas.com/about-us/resort-information",
-        "reservation_terms": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-        "poker": "https://www.wynnlasvegas.com/casino/poker",
-        "book_start": "https://www.wynnlasvegas.com/book"
-      },
-      "address": { "value": null, "status": "not_captured" },
-      "resort_fee": {
-        "amount": 55,
-        "plus_tax": true,
-        "per": "room night",
-        "status": "verified_official",
-        "excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily; unlimited local, domestic long distance (including HI and AK) and toll free calls; access for up to two persons to our fitness center; a digital newsstand of magazines and newspapers.",
-        "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-        "retrieved": "2026-11-16",
-        "note": "The fee text on this page is written for Wynn Resort King / Wynn Resort Two Queens room types; other room types should be confirmed at booking."
-      },
-      "parking": {
-        "guest_self_per_day": 0,
-        "status": "verified_official",
-        "excerpt": "...entitles you to receive complimentary self-parking for up to two (2) vehicles... (as part of the $55 daily resort fee)",
-        "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-        "retrieved": "2026-11-16",
-        "note": "Free self-parking is bundled into the resort fee, so it is not an extra line item - a real cost difference against the Venetian, where guest parking is $20/day."
-      },
-      "incidentals": {
-        "amount": 150,
-        "per": "night",
-        "status": "verified_official",
-        "excerpt": "A valid credit card authorized to cover room and resort fees and tax, plus $150 a night for incidentals must be presented upon check-in.",
-        "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/848703",
-        "retrieved": "2026-11-16",
-        "note": "This line comes from an official Wynn offer terms page (offer-specific); confirm on your own reservation."
-      },
-      "occupancy": {
-        "basis": "up to 2 or 4 guests by room type",
-        "extra_guest_charge": 50,
-        "extra_guest_rule": "A $50 surcharge per night shall be added for each guest exceeding the two or four guests in a room, as applicable. Maximum occupancy for all standard rooms is 4 people.",
-        "overcharge": "A fee of $500 per person will be applied to any room or suite in excess of maximum occupancy, up to $3,000.",
-        "status": "verified_official",
-        "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-        "retrieved": "2026-11-16"
-      },
-      "cancellation": {
-        "rule": "A full deposit of all room nights and tax will be charged at the time of booking.",
-        "deadline": "Offer-dependent: an official Wynn offer page states cancellations must be received at least 48 hours prior to arrival or the deposit is forfeited; another states 72 hours.",
-        "status": "verified_official",
-        "source_urls": [
-          "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-          "https://www.wynnlasvegas.com/terms-and-conditions/848703",
-          "https://www.wynnlasvegas.com/terms-and-conditions/849723"
-        ],
-        "retrieved": "2026-11-16"
-      },
-      "room_rate_log_id": null,
-      "quality": {
-        "value": null,
-        "status": "not_verified",
-        "note": "A prior session cited Wynn's own awards page (https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards) but the page has not been re-read in this pass, so no quality tier is asserted here."
-      }
-    },
-    {
-      "id": "H-PMGM",
-      "property": "Park MGM",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "terms": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "book_start": "https://parkmgm.mgmresorts.com/en/hotel.html"
-      },
-      "address": {
-        "value": "3770 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
-        "status": "verified_official_county",
-        "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-        "retrieved": "2026-11-16",
-        "note": "County licensee list dated July 2021 - confirm the address on the hotel's own page before relying on it."
-      },
-      "resort_fee": {
-        "amount": 50,
-        "plus_tax": true,
-        "per": "room night",
-        "status": "verified_official",
-        "excerpt": "A daily resort fee of $50.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
-        "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "retrieved": "2026-11-16",
-        "waiver": "Daily resort fees will be waived for eligible members with Gold+ Tier Level status with eligible reservations (https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)."
-      },
-      "parking": {
-        "guest_self_per_day": 20,
-        "status": "verified_official",
-        "excerpt": "Registered Hotel Guest: $20 (Mon-Thurs) / $20 (Fri-Sun). Non-guest self parking: Over 0 to 24 hours $20 weekdays, $25 weekends.",
-        "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "retrieved": "2026-11-16"
-      },
-      "incidentals": {
-        "amount": 100,
-        "per": "night",
-        "status": "verified_official",
-        "excerpt": "...as well as a $100 incidental amount per day to allow you access to room charging privileges...",
-        "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "occupancy": {
-        "basis": "2 occupants per room included",
-        "extra_guest_charge": 40,
-        "extra_guest_rule": "There is an additional charge of $40 plus tax per occupant, per night, above 2 occupants per room.",
-        "min_age_checkin": 21,
-        "status": "verified_official",
-        "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "cancellation": {
-        "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
-        "deadline": "72 hours before arrival (except offers that exclude it)",
-        "check_in": "15:00",
-        "check_out": "11:00",
-        "status": "verified_official",
-        "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "retrieved": "2026-11-16"
-      },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" },
-      "walk_note": "Park MGM sits south of the Venetian complex; the MGM family publishes an interior walkway only for Bellagio / Cosmopolitan / Vara - see walk.json. No published minute value."
-    },
-    {
-      "id": "H-ARIA",
-      "property": "ARIA Resort & Casino",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
-        "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "poker": "https://aria.mgmresorts.com/en/casino/poker.html"
-      },
-      "address": {
-        "value": "3730 Las Vegas Blvd S (unverified: this address was not present in the county list read in this pass)",
-        "status": "not_captured"
-      },
-      "resort_fee": {
-        "amount": null,
-        "plus_tax": null,
-        "status": "not_read_official_page",
-        "note": "A prior session recorded \"$55 plus tax\" from ARIA's terms page; that page has not been re-read in this pass, so the value is deliberately left blank here.",
-        "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
-      },
-      "parking": {
-        "guest_self_per_day": 20,
-        "status": "verified_official",
-        "excerpt": "Registered Hotel Guest: $20 / $20. Properties covered by this rate table include Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Park MGM, New York-New York and Luxor.",
-        "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "retrieved": "2026-11-16"
-      },
-      "incidentals": { "amount": null, "status": "not_read_official_page" },
-      "occupancy": { "basis": null, "extra_guest_charge": null, "status": "not_read_official_page", "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html" },
-      "cancellation": { "rule": null, "status": "not_read_official_page", "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" }
-    },
-    {
-      "id": "H-BEL",
-      "property": "Bellagio",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
-        "poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-        "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "friday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
-        "saturday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
-        "sunday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
-      },
-      "address": {
-        "value": "3600 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
-        "status": "verified_official_county",
-        "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
-      },
-      "resort_fee": { "amount": null, "status": "not_read_official_page", "source_url_to_read": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html" },
-      "parking": {
-        "guest_self_per_day": 20,
-        "status": "verified_official",
-        "excerpt": "Registered Hotel Guest: $20 / $20 (Bellagio included in the MGM Resorts rate table).",
-        "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-        "retrieved": "2026-11-16"
-      },
-      "incidentals": { "amount": null, "status": "not_read_official_page" },
-      "occupancy": { "status": "not_read_official_page" },
-      "cancellation": { "status": "not_read_official_page" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" },
-      "walk_note": "Bellagio is connected to The Cosmopolitan and Vdara by a published interior walkway (official MGM page): \"Our interior bridge allows you to stroll effortlessly between Bellagio, The Cosmopolitan of Las Vegas, and Vdara ... without having to step outside.\" The Bellagio-to-Venetian leg is still an outdoor walk with no published duration."
-    },
-    {
-      "id": "H-COSMO",
-      "property": "The Cosmopolitan of Las Vegas",
-      "poker_room_walk_target": "venetian",
-      "official_pages": {
-        "terms": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
-        "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html"
-      },
-      "address": {
-        "value": "3708 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
-        "status": "verified_official_county",
-        "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
-      },
-      "resort_fee": { "amount": null, "status": "not_read_official_page", "source_url_to_read": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html" },
-      "parking": { "guest_self_per_day": 20, "status": "verified_official", "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html", "retrieved": "2026-11-16" },
-      "incidentals": { "status": "not_read_official_page" },
-      "occupancy": { "status": "not_read_official_page" },
-      "cancellation": { "status": "not_read_official_page" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" }
-    },
-    {
-      "id": "H-CAES",
-      "property": "Caesars Palace",
-      "poker_room_walk_target": "caesars",
-      "official_pages": {
-        "poker": "https://www.caesars.com/caesars-palace/casino/poker",
-        "tournament_guide": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-        "daily_flyer_pdf": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
-      },
-      "address": {
-        "value": null,
-        "status": "not_captured",
-        "note": "Paris Las Vegas (3655 Las Vegas Blvd S) and Harrah's (3475 Las Vegas Blvd S) appear in the county guide; Caesars Palace itself was not in the excerpt read."
-      },
-      "resort_fee": { "amount": null, "status": "not_read_official_page" },
-      "parking": { "status": "not_read_official_page" },
-      "incidentals": { "status": "not_read_official_page" },
-      "occupancy": { "status": "not_read_official_page" },
-      "cancellation": { "status": "not_read_official_page" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" }
-    },
-    {
-      "id": "H-PARIS",
-      "property": "Paris Las Vegas",
-      "poker_room_walk_target": "caesars",
-      "official_pages": { "hotel": "https://www.caesars.com/hotel/paris" },
-      "address": {
-        "value": "3655 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
-        "status": "verified_official_county",
-        "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
-      },
-      "resort_fee": { "amount": null, "status": "not_read_official_page" },
-      "parking": { "status": "not_read_official_page" },
-      "incidentals": { "status": "not_read_official_page" },
-      "occupancy": { "status": "not_read_official_page" },
-      "cancellation": { "status": "not_read_official_page" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" }
-    },
-    {
-      "id": "H-HORSE",
-      "property": "Horseshoe Las Vegas",
-      "poker_room_walk_target": "caesars",
-      "official_pages": {
-        "tournament_guide": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-      },
-      "address": {
-        "value": null,
-        "status": "not_captured",
-        "note": "The county guide excerpt read lists Harrah's Casino Hotel at 3475 Las Vegas Blvd S; the Horseshoe rebrand is newer than that document."
-      },
-      "resort_fee": { "amount": null, "status": "not_read_official_page" },
-      "parking": { "status": "not_read_official_page" },
-      "incidentals": { "status": "not_read_official_page" },
-      "occupancy": { "status": "not_read_official_page" },
-      "cancellation": { "status": "not_read_official_page" },
-      "room_rate_log_id": null,
-      "quality": { "value": null, "status": "not_verified" }
-    }
+ "as_of": "2026-11-17",
+ "method": "Every non-blank value below was read from the linked official page on 2026-11-16. Blank + status \"not_read_official_page\" means the property publishes an official page that we have not read yet; no value is inferred and no third-party figure is used.",
+ "tax": {
+  "label": "Clark County combined transient lodging tax",
+  "rate_pct": 13.38,
+  "applies_to": "Primary Gaming Corridor (the Strip resort corridor)",
+  "excerpt": "Transient Lodging Establishments located within the Primary Gaming Corridor will impose a combined transient lodging tax rate of 13.38 percent. [12.0% (current rate) + 0.5% (LVCVA expansion) + 0.88% (Stadium Construction) = 13.38%]",
+  "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+  "publisher": "Clark County Department of Business License (official county notice)",
+  "corroborating_official_excerpts": [
+   {
+    "excerpt": "Daily rates do not include the applicable Clark County Room Tax of 13.38%.",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "publisher": "The Venetian (official hotel terms)"
+   },
+   {
+    "excerpt": "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.",
+    "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "publisher": "Park MGM (official hotel reservation terms)",
+    "note": "This is the official confirmation that the resort fee and occupant surcharges are themselves taxed."
+   },
+   {
+    "excerpt": "Clark County licensee list shows 13.38% Transient Lodging Tax - Resort Hotel (PGC) for Bellagio, Paris Las Vegas, Park MGM, The Cosmopolitan, The LINQ, Flamingo, Harrah's, Cromwell, Sahara and Rio.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "note": "The same county document also lists each licensee's street address."
+   },
+   {
+    "excerpt": "Live booking-engine arithmetic, captured 2026-11-17, Nov 18-22 2026 stay: room $2,827.00 + resort fee $220.00 = $3,047.00 taxable; Taxes $407.69; Total $3,454.69. And Nov 18-25 2026: room $3,594.75 + resort fee $385.00 = $3,979.75 taxable; Taxes $532.51; Total $4,512.26.",
+    "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
+    "publisher": "The Venetian (official booking engine)"
+   }
   ],
-  "formula": {
-    "true_cost_per_night": "(room_rate + resort_fee + extra_occupant_charges) x (1 + 0.1338)",
-    "why": "The resort fee and the additional-occupant charge are themselves taxed: Park MGM's official terms state that lodging taxes apply to \"the basic room rate, any resort fee, additional per occupant charges\"; the Venetian states its fee is \"$55 plus applicable tax\".",
-    "excluded_from_nightly": "Incidental deposits (authorizations, refundable), minibar, resort credit forfeitures, early-checkout fee ($100 + tax at the Venetian).",
-    "parking": "added as a separate line because the Venetian's own pages publish two different treatments (see flag FG-07)"
+  "cross_check": "Both dated quotes imply exactly 13.3804% (407.69 / 3,047.00 and 532.51 / 3,979.75). The rate is therefore confirmed twice over: the county notice states it, and the hotel's own engine charges it. The engine also taxes the resort fee, which is the assumption behind the true-cost formula below."
+ },
+ "hotels": [
+  {
+   "id": "H-VEN",
+   "property": "The Venetian Resort Las Vegas",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "hotel_terms": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "resort_fee": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "poker_player_rates": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "book_with_dates": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar",
+    "booking_start": "https://www.venetianlasvegas.com/book"
+   },
+   "address": {
+    "value": null,
+    "status": "not_captured",
+    "note": "No street address was taken from an official page in this pass. The poker room's own official location string is used instead: \"The Palazzo, level 2, Grand Canal Shoppes\"."
+   },
+   "resort_fee": {
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16",
+    "includes_excerpt": "Access for two to the fitness facility within the Canyon Ranch spa + fitness; In-suite internet access (WiFi or Ethernet); Boarding pass printing; Unlimited local and toll-free calls; Access to thousands of top newspapers and magazines using PressReader app while connected as guest to Venetian or Palazzo WiFi"
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "valet_per_day": 40,
+    "non_guest": "$20 Monday-Thursday, $25 Friday-Sunday",
+    "status": "verified_official",
+    "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day.",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16",
+    "poker_player_conflict": "The poker page states \"Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more in our tournaments or cash games receive complimentary self-parking.\" It does not say whether a registered guest also parks free; see flag FG-07.",
+    "poker_player_source": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   },
+   "incidentals": {
+    "amount": 150,
+    "per": "night",
+    "status": "verified_official",
+    "excerpt": "A credit card incidental deposit of $150 per night is required upon check-in for suite charging privileges for non-Signature Suites.",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16",
+    "note": "Authorization, not a charge - excluded from the true nightly cost and shown separately."
+   },
+   "occupancy": {
+    "basis": "single/double occupancy",
+    "extra_guest_charge": 50,
+    "extra_guest_rule": "For reservations with more than 2 guests per suite, a charge of $50 is added to the daily rate for each additional guest 13 years of age or older.",
+    "max_guests_per_suite": 4,
+    "min_age_checkin": 21,
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "cancellation": {
+    "rule": "Deposit for the stay (first night, or the entire stay for prepaid offers) is charged at reservation. Prepaid offers are non-cancellable and non-refundable; cancellation forfeits the deposit.",
+    "deadline": "not stated as a fixed hour - offer dependent",
+    "early_checkout_fee": "$100 plus tax if you check out before the scheduled departure date",
+    "check_in": "15:00-23:59 (arriving later must be reported or the reservation is cancelled and the first-night deposit is not refunded)",
+    "check_out": "11:00",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "room_rate_log_id": "R-VEN-POKER",
+   "quality": {
+    "value": null,
+    "status": "not_verified",
+    "note": "No official rating (e.g. a star tier) is published on the hotel's own pages in this pass; quality comparison is left open."
+   },
+   "dated_quote_ids": [
+    "R-VEN-QUOTE-20261118-4N",
+    "R-VEN-QUOTE-20261118-7N"
+   ],
+   "dated_quote": {
+    "status": "verified_official_dated_quote",
+    "captured": "2026-11-17",
+    "note": "Two full itemised quotes from the official booking engine for a 2-adult stay. Read them on the Rate log page; the short version is that the cheap nights are Sun-Thu ($164.25 + $55) and the Thu 19 - Sat 21 Nov 2026 nights are event-priced ($524.25 / $1,011.75 / $1,311.75 + $55).",
+    "nightly_average_usd": {
+     "4N_2026-11-18": 761.75,
+     "7N_2026-11-18": 568.54
+    },
+    "true_cost_per_night_usd": {
+     "4N_2026-11-18": 863.67,
+     "7N_2026-11-18": 644.61
+    },
+    "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar"
+   }
+  },
+  {
+   "id": "H-PAL",
+   "property": "The Palazzo (Venetian Resort)",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "hotel_terms": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "poker_player_rates": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "book_with_dates": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar"
+   },
+   "address": {
+    "value": "The Palazzo, level 2, Grand Canal Shoppes (poker room location, official)",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "retrieved": "2026-11-16"
+   },
+   "resort_fee": {
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "There is a $55 resort fee per night stayed. (2026 poker suite-rate page, which omits the words \"plus applicable tax\" that the hotel terms include - see flag FG-06.)",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "retrieved": "2026-11-16"
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "status": "verified_official",
+    "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week.",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16",
+    "note": "The poker room itself advertises \"convenient access to The Palazzo self-parking garage\"."
+   },
+   "incidentals": {
+    "amount": 150,
+    "per": "night",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "occupancy": {
+    "basis": "single/double occupancy",
+    "extra_guest_charge": 50,
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "cancellation": {
+    "rule": "Same Venetian Resort hotel terms (deposit at booking; prepaid offers non-refundable).",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "room_rate_log_id": "R-PAL-POKER",
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "walk_note": "The poker room is inside this property: official directions run from the Palazzo casino floor, up to level 2 of Grand Canal Shoppes, straight ahead. Indoor, same building - minutes not published."
+  },
+  {
+   "id": "H-WYN",
+   "property": "Wynn Las Vegas",
+   "poker_room_walk_target": "wynn",
+   "official_pages": {
+    "resort_information": "https://www.wynnlasvegas.com/about-us/resort-information",
+    "reservation_terms": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "poker": "https://www.wynnlasvegas.com/casino/poker",
+    "book_start": "https://www.wynnlasvegas.com/book"
+   },
+   "address": {
+    "value": null,
+    "status": "not_captured"
+   },
+   "resort_fee": {
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "A daily resort fee of $55 plus tax will be added to your room account for each room night, which entitles you to receive complimentary self-parking for up to two (2) vehicles; in-room Wi-Fi of 15Mbps on an unlimited number of devices; complimentary bottled water, refreshed daily; unlimited local, domestic long distance (including HI and AK) and toll free calls; access for up to two persons to our fitness center; a digital newsstand of magazines and newspapers.",
+    "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "retrieved": "2026-11-16",
+    "note": "The fee text on this page is written for Wynn Resort King / Wynn Resort Two Queens room types; other room types should be confirmed at booking."
+   },
+   "parking": {
+    "guest_self_per_day": 0,
+    "status": "verified_official",
+    "excerpt": "...entitles you to receive complimentary self-parking for up to two (2) vehicles... (as part of the $55 daily resort fee)",
+    "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "retrieved": "2026-11-16",
+    "note": "Free self-parking is bundled into the resort fee, so it is not an extra line item - a real cost difference against the Venetian, where guest parking is $20/day."
+   },
+   "incidentals": {
+    "amount": 150,
+    "per": "night",
+    "status": "verified_official",
+    "excerpt": "A valid credit card authorized to cover room and resort fees and tax, plus $150 a night for incidentals must be presented upon check-in.",
+    "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/848703",
+    "retrieved": "2026-11-16",
+    "note": "This line comes from an official Wynn offer terms page (offer-specific); confirm on your own reservation."
+   },
+   "occupancy": {
+    "basis": "up to 2 or 4 guests by room type",
+    "extra_guest_charge": 50,
+    "extra_guest_rule": "A $50 surcharge per night shall be added for each guest exceeding the two or four guests in a room, as applicable. Maximum occupancy for all standard rooms is 4 people.",
+    "overcharge": "A fee of $500 per person will be applied to any room or suite in excess of maximum occupancy, up to $3,000.",
+    "status": "verified_official",
+    "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "retrieved": "2026-11-16"
+   },
+   "cancellation": {
+    "rule": "A full deposit of all room nights and tax will be charged at the time of booking.",
+    "deadline": "Offer-dependent: an official Wynn offer page states cancellations must be received at least 48 hours prior to arrival or the deposit is forfeited; another states 72 hours.",
+    "status": "verified_official",
+    "source_urls": [
+     "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+     "https://www.wynnlasvegas.com/terms-and-conditions/848703",
+     "https://www.wynnlasvegas.com/terms-and-conditions/849723"
+    ],
+    "retrieved": "2026-11-16"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified",
+    "note": "A prior session cited Wynn's own awards page (https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards) but the page has not been re-read in this pass, so no quality tier is asserted here."
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-PMGM",
+   "property": "Park MGM",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "terms": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "book_start": "https://parkmgm.mgmresorts.com/en/hotel.html"
+   },
+   "address": {
+    "value": "3770 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-16",
+    "note": "County licensee list dated July 2021 - confirm the address on the hotel's own page before relying on it."
+   },
+   "resort_fee": {
+    "amount": 50,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "A daily resort fee of $50.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+    "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-16",
+    "waiver": "Daily resort fees will be waived for eligible members with Gold+ Tier Level status with eligible reservations (https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)."
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "status": "verified_official",
+    "excerpt": "Registered Hotel Guest: $20 (Mon-Thurs) / $20 (Fri-Sun). Non-guest self parking: Over 0 to 24 hours $20 weekdays, $25 weekends.",
+    "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "retrieved": "2026-11-16"
+   },
+   "incidentals": {
+    "amount": 100,
+    "per": "night",
+    "status": "verified_official",
+    "excerpt": "...as well as a $100 incidental amount per day to allow you access to room charging privileges...",
+    "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "occupancy": {
+    "basis": "2 occupants per room included",
+    "extra_guest_charge": 40,
+    "extra_guest_rule": "There is an additional charge of $40 plus tax per occupant, per night, above 2 occupants per room.",
+    "min_age_checkin": 21,
+    "status": "verified_official",
+    "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "cancellation": {
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+    "deadline": "72 hours before arrival (except offers that exclude it)",
+    "check_in": "15:00",
+    "check_out": "11:00",
+    "status": "verified_official",
+    "source_url": "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-16"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "walk_note": "Park MGM sits south of the Venetian complex; the MGM family publishes an interior walkway only for Bellagio / Cosmopolitan / Vara - see walk.json. No published minute value.",
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-ARIA",
+   "property": "ARIA Resort & Casino",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "poker": "https://aria.mgmresorts.com/en/casino/poker.html"
+   },
+   "address": {
+    "value": "3730 Las Vegas Blvd S (unverified: this address was not present in the county list read in this pass)",
+    "status": "not_captured"
+   },
+   "resort_fee": {
+    "amount": null,
+    "plus_tax": null,
+    "status": "not_read_official_page",
+    "note": "A prior session recorded \"$55 plus tax\" from ARIA's terms page; that page has not been re-read in this pass, so the value is deliberately left blank here.",
+    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "status": "verified_official",
+    "excerpt": "Registered Hotel Guest: $20 / $20. Properties covered by this rate table include Bellagio, ARIA, Vdara, The Cosmopolitan of Las Vegas, MGM Grand, Park MGM, New York-New York and Luxor.",
+    "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "retrieved": "2026-11-16"
+   },
+   "incidentals": {
+    "amount": null,
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "basis": null,
+    "extra_guest_charge": null,
+    "status": "not_read_official_page",
+    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+   },
+   "cancellation": {
+    "rule": null,
+    "status": "not_read_official_page",
+    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-BEL",
+   "property": "Bellagio",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "friday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "saturday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "sunday_terms_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+   },
+   "address": {
+    "value": "3600 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+   },
+   "resort_fee": {
+    "amount": null,
+    "status": "not_read_official_page",
+    "source_url_to_read": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "status": "verified_official",
+    "excerpt": "Registered Hotel Guest: $20 / $20 (Bellagio included in the MGM Resorts rate table).",
+    "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "retrieved": "2026-11-16"
+   },
+   "incidentals": {
+    "amount": null,
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "status": "not_read_official_page"
+   },
+   "cancellation": {
+    "status": "not_read_official_page"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "walk_note": "Bellagio is connected to The Cosmopolitan and Vdara by a published interior walkway (official MGM page): \"Our interior bridge allows you to stroll effortlessly between Bellagio, The Cosmopolitan of Las Vegas, and Vdara ... without having to step outside.\" The Bellagio-to-Venetian leg is still an outdoor walk with no published duration.",
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-COSMO",
+   "property": "The Cosmopolitan of Las Vegas",
+   "poker_room_walk_target": "venetian",
+   "official_pages": {
+    "terms": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+    "parking": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+   },
+   "address": {
+    "value": "3708 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+   },
+   "resort_fee": {
+    "amount": null,
+    "status": "not_read_official_page",
+    "source_url_to_read": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html"
+   },
+   "parking": {
+    "guest_self_per_day": 20,
+    "status": "verified_official",
+    "source_url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+    "retrieved": "2026-11-16"
+   },
+   "incidentals": {
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "status": "not_read_official_page"
+   },
+   "cancellation": {
+    "status": "not_read_official_page"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-CAES",
+   "property": "Caesars Palace",
+   "poker_room_walk_target": "caesars",
+   "official_pages": {
+    "poker": "https://www.caesars.com/caesars-palace/casino/poker",
+    "tournament_guide": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "daily_flyer_pdf": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
+   },
+   "address": {
+    "value": null,
+    "status": "not_captured",
+    "note": "Paris Las Vegas (3655 Las Vegas Blvd S) and Harrah's (3475 Las Vegas Blvd S) appear in the county guide; Caesars Palace itself was not in the excerpt read."
+   },
+   "resort_fee": {
+    "amount": null,
+    "status": "not_read_official_page"
+   },
+   "parking": {
+    "status": "not_read_official_page"
+   },
+   "incidentals": {
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "status": "not_read_official_page"
+   },
+   "cancellation": {
+    "status": "not_read_official_page"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-PARIS",
+   "property": "Paris Las Vegas",
+   "poker_room_walk_target": "caesars",
+   "official_pages": {
+    "hotel": "https://www.caesars.com/hotel/paris"
+   },
+   "address": {
+    "value": "3655 Las Vegas Blvd S, Las Vegas, NV (Clark County transient-licence guide)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
+   },
+   "resort_fee": {
+    "amount": null,
+    "status": "not_read_official_page"
+   },
+   "parking": {
+    "status": "not_read_official_page"
+   },
+   "incidentals": {
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "status": "not_read_official_page"
+   },
+   "cancellation": {
+    "status": "not_read_official_page"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
+  },
+  {
+   "id": "H-HORSE",
+   "property": "Horseshoe Las Vegas",
+   "poker_room_walk_target": "caesars",
+   "official_pages": {
+    "tournament_guide": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   },
+   "address": {
+    "value": null,
+    "status": "not_captured",
+    "note": "The county guide excerpt read lists Harrah's Casino Hotel at 3475 Las Vegas Blvd S; the Horseshoe rebrand is newer than that document."
+   },
+   "resort_fee": {
+    "amount": null,
+    "status": "not_read_official_page"
+   },
+   "parking": {
+    "status": "not_read_official_page"
+   },
+   "incidentals": {
+    "status": "not_read_official_page"
+   },
+   "occupancy": {
+    "status": "not_read_official_page"
+   },
+   "cancellation": {
+    "status": "not_read_official_page"
+   },
+   "room_rate_log_id": null,
+   "quality": {
+    "value": null,
+    "status": "not_verified"
+   },
+   "dated_quote": {
+    "status": "not_verified",
+    "captured": "2026-11-17",
+    "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   }
   }
+ ],
+ "formula": {
+  "true_cost_per_night": "(room_rate + resort_fee + extra_occupant_charges) x (1 + 0.1338)",
+  "why": "The resort fee and the additional-occupant charge are themselves taxed: Park MGM's official terms state that lodging taxes apply to \"the basic room rate, any resort fee, additional per occupant charges\"; the Venetian states its fee is \"$55 plus applicable tax\".",
+  "excluded_from_nightly": "Incidental deposits (authorizations, refundable), minibar, resort credit forfeitures, early-checkout fee ($100 + tax at the Venetian).",
+  "parking": "added as a separate line because the Venetian's own pages publish two different treatments (see flag FG-07)"
+ }
 }
