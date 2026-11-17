@@ -51,14 +51,26 @@ jobs:
           # Non-blocking on purpose: when an official page changes, the transcriptions in
           # scripts/build-events.py stop matching, and that is exactly the situation we want
           # reported as a pull request rather than a red X with no artefacts.
-          { python3 scripts/build-events.py --check
-            && python3 scripts/build-schedule.py --check
-            && python3 scripts/build-walk.py --check
-            && python3 scripts/build-site.py --check
-            && node scripts/scrape-schedule.mjs --selftest ; } > /tmp/verify.log 2>&1 \
-            || echo failed > /tmp/verify.failed
+          #
+          # (This block used to be written as `{ cmd \n && cmd ; }`, which is a bash syntax
+          # error - a newline before `&&` terminates the command - so the step died with exit 2
+          # on every run and the commit/PR step below was always skipped. Runs 43943838443 and
+          # 44124782058 both failed this way; see COORDINATION.md, session arena/594db405-poker2.)
+          set +e
+          {
+            python3 scripts/build-events.py --check \
+              && python3 scripts/build-schedule.py --check \
+              && python3 scripts/build-walk.py --check \
+              && python3 scripts/build-site.py --check \
+              && node scripts/scrape-schedule.mjs --selftest
+          } > /tmp/verify.log 2>&1
+          verify_status=$?
+          set -e
           cat /tmp/verify.log
-          [ -f /tmp/verify.failed ] && echo "GENERATOR CHECK FAILED: official text no longer matches the transcription - opening a review PR" || true
+          if [ "$verify_status" -ne 0 ]; then
+            echo failed > /tmp/verify.failed
+            echo "GENERATOR CHECK FAILED: official text no longer matches the transcription - opening a review PR"
+          fi
 
       - name: Commit snapshots, or open a review PR when a source moved
         env:

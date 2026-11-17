@@ -93,6 +93,13 @@ PY
   echo "opened PR for ${NEEDS} source(s) needing review"
 else
   git commit -q -m "refresh ${STAMP}: official sources unchanged (snapshots only)"
-  git push -q origin HEAD:"$(git rev-parse --abbrev-ref HEAD)"
-  echo "committed snapshots: every official source matched its tracked values"
+  BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
+  # main can move while this job runs; rebase onto it and retry rather than failing the run.
+  for i in 1 2 3; do
+    git pull --rebase --autostash origin "$BRANCH_NAME" && git push -q origin HEAD:"$BRANCH_NAME" && exit 0
+    echo "push attempt $i failed; retrying after rebase"
+    sleep 5
+  done
+  echo "could not push the snapshot commit after 3 attempts" >&2
+  exit 1
 fi
