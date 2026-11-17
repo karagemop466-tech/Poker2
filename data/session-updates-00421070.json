@@ -1,0 +1,74 @@
+{
+  "session": "arena/00421070-poker2",
+  "generated_on": "2026-11-17",
+  "note": "Evidence record only. No dataset row was changed. Values below are what the cited official pages state when read in this session.",
+  "X1_lodging_tax": {
+    "claim": "The 13.38% rate applies to hotels located inside the Primary Gaming Corridor (PGC); the rate is 13.00% outside it.",
+    "status": "verified_official_source",
+    "sources": [
+      {
+        "publisher": "City of Las Vegas, Business License Division",
+        "title": "Transient Lodging Establishment Room Tax Instructions & Guidelines (Rev. March 2026)",
+        "url": "https://files.lasvegasnevada.gov/business-licensing/RoomTaxPacket.pdf",
+        "states": [
+          "Room tax rate INSIDE the Primary Gaming Corridor is 13.38%; OUTSIDE is 13.00% (Collecting and Remitting Room Tax).",
+          "Room tax must be shown as a separate charge and may NOT be included in the room price.",
+          "Appendix IV disbursement, inside PGC (75+ rooms): LVCVA 6.12%, Nevada Dept. of Taxation 0.38%, City of Las Vegas 1%, Clark County transportation 1%, Clark County education 1%, Stadium District 0.88%, State of Nevada 3%; total 13.38%.",
+          "Appendix IV, outside PGC (75+ rooms): LVCVA 6.12%, NDOT 0.38%, City 1%, transportation 1%, education 1%, Stadium District 0.5%, State 3%; total 13%.",
+          "Appendix III lists the same totals with a different split (e.g. LVCVA 5.5% + City 2% for 75+ rooms inside PGC); both appendices total 13.38% / 13%."
+        ],
+        "retrieved": "2026-11-17"
+      },
+      {
+        "publisher": "Clark County, Department of Business License",
+        "title": "Newly adopted transient lodging tax rate changes (letter, November 15, 2016)",
+        "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+        "states": [
+          "Primary Gaming Corridor: 12.0% (current) + 0.5% (LVCVA expansion) + 0.88% (stadium) = 13.38%, effective March 1, 2017.",
+          "Stadium District outside the PGC: 12.0% + 0.5% + 0.5% = 13.00%.",
+          "Outside the Stadium District and the PGC: only the 0.5% LVCVA increase applies (the letter does not state a total for that area)."
+        ],
+        "retrieved": "2026-11-17",
+        "caveat": "This is the 2016 adoption letter. The March 2026 City packet above is the more recent official statement of the rate."
+      }
+    ],
+    "not_verified": [
+      "Whether each individual hotel on the board sits inside the PGC. That needs the official PGC map (City packet Appendix II; Clark County Business License site). No hotel has been placed inside or outside the PGC in this session.",
+      "Whether the 13.38% applies to the resort fee as well as the room rate. The fee is not stated as taxable or non-taxable in the sources read here. The Venetian resort-fee page says only '$55 plus tax per night'.",
+      "Secondary sites (roommaster.com, lodgify.com, legalclarity.org, casino.org, airbnb help) repeat 13.38% / 13% but are not official and are not used as evidence."
+    ]
+  },
+  "X2_wynn_schedule_recheck": {
+    "status": "fetch_succeeded_2026-11-17",
+    "note": "The 2026-11-16 HTTP 500 on the Wynn schedule PDF did not recur.",
+    "sources": [
+      {
+        "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+        "publisher": "Wynn Las Vegas (WPT World Championship schedule PDF, linked from https://www.wynnlasvegas.com/casino/poker)",
+        "retrieved": "2026-11-17",
+        "page_1_of_2_read": true,
+        "page_2_of_2_read": false,
+        "rows_read_page_1": "Nov 27 to Dec 12, 2026 (about 70 rows; buy-in, guarantee, chips, levels as printed)",
+        "footnotes_read": [
+          "Players must be at least 21 years of age.",
+          "Winners of the 'Double Play Milestone Satellite' receive two prizes valued at $1,100 each, which may be used separately or combined for an entry.",
+          "The Ladies Championship entry is $11,100 with a discounted entry for ladies (see structure sheet)."
+        ]
+      },
+      {
+        "url": "https://www.wynnlasvegas.com/casino/poker",
+        "publisher": "Wynn Las Vegas poker room page",
+        "retrieved": "2026-11-17",
+        "states": [
+          "WPT World Championship: November 27 to December 21 (2026).",
+          "Wynn Signature Series: January 11 to 24, 2027.",
+          "Daily tournaments: a $10,000 guaranteed event every evening at 6 p.m.; a $40,000 guaranteed NLH Rebuy on Fridays; the daily schedule is suspended during each Signature, Millions and Classic series."
+        ]
+      }
+    ],
+    "not_verified": [
+      "Page 2 of the schedule PDF (Dec 13 to Dec 21 rows) was not read in this session.",
+      "No row was imported into the dataset. Rule fields (single entry, re-entry, add-on) for these events need the structure sheets and are not covered by this record."
+    ]
+  }
+}
