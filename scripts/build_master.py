@@ -471,7 +471,11 @@ add_hotel(
     resort_fee_text="",
     resort_fee_src="https://www.caesars.com/horseshoe-las-vegas/hotel",
     tax_rate=0.1338,
-    tax_note="Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian's and The Cosmopolitan's hotel terms). The property's own terms do not print a rate.",
+    tax_note=("Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The "
+              "Venetian's and The Cosmopolitan's hotel terms). Re-read 2026-11-17: the guide's licensed-"
+              "property schedule lists \u201cBally\u2019s Las Vegas, 3645 Las Vegas Blvd S\u201d at 13.38% \u2014 this "
+              "property's address \u2014 while the property now trades as Horseshoe Las Vegas (per the official "
+              "Caesars guide). The property's own terms do not print a rate."),
     parking="", deposit="",
     cancellation="Free 48-hour cancellation advertised on the official hotel page (2026-11-16).",
     booking_url="https://www.caesars.com/book/?propcode=BLV",
@@ -1075,6 +1079,35 @@ for ev in events:
         ev["struct_checked"] = V_REREAD
     else:
         ev["last_checked"] = ev.get("last_checked") or AS_OF
+
+# ---------------------------------------------------------------------------
+# arena/ec9cc26c-poker2 (2026-11-17): K2 verification sweep. Re-read end to
+# end today, first-hand, and reconciled field-by-field against these rows:
+#   * Venetian DSE IV schedule page — all 94 printed table rows transcribed;
+#     the 83 published (non-restart) rows match on date, start, event number,
+#     name, guarantee and structure-sheet URL with zero mismatches. Transcript:
+#     research/ec9cc26c-venetian-schedule-official-2026-11-17.md
+#   * Wynn WPT World Championship schedule PDF — all 136 printed rows
+#     transcribed; the 49 dated Wynn rows match on date, start, buy-in and
+#     guarantee with zero mismatches (multi-flight rows are covered by the
+#     aggregated rows; the 4 recurring dailies cite a different PDF that was
+#     NOT re-read today and keep their earlier date). Transcript:
+#     research/ec9cc26c-wynn-wpt-schedule-official-2026-11-17.md
+#   * Caesars poker guide (Caesars Palace 4 daily times/buy-in/guarantee and
+#     the $50 add-on; Horseshoe 6 daily times), MGM Grand poker page (3 daily
+#     times), Golden Nugget daily page (3 times, 15,000 chips, 15-minute
+#     levels, unlimited re-entry to level 5 and two $20 add-ons).
+# The MGM Saturday row is excluded: its buy-in/guarantee come from the weekly
+# schedule PDF, which was not re-read today.
+# ---------------------------------------------------------------------------
+K2 = "2026-11-17"
+K2_SOURCES = {W_WPT_SCHED, C_GUIDE, MGM_POKER, GN_PAGE}
+for ev in events:
+    if ev.get("venue_id") == "venetian":
+        ev["last_checked"] = K2          # schedule page re-read end to end today
+        ev["schedule_checked"] = K2
+    elif ev.get("source_url") in K2_SOURCES and ev.get("id") != "MGM-SAT-150":
+        ev["last_checked"] = K2
 
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
