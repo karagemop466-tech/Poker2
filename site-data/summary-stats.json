@@ -1,20 +1,20 @@
 {
  "as_of": "2026-11-16",
  "rows_total": 94,
- "days_with_qualifying_event": 23,
+ "days_with_qualifying_event": 27,
  "categories": {
-  "multi_flight": 28,
-  "single_entry_candidate": 38,
-  "day2_restart": 11,
-  "unverified": 7,
+  "multi_flight": 27,
+  "single_entry_candidate": 46,
+  "day2_restart": 10,
   "spend_advantage": 2,
   "satellite": 7,
-  "team_format": 1
+  "team_format": 1,
+  "final_table": 1
  },
- "sheets_read": 23,
+ "sheets_read": 37,
  "sheets_published": 37,
- "qualifying_rows": 34,
- "spend_advantage_rows": 30,
+ "qualifying_rows": 42,
+ "spend_advantage_rows": 29,
  "cheapest_qualifying_entry": 200,
  "highest_ratio": 93.8,
  "highest_ratio_event": "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
@@ -58,21 +58,21 @@
   "fallback_days": 4
  },
  "cheapest_window": {
-  "arrival": "2026-11-29",
-  "departure": "2026-12-03",
+  "arrival": "2026-11-23",
+  "departure": "2026-11-27",
   "days": [
-   "2026-11-29",
-   "2026-11-30",
-   "2026-12-01",
-   "2026-12-02"
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25",
+   "2026-11-26"
   ],
   "nights": 4,
   "entries": 4,
-  "entry_cost": 1200,
-  "gtd_played": 64000,
-  "avg_ratio": 46.7,
-  "poker_rate_eligible_nights": 1,
-  "has_overlap_flag": false,
-  "fallback_days": 1
+  "entry_cost": 1100,
+  "gtd_played": 41000,
+  "avg_ratio": 37.7,
+  "poker_rate_eligible_nights": 2,
+  "has_overlap_flag": true,
+  "fallback_days": 2
  }
 }
