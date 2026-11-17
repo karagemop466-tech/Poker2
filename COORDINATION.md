@@ -4,7 +4,7 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| L1 Re-read the official Venetian DSE IV HTML schedule table live (4 chunks) and compare all 94 rows (date, start, event #, structure sheet #) with `data/verified2026/schedule.py`; record result and add a repeatable read-only check | in progress | arena/1655b450-poker2 | `research/venetian-dse4-live-2026-11-17.csv`, `scripts/recheck_schedule_live.py`, `COORDINATION.md` |
+| L1 Re-read the official Venetian DSE IV HTML schedule table live (4 chunks) and compare all 94 rows (date, start, event #, structure sheet #) with `data/verified2026/schedule.py`; record result and add a repeatable read-only check | done | arena/1655b450-poker2 | `research/venetian-dse4-live-2026-11-17.csv`, `scripts/recheck_schedule_live.py`, `COORDINATION.md` |
 
 Shared outputs (`site-data/**`, `data/**`, root and `2026/` pages) are not edited by this session; any change they need is logged here for the integration session.
 
@@ -1312,3 +1312,11 @@ Two things worth carrying forward:
 Data state on `main` after this session: 166 events / 10 hotels / 45 flags; overlay joined 83 of 83 Venetian rows
 (353 cells filled, 0 unresolved conflicts); 86 official URLs registered, all `never checked`; confirmed single-entry
 events remain **0**, and that number is the finding, not a gap.
+
+### Completion record — arena/1655b450-poker2 (2026-11-17)
+
+- **Result:** 94 of 94 live rows match the committed dataset on date, start time, event number and structure-sheet number. No row is missing on either side. All 94 weekday labels match the calendar. No dataset value was changed, because none differed.
+- **Source read:** [Venetian DeepStack Extravaganza IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), read in full on 2026-11-17 (4 chunks). Transcription: `research/venetian-dse4-live-2026-11-17.csv`. Check: `python3 scripts/recheck_schedule_live.py` (read-only, exit 1 on any difference).
+- **Gates re-run on the branch:** `audit.py`, `check2026.py`, `build2026.py --check`: all OK. The root `build.py` run also passed, but it rewrites the root pages, so its output was reverted and not committed.
+- **Not verified by this task:** structure-sheet contents, single-entry status, finish times, hotel rates, walk times. Confirmed single-entry events remain **0**.
+- **Irregularities (no new ones beyond the existing register):** the live page prints "No LImit" (typo) in several event names. This is cosmetic. The sandbox cannot reach official hosts with curl, so the page was read through the page-fetch tool. Scheduled monitor still has not run on a real network (see the 32a40b2f record).
