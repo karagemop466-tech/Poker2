@@ -295,9 +295,12 @@ def build_index():
 
     cards = [
         ("94", "published schedule rows", "every &lt;tr&gt; on the official DSE IV page, transcribed in order"),
-        ("48", "rows with structure data", "12 of 37 structure-sheet PDFs read in full"),
-        ("46", "rows structure not read", "date, time, event no, name and sheet link only"),
-        ("0", "events confirmed single-entry", "no sheet read prints an entry limit &mdash; see FD-03"),
+        ("%d" % len(read), "rows with structure data",
+         "all %d structure-sheet PDFs read in full, 2026-11-17" % len(SHEETS)),
+        *([("%d" % (len(EV) - len(read)), "rows structure not read",
+            "date, time, event no, name and sheet link only")] if len(read) < len(EV) else []),
+        ("0", "events confirmed single-entry",
+         "no sheet prints an entry limit; see FD-03"),
         ("%d" % len(rankable), "rows with a usable GTD &divide; fee", "only where the guarantee is pure prize pool"),
         ("6 / 11", "hotels inside the 30-minute walk", "measured, third-party routing &mdash; see FD-08"),
         ("0", "dated room rates captured", "every booking engine is JavaScript-only &mdash; see FD-05"),
@@ -335,7 +338,7 @@ def build_index():
     <h2>What is verified, and how</h2>
     {table(["Input", "How it was read", "Rows", "Date"], [
       ["Official DSE IV schedule page", "all four page chunks, one row per table row", "94", AS_OF],
-      ["Official structure-sheet PDFs", "each PDF opened and read in full", "12 of 37", AS_OF],
+      ["Official structure-sheet PDFs", "each PDF opened and read in full", "%d of %d" % (len(SHEETS), len(SHEETS) + len(UNREAD_SHEETS)), AS_OF],
       ["Venetian resort fee / hotel terms", "official property pages", "1 property", AS_OF],
       ["Bellagio, ARIA, MGM Grand, Wynn terms", "official property terms pages", "4 properties", AS_OF],
       ["Clark County transient lodging tax", "county licensing guide (PDF)", "13.38%", AS_OF],
@@ -891,6 +894,17 @@ def build_venues():
 
 
 def build_summary():
+    n_sheets = len(SHEETS)
+    n_unread_sheets = len(UNREAD_SHEETS)
+    n_unread = sum(1 for e in EV if not e["structure_read"])
+    n_late = sum(1 for e in EV if e["late_reg_time"])
+    n_pays = sum(1 for e in EV if e["pays_pct"])
+    if n_unread:
+        unread_li = ("<li>%d rows have no fee or structure, because %d sheets were not read.</li>"
+                     % (n_unread, n_unread_sheets))
+    else:
+        unread_li = ("<li><b>Nothing is left unread.</b> Every one of the %d sheets has now been "
+                     "read in full, which retired the earlier build's largest gap.</li>" % n_sheets)
     rows = [
         ["Best tournaments on cost and prize pool, single entry only",
          pill("partly answered", "warn"),
@@ -952,18 +966,18 @@ def build_summary():
   <h2>What is solid</h2>
   <ul class="tight">
     <li>94 schedule rows transcribed from the official page.</li>
-    <li>12 structure sheets read in full; every fee split sums exactly to the buy-in (0 mismatches).</li>
+    <li>All {n_sheets} structure sheets read in full; every fee split sums exactly to the buy-in on all {len(EV)} rows (0 mismatches).</li>
     <li>Room tax 13.38% corroborated by a county document and by the property's own terms.</li>
     <li>Walking times measured for all eleven hotel candidates, with re-checkable URLs.</li>
-    <li>Late-registration closes and payout percentage for 48 rows &mdash; values the earlier dashboards left blank.</li>
+    <li>Late-registration close for {n_late} rows and a payout percentage for {n_pays} rows &mdash; values the earlier dashboards left blank. The other {len(EV) - n_late} close times and {len(EV) - n_pays} payout figures are blank because the sheet does not print one.</li>
   </ul>
  </div>
  <div class="panel">
   <h2>What is not</h2>
   <ul class="tight">
-    <li>No confirmed single-entry event. Twelve sheets, no entry-limit clause.</li>
+    <li>No confirmed single-entry event. All {n_sheets} sheets read; none prints an entry-limit clause, and the 22 rows carrying an "no second entry" quote are quoting the multi-flight rule, not a freezeout (<a href="flagged.html#FD-03">FD-03</a>).</li>
     <li>No dated room rate. The hotel side of the trip cost has no verified input.</li>
-    <li>46 rows have no fee or structure, because 25 sheets were not read.</li>
+    {unread_li}
     <li>Four hotels publish no reachable resort fee.</li>
     <li>No automatic source check in this repository has ever completed a scheduled run (<a href="flagged.html#FD-01">FD-01</a>).</li>
   </ul>
@@ -985,20 +999,35 @@ def build_summary():
 
 
 def build_questions():
-    rows = [[e["id"], esc(e["question"]), esc(e["why"]), esc(e["how_to_close"]),
-             esc(e["can_be_closed_here"]), esc(e["blocks"]),
-             pill(e["status"], "ok" if "answered" in e["status"] else "warn"), link(e["source_url"])]
-            for e in QT]
+    def status_pill(e):
+        st = e.get("status", "")
+        if e.get("answer"):
+            return pill("answered", "ok")
+        if "partly" in st:
+            return pill("partly answered", "warn")
+        return pill("open", "warn")
+
+    def answer_cell(e):
+        # a question that has since been answered shows the answer, not the old gap text
+        if e.get("answer"):
+            return esc(e["answer"])
+        return esc(e.get("why", ""))
+
+    rows = [[e["id"], esc(e["question"]), answer_cell(e), esc(e["how_to_close"]),
+             esc(e["can_be_closed_here"]), esc(e["blocks"]), status_pill(e),
+             link(e["source_url"])] for e in QT]
+    closed = sum(1 for e in QT if e.get("answer"))
     body = f"""
 <section class="hero">
   <h1>Questions that must be answered before a decision</h1>
   <p class="lede">Each item names what is unknown, why it matters, exactly how to close it, and
   whether it can be closed from a document that already exists.</p>
-  <p class="note">{len(QT)} items. Four can be closed from documents already linked on this site;
-  the rest need a booking engine, a phone call or a decision from you.</p>
+  <p class="note">{len(QT)} items. <b>{closed} have since been answered</b> and now show the answer
+  instead of the gap &mdash; reading all 37 structure sheets closed three of them. The remaining
+  items need a booking engine, a phone call or a decision from you.</p>
 </section>
 <div class="panel">
-{table(["ID", "Question", "Why it matters", "How to close it", "Closable from a document?", "What it blocks", "Status", "Source"], rows, "t-q")}
+{table(["ID", "Question", "Answer / why it matters", "How to close it", "Closable from a document?", "What it blocks", "Status", "Source"], rows, "t-q")}
 </div>
 """
     # anchor rows so questions.html#IQ-03 works

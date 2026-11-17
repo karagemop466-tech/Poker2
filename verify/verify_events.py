@@ -149,7 +149,10 @@ def main():
     thin = []
     for n in sorted(sheets.BY_NUMBER):
         s = sheets.BY_NUMBER[n]
-        missing = [k for k in ("fee", "chips", "level_min", "late_reg_time")
+        # late_reg_text is the printed line; late_reg_time is only filled when that line
+        # actually prints a clock time. Sheet 25 prints "6 levels" with no time, so the
+        # clock field is legitimately blank and late_reg_text carries the evidence.
+        missing = [k for k in ("fee", "chips", "level_min", "late_reg_text")
                    if not s.get(k)]
         if missing:
             thin.append((n, missing))

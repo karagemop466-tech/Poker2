@@ -1,7 +1,7 @@
 {
  "meta": {
   "as_of": "2026-11-17",
-  "count": 15
+  "count": 21
  },
  "flags": [
   {
@@ -30,12 +30,13 @@
    "id": "FD-03",
    "severity": "high",
    "area": "rules",
-   "title": "Silence on a structure sheet is not a single-entry rule",
-   "finding": "None of the 12 Venetian structure sheets read in this pass prints an entry limit for a one-day event. Each prints its fee split, level time, late-registration close and payout percentage, and none prints 'no re-entry', 'no rebuy' or 'no add-on'. Six sheets print a flight restriction instead: 'Any player who bags chips for Day 2 may not play a subsequent flight'.",
-   "why_it_matters": "A row labelled 'single entry' on that basis would be an inference. The honest label is 'sheet silent', and the decision to treat silence as a freezeout has to be made explicitly, in writing, by the player or by the venue.",
-   "evidence": "sheets 1, 5, 7, 11, 15, 16, 18, 34 read in full; none prints an entry-limit clause.",
-   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-   "action": "Every row carries single_entry = not_stated / explicit_no / explicit_yes, and the site never upgrades silence."
+   "title": "Nothing in this series is a confirmed single-entry event",
+   "finding": "All 37 structure sheets have now been read in full. Not one of them prints 'no re-entry', 'no rebuy' or 'no add-on' for any event. The only entry limit any sheet prints is the multi-flight rule: 'Any player who bags chips for Day 2 may not play a subsequent flight.' That rule appears on 22 of the 94 rows and it restricts a player who has already SURVIVED a flight from buying a second one. It is silent on the ordinary case, a player who busts on Day 1A and wants to enter Day 1B, which is exactly what a multi-flight event exists to allow. Four sheets (4, 10, 12, 21) therefore contradicted themselves in the earlier build: the same row was labelled 'explicit: no 2nd entry' and 're-entry allowed'. Those four are now recorded as sheet-silent with re-entry allowed.",
+   "why_it_matters": "The travel brief asks for single-entry tournaments as the main section, so this is the load-bearing question of the whole site. The answer is that the filter cannot be satisfied from official documents: 72 rows are silent and 22 rows print only the flight rule. Zero events can be confirmed as freezeout. A site that printed 'single entry' on 22 rows would be overstating what the sheets say by exactly the amount that matters.",
+   "evidence": "data/audit/events.json, single_entry and re_entry columns. single_entry is 'explicit_yes' on 0 rows, 'explicit_no' on 22, 'not_stated' on 72. Every one of the 22 explicit_no excerpts quotes the flight rule and no other prohibition. No sheet prints an entry-limit clause of any other kind.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "action": "The site does not label any row single-entry. The tournament page separates rows by how strong the evidence is, names the flight rule for what it is, and keeps 'sheet silent' distinct from 'one entry only'. The toggle the brief asks for is present but it filters on published evidence, so it returns nothing rather than returning a guess.",
+   "resolution": "Corrected 2026-11-17 after all 37 sheets were read. Four sheets whose only printed limit was the flight rule had been marked explicit_no while also carrying re_entry=explicit_yes; they are now not_stated. The claim 'no sheet prints an entry limit' is now verified against all 37 rather than 12."
   },
   {
    "id": "FD-04",
@@ -169,6 +170,78 @@
    "evidence": "index.html vs plan/index.html KPI blocks.",
    "source_url": "https://karagemop466-tech.github.io/Poker2/",
    "action": "/audit/ states its own numbers from its own dataset and links the other surfaces rather than silently disagreeing with them. Choosing one surface is suggestion SG-01."
+  },
+  {
+   "id": "FD-16",
+   "severity": "high",
+   "area": "events",
+   "title": "Flights of the same event are not the same tournament",
+   "finding": "Three events sell several starting flights at different times of day, and the flights do not share a structure. Event 26 ($800, $500,000 GTD): sheet 12 gives Days A, C and E 40-minute levels, sheet 13 gives Days B and D 30-minute levels, and sheet 14 gives Day F 20-minute levels as an explicit Turbo. Event 56 ($1,100, $500,000 GTD): sheet 35 gives Days A, C and E 40-minute levels, sheet 36 gives Days B and D 30-minute levels, with late registration running to about 11:10 PM instead of about 4:55 PM. Event 47 ($2,200, $1,000,000 GTD): sheet 21 gives Day 1A 40-minute levels at 10:10 AM, sheet 37 gives Day 1B 30-minute levels at 6:10 PM.",
+   "why_it_matters": "A player comparing these events by buy-in and guarantee is comparing numbers that sit on top of different structures. The 5:10 PM flight of event 26 costs the same $800 as the 11:10 AM flight and buys 25% less time per level. Any ranking or 'value' reading that treats the flights as one homogeneous event is wrong in the direction of flattering the evening flights. It is also a practical trap: a player planning an 8 AM start cannot simply join the same event later at the same structure.",
+   "evidence": "Level Duration line on sheets 12/13/14, 35/36 and 21/37, all read 2026-11-17. Every row of events.json carries the sheet number it came from, so each flight shows its own level_min rather than an event-level average.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "action": "The events table prints the level time per row and never aggregates a multi-flight event into one line. The schedule page treats each flight as its own option, so a day is planned around the flight that is actually being played.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
+  },
+  {
+   "id": "FD-17",
+   "severity": "medium",
+   "area": "events",
+   "title": "Three events charge a third-party fee that is not a house fee",
+   "finding": "Sheets 31, 32 and 33 (the LIPS events) print two separate withholdings. Sheet 31 and 33: '$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS).' Sheet 32: '$90 ... house fees ... $20 ... flat fee for Vegas Connected'. The remaining prize pool is $510 of $600 in all three cases.",
+   "why_it_matters": "The site's fee column is defined as money withheld from the buy-in. On these three sheets that money goes to two different recipients, and one of them is a third-party series operator rather than the house. Reporting $80 or $90 alone would understate what is withheld from the prize pool. Anyone modelling cost per entry has to compare like with like, and the LIPS events cost $90 or $110 to enter in practice.",
+   "evidence": "Rule 6 on sheets 31, 32 and 33. $80 + $10 + $510 = $600; $90 + $20 + $690 = $800.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "action": "The fee column records the full amount withheld - $90 on sheets 31 and 33, $110 on sheet 32 - and the notes column names the split, so the number is not understated.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
+  },
+  {
+   "id": "FD-18",
+   "severity": "medium",
+   "area": "events",
+   "title": "Three events cost less if you register early, so the buy-in is not one number",
+   "finding": "Sheets 4, 8, 35 and 36 print a conditional discount. Sheet 4: '$20 off house fees on Day 1A if registered before 11:10 a.m. ($580 total instead of $600)'. Sheet 8: 'PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only, for a total buy in of $180 instead of $200', and 'all subsequent buy in's after the initial buy in will be $200'. Sheet 35: '$40 discount on house fees for a total buy in of $1,060 instead of $1,100 ... will no longer be applied once the event has started and played one hand.' Sheet 36 prints the same $40 discount for Day 1B.",
+   "why_it_matters": "The published buy-in is a maximum, not a price. On event 56 the difference is $40, on event 59 $20, and the PokerAtlas discount additionally depends on holding a membership and claiming an offer in a phone app at the cage. A trip budget built on nominal buy-ins overstates cost, and a cost-per-entry ranking built on them understates the discount events' value.",
+   "evidence": "Note 7 on sheet 4; rule 7 on sheet 8; rule 7 on sheets 35 and 36.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "action": "Buy-in is recorded as the nominal printed figure, which is the upper bound, and the discount is stated in the row notes rather than baked into the arithmetic. The cost calculator uses the nominal figure and says so.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
+  },
+  {
+   "id": "FD-19",
+   "severity": "medium",
+   "area": "events",
+   "title": "Seven rows guarantee seats, not money, and cannot be costed like the rest",
+   "finding": "Sheets 19, 24 and 25 cover seven events - 33, 37, 41, 44, 45, 46 and 48 - whose prize is direct entry to a named event rather than a cash pool. Sheets 19 and 24 print 'Guarantee: 2 Seats'; sheet 25 prints 'Guarantee: 2 Seats' across three separate events. Sheet 19's prizes are seats to the $800 LIPS Ladies event 39, and sheets 24 and 25's are seats to the $2,200 PokerAtlas Title event 47. All three are 'Milestone' satellites: a player who reaches 200,000 chips is paid immediately and removed from play.",
+   "why_it_matters": "These rows have a buy-in and a fee like any other, so a naive sort by 'guarantee divided by entry fee' would try to divide a seat count by dollars. The prize is also conditional on the target event running and on the satellite filling its seat allocation, neither of which the sheet promises.",
+   "evidence": "Guarantee line and prize rules on sheets 19, 24 and 25.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "action": "These seven rows are categorised as satellites, excluded from every guarantee-to-fee comparison, and shown in their own section with the seat prize named. A seat guarantee is never expressed as a dollar figure.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
+  },
+  {
+   "id": "FD-20",
+   "severity": "medium",
+   "area": "events",
+   "title": "Four events are not Hold'em, and two are not one player per seat",
+   "finding": "Event 20 and event 57 ($300 and $600) are Pot Limit Omaha double-board bomb pots played eight-handed, where every player antes every hand and action starts on the flop. Event 27 ($600) is BIG O, five-card Omaha hi-lo, also eight-handed. Event 35 ($600) is a tag-team event where a team rotates players at the start of every level and a team that fails to switch is disqualified. Event 24 and event 32 are Seniors events, 50+ only. Event 39 is open to female players only, and events 19, 24 and 25's satellites are restricted to female or to 50+ players.",
+   "why_it_matters": "The brief asks for tournaments to play, and a Hold'em cash-game specialist may not want a bomb pot or a five-card split game at all. Two of these rows are not even buyable by a solo player, and four are not buyable at all by a player who does not meet an age or gender condition. Sorting the whole schedule by price puts events a reader cannot enter next to ones they can.",
+   "evidence": "Game description and rules 2, 7, 8 and 10 on sheets 22 and 23; sheet 28; rule 8 on sheet 31; rules 2 on sheets 17, 20, 32 and 33; rule 2 on items 19, 24 and 25.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "action": "Every row carries its game and any eligibility condition on the tournament page, and the non-Hold'em and team rows are kept out of the like-for-like comparison. Eligibility is quoted, not paraphrased.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
+  },
+  {
+   "id": "FD-21",
+   "severity": "medium",
+   "area": "events",
+   "title": "Payout percentage is not uniform, and a figure that looks like one is not one",
+   "finding": "Most sheets print 'pays 12.5% of the field', but sheet 17 (Seniors, $600) prints 15% and sheet 20 (Seniors, $1,100) prints nothing. Separately, on the flight sheets the 12.5% figure in the rules text is the FLIGHT-STOP rule - 'each starting flight will play until we are down to approximately 12.5% of the field remaining' - not a payout rule. Sheets 2, 3, 4, 12, 13, 20, 21, 35, 36, 37 and 32 print the stop rule and no payout percentage at all.",
+   "why_it_matters": "Reading the stop rule as a payout rule would publish a 12.5% payout figure for 11 sheets that never printed one. The distinction also changes the comparison: a 15% event pays more places than a 12.5% event at the same field size, which is a real difference in variance for a player deciding what to enter.",
+   "evidence": "pays_pct is 12.5 on 46 rows, 15 on 2 rows and blank on 46 rows. The 46 blanks are sheets that either print no percentage or print only the flight-stop rule.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "action": "pays_pct is filled only where a sheet prints a payout percentage. The 46 blank rows say so, and the flight-stop rule is quoted in the row notes where it exists instead of being promoted into the payout column.",
+   "resolution": "Recorded 2026-11-17 when the remaining 25 sheets were read."
   }
  ]
 }

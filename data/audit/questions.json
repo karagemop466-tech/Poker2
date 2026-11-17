@@ -6,13 +6,14 @@
  "questions": [
   {
    "id": "IQ-01",
-   "question": "What is printed on the 25 structure sheets that were not read?",
-   "why": "46 of 94 published rows have no fee, stack, level time or late-registration close. Without them those rows cannot be compared with the 48 that do.",
-   "how_to_close": "Open each sheet URL and transcribe the same fields into data/audit/sheets.py.",
-   "can_be_closed_here": "yes - it is 25 more documents, not a missing source",
-   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "status": "open",
-   "blocks": "Like-for-like comparison of 46 rows"
+   "question": "What is printed on the 37 structure sheets?",
+   "answer": "All 37 have now been read in full, 2026-11-17, and every one of the 94 schedule rows carries its fee, prize-pool split, starting stack, level time and late-registration close. The sheets are consistent on one point worth stating: $fee + $prize pool always equals the printed buy-in, on all 94 rows, with no exceptions. What they do not contain is any entry limit (FD-03) or any payout percentage on 46 rows (FD-21).",
+   "status": "closed",
+   "how_to_close": "Read each PDF linked from the official schedule page.",
+   "can_be_closed_here": "Closed here: every sheet is a public PDF.",
+   "blocks": "Nothing now. It gated the fee, stack and late-registration columns.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "resolution": "Closed 2026-11-17. This was the largest open gap in the earlier build."
   },
   {
    "id": "IQ-02",
@@ -27,12 +28,13 @@
   {
    "id": "IQ-03",
    "question": "Does any Venetian one-day event actually forbid re-entry?",
-   "why": "Twelve sheets were read in full and none prints an entry limit. 'Single entry' is currently an assumption about silence.",
-   "how_to_close": "Ask the poker room in writing (lv_cas_poker@venetianlasvegas.com, 702.414.7657) whether a one-day event permits a second entry.",
-   "can_be_closed_here": "no - needs the venue to answer",
-   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "status": "open",
-   "blocks": "Labelling any event 'single entry'"
+   "answer": "No. With all 37 sheets read, none prints a freezeout, no-rebuy or no-add-on rule. The only entry restriction in the series is the multi-flight rule, which stops a player who has already bagged chips from buying a later flight - not the same thing, and it does not apply to one-day events at all in the way it applies to flights. Four sheets had previously been recorded as forbidding a second entry on that basis; they have been corrected to sheet-silent.",
+   "status": "closed",
+   "how_to_close": "Read the 25 remaining structure sheets.",
+   "can_be_closed_here": "Closed here: every sheet is a public PDF.",
+   "blocks": "The single-entry claim the brief asks for. It cannot be satisfied.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "resolution": "Closed 2026-11-17 with a negative answer. The practical consequence is that the site cannot claim any event is single-entry, which is why the tournament page separates rows by evidence strength instead."
   },
   {
    "id": "IQ-04",
@@ -47,12 +49,13 @@
   {
    "id": "IQ-05",
    "question": "Which guarantee figures include bounties?",
-   "why": "Guarantee-per-entry is only comparable across rows when the guarantee is pure prize pool.",
-   "how_to_close": "Already answered for the 12 sheets read (gtd_basis column); the remaining 25 sheets need the same line checked.",
-   "can_be_closed_here": "yes for the read set",
+   "answer": "32 of the 94 rows. The sheets print the basis explicitly: sheets 1, 8, 11, 15, 16, 26, 27, 30 and 33 define the guarantee as prize pool plus total bounties, and the wording on each names the actual composition - for example sheet 15's 'the actual prize pool plus the total amount of $100 bounties that are awarded'. The other 51 dollar guarantees are pure prize pool, and 7 rows guarantee seats instead of money.",
+   "status": "closed",
+   "how_to_close": "Read the guarantee rules on all 37 sheets and classify each.",
+   "can_be_closed_here": "Closed here: every sheet is a public PDF.",
+   "blocks": "The like-for-like guarantee comparison.",
    "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
-   "status": "partly answered",
-   "blocks": "Cross-row ratio comparison"
+   "resolution": "Closed 2026-11-17. The 32 bounty-inclusive rows carry their guarantee but no guarantee-to-fee ratio, and the table prints 'n/a - bounty GTD' in that cell."
   },
   {
    "id": "IQ-06",
