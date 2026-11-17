@@ -1901,9 +1901,9 @@
    "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
-   "group": "candidate",
-   "group_label": "Best single-entry candidates",
-   "reason": "One-day event with a single starting day. The official structure sheet contains no re-entry, rebuy or add-on clause.",
+   "group": "multiflight",
+   "group_label": "Multi-flight (second flight = second buy-in)",
+   "reason": "The official structure sheet schedules Day 1 and Day 2 as separate days (Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM), so this is not a one-day event and cannot be played as a same-day single entry. Returning on Day 2 is a continuation of the same entry, not a second buy-in, but the trip does not get a free day back.",
    "dates": [
     "2026-12-10"
    ],
@@ -5433,7 +5433,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5528,7 +5528,7 @@
      "verdict": "conditional fallback",
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5588,7 +5588,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5669,7 +5669,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
      "flight": "restart",
      "row_gtd": "",
@@ -5687,7 +5687,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS FINAL TABLE STREAMED FINAL TABLE (POKERGO)",
      "flight": "restart",
      "row_gtd": "",

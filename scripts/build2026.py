@@ -211,8 +211,38 @@ def classify(ev_no, rows, sheet):
     if sheet and sheet.get("bounty"):
         return "bounty", ("Bounty format. The published guarantee includes bounty money, so the cash prize pool "
                           "is smaller than the headline number.")
+    # A multi-day event is not a same-day single entry. `$800 ... (2DAY) ... MAIN EVENT` reaches this
+    # line because the sheet prices no second buy-in and prints no bounty, and an earlier version
+    # returned "candidate" here with the reason "One-day event" - a factual claim contradicted by the
+    # event's own name. multi_flight is the group that already means "second day = second buy-in", so
+    # a two-day event belongs there and its reason says why.
+    sheet_start = str((sheet or {}).get("start") or "")
+    name = " ".join((r[3] or "") for r in rows).upper()
+    two_day = ("Day 2" in sheet_start or "Day 3" in sheet_start
+               or any("Day 2" in f for f in flags)
+               or any(t in name for t in ("(2DAY)", "(3DAY)", "2 DAY", "3 DAY")))
+    if two_day:
+        return "multiflight", ("The official structure sheet schedules Day 1 and Day 2 as separate days"
+                               + (" (%s)" % sheet_start if sheet_start else "")
+                               + ", so this is not a one-day event and cannot be played as a same-day "
+                                 "single entry. Returning on Day 2 is a continuation of the same entry, "
+                                 "not a second buy-in, but the trip does not get a free day back.")
     return "candidate", ("One-day event with a single starting day. The official structure sheet contains no "
                          "re-entry, rebuy or add-on clause.")
+
+
+def demographic_gate(e):
+    """The restriction text when the official sheet limits WHO may play (age 50+, women only,
+    teams), else None.
+
+    The standard property-wide "21+ with a Venetian Rewards card" requirement is not a
+    restriction on an adult trip, so it is not a gate. This mirrors the test the root surface
+    applies in scripts/build-schedule.py, so both surfaces answer "can I enter this?" the same way.
+    """
+    el = e.get("eligibility") or ""
+    if "50+" in el or "female" in el.lower() or el.startswith("Teams"):
+        return el
+    return None
 
 
 GROUP_LABEL = {
@@ -312,7 +342,7 @@ GROUP_TIER = {"candidate": 0, "bounty": 1, "multiflight": 2, "spend": 3, "satell
 
 def _selection_rank(x):
     """Order candidate primaries: unrestricted first, then by group, then by money at stake."""
-    restricted = 1 if x.get("eligibility") else 0
+    restricted = 1 if demographic_gate(x) else 0
     tier = GROUP_TIER.get(x["group"], 3)
     # earlier start breaks a tie within a tier, then the bigger guarantee, then the event number
     return (restricted, tier, x["start_m"] or 0, -(x.get("gtd") or 0), x["event_no"])
@@ -328,7 +358,7 @@ def choose_primary(entries):
     """
     if not entries:
         return None
-    open_to_all = [x for x in entries if not x.get("eligibility")]
+    open_to_all = [x for x in entries if not demographic_gate(x)]
     pool = open_to_all or entries
     ranked = sorted(pool, key=_selection_rank)
     # prefer a start the player can reach first, but never at the cost of the tier
@@ -402,7 +432,7 @@ def build_days(events):
         # Events a player who meets the condition could play, which are never promoted to primary
         # because they are restricted. Shown explicitly so an age-restricted morning event is not
         # silently dropped from the day.
-        restricted_alts = [x for x in entries if x.get("eligibility")
+        restricted_alts = [x for x in entries if demographic_gate(x)
                            and (primary is None or x["event_no"] != primary["event_no"])]
         out.append(dict(date=d, dow=entries[0]["dow"] if entries else (restarts[0]["dow"] if restarts else ""),
                         entries=entries, restarts=restarts, primary=primary, fallbacks=fallbacks,
@@ -728,21 +758,45 @@ def num(v, dash=True):
 
 def p_index(events, days):
     cands = [e for e in events if e["group"] == "candidate"]
-    ranked = [e for e in cands if e["ratio"]]
+    # Only events anyone on the trip can enter are ranked. A 50+ or women-only event is a real
+    # event with a real guarantee, but ranking it first for a traveller who cannot enter it is
+    # not decision support - it is a wrong answer with a source link. They are listed separately.
+    restricted = [e for e in cands if demographic_gate(e)]
+    cands_open = [e for e in cands if not demographic_gate(e)]
+    ranked = [e for e in cands_open if e["ratio"]]
     ranked.sort(key=lambda e: -e["ratio"])
-    cheapest = sorted([e for e in cands if e["buy_in"]], key=lambda e: e["buy_in"])[:5]
+    cheapest = sorted([e for e in cands_open if e["buy_in"]], key=lambda e: e["buy_in"])[:5]
     cards = [
         ("Events in the series", len(events), "Venetian DeepStack Extravaganza IV, Nov 16 &ndash; Dec 23 2026"),
         ("Scheduled rows", len(sched.ROWS), "including 12 Day&nbsp;2 / Day&nbsp;3 restarts"),
         ("Structure sheets read", len(SHEETS), "all 37, every one read on %s" % RETRIEVED),
         ("Confirmed single-entry", 0, "no official sheet states a one-entry rule &mdash; see F-01"),
-        ("Best candidates", len(cands), "one-day, no bounty, no re-entry/add-on clause printed"),
+        ("Best candidates", len(cands), "%d open to any player, %d restricted by age/field; one-day, "
+         "no bounty, no re-entry/add-on clause printed" % (len(cands_open), len(restricted))),
         ("Poker suite rate", "from&nbsp;$119", "code EPOKR25, phone only &mdash; see hotels"),
     ]
     cardhtml = "".join(
         '<div class="card"><div class="k">%s</div><div class="v">%s</div><div class="s">%s</div></div>'
         % (k, v, s) for k, v, s in cards)
 
+    if restricted:
+        rrows = "".join(
+            "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a></td>"
+            "<td class='num'>$%s</td><td class='num'>%s</td><td>%s</td></tr>"
+            % (i + 1, e["event_no"], esc(e["name"][:64]), format(e["buy_in"], ","),
+               esc(e.get("gtd_text") or ("$%s" % format(e["gtd"], ",") if e.get("gtd") else "&mdash;")),
+               esc(demographic_gate(e)))
+            for i, e in enumerate(sorted(restricted, key=lambda x: -(x["ratio"] or 0))))
+        restricted_html = (
+            "<div class=\"panel\"><h2>Restricted candidates &mdash; confirmed entries you may not be "
+            "able to play</h2>\n<p class=\"note\">These events meet every other single-entry test, but the "
+            "official structure sheet restricts who may enter. They are listed here, with the sheet's own "
+            "wording, instead of being ranked against open events.</p><div class=\"tbl-scroll\"><table>"
+            "<thead><tr><th class=\"num\">#</th><th>Event</th><th class=\"num\">Entry</th>"
+            "<th class=\"num\">Guarantee</th><th>Restriction (official sheet)</th></tr></thead><tbody>"
+            + rrows + "</tbody></table></div></div>")
+    else:
+        restricted_html = ""
     top = "".join(
         "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a></td>"
         "<td class='num'>$%s</td><td class='num'>%s</td><td class='num'>%s</td>"
@@ -784,6 +838,9 @@ flights, award bounties, or pay out in seats.</p>
 
 <div class="grid2">
 <div class="panel"><h2>Best value among single-entry candidates</h2>
+<p class="note">Open to any player aged 21+ only. %(nres)d candidate event(s) are restricted by the
+official sheet (age 50+ or women-only) and are listed at the foot of this page rather than ranked
+against events you can actually enter.</p>
 <p class="note">Guarantee &divide; total entry fee, shown only where both figures are printed on the
 official documents. This is a <strong>descriptive ratio, not a forecast</strong> &mdash; a guarantee is
 a floor the room commits to, not a predicted pool. Bounty, multi-flight, satellite and team events are
@@ -804,6 +861,7 @@ excluded from this table on purpose: their guarantees are not like-for-like.</p>
 <p class="note"><a href="trip.html">Estimate the cost of a whole trip &rarr;</a></p>
 </div>
 </div>
+%(restricted_html)s
 
 <div class="panel"><h2>What is on this site</h2>
 <div class="grid2">
@@ -845,7 +903,8 @@ true-cost-per-night calculator.</li>
 </ul>
 </div>
 </div></div>
-""" % dict(ret=RETRIEVED, cards=cardhtml, top=top, cheap=cheap, n=len(events))
+""" % dict(ret=RETRIEVED, cards=cardhtml, top=top, cheap=cheap, n=len(events),
+                  nres=len(restricted), restricted_html=restricted_html)
     return page("Dashboard", body, "index.html")
 
 
@@ -891,7 +950,8 @@ def p_tournaments(events):
                       if e.get("flights") else "") + esc("; ".join(x for x in [
                     e["payout_pct"],
                     e["late_reg"] and ("late reg: " + e["late_reg"]),
-                    e["eligibility"],
+                    (("21+ with a Venetian Rewards card (property rule) -- " + e["eligibility"])
+                     if e["eligibility"] else None),
                 ] if x)),
                 search=esc((" ".join([e["name"], e["official_name"], str(e["event_no"]),
                                       e["group_label"]] + e.get("flights", []))).lower()),
@@ -1050,7 +1110,7 @@ def p_schedule(days, events):
                 "primary</span> %s</p>"
                 % (x["event_no"], esc(entry_title(x)[:64]), esc(x["start"]),
                    ("$" + format(x["buy_in"], ",")) if x["buy_in"] else "not published",
-                   esc(x["eligibility"]))
+                   esc(demographic_gate(x) or ""))
                 for x in d["restricted_alternatives"])
             lines.append("<div class='day'><h3>Also running &mdash; entry restricted</h3>%s"
                          "<p class='small'>Listed so the day is complete. It is never made the primary "

@@ -1193,7 +1193,7 @@ Everything else is either a source contradiction to watch or a dataset-hygiene n
 <p class="sm">Configuration: <code>scripts/check_sources.mjs</code> reads <code>site-data/sources.json</code> plus every
 structure-sheet URL in <code>site-data/events.json</code>, hashes each page, compares the tracked values, and writes
 <code>site-data/change-report.json</code>. It runs on a schedule in
-<a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/daily-refresh.yml">the refresh workflow</a>
+<a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/plan-refresh.yml">the refresh workflow</a>
 and can be triggered manually before a non-refundable payment.</p>
 </section>"""
     page("flagged.html", "Flagged for review", body)
@@ -1432,6 +1432,9 @@ def main():
     if check:
         stale = []
         for fname, txt in generated.items():
+            # Compare against THIS surface's own output directory. It was reading the repository
+            # root, which is the other generator's directory, so --check reported its own pages
+            # "stale" (and would have called the root dashboard fresh) no matter what was written.
             disk = os.path.join(OUT, fname)
             if not os.path.exists(disk) or open(disk, encoding="utf8").read() != txt:
                 stale.append(fname)

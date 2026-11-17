@@ -211,17 +211,43 @@ def changed_flag(url):
             return ' <span class="badge b-bad">source changed — re-check</span>'
     return ""
 
-def src_links(*urls):
-    out = []
-    labels = {"schedule": "schedule", "struct": "structure", "page": "page"}
-    i = 0
-    for u in urls:
-        if not u:
+_LABELS = (
+    (("/structures/", ".pdf"), "structure sheet"),
+    (("hotel-terms", "terms-and-conditions"), "hotel terms"),
+    (("resort-fee",), "resort-fee page"),
+    (("suite-rates",), "poker suite rates"),
+    (("/booking", "/book?"), "official booking engine"),
+    (("deepstack-extravaganza-poker-tournament/dse-",), "DSE IV schedule"),
+    (("/casino/poker",), "poker room page"),
+)
+
+
+def _label_for(u):
+    """Name a citation link after the document it actually points at, never after its position.
+
+    An earlier version labelled links by argument order ("schedule", then "structure"), so a row
+    whose first URL was a structure sheet printed "schedule" over a link to a .pdf, and any row
+    citing a single URL called it "schedule" whatever it was. A label that can name the wrong
+    kind of document is worse than no label, so the label is derived from the URL itself.
+    """
+    ul = (u or "").lower()
+    for needles, lbl in _LABELS:
+        if any(n in ul for n in needles):
+            return lbl
+    return "official page"
+
+
+def src_links(*urls, labels=None):
+    """Citation links. `labels` optionally overrides the derived label, by position."""
+    out, seen = [], set()
+    for i, u in enumerate(urls):
+        if not u or u in seen:
             continue
-        lbl = labels.get(["schedule", "struct", "page"][min(i, 2)], "source")
-        out.append(f'<a href="{esc(u)}" rel="noopener" target="_blank">{lbl}</a>')
-        i += 1
-    return " · ".join(out) if out else ""
+        seen.add(u)
+        lbl = labels[i] if labels and i < len(labels) and labels[i] else _label_for(u)
+        out.append(f'<a href="{esc(u)}" rel="noopener" target="_blank">{esc(lbl)}</a>')
+    return " \u00b7 ".join(out) if out else ""
+
 
 # ------------------------------------------------------------------ event table
 def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
@@ -362,8 +388,8 @@ def hotel_table(hotels, table_id, show_calc=True):
                             if quote.get("itemisation") else "")
                          + (f'<small class="excerpt note"><strong>Caveat:</strong> {esc(quote.get("caveat"))}</small>'
                             if quote.get("caveat") else "")
-                         + (f'<small class="note">true cost/night {money(quote.get("true_cost_per_night_usd"))} '
-                            f'before parking'
+                         + (f'<small class="note">true cost per night {money(quote.get("true_cost_per_night_usd"))} '
+                            f'(room + resort fee + tax, divided by the nights of this quote), before parking'
                             + (f'; parking is {money(_pk)}/day on top'
                                if (_pk := quote.get("parking_self_park_per_day_usd")) else "")
                             + '</small>'
@@ -466,7 +492,7 @@ def hotel_table(hotels, table_id, show_calc=True):
 <td>{esc(h.get('parking','')) or '—'}</td>
 <td>{calc}</td>
 <td>{walk_cell}</td>
-<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">{fee_when}</small></td>
+<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'), labels=('resort-fee terms', 'official booking engine'))} <small class="note">{fee_when}</small></td>
 </tr>""")
     head = ("<th>Hotel</th><th>Address</th><th>Dated quote / latest logged rate</th><th>Resort fee</th><th>Tax</th>"
             "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
@@ -1264,10 +1290,30 @@ before the primary began, or two events at different properties start within 30 
         return "".join(out)
     head_r = ("<th>Date</th><th>Venue</th><th>Event</th><th>Total entry fee</th><th>House fee</th>"
               "<th>Prize pool/entry</th><th>Guarantee</th><th>Pool ÷ fee</th><th>Sources</th>")
-    nlh_singles = [e for e in singles + ambiguous
-                   if e.get("gtd_ratio") and "bounty" not in " ".join(e.get("tags", []))]
-    bounty_singles = [e for e in singles + ambiguous
-                      if e.get("gtd_ratio") and "bounty" in " ".join(e.get("tags", []))]
+    def _demographic_gate(e):
+        """Restriction text when the official source limits WHO may enter, else None.
+
+        A live tournament plan that ranks a 50+ Seniors event first is wrong for any traveller
+        who is not 50+, however well-sourced the row is. `scripts/build-schedule.py` already
+        excludes these from the day plan; this table has to agree with it.
+        """
+        el = e.get("eligibility")
+        if isinstance(el, dict):
+            el = el.get("value") or el.get("excerpt") or ""
+        el = el or ""
+        if "50+" in el or "female" in el.lower() or el.startswith("Teams"):
+            return el
+        return None
+
+    _pool = singles + ambiguous
+    nlh_singles = [e for e in _pool
+                   if e.get("gtd_ratio") and "bounty" not in " ".join(e.get("tags", []))
+                   and not _demographic_gate(e)]
+    bounty_singles = [e for e in _pool
+                      if e.get("gtd_ratio") and "bounty" in " ".join(e.get("tags", []))
+                      and not _demographic_gate(e)]
+    restricted_singles = [e for e in _pool
+                          if e.get("gtd_ratio") and _demographic_gate(e)]
     body_r = f"""
 <h1>Descriptive ranking</h1>
 <div class="flag info"><strong>Read this first.</strong> “Pool ÷ fee” is a descriptive ratio of two published numbers
@@ -1279,12 +1325,17 @@ official sources. Bounty and multi-flight events are shown in separate tables be
 <h2>Bounty / PKO events — labeled separately</h2>
 <p class="note">For bounty events the published guarantee often includes total bounties (marked in the table where the structure sheet says so).</p>
 <table class="data"><thead><tr>{head_r}</tr></thead><tbody>{rank_rows(bounty_singles)}</tbody></table>
+<h2>Restricted field — you may not be able to enter</h2>
+<p class="note">These events pass every other test, but the official document restricts who may play (age 50+ or a women-only field).
+They are listed rather than ranked, because a first-place ranking you cannot buy into is not a plan ({len(restricted_singles)} event(s)).</p>
+<table class="data"><thead><tr>{head_r}</tr></thead><tbody>{rank_rows(restricted_singles)}</tbody></table>
 <h2>Not ranked here</h2>
 <ul class="tight">
 <li><strong>Spend-more events ({len(spend)}):</strong> cost to enter is not a single number when re-entry/rebuy/add-ons exist. See <a href="tournaments.html">Tournaments</a> filtered to “Spend-more”.</li>
 <li><strong>Multi-flight events ({len(multiflight)}):</strong> guarantee is shared across flights; per-flight entry ≠ per-event cost.</li>
 <li><strong>Satellites ({len(satellites)}) / team events ({len(teams)}):</strong> prizes are seats; or the unit is a team.</li>
 <li><strong>Unverified rows ({len(unverified)}):</strong> ranking requires confirmed fee and guarantee.</li>
+<li><strong>Restricted-field rows ({len(restricted_singles)}):</strong> the official source limits who may enter, so they are listed apart from the open ranking.</li>
 </ul>"""
 
     # ---------------- rules ----------------
