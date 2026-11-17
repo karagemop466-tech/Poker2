@@ -54,15 +54,14 @@ target="_blank" rel="noopener">County guide (PDF)</a> ·
 target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
-<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
-rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
-a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
+<p><strong>No dated room quote has been captured yet.</strong> Every official booking page reached so far showed no nightly price to a non-browser fetch: the first rendered prices as <code>$XXX</code>
+behind a cookie wall, and the second returned a page with no rates. The log below records each <em>attempt</em> rather than a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
 parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
-<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
-target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
-<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
-was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
-hotel and poker room are in the table above so each pair can be checked directly.</p></div>
+<ul class="tight"><li><strong>The Venetian</strong>, 2026-11-27 → 2026-12-02, 2 adults (logged 2026-11-16): The official booking calendar rendered every nightly price as &#x27;$XXX&#x27; to a non-browser fetch, so no dated rate could be read. <a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&amp;arrival_date=2026-11-27&amp;children%5B%5D=0&amp;departure_date=2026-12-02&amp;view=calendar" target="_blank" rel="noopener">booking link ↗</a></li><li><strong>The Venetian</strong>, 2026-12-07 → 2026-12-09, 2 adults (logged 2026-11-17): The booking URL returned the &#x27;Reservations | The Venetian Resort Las Vegas&#x27; page, which shows the rewards sign-in and tier table only. No nightly rate, resort-fee line or checkout total was rendered, so no rate is recorded. <a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&amp;arrival_date=2026-12-07&amp;children%5B%5D=0&amp;departure_date=2026-12-09&amp;view=calendar" target="_blank" rel="noopener">booking link ↗</a></li></ul>
+<p><strong>Walking to the Venetian poker room was measured on Google Maps for 9 hotels (2026-11-17).</strong>
+Each value is the first walking route Google lists for the official street address; 5 of 9 are within 30 minutes.
+The Venetian's own pair is the destination property and was not queried. Walking times to Wynn and the other venues are still unverified,
+and no official property page publishes a walk time. Official street addresses for every hotel and poker room are in the table above.</p></div>
 <div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="tbl-hotels">
 <select data-bind-date="tbl-hotels"><option value="">All dates</option></select>
@@ -82,7 +81,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/book" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-cat="hotel" data-walk-ok="0">
+<tr data-cat="hotel" data-walk-ok="1">
 <td><strong>The Palazzo at The Venetian</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3325 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
 <td>$209 <small class="note">from-price, conditional poker player rate · logged 2026-11-16</small></td><td>$55 /night<small class="note">$55 plus applicable tax per night (official resort-fee page, shared with Venetian)</small></td><td>13.38%<small class="note">Same Clark County room tax disclosure as The Venetian.</small></td>
@@ -90,10 +89,10 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="20.0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-good">7 min to Venetian · within 30</span> <small class="note">Google Maps walking route, 2026-11-17, 0.2 mi, via unnamed roads · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html" rel="noopener" target="_blank">schedule</a> · <a href="https://www.venetianlasvegas.com/book" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-cat="hotel" data-walk-ok="0">
+<tr data-cat="hotel" data-walk-ok="1">
 <td><strong>Wynn Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3131 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
 <td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per room night (official resort-information page)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
@@ -101,7 +100,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-good">26 min to Venetian · within 30</span> <small class="note">Google Maps walking route, 2026-11-17, 1.1 mi, via Encore Resort Blvd · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.wynnlasvegas.com/about-us/resort-information" rel="noopener" target="_blank">schedule</a> · <a href="https://www.wynnlasvegas.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
@@ -112,10 +111,10 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-bad">42 min to Venetian · over 30 min</span> <small class="note">Google Maps walking route, 2026-11-17, 1.8 mi, via Las Vegas Blvd S · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://aria.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-cat="hotel" data-walk-ok="0">
+<tr data-cat="hotel" data-walk-ok="1">
 <td><strong>Bellagio</strong><small class="note">Strip</small></td>
 <td>3600 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
 <td><span class="badge b-warn">no dated quote</span></td><td>$55 /night<small class="note">$55 plus tax per night; $50 plus tax extra occupant (official terms)</small></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
@@ -123,7 +122,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="55.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-good">26 min to Venetian · within 30</span> <small class="note">Google Maps walking route, 2026-11-17, 1.1 mi, via Las Vegas Blvd S · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://bellagio.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
@@ -134,10 +133,10 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="50.0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-bad">45 min to Venetian · over 30 min</span> <small class="note">Google Maps walking route, 2026-11-17, 2.0 mi, via Las Vegas Blvd S · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://mgmgrand.mgmresorts.com/en/hotel.html" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-cat="hotel" data-walk-ok="0">
+<tr data-cat="hotel" data-walk-ok="1">
 <td><strong>Horseshoe Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3645 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
 <td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms do not print a rate.</small></td>
@@ -145,10 +144,10 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-good">24 min to Venetian · within 30</span> <small class="note">Google Maps walking route, 2026-11-17, 1.0 mi, via Las Vegas Blvd S · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=BLV" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-cat="hotel" data-walk-ok="0">
+<tr data-cat="hotel" data-walk-ok="1">
 <td><strong>Caesars Palace</strong><small class="note">Strip (venue hotel)</small></td>
 <td>3570 S. Las Vegas Blvd, Las Vegas, NV 89109</td>
 <td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax 13.38% (county licensing guide; corroborated by The Venetian&#x27;s and The Cosmopolitan&#x27;s hotel terms). The property&#x27;s own terms say “plus tax” without printing the rate.</small></td>
@@ -156,7 +155,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="0" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-good">25 min to Venetian · within 30</span> <small class="note">Google Maps walking route, 2026-11-17, 1.0 mi, via Mystère Dreams Ave · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=CP" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
@@ -167,7 +166,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="49.99" data-tax="0.1338" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-bad">34 min to Venetian · over 30 min</span> <small class="note">Google Maps walking route, 2026-11-17, 1.4 mi, via Convention Center Dr · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3000+Paradise+Rd,+Las+Vegas,+NV+89109&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"><a href="https://www.westgateresorts.com/terms-and-conditions/" rel="noopener" target="_blank">schedule</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
@@ -178,7 +177,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <td><div data-hotel-calc data-fee="0" data-tax="0.13" data-parking="0">
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div></td>
-<td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
+<td><span class="badge b-bad">185 min to Venetian · over 30 min</span> <small class="note">Google Maps walking route, 2026-11-17, 8.2 mi, via Las Vegas Blvd S · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=9777+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89183&amp;destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">route ↗</a></small><br><a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
 <td class="src"> <small class="note">checked 2026-11-17</small></td>
 </tr></tbody></table>
 <h2>Dated rate logs</h2>
@@ -186,7 +185,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
-<li>Verified walking times per hotel–venue pair (30-minute limit). Use the maps links in each row to capture them.</li>
+<li>Walking times to Wynn and the other venues (30-minute limit). The Venetian pair is measured for 9 hotels above.</li>
 <li>Official resort-fee amounts for Caesars properties (shown in the official booking flow at checkout; Diamond+ waives).</li>
 </ul>
 <p class="note">The trip calculator on the <a href="planner.html">Trip Planner</a> uses the same formula, per hotel, over your stay.</p></div>

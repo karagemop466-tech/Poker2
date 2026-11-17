@@ -342,6 +342,64 @@ for t in gn["times"]:
         notes="Downtown location (Fremont Street), not the Strip. Buy-in is not printed on the official page \u2014 left blank.",
     )
 
+# ------------------------------------------------- Bellagio weekly events (official PDFs, read 2026-11-17)
+BEL_FRI = "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+BEL_SAT = "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+BEL_SUN = "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+BEL_PAGE = "https://bellagio.mgmresorts.com/en/casino/poker.html"
+add_event(
+    id="BEL-FRI-600", venue_id="bellagio", venue="Bellagio",
+    name="NLH $600 buy-in (Fridays 11:00 AM)", game="NLH",
+    date="Recurring (Fridays; no calendar dates printed)", start="11:00 AM",
+    buy_in=600, fee=90, pool_per_entry=510, gtd=None,
+    format="recurring", category="spend-more", tags=["recurring", "re-entry", "gratuity-chips"],
+    chips=30000, level_min=30, late_reg="Re-entry through the end of level 8 (including break)",
+    rules=dict(single_entry="no \u2014 re-entry allowed through the end of level 8 (official PDF rule 03)",
+               re_entry="allowed: buy in and re-enter through the end of level 8 (including break)",
+               add_on="voluntary $40 staff gratuity at registration = 15,000 extra chips (not a prize-pool deduction)",
+               fee_text="$510 prize pool + $50 house fee + $40 optional staff gratuity = $600 (rule 05); the gratuity is withheld from the prize pool and buys 15,000 chips",
+               excerpt=("Rule 03: 'Players may buy-in and re-enter through the end of level 8 (Including Break).' "
+                        "Rule 05: 'The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.' "
+                        "Rule 07: 'The voluntary staff gratuity will grant players an extra 15,000 chips.'"),
+               retrieved="2026-11-17"),
+    last_checked="2026-11-17", source_url=BEL_FRI, struct_url=BEL_FRI,
+    notes=("Official PDF, undated (no year printed). The poker page lists it as 'FRIDAYS | $600 NLH' with no date. "
+           "Re-entry and paid chips make it a spend-advantage event, excluded from the single-entry ranking."),
+)
+add_event(
+    id="BEL-SUN-400", venue_id="bellagio", venue="Bellagio",
+    name="$400 H.O.R.S.E. (Sundays 11:00 AM)", game="H.O.R.S.E.",
+    date="Recurring (Sundays; no calendar dates printed)", start="11:00 AM",
+    buy_in=400, fee=60, pool_per_entry=340, gtd=None,
+    format="recurring", category="spend-more", tags=["recurring", "re-entry", "gratuity-chips"],
+    chips=30000, level_min=30, late_reg="Re-entry through the end of level 8 (including break)",
+    rules=dict(single_entry="no \u2014 re-entry allowed through the end of level 8 (official PDF rule 05)",
+               re_entry="allowed: buy in and re-enter through the end of level 8 (including break)",
+               add_on="voluntary $25 staff gratuity at registration = 15,000 extra chips (not a prize-pool deduction)",
+               fee_text="$340 prize pool + $35 house fee + $25 optional staff gratuity = $400 (rule 01); the gratuity is withheld from the prize pool and buys 15,000 chips",
+               excerpt=("Rule 01: 'The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.' "
+                        "Rule 05: 'Players may buy-in and re-enter through the end of level 8 (Including Break).'"),
+               retrieved="2026-11-17"),
+    last_checked="2026-11-17", source_url=BEL_SUN, struct_url=BEL_SUN,
+    notes=("Official PDF, undated (no year printed). Re-entry plus a paid gratuity that buys extra chips: excluded from the "
+           "single-entry ranking. Same figures as the earlier read on 2026-11-16."),
+)
+add_event(
+    id="BEL-SAT-1000", venue_id="bellagio", venue="Bellagio",
+    name="NLH (Saturdays 11:00 AM) \u2014 buy-in unverified", game="NLH",
+    date="Recurring (Saturdays; PDF names 'Combined Final Day 2 (9/13/26)')", start="11:00 AM",
+    buy_in=None, fee=None, pool_per_entry=None, gtd=None,
+    format="recurring", category="unverified", tags=["recurring", "multi-flight"],
+    chips=None, level_min=None, late_reg="Registration open until the start of Level 10 (rule 03)",
+    rules=dict(single_entry="unverified", re_entry="unverified", add_on="unverified",
+               excerpt=("Heading: 'NLH $1100 BUY-IN'. Rule 07: 'Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.' "
+                        "Rule 03: 'Registration will be open until the start of Level 10.' Rule 04: 'Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio.'"),
+               retrieved="2026-11-17"),
+    last_checked="2026-11-17", source_url=BEL_SAT, struct_url=BEL_SAT,
+    notes=("The official Saturday PDF contradicts itself: the heading says $1,100, the poker-page link says $1,000, rule 07 "
+           "quotes a $600 buy-in, and the Day 2 date is 9/13/26. No buy-in, guarantee or entry rule is taken from it."),
+)
+
 # ------------------------------------------------------------------- hotels
 def walk_links(address, hotel):
     dest_ven = "The Venetian Poker Room, 3355 S Las Vegas Blvd, Las Vegas, NV"
@@ -356,6 +414,8 @@ def walk_links(address, hotel):
 hotels = []
 hmap = {}
 
+GOOGLE_WALK = {r["hotel_id"]: r for r in load("data/walk-googlemaps-2026-11-17.json")["rows"]}
+
 def add_hotel(**kw):
     kw.setdefault("rate_log", [])
     kw.setdefault("parking", "")
@@ -368,6 +428,14 @@ def add_hotel(**kw):
     kw["walk"] = dict(venetian_min=None, wynn_min=None,
                       status="UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
                       **walk_links(kw.get("address", ""), kw.get("name", "")))
+    gw = GOOGLE_WALK.get(kw["id"])
+    if gw:
+        kw["walk"].update(
+            venetian_min=gw["walk_min"], venetian_miles=gw["walk_miles"],
+            venetian_within_30=gw["within_30_min"], venetian_source=gw["url"],
+            venetian_checked=gw["fetched"], venetian_route=gw["route"],
+            status=("Venetian pair: Google Maps walking route, read 2026-11-17 (" + str(gw["walk_min"]) + " min). "
+                    "Other venue pairs UNVERIFIED."))
     hotels.append(kw)
     hmap[kw["id"]] = kw
 
@@ -520,6 +588,35 @@ flags += [
          where="All hotel rows",
          detail="No official walking-time source and no dated checkout quote have been captured. Walk minutes and checkout totals are blank; use the official booking links and maps links to capture them for exact trip dates before booking.",
          url=""),
+    dict(source="arena/90300c52-poker2", item="Bellagio poker page carries a stale 2025 notice",
+         where="Bellagio poker page, 'Please Note' box",
+         detail=("The page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot "
+                 "Tournament at 2 PM PT.' July 26 fell on a Saturday in 2025 and on a Sunday in 2026, so the notice is out of date. "
+                 "Not used to date any event. Ask the poker room for the current weekly schedule."),
+         url=BEL_PAGE),
+    dict(source="arena/90300c52-poker2", item="Bellagio weekly PDFs carry no year and no calendar dates",
+         where="Bellagio Friday, Saturday and Sunday tournament PDFs",
+         detail=("The three weekly PDFs say only 'Fridays', 'Saturdays' and 'Sundays'. The Saturday PDF's Day 2 is dated '9/13/26' "
+                 "in a document with no other year. Recurring rows therefore have no calendar date and cannot be placed on a trip day."),
+         url=BEL_SAT),
+    dict(source="arena/90300c52-poker2", item="Walking-time coordinates differ from the Google address label",
+         where="data/site/walking.json (routing estimates) vs data/walk-googlemaps-2026-11-17.json",
+         detail=("The OpenStreetMap routing estimates use coordinates for the Venetian origin (36.1217073, -115.1693352). Google labels "
+                 "those coordinates '3377 S Las Vegas Blvd #2100', not the published 3355 S. Las Vegas Blvd. The Google values on the "
+                 "hotel table use the published street addresses instead. For the same coordinate pair (origin above to the walk.json Wynn "
+                 "coordinate) the routed estimate is 18.8 min and Google gives 20 min (0.9 mi); the Google figures are the ones shown on the hotel table."),
+         url="https://www.google.com/maps/dir/?api=1&origin=36.1217073,-115.1693352&destination=36.1294358,-115.1648801&travelmode=walking"),
+    dict(source="arena/90300c52-poker2", item="Poker room location versus the walking destination",
+         where="Venetian poker room; Google walking destination 3355 S. Las Vegas Blvd",
+         detail=("The official poker-room page says the room is on level 2 of Grand Canal Shoppes in The Palazzo. The walking values use "
+                 "The Venetian's address (3355 S. Las Vegas Blvd) as destination, while the Palazzo's address is 3325 S. Las Vegas Blvd. "
+                 "Route times for hotels on the Palazzo side may differ by a few minutes; the room's own directions are the authority."),
+         url="https://www.venetianlasvegas.com/resort/casino/poker.html"),
+    dict(source="arena/90300c52-poker2", item="Venetian room-rate lookup still returns no rates",
+         where="Venetian booking calendar (second attempt 2026-11-17)",
+         detail=("A dated booking URL for 7-9 Dec 2026 (2 adults) returned the 'Reservations' page with no nightly rate, resort-fee line or "
+                 "checkout total. No room rate is entered. The dated-quote requirement stays open."),
+         url="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-12-07&children%5B%5D=0&departure_date=2026-12-09&view=calendar"),
     dict(source="arena/8234a824-poker2", item="Venetian poker-rate wording ambiguity",
          where="Venetian resort-fee page vs poker-suite-rate page",
          detail="The resort-fee page says \u2018Rates include a daily Resort Fee of $55 plus tax\u2019 while the poker-rate page lists the fee separately in its conditions; exact meaning for the poker offer should be confirmed at reservation.",
@@ -573,6 +670,12 @@ master["westgate_resort_fee_conflict"] = E1C["westgate_resort_fee_conflict"]
 master["caesars_resort_fee_range"] = E1C["caesars_resort_fee_range"]
 master["walking_check"] = E1C["walking_check"]
 master["rate_log_e1c"] = E1C["rate_log"]
+master["rate_log_e1c"].setdefault("attempts", []).append(dict(
+    hotel="The Venetian", check_in="2026-12-07", check_out="2026-12-09", occupancy=2,
+    result=("The booking URL returned the 'Reservations | The Venetian Resort Las Vegas' page, which shows the rewards "
+            "sign-in and tier table only. No nightly rate, resort-fee line or checkout total was rendered, so no rate is recorded."),
+    url="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-12-07&children%5B%5D=0&departure_date=2026-12-09&view=calendar",
+    logged="2026-11-17"))
 master["venetian_series_label"] = E1C["venetian_series_label"]
 
 # rooms that host tournaments but had no hotel record yet (official fee/hours from
@@ -1080,6 +1183,19 @@ ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
 master["as_of"] = LAST_VERIFIED
+# Google Maps walking values (data/walk-googlemaps-2026-11-17.json): applied to every hotel record,
+# whichever path created it, so no hotel is left out of the measured set.
+for _h in hotels:
+    _gw = GOOGLE_WALK.get(_h["id"])
+    if _gw and (_h.get("walk") or {}).get("venetian_min") is None:
+        _h.setdefault("walk", {})
+        _h["walk"].update(
+            venetian_min=_gw["walk_min"], venetian_miles=_gw["walk_miles"],
+            venetian_within_30=_gw["within_30_min"], venetian_source=_gw["url"],
+            venetian_checked=_gw["fetched"], venetian_route=_gw["route"],
+            status=("Venetian pair: Google Maps walking route, read 2026-11-17 (" + str(_gw["walk_min"]) + " min). "
+                    "Other venue pairs UNVERIFIED."))
+
 with open(os.path.join(ROOT, "data/master.json"), "w") as f:
     json.dump(master, f, indent=1, sort_keys=False)
 print("data/master.json written: %d events, %d hotels, %d flags"

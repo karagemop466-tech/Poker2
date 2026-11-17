@@ -14,7 +14,17 @@ def load(p, default=None):
     with open(path) as f:
         return json.load(f)
 
+from html import escape as _esc
 master = load("data/master.json")
+GW_HOTELS = [h for h in master["hotels"] if (h.get("walk") or {}).get("venetian_min") is not None]
+GW_WITHIN = sum(1 for h in GW_HOTELS if h["walk"].get("venetian_within_30"))
+GW_CHECKED = ", ".join(sorted({h["walk"]["venetian_checked"] for h in GW_HOTELS})) or "not measured"
+_ATT = (master.get("rate_log_e1c") or {}).get("attempts") or []
+attempts_html = "".join(
+    f'<li><strong>{_esc(a.get("hotel",""))}</strong>, {_esc(a.get("check_in",""))} → {_esc(a.get("check_out",""))}, '
+    f'{a.get("occupancy","")} adults (logged {_esc(a.get("logged",""))}): {_esc(a.get("result",""))} '
+    f'<a href="{_esc(a.get("url",""))}" target="_blank" rel="noopener">booking link ↗</a></li>'
+    for a in _ATT)
 monitor = load("data/source_monitor.json", {"urls": []})
 AS_OF = master.get("as_of") or "2026-11-16"
 
@@ -203,10 +213,21 @@ def hotel_table(hotels, table_id, show_calc=True):
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div>"""
         walk = h.get("walk", {})
-        walk_cell = (f'<span class="badge b-warn">unverified</span> '
+        if walk.get("venetian_min") is not None:
+            ok = bool(walk.get("venetian_within_30"))
+            walk_head = (f'<span class="badge {"b-good" if ok else "b-bad"}">{walk["venetian_min"]} min to Venetian · '
+                         f'{"within 30" if ok else "over 30 min"}</span> '
+                         f'<small class="note">Google Maps walking route, {esc(walk.get("venetian_checked",""))}, '
+                         f'{walk.get("venetian_miles")} mi, {esc(walk.get("venetian_route",""))} · '
+                         f'<a href="{esc(walk.get("venetian_source",""))}" target="_blank" rel="noopener">route ↗</a></small><br>')
+            walk_ok = "1" if ok else "0"
+        else:
+            walk_head = '<span class="badge b-warn">unverified</span> '
+            walk_ok = "0"
+        walk_cell = (walk_head +
                      f'<a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">walk to Venetian ↗</a> · '
                      f'<a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">walk to Wynn ↗</a>')
-        rows.append(f"""<tr data-cat="hotel" data-walk-ok="0">
+        rows.append(f"""<tr data-cat="hotel" data-walk-ok="{walk_ok}">
 <td><strong>{esc(h['name'])}</strong><small class="note">{esc(h.get('area',''))}</small></td>
 <td>{esc(h.get('address',''))}</td>
 <td>{rate_cell}</td><td>{fee_cell}</td><td>{tax_cell}</td>
@@ -425,7 +446,7 @@ primary event and adds a conditional evening fallback instead of an impossible s
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
 <li><strong>Do not mix in spend-more events</strong> without budgeting re-entries/add-ons: Wynn WPT re-entry events, Wynn Friday $240 rebuy, Caesars Palace $50 add-on, Golden Nugget re-entries/add-ons.</li>
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
-<li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
+<li><strong>Walking to the Venetian poker room is measured for {len(GW_HOTELS)} hotels</strong> (Google Maps walking routes, read {GW_CHECKED}); {GW_WITHIN} are within 30 minutes. Walking times to the other venues remain unverified.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
 </ul></div>
 <div class="panel"><h2>Findings, each with the official document behind it</h2>
@@ -525,7 +546,7 @@ The official Wynn poker page states the daily slate is suspended during Wynn Sig
                     lead="Recurring daily No Limit Hold'em events.",
                     hotel_ids=("H-MGM",)),
         "bellagio": dict(slug="venue-bellagio.html", title="Bellagio",
-                         lead="Recurring daily events; Friday $600 and weekend schedules.",
+                         lead="Weekly official events: Friday $600 NLH and Sunday $400 H.O.R.S.E. allow re-entry through level 8 and sell extra chips; Saturday NLH is unverified. No calendar dates are printed.",
                          hotel_ids=("H-BEL",)),
         "gn": dict(slug="venue-goldennugget.html", title="Golden Nugget (downtown)",
                              lead=("Downtown Las Vegas \u2014 outside the Strip walking scope, kept for completeness. "
@@ -578,15 +599,14 @@ target="_blank" rel="noopener">County guide (PDF)</a> ·
 target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
 <div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
-<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
-rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
-a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
+<p><strong>No dated room quote has been captured yet.</strong> Every official booking page reached so far showed no nightly price to a non-browser fetch: the first rendered prices as <code>$XXX</code>
+behind a cookie wall, and the second returned a page with no rates. The log below records each <em>attempt</em> rather than a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
 parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
-<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
-target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
-<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
-was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
-hotel and poker room are in the table above so each pair can be checked directly.</p></div>
+<ul class="tight">{attempts_html}</ul>
+<p><strong>Walking to the Venetian poker room was measured on Google Maps for {len(GW_HOTELS)} hotels ({GW_CHECKED}).</strong>
+Each value is the first walking route Google lists for the official street address; {GW_WITHIN} of {len(GW_HOTELS)} are within 30 minutes.
+The Venetian's own pair is the destination property and was not queried. Walking times to Wynn and the other venues are still unverified,
+and no official property page publishes a walk time. Official street addresses for every hotel and poker room are in the table above.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
 <h2>Dated rate logs</h2>
@@ -594,7 +614,7 @@ hotel and poker room are in the table above so each pair can be checked directly
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
-<li>Verified walking times per hotel–venue pair (30-minute limit). Use the maps links in each row to capture them.</li>
+<li>Walking times to Wynn and the other venues (30-minute limit). The Venetian pair is measured for {len(GW_HOTELS)} hotels above.</li>
 <li>Official resort-fee amounts for Caesars properties (shown in the official booking flow at checkout; Diamond+ waives).</li>
 </ul>
 <p class="note">The trip calculator on the <a href="planner.html">Trip Planner</a> uses the same formula, per hotel, over your stay.</p></div>"""
@@ -837,7 +857,7 @@ booking/registration decision needs. Suggestions for discovering the missing inf
 <tbody>{q_rows}</tbody></table>
 <div class="panel"><h2>Added by this session</h2><ul class="tight">
 <li><strong>Q-A:</strong> What is the dated checkout total (with tax and resort fee) for the exact trip dates at Venetian, Palazzo and Wynn? — Open. Use the official booking links on the <a href="hotels.html">hotels page</a>; log the quote with its timestamp in the rate log.</li>
-<li><strong>Q-B:</strong> What are the verified walking times between each hotel and each venue (30-minute limit)? — Open. Use the per-row Google Maps walking links and record the minutes.</li>
+<li><strong>Q-B:</strong> What are the verified walking times between each hotel and each venue (30-minute limit)? — Partly answered: the Venetian poker room pair is measured on Google Maps for {len(GW_HOTELS)} hotels ({GW_CHECKED}). Wynn and the other venues remain open; use the per-row Google Maps links and record the minutes.</li>
 <li><strong>Q-C:</strong> Do the Venetian DSE sheets’ “no re-entry clause” silence and the Valuetown “subsequent buy in’s” note mean unlimited re-entry is allowed after all? — Open. Only the poker room can settle it (flag IR-8234-01/02).</li>
 <li><strong>Q-D:</strong> Which Caesars Palace daily buy-in figure is current — $100 (official guide) or $160 at 2 PM/9 PM (official flyer)? — Open; two official sources disagree.</li>
 <li><strong>Q-E:</strong> What are the Horseshoe and MGM Grand daily buy-ins and guarantees? — Open; not published on their official pages (Horseshoe) or only on the weekly PDF (MGM).</li>

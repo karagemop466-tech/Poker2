@@ -1,0 +1,119 @@
+{
+  "as_of": "2026-11-17",
+  "method": "Each row is the first walking route listed by Google Maps directions (travelmode=walking) for the origin hotel address to the destination address, read with the page reader on 2026-11-17. Google's route list shows the walking duration and distance for each alternative; the first (fastest) alternative is recorded. Google's default departure text on the page is 'Mon, Nov 16', so the figure is a walking-route estimate from Google, not a time-of-day measurement; walking routes are not traffic-dependent. Addresses are the official street addresses used in data/site/walking.json, not re-verified against each property page in this pass.",
+  "destination_used": "3355 S. Las Vegas Blvd, Las Vegas, NV 89109 (The Venetian's published address). The official Venetian poker-room page places the room on level 2 of Grand Canal Shoppes in The Palazzo (https://www.venetianlasvegas.com/resort/casino/poker.html); the Palazzo address (3325 S. Las Vegas Blvd) is the nearer published address and was not used as the destination.",
+  "limit_min": 30,
+  "rows": [
+    {
+      "hotel_id": "H-PAL",
+      "hotel": "The Palazzo at The Venetian",
+      "origin_address": "3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 7,
+      "walk_miles": 0.2,
+      "route": "via unnamed roads",
+      "alternatives": "8 min, 0.3 mi (unnamed roads)",
+      "within_30_min": true,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-WYN",
+      "hotel": "Wynn Las Vegas",
+      "origin_address": "3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 26,
+      "walk_miles": 1.1,
+      "route": "via Encore Resort Blvd",
+      "alternatives": "30 min, 1.2 mi (via Las Vegas Blvd S)",
+      "within_30_min": true,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-ARIA",
+      "hotel": "ARIA Resort & Casino",
+      "origin_address": "3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 42,
+      "walk_miles": 1.8,
+      "route": "via Las Vegas Blvd S",
+      "alternatives": "55 min, 2.4 mi (via Frank Sinatra Dr); 55 min, 2.4 mi (via Frank Sinatra Dr and Jay Sarno Wy)",
+      "within_30_min": false,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-BEL",
+      "hotel": "Bellagio",
+      "origin_address": "3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 26,
+      "walk_miles": 1.1,
+      "route": "via Las Vegas Blvd S",
+      "alternatives": "35 min, 1.4 mi (via Sands Ave)",
+      "within_30_min": true,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-MGM",
+      "hotel": "MGM Grand",
+      "origin_address": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 45,
+      "walk_miles": 2.0,
+      "route": "via Las Vegas Blvd S",
+      "alternatives": "49 min, 2.1 mi (via Koval Ln); 50 min, 2.2 mi (via Koval Ln and Sands Ave)",
+      "within_30_min": false,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-HS",
+      "hotel": "Horseshoe Las Vegas",
+      "origin_address": "3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 24,
+      "walk_miles": 1.0,
+      "route": "via Las Vegas Blvd S",
+      "alternatives": "30 min, 1.3 mi (via Krueger Dr)",
+      "within_30_min": true,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-CZP",
+      "hotel": "Caesars Palace",
+      "origin_address": "3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+      "walk_min": 25,
+      "walk_miles": 1.0,
+      "route": "via Mystère Dreams Ave",
+      "alternatives": "28 min, 1.2 mi (via Jay Sarno Wy)",
+      "within_30_min": true,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-WG",
+      "hotel": "Westgate Las Vegas Resort & Casino",
+      "origin_address": "3000 Paradise Rd, Las Vegas, NV 89109",
+      "walk_min": 34,
+      "walk_miles": 1.4,
+      "route": "via Convention Center Dr",
+      "alternatives": "40 min, 1.7 mi (via Las Vegas Blvd S)",
+      "within_30_min": false,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=3000+Paradise+Rd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    },
+    {
+      "hotel_id": "H-SP",
+      "hotel": "South Point Hotel, Casino & Spa",
+      "origin_address": "9777 S. Las Vegas Blvd, Las Vegas, NV 89183",
+      "walk_min": 185,
+      "walk_miles": 8.2,
+      "route": "via Las Vegas Blvd S",
+      "alternatives": "3 hr 17 min, 8.9 mi (via Las Vegas Blvd S and Koval Ln); 3 hr 19 min, 9.0 mi (via Las Vegas Blvd S and Frank Sinatra Dr)",
+      "within_30_min": false,
+      "url": "https://www.google.com/maps/dir/?api=1&origin=9777+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89183&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+      "fetched": "2026-11-17"
+    }
+  ],
+  "not_measured": [
+    {"hotel_id": "H-VEN", "reason": "The Venetian is the destination property; no route was requested."}
+  ]
+}

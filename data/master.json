@@ -6040,6 +6040,121 @@
    "bounty": null,
    "total_entry_fee": null,
    "gtd_ratio": null
+  },
+  {
+   "id": "BEL-FRI-600",
+   "venue_id": "bellagio",
+   "venue": "Bellagio",
+   "name": "NLH $600 buy-in (Fridays 11:00 AM)",
+   "game": "NLH",
+   "date": "Recurring (Fridays; no calendar dates printed)",
+   "start": "11:00 AM",
+   "buy_in": 600,
+   "fee": 90,
+   "pool_per_entry": 510,
+   "gtd": null,
+   "format": "recurring",
+   "category": "spend-more",
+   "tags": [
+    "recurring",
+    "re-entry",
+    "gratuity-chips"
+   ],
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "Re-entry through the end of level 8 (including break)",
+   "rules": {
+    "single_entry": "no \u2014 re-entry allowed through the end of level 8 (official PDF rule 03)",
+    "re_entry": "allowed: buy in and re-enter through the end of level 8 (including break)",
+    "add_on": "voluntary $40 staff gratuity at registration = 15,000 extra chips (not a prize-pool deduction)",
+    "fee_text": "$510 prize pool + $50 house fee + $40 optional staff gratuity = $600 (rule 05); the gratuity is withheld from the prize pool and buys 15,000 chips",
+    "excerpt": "Rule 03: 'Players may buy-in and re-enter through the end of level 8 (Including Break).' Rule 05: 'The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.' Rule 07: 'The voluntary staff gratuity will grant players an extra 15,000 chips.'",
+    "retrieved": "2026-11-17"
+   },
+   "last_checked": "2026-11-17",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "struct_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "notes": "Official PDF, undated (no year printed). The poker page lists it as 'FRIDAYS | $600 NLH' with no date. Re-entry and paid chips make it a spend-advantage event, excluded from the single-entry ranking.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": 600,
+   "gtd_ratio": null
+  },
+  {
+   "id": "BEL-SUN-400",
+   "venue_id": "bellagio",
+   "venue": "Bellagio",
+   "name": "$400 H.O.R.S.E. (Sundays 11:00 AM)",
+   "game": "H.O.R.S.E.",
+   "date": "Recurring (Sundays; no calendar dates printed)",
+   "start": "11:00 AM",
+   "buy_in": 400,
+   "fee": 60,
+   "pool_per_entry": 340,
+   "gtd": null,
+   "format": "recurring",
+   "category": "spend-more",
+   "tags": [
+    "recurring",
+    "re-entry",
+    "gratuity-chips"
+   ],
+   "chips": 30000,
+   "level_min": 30,
+   "late_reg": "Re-entry through the end of level 8 (including break)",
+   "rules": {
+    "single_entry": "no \u2014 re-entry allowed through the end of level 8 (official PDF rule 05)",
+    "re_entry": "allowed: buy in and re-enter through the end of level 8 (including break)",
+    "add_on": "voluntary $25 staff gratuity at registration = 15,000 extra chips (not a prize-pool deduction)",
+    "fee_text": "$340 prize pool + $35 house fee + $25 optional staff gratuity = $400 (rule 01); the gratuity is withheld from the prize pool and buys 15,000 chips",
+    "excerpt": "Rule 01: 'The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.' Rule 05: 'Players may buy-in and re-enter through the end of level 8 (Including Break).'",
+    "retrieved": "2026-11-17"
+   },
+   "last_checked": "2026-11-17",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "struct_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "notes": "Official PDF, undated (no year printed). Re-entry plus a paid gratuity that buys extra chips: excluded from the single-entry ranking. Same figures as the earlier read on 2026-11-16.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": 400,
+   "gtd_ratio": null
+  },
+  {
+   "id": "BEL-SAT-1000",
+   "venue_id": "bellagio",
+   "venue": "Bellagio",
+   "name": "NLH (Saturdays 11:00 AM) \u2014 buy-in unverified",
+   "game": "NLH",
+   "date": "Recurring (Saturdays; PDF names 'Combined Final Day 2 (9/13/26)')",
+   "start": "11:00 AM",
+   "buy_in": null,
+   "fee": null,
+   "pool_per_entry": null,
+   "gtd": null,
+   "format": "recurring",
+   "category": "unverified",
+   "tags": [
+    "recurring",
+    "multi-flight"
+   ],
+   "chips": null,
+   "level_min": null,
+   "late_reg": "Registration open until the start of Level 10 (rule 03)",
+   "rules": {
+    "single_entry": "unverified",
+    "re_entry": "unverified",
+    "add_on": "unverified",
+    "excerpt": "Heading: 'NLH $1100 BUY-IN'. Rule 07: 'Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.' Rule 03: 'Registration will be open until the start of Level 10.' Rule 04: 'Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio.'",
+    "retrieved": "2026-11-17"
+   },
+   "last_checked": "2026-11-17",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "struct_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "notes": "The official Saturday PDF contradicts itself: the heading says $1,100, the poker-page link says $1,000, rule 07 quotes a $600 buy-in, and the Day 2 date is 9/13/26. No buy-in, guarantee or entry rule is taken from it.",
+   "gtd_includes_bounties": null,
+   "bounty": null,
+   "total_entry_fee": null,
+   "gtd_ratio": null
   }
  ],
  "hotels": [
@@ -6104,11 +6219,16 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 7,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (7 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 0.2,
+    "venetian_within_30": true,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via unnamed roads"
    }
   },
   {
@@ -6130,11 +6250,16 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 26,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (26 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 1.1,
+    "venetian_within_30": true,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Encore Resort Blvd"
    }
   },
   {
@@ -6156,11 +6281,16 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 42,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (42 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 1.8,
+    "venetian_within_30": false,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Las Vegas Blvd S"
    }
   },
   {
@@ -6182,11 +6312,16 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 26,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (26 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 1.1,
+    "venetian_within_30": true,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Las Vegas Blvd S"
    }
   },
   {
@@ -6208,11 +6343,16 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 45,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (45 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 2.0,
+    "venetian_within_30": false,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Las Vegas Blvd S"
    }
   },
   {
@@ -6234,11 +6374,16 @@
    "parking_value": null,
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 24,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (24 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 1.0,
+    "venetian_within_30": true,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Las Vegas Blvd S"
    }
   },
   {
@@ -6260,11 +6405,16 @@
    "parking_value": null,
    "quality": "",
    "walk": {
-    "venetian_min": null,
+    "venetian_min": 25,
     "wynn_min": null,
-    "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (25 min). Other venue pairs UNVERIFIED.",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
+    "venetian_miles": 1.0,
+    "venetian_within_30": true,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Myst\u00e8re Dreams Ave"
    },
    "fee_range": {
     "text": "$45-$50 plus applicable tax",
@@ -6305,6 +6455,15 @@
     "url": "https://www.westgateresorts.com/terms-and-conditions/",
     "secondary_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
     "retrieved": "2026-11-16"
+   },
+   "walk": {
+    "venetian_min": 34,
+    "venetian_miles": 1.4,
+    "venetian_within_30": false,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=3000+Paradise+Rd,+Las+Vegas,+NV+89109&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Convention Center Dr",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (34 min). Other venue pairs UNVERIFIED."
    }
   },
   {
@@ -6332,7 +6491,16 @@
    "sources": [
     "https://southpointcasino.com/casino/poker-room"
    ],
-   "retrieved": "2026-11-16"
+   "retrieved": "2026-11-16",
+   "walk": {
+    "venetian_min": 185,
+    "venetian_miles": 8.2,
+    "venetian_within_30": false,
+    "venetian_source": "https://www.google.com/maps/dir/?api=1&origin=9777+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89183&destination=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&travelmode=walking",
+    "venetian_checked": "2026-11-17",
+    "venetian_route": "via Las Vegas Blvd S",
+    "status": "Venetian pair: Google Maps walking route, read 2026-11-17 (185 min). Other venue pairs UNVERIFIED."
+   }
   }
  ],
  "questions": [
@@ -6834,12 +7002,52 @@
    "id": "VR-030"
   },
   {
+   "source": "arena/90300c52-poker2",
+   "item": "Bellagio poker page carries a stale 2025 notice",
+   "where": "Bellagio poker page, 'Please Note' box",
+   "detail": "The page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' July 26 fell on a Saturday in 2025 and on a Sunday in 2026, so the notice is out of date. Not used to date any event. Ask the poker room for the current weekly schedule.",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "id": "VR-031"
+  },
+  {
+   "source": "arena/90300c52-poker2",
+   "item": "Bellagio weekly PDFs carry no year and no calendar dates",
+   "where": "Bellagio Friday, Saturday and Sunday tournament PDFs",
+   "detail": "The three weekly PDFs say only 'Fridays', 'Saturdays' and 'Sundays'. The Saturday PDF's Day 2 is dated '9/13/26' in a document with no other year. Recurring rows therefore have no calendar date and cannot be placed on a trip day.",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "id": "VR-032"
+  },
+  {
+   "source": "arena/90300c52-poker2",
+   "item": "Walking-time coordinates differ from the Google address label",
+   "where": "data/site/walking.json (routing estimates) vs data/walk-googlemaps-2026-11-17.json",
+   "detail": "The OpenStreetMap routing estimates use coordinates for the Venetian origin (36.1217073, -115.1693352). Google labels those coordinates '3377 S Las Vegas Blvd #2100', not the published 3355 S. Las Vegas Blvd. The Google values on the hotel table use the published street addresses instead. For the same coordinate pair (origin above to the walk.json Wynn coordinate) the routed estimate is 18.8 min and Google gives 20 min (0.9 mi); the Google figures are the ones shown on the hotel table.",
+   "url": "https://www.google.com/maps/dir/?api=1&origin=36.1217073,-115.1693352&destination=36.1294358,-115.1648801&travelmode=walking",
+   "id": "VR-033"
+  },
+  {
+   "source": "arena/90300c52-poker2",
+   "item": "Poker room location versus the walking destination",
+   "where": "Venetian poker room; Google walking destination 3355 S. Las Vegas Blvd",
+   "detail": "The official poker-room page says the room is on level 2 of Grand Canal Shoppes in The Palazzo. The walking values use The Venetian's address (3355 S. Las Vegas Blvd) as destination, while the Palazzo's address is 3325 S. Las Vegas Blvd. Route times for hotels on the Palazzo side may differ by a few minutes; the room's own directions are the authority.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "id": "VR-034"
+  },
+  {
+   "source": "arena/90300c52-poker2",
+   "item": "Venetian room-rate lookup still returns no rates",
+   "where": "Venetian booking calendar (second attempt 2026-11-17)",
+   "detail": "A dated booking URL for 7-9 Dec 2026 (2 adults) returned the 'Reservations' page with no nightly rate, resort-fee line or checkout total. No room rate is entered. The dated-quote requirement stays open.",
+   "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-12-07&children%5B%5D=0&departure_date=2026-12-09&view=calendar",
+   "id": "VR-035"
+  },
+  {
    "source": "arena/8234a824-poker2",
    "item": "Venetian poker-rate wording ambiguity",
    "where": "Venetian resort-fee page vs poker-suite-rate page",
    "detail": "The resort-fee page says \u2018Rates include a daily Resort Fee of $55 plus tax\u2019 while the poker-rate page lists the fee separately in its conditions; exact meaning for the poker offer should be confirmed at reservation.",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "id": "VR-031"
+   "id": "VR-036"
   },
   {
    "id": "IR-E1C-01",
@@ -7711,6 +7919,15 @@
     "result": "The official booking calendar rendered every nightly price as '$XXX' to a non-browser fetch, so no dated rate could be read.",
     "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar",
     "logged": "2026-11-16"
+   },
+   {
+    "hotel": "The Venetian",
+    "check_in": "2026-12-07",
+    "check_out": "2026-12-09",
+    "occupancy": 2,
+    "result": "The booking URL returned the 'Reservations | The Venetian Resort Las Vegas' page, which shows the rewards sign-in and tier table only. No nightly rate, resort-fee line or checkout total was rendered, so no rate is recorded.",
+    "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-12-07&children%5B%5D=0&departure_date=2026-12-09&view=calendar",
+    "logged": "2026-11-17"
    }
   ],
   "method": "Each attempt is appended with its dates, occupancy, what blocked it and a timestamp; a quote is only entered with check-in, check-out, occupancy, room type, nightly rate, resort fee, tax, parking, cancellation deadline and checkout total."
