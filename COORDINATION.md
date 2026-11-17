@@ -510,3 +510,22 @@ Publication record for PR #34 (2026-11-16):
   excerpt duplicated the single-entry excerpt verbatim when both came from the same sentence.
 - Follow-ups recorded for the next session: `S-11` (choose one surface to keep), `S-12` (merge the three scheduled
   monitor jobs), `S-02` (27 structure sheets unread), `FG-02` (get the single-entry answer in writing).
+
+## Session arena/5dcf101f-poker2 — verification sweep + integration (2026-11-17)
+
+Base: `02cffeb` (main). Branch: `arena/5dcf101f-poker2` (fixed by the session protocol; the task spec's
+`session-<id>/<task>` naming is not available to this session — same deviation recorded as F02 by earlier sessions).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Read official Venetian DSE IV schedule end-to-end; reconcile every row the site publishes (dates, times, event numbers, buy-ins, guarantees) | in progress | arena/5dcf101f-poker2 | `data/master.json`, `data/site/*` (read), `COORDINATION.md` |
+| V2 Read every Venetian structure sheet the site cites; remove the `unverified` label where the official sheet settles the row | in progress | arena/5dcf101f-poker2 | `scripts/build_master.py`, `data/master.json` |
+| V3 Duplicate-row audit (same venue + date + event published twice) | in progress | arena/5dcf101f-poker2 | `scripts/audit.py`, `data/master.json` |
+| V4 Hotel true-cost integrity: every row's tax rate must trace to a source that states it | in progress | arena/5dcf101f-poker2 | `data/master.json`, `hotels.html` |
+| V5 One page per venue for every venue in the dataset, each with its events + hotels | pending | arena/5dcf101f-poker2 | `scripts/build_site.py`, `venue-*.html` |
+| V6 Per-row `last_checked` on every table (events, hotels, walking, ranking) | pending | arena/5dcf101f-poker2 | `scripts/build_site.py` |
+| V7 Site-wide search across all tables | pending | arena/5dcf101f-poker2 | `assets/dashboard.js`, `scripts/build_site.py` |
+| V8 Build/link/audit verification, PR to main, Pages deploy confirmation, record | pending | arena/5dcf101f-poker2 | `COORDINATION.md`, `README.md` |
+
+Scope: this session works only on the files above. Legacy surfaces (`plan/`, `site-data/`, `docs/`, `verified/`, `pages/`)
+are read as inputs and left untouched. New canonical data continues to flow through `data/master.json`.
