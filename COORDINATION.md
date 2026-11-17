@@ -1754,3 +1754,6 @@ evidence upgraded from placeholder to the verified 72-hour rule).
 **Not verified (published on Flagged, does not block):** any dated hotel quote (booking engines
 render prices with JavaScript — F-05), hotel quality ratings (no official source), any
 single-entry confirmation in writing (FG-02), finish times (F-04), Westgate's $36.99 origin.
+
+**Publication — arena/594db405-poker2:** integration PR [#78](https://github.com/karagemop466-tech/Poker2/pull/78)
+(`arena/594db405-poker2` → `main`). Merge + Pages result appended below once the deploy is confirmed.
