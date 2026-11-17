@@ -1517,3 +1517,27 @@ what this session read.
 the next scheduled run (06:30 UTC) should commit `site-data/snapshots/**`; Horseshoe tax rate and
 the Caesars/Horseshoe/Paris resort fees (the official pages read state no fee); S-12 workflow
 consolidation; FG-02 (no official document states a one-entry cap).
+
+### Merge and deploy record — arena/8a8fa20f-poker2 (2026-11-17)
+
+| PR | Merged (UTC) | `main` commit | Content |
+|---|---|---|---|
+| [#73](https://github.com/karagemop466-tech/Poker2/pull/73) | 2026-11-17 22:18 | `2cf3557` | Hotel fee evidence (ARIA/Bellagio/Cosmopolitan), county tax rows for 9 of 10 properties, the daily-refresh job fix, two `/2026/` defects fixed, `check_semantics.py` + `check_plan_fresh.py` gates, `url-check.yml` placeholder, FG-07/FG-13/FG-17 updates |
+| [#74](https://github.com/karagemop466-tech/Poker2/pull/74) | 2026-11-17 22:21 | `1c094d7` | Occupancy, incidental hold and the 72-hour cancellation rule for ARIA, Bellagio and The Cosmopolitan, from the same terms pages |
+
+Both merges ran with `Verify site` and `Plan: generated pages match their data` green on the
+merge commit. GitHub Pages reported `built` for `1c094d7`; the live pages were then read back
+with a cache-busting query rather than assumed:
+`/2026/sources.html` now says **61 URLs are monitored** beside a 61-URL run and lists the three
+previously missing hotel pages; `/plan/hotels.html` shows the fee excerpts, the county licence
+row and the filled occupancy/incidental/cancellation cells.
+
+**Caching note for whoever reads this next:** the first read of the live page after deploy
+returned the *previous* build's text. `fetch_page` on the bare URL is served from a CDN edge
+cache; appending any query string (`?v=<commit>`) returns the current build. Do not conclude a
+deploy failed from a stale read — check `pages/builds` for the commit first.
+
+Still open after this session: the next 06:30 UTC refresh run should commit the first
+`site-data/snapshots/**` baseline (the job now reaches its commit step; it could not before);
+Horseshoe's county tax row and the Caesars/Horseshoe/Paris resort fees (official pages state no
+fee); FG-02 (no official document states a one-entry cap — that is still the finding).
