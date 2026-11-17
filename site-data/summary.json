@@ -1,153 +1,197 @@
 {
-  "as_of": "2026-11-16",
-  "title": "Executive summary - Las Vegas Strip single-entry poker trip",
-  "scope": "Live tournament entries published on an official dated schedule inside the Las Vegas Strip walking corridor, filtered to one-day events whose official structure sheet was read and shows no rebuy, add-on or re-entry provision; plus the hotel cost side for the properties that can reach that poker room on foot.",
-  "method": "Read the official schedule page in full (four page chunks), then read each referenced structure sheet in full and take only the values printed there. Cross-check: every guarantee in the event name had to match the guarantee on its sheet, and the build fails if it does not. Anything not published is blank and flagged, never filled in.",
-  "headline_numbers_note": "Counts and the recommended window are injected from the generated datasets by scripts/build-site.py, so they cannot drift from the tables.",
-  "findings": [
-    {
-      "title": "One venue has a dated, per-event official source set - and it drives everything",
-      "text": "The Venetian's DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026) publishes 64 numbered events as 94 rows with a structure sheet per event. No other Strip room in this dataset publishes a comparable dated document set, so the ranked table is Venetian-only and that limit is stated on every page rather than hidden.",
-      "sources": [
-        "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-      ]
-    },
-    {
-      "title": "46 one-day events have no re-entry, rebuy or add-on clause anywhere in their sheet",
-      "text": "All 37 official structure sheets were read in full (ten on 2026-11-16, 27 on 2026-11-17). 46 one-day rows across 19 sheets state no rebuy, add-on or re-entry clause. Each sheet lists a late-registration window and no additional-buy-in provision. That is the strongest state the published sources support - it is not a written single-entry guarantee (FG-02).",
-      "sources": [
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
-      ]
-    },
-    {
-      "title": "The room does write re-entry rules when they exist - which makes the silence meaningful",
-      "text": "The PokerAtlas Valuetown sheet (events 18 and 58) states: 'PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only... All subsequent buy in's after the initial buy in will be $200.' Two consequences: those events allow further buy-ins, and a paid third-party membership lowers the first entry, which is a spending-based edge. Both are excluded from the single-entry table and shown separately.",
-      "sources": [
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
-      ]
-    },
-    {
-      "title": "Multi-flight main events are not single-entry, by their own rule",
-      "text": "Event 01's sheet says each starting flight plays to about 12.5% of the field, Day 2 combines 1A-1D, and 'Any player who bags chips for Day 2 may not play a subsequent flight' - so an eliminated player may buy into another flight. All 28 flight rows (including the $800/$500K, $1,100/$150K, $1,100/$500K, $2,200/$1M and Seniors events) are therefore in the separate list, not the ranked one.",
-      "sources": [
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-      ]
-    },
-    {
-      "title": "A 'guarantee to buy-in' number worth using, and its limit",
-      "text": "The size ratio for the best verified rows: $600 into a $50,000 guarantee (83.3x, event 54, Dec 16), $600 into $40,000 (66.7x, events 28 and 30), $300 into $15,000 (50.0x, nine events). For bounty events the published guarantee explicitly includes total bounties, so the cash-only figure is smaller. The ratio describes the published guarantee per entry; it is not an expected value, and no field size is knowable in advance.",
-      "sources": [
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
-        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
-      ]
-    },
-    {
-      "title": "The 8 AM start you asked for does not exist on this schedule",
-      "text": "Across all 94 rows the earliest start is 09:10 (a Dec 12 satellite) and the earliest cash-prize start is 10:10 AM. Long days are still available: 10:10 AM RaceDay Stack (registration closes 12:25 PM) followed by an 11:10 AM event the next day, or an 11:10 AM day event whose registration runs to about 4:55 PM. The only 9 AM recurring start found in any official Strip source is Horseshoe's.",
-      "sources": [
-        "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-        "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
-      ]
-    },
-    {
-      "title": "The hotel answer is currently a formula, not a price - because the room rate is the only missing term",
-      "text": "Verified from official pages: Venetian/Palazzo $55 resort fee plus tax and 13.38% Clark County room tax, $20/day guest parking, $150/night incidental authorization, $50/night per additional guest aged 13+, $100 plus tax for early checkout, and poker rates 'starting as low as $119 and $209'. Park MGM: $50 fee plus tax, $40 plus tax per extra occupant, $20/day parking, $100/day incidentals, 72-hour refundable first-night deposit. Wynn: $55 plus tax with free self-parking for two vehicles bundled in, $50 extra-guest surcharge, full-stay deposit at booking. Every booking engine renders date-specific prices only in JavaScript, so no nightly rate could be captured; the true cost is exact for fees and tax and open only on the rate.",
-      "sources": [
-        "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-        "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
-        "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-        "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
-      ]
-    },
-    {
-      "title": "The cheapest entries quietly break the cheapest room rate",
-      "text": "The Venetian poker suite rate requires, each night, six hours of active live cash play or a $300-or-higher tournament buy-in, completed before 2 AM on the last night - otherwise 'your nightly suite rate will be adjusted to the prevailing rate'. A trip built from $200 RaceDay and $200 bounty events therefore forfeits the $119 rate. The plan builder prefers $300+ primaries for exactly this reason, and flags any day where it cannot.",
-      "sources": [
-        "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-      ]
-    },
-    {
-      "title": "Walking time is unverified for every pair, and two facts do exist",
-      "text": "No official page publishes minutes. What is published: the poker room is inside the Palazzo (level 2, Grand Canal Shoppes) with in-resort directions from both the Venetian and Palazzo lobbies, and MGM's own page describes an interior bridge linking Bellagio, the Cosmopolitan and Vdara. So the Venetian and Palazzo are the only properties with a verified same-building route, and the 30-minute filter has no verified input for any other hotel.",
-      "sources": [
-        "https://www.venetianlasvegas.com/resort/casino/poker.html",
-        "https://www.mgmresorts.com/en/things-to-do/parking.html"
-      ]
-    },
-    {
-      "title": "Ranking discipline applied",
-      "text": "Only rows with a confirmed fee and a confirmed guarantee are ranked (30 of 94). Eleven one-day rows are listed but unranked because their sheet has not been read; the remaining rows are satellites, tag-team, multi-flight, Day 2 restarts, final tables and the two partner-discount events. Bounty formats are labelled separately because their guarantee includes bounties.",
-      "sources": [
-        "https://github.com/karagemop466-tech/Poker2/blob/main/site-data/events.json"
-      ]
-    }
-  ],
-  "recommendation": {
-    "headline": "Dec 6 - Dec 10, 2026 at the Venetian/Palazzo: four single-entry-candidate days, one event per day, evening events only as conditional fallbacks.",
-    "why": "It is the only four-consecutive-day window in the series where every day has a one-day event with a confirmed fee and guarantee, every primary is $300+ so the poker suite rate stays valid, and the average published guarantee-per-entry ratio is the highest of any such window (58.4x). Dec 13 - Dec 17 is the close alternative at 58.3x for $1,500 of entries instead of $1,800.",
-    "days": [
-      {
-        "date": "2026-12-06",
-        "primary": "Event 28, $600 NLH, $40K GTD, 11:10 AM",
-        "fallback": "Event 29, $300 Bounty, 5:10 PM (enter only if out before 9:40 PM)"
-      },
-      {
-        "date": "2026-12-07",
-        "primary": "Event 30, $600 Bounty, $40K GTD, 11:10 AM",
-        "fallback": "Event 31, $300 Bounty, 5:10 PM (same condition)"
-      },
-      {
-        "date": "2026-12-08",
-        "primary": "Event 34, $300 Bounty, $15K GTD, 5:10 PM - this day has no verified morning start",
-        "fallback": "none"
-      },
-      {
-        "date": "2026-12-09",
-        "primary": "Event 38, $300 Bounty, $15K GTD, 5:10 PM",
-        "fallback": "none. Event 36 ($800 bounty, $75K GTD, 11:10 AM; sheet 16) is an alternative that day, not a fallback. Its sheet lists late registration to 4:55 PM and 30-minute levels, but no official source says how long a player lasts, so whether Event 38 (5:10 PM) can be reached after Event 36 is unknown and is not planned"
-      }
-    ],
-    "cost_model": "4 entries at $1,800 plus lodging at 4 x (rate + $55) x 1.1338. With the published $119 poker rate that is $197.28 per night, $789.12 for the stay, and about $2,589 before parking; add $80 if the $20/day guest parking applies (FG-07). Incidentals of $150/night are an authorization, not a charge.",
-    "before_paying": "Confirm in writing that Events 28, 30, 34 and 38 are limited to one entry (Q-03); read Event 36's sheet if you want the $800 (S-02); capture the itemised checkout total for Dec 6-10 (S-05); re-run the change monitor the morning you pay (S-10).",
-    "not_claimed": "Not a best-on-Strip claim: other rooms' schedules are not yet verified to the same standard. Not a forecast: no field sizes, no expected value, no finish times."
+ "as_of": "2026-11-17",
+ "title": "Executive summary - Las Vegas Strip single-entry poker trip",
+ "scope": "Live tournament entries published on an official dated schedule inside the Las Vegas Strip walking corridor, filtered to one-day events whose official structure sheet was read and shows no rebuy, add-on or re-entry provision; plus the hotel cost side for the properties that can reach that poker room on foot.",
+ "method": "Read the official Venetian schedule page in full, then read all 37 of its structure sheets in full and take only the values printed on each one. Cross-check: every guarantee in an event's name had to match the guarantee on its own sheet; the build aborts if they ever disagree. Then read every other Strip room's official document that can be fetched: the Bellagio Friday/Saturday/Sunday sheets, the Caesars Palace 2026 daily flyer, the Wynn daily structures PDF, the MGM Grand schedule PDF and the Golden Nugget daily page. Hotel costs come from the properties' own terms pages plus two itemised quotes captured from the Venetian's booking engine on 2026-11-17. Anything not published is left blank and flagged - never filled in, never inferred.",
+ "headline_numbers_note": "Counts and the recommended window are injected from the generated datasets by scripts/build-site.py, so they cannot drift from the tables.",
+ "findings": [
+  {
+   "title": "One venue has a dated, per-event official source set - and it drives everything",
+   "text": "The Venetian's DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026) publishes 64 numbered events as 94 rows with a structure sheet per event. No other Strip room in this dataset publishes a comparable dated document set, so the ranked table is Venetian-only and that limit is stated on every page rather than hidden.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+   ]
   },
-  "decision_sequence": [
-    {
-      "step": 1,
-      "text": "Fix trip dates and nightly budget / quality floor",
-      "state": "blocked on you",
-      "detail": "Dates: any 4-day window inside Nov 16 - Dec 23 is viable; Dec 6-10 is the best verified. Nightly ceiling and quality tier are not set, and no official quality rating exists (Q-02, FG-12)."
-    },
-    {
-      "step": 2,
-      "text": "Get official structure sheets and written maximum-entry / no-rebuy / no-add-on rules; drop anything that fails the single-entry policy",
-      "state": "partly done",
-      "detail": "10 of 37 sheets read; 34 events pass on 'no contrary provision'; 28 flight rows, 7 satellites, 1 team event and the 2 partner-discount events are excluded by explicit text. The written confirmation itself is still outstanding (Q-03)."
-    },
-    {
-      "step": 3,
-      "text": "Compare only the survivors on guarantee, buy-in, stack and blind duration, payout structure and schedule fit",
-      "state": "done for the 30 ranked rows",
-      "detail": "All five fields are on the site per row, with excerpts; payout structure is '12.5% of the field' on every sheet read."
-    },
-    {
-      "step": 4,
-      "text": "Obtain itemised hotel totals for the same stay; check the walking route under 30 minutes",
-      "state": "blocked on you",
-      "detail": "Fee, tax, occupant surcharge, parking, incidentals and cancellation windows are verified; the per-night rate is not, and no walk duration is verified (FG-05, FG-11)."
-    },
-    {
-      "step": 5,
-      "text": "Build one event per day first; add evening events only where the earlier event can realistically be exited",
-      "state": "done",
-      "detail": "23 days carry one primary each; evening events appear only as conditional fallbacks gated by the later registration cutoff, with overlap flags computed from published times."
-    },
-    {
-      "step": 6,
-      "text": "Reconfirm official schedules, rates and policies before any non-refundable payment",
-      "state": "tooling in place",
-      "detail": "A daily job re-reads every official URL and reports value-level changes; run it manually on the morning you pay."
-    }
-  ]
+  {
+   "title": "45 one-day events carry no re-entry, rebuy or add-on clause on their sheet - and every sheet has now been read",
+   "text": "All 37 structure sheets were read, not ten. 45 one-day rows show a late-registration window and no additional-buy-in provision: $200 RaceDay Stack, $200/$300/$400/$600 no-limit hold'em, bounties, PLO, Big O and the LIPS events, at 10:10, 11:10, 12:10 and 17:10 starts. 41 of them have both the fee and the guarantee confirmed, so they can be ranked. Zero rows in the dataset are still labelled unverified. The caveat has not changed: not one sheet says 'one entry per player', so these are candidates and not confirmations (FG-02).",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   ]
+  },
+  {
+   "title": "The room does write re-entry rules when they exist - which makes the silence meaningful",
+   "text": "The PokerAtlas Valuetown sheet (events 18 and 58) states: 'PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only... All subsequent buy in's after the initial buy in will be $200.' Two consequences: those events allow further buy-ins, and a paid third-party membership lowers the first entry, which is a spending-based edge. Both are excluded from the single-entry table and shown separately.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   ]
+  },
+  {
+   "title": "Multi-flight main events are not single-entry, by their own rule",
+   "text": "Event 01's sheet says each starting flight plays to about 12.5% of the field, Day 2 combines 1A-1D, and 'Any player who bags chips for Day 2 may not play a subsequent flight' - so an eliminated player may buy into another flight. All 28 flight rows (including the $800/$500K, $1,100/$150K, $1,100/$500K, $2,200/$1M and Seniors events) are therefore in the separate list, not the ranked one.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+   ]
+  },
+  {
+   "title": "A 'guarantee to buy-in' number worth using, and its limit",
+   "text": "The size ratio for the best verified rows: $600 into a $50,000 guarantee (83.3x, event 54, Dec 16), $600 into $40,000 (66.7x, events 28 and 30), $300 into $15,000 (50.0x, nine events). For bounty events the published guarantee explicitly includes total bounties, so the cash-only figure is smaller. The ratio describes the published guarantee per entry; it is not an expected value, and no field size is knowable in advance.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ]
+  },
+  {
+   "title": "The 8 AM start you asked for does not exist on this schedule",
+   "text": "Across all 94 rows the earliest start is 09:10 (a Dec 12 satellite) and the earliest cash-prize start is 10:10 AM. Long days are still available: 10:10 AM RaceDay Stack (registration closes 12:25 PM) followed by an 11:10 AM event the next day, or an 11:10 AM day event whose registration runs to about 4:55 PM. The only 9 AM recurring start found in any official Strip source is Horseshoe's.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   ]
+  },
+  {
+   "title": "The hotel answer is currently a formula, not a price - because the room rate is the only missing term",
+   "text": "Verified from official pages: Venetian/Palazzo $55 resort fee plus tax and 13.38% Clark County room tax, $20/day guest parking, $150/night incidental authorization, $50/night per additional guest aged 13+, $100 plus tax for early checkout, and poker rates 'starting as low as $119 and $209'. Park MGM: $50 fee plus tax, $40 plus tax per extra occupant, $20/day parking, $100/day incidentals, 72-hour refundable first-night deposit. Wynn: $55 plus tax with free self-parking for two vehicles bundled in, $50 extra-guest surcharge, full-stay deposit at booking. Every booking engine renders date-specific prices only in JavaScript, so no nightly rate could be captured; the true cost is exact for fees and tax and open only on the rate. Update 2026-11-17: two itemised dated quotes were captured from the Venetian's own booking engine, so one property now has a real price rather than a formula. Nine of the ten hotels still do not.",
+   "sources": [
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "https://parkmgm.mgmresorts.com/en/terms-and-conditions.html",
+    "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+    "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf"
+   ]
+  },
+  {
+   "title": "The cheapest entries quietly break the cheapest room rate",
+   "text": "The Venetian poker suite rate requires, each night, six hours of active live cash play or a $300-or-higher tournament buy-in, completed before 2 AM on the last night - otherwise 'your nightly suite rate will be adjusted to the prevailing rate'. A trip built from $200 RaceDay and $200 bounty events therefore forfeits the $119 rate. The plan builder prefers $300+ primaries for exactly this reason, and flags any day where it cannot.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+   ]
+  },
+  {
+   "title": "The walking test now returns a real shortlist",
+   "text": "45 of 70 hotel-to-venue pairs have a walking duration and 30 of them are 30 minutes or less. Staying at The Venetian puts its own poker room at zero minutes and reaches Wynn (13 min), Caesars Palace (19.5 min) and Horseshoe (20.5 min) on foot, so the whole centre-Strip corridor is one venue cluster. Bellagio is 27.6 minutes - inside the limit but a real walk. MGM Grand is 36.5 minutes and fails the test. Durations are routed estimates, not measurements, and every row links to Google and Apple Maps so you can check it.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "https://www.wynnlasvegas.com/casino/poker",
+    "https://www.caesars.com/caesars-palace/casino/poker"
+   ]
+  },
+  {
+   "title": "Ranking discipline applied",
+   "text": "Only rows with a confirmed fee and a confirmed guarantee are ranked (30 of 94). Eleven one-day rows are listed but unranked because their sheet has not been read; the remaining rows are satellites, tag-team, multi-flight, Day 2 restarts, final tables and the two partner-discount events. Bounty formats are labelled separately because their guarantee includes bounties.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker2/blob/main/site-data/events.json"
+   ]
+  },
+  {
+   "title": "Event #39 is a two-day event, not a multi-flight one - and it is women-only",
+   "text": "Reading sheet 32 corrected a classification. The $800 LIPS Ladies Main Event has a single Day 1 (10:10 AM, 10 Dec) and resumes at 10:00 AM on 11 Dec, with the PokerGO-streamed final table at about 7 PM that evening. There are no 1A/1B flights, so it is not a re-entry event - but it occupies a second morning, so it is excluded from a one-day plan. It is also restricted to female players (rule 02), as are the two $100 satellites into it.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ]
+  },
+  {
+   "title": "Three events have an age or gender gate you can fail after paying",
+   "text": "The $600 Seniors events (#24, #32) and the $1,100 Seniors (#49) require players to be 50 or older, and the sheets say plainly that anyone younger who buys in is 'not entitled to any prize money or a refund of their buy in'. The LIPS Ladies events are restricted to female players. These were not on the site before this pass; they are now on every row that carries one.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ]
+  },
+  {
+   "title": "A real hotel quote exists now, and it exposes a three-night price spike",
+   "text": "The Venetian's booking engine publishes an itemised breakdown, so two dated quotes were captured on 2026-11-17. Seven nights from 18 Nov 2026: room $3,594.75 + resort fee $385.00 + tax $532.51 = $4,512.26, or $644.61 per night all-in. But the nights are not even - Sun 18 is $164.25, Thu 19 is $614.25, Fri 20 is $1,011.75, Sat 21 is $1,311.75, then $164.25 for each of Sun 22, Mon 23 and Tue 24. Three nights carry most of the week. Both quotes imply a tax of 13.3804%, which independently confirms the published Clark County rate and proves the resort fee is taxed too.",
+   "sources": [
+    "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+   ]
+  },
+  {
+   "title": "Every other Strip room either re-enters, add-ons, or sells chips",
+   "text": "Reading the other rooms' official documents settled it. Caesars Palace runs four dailies with a $50 add-on and re-entry after an early elimination. Bellagio's three weeklies allow re-entry through level 8 and sell an extra 15,000-20,000 chips through a 'voluntary' gratuity. Wynn's dailies allow re-entry (or, on Fridays, unlimited rebuys) and a $100 add-on. Golden Nugget allows unlimited re-entry and two add-ons, and says the first add-on does not even go into the prize pool. Not one of them is single-entry, which is why the ranked table is Venetian-only and says so.",
+   "sources": [
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/"
+   ]
+  },
+  {
+   "title": "Wynn's dailies may not run during your trip at all",
+   "text": "All four Wynn daily sheets say the event 'may be suspended during Seniors Events, Classic Events, or other Tournament Series', and the WPT World Championship takes over the same poker room from 27 November to 21 December 2026. That covers most of the Venetian series window, so no Wynn daily should anchor a day without a phone call.",
+   "sources": [
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ]
+  }
+ ],
+ "recommendation": {
+  "headline": "Dec 6 - Dec 10, 2026 at the Venetian/Palazzo: four single-entry-candidate days, one event per day, evening events only as conditional fallbacks.",
+  "why": "It is the only four-consecutive-day window in the series where every day has a one-day event with a confirmed fee and guarantee, every primary is $300+ so the poker suite rate stays valid, and the average published guarantee-per-entry ratio is the highest of any such window (58.4x). Dec 13 - Dec 17 is the close alternative at 58.3x for $1,500 of entries instead of $1,800.",
+  "days": [
+   {
+    "date": "2026-12-06",
+    "primary": "Event 28, $600 NLH, $40K GTD, 11:10 AM",
+    "fallback": "Event 29, $300 Bounty, 5:10 PM (enter only if out before 9:40 PM)"
+   },
+   {
+    "date": "2026-12-07",
+    "primary": "Event 30, $600 Bounty, $40K GTD, 11:10 AM",
+    "fallback": "Event 31, $300 Bounty, 5:10 PM (same condition)"
+   },
+   {
+    "date": "2026-12-08",
+    "primary": "Event 34, $300 Bounty, $15K GTD, 5:10 PM - this day has no verified morning start",
+    "fallback": "none"
+   },
+   {
+    "date": "2026-12-09",
+    "primary": "Event 38, $300 Bounty, $15K GTD, 5:10 PM",
+    "fallback": "none. Event 36 ($800 bounty, $75K GTD, 11:10 AM; sheet 16) is an alternative that day, not a fallback. Its sheet lists late registration to 4:55 PM and 30-minute levels, but no official source says how long a player lasts, so whether Event 38 (5:10 PM) can be reached after Event 36 is unknown and is not planned"
+   }
+  ],
+  "cost_model": "4 entries at $1,800 plus lodging at 4 x (rate + $55) x 1.1338. With the published $119 poker rate that is $197.28 per night, $789.12 for the stay, and about $2,589 before parking; add $80 if the $20/day guest parking applies (FG-07). Incidentals of $150/night are an authorization, not a charge.",
+  "before_paying": "Confirm in writing that Events 28, 30, 34 and 38 are limited to one entry (Q-03); read Event 36's sheet if you want the $800 (S-02); capture the itemised checkout total for Dec 6-10 (S-05); re-run the change monitor the morning you pay (S-10).",
+  "not_claimed": "Not a best-on-Strip claim: other rooms' schedules are not yet verified to the same standard. Not a forecast: no field sizes, no expected value, no finish times."
+ },
+ "decision_sequence": [
+  {
+   "step": 1,
+   "text": "Fix trip dates and nightly budget / quality floor",
+   "state": "blocked on you",
+   "detail": "Dates: any 4-day window inside Nov 16 - Dec 23 is viable; Dec 6-10 is the best verified. Nightly ceiling and quality tier are not set, and no official quality rating exists (Q-02, FG-12)."
+  },
+  {
+   "step": 2,
+   "text": "Get official structure sheets and written maximum-entry / no-rebuy / no-add-on rules; drop anything that fails the single-entry policy",
+   "state": "partly done",
+   "detail": "10 of 37 sheets read; 34 events pass on 'no contrary provision'; 28 flight rows, 7 satellites, 1 team event and the 2 partner-discount events are excluded by explicit text. The written confirmation itself is still outstanding (Q-03)."
+  },
+  {
+   "step": 3,
+   "text": "Compare only the survivors on guarantee, buy-in, stack and blind duration, payout structure and schedule fit",
+   "state": "done for the 30 ranked rows",
+   "detail": "All five fields are on the site per row, with excerpts; payout structure is '12.5% of the field' on every sheet read."
+  },
+  {
+   "step": 4,
+   "text": "Obtain itemised hotel totals for the same stay; check the walking route under 30 minutes",
+   "state": "blocked on you",
+   "detail": "Fee, tax, occupant surcharge, parking, incidentals and cancellation windows are verified; the per-night rate is not, and no walk duration is verified (FG-05, FG-11)."
+  },
+  {
+   "step": 5,
+   "text": "Build one event per day first; add evening events only where the earlier event can realistically be exited",
+   "state": "done",
+   "detail": "23 days carry one primary each; evening events appear only as conditional fallbacks gated by the later registration cutoff, with overlap flags computed from published times."
+  },
+  {
+   "step": 6,
+   "text": "Reconfirm official schedules, rates and policies before any non-refundable payment",
+   "state": "tooling in place",
+   "detail": "A daily job re-reads every official URL and reports value-level changes; run it manually on the morning you pay."
+  }
+ ]
 }

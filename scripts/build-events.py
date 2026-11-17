@@ -42,6 +42,7 @@ SILENT_ENTRY = ("Read in full: the sheet lists no rebuy, no add-on and no re-ent
                 "provision. It states a late-registration window only.")
 SILENT_ADDON = "Read in full: the sheet contains no add-on provision."
 PAY125 = "This event pays 12.5% of the field"
+PAY15 = "This event pays 15% of the field"
 
 SHEETS = {
     1: {
@@ -293,6 +294,7 @@ SHEETS = {
                      "consists of $700 of every $800 Buy In."),
     },
     17: {
+        "gate_excerpt": "Must be 50+ years of age. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in (rule 02).",
         "title": "$600 No Limit Hold'em Seniors (1Day) - must be 50+",
         "events": ["24", "32"], "start": "10:10", "chips": 40000, "level_min": 30,
         "reg_close": "15:55", "reg_close_text": "Late Registration: 10 levels + Break (~ 3:55 PM)",
@@ -306,6 +308,8 @@ SHEETS = {
                      "consists of $510 of every $600 Buy In."),
     },
     19: {
+        "gate_excerpt": "Open to Female players who must be 21+ years of age and have a Venetian Rewards card to participate (rule 02).",
+        "notes": "Prize is seats, not cash: winners receive direct entry to Event #39; any odd money is paid as one additional payout (rules 04 and 08). A player who reaches 200,000 chips ('The Milestone') instantly receives a seat and stops playing (rule 09).",
         "title": "$100 NLH LIPS Ladies (1Day) - Milestone Satellite to Event #39",
         "events": ["33", "37"], "start": "16:10", "chips": 20000, "level_min": 20,
         "reg_close": "18:25", "reg_close_text": "Late Registration: 6 levels + Break (~6:25 PM)",
@@ -320,6 +324,7 @@ SHEETS = {
                            "are awarded at the end of the satellite."),
     },
     20: {
+        "gate_excerpt": "Must be 50+ years of age. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in (rule 02).",
         "title": "$1,100 No Limit Hold'em Seniors - Day A+B @ 10:10 AM with Day 2 @ 10:00 AM",
         "events": ["49"], "start": "10:10", "chips": 40000, "level_min": 40,
         "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
@@ -370,6 +375,7 @@ SHEETS = {
                      "consists of $510 of every $600 Buy In."),
     },
     24: {
+        "notes": "Prize is seats, not cash: winners receive direct entry to Event #47; any odd money is paid as one additional payout (rules 04 and 08). A player who reaches 200,000 chips ('The Milestone') instantly receives a seat and stops playing (rule 09).",
         "title": "$260 No Limit Hold'em (1Day) - Milestone Satellite to Event #47",
         "events": ["41", "44"], "start": "16:10", "chips": 20000, "level_min": 20,
         "reg_close": "18:25", "reg_close_text": "Late Registration: 6 levels + Break (~6:25 PM)",
@@ -381,6 +387,7 @@ SHEETS = {
                            "additional payout."),
     },
     25: {
+        "notes": "Prize is seats, not cash: winners receive direct entry to Event #47; any odd money is paid as one additional payout (rules 04 and 08). A player who reaches 200,000 chips ('The Milestone') instantly receives a seat and stops playing (rule 09).",
         "title": "$260 No Limit Hold'em Turbo (1Day) - Milestone Satellite to Event #47",
         "events": ["45", "46", "48"],
         "starts": {"45": "20:10", "46": "09:10", "48": "12:10"},
@@ -441,6 +448,8 @@ SHEETS = {
                      "consists of $160 of every $200 Buy In."),
     },
     31: {
+        "gate_excerpt": "Teams consist of Female / Female OR Female / Male. Teams rotate players at the start of every level; each team member must play every other level. Teams that fail to switch at the level change are disqualified (rule 08).",
+        "notes": "One buy-in covers a two-player team, so the cost per player is not the published $600; the sheet does not state a per-player price.",
         "title": "$600 No Limit Hold'em LIPS Poker Jingle Tag Team (1Day)",
         "events": ["35"], "start": "10:10", "chips": 40000, "level_min": 30,
         "reg_close": "14:40", "reg_close_text": "Late Registration: 8 levels + Break (~ 2:40 PM)",
@@ -452,6 +461,7 @@ SHEETS = {
                      "International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In."),
     },
     32: {
+        "gate_excerpt": "Must be a female 21+ years of age and have a Venetian Rewards card to participate (rule 02).",
         "title": "$800 No Limit Hold'em LIPS Ladies (2Day) - Women in Poker Main Event",
         "events": ["39"], "start": "10:10", "chips": 40000, "level_min": 40,
         "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
@@ -544,7 +554,9 @@ SHEETS = {
 # --------------------------------------------------------------------------------------
 # The official schedule table, transcribed from dse-nov-2026.html on 2026-11-16
 # (all four page chunks read; 64 numbered events, 94 published rows incl. flights,
-# day-2 restarts and final tables). kind: DAY | FLIGHT | RESTART | FINALTABLE | SAT | TEAM
+# day-2 restarts and final tables). Re-read against the official page on 2026-11-17: all 94
+# rows still match the table.
+# kind: DAY | FLIGHT | MULTIDAY | RESTART | FINALTABLE | SAT | TEAM
 # --------------------------------------------------------------------------------------
 ROWS = [
     ("2026-11-16", "11:10", "01", "$300 No Limit Hold'em 1A $75K GTD", 10, "FLIGHT"),
@@ -600,7 +612,7 @@ ROWS = [
     ("2026-12-09", "11:10", "36", "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money", 16, "DAY"),
     ("2026-12-09", "16:10", "37", "$100 NLH LIPS Ladies Milestone Satellite (1Day) - awards direct entry to Event #39", 19, "SAT"),
     ("2026-12-09", "17:10", "38", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 15, "DAY"),
-    ("2026-12-10", "10:10", "39", "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event", 32, "DAY"),
+    ("2026-12-10", "10:10", "39", "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event", 32, "MULTIDAY"),
     ("2026-12-10", "12:10", "40", "$600 Pot Limit Omaha Bounty $25K GTD (1Day)", 27, "DAY"),
     ("2026-12-10", "16:10", "41", "$260 NLH Milestone Satellite (1Day) - awards direct entry to Event #47", 24, "SAT"),
     ("2026-12-10", "17:10", "42", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 15, "DAY"),
@@ -744,7 +756,7 @@ def build():
             return {"value": value, "status": status, "excerpt": excerpt,
                     "source_url": url, "retrieved": SHEET_AS_OF if read else None}
 
-        if read and kind in ("DAY", "PARTNER", "SAT", "TEAM"):
+        if read and kind in ("DAY", "PARTNER", "MULTIDAY", "SAT", "TEAM"):
             entry_status = "explicit_no" if "re_entry_explicit" in sheet else "silent"
             ev["rules"] = {
                 "single_entry": field(
@@ -761,7 +773,8 @@ def build():
                 "add_on": field(None, "not_stated_sheet_read", SILENT_ADDON, ev["sheet_url"]),
                 "fee": field(sheet["fee"], "explicit", sheet["fee_text"], ev["sheet_url"]),
                 "guarantee": field(gtd_sheet, "explicit", sheet["gtd_text"], ev["sheet_url"]),
-                "payout": field(sheet.get("pays"), "explicit", sheet.get("pays_text", PAY125), ev["sheet_url"])
+                "payout": field(sheet.get("pays"), "explicit", sheet.get("pays_text") or (PAY15 if sheet.get("pays") == 15 else PAY125),
+                         ev["sheet_url"])
                 if sheet.get("pays") else field(None, "not_stated_sheet_read", None, ev["sheet_url"]),
                 "bounty": field(sheet.get("bounty"), "explicit", sheet.get("bounty_text"),
                                 ev["sheet_url"]) if sheet.get("bounty") else None,
@@ -795,6 +808,8 @@ def build():
             ev["category"] = "team_format"
         elif kind == "FLIGHT":
             ev["category"] = "multi_flight"
+        elif kind == "MULTIDAY":
+            ev["category"] = "multi_day"
         elif kind == "PARTNER":
             ev["category"] = "spend_advantage"
         elif not read:
@@ -803,6 +818,9 @@ def build():
             ev["category"] = "spend_advantage"
         else:
             ev["category"] = "single_entry_candidate"
+        # ---- per-sheet notes and level-note, only where the sheet states them ----
+        ev["notes"] = sheet.get("notes") if read else None
+        ev["level_note"] = sheet.get("level_note") if read else None
         # ---- computed, clearly labelled as computed ----
         ev["ratio_gtd_to_buyin"] = (round(ev["gtd"] / ev["buy_in"], 1)
                                     if ev["gtd"] and ev["buy_in"] else None)
@@ -815,7 +833,7 @@ def build():
     for n, s in SHEETS.items():
         if s.get("not_read"):
             continue
-        tagged = {e["event_no"] for e in events if e["sheet"] == n and e["kind"] in ("DAY", "PARTNER", "FLIGHT", "SAT", "TEAM")}
+        tagged = {e["event_no"] for e in events if e["sheet"] == n and e["kind"] in ("DAY", "PARTNER", "FLIGHT", "MULTIDAY", "SAT", "TEAM")}
         listed = {(x[:-2] if x.endswith("D2") else x) for x in s["events"]}
         extra = tagged - listed
         if extra:

@@ -626,37 +626,26 @@
   "2026-12-10": {
    "date": "2026-12-10",
    "dow": "Thu",
-   "qualifying_events": 3,
+   "qualifying_events": 2,
    "primary": {
-    "id": "V39-20261210-1010",
-    "event_no": "39",
-    "name": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event",
-    "start": "10:10",
-    "buy_in": 800,
-    "gtd": 40000,
-    "fee": 110,
-    "pool_per_entry": 690,
-    "ratio": 50.0,
-    "reg_close": "16:55",
-    "chips": 40000,
-    "level_min": 40,
-    "earliest_plausible_finish": "5:35 PM",
-    "sheet": 32,
-    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-    "last_checked": "2026-11-16"
-   },
-   "fallback": {
     "id": "V42-20261210-1710",
     "event_no": "42",
     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
     "start": "17:10",
     "buy_in": 300,
     "gtd": 15000,
+    "fee": 50,
+    "pool_per_entry": 250,
     "ratio": 50.0,
     "reg_close": "21:40",
+    "chips": 25000,
+    "level_min": 30,
+    "earliest_plausible_finish": "10:10 PM",
     "sheet": 15,
-    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "last_checked": "2026-11-16"
    },
+   "fallback": null,
    "skipped_events": [
     {
      "event_no": "40",
@@ -667,16 +656,7 @@
      "ratio": 41.7
     }
    ],
-   "flags": [
-    {
-     "type": "overlap",
-     "text": "42 starts 17:10 but 39 cannot plausibly finish before 5:35 PM (its registration closes 16:55). You can only join 42 during its late registration, which closes 21:40."
-    },
-    {
-     "type": "conditional",
-     "text": "Fallback entry for 42 stays open until 21:40, so a bust out of 39 before then still allows it - mid-level, at the blinds of that moment, not from a fresh start."
-    }
-   ]
+   "flags": []
   },
   "2026-12-11": {
    "date": "2026-12-11",
@@ -1284,12 +1264,12 @@
     ],
     "nights": 4,
     "entries": 4,
-    "entry_cost": 2800,
-    "gtd_played": 195000,
+    "entry_cost": 2300,
+    "gtd_played": 170000,
     "avg_ratio": 69.3,
     "poker_rate_eligible_nights": 4,
     "has_overlap_flag": true,
-    "fallback_days": 4
+    "fallback_days": 3
    },
    {
     "arrival": "2026-12-08",
@@ -1302,12 +1282,12 @@
     ],
     "nights": 4,
     "entries": 4,
-    "entry_cost": 2800,
-    "gtd_played": 185000,
+    "entry_cost": 2300,
+    "gtd_played": 160000,
     "avg_ratio": 65.1,
     "poker_rate_eligible_nights": 4,
     "has_overlap_flag": true,
-    "fallback_days": 3
+    "fallback_days": 2
    }
   ],
   "best_poker_rate_compatible": [
@@ -1340,12 +1320,12 @@
     ],
     "nights": 4,
     "entries": 4,
-    "entry_cost": 2800,
-    "gtd_played": 195000,
+    "entry_cost": 2300,
+    "gtd_played": 170000,
     "avg_ratio": 69.3,
     "poker_rate_eligible_nights": 4,
     "has_overlap_flag": true,
-    "fallback_days": 4
+    "fallback_days": 3
    },
    {
     "arrival": "2026-12-08",
@@ -1358,12 +1338,12 @@
     ],
     "nights": 4,
     "entries": 4,
-    "entry_cost": 2800,
-    "gtd_played": 185000,
+    "entry_cost": 2300,
+    "gtd_played": 160000,
     "avg_ratio": 65.1,
     "poker_rate_eligible_nights": 4,
     "has_overlap_flag": true,
-    "fallback_days": 3
+    "fallback_days": 2
    }
   ],
   "cheapest_entries": [
