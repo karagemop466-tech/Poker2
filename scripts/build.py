@@ -733,7 +733,16 @@ def page_single_entry():
 <h1>Confirmed single-entry events: <span class="big-num">%d</span></h1>
 <p class="lede">A single-entry screen means the organiser states, in writing, that you get one entry,
 no rebuy and no add-on. Not one official document retrieved in this build says that. Every organiser
-that does publish a rule publishes a <em>permissive</em> one.</p></section>
+that does publish a rule publishes a <em>permissive</em> one — so this page reports the absence of a
+permissive clause, not a promise of a closed one.</p>
+<div class="note"><p><strong>Update, 17 Nov 2026:</strong> all 37 Venetian DeepStack Extravaganza IV
+structure sheets have now been read in full (register: <code>research/structure-sheets-register.md</code>;
+machine-readable transcription: <code>data/structure-sheets.json</code>). Not one sheet prints a
+re-entry, rebuy or add-on mechanism, and not one prints a clause limiting play to a single entry either.
+Thirteen print only the multi-flight Day-2 bagging rule (which bars anyone who bags from taking a second
+flight, and so implies the rest may); the other twenty-four print nothing about entries at all. The honest reading is therefore <em>silence</em>, which is why the events pages label those rows
+&quot;sheet silent on re-entry&quot; rather than &quot;single entry&quot;, and why the Venetian rows are
+counted in the sheet-silent group instead of the confirmed group above.</p></div></section>
 
 <section class="block">
 <div class="head"><h2>What the official text actually says</h2>

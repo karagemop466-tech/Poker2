@@ -19,14 +19,16 @@
    "category": "single",
    "tags": [],
    "chips": 40000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -37,7 +39,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 33.33,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-03",
@@ -58,13 +62,15 @@
    ],
    "chips": 30000,
    "level_min": "20/15",
-   "late_reg": "6 levels + Break (~12:25 PM)",
+   "late_reg": "6 levels + Break (~ 12:25 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -75,7 +81,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": null,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "reg_close_end": "12:25"
   },
   {
    "id": "V-04",
@@ -96,13 +104,15 @@
    ],
    "chips": 30000,
    "level_min": "20/15",
-   "late_reg": "6 levels + Break (~12:25 PM)",
+   "late_reg": "6 levels + Break (~ 12:25 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -113,7 +123,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": null,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "reg_close_end": "12:25"
   },
   {
    "id": "V-05",
@@ -134,13 +146,15 @@
    ],
    "chips": 30000,
    "level_min": "20/15",
-   "late_reg": "6 levels + Break (~12:25 PM)",
+   "late_reg": "6 levels + Break (~ 12:25 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $165 of every $200 Buy In. \u2026 Late Registration: 6 levels + Break (~ 12:25 PM).",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -151,7 +165,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": null,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "reg_close_end": "12:25"
   },
   {
    "id": "V-06",
@@ -169,16 +185,18 @@
    "category": "single",
    "tags": [],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + Break (~3:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake - Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Late Registration: 8 levels + Break (~ 3:40 PM).",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
    "notes": "",
@@ -186,7 +204,10 @@
    "bounty": null,
    "total_entry_fee": 200,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-08",
@@ -207,16 +228,18 @@
     "pko"
    ],
    "chips": 25000,
-   "level_min": 30,
+   "level_min": "30",
    "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 Players start the event as a $50 bounty. \u2026 A Prize Pool of $8,000 is guaranteed \u2026 which consists of the actual prize pool plus the total amount of bounty prize money.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
    "notes": "",
@@ -224,7 +247,10 @@
    "bounty": null,
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-09",
@@ -244,14 +270,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -262,7 +290,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-10",
@@ -280,16 +310,18 @@
    "category": "single",
    "tags": [],
    "chips": 40000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
    "notes": "",
@@ -297,7 +329,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 37.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-11",
@@ -317,14 +352,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -335,7 +372,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-12",
@@ -353,14 +392,16 @@
    "category": "single",
    "tags": [],
    "chips": 40000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "NOT VERIFIED: structure sheet not yet read",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -371,7 +412,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 33.33,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-13",
@@ -391,14 +434,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -409,7 +454,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-14",
@@ -426,17 +473,19 @@
    "format": "one-day",
    "category": "single",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
    "notes": "",
@@ -444,7 +493,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 50.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-15",
@@ -464,14 +516,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -482,7 +536,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-16",
@@ -501,15 +557,17 @@
    "tags": [
     "bounty"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -520,7 +578,9 @@
    "total_entry_fee": 600,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-17",
@@ -542,16 +602,18 @@
     "plo"
    ],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + break (~4:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + break (~ 4:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $340 of every $400 Buy In. \u2026 Players receive a $100 Bounty for each player they eliminate \u2026 A total prize pool of $15,000 is guaranteed \u2026 plus the total amount of $100 bounties.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
    "notes": "",
@@ -559,7 +621,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 37.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+   "reg_close_end": "16:40"
   },
   {
    "id": "V-18",
@@ -571,7 +636,7 @@
    "start": "5:10 PM",
    "buy_in": 200,
    "fee": 40,
-   "pool_per_entry": null,
+   "pool_per_entry": 160,
    "gtd": 20000,
    "format": "one-day",
    "category": "ambiguous",
@@ -579,16 +644,18 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": 30,
+   "level_min": "30",
    "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "ambiguous",
     "re_entry": "not stated; sheet note 7 refers to \u201csubsequent buy in\u2019s\u201d",
     "add_on": "none stated",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only \u2026 All subsequent buy in's after the initial buy in will be $200.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
    "notes": "",
@@ -596,7 +663,10 @@
    "bounty": null,
    "total_entry_fee": 200,
    "gtd_ratio": 100.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-20",
@@ -617,16 +687,18 @@
     "plo"
    ],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + break (~4:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + break (~ 4:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In. \u2026 Guarantee: $10,000.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
    "notes": "",
@@ -634,7 +706,10 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 33.33,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "reg_close_end": "16:40"
   },
   {
    "id": "V-21",
@@ -654,14 +729,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -672,7 +749,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-22",
@@ -692,14 +771,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -710,7 +791,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-23",
@@ -730,14 +813,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -748,7 +833,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-24",
@@ -768,16 +855,18 @@
     "seniors"
    ],
    "chips": 40000,
-   "level_min": 30,
-   "late_reg": "10 levels + Break (~3:55 PM)",
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 3:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
    "notes": "",
@@ -785,7 +874,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "reg_close_end": "15:55"
   },
   {
    "id": "V-25",
@@ -805,14 +897,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -823,7 +917,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-27",
@@ -843,16 +939,18 @@
     "plo"
    ],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + break (~4:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + break (~ 4:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake - Staff). Prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
    "notes": "",
@@ -860,7 +958,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 41.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+   "reg_close_end": "16:40"
   },
   {
    "id": "V-28",
@@ -877,17 +978,19 @@
    "format": "one-day",
    "category": "single",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
    "notes": "",
@@ -895,7 +998,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-29",
@@ -915,14 +1021,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -933,7 +1041,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-30",
@@ -952,15 +1062,17 @@
    "tags": [
     "bounty"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -971,7 +1083,9 @@
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-31",
@@ -991,14 +1105,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1009,7 +1125,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-32",
@@ -1029,16 +1147,18 @@
     "seniors"
    ],
    "chips": 40000,
-   "level_min": 30,
-   "late_reg": "10 levels + Break (~3:55 PM)",
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 3:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $40,000.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
    "notes": "",
@@ -1046,7 +1166,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 66.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "reg_close_end": "15:55"
   },
   {
    "id": "V-34",
@@ -1066,14 +1189,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1084,7 +1209,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-36",
@@ -1103,17 +1230,19 @@
    "tags": [
     "bounty"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
    "notes": "",
@@ -1121,7 +1250,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 93.75,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-38",
@@ -1141,14 +1273,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1159,7 +1293,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-40",
@@ -1181,16 +1317,18 @@
     "plo"
    ],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + break (~4:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + break (~ 4:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Players receive a $200 Bounty for each player they eliminate \u2026 A total prize pool of $25,000 is guaranteed \u2026 plus the total amount of $200 bounties.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
    "notes": "",
@@ -1198,7 +1336,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 41.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+   "reg_close_end": "16:40"
   },
   {
    "id": "V-42",
@@ -1218,14 +1359,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1236,7 +1379,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-43",
@@ -1257,16 +1402,18 @@
     "ladies"
    ],
    "chips": 40000,
-   "level_min": 30,
+   "level_min": "30",
    "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In \u2026 for \u2026 (LIPS). Prize pool consists of $510 of every $600 Buy In. \u2026 Players receive $200 Bounty for each player they eliminate.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
    "notes": "",
@@ -1274,7 +1421,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 50.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-50",
@@ -1294,14 +1444,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1312,7 +1464,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-51",
@@ -1332,14 +1486,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1350,7 +1506,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-52",
@@ -1370,17 +1528,19 @@
     "bounty",
     "pko"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
    "notes": "",
@@ -1388,7 +1548,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 68.18,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-53",
@@ -1408,14 +1571,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1426,7 +1591,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-54",
@@ -1445,15 +1612,17 @@
    "tags": [
     "bounty"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1464,7 +1633,9 @@
    "total_entry_fee": 600,
    "gtd_ratio": 83.33,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-55",
@@ -1484,14 +1655,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1502,7 +1675,9 @@
    "total_entry_fee": 300,
    "gtd_ratio": 50.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-57",
@@ -1523,16 +1698,18 @@
     "plo"
    ],
    "chips": 30000,
-   "level_min": 30,
-   "late_reg": "8 levels + break (~4:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + break (~ 4:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. \u2026 Guarantee: $25,000.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
    "notes": "",
@@ -1540,7 +1717,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 41.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+   "reg_close_end": "16:40"
   },
   {
    "id": "V-58",
@@ -1552,7 +1732,7 @@
    "start": "5:10 PM",
    "buy_in": 200,
    "fee": 40,
-   "pool_per_entry": null,
+   "pool_per_entry": 160,
    "gtd": 20000,
    "format": "one-day",
    "category": "ambiguous",
@@ -1560,16 +1740,18 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": 30,
+   "level_min": "30",
    "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "ambiguous",
     "re_entry": "not stated; sheet note 7 refers to \u201csubsequent buy in\u2019s\u201d",
     "add_on": "none stated",
     "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In. \u2026 PokerAtlas PRO players will receive a twenty ($20) rake discount on their initial $200 buy in only \u2026 All subsequent buy in's after the initial buy in will be $200.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
    "notes": "",
@@ -1577,7 +1759,10 @@
    "bounty": null,
    "total_entry_fee": 200,
    "gtd_ratio": 100.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-60",
@@ -1597,14 +1782,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1615,7 +1802,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-61",
@@ -1635,14 +1824,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1653,7 +1844,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-62",
@@ -1673,14 +1866,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1691,7 +1886,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-63",
@@ -1708,17 +1905,19 @@
    "format": "one-day",
    "category": "single",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "10 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
    "notes": "",
@@ -1726,7 +1925,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 50.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-64",
@@ -1746,14 +1948,16 @@
     "bounty"
    ],
    "chips": 25000,
-   "level_min": "",
-   "late_reg": "",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (9:40 PM)",
    "rules": {
     "single_entry": "not stated \u2014 sheet is silent on re-entry",
     "re_entry": "no re-entry clause printed on the sheet; silence, not a prohibition",
     "add_on": "no add-on clause printed on the sheet; silence, not a prohibition",
     "excerpt": "Structure sheet read: no re-entry or add-on clause",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
    "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1764,7 +1968,9 @@
    "total_entry_fee": 200,
    "gtd_ratio": 40.0,
    "schedule_checked": "2026-11-17",
-   "struct_checked": "2026-11-17"
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "reg_close_end": "21:40"
   },
   {
    "id": "V-MF01-11-16-11:10AM",
@@ -1775,23 +1981,25 @@
    "date": "2026-11-16",
    "start": "11:10 AM",
    "buy_in": 300,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 60,
+   "pool_per_entry": 240,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 30000,
+   "level_min": "40",
+   "late_reg": "6 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131D; Day 2 Restart Nov 18 12:00 PM (structure 10)",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
    "notes": "Flight 1A of 1A\u20131D; Day 2 Restart Nov 18 12:00 PM (structure 10)",
@@ -1799,7 +2007,10 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-MF01-11-16-5:10PM",
@@ -1810,23 +2021,25 @@
    "date": "2026-11-16",
    "start": "5:10 PM",
    "buy_in": 300,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 60,
+   "pool_per_entry": 240,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "6 levels + Break (~8:40 PM)",
+   "chips": 30000,
+   "level_min": "30",
+   "late_reg": "6 levels + Break (~ 8:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "a player who has not bagged a Day 2 stack may enter another flight",
     "add_on": "none stated",
     "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. \u2026 $60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
    "notes": "Flight 1B",
@@ -1834,7 +2047,10 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "reg_close_end": "20:40"
   },
   {
    "id": "V-MF01-11-17-11:10AM",
@@ -1845,23 +2061,25 @@
    "date": "2026-11-17",
    "start": "11:10 AM",
    "buy_in": 300,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 60,
+   "pool_per_entry": 240,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 30000,
+   "level_min": "40",
+   "late_reg": "6 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1C",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
    "notes": "Flight 1C",
@@ -1869,7 +2087,10 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-MF01-11-17-5:10PM",
@@ -1880,23 +2101,25 @@
    "date": "2026-11-17",
    "start": "5:10 PM",
    "buy_in": 300,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 60,
+   "pool_per_entry": 240,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "6 levels + Break (~8:40 PM)",
+   "chips": 30000,
+   "level_min": "30",
+   "late_reg": "6 levels + Break (~ 8:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "a player who has not bagged a Day 2 stack may enter another flight",
     "add_on": "none stated",
     "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. \u2026 $60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
    "notes": "Flight 1D",
@@ -1904,7 +2127,10 @@
    "bounty": null,
    "total_entry_fee": 300,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "reg_close_end": "20:40"
   },
   {
    "id": "V-MF07-11-23-11:10AM",
@@ -1915,23 +2141,25 @@
    "date": "2026-11-23",
    "start": "11:10 AM",
    "buy_in": 400,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 70,
+   "pool_per_entry": 330,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "40",
    "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "a player who has not bagged a Day 2 stack may enter another flight",
     "add_on": "none stated",
     "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. \u2026 $70 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $330 of every $400 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
    "notes": "Flight 1A of 1A\u20131B; Day 2 Restart Nov 25 11:00 AM (structure 2)",
@@ -1939,7 +2167,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF07-11-24-11:10AM",
@@ -1950,23 +2181,25 @@
    "date": "2026-11-24",
    "start": "11:10 AM",
    "buy_in": 400,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 70,
+   "pool_per_entry": 330,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
+   "chips": 40000,
+   "level_min": "40",
    "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "a player who has not bagged a Day 2 stack may enter another flight",
     "add_on": "none stated",
     "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight. \u2026 $70 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $330 of every $400 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
    "notes": "Flight 1B",
@@ -1974,7 +2207,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF19-11-29-11:10AM",
@@ -1985,23 +2221,25 @@
    "date": "2026-11-29",
    "start": "11:10 AM",
    "buy_in": 400,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 70,
+   "pool_per_entry": 330,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131C; Day 2 Restart Dec 2 11:00 AM (structure 3); 40K chips, 40-minute levels",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
    "notes": "Flight 1A of 1A\u20131C; Day 2 Restart Dec 2 11:00 AM (structure 3); 40K chips, 40-minute levels",
@@ -2009,7 +2247,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF19-11-30-11:10AM",
@@ -2020,23 +2261,25 @@
    "date": "2026-11-30",
    "start": "11:10 AM",
    "buy_in": 400,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 70,
+   "pool_per_entry": 330,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
    "notes": "Flight 1B",
@@ -2044,7 +2287,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF19-12-01-11:10AM",
@@ -2055,23 +2301,25 @@
    "date": "2026-12-01",
    "start": "11:10 AM",
    "buy_in": 400,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 70,
+   "pool_per_entry": 330,
    "gtd": 75000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1C",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
    "notes": "Flight 1C",
@@ -2079,7 +2327,10 @@
    "bounty": null,
    "total_entry_fee": 400,
    "gtd_ratio": 187.5,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF26-12-03-11:10AM",
@@ -2090,23 +2341,25 @@
    "date": "2026-12-03",
    "start": "11:10 AM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "6 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131F; Day 2 Restart Dec 6 12:00 PM (structure 12). Day 2 rules not yet read.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
    "notes": "Flight 1A of 1A\u20131F; Day 2 Restart Dec 6 12:00 PM (structure 12). Day 2 rules not yet read.",
@@ -2114,7 +2367,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-MF26-12-03-5:10PM",
@@ -2125,23 +2381,25 @@
    "date": "2026-12-03",
    "start": "5:10 PM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "6 levels + Break (~ 8:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
    "notes": "Flight 1B",
@@ -2149,7 +2407,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "reg_close_end": "20:40"
   },
   {
    "id": "V-MF26-12-04-11:10AM",
@@ -2160,23 +2421,25 @@
    "date": "2026-12-04",
    "start": "11:10 AM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "6 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1C",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
    "notes": "Flight 1C",
@@ -2184,7 +2447,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-MF26-12-04-5:10PM",
@@ -2195,23 +2461,25 @@
    "date": "2026-12-04",
    "start": "5:10 PM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "6 levels + Break (~ 8:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1D",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
    "notes": "Flight 1D",
@@ -2219,7 +2487,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "reg_close_end": "20:40"
   },
   {
    "id": "V-MF26-12-05-11:10AM",
@@ -2230,23 +2501,25 @@
    "date": "2026-12-05",
    "start": "11:10 AM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "6 levels + Break (~ 3:40 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1E",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
    "notes": "Flight 1E",
@@ -2254,7 +2527,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "reg_close_end": "15:40"
   },
   {
    "id": "V-MF26-12-05-5:10PM",
@@ -2265,25 +2541,27 @@
    "date": "2026-12-05",
    "start": "5:10 PM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "20",
+   "late_reg": "6 levels + Break (~ 7:25 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1F",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
    "notes": "Flight 1F",
@@ -2291,7 +2569,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 625.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+   "reg_close_end": "19:25"
   },
   {
    "id": "V-MF47-12-12-10:10AM",
@@ -2302,23 +2583,25 @@
    "date": "2026-12-12",
    "start": "10:10 AM",
    "buy_in": 2200,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 225,
+   "pool_per_entry": 1975,
    "gtd": 1000000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131B; Day 2 Restart Dec 13 1:00 PM (structure 21). Day 2 rules not yet read.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
    "notes": "Flight 1A of 1A\u20131B; Day 2 Restart Dec 13 1:00 PM (structure 21). Day 2 rules not yet read.",
@@ -2326,7 +2609,10 @@
    "bounty": null,
    "total_entry_fee": 2200,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF47-12-12-6:10PM",
@@ -2337,23 +2623,25 @@
    "date": "2026-12-12",
    "start": "6:10 PM",
    "buy_in": 2200,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 225,
+   "pool_per_entry": 1975,
    "gtd": 1000000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "9 levels + Break (~ 11:10 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
    "notes": "Flight 1B",
@@ -2361,7 +2649,10 @@
    "bounty": null,
    "total_entry_fee": 2200,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+   "reg_close_end": "23:10"
   },
   {
    "id": "V-MF49-12-13-10:10AM",
@@ -2372,25 +2663,27 @@
    "date": "2026-12-13",
    "start": "10:10 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 300000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [
     "seniors"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131B; Day 2 Restart Dec 15 10:00 AM (structure 20)",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
    "notes": "Flight 1A of 1A\u20131B; Day 2 Restart Dec 15 10:00 AM (structure 20)",
@@ -2398,7 +2691,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 272.73,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF49-12-14-10:10AM",
@@ -2409,25 +2705,27 @@
    "date": "2026-12-14",
    "start": "10:10 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 300000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [
     "seniors"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
    "notes": "Flight 1B",
@@ -2435,7 +2733,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 272.73,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF39-12-10-10:10AM",
@@ -2446,8 +2747,8 @@
    "date": "2026-12-10",
    "start": "10:10 AM",
    "buy_in": 800,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 110,
+   "pool_per_entry": 690,
    "gtd": 40000,
    "format": "multi-flight",
    "category": "multi-flight",
@@ -2455,16 +2756,18 @@
     "ladies"
    ],
    "chips": 40000,
-   "level_min": 40,
-   "late_reg": "9 levels + Break (~4:55 PM)",
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "a player who has not bagged a Day 2 stack may enter another flight",
     "add_on": "none stated",
     "excerpt": "$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
    "notes": "Two-day event; Day 2 restart Dec 11 10:00 AM. Day 2 rules not yet read. Entry rules unverified.",
@@ -2472,7 +2775,10 @@
    "bounty": null,
    "total_entry_fee": 800,
    "gtd_ratio": 50.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF56-12-17-10:10AM",
@@ -2483,23 +2789,25 @@
    "date": "2026-12-17",
    "start": "10:10 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131E; Day 2 Restart Dec 20 11:00 AM (structure 35). Day 2 rules not yet read.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight. On Day 1A, players who register before 10:10 a.m. pay $1,060 instead of $1,100 (a $40 house-fee discount)."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
    "notes": "Flight 1A of 1A\u20131E; Day 2 Restart Dec 20 11:00 AM (structure 35). Day 2 rules not yet read.",
@@ -2507,7 +2815,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF56-12-17-6:10PM",
@@ -2518,23 +2829,25 @@
    "date": "2026-12-17",
    "start": "6:10 PM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "9 levels + Break (~ 11:10 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight. On Day 1B, players who register before 6:10 p.m. pay $1,060 instead of $1,100 (a $40 house-fee discount)."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
    "notes": "Flight 1B",
@@ -2542,7 +2855,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "reg_close_end": "23:10"
   },
   {
    "id": "V-MF56-12-18-10:10AM",
@@ -2553,23 +2869,25 @@
    "date": "2026-12-18",
    "start": "10:10 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1C",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight. On Day 1A, players who register before 10:10 a.m. pay $1,060 instead of $1,100 (a $40 house-fee discount)."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
    "notes": "Flight 1C",
@@ -2577,7 +2895,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF56-12-18-6:10PM",
@@ -2588,23 +2909,25 @@
    "date": "2026-12-18",
    "start": "6:10 PM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "30",
+   "late_reg": "9 levels + Break (~ 11:10 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1D",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight. On Day 1B, players who register before 6:10 p.m. pay $1,060 instead of $1,100 (a $40 house-fee discount)."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
    "notes": "Flight 1D",
@@ -2612,7 +2935,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "reg_close_end": "23:10"
   },
   {
    "id": "V-MF56-12-19-10:10AM",
@@ -2623,23 +2949,25 @@
    "date": "2026-12-19",
    "start": "10:10 AM",
    "buy_in": 1100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 140,
+   "pool_per_entry": 960,
    "gtd": 500000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (~ 4:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1E",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight. On Day 1A, players who register before 10:10 a.m. pay $1,060 instead of $1,100 (a $40 house-fee discount)."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
    "notes": "Flight 1E",
@@ -2647,7 +2975,10 @@
    "bounty": null,
    "total_entry_fee": 1100,
    "gtd_ratio": 454.55,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "reg_close_end": "16:55"
   },
   {
    "id": "V-MF59-12-20-11:10AM",
@@ -2658,23 +2989,25 @@
    "date": "2026-12-20",
    "start": "11:10 AM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 95,
+   "pool_per_entry": 505,
    "gtd": 150000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1A of 1A\u20131C; Day 2 Restart Dec 23 11:00 AM (structure 4). Day 2 rules not yet read.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
    "notes": "Flight 1A of 1A\u20131C; Day 2 Restart Dec 23 11:00 AM (structure 4). Day 2 rules not yet read.",
@@ -2682,7 +3015,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF59-12-21-11:10AM",
@@ -2693,23 +3029,25 @@
    "date": "2026-12-21",
    "start": "11:10 AM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 95,
+   "pool_per_entry": 505,
    "gtd": 150000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1B",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
    "notes": "Flight 1B",
@@ -2717,7 +3055,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-MF59-12-22-11:10AM",
@@ -2728,23 +3069,25 @@
    "date": "2026-12-22",
    "start": "11:10 AM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 95,
+   "pool_per_entry": 505,
    "gtd": 150000,
    "format": "multi-flight",
    "category": "multi-flight",
    "tags": [],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 40000,
+   "level_min": "40",
+   "late_reg": "9 levels + Break (5:55 PM)",
    "rules": {
     "single_entry": "no \u2014 multi-flight event (each starting flight is a separate entry)",
     "re_entry": "unverified for this flight sheet",
     "add_on": "none stated",
     "excerpt": "Flight 1C",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight."
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
    "notes": "Flight 1C",
@@ -2752,7 +3095,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 250.0,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "reg_close_end": "17:55"
   },
   {
    "id": "V-X35",
@@ -2763,8 +3109,8 @@
    "date": "2026-12-09",
    "start": "10:10 AM",
    "buy_in": 600,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 90,
+   "pool_per_entry": 510,
    "gtd": 10000,
    "format": "team",
    "category": "team",
@@ -2773,16 +3119,18 @@
     "team"
    ],
    "chips": 40000,
-   "level_min": 30,
-   "late_reg": "8 levels + Break (~2:40 PM)",
+   "level_min": "30",
+   "late_reg": "8 levels + Break (~ 2:40 PM)",
    "rules": {
     "single_entry": "no \u2014 team event (one entry per team)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In.",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
    "notes": "",
@@ -2790,7 +3138,10 @@
    "bounty": null,
    "total_entry_fee": 600,
    "gtd_ratio": 16.67,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "reg_close_end": "14:40"
   },
   {
    "id": "V-X33",
@@ -2801,8 +3152,8 @@
    "date": "2026-12-08",
    "start": "4:10 PM",
    "buy_in": 100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 20,
+   "pool_per_entry": 80,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -2811,17 +3162,19 @@
     "milestone",
     "satellite"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "20",
+   "late_reg": "6 levels + Break (~6:25 PM)",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
    "notes": "",
@@ -2829,7 +3182,10 @@
    "bounty": null,
    "total_entry_fee": 100,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "reg_close_end": "18:25"
   },
   {
    "id": "V-X37",
@@ -2840,8 +3196,8 @@
    "date": "2026-12-09",
    "start": "4:10 PM",
    "buy_in": 100,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 20,
+   "pool_per_entry": 80,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -2850,17 +3206,19 @@
     "milestone",
     "satellite"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "20",
+   "late_reg": "6 levels + Break (~6:25 PM)",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
    "notes": "",
@@ -2868,7 +3226,10 @@
    "bounty": null,
    "total_entry_fee": 100,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "reg_close_end": "18:25"
   },
   {
    "id": "V-X41",
@@ -2879,8 +3240,8 @@
    "date": "2026-12-10",
    "start": "4:10 PM",
    "buy_in": 260,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 40,
+   "pool_per_entry": 220,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -2888,17 +3249,19 @@
     "milestone",
     "satellite"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "20",
+   "late_reg": "6 levels + Break (~6:25 PM)",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
    "notes": "",
@@ -2906,7 +3269,10 @@
    "bounty": null,
    "total_entry_fee": 260,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "reg_close_end": "18:25"
   },
   {
    "id": "V-X44",
@@ -2917,8 +3283,8 @@
    "date": "2026-12-11",
    "start": "4:10 PM",
    "buy_in": 260,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 40,
+   "pool_per_entry": 220,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -2926,17 +3292,19 @@
     "milestone",
     "satellite"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "20",
+   "late_reg": "6 levels + Break (~6:25 PM)",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
    "notes": "",
@@ -2944,7 +3312,10 @@
    "bounty": null,
    "total_entry_fee": 260,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "reg_close_end": "18:25"
   },
   {
    "id": "V-X45",
@@ -2955,8 +3326,8 @@
    "date": "2026-12-11",
    "start": "8:10 PM",
    "buy_in": 260,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 35,
+   "pool_per_entry": 225,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -2965,17 +3336,19 @@
     "satellite",
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "15",
+   "late_reg": "6 levels",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
    "notes": "",
@@ -2983,7 +3356,10 @@
    "bounty": null,
    "total_entry_fee": 260,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "reg_close_end": null
   },
   {
    "id": "V-X46",
@@ -2994,8 +3370,8 @@
    "date": "2026-12-12",
    "start": "9:10 AM",
    "buy_in": 260,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 35,
+   "pool_per_entry": 225,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -3004,17 +3380,19 @@
     "satellite",
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "15",
+   "late_reg": "6 levels",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
    "notes": "",
@@ -3022,7 +3400,10 @@
    "bounty": null,
    "total_entry_fee": 260,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "reg_close_end": null
   },
   {
    "id": "V-X48",
@@ -3033,8 +3414,8 @@
    "date": "2026-12-12",
    "start": "12:10 PM",
    "buy_in": 260,
-   "fee": null,
-   "pool_per_entry": null,
+   "fee": 35,
+   "pool_per_entry": 225,
    "gtd": null,
    "format": "satellite",
    "category": "satellite",
@@ -3043,17 +3424,19 @@
     "satellite",
     "turbo"
    ],
-   "chips": null,
-   "level_min": "",
-   "late_reg": "",
+   "chips": 20000,
+   "level_min": "15",
+   "late_reg": "6 levels",
    "rules": {
     "single_entry": "no \u2014 satellite (awards a seat, not a cash prize pool)",
     "re_entry": "none stated",
     "add_on": "none stated",
     "excerpt": "",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-16",
+    "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+    "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
    "notes": "",
@@ -3061,7 +3444,10 @@
    "bounty": null,
    "total_entry_fee": 260,
    "gtd_ratio": null,
-   "schedule_checked": "2026-11-17"
+   "schedule_checked": "2026-11-17",
+   "struct_checked": "2026-11-17",
+   "late_reg_source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "reg_close_end": null
   },
   {
    "id": "U-WPT01",
@@ -6059,22 +6445,24 @@
    "cancellation": "",
    "quality": "",
    "booking_url": "https://www.venetianlasvegas.com/book",
-   "rate_log": [
-    {
-     "date": "2026-11-16",
-     "rate": 119,
-     "basis": "from-price, conditional poker player rate",
-     "conditions": "Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies.",
-     "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-    }
-   ],
-   "notes": "Official 2026 poker-suite-rate page publishes from-$119 (Venetian) and from-$209 (Palazzo). A dated checkout quote for exact trip dates has NOT been captured; rate log holds dated entries only.",
+   "rate_log": [],
+   "notes": "Official 2026 poker-suite-rate page (re-read 2026-11-17) prints ONE pair of starting rates \u2014 'as low as $119 and $209' \u2014 for a Luxury King Suite 'in either The Venetian or The Palazzo' and states play requirements ($300+ tournament buy-in, or six hours of live cash, per night stayed). It does not say which property carries which number, so no rate is attributed to this hotel; both numbers are recorded once, in rate_log_shared below. A dated checkout quote for exact trip dates has NOT been captured.",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 5,
+    "wynn_min": 18.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "0.1 mile",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "5 min walk (0.1 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "19 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
+    "osrm_venetian_min": 0.0,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6091,24 +6479,26 @@
    "parking_value": 20.0,
    "deposit": "$150 per night incidentals (official hotel terms).",
    "booking_url": "https://www.venetianlasvegas.com/book",
-   "rate_log": [
-    {
-     "date": "2026-11-16",
-     "rate": 209,
-     "basis": "from-price, conditional poker player rate",
-     "conditions": "Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies.",
-     "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
-    }
-   ],
-   "notes": "Same resort and poker room as The Venetian. Official poker-rate wording maps $119 to Venetian and $209 to Palazzo per prior 2026-11-16 reads; see flag F-PokerRate-Mapping.",
+   "rate_log": [],
+   "notes": "Same resort and poker room as The Venetian. The official poker-rate page prints the same unattributed pair of starting rates ($119 / $209) for 'either The Venetian or The Palazzo'; it does not map a number to a property. See rate_log_shared.",
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 4,
+    "wynn_min": 16.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "443 ft",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "4 min walk (443 ft) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "17 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
+    "osrm_venetian_min": 6.0,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6130,11 +6520,21 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 12,
+    "wynn_min": 8.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "0.5 mile",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "12 min walk (0.5 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "9 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
+    "osrm_venetian_min": 13.0,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6156,11 +6556,21 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 37,
+    "wynn_min": 46.4,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "1.6 miles",
+    "within_30_to_venetian": false,
+    "status_to_venetian": "37 min walk (1.6 miles) to The Venetian Poker Room \u2014 outside the 30-minute limit",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "46 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 30.6,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6182,11 +6592,21 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 28,
+    "wynn_min": 41.5,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "1.1 miles",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "28 min walk (1.1 miles) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "42 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 27.6,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6208,11 +6628,21 @@
    "cancellation": "",
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 42,
+    "wynn_min": 53.2,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "1.8 miles",
+    "within_30_to_venetian": false,
+    "status_to_venetian": "42 min walk (1.8 miles) to The Venetian Poker Room \u2014 outside the 30-minute limit",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "53 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 36.5,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6234,11 +6664,21 @@
    "parking_value": null,
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 24,
+    "wynn_min": 36.3,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "1.0 mile",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "24 min walk (1.0 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "36 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 20.5,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6260,11 +6700,21 @@
    "parking_value": null,
    "quality": "",
    "walk": {
-    "venetian_min": null,
-    "wynn_min": null,
+    "venetian_min": 19,
+    "wynn_min": 35.3,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
-    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking",
-    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&travelmode=walking"
+    "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_distance": "0.8 mile",
+    "within_30_to_venetian": true,
+    "status_to_venetian": "19 min walk (0.8 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "35 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 19.5,
+    "routers_agree_30min": true
    },
    "fee_range": {
     "text": "$45-$50 plus applicable tax",
@@ -6305,6 +6755,18 @@
     "url": "https://www.westgateresorts.com/terms-and-conditions/",
     "secondary_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
     "retrieved": "2026-11-16"
+   },
+   "walk": {
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_min": null,
+    "within_30_to_venetian": null,
+    "status_to_venetian": "not read \u2014 open the maps link for a manual check",
+    "wynn_min": 24.6,
+    "within_30_to_wynn": true,
+    "status_to_wynn": "25 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
+    "osrm_venetian_min": 39.4
    }
   },
   {
@@ -6332,19 +6794,32 @@
    "sources": [
     "https://southpointcasino.com/casino/poker-room"
    ],
-   "retrieved": "2026-11-16"
+   "retrieved": "2026-11-16",
+   "walk": {
+    "source_type": "third-party routing (Google Maps), not a casino document",
+    "retrieved": "2026-11-17",
+    "method": "Google Maps walking directions, shortest suggested route, read 2026-11-17; figures rounded as the page displayed them",
+    "venetian_min": null,
+    "within_30_to_venetian": null,
+    "status_to_venetian": "not read \u2014 open the maps link for a manual check",
+    "wynn_min": null,
+    "within_30_to_wynn": null,
+    "status_to_wynn": "not routed \u2014 open the maps link for a manual check",
+    "osrm_venetian_min": null
+   }
   }
  ],
  "questions": [
   {
    "id": "Q01",
    "question": "Which tournaments are single-entry, one-day events with no re-entry, rebuy or add-on?",
-   "status": "Partly answered",
-   "answer": "32 Venetian events are verified single-entry from official structure sheets. No Wynn daily event qualifies. Wynn WPT events are unverified or excluded.",
-   "needed": "Review the structure sheets for the 17 unverified Venetian rows and the unverified Wynn WPT rows.",
-   "how_to_find": "Open each official structure PDF linked in the row, or ask the poker room.",
+   "status": "Answered for The Venetian \u2014 the answer is 'none can be confirmed'",
+   "answer": "All 37 Venetian DeepStack Extravaganza IV structure sheets have been read in full (2026-11-17). Not one prints a clause limiting play to a single entry, and not one prints a re-entry, rebuy or add-on clause either: 13 print only the Day-2 bagging rule for multi-flight events, and 24 say nothing about entries. So 45 one-day Venetian rows are 'sheet silent on re-entry' \u2014 a category of their own, not a single-entry list. Two further rows (Events 18 and 58) are entry-limit ambiguous because their sheet prices a subsequent buy-in. Wynn's printed terms allow re-entry, so Wynn events sit in the spend-more list.",
+   "needed": "A written answer from The Venetian poker room on whether a one-day event may be re-entered. Until then no row can be called single-entry.",
+   "how_to_find": "Ask the poker room in writing (email or at the desk) and record the answer with its date, or find an official tournament-rules page that states an entry limit.",
    "sources": [
     "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
     "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
    ]
   },
@@ -6362,23 +6837,28 @@
   {
    "id": "Q03",
    "question": "What is the true nightly cost of each hotel for the user's dates?",
-   "status": "Open",
-   "answer": "Resort fee verified: $55 plus tax per night at The Venetian and Wynn (official). Nightly room rates were NOT captured, so the true cost is blank.",
-   "needed": "Travel dates, room type, and an official nightly rate for each hotel, with tax.",
-   "how_to_find": "Get quotes from each hotel's official booking page for the exact dates.",
+   "status": "Partly answered \u2014 fees and tax verified, room rate open",
+   "answer": "The mandatory resort fee is $55 plus tax per night at The Venetian, The Palazzo and Wynn, and the room tax is 13.38% for the Strip corridor (13.00% at South Point). What is missing is a room rate: the Venetian poker-rate page prints starting rates of $119 and $209 for a suite 'in either The Venetian or The Palazzo' without saying which property is which, and no dated checkout quote for the trip dates has been captured. True cost per night therefore stays blank rather than being estimated.",
+   "needed": "A dated checkout quote per hotel for the exact stay dates, with resort fee, tax line, parking, cancellation deadline and the time it was read.",
+   "how_to_find": "Use each hotel's official booking page for the exact dates and log the total, not the headline rate.",
    "sources": [
+    "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
     "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "https://www.visitwynn.com/tc/index.cfm?term_id=850250"
+    "https://www.wynnlasvegas.com/about-us/resort-information"
    ]
   },
   {
    "id": "Q04",
    "question": "Is each hotel within a 30-minute walk of the tournament venue?",
-   "status": "Open",
-   "answer": "Walking times were NOT verified for any hotel.",
-   "needed": "Walking time from each hotel to each tournament venue, from a map or official source.",
-   "how_to_find": "Check a walking route on a map service and record the date checked, or ask the resort.",
-   "sources": []
+   "status": "Answered as far as routing services allow",
+   "answer": "No casino publishes a walk time, so routing services were used and labelled as such. Google Maps walking directions (read 2026-11-17) and an independent OSRM foot matrix agree on every 30-minute verdict for The Venetian Poker Room: Palazzo 4-6 min, Venetian 5 min, Wynn 12-13 min, Caesars Palace 19-20 min, Horseshoe 21-24 min and Bellagio 28 min are inside the limit; MGM Grand (37-42 min) and ARIA (31-37 min) are outside it. The Wynn poker room is covered by the OSRM matrix alone: Wynn, Encore, Resorts World, Venetian, Palazzo, Westgate, Harrah's, LINQ and Flamingo are inside; Horseshoe, Caesars Palace, Bellagio and everything south of them are outside.",
+   "needed": "A second router on the Wynn side, and an in-person check of the two tight calls: Bellagio to the Venetian (28-30 min depending on router) and ARIA to the Venetian (30.6 min by OSRM, 37 min by Google \u2014 the only pair where the two routers land on opposite sides of the limit).",
+   "how_to_find": "Walk the two tight pairs once and record the time; or read a second routing service for the Wynn side.",
+   "sources": [
+    "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas&destination=The+Venetian+Poker+Room&travelmode=walking",
+    "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   ]
   },
   {
    "id": "Q05",
@@ -6424,8 +6904,8 @@
    "id": "Q09",
    "question": "Does the poker room confirm single-entry status for each event the user plans to play?",
    "status": "Open",
-   "answer": "Single-entry status here means the official structure sheet states no re-entry, rebuy or add-on. It is not a poker-room confirmation.",
-   "needed": "Poker-room confirmation for each planned event.",
+   "answer": "Correct as stated, and now measured across the whole festival: 'sheet silent on re-entry' is what the document says, not what the room promises. The wording on every Venetian row was changed to that label so it can never be read as a single-entry confirmation.",
+   "needed": "A written poker-room answer for any event actually being planned.",
    "how_to_find": "Ask the poker room at the venue, or read the written rules at registration.",
    "sources": [
     "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
@@ -6456,8 +6936,8 @@
   {
    "id": "Q12",
    "question": "Are the official structure sheets and schedules current?",
-   "status": "Open",
-   "answer": "Venetian pages are for the 2026 series. Wynn daily and WPT PDFs carry 2025 version stamps (see flags F04 and F05).",
+   "status": "Answered for The Venetian",
+   "answer": "All 37 Venetian sheets and the November schedule page were re-read on 2026-11-17 and every one of the 83 scheduled rows reconciles with its sheet (start time, house fee, chips, printed late-registration wording, guarantee). Wynn's daily and WPT PDFs still carry 2025 version stamps (flags F04, F05), so the Wynn rows remain the weaker half of the data.",
    "needed": "Re-check each official document before travel.",
    "how_to_find": "Re-open the official pages and compare dates and buy-ins.",
    "sources": [
@@ -6489,7 +6969,9 @@
     "C) Manual review plus a second reviewer."
    ],
    "tradeoff": "A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.",
-   "status": "Awaiting decision"
+   "status": "Implemented, with the scope kept honest",
+   "recommendation": "Option A, narrowly",
+   "implemented_as": "The classification is now mechanical where the document is explicit and manual only where wording is ambiguous. scripts/build_structure_registry.py holds the reading of all 37 sheets; scripts/audit.py re-derives every Venetian row's fee, chips, late-registration wording, clock close and guarantee against the sheet it cites and fails the build on any mismatch. Automatic keyword hunting for 're-entry' was not used as the decision rule: all 24 silent sheets contain no such word, and treating that as 'single entry' would be an inference. Silence is labelled silence."
   },
   {
    "id": "S03",
@@ -6537,7 +7019,9 @@
     "C) Estimate from straight-line distance (not recommended; cannot be verified)."
    ],
    "tradeoff": "A and B are verifiable; C is an estimate and conflicts with the 'never infer' rule.",
-   "status": "Awaiting decision"
+   "status": "Implemented",
+   "recommendation": "Option A, and it is what the site now does",
+   "implemented_as": "Google Maps walking directions were read 2026-11-17 for eight hotels' trips to The Venetian Poker Room, and every figure was checked against a second, independent router: the OSRM foot-profile matrix built 2026-11-16 from geocoded official addresses. The two agree on the 30-minute verdict for every pair they share. The Wynn side is covered by the OSRM matrix alone and is labelled 'single router'. Each row states the date read, the router count and a live route link, so any figure can be re-checked by hand."
   },
   {
    "id": "S07",
@@ -6549,7 +7033,8 @@
     "C) Add a day planner that builds an 8 AM\u2013close schedule from verified start times."
    ],
    "tradeoff": "A and C add real decision value. B is what is built now.",
-   "status": "Awaiting decision"
+   "status": "Partly implemented",
+   "implemented_as": "Search boxes, date filters and category filters run on every table, and a day planner now picks one primary event per day with a fallback, using published start times and printed registration cut-offs. Buy-in-cap and guarantee-minimum filters are not built yet."
   },
   {
    "id": "S08",
@@ -6561,7 +7046,9 @@
     "C) No automation."
    ],
    "tradeoff": "A keeps data current but needs hosting; B is cheap; C risks stale data.",
-   "status": "Awaiting decision"
+   "status": "Awaiting decision",
+   "recommendation": "Option A, already wired \u2014 it just needs a first baseline",
+   "implemented_as": "Three workflows exist (recheck.yml, source-monitor.yml, plan-refresh.yml) and 82 official URLs are in data/source_monitor.json, but no hash baseline has been taken yet, so nothing can be diffed. The next run of source-monitor.yml establishes the baseline; until then the monitor page shows 82 URLs as 'never checked'."
   },
   {
    "id": "S09",
@@ -6573,7 +7060,9 @@
     "C) Use both: sheet-based by default, confirmation for events the user will play."
    ],
    "tradeoff": "A is clear but depends on documents; B is strongest but slow; C balances both.",
-   "status": "Awaiting decision"
+   "status": "Implementing \u2014 the wording was already changed to match",
+   "recommendation": "Option C",
+   "implemented_as": "Every Venetian one-day row reads 'sheet silent on re-entry' and the 45 of them sit in their own category, never in the single-entry group. The structure-sheet register states the standard in one place, and Q01 and Q09 record that a poker-room answer is still needed before any row is called single-entry."
   },
   {
    "id": "S10",
@@ -6829,7 +7318,7 @@
    "source": "arena/8234a824-poker2",
    "item": "Hotel walking times and dated room totals",
    "where": "All hotel rows",
-   "detail": "No official walking-time source and no dated checkout quote have been captured. Walk minutes and checkout totals are blank; use the official booking links and maps links to capture them for exact trip dates before booking.",
+   "detail": "No dated checkout quote has been captured, so true cost per night stays blank. Walking times are now recorded from routing services (Google Maps read 2026-11-17, cross-checked against an OSRM foot matrix) and labelled as third-party estimates, not casino documents; the Wynn-side routes are still unread.",
    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
    "id": "VR-030"
   },
@@ -7684,21 +8173,11 @@
   "note": "Only a range is published, so no single Caesars Palace fee value is entered."
  },
  "walking_check": {
-  "status": "not verified",
-  "why": "No official hotel or poker-room page publishes a walking time between properties, and no routing service could be queried from the build environment. Every walk field stays blank and the 30-minute rule is recorded as unapplied rather than assumed.",
-  "addresses_published": {
-   "The Venetian": "3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "The Palazzo": "3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "Wynn Las Vegas": "3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "Bellagio": "3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "The Cosmopolitan": "3708 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "ARIA": "3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "Caesars Palace": "3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "Horseshoe Las Vegas": "3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "MGM Grand": "3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
-   "Westgate Las Vegas": "3000 Paradise Rd, Las Vegas, NV 89109",
-   "South Point": "9777 S. Las Vegas Blvd, Las Vegas, NV 89183"
-  }
+  "osrm_as_of": "2026-11-16",
+  "google_as_of": "2026-11-17",
+  "osrm_method": "Official addresses geocoded via OpenStreetMap Nominatim; walking routes computed with the OSRM foot profile on the FOSSGIS routing server (routing.openstreetmap.de/routed-foot) on 2026-11-16. Durations are routing estimates (typical walking pace), not a Google/Apple Maps measurement \u2014 each row includes a prefilled Google Maps walking-directions link for independent confirmation. The \u226430-minute rule is applied to the routed estimate.",
+  "disagreements": [],
+  "note": "Two unrelated walking routers are compared: an OSRM foot-profile matrix computed from geocoded official addresses, and the Google Maps walking directions read for the routes that were opened. They agree on the 30-minute classification for every hotel covered by both. Individual minutes differ by a few minutes, which is expected between routers; the routing estimate is a planning aid, not a promise about a casino corridor."
  },
  "rate_log_e1c": {
   "status": "no dated quote captured",
@@ -7720,5 +8199,27 @@
   "excerpt": "The DeepStack overview page still labels the 'Current Series' as the WPT Fall Festival while the DSE IV event page and schedule PDF (Nov 16 - Dec 23, 2026) are live.",
   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
   "retrieved": "2026-11-16"
+ },
+ "rate_log_shared": {
+  "hotel_ids": [
+   "H-VEN",
+   "H-PAL"
+  ],
+  "note": "The official 2026 poker-suite-rate page prints starting rates 'as low as $119 and $209' for a Luxury King Suite in either The Venetian or The Palazzo, and does not say which property carries which figure. Neither number is attributed to a single hotel here.",
+  "entries": [
+   {
+    "date": "2026-11-17",
+    "values": [
+     119,
+     209
+    ],
+    "basis": "from-price, conditional poker-player rate",
+    "conditions": "During the stay the player must buy in to a $300 or higher tournament, or play six hours of active live cash, for each night stayed; otherwise the nightly rate is adjusted to the prevailing rate. Rates are subject to availability and blackout dates.",
+    "resort_fee": "$55 per night stayed (same page)",
+    "occupancy": "Single/double occupancy, Luxury King Suite",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "retrieved": "2026-11-17"
+   }
+  ]
  }
 }

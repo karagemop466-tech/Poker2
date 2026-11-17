@@ -776,6 +776,27 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
 
+## Session arena/618fc735-poker2 — independent verification sweep (2026-11-17)
+
+Base: `main` @ `ba321e7` (PR #52 merged). Branch: `arena/618fc735-poker2`. This session runs as the
+**final integration session** for the shared outputs, because no other session holds a live claim.
+
+| Task | Status | Owner | Files (scope) |
+|---|---|---|---|
+| K1 Board claim + baseline check | in progress | arena/618fc735-poker2 | `COORDINATION.md` |
+| K2 Re-read the Venetian DSE IV schedule page and reconcile every published row against `data/master.json` (date, time, event no., name, structure-PDF link) | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json` |
+| K3 Re-read the Venetian + Wynn + other-venue policy pages (resort fee, room tax, poker suite rates, terms, schedules) and record row-level `last_checked` | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json`, root pages |
+| K4 Re-read the structure sheets that back the "sheet silent on re-entry" rows and confirm the silence claim line by line | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json` |
+| K5 Fix defects found by K2–K4; regenerate the site; refresh summary / questions / suggestions / flagged evidence state | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `scripts/build_site.py`, root pages |
+| K6 Checks (`audit.py`, `check_links.py`, generator `--check`, `check_site.mjs`), PR → `main`, merge, Pages deploy confirmed, record here | in progress | arena/618fc735-poker2 | `COORDINATION.md` |
+
+Notes for other sessions: this session edits the root dashboard generator/data pair only
+(`scripts/build_master.py`, `scripts/build_site.py`, `data/master.json`, root `*.html`). The `/plan/`
+surface (`scripts/build-events.py`, `plan/**`, `site-data/**`) is **not** in this scope; if you need a
+change there, log it here. Sandbox note: direct `curl` from this environment cannot reach any casino
+host (only the GitHub/npm/PyPI allowlist), so every source re-read below was done with the page-fetch
+tool, which does reach the official sites. That distinction is recorded with each finding.
+
 ### Integration sync after merging main (PRs #51/#52), 2026-11-17 (continued)
 
 Main moved to `ba321e7` while this branch was working: PR #48/#51/#52 had completed the 37-sheet sweep
@@ -875,6 +896,31 @@ hand-verified detail is folded in through the overlay file above rather than los
   minutes and the "OSM/OSRM foot-routing estimate … not an official measurement" note; `plan/schedule.html`
   shows Dec 2 → Event 25, Dec 8 → Event 34, Dec 9 → Event 36 (93.8×) with Event 38 as the conditional
   fallback, Dec 10 → Event 42 — the three restricted events no longer appear as primaries anywhere.
+
+## Session arena/618fc735-poker2 — what shipped after the merge with main (2026-11-17)
+
+Merged `main` into this branch (only `COORDINATION.md` conflicted; resolved by keeping both
+sections in order, main's `/plan/` work untouched). Additional work on top of the claim above:
+
+| Item | Result | Where |
+|---|---|---|
+| All 37 Venetian DSE IV structure sheets | read in full 2026-11-17, transcribed | `data/structure-sheets.json`, `scripts/build_structure_registry.py` |
+| Sheet-by-sheet register | now **generated** from that JSON so it cannot drift | `scripts/build_sheet_register.py` → `research/structure-sheets-register.md` |
+| Row-level reconciliation against the cited sheet | fee, chips, printed late-reg wording, printed clock close, guarantee — 83/83 rows, 0 mismatches, build fails on any | `scripts/audit.py` |
+| Walking times | Google Maps routes read for 8 hotels + OSRM matrix for 21; **both routers agree on every 30-minute verdict they share**; Wynn side labelled "1 router" | `data/master.json` (`hotels[].walk`, `walking_check`) |
+| Hotel rates | stopped attributing `$119`/`$209` to a named property — the official page prints the pair for "either The Venetian or The Palazzo" and never maps them | `data/master.json` (`rate_log_shared`) |
+| Trip calculator | room rate starts **blank** (no unsourced prefill); hotel side stays blank until a dated quote exists | `assets/dashboard.js`, `planner.html` |
+| Day plan | rebuilt on two published facts only — start time + printed registration close; flags only document-level impossibilities (registration already closed, or two properties inside 30 min) | `scripts/build_site.py` |
+| Sheet-silence standard | restated in one place: 0 sheets print a one-entry rule, 13 print the Day-2 bagging rule, 24 say nothing about entries; silence ≠ prohibition | register + `single-entry.html` + S09 |
+
+Corrections made to my own earlier figures while cross-checking (recorded so nobody re-derives them):
+the sheet counts were reversed in an earlier draft of the register (13 Day-2-bagging / 24 silent, not the
+other way round), and the "$119 Venetian / $209 Palazzo" mapping that had survived from a previous session
+was **not** in the source and has been removed rather than restated.
+
+Local checks at hand-off: `audit.py` OK · `check_links.py` OK · `build-events.py`, `build-schedule.py`,
+`build-site.py`, `build-walk.py` all `--check` clean (`/plan/` generators left untouched and still green) ·
+`check_site.mjs` OK (15 plan pages, 94 rows) · `check_sources.mjs --selftest` OK · `scrape-schedule.mjs --selftest` OK.
 
 
 ## Session arena/839a07d9-poker2 — claims (2026-11-17, integration + verification sweep)

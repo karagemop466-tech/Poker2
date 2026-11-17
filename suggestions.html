@@ -44,30 +44,60 @@
 <main>
 
 <h1>Suggestions — review before implementing</h1>
-<p class="lead">Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off. Each item lists options and the trade-off so you can choose a
-path. Nothing here has been implemented.</p>
+<p class="lead">Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off. Each item lists options, the trade-off and — where the work has
+already been done here — exactly how it was done, so you can accept it or ask for a different option.</p>
 <table class="data"><thead><tr><th>#</th><th>Suggestion</th><th>Options</th><th>Trade-off</th><th>Status</th></tr></thead>
 <tbody><tr><td>S01</td><td><strong>Add the remaining Strip properties</strong><small class="note">Coverage</small></td>
 <td>A) Add MGM / Mandalay Bay, Caesars properties and Resorts World next (official poker pages and structure sheets).<br>B) Add only the properties with 2+ single-entry events in the next two weeks.<br>C) Keep the scope at Venetian and Wynn.</td>
-<td>A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S02</td><td><strong>Automate structure-sheet classification</strong><small class="note">Verification</small></td>
+<td>A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr><tr><td>S02</td><td><strong>Automate structure-sheet classification</strong><small class="note">Verification</small></td>
 <td>A) Script that reads each official structure PDF and flags re-entry, rebuy, add-on and flight words automatically.<br>B) Keep manual review with a checklist per row.<br>C) Manual review plus a second reviewer.</td>
-<td>A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S03</td><td><strong>Capture dated snapshots of every official source</strong><small class="note">Evidence</small></td>
+<td>A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.</td>
+<td><span class="badge b-info">Implemented, with the scope kept honest</span>
+<small class="note"><strong>Recommended:</strong> Option A, narrowly</small>
+<small class="note">The classification is now mechanical where the document is explicit and manual only where wording is ambiguous. scripts/build_structure_registry.py holds the reading of all 37 sheets; scripts/audit.py re-derives every Venetian row&#x27;s fee, chips, late-registration wording, clock close and guarantee against the sheet it cites and fails the build on any mismatch. Automatic keyword hunting for &#x27;re-entry&#x27; was not used as the decision rule: all 24 silent sheets contain no such word, and treating that as &#x27;single entry&#x27; would be an inference. Silence is labelled silence.</small></td></tr><tr><td>S03</td><td><strong>Capture dated snapshots of every official source</strong><small class="note">Evidence</small></td>
 <td>A) Save a PDF or HTML copy of each official source with the date checked.<br>B) Save links only (current approach).<br>C) Snapshot only the sources behind single-entry rows.</td>
-<td>A and C protect against changes; B is simplest but links can change silently.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S04</td><td><strong>Add a nightly-rate capture step</strong><small class="note">Hotels</small></td>
+<td>A and C protect against changes; B is simplest but links can change silently.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr><tr><td>S04</td><td><strong>Add a nightly-rate capture step</strong><small class="note">Hotels</small></td>
 <td>A) Record an official nightly rate for each hotel on the chosen dates, with the date and tax shown.<br>B) Ask the user for a quoted rate.<br>C) Show resort fees only (current state).</td>
-<td>A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S05</td><td><strong>Choose a quality measure for hotels</strong><small class="note">Hotels</small></td>
+<td>A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr><tr><td>S05</td><td><strong>Choose a quality measure for hotels</strong><small class="note">Hotels</small></td>
 <td>A) AAA Diamond rating (official AAA listing).<br>B) Forbes Travel Guide star rating.<br>C) The user&#x27;s own criteria (for example room size, reviews).</td>
-<td>A and B are third-party rating bodies with official listings. C is personal and needs the user to define it.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S06</td><td><strong>Walking-time method</strong><small class="note">Hotels</small></td>
+<td>A and B are third-party rating bodies with official listings. C is personal and needs the user to define it.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr><tr><td>S06</td><td><strong>Walking-time method</strong><small class="note">Hotels</small></td>
 <td>A) Use a map routing service and record the date checked.<br>B) Use each resort&#x27;s own map or concierge.<br>C) Estimate from straight-line distance (not recommended; cannot be verified).</td>
-<td>A and B are verifiable; C is an estimate and conflicts with the &#x27;never infer&#x27; rule.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S07</td><td><strong>Add interactive filters</strong><small class="note">Usability</small></td>
+<td>A and B are verifiable; C is an estimate and conflicts with the &#x27;never infer&#x27; rule.</td>
+<td><span class="badge b-info">Implemented</span>
+<small class="note"><strong>Recommended:</strong> Option A, and it is what the site now does</small>
+<small class="note">Google Maps walking directions were read 2026-11-17 for eight hotels&#x27; trips to The Venetian Poker Room, and every figure was checked against a second, independent router: the OSRM foot-profile matrix built 2026-11-16 from geocoded official addresses. The two agree on the 30-minute verdict for every pair they share. The Wynn side is covered by the OSRM matrix alone and is labelled &#x27;single router&#x27;. Each row states the date read, the router count and a live route link, so any figure can be re-checked by hand.</small></td></tr><tr><td>S07</td><td><strong>Add interactive filters</strong><small class="note">Usability</small></td>
 <td>A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).<br>B) Keep static tables sorted by value.<br>C) Add a day planner that builds an 8 AM–close schedule from verified start times.</td>
-<td>A and C add real decision value. B is what is built now.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S08</td><td><strong>Monitor for changes</strong><small class="note">Maintenance</small></td>
+<td>A and C add real decision value. B is what is built now.</td>
+<td><span class="badge b-info">Partly implemented</span>
+
+<small class="note">Search boxes, date filters and category filters run on every table, and a day planner now picks one primary event per day with a fallback, using published start times and printed registration cut-offs. Buy-in-cap and guarantee-minimum filters are not built yet.</small></td></tr><tr><td>S08</td><td><strong>Monitor for changes</strong><small class="note">Maintenance</small></td>
 <td>A) Scheduled job that re-fetches each official page weekly and flags changed rows.<br>B) Manual re-check before each trip.<br>C) No automation.</td>
-<td>A keeps data current but needs hosting; B is cheap; C risks stale data.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S09</td><td><strong>Name the single-entry standard in one place</strong><small class="note">Clarity</small></td>
+<td>A keeps data current but needs hosting; B is cheap; C risks stale data.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+<small class="note"><strong>Recommended:</strong> Option A, already wired — it just needs a first baseline</small>
+<small class="note">Three workflows exist (recheck.yml, source-monitor.yml, plan-refresh.yml) and 82 official URLs are in data/source_monitor.json, but no hash baseline has been taken yet, so nothing can be diffed. The next run of source-monitor.yml establishes the baseline; until then the monitor page shows 82 URLs as &#x27;never checked&#x27;.</small></td></tr><tr><td>S09</td><td><strong>Name the single-entry standard in one place</strong><small class="note">Clarity</small></td>
 <td>A) Keep the current definition (no re-entry, rebuy or add-on stated in the official structure sheet).<br>B) Require poker-room confirmation for every row before it counts as single-entry.<br>C) Use both: sheet-based by default, confirmation for events the user will play.</td>
-<td>A is clear but depends on documents; B is strongest but slow; C balances both.</td><td><span class="badge b-info">Awaiting decision</span></td></tr><tr><td>S10</td><td><strong>Fix the repo setup</strong><small class="note">Repo</small></td>
+<td>A is clear but depends on documents; B is strongest but slow; C balances both.</td>
+<td><span class="badge b-info">Implementing — the wording was already changed to match</span>
+<small class="note"><strong>Recommended:</strong> Option C</small>
+<small class="note">Every Venetian one-day row reads &#x27;sheet silent on re-entry&#x27; and the 45 of them sit in their own category, never in the single-entry group. The structure-sheet register states the standard in one place, and Q01 and Q09 record that a poker-room answer is still needed before any row is called single-entry.</small></td></tr><tr><td>S10</td><td><strong>Fix the repo setup</strong><small class="note">Repo</small></td>
 <td>A) Keep Pages on main, path &#x27;/&#x27; (current; site files are at the root).<br>B) Move the site into /docs and switch Pages to /docs.<br>C) Use a GitHub Actions build (needs a workflow file).</td>
-<td>A is in place now. B keeps the root clean. C allows a build step but adds a workflow.</td><td><span class="badge b-info">Awaiting decision</span></td></tr></tbody></table>
+<td>A is in place now. B keeps the root clean. C allows a build step but adds a workflow.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr></tbody></table>
 <div class="panel"><h2>Added by this session</h2>
 <ul class="tight">
 <li><strong>S-A (Decision quality):</strong> Require a dated checkout quote + verified walk time before any event/hotel pair leaves the “candidate” list. Options: A) hard gate in the planner (recommended) · B) warning badge only · C) manual checklist. Trade-off: A prevents bad bookings but blocks planning until quotes exist.</li>
