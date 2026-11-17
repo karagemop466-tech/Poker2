@@ -2,9 +2,13 @@
 """Re-check every official URL this site cites, and record content changes as a dated log.
 
 Runs on a schedule (see .github/workflows/recheck.yml). For each URL it:
-  * fetches it with a browser-like User-Agent and a timeout;
+  * fetches it with a browser-like User-Agent, a cookie jar (so a redirect that sets a session
+    cookie is followed instead of being written up as a 3xx) and a timeout;
   * hashes the normalised visible text for HTML and the raw bytes for PDFs;
-  * compares the hash with the previous run and records CHANGED / unchanged / first check.
+  * compares the hash with the previous run and records CHANGED / unchanged / first check;
+  * when the fetch fails, records *why* it failed. A property that refuses a datacenter runner and
+    a page that has actually moved are different facts, and the site must not print them the same
+    way: "not read today" is never evidence of "not changed".
 
 Output: data/verified2026/checks.json  (append-only history, newest run first)
 
@@ -14,6 +18,7 @@ never rewrites a table row.
 """
 from __future__ import annotations
 
+import http.cookiejar
 import hashlib
 import json
 import os
@@ -92,10 +97,62 @@ def content_hash(url, raw):
     return hashlib.sha256(normalise(raw).encode("utf-8")).hexdigest()[:16], "normalised HTML text"
 
 
+_OPENER = None
+
+# What each failure mode means for the reader. Printed verbatim on the Sources page, so a red row in
+# the monitor log can never be read as "the source is unchanged".
+MEANING = {
+    "blocked": "the property's bot protection refused the runner; the page is live for a person, "
+               "so this value has to be re-read by hand",
+    "redirect-loop": "the host keeps redirecting without serving content (a cookie or region wall). "
+                     "Not evidence that the page moved",
+    "not found": "the official URL no longer serves a document - the citation itself needs correcting",
+    "server error": "the official host returned 5xx. Retry before concluding anything",
+    "timeout": "the request timed out; nothing about the document is proven",
+    "dns": "the host did not resolve from the runner",
+    "tls": "the TLS handshake failed from the runner",
+    "unreachable": "the request failed; nothing about the document is proven",
+}
+
+
+def error_kind(code, message):
+    m = str(message or "").lower()
+    if code in (401, 403, 429):
+        return "blocked"
+    if code in (301, 302, 303, 307, 308):
+        return "redirect-loop"
+    if code in (404, 410, 451):
+        return "not found"
+    if code and int(code) >= 500:
+        return "server error"
+    if "timed out" in m or "timeout" in m:
+        return "timeout"
+    if "resolve" in m or "nodename" in m or "network is unreachable" in m:
+        return "dns"
+    if "certificate" in m or "ssl" in m or "tls" in m:
+        return "tls"
+    return "unreachable"
+
+
+def opener():
+    global _OPENER
+    if _OPENER is None:
+        _OPENER = urllib.request.build_opener(
+            urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
+            urllib.request.HTTPRedirectHandler())
+    return _OPENER
+
+
 def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=45) as r:
-        return r.getcode(), r.read()
+    """One fetch. Returns (status, bytes, final url) or raises; the final url is what a citation
+    actually resolves to, which is how a moved page is told apart from a blocked one."""
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    with opener().open(req, timeout=60) as r:
+        return r.getcode(), r.read(), r.geturl()
 
 
 def main():
@@ -116,10 +173,13 @@ def main():
     for key, (label, url) in sorted(sources().items()):
         row = dict(key=key, label=label, url=url)
         try:
-            code, raw = fetch(url)
+            code, raw, final = fetch(url)
             row["status"] = code
             row["hash"], row["hash_method"] = content_hash(url, raw)
             row["bytes"] = len(raw)
+            if final and final.rstrip("/") != url.rstrip("/"):
+                # kept, because a citation that resolves somewhere else is a citation to fix
+                row["resolved_to"] = final
             old = previous.get(key)
             if old is None:
                 row["change"] = "first check"
@@ -128,11 +188,32 @@ def main():
             else:
                 row["change"] = "unchanged"
         except urllib.error.HTTPError as e:
-            row.update(status=e.code, hash=None, change="fetch error", error="HTTP %s" % e.code)
+            kind = error_kind(e.code, e.reason)
+            row.update(status=e.code, hash=None, change="fetch error", error="HTTP %s" % e.code,
+                       error_kind=kind, reason=MEANING[kind])
         except Exception as e:  # noqa: BLE001
-            row.update(status=None, hash=None, change="fetch error", error=str(e)[:180])
+            kind = error_kind(None, str(e))
+            row.update(status=None, hash=None, change="fetch error", error=str(e)[:180],
+                       error_kind=kind, reason=MEANING[kind])
         results.append(row)
         print("%-10s %-12s %s" % (row.get("status"), row["change"], key))
+
+    kinds = {}
+    for r in results:
+        if r["change"] == "fetch error":
+            k = r.get("error_kind") or "unreachable"
+            kinds[k] = kinds.get(k, 0) + 1
+
+    readable_rows = [r for r in results if r.get("hash")]
+    if not readable_rows and "--allow-no-network" not in sys.argv:
+        # A run where nothing could be fetched proves nothing about the sources, and recording it
+        # would (a) replace the site's last real coverage number with "0 of 61 read" and (b) strip
+        # every row's badge, making the tables look less checked than they are. This has happened:
+        # a run inside a sandbox with no outbound access produced exactly this state.
+        print("ABORT: 0 of %d URLs were readable. Nothing is written and no run is recorded, "
+              "because \"every fetch failed\" describes the network this command ran on, not the "
+              "official documents. Pass --allow-no-network to record it deliberately." % len(results))
+        return 1
 
     history.insert(0, dict(checked=now, results=results))
     history = history[:90]
@@ -149,9 +230,17 @@ def main():
         never_checked=sum(1 for r in results
                           if r["change"] not in ("first check", "unchanged", "CHANGED", "fetch error")),
         errors=sum(1 for r in results if r["change"] == "fetch error"),
+        readable=sum(1 for r in results if r.get("hash")),
+        # Coverage, stated as a number the reader can hold the job to: URLs whose fetch failed are not
+        # "checked and unchanged", and a first-time check is not "unchanged" either.
+        by_error_kind=kinds,
+        coverage="%d of %d URLs could be read by this run" % (sum(1 for r in results if r.get("hash")),
+                                                              len(results)),
         note=("HTML is hashed from normalised visible text; PDFs are hashed as raw response bytes. "
               "A CHANGED row means the official document moved, so every value transcribed from it "
-              "must be re-read before it is relied on. This job reports; it never rewrites a value."),
+              "must be re-read before it is relied on. A fetch error is a monitoring failure, not a "
+              "verdict: the value it covers keeps its own last human-verified date. "
+              "This job reports; it never rewrites a value."),
         runs=history,
     )
     with open(OUT, "w", encoding="utf-8") as f:

@@ -1550,3 +1550,25 @@ consolidation; FG-02 (no official document states a one-entry cap).
 * **Still open, none of it blocking:** the `plan-refresh.yml` generator step (root cause written up
   above); the root monitor's first baseline run; F-05 dated hotel quotes; F-08 measured walk times;
   Q13 (which surface is primary) and S11–S13 as decisions for you.
+
+## Session arena/7be88b38-poker2 — claims (2026-11-17)
+
+Branch `arena/7be88b38-poker2` (fixed by the platform; no other branch is created or pushed).
+Session start point: `main` = `b832ae2` (the scheduled re-check commit), working tree clean, **no open PRs**. While this claim was being written `main` took PR #70 and #71 (including `arena/555c41d4-poker2`'s root-nav link to `/2026/`); the rebase conflict was the usual append-at-the-end collision on this file and both sections are kept. `N4` is therefore *grouping and labelling* the nav that #71 extended, not re-adding a link to `/2026/`.
+
+Takeover note, per the handoff rule: the section above this one carries claims `J1`–`J7` owned by
+`arena/0fd90745-poker2` marked *in progress*. That session has no commits after the board entry it
+wrote and its claims are >60 minutes old; its work was in fact carried into `main` by PRs #53–#68
+(J1 → the 37-sheet audit in `data/sheets/`, J2 → per-row `last_checked`, J3 → the root monitor
+registry, J4 → README, J5 → `data/verified2026/content.py`, J6 → PR #28 is closed). This session
+closes those rows as *done via the later integration PRs* rather than leaving them claimed forever,
+and does not re-do them.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| N1 Diagnose and fix the red-X scheduled monitor: `.github/workflows/plan-refresh.yml` has failed on both of its runs (43943838443, 44124782058) at the step "Verify the generators still reproduce every dataset and page" | in progress | arena/7be88b38-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh`, `scripts/build-site.py` |
+| N2 Fix the broken official citation the published `/2026/` site points at for Wynn/Encore (`wynnlasvegas.com/casino/poker-room` returns HTTP 404 to the monitor and to a browser); re-read the live Wynn poker page first-hand and update the venue row + flag with today's evidence | in progress | arena/7be88b38-poker2 | `data/verified2026/content.py`, `2026/**`, `data/verified2026/dataset.json` |
+| N3 Monitor coverage honesty: 10 of the 61 URLs the `/2026/` re-check tries end in a fetch error (403/302/422/404/timeout), so those rows never get a baseline; report coverage on the sources page instead of implying full coverage, and make the fetch follow redirects / send cookie + accept headers so a bot-gate is not mistaken for a dead link | in progress | arena/7be88b38-poker2 | `scripts/recheck2026.py`, `scripts/build2026.py`, `2026/sources.html` |
+| N4 Landing page: the root dashboard's nav is 26 flat links mixing live-generated pages with frozen contributor pages; group it by category and state on the landing page which surface is which (S-11 one-surface decision, executed as orientation rather than deletion) | in progress | arena/7be88b38-poker2 | `scripts/build_site.py`, `assets/dashboard.css`, root `*.html` |
+| N5 First-hand re-verification of the load-bearing sources on 2026-11-17, with links, recorded in `research/` | in progress | arena/7be88b38-poker2 | `research/7be88b38-official-recheck-2026-11-17.md` |
+| N6 Final integration: checks green, PR → `main`, merge, Pages deploy confirmed, record here | unclaimed → this session | arena/7be88b38-poker2 | `COORDINATION.md` |

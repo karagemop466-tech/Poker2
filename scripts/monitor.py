@@ -28,7 +28,7 @@ statement about the sandbox, not about the sources).
 
 Runs in GitHub Actions (.github/workflows/source-monitor.yml).
 """
-import json, os, re, sys, hashlib, datetime, urllib.request, urllib.error
+import json, os, re, sys, hashlib, datetime, http.cookiejar, urllib.request, urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MON = os.path.join(ROOT, "data", "source_monitor.json")
@@ -97,12 +97,29 @@ def slug(u):
     return re.sub(r"[^a-z0-9]+", "-", u.lower()).strip("-")[:80]
 
 
+_OPENER = None
+
+
+def _opener():
+    """A cookie-aware opener. Several Strip properties answer a first request with a 302 that sets a
+    session cookie and only then serve the page; without a jar that redirect is reported as a fetch
+    failure, and the row it covers would be written up as if the source itself were broken."""
+    global _OPENER
+    if _OPENER is None:
+        _OPENER = urllib.request.build_opener(
+            urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
+            urllib.request.HTTPRedirectHandler())
+    return _OPENER
+
+
 def fetch(url):
     """One fetch, one truth. Returns (text, status); raises on any failure."""
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 (compatible; Poker2SourceMonitor/1.0; "
-                      "+https://github.com/karagemop466-tech/Poker2)"})
-    with urllib.request.urlopen(req, timeout=45) as r:
+                      "+https://github.com/karagemop466-tech/Poker2)",
+        "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9"})
+    with _opener().open(req, timeout=45) as r:
         return r.read(), r.status
 
 
@@ -192,6 +209,16 @@ def main(dry=False):
             changed.append(rec["label"])
         else:
             rec["status"] = "unchanged"
+
+    if len(failed) == len(mon["urls"]) and mon["urls"]:
+        # Nothing was reachable. That describes the network this command ran on, not the official
+        # documents, and writing it would stamp "unreachable" over every row's marker and report a
+        # coverage of zero from a repository that has no way of knowing. Same rule as
+        # scripts/recheck2026.py: no egress, no run recorded.
+        print("monitor: 0 of %d URLs were readable - nothing written, no run recorded. "
+              "A run where every fetch fails says something about this environment, not about the "
+              "sources. Pass --allow-no-network to record it deliberately." % len(mon["urls"]))
+        return 1
 
     mon["last_run"] = today
     mon["last_run_summary"] = {

@@ -19,22 +19,41 @@ MASTER = master
 monitor = load("data/source_monitor.json", {"urls": []})
 AS_OF = master.get("as_of") or "2026-11-16"
 
-NAV = [
-    ("index.html", "Dashboard"), ("2026/", "DSE IV · 2026"), ("summary.html", "Executive Summary"),
-    ("tournaments.html", "Tournaments"), ("venue-venetian.html", "Venetian"),
-    ("venue-wynn.html", "Wynn"),
-    ("venue-horseshoe.html", "Horseshoe"), ("venue-caesars.html", "Caesars Palace"),
-    ("venue-mgm.html", "MGM Grand"), ("venue-bellagio.html", "Bellagio"),
-    ("venue-goldennugget.html", "Golden Nugget"), ("venue-others.html", "Other Venues"),
-    ("hotels.html", "Hotels"), ("planner.html", "Trip Planner"),
-    ("ranking.html", "Ranking"), ("rules.html", "Entry Rules"),
-    ("monitor.html", "Source Monitor"), ("flagged.html", "Flagged"),
-    ("questions.html", "Questions"), ("suggestions.html", "Suggestions"),
-    ("repo-review.html", "Repo Review"),
-    ("walking.html", "Walking Times"), ("wpt-terms.html", "WPT Terms"),
-    ("rate-log.html", "Rate Log"), ("trip.html", "Trip Plan"),
-    ("archive.html", "Archive"),
+# The navigation is grouped by category, and each group says what it is for. The list used to be 26
+# links in one row, which mixed this dashboard's own generated pages with pages a parallel session
+# wrote once and froze - and a reader could not tell a live table from a snapshot. `page()` marks any
+# target this generator does not write, so the distinction is produced from `GENERATED` rather than
+# from a hand-kept list that would go stale the first time a page moved.
+NAV_GROUPS = [
+    ("Start here", [("index.html", "Dashboard"), ("2026/", "DSE IV audit, Nov\u2013Dec 2026"),
+                    ("summary.html", "Executive summary")]),
+    ("Tournaments", [("tournaments.html", "All events"), ("single-entry.html", "Single-entry candidates"),
+                     ("ranking.html", "Ranking"), ("rules.html", "Entry rules"),
+                     ("schedule.html", "Day schedule")]),
+    ("Poker rooms", [("venue-venetian.html", "Venetian"), ("venue-wynn.html", "Wynn"),
+                     ("venue-horseshoe.html", "Horseshoe"), ("venue-caesars.html", "Caesars Palace"),
+                     ("venue-mgm.html", "MGM Grand"), ("venue-bellagio.html", "Bellagio"),
+                     ("venue-goldennugget.html", "Golden Nugget"),
+                     ("venue-others.html", "Other rooms"), ("venues.html", "All rooms")]),
+    ("Hotels, walking and cost", [("hotels.html", "Hotels"), ("walking.html", "Walking times"),
+                                  ("rate-log.html", "Rate log"), ("planner.html", "Trip planner"),
+                                  ("trip.html", "Trip cost"), ("wpt-terms.html", "WPT terms")]),
+    ("Evidence and review", [("sources.html", "Sources"), ("monitor.html", "Source monitor"),
+                             ("flagged.html", "Flagged for review"), ("questions.html", "Questions"),
+                             ("suggestions.html", "Suggestions"), ("repo-review.html", "Repo review"),
+                             ("archive.html", "Archive")]),
 ]
+NAV = [(href, label) for _g, items in NAV_GROUPS for href, label in items]
+
+# Links whose target is built by a different generator. Not "preserved": /2026/ is rebuilt and
+# re-checked by scripts/build2026.py, so it must not carry the stale-snapshot marker.
+CROSS_SURFACE = {
+    "2026/": "Separate surface with its own generator, dataset and scheduled re-check "
+             "(scripts/build2026.py, .github/workflows/recheck.yml). Linked, not maintained here.",
+}
+
+# Filled by build() with the filenames this generator writes; used to label everything it does not.
+GENERATED = set()
 
 def esc(s):
     return html.escape(str(s if s is not None else ""))
@@ -48,9 +67,27 @@ def money(v):
         return esc(v)
 
 def page(title, active, body, desc=""):
-    nav = "\n".join(
-        '<a href="%s"%s>%s</a>' % (href, ' class="active"' if href == active else "", label)
-        for href, label in NAV)
+    parts = []
+    for group, items in NAV_GROUPS:
+        links = []
+        for href, label in items:
+            cls = []
+            title_attr = ""
+            if href == active:
+                cls.append("active")
+            if href in CROSS_SURFACE:
+                cls.append("cross")
+                title_attr = ' title="%s"' % esc(CROSS_SURFACE[href])
+            elif GENERATED and href not in GENERATED:
+                # a page this generator does not write: kept linked, but labelled as what it is
+                cls.append("static")
+                title_attr = (' title="Preserved page from an earlier session or another surface. '
+                              'This dashboard\u2019s generator does not rebuild it, so check its own '
+                              'as-of date before relying on it."')
+            links.append('<a href="%s"%s%s>%s</a>'
+                         % (href, (' class="%s"' % " ".join(cls)) if cls else "", title_attr, esc(label)))
+        parts.append('<span class="navgroup">%s</span>%s' % (esc(group), "".join(links)))
+    nav = "\n".join(parts)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -771,6 +808,29 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
     <div class="s">official fees where published</div></div>
   <div class="card"><div class="k">Flags for review</div><div class="v">{n_flags}</div>
     <div class="s">published on the Flagged page</div></div>
+</div>
+<div class="panel">
+<h2>The decision path, and where each step is answered</h2>
+<p class="note">The order below is the order a booking has to happen in. Each step links the page that
+carries its evidence; a step whose answer is not on the site is a gap, not a permission to assume.</p>
+<ol class="tight">
+<li><strong>Fix the dates, the nightly budget and the quality floor.</strong> Nothing downstream can be
+compared until the window is set — <a href="planner.html">trip planner</a> holds the window and the floor.</li>
+<li><strong>Get the official structure sheet for each candidate event, with its written maximum-entry /
+no-rebuy / no-add-on rule.</strong> The per-field readings and what each sheet actually says live on
+<a href="rules.html">entry rules</a>; events that do not match a single-entry policy are separated on
+<a href="tournaments.html">the tournament table</a> and on the spend-more pages.</li>
+<li><strong>Compare only the surviving events</strong> on guarantee, buy-in, stack and blind length,
+payout structure and schedule fit — <a href="ranking.html">ranking</a> (ratio of published guarantee to
+published entry fee; descriptive, not a forecast).</li>
+<li><strong>Price the same stay at each hotel, and check the walk</strong> — <a href="hotels.html">hotels</a>
+for fee, tax, parking and the dated rate log, <a href="walking.html">walking times</a> for the 30-minute test.</li>
+<li><strong>One event per day first</strong>; an evening event is added only where the player can really
+leave the earlier one — <a href="planner.html#dayplan">day plan</a> and <a href="schedule.html">schedule</a>.</li>
+<li><strong>Re-confirm the official schedule, rate and policy before anything non-refundable</strong> —
+<a href="monitor.html">source monitor</a> records when each cited document was last re-read, and
+<a href="flagged.html">flagged for review</a> lists what is still unproven.</li>
+</ol>
 </div>
 <div class="panel">
 <h2>How to read this site</h2>
@@ -1615,6 +1675,8 @@ already been done here — exactly how it was done, so you can accept it or ask 
         "repo-review.html": ("Repo review", body_repo),
     }
     pages.update(venue_pages)
+    GENERATED.update(pages)
+    GENERATED.add("planning.html")   # the redirect this generator maintains
     for fn, (title, b) in pages.items():
         with open(os.path.join(ROOT, fn), "w") as f:
             f.write(page(title, fn, b))
