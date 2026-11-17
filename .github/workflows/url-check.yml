@@ -1,0 +1,30 @@
+name: URL check
+
+# Placeholder only. A workflow file of this name lived on the branch
+# arena/e1c079dc-poker2 and ran once (run 43942113607, success, 2026-11-16 19:42Z)
+# before that branch was deleted; the file itself never reached main, so GitHub kept
+# the workflow as an orphan whose "active" state means nothing.
+#
+# It is restored here as an inert placeholder on purpose. Deleting the file is the only
+# supported way to remove a workflow from GitHub's list, and deleting it while it is
+# still registered makes the workflow card show the *newest run in the repository* — a
+# green tick from the unrelated `Verify site` job — which is exactly the "a passing run
+# proves the job works" trap this repository has been burned by before. A placeholder
+# whose only job does nothing cannot be misread that way.
+#
+# If a real URL check is ever wanted, extend scripts/check_links.py in tests/CI: it
+# already covers every internal link and every external host on every page.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain
+        run: |
+          echo "Placeholder for a retired workflow. See .github/workflows/url-check.yml in the repo."
+          echo "Real checks live in verify.yml (structure + semantics) and plan-verify.yml (/plan/)."
