@@ -22,6 +22,10 @@ PAGES = [
     "single-entry.html", "summary.html", "questions.html", "suggestions.html",
     "flagged.html", "sources.html", "repo-review.html",
     "walking.html", "wpt-terms.html", "rate-log.html", "trip.html", "archive.html",
+    # generated per-venue pages (arena/5dcf101f-poker2): one per venue in the dataset
+    "venue-venetian.html", "venue-wynn.html", "venue-horseshoe.html", "venue-caesars.html",
+    "venue-mgm.html", "venue-bellagio.html", "venue-goldennugget.html", "venue-others.html",
+    "ranking.html", "rules.html", "monitor.html", "planner.html", "repo-review.html",
 ]
 HREF = re.compile(r'href="([^"]+)"')
 

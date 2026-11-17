@@ -21,7 +21,10 @@ AS_OF = master["as_of"]
 NAV = [
     ("index.html", "Dashboard"), ("summary.html", "Executive Summary"),
     ("tournaments.html", "Tournaments"), ("venue-venetian.html", "Venetian"),
-    ("venue-wynn.html", "Wynn"), ("venue-others.html", "Other Venues"),
+    ("venue-wynn.html", "Wynn"),
+    ("venue-horseshoe.html", "Horseshoe"), ("venue-caesars.html", "Caesars Palace"),
+    ("venue-mgm.html", "MGM Grand"), ("venue-bellagio.html", "Bellagio"),
+    ("venue-goldennugget.html", "Golden Nugget"), ("venue-others.html", "Other Venues"),
     ("hotels.html", "Hotels"), ("planner.html", "Trip Planner"),
     ("ranking.html", "Ranking"), ("rules.html", "Entry Rules"),
     ("monitor.html", "Source Monitor"), ("flagged.html", "Flagged"),
@@ -62,6 +65,10 @@ def page(title, active, body, desc=""):
   <div class="tagline">Every row links to an official source · data as of {AS_OF} · unconfirmed values stay blank and flagged</div>
 </header>
 <nav class="site">{nav}</nav>
+<div class="globalsearch">
+  <input type="search" id="site-search" placeholder="Search every table on this page (venue, event, date, rules, hotel)…" aria-label="Site-wide table search">
+  <span class="count" id="site-search-status"></span>
+</div>
 <main>
 {body}
 </main>
@@ -360,6 +367,69 @@ The daily schedule is suspended during Wynn series (official page).</p>
 {event_table(oth_evs, 'tbl-venue')}
 <h2>Hotels near these venues</h2>
 {hotel_table(oth_hotels, 'tbl-oth-hotels', show_calc=False)}"""
+
+    # ---------------- one page per venue ----------------
+    # Every venue that appears in the dataset gets its own page with its events
+    # and the hotels assigned to it. Pages are generated from the data, so a
+    # venue added later cannot silently lose its page.
+    VENUE_META = {
+        "venetian": dict(slug="venue-venetian-only.html", title="The Venetian",
+                         lead=("DeepStack Extravaganza IV, Nov 16 \u2013 Dec 23, 2026. "
+                               "Poker room is on the property, so a stay here has a 0-minute walk."),
+                         hotel_ids=("H-VEN", "H-PAL")),
+        "wynn": dict(slug="venue-wynn.html", title="Wynn Las Vegas",
+                     lead=("WPT World Championship, Nov 27 \u2013 Dec 21, 2026, plus the daily schedule. "
+                           "The poker room is in Encore at Wynn Las Vegas (stated in the official WPT terms)."),
+                     hotel_ids=("H-WYN",)),
+        "horseshoe": dict(slug="venue-horseshoe.html", title="Horseshoe Las Vegas",
+                          lead="Hall of Fame Poker Room, recurring daily schedule.",
+                          hotel_ids=("H-HS",)),
+        "caesars": dict(slug="venue-caesars.html", title="Caesars Palace",
+                        lead="Recurring daily No Limit Hold'em events.",
+                        hotel_ids=("H-CZP",)),
+        "mgm": dict(slug="venue-mgm.html", title="MGM Grand",
+                    lead="Recurring daily No Limit Hold'em events.",
+                    hotel_ids=("H-MGM",)),
+        "bellagio": dict(slug="venue-bellagio.html", title="Bellagio",
+                         lead="Recurring daily events; Friday $600 and weekend schedules.",
+                         hotel_ids=("H-BEL",)),
+        "gn": dict(slug="venue-goldennugget.html", title="Golden Nugget (downtown)",
+                             lead=("Downtown Las Vegas \u2014 outside the Strip walking scope, kept for completeness. "
+                                   "No Strip hotel is within a 30-minute walk of it."),
+                             hotel_ids=()),
+    }
+    venue_pages = {}
+    by_venue = {}
+    for e in evs:
+        by_venue.setdefault(e.get("venue_id"), []).append(e)
+    for vid, meta in VENUE_META.items():
+        vevs = by_venue.get(vid, [])
+        vhotels = [h for h in hotels if h.get("id") in meta["hotel_ids"]]
+        n_single = len([e for e in vevs if e["category"] == "single"])
+        n_spend = len([e for e in vevs if e["category"] in ("spend-more", "multi-flight")])
+        n_unv = len([e for e in vevs if e["category"] == "unverified"])
+        checked = sorted({e.get("last_checked") for e in vevs if e.get("last_checked")})
+        body_v = f"""
+<h1>{esc(meta['title'])} \u2014 events and hotels</h1>
+<p class="lead">{meta['lead']}</p>
+<div class="cards">
+ <div class="card"><div class="k">Events listed</div><div class="v">{len(vevs)}</div>
+   <div class="s">last checked {esc(', '.join(checked)) or 'n/a'}</div></div>
+ <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{n_single}</div>
+   <div class="s">sheet read; no re-entry/rebuy/add-on clause</div></div>
+ <div class="card"><div class="k">Spend-more / multi-flight</div><div class="v">{n_spend}</div>
+   <div class="s">extra buy-ins are possible</div></div>
+ <div class="card"><div class="k">Unverified</div><div class="v">{n_unv}</div>
+   <div class="s">no official rule document published</div></div>
+</div>
+<h2>Events at this venue</h2>
+{toolbar('tbl-venue') if vevs else '<p class="excerpt">No event rows in the dataset for this venue.</p>'}
+{event_table(vevs, 'tbl-venue') if vevs else ''}
+<h2>Hotels at this venue</h2>
+{hotel_table(vhotels, 'tbl-vh', show_calc=False) if vhotels else '<p class="excerpt">No hotel record is assigned to this venue in the dataset.</p>'}
+<p class="note">Every value above links to the official venue document it came from. Blank cells mean the official
+source does not publish that value; blanks are listed on the <a href="flagged.html">Flagged for review</a> page.</p>"""
+        venue_pages[meta["slug"]] = (meta["title"], body_v)
 
     # ---------------- hotels ----------------
     body_h = f"""
@@ -691,6 +761,7 @@ path. Nothing here has been implemented.</p>
         "suggestions.html": ("Suggestions", body_s),
         "repo-review.html": ("Repo review", body_repo),
     }
+    pages.update(venue_pages)
     for fn, (title, b) in pages.items():
         with open(os.path.join(ROOT, fn), "w") as f:
             f.write(page(title, fn, b))

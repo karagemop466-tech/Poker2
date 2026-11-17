@@ -66,13 +66,14 @@ for r in walking["rows"]:
              f'<td>{esc(r["hotel"])}<div class="tiny">{esc(r["hotel_address"])}</div></td>'
              f'<td>{esc(r["venue"])}</td><td>{r["walk_min"]}</td>'
              f'<td>{"✅ ≤30 min" if r["within_30_min"] else "❌ over 30 min"}</td>'
-             f'<td><a href="{esc(r["gmaps_link"])}" target="_blank" rel="noopener">Verify on Google Maps</a></td></tr>')
+             f'<td><a href="{esc(r["gmaps_link"])}" target="_blank" rel="noopener">Verify on Google Maps</a></td>'
+             f'<td>{esc(r.get("as_of") or walking.get("as_of"))}</td></tr>')
 write("walking.html", "Walking times", f"""
 <h2>Walking times — hotel → venue poker room (f0816fab)</h2>
 <p>{esc(walking["method"])}</p>
 <div class="filters"><input id="q" class="search" placeholder="Search hotel or venue…">
 <label><input type="checkbox" id="only30"> ≤ 30-minute limit only</label></div>
-<table class="data" id="walktbl"><thead><tr><th>Hotel</th><th>Venue poker room</th><th>Walk (min, routed estimate)</th><th>30-min rule</th><th>Confirmation</th></tr></thead>
+<table class="data" id="walktbl"><thead><tr><th>Hotel</th><th>Venue poker room</th><th>Walk (min, routed estimate)</th><th>30-min rule</th><th>Confirmation</th><th>Last checked</th></tr></thead>
 <tbody>{rows}</tbody></table>
 <h3>Flagged (this dataset)</h3>
 """ + "".join(f'<div class="qitem flag"><h3>[{esc(x["id"])}] {esc(x["item"])} <span class="pill">{esc(x["severity"])}</span></h3><p class="tiny">{esc(x["where"])}</p><p>{esc(x["detail"])}</p></div>'

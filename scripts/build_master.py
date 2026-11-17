@@ -596,7 +596,13 @@ add_e1c_hotel(
     name="South Point Hotel, Casino & Spa", venue="South Point",
     address="9777 S. Las Vegas Blvd, Las Vegas, NV 89183",
     resort_fee_value=None, resort_fee_text=None, resort_fee_src=None,
-    tax_rate=0.1338, tax_note="Clark County transient lodging tax, per the county licensing guide.",
+    # South Point is at 9777 S. Las Vegas Blvd, outside the Primary Gaming Corridor. The county's
+    # own licensed-property schedule lists it at 13.00%, not the 13.38% PGC rate. Corrected
+    # 2026-11-17 after reading the Clark County guide directly (Appendix III + property schedule).
+    tax_rate=0.1300, tax_note=("Clark County transient lodging tax 13.00% — the county licensing guide lists "
+                              "\u201cSouth Point Hotel and Casino, 9777 Las Vegas Blvd S\u201d at 13.00% "
+                              "(Resort Hotel, Stadium District outside Primary Gaming Corridor), not the 13.38% PGC rate."),
+    tax_src="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
     parking_value=None, parking="Self-parking is free (stated on the poker page)", deposit="",
     cancellation="", quality="30-table 24-hour room; about 8 miles south of the Strip.",
     booking_url="", rate_log=[],
@@ -723,8 +729,20 @@ WPT_SCHEDULE_ONLY = [
     ("E1C-WY-12", "TORSE Championship (2 Day) $1,600", 1600, None, "2026-12-19", "1:00 PM", ["mixed"]),
 ]
 existing_ids = {e["id"] for e in events}
+# 2026-11-17 verification: these 12 rows duplicate events already present from the WPT
+# structures read (U-WPT*). Same venue + same date + same start + same name = one event.
+# Adding them twice inflated the table and double-counted the guarantee in any tally.
+skipped_dupes = []
 for rid, name, buy, gtd, date, start, tags in WPT_SCHEDULE_ONLY:
     if rid in existing_ids:
+        skipped_dupes.append(rid)
+        continue
+    same_event = [e for e in events
+                  if e.get("venue_id") == "wynn" and e.get("date") == date
+                  and e.get("start") == start
+                  and str(e.get("name", "")).strip().lower() == name.strip().lower()]
+    if same_event:
+        skipped_dupes.append("%s (same as %s)" % (rid, same_event[0]["id"]))
         continue
     events.append({
         "id": rid, "venue_id": "wynn", "venue": "Wynn Las Vegas", "name": name, "game": "",
@@ -743,7 +761,220 @@ for rid, name, buy, gtd, date, start, tags in WPT_SCHEDULE_ONLY:
         "total_entry_fee": buy if gtd else None,
         "gtd_ratio": round(gtd / buy, 1) if (gtd and buy) else None,
     })
-print("added %d schedule-verified Wynn events" % len(WPT_SCHEDULE_ONLY))
+print("added %d schedule-verified Wynn events; skipped %d duplicates (%s)"
+      % (len(WPT_SCHEDULE_ONLY) - len(skipped_dupes), len(skipped_dupes), ", ".join(skipped_dupes)))
+
+# ---------------------------------------------------------------------------
+# Duplicate guard (2026-11-17). Two sessions added the same Wynn series events
+# under different names ("HORSE $800" vs "HORSE $800 (no guarantee)",
+# "NIH $500 Bounty Turbo" vs "NLH $500 Bounty Turbo"), so matching on the exact
+# name missed them. Canonical key = venue + date + start + buy-in + normalised
+# name. Where two rows collide, the row with more official data wins and the
+# other is dropped after being recorded.
+# ---------------------------------------------------------------------------
+import re as _re
+
+def _canon(name):
+    n = str(name).lower()
+    n = _re.sub(r"\([^)]*\)", " ", n)          # drop "(no guarantee)", "(2 Day)", "(schedule text ...)"
+    n = n.replace("\u2014", " ").replace("\u2013", " ")
+    n = n.replace("nih", "nlh")                   # official schedule typo for NLH
+    n = _re.sub(r"[$,\u00b7\u2019'\-]", " ", n)
+    n = _re.sub(r"\b\d+\b", lambda m: m.group(0), n)
+    n = _re.sub(r"\s+", " ", n).strip()
+    return n
+
+def _richness(e):
+    score = 0
+    for k in ("fee", "pool_per_entry", "chips", "gtd", "level_min", "late_reg"):
+        if e.get(k) not in (None, "", 0):
+            score += 1
+    if e.get("category") != "unverified":
+        score += 1
+    if (e.get("rules") or {}).get("retrieved") == "2026-11-17":
+        score += 3
+    return score
+
+_buckets = {}
+for e in events:
+    k = (e.get("venue_id"), e.get("date"), e.get("start"), e.get("buy_in"), _canon(e.get("name", "")))
+    _buckets.setdefault(k, []).append(e)
+
+_dropped = []
+for k, rows in _buckets.items():
+    if len(rows) < 2:
+        continue
+    rows.sort(key=_richness, reverse=True)
+    for loser in rows[1:]:
+        _dropped.append({"dropped": loser["id"], "kept": rows[0]["id"],
+                         "name": loser.get("name"), "date": loser.get("date")})
+        events.remove(loser)
+if _dropped:
+    print("dropped %d duplicate Wynn rows: %s" % (len(_dropped), _dropped))
+
+# Hard guard: no two published rows may describe the same event on the same day.
+_dupe_key = {}
+for e in events:
+    k = (e.get("venue_id"), e.get("date"), e.get("start"), e.get("buy_in"), _canon(e.get("name", "")))
+    _dupe_key.setdefault(k, []).append(e["id"])
+_dupes = {k: v for k, v in _dupe_key.items() if len(v) > 1}
+assert not _dupes, "duplicate event rows: %s" % _dupes
+
+# ---------------------------------------------------------------------------
+# arena/5dcf101f-poker2 (2026-11-17): Wynn WPT events whose OFFICIAL terms and
+# conditions were read verbatim from the structures PDF during this session.
+#
+# Every value below is transcribed from the published clause printed for that
+# exact event. The PDF documents 13 events; rows for events the PDF does NOT
+# cover keep their "unverified" label — that is the honest state, not a gap to
+# be filled by inference.
+#
+# Each entry: (match_substring, chips, level_min, fee, pool_per_entry, clause)
+# fee + pool_per_entry are the published $X (Tournament Prize Pool) + $Y
+# (Tournament Fee) + $Z (Poker Staff Service Charge) split.
+# ---------------------------------------------------------------------------
+WPT_STRUCT_CLASSES = {
+    "$600 NLH $400K": dict(chips=40000, level_min="30 (1A-1E) / 20 (1F) / 40 (Day 2)",
+        fee=90, pool=510, stacked=True,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting "
+                "flight will be available until the start of level 9.")),
+    "$600 TORSE": dict(chips=35000, level_min="30", fee=90, pool=510, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9.")),
+    "$400 PLO": dict(chips=30000, level_min="30", fee=63, pool=337, stacked=False,
+        clause=("Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + "
+                "$18 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9 (approximately 5:30 p.m.).")),
+    "$600 Mixed Triple Draw": dict(chips=35000, level_min="30", fee=90, pool=510, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9.")),
+    "$600 Limit Omaha 8 (1 Day)": dict(chips=35000, level_min="30", fee=90, pool=510, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9.")),
+    "$600 Limit Omaha 8/Stud 8": dict(chips=35000, level_min="30", fee=90, pool=510, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9.")),
+    "$600 HORSE": dict(chips=35000, level_min="30", fee=90, pool=510, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9 (approximately 4:30 p.m.).")),
+    "$800 NLH $1M GTD": dict(chips=40000, level_min="30 (1A-1E) / 20 (1F) / 40 (Day 2)",
+        fee=105, pool=695, stacked=True,
+        clause=("Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + "
+                "$33 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting "
+                "flight will be available until the start of level 9.")),
+    "$1,100 PLO": dict(chips=30000, level_min="30", fee=130, pool=975, stacked=False,
+        clause=("Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + "
+                "$45 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9 (approximately 5:30 p.m.).")),
+    "$1,600 NLH $1M GTD": dict(chips=40000, level_min="40", fee=170, pool=1430, stacked=True,
+        clause=("Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + "
+                "$50 (Poker Staff Service Charge). Registration: Unlimited re-entry for each starting "
+                "flight will be available until the start of level 10.")),
+    "$1,100 WPT Prime": dict(chips=40000, level_min="40 (Day 1) / 60", fee=130, pool=970, stacked=True,
+        clause=("Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + "
+                "$40 (Poker Staff Service Charge). Registration: One (1) Entry and One (1) re-entry "
+                "for each starting flight will be available until the start of level 10 "
+                "(approximately 6:45 p.m.).")),
+    "$600 NLH Turbo $50K": dict(chips=30000, level_min="20", fee=85, pool=515, stacked=False,
+        clause=("Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + "
+                "$25 (Poker Staff Service Charge). Registration: Unlimited re-entry will be available "
+                "until the start of level 9.")),
+    "$1,600 PLO Mystery Bounty": dict(chips=40000, level_min="40 (1A) / 20 (1B) / 40 (Day 2)",
+        fee=170, pool=930, stacked=True,
+        clause=("Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize "
+                "Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge). Registration: "
+                "Unlimited re-entry for each starting flight will be available until the start of level 10.")),
+}
+
+WPT_CLAUSE_MATCH = [
+    # (needle in the dataset row name, WPT_STRUCT_CLASSES key)
+    ("wpt prime", "$1,100 WPT Prime"),
+    ("plo mystery bounty", "$1,600 PLO Mystery Bounty"),
+    ("nlh turbo $600 $50k", "$600 NLH Turbo $50K"),
+    ("hold'em $600 $400k", "$600 NLH $400K"),
+    ("$600 no limit hold'em $400k", "$600 NLH $400K"),
+    ("hold'em $800 $1m", "$800 NLH $1M GTD"),
+    ("$800 no limit hold'em $1m", "$800 NLH $1M GTD"),
+    ("hold'em $1,600 $1m", "$1,600 NLH $1M GTD"),
+    ("$1,600 no limit hold'em $1m", "$1,600 NLH $1M GTD"),
+    ("$600 horse", "$600 HORSE"),
+    ("$600 torse", "$600 TORSE"),
+    ("$600 mixed triple draw", "$600 Mixed Triple Draw"),
+    ("$600 limit omaha 8/stud 8", "$600 Limit Omaha 8/Stud 8"),
+    ("$600 limit omaha 8", "$600 Limit Omaha 8 (1 Day)"),
+    ("$400 pot limit omaha", "$400 PLO"),
+    ("$1,100 plo", "$1,100 PLO"),
+]
+
+def _classify_wynn_name(name):
+    n = str(name).lower()
+    for needle, key in WPT_CLAUSE_MATCH:
+        if needle in n:
+            return key
+    return None
+
+wpt_enriched = 0
+for ev in events:
+    if ev.get("venue_id") != "wynn":
+        continue
+    key = _classify_wynn_name(ev.get("name", ""))
+    if not key:
+        continue
+    c = WPT_STRUCT_CLASSES[key]
+    # A published fee split is only valid for the buy-in it was printed for.
+    # If the class's implied buy-in (pool + fee) differs from the row's buy-in,
+    # the clause belongs to a different event and must not be applied.
+    implied = (c["pool"] or 0) + (c["fee"] or 0)
+    if ev.get("buy_in") and implied and implied != ev["buy_in"]:
+        continue
+    ev["chips"] = c["chips"]
+    ev["level_min"] = c["level_min"]
+    ev["fee"] = c["fee"]
+    ev["pool_per_entry"] = c["pool"]
+    if c["fee"] and ev.get("buy_in"):
+        ev["total_entry_fee"] = ev["buy_in"]
+    ev["rules"] = {
+        "single_entry": "no — re-entry permitted" if "One (1) Entry" not in c["clause"] else "no — 1 entry + 1 re-entry",
+        "re_entry": c["clause"].split("Registration: ")[-1].strip(),
+        "add_on": "no add-on clause printed for this event on the official structures PDF",
+        "excerpt": c["clause"],
+        "retrieved": "2026-11-17",
+    }
+    ev["notes"] = ("Entry-fee split, starting stack, level length and registration clause transcribed "
+                   "from the official Wynn WPT structures PDF, read 2026-11-17. Re-entry is permitted, "
+                   "so the event sits in the spend-more group; it is not single-entry.")
+    ev["last_checked"] = "2026-11-17"
+    if ev.get("category") == "unverified":
+        ev["category"] = "spend-more"
+    wpt_enriched += 1
+print("enriched %d Wynn rows with terms transcribed from the official WPT structures PDF" % wpt_enriched)
+
+# ---------------------------------------------------------------------------
+# "Last checked" must be the date THIS row's own official document was read, not a
+# global constant. The Venetian DSE IV event page was re-read end to end on
+# 2026-11-17 during this session; rows whose cited structure sheet was also
+# re-read that day carry that date, and rows verified on an earlier read keep the
+# earlier date. Never bump a date that no human/agent actually re-read.
+# ---------------------------------------------------------------------------
+V_REREAD = "2026-11-17"
+V_SHEETS_REREAD = {1, 5, 11, 15, 18}   # sheets read verbatim again in this session
+import re as _re2
+for ev in events:
+    if ev.get("venue_id") != "venetian":
+        continue
+    ev["schedule_checked"] = V_REREAD        # the schedule page itself was re-read
+    m = _re2.search(r"structure_(\d+)\.pdf", str(ev.get("struct_url") or ""))
+    if m and int(m.group(1)) in V_SHEETS_REREAD:
+        ev["last_checked"] = V_REREAD
+        ev["struct_checked"] = V_REREAD
+    else:
+        ev["last_checked"] = ev.get("last_checked") or AS_OF
 
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]

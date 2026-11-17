@@ -51,7 +51,35 @@
     applyFilters(table);
   }
 
-  ["tbl-tournaments", "tbl-rules", "tbl-hotels", "tbl-venue"].forEach(bindTable);
+  Array.prototype.forEach.call(document.querySelectorAll("table.data[id]"), function (t) {
+    bindTable(t.id);
+  });
+
+  /* ---------- site-wide search across every table on the page ---------- */
+  var globalBox = document.getElementById("site-search");
+  if (globalBox) {
+    var allTables = document.querySelectorAll("table.data");
+    var statusEl = document.getElementById("site-search-status");
+    function runGlobalSearch() {
+      var q = norm(globalBox.value).trim();
+      var shown = 0, total = 0;
+      allTables.forEach(function (table) {
+        table.setAttribute("data-search", q);
+        applyFilters(table);
+        table.querySelectorAll("tbody tr").forEach(function (row) {
+          total++;
+          if (!row.classList.contains("hidden")) shown++;
+        });
+      });
+      if (statusEl) {
+        statusEl.textContent = q === ""
+          ? total + " rows on this page"
+          : shown + " of " + total + " rows on this page match \u201c" + globalBox.value + "\u201d";
+      }
+    }
+    globalBox.addEventListener("input", runGlobalSearch);
+    runGlobalSearch();
+  }
 
   /* ---------- trip cost calculator ---------- */
   var tripForm = document.getElementById("trip-calc");
