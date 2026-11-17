@@ -1304,3 +1304,14 @@ Two things worth carrying forward:
 Data state on `main` after this session: 166 events / 10 hotels / 45 flags; overlay joined 83 of 83 Venetian rows
 (353 cells filled, 0 unresolved conflicts); 86 official URLs registered, all `never checked`; confirmed single-entry
 events remain **0**, and that number is the finding, not a gap.
+
+## Session arena/555c41d4-poker2 — root-to-current-site integration (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Add a visible, generated navigation path from the root dashboard to the consolidated `/2026/` DSE IV research surface; explain which surface is current | done | arena/555c41d4-poker2 | `scripts/build_site.py`, generated root HTML pages, `COORDINATION.md` |
+
+- The root dashboard previously had no link to `/2026/`, even though the README identifies `/2026/` as the consolidated current event-specific site. Added a nav item site-wide and a clear landing-page callout. No tournament or hotel claims/data were changed.
+- Verification: ran `python3 scripts/build_site.py`; `python3 scripts/check_links.py` passed (37 pages, 4,333 links; no broken internal links and no non-official external hosts). `git diff --check` passed.
+- Earlier session-wide checks during this turn: `scripts/audit.py`, `scripts/check2026.py`, `scripts/build2026.py --check`, `scripts/check_guarantees.py`, `scripts/check_monitor_badge.py`, `scripts/check_search.mjs`, and plan refresh generator/self-tests passed. The latest scheduled plan-refresh GitHub run (44124782058) failed at its generator verification step (exit code 2); its logs were not retrievable from this sandbox, and local reruns passed, so no unsupported diagnosis was recorded. The separate scheduled `/2026/` re-check run (44118803672) succeeded.
+- Source note: the added link and page description are repository navigation, not new event/hotel facts. All existing row-level source data remains unchanged.
