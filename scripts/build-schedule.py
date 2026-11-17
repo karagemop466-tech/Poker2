@@ -4,7 +4,10 @@
 Rules, all derived from published data (nothing is estimated):
   1. A day's PRIMARY event is chosen only from rows classified single_entry_candidate
      (one-day event whose official structure sheet was read and contains no rebuy,
-     add-on or re-entry clause) and whose fee AND guarantee are both confirmed.
+     add-on or re-entry clause) and whose fee AND guarantee are both confirmed,
+     and whose official sheet states no entry restriction. Rows whose sheet restricts
+     entry (50+, female-only, tag-team) are listed with the restriction instead of
+     being scheduled, because the plan must be playable by a general visitor.
   2. Among that day's qualifying events, the primary is the one with the highest
      guarantee/buy-in size ratio that starts before 12:00; if none starts before noon,
      the highest-ratio event of the day becomes the primary.
@@ -51,7 +54,11 @@ def main():
     d = json.load(open(EV, encoding="utf8"))
     events = d["events"]
     qual = [e for e in events if e["category"] == "single_entry_candidate"
-            and e["fee"] is not None and e["gtd"] is not None]
+            and e["fee"] is not None and e["gtd"] is not None
+            and not e.get("eligibility")]
+    restricted = [e for e in events if e["category"] == "single_entry_candidate"
+                  and e["fee"] is not None and e["gtd"] is not None
+                  and e.get("eligibility")]
     by_day = defaultdict(list)
     for e in qual:
         by_day[e["date"]].append(e)
@@ -121,6 +128,11 @@ def main():
                 {"event_no": e["event_no"], "start": e["start"], "name": e["name"],
                  "buy_in": e["buy_in"], "gtd": e["gtd"], "ratio": e["ratio_gtd_to_buyin"]}
                 for e in evs if e is not primary and e is not fallback
+            ] + [
+                {"event_no": e["event_no"], "start": e["start"], "name": e["name"],
+                 "buy_in": e["buy_in"], "gtd": e["gtd"], "ratio": e["ratio_gtd_to_buyin"],
+                 "restricted": e["eligibility"]}
+                for e in restricted if e["date"] == day
             ],
             "flags": flags,
         }
@@ -170,6 +182,7 @@ def main():
         "as_of": d["as_of"],
         "rules": [
             "Primary events are drawn only from rows whose official structure sheet was read and whose fee and guarantee are both confirmed.",
+            "A primary must be open to all players: rows whose sheet restricts entry (50+, female-only, tag-team) are listed with the restriction, never scheduled as the primary.",
             "Highest published guarantee-to-buy-in size ratio that starts before 12:00 is the day's primary.",
             "An evening event is shown only as a conditional fallback, and only when its late-registration cutoff is later than the primary's.",
             "Overlap is flagged when the later event starts at or before the earlier event's earliest plausible finish (registration close + one level).",
@@ -205,6 +218,7 @@ def main():
         "sheets_read": len({e["sheet"] for e in events if e["sheet_read"]}),
         "sheets_published": len({e["sheet"] for e in events}),
         "qualifying_rows": len(qual),
+        "restricted_single_entry_rows": len(restricted),
         "spend_advantage_rows": cats["spend_advantage"] + len([e for e in events if e["category"] == "multi_flight"]),
         "cheapest_qualifying_entry": min(e["buy_in"] for e in qual),
         "highest_ratio": max(qual, key=lambda e: e["ratio_gtd_to_buyin"])["ratio_gtd_to_buyin"],

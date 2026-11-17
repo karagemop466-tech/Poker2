@@ -171,6 +171,7 @@ ALL_SHEET_NUMS = sorted({e["sheet"] for e in events if e["sheet"]})
 
 CATEGORY_LABEL = {
     "single_entry_candidate": ("single-entry candidate", "ok"),
+    "single_entry_2day": ("single-entry candidate, 2-day", "ok"),
     "spend_advantage": ("spend-advantage", "bad"),
     "multi_flight": ("multi-flight", "bad"),
     "satellite": ("satellite", "warn"),
@@ -549,9 +550,11 @@ starting stack, level length and the registration cutoff are blank, and so is wh
 """ + str(len(OTHERS_MISC)) + """ other-venue rows are in this state.</p>
 """ + filters() + """
 """ + event_table(rows, "the sheet URL in the last column is what would close each row") + """
-<div class="note info">Reading the remaining """ + str(STATS["sheets_published"] - STATS["sheets_read"]) + """ sheets
-is suggestion <a href="suggestions.html">S-02</a>. The daily job already fetches every one of those URLs, so a change
-to a sheet is reported here before anyone relies on it.</div>
+<div class="note info">Sheet sweep status: as of 2026-11-17 all 37 official Venetian DSE IV structure sheets have been
+read in full (S-02 completed by arena/18aba6dd-poker2), so no Venetian row is unverified any more; the remaining rows
+on this page are other-venue rows cited from other sessions' reads, not re-read here (FG-04). The daily job still
+fetches every one of those 37 sheet URLs, so if the Venetian changes a sheet after 2026-11-17, the change is reported
+here before anyone relies on it.</div>
 </section>"""
     page("unverified.html", "Unverified rows", body)
 
@@ -1174,7 +1177,7 @@ def p_repo():
         ("Every resort fee / parking / incidentals / occupancy value has a source URL", "validate(): &ldquo;verified_official&rdquo; without a URL aborts"),
         ("No broken internal links", "validate(): walks every written page after generation"),
         ("Guarantee in the event name matches the guarantee on its structure sheet",
-         "scripts/build-events.py: 34 cross-checked rows, mismatch aborts"),
+         "scripts/build-events.py: 94 cross-checked rows, mismatch aborts"),
         ("Event-to-sheet tagging matches each sheet's own &ldquo;Event Numbers&rdquo; line", "scripts/build-events.py"),
         ("Registration-close time parsed from the sheet matches the printed wall clock in the text",
          "scripts/build-events.py parses both the level count and the parenthesised time"),
@@ -1191,7 +1194,7 @@ def p_repo():
         ("FG-14", "<code>data/tournaments.json</code> attributed structure-sheet values (registration cutoff, stack, level length) to the schedule page, and a second session had already flagged those fields as unreproducible from that page. Both were half right: the values are real, the attribution was not. Fixed by per-field source links in the new dataset."),
         ("FG-15", "<code>data/venetian-dse4-official-check.json</code> (47 rows) and <code>data/verified/tournaments.json</code> (32 rows) each labelled rows &ldquo;single_entry&rdquo; on sheet silence alone, and the former counted per-flight rows as separate single-entry events. The consolidated dataset uses three states and groups flights by event."),
         ("FG-16", "Four front-ends (the repository root dashboard, <code>/docs/</code>, <code>/verified/</code>, <code>/pages/</code>) render four datasets with different labels for the same event. Nothing was deleted to fix that: the root dashboard belongs to <code>scripts/build_site.py</code> and its CI ownership note, and this <code>/plan/</code> surface is generated beside it from <code>site-data/*.json</code>. Consolidating to one surface is suggestion S-11."),
-        ("FG-19", "For the 34 rows whose sheet was read, the buy-in is fee-inclusive. For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter shows the published buy-in with a caveat instead of a computed total."),
+        ("FG-19", "Until 2026-11-16 only 34 of the 94 Venetian rows had a read sheet, and rows without one showed the published buy-in with a fee-inclusiveness caveat. Session arena/18aba6dd-poker2 read the remaining 27 sheets on 2026-11-17, so every Venetian DSE IV row now carries fee, stack, level, registration-close and payout values transcribed from its own official sheet (fee-inclusive, quoted per row). The other-venue rows remain &ldquo;cited, not re-read&rdquo; (FG-04)."),
         ("Repo hygiene", "The root carries <code>style.css</code>, <code>styles.css</code>, <code>app.js</code> and <code>assets/</code> from several sessions with overlapping selectors. All of them stay in place because the root dashboard references them; this surface ships its own <code>plan/assets/site.css</code> and <code>plan/assets/site.js</code>, and the build fails if either is missing, so neither page set can restyle the other."),
     ]
     blist = ""
