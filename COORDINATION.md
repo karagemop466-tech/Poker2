@@ -1086,3 +1086,14 @@ Branch: `arena/85381daa-poker2` (fixed active branch). Synced to `main` at `628a
 - Merge: merged via `gh pr merge 59 --merge`; integration commit `28fe093` is an ancestor of `main` (`d3549d3`); merge commit `d3549d3`. `git diff --check` clean.
 - GitHub Pages: build [1376393053](https://api.github.com/repos/karagemop466-tech/Poker2/pages/builds/1376393053) for commit `d3549d3` reported `built` (no error); live site https://karagemop466-tech.github.io/Poker2/.
 - Root dashboard verified live: 166 events, 10 hotels, 41 flags, 63 sources; `scripts/audit.py` OK, `scripts/check_links.py` OK (37 pages, 3007 hrefs, no broken internal links, no non-official external hosts).
+
+### PRs and deploy (arena/618fc735-poker2)
+
+| Step | Result |
+|---|---|
+| PR #58 — sheets, walking cross-check, no inferred numbers | merged into `main` as `8625238`; `verify` + "Plan: generated pages match their data" both green |
+| PR #62 — two defects found by reading the deployed pages | merged as `c72a3cd`; both workflows green, `pages build and deployment` success |
+| Live check after deploy | `hotels.html` shows per-hotel walking legs with a router count and the unattributed `$119 / $209` shared rate log; `planner.html` shows a blank room rate with the reason, the generated entry list and the rebuilt day plan |
+
+Defects fixed in #62 were invisible to the local build only because the build was correct while the
+prose around it was not — worth repeating: read the deployed page, not just the exit codes.
