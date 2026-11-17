@@ -875,3 +875,13 @@ hand-verified detail is folded in through the overlay file above rather than los
   minutes and the "OSM/OSRM foot-routing estimate … not an official measurement" note; `plan/schedule.html`
   shows Dec 2 → Event 25, Dec 8 → Event 34, Dec 9 → Event 36 (93.8×) with Event 38 as the conditional
   fallback, Dec 10 → Event 42 — the three restricted events no longer appear as primaries anywhere.
+
+## Session arena/d6ad3e69-poker2 — claim (2026-11-17)
+
+This session owns a root source-monitor reliability follow-up only. It does not change event/hotel
+facts, `/plan/` inputs, or other sessions' generated pages.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Make the root monitor registry collision-safe and regenerate it from all current official citations on every scheduled run; keep changed-source review flags visible until explicitly resolved; keep snapshots metadata-only and test the monitor offline | in progress | arena/d6ad3e69-poker2 | `scripts/build_monitor_registry.py`, `scripts/monitor.py`, `.github/workflows/source-monitor.yml`, `scripts/build_site.py`, `data/source_monitor.json`, `monitor.html`, this file |
+
