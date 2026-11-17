@@ -57,5 +57,31 @@ for n, sheet in sorted(b26.SHEETS.items()):
 
 for p in problems:
     print("FAIL " + p)
-print("%s: %d event(s) resolved across %d sheet(s)" % ("FAILED" if problems else "OK", checked, len(b26.SHEETS)))
-sys.exit(1 if problems else 0)
+print("%s: %d event(s) resolved across %d sheet(s)"
+      % ("FAILED" if problems else "OK", checked, len(b26.SHEETS)))
+
+# --------------------------------------------------------------------------------------
+# day-plan rule: a restricted or satellite event must not be the primary of a day that has an
+# unrestricted event available. This is the bug that made a $260 satellite the main event of
+# 12 December instead of the $2,200 $1M-guarantee title event.
+# --------------------------------------------------------------------------------------
+day_problems = []
+days = b26.build_days(b26.build_events())
+for d in days:
+    p = d["primary"]
+    if p is None:
+        continue
+    if p.get("eligibility"):
+        day_problems.append("%s: primary #%s is entry-restricted (%s)"
+                            % (d["date"], p["event_no"], p["eligibility"][:60]))
+    alternatives = [x for x in d["entries"]
+                    if not x.get("eligibility") and x["group"] != "satellite"
+                    and not (x["event_no"] == p["event_no"] and x["start"] == p["start"])]
+    if p["group"] == "satellite" and alternatives:
+        day_problems.append("%s: primary #%s is a satellite but %d open event(s) run that day"
+                            % (d["date"], p["event_no"], len(alternatives)))
+for q in day_problems:
+    print("FAIL " + q)
+print("%s: %d day(s) checked for a playable primary"
+      % ("FAILED" if day_problems else "OK", len([d for d in days if d["primary"]])))
+sys.exit(1 if (problems or day_problems) else 0)

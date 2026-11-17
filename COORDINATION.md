@@ -1127,13 +1127,14 @@ Branch `arena/d16d61f0-poker2` (fixed by the platform; no other branch is create
 | Task | Status | Owner | Files |
 |---|---|---|---|
 | K1 Unblock and integrate PR #55 (the consolidated `/2026/` surface carrying all 37 verified structure sheets) — it was `CONFLICTING` on `COORDINATION.md` only | done | arena/d16d61f0-poker2 | `24` merge of `origin/arena/839a07d9-poker2`; `COORDINATION.md` |
-| K2 Re-verify every hotel fee / tax / parking / cancellation value against the official page, first-hand | in progress | arena/d16d61f0-poker2 | `data/verified2026/hotels.py`, `2026/hotels.html` |
-| K3 Verify the monitor actually marks rows whose source changed, and fix it if it does not | in progress | arena/d16d61f0-poker2 | `scripts/build2026.py`, `data/verified2026/checks.json`, `2026/sources.html`, `2026/tournaments.html` |
-| K4 Site-wide search box across every table (root dashboard had one; `/2026/` did not) | in progress | arena/d16d61f0-poker2 | `scripts/build2026.py`, `2026/assets/site2026.js` |
-| K5 Per-venue pages: "one page per venue" was met for The Venetian only — extend to a page per other room with what each actually publishes | in progress | arena/d16d61f0-poker2 | `scripts/build2026.py`, `2026/venues/*.html` |
-| K6 Fix stale citations inside the `/2026/` pages (`data/site/checks.json` vs the real `data/verified2026/checks.json`) | in progress | arena/d16d61f0-poker2 | `scripts/build2026.py` |
-| K7 Update summary / questions / suggestions / flagged with the new evidence state | in progress | arena/d16d61f0-poker2 | `data/verified2026/content.py` |
-| K8 PR → `main`, CI green, Pages deploy confirmed, record here | pending | arena/d16d61f0-poker2 | `COORDINATION.md` |
+| K2 Re-verify every hotel fee / tax / parking / cancellation value against the official page, first-hand | done | arena/d16d61f0-poker2 | `data/verified2026/hotels.py`, `2026/hotels.html` |
+| K3 Verify the monitor actually marks rows whose source changed, and fix it if it does not | done | arena/d16d61f0-poker2 | `scripts/build2026.py`, `2026/sources.html`, `2026/tournaments.html`, `scripts/check_monitor_badge.py` |
+| K4 Site-wide search box across every table (root dashboard had one; `/2026/` did not) | done | arena/d16d61f0-poker2 | `scripts/build2026.py`, `2026/assets/{site2026.js,search-index.js}`, `scripts/check_search.mjs` |
+| K5 Per-venue pages: "one page per venue" was met for The Venetian only — extend to a page per other room | done | arena/d16d61f0-poker2 | `scripts/build2026.py`, `2026/venues/*.html` |
+| K6 Fix stale citations inside the `/2026/` pages (`data/site/checks.json` vs the real `data/verified2026/checks.json`) | done | arena/d16d61f0-poker2 | `scripts/build2026.py` |
+| K7 Update summary / questions / suggestions / flagged with the new evidence state | done | arena/d16d61f0-poker2 | `data/verified2026/content.py` |
+| K8 Two data defects found by line-by-line checking and fixed, with CI gates | done | arena/d16d61f0-poker2 | `scripts/build2026.py`, `scripts/check_guarantees.py`, `.github/workflows/verify.yml` |
+| K9 PR → `main`, CI green, Pages deploy confirmed, record here | in progress | arena/d16d61f0-poker2 | `COORDINATION.md` |
 
 Claim note: K1 was taken because PR #55 had been sitting `CONFLICTING` for a day with green checks and the
 conflict was a pure appending collision at the end of this file (two sessions appended a section at the same
