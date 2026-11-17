@@ -603,6 +603,61 @@ source read; no 8:00 AM tournament is printed anywhere in the dataset.
 - Irregularity: running `python3 scripts/monitor.py` in this sandbox checked 22 URLs and got 22 fetch errors. Its local report/registry changes were discarded so this documentation-only task does not publish errors as a fresh monitor run. This indicates an environment/network retrieval failure, not confirmation that sources are unchanged; check the scheduled Actions run/report. The repository has multiple monitor workflows with separate registries; consolidation remains a documented open integration decision (S-12).
 - No external source facts were added or changed in this task. The official-source evidence remains the cited dataset and links audited by `scripts/audit.py`.
 - Integration: PR [#43](https://github.com/karagemop466-tech/Poker2/pull/43) merged to `main` at `93ee9ca2c320441e0835af3228c584a20fa18b59` on 2026-11-17. Both PR checks passed: [Verify site](https://github.com/karagemop466-tech/Poker2/actions/runs/43988469385) and [Plan generated pages](https://github.com/karagemop466-tech/Poker2/actions/runs/43988469431). Post-merge root `Verify site` [run 43988516031](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516031), `/plan/` verification [run 43988516113](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516113), GitHub Pages build/deployment [run 43988515513](https://github.com/karagemop466-tech/Poker2/actions/runs/43988515513), and static-site deployment [run 43988516063](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516063) all completed successfully. Live site: https://karagemop466-tech.github.io/Poker2/.
+
+## Session arena/18aba6dd-poker2 — claims (2026-11-17)
+
+Started from `origin/main` at `7499702` (after PRs #43/#44, README repair). All prior board tasks are `done`; the open follow-ups recorded by arena/72ca3e9d-poker2 are picked up here. Platform constraint noted by earlier sessions applies: this Arena session is fixed to branch `arena/18aba6dd-poker2`, so all work is committed there (equivalent of `session-<id>/<task>` scope discipline is kept by file ownership, not by branch naming).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| S-02: read the 27 remaining official Venetian DSE IV structure sheets (2, 3, 4, 9, 12, 13, 14, 16, 17, 19–28, 30–37) and transcribe entry rules + structural values into the /plan/ surface, moving rows out of `unverified`/silent states where the sheet text warrants | in progress | arena/18aba6dd-poker2 | `scripts/build-events.py`, `site-data/*.json` (regenerated), `plan/**` (regenerated), `COORDINATION.md` |
+| Re-run plan-surface verification (build-events.py, build-schedule.py, build-site.py, check_site.mjs) and record results | in progress | arena/18aba6dd-poker2 | `plan/**`, `COORDINATION.md` |
+| PR to main, merge, confirm GitHub Pages deploy, record result | pending | arena/18aba6dd-poker2 | `COORDINATION.md` |
+
+Explicitly NOT claimed (blocked on user decision or out of scope): S-11 (surface consolidation), S-12 (monitor-job merge), FG-02 (written single-entry confirmation from the poker room — requires contacting the room), FG-05 (dated hotel quote — requires browser booking engine). The root-dashboard surface (`scripts/build_site.py` + `data/master.json` pipeline) is not touched by this session.
+
+## Session arena/18aba6dd-poker2 — completion record (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| S-02: read the 27 remaining official Venetian DSE IV structure sheets; transcribe entry rules + structural values | done | arena/18aba6dd-poker2 | `scripts/build-events.py`, `site-data/events.json`, `site-data/schedule.json`, `site-data/summary-stats.json`, `plan/**` |
+| Plan-surface verification rerun (build-events/build-schedule/build-site `--check`, `check_site.mjs`) | done | arena/18aba6dd-poker2 | `plan/**` |
+| S-06 (plan surface): routed walking minutes for all 12 hotel→venue pairs | done | arena/18aba6dd-poker2 | `site-data/walk.json`, `scripts/build-site.py`, `site-data/{summary,questions,suggestions}.json` |
+| Schedule-builder eligibility rule (primaries must be open to all; restricted candidates listed with reason) | done | arena/18aba6dd-poker2 | `scripts/build-schedule.py`, `site-data/schedule.json` |
+| PR to main, merge, confirm GitHub Pages deploy, record result | recorded below | arena/18aba6dd-poker2 | `COORDINATION.md` |
+
+### Sources read first-hand on 2026-11-17 (session arena/18aba6dd-poker2)
+
+The 27 remaining official Venetian DSE IV structure sheets, each read in full:
+`https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{2,3,4,9,12,13,14,16,17,19,20,21,22,23,24,25,26,27,28,30,31,32,33,34,35,36,37}.pdf`
+— completing the sweep of all 37 published sheets (sheets 1, 5, 6, 7, 8, 10, 11, 15, 18, 29 were read by earlier sessions on 2026-11-16 and were not re-read).
+
+Walking measurements (2 pairs measured fresh 2026-11-17; 10 pairs reused from the dated 2026-11-16 dataset `data/site/walking.json` with the same method):
+- OpenStreetMap Nominatim geocoding: `https://nominatim.openstreetmap.org/search?q=The+Cosmopolitan+of+Las+Vegas%2C+3708+Las+Vegas+Blvd+South&format=json` (geocoded exactly to the official 3708 S Las Vegas Blvd address)
+- OSRM foot profile (FOSSGIS public server): `https://routing.openstreetmap.de/routed-foot/route/v1/foot/...` — Cosmopolitan→Venetian poker room 22.6 min / 1,692 m; Bellagio→Cosmopolitan 16.5 min / 1,235 m
+
+### Verification performed
+
+- `python3 scripts/build-events.py` cross-checks: guarantee parsed from each event name must equal the guarantee printed on that event's sheet (94 rows, mismatch aborts); event-to-sheet tagging must match each sheet's own "Event Numbers" line (no orphan rows).
+- Result dataset: 94 Venetian rows, all sheet-verified (`sheet_read` true, 0 `unverified`); categories: 45 single_entry_candidate, 27 multi_flight, 11 day2_restart, 7 satellite, 2 spend_advantage, 1 team_format, 1 single_entry_2day (new).
+- `--check` modes of all three generators pass; `node scripts/check_site.mjs` passes (15 plan pages, 94 event rows, every data row carries an https official-source link); all pages served HTTP 200 from a local server.
+- Schedule rebuilt: 27 days with an open-to-all primary; 50+ Seniors rows (events 24/32) listed with their restriction instead of being scheduled; best 4-day window Dec 6–9, 2026 (entries $2,300, $170K GTD played, avg ratio 69.3x, every night poker-rate eligible).
+
+### Findings and irregularities from the sweep (published on the plan's Flagged/Unverified pages where relevant)
+
+1. **Event 39's schedule tag is misleading.** The schedule page tags it as a flight row, but its sheet defines exactly one Day 1 (Dec 10) + Day 2 restart — there are no multiple starting flights. Modeled as a new `single_entry_2day` category rather than asserting a "buy into another flight" rule the sheet does not contain. It is also female-only (sheet rule 02), so it stays out of the day plan.
+2. **LIPS events withhold an extra flat fee** for Vegas Connected, INC, DBA Ladies International Poker Series: $10 of the $600 buy-in (sheets 31, 33) and $20 of the $800 buy-in (sheet 32), on top of the house-fee split. Recorded verbatim on each row.
+3. **Satellites guarantee seats, not dollars** ("Guarantee: 2 Seats" on sheets 19, 24, 25): numeric guarantee stays blank by design; the seat text is quoted. The turbo-satellite sheet (25) prints no registration-close wall clock — only "6 levels" — so that field stays blank rather than computed.
+4. **Printed vs arithmetic reg-close times disagree on several multi-flight sheets** (e.g. sheet 2 prints "9 levels + Break (5:55 PM)" while 9×40 min from 11:10 AM lands at ~5:25 PM). The printed wall-clock text is transcribed verbatim, matching the convention used for sheets 1/8 in the earlier session.
+5. **Sheet 28's fee rule** extracts with a line-wrap artifact ("(Rake … - Staff)"); transcribed as extracted, consistent with how sheets 5/6/18/29 were transcribed.
+6. **Event 49's flights play to ~15% of the field** (sheet 20), not the 12.5% printed on the other flight sheets.
+7. **Events 56/59 publish early-registration rake discounts** ($40/$20 off house fees before the event starts, sheet 35/36 rule 07) — recorded in the fee text; not classified spend-advantage because a time-based discount lowers cost rather than buying an edge (unlike the PokerAtlas PRO membership discount on events 18/58).
+8. **Sheet 26 (event 17)**, previously a `not_read` placeholder, resolves cleanly: $400 PLO bounty, $60 fee/$340 pool, $100 bounties, 12.5% payout, silent on re-entry → single-entry candidate.
+
+### Integration / publication record
+
+- Branch `arena/18aba6dd-poker2` (fixed by the platform; file-ownership discipline kept instead of branch-per-task, as with every prior session).
+- PR and Pages deploy result: recorded below after merge.
 - Follow-up record PR [#44](https://github.com/karagemop466-tech/Poker2/pull/44) merged at `74997023025b4afd5c2767485e129be5ece49f5a`; both verification workflows passed. For that merge, GitHub's canonical `pages build and deployment` run [43988703319](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703319) succeeded and Pages API reports `built` for the same commit. The separate `.github/workflows/pages.yml` run [43988703616](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703616) failed in its deploy job with “No artifacts named github-pages” even though the earlier steps reported success; a manual workflow dispatch was denied by repository permissions. The canonical Pages build succeeded, so the site is published; duplicate deployment-workflow behavior remains an irregularity for review, not a claim that the live deployment failed.
 
 ## Session arena/f4e82c6f-poker2 — duplicate Pages publisher cleanup (2026-11-17)
@@ -720,3 +775,35 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `build-events.py --check`, `build-site.py --check` OK · `node scripts/check_site.mjs` OK ·
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
+
+### Integration sync after merging main (PRs #51/#52), 2026-11-17 (continued)
+
+Main moved to `ba321e7` while this branch was working: PR #48/#51/#52 had completed the 37-sheet sweep
+independently and rewrote the events dataset and generators. Resolution, per protocol (never discard
+another session's work):
+
+- `scripts/build-events.py`, `site-data/events.json`: **main's versions taken wholesale**; this branch's
+  duplicate transcription was dropped (kept only in git history on commits `21d4489`/`8100cb9`).
+- `scripts/build-schedule.py`: this branch's open-to-all gate re-applied on top of main's payload — now
+  keyed off main's per-row `eligibility` field, skipping only *demographic* restrictions (50+, female-only,
+  team composition); the venue-wide "21+, with a Venetian Rewards card" gate stays schedulable. Regenerated
+  day plan: Dec 2 → Event 25, Dec 8 → Event 34, Dec 10 → Event 42 (Events 24/32/39 listed in
+  `skipped_events` with the restriction text; `restricted_single_entry_rows` = 3).
+- `summary.json` recommendation synced to the regenerated schedule (main's committed narrative said
+  "Event 38 primary on Dec 9" while its own committed `schedule.json` had Event 36 — the summary was
+  written ahead of a gated rebuild that never ran). Now: Dec 9 primary Event 36 (93.8x incl. bounties),
+  Event 38 as a conditional fallback gated on registration close; window numbers now cite the canonical
+  `top_windows` stats (Dec 6–9: 69.3x avg, $2,300 entries, $170K GTD, 4/4 poker-rate nights).
+- `scripts/build-schedule.py` now emits `top_windows` (top 4 distinct windows) so narrative pages cite
+  canonical numbers instead of ad-hoc math.
+- Walking minutes (S-06), walk.json, Q-10 answer, FG-11 resolution and the S-02/S-06 suggestion records
+  were re-applied onto main's narrative files (main still had the pre-S-06 "unverified" state).
+- Root surface (`build.py`, root pages, `data/master.json`): untouched; a local run of the legacy
+  `scripts/build.py` clobbered root pages during CI simulation and was reverted immediately — root pages
+  belong to main's `build_site.py` session (PR #52).
+- `scripts/check_sources.mjs` fetch runs in this sandbox have no network, so `site-data/change-report.json`
+  and `site-data/snapshots/` it wrote locally were deleted, not committed (the scheduled workflow owns them).
+
+Re-verified on the merged tree: `build-events.py --check`, `build-schedule.py --check`, `build-site.py
+--check`, `check_site.mjs` (15 plan pages / 94 rows / 13 UI ids), `check_links.py` (0 broken internal links,
+no non-official hosts), `audit.py` (166 events / 10 hotels / 41 flags OK), HTTP smoke test all plan pages 200.

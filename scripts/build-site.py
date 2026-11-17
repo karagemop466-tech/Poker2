@@ -172,6 +172,7 @@ ALL_SHEET_NUMS = sorted({e["sheet"] for e in events if e["sheet"]})
 
 CATEGORY_LABEL = {
     "single_entry_candidate": ("single-entry candidate", "ok"),
+    "single_entry_2day": ("single-entry candidate, 2-day", "ok"),
     "spend_advantage": ("spend-advantage", "bad"),
     "multi_flight": ("multi-flight", "bad"),
     "satellite": ("satellite", "warn"),
@@ -712,9 +713,9 @@ def p_hotels():
                 prop = h["property"]
         prop = prop or p["hotel_id"]
         mins = p.get("minutes_verified")
-        kind = "ok" if p["status"].startswith("connected") else "bad"
+        kind = ("ok" if (mins is not None and mins <= 30) else "bad")
         label = WALK["status_labels"].get(p["status"], p["status"])
-        route = esc(p.get("route_official") or "no official route statement found")
+        route = esc(p.get("route_official") or "no official route text")
         if p.get("route_source"):
             route += "<div>" + srclink(p["route_source"], "official route text") + "</div>"
         maps = ""
@@ -724,13 +725,20 @@ def p_hotels():
             maps += " " + srclink(p["apple_maps"], "Apple Maps")
         if not maps:
             maps = "&mdash;"
-        attrs = [("data-key", p["id"]), ("data-walk", mins if mins else ""), ("data-venue", p["venue"]),
+        attrs = [("data-key", p["id"]), ("data-walk", mins if mins is not None else ""), ("data-venue", p["venue"]),
                  ("data-cat", "walk"), ("data-flag", "no" if kind == "ok" else "yes"),
                  ("data-search", (prop + " " + str(p.get("destination_label"))).lower())]
+        routed_note = ""
+        if p.get("minutes_kind") == "routed_osrm_osm":
+            routed_note = ('<div class="sm">OSM/OSRM foot-routing estimate, routed ' + esc(p.get("routed_on", ""))
+                           + ((", " + str(p["routed_distance_m"]) + " m") if p.get("routed_distance_m") else "")
+                           + " - not an official measurement</div>")
+        elif p.get("minutes_kind") == "same_property_indoor":
+            routed_note = '<div class="sm">Same building/resort: official indoor route applies</div>'
         wrows += (tag_open("tr", attrs) + "<td>" + esc(prop) + "</td><td>"
                   + esc(venue_names.get(p["venue"], p["venue"])) + "</td><td>"
                   + esc(p.get("destination_label") or "") + '</td><td class="num">'
-                  + ((str(mins) + " min") if mins else "&mdash;") + "</td><td>" + badge(label, kind)
+                  + ((str(mins) + " min") if mins is not None else "&mdash;") + routed_note + "</td><td>" + badge(label, kind)
                   + '</td><td class="sm">' + route + "</td><td class=\"nowrap\">" + maps + "</td></tr>")
     tax = HOT["tax"]
     body = """
@@ -756,11 +764,11 @@ disagree about it (FG-07).</div>
                  + srclink(c["source_url"], host_of(c["source_url"])) + "</li>")
     body += """</ul></div>
 <h2>Walking route to the poker room (30-minute limit)</h2>
-<p class="lede">""" + esc(WALK["why_no_minutes"]) + """</p>
-<div class="filters"><label class="check"><input type="checkbox" data-f="walk"> only pairs with a verified &le;30 min duration</label>
+<p class="lede">""" + esc(WALK["method"]) + """</p>
+<div class="filters"><label class="check"><input type="checkbox" data-f="walk"> only pairs routed at &le;30 min</label>
 <span class="spacer"></span><span class="count"></span></div>
-<div class="tablewrap compact" data-filterable><table><caption>""" + str(len(WALK["pairs"])) + """ hotel &rarr; venue pairs &middot; durations blank until verified</caption>
-<thead><tr><th>Hotel</th><th>Toward</th><th>Destination</th><th>Verified minutes</th><th>Status</th><th>Official route</th><th>Check it yourself</th></tr></thead>
+<div class="tablewrap compact" data-filterable><table><caption>""" + str(len(WALK["pairs"])) + """ hotel &rarr; venue pairs &middot; routed walking durations (OSM/OSRM foot profile), Maps links to confirm each one</caption>
+<thead><tr><th>Hotel</th><th>Toward</th><th>Destination</th><th>Routed minutes</th><th>Status</th><th>Official route</th><th>Check it yourself</th></tr></thead>
 <tbody>""" + wrows + """</tbody></table></div>
 <h2>Official booking engines for your dates</h2>
 <ul class="tight">"""
@@ -955,12 +963,12 @@ def p_venue(v):
             if h["id"] == p["hotel_id"]:
                 prop = h["property"]
         mins = p.get("minutes_verified")
-        kind = "ok" if p["status"].startswith("connected") else "bad"
+        kind = ("ok" if (mins is not None and mins <= 30) else "bad")
         label = WALK["status_labels"].get(p["status"], p["status"])
         route = esc(p.get("route_official") or "no official route text")
         if p.get("google_maps"):
             route += " &middot; " + srclink(p["google_maps"], "Google Maps")
-        wrows += ('<tr><td>' + esc(prop) + '</td><td class="num">' + ((str(mins) + " min") if mins else "&mdash;")
+        wrows += ('<tr><td>' + esc(prop) + '</td><td class="num">' + ((str(mins) + " min") if mins is not None else "&mdash;")
                   + "</td><td>" + badge(label, kind) + '</td><td class="sm">' + route + "</td></tr>")
     fields = ""
     for k, val in r_.items():
@@ -1103,7 +1111,10 @@ def p_flagged():
 <h1>Flagged for review</h1>
 <p class="lede">""" + esc(FLAGS["intro"]) + """</p>
 <div class="note bad"><b>The four that change decisions.</b> FG-01 (no 8 AM start exists in the verified schedule),
-FG-02 (no sheet publishes a one-entry cap), FG-05 (no dated room rate) and FG-11 (no walking minutes verified).
+FG-02 (no sheet publishes a one-entry cap), FG-05 (no dated room rate). FG-11 (walking minutes) is now answered with
+routed estimates - OSM Nominatim geocodes and OSRM foot routing (10 pairs on 2026-11-16, the Cosmopolitan and
+Bellagio&rarr;Cosmopolitan pairs freshly on 2026-11-17), each row carrying Google/Apple Maps links to confirm - still
+not an official minute value.
 Everything else is either a source contradiction to watch or a dataset-hygiene note.</div>
 """ + items + """
 """ + diff_html + """
