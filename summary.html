@@ -47,7 +47,7 @@
 <p class="lead">Updated 2026-11-17 after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
 <div class="panel"><h2>Scope</h2><p>Covered: The Venetian (DeepStack Extravaganza IV, official schedule rows Nov 16 – Dec 23, 2026) and Wynn Las Vegas (daily tournaments and WPT World Championship, Nov 27 – Dec 21, 2026). Not covered: other Strip rooms. Every value is from an official source or is marked UNVERIFIED.</p>
 <p>The current verified picture: <strong>45 one-day events whose structure sheet is silent on re-entry</strong> (The Venetian DSE IV) — none of them has a published no-re-entry rule,
-2 entry-ambiguous events, 35 spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
+0 entry-ambiguous events, 37 spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
 plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy-ins are not all published.</p></div>
 <div class="panel"><h2>Headline numbers (computed from the dataset on 2026-11-17)</h2>
 <p class="note">Every number below is computed from <code>data/master.json</code> at build time, so it cannot drift
@@ -55,11 +55,11 @@ away from the tables. Counts from the earlier recorded pass are kept in <a href=
 <table class="data"><thead><tr><th>Measure</th><th>Value</th><th>How it is counted</th></tr></thead><tbody>
 <tr><td>Sheet silent on re-entry (The Venetian)</td><td><strong>45</strong></td>
  <td>official structure sheet read in full; prints no re-entry, rebuy or add-on clause. Silence is not a published freezeout rule.</td></tr>
-<tr><td>Entry limit ambiguous</td><td><strong>2</strong></td>
+<tr><td>Entry limit ambiguous</td><td><strong>0</strong></td>
  <td>sheet wording implies further buy-ins (Valuetown events 18 and 58).</td></tr>
-<tr><td>Spend-more events (re-entry / rebuy / add-on published)</td><td><strong>35</strong></td>
+<tr><td>Spend-more events (re-entry / rebuy / add-on published)</td><td><strong>37</strong></td>
  <td>official document states extra buy-ins are available; excluded from the single-entry group.</td></tr>
-<tr><td>Multi-flight events</td><td><strong>36</strong></td>
+<tr><td>Multi-flight events</td><td><strong>35</strong></td>
  <td>event runs more than one starting flight; one row per flight.</td></tr>
 <tr><td>Satellites</td><td><strong>7</strong></td>
  <td>award an entry to another event rather than a cash prize.</td></tr>
@@ -83,7 +83,7 @@ primary event and adds a conditional evening fallback instead of an impossible s
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
 <li><strong>Do not mix in spend-more events</strong> without budgeting re-entries/add-ons: Wynn WPT re-entry events, Wynn Friday $240 rebuy, Caesars Palace $50 add-on, Golden Nugget re-entries/add-ons.</li>
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
-<li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
+<li><strong>Walking times are routed, not published.</strong> No casino prints one, so the figures come from Google Maps (read 2026-11-17) and are confirmed by an independent OSRM foot matrix: Wynn 12 min, Palazzo 4 min, Venetian 5 min, Caesars Palace 19 min, Horseshoe 24 min and Bellagio 28 min all clear the 30-minute limit to The Venetian Poker Room, while MGM Grand (42 min) and ARIA (37 min) do not. Wynn-side routes are unread.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
 </ul></div>
 <div class="panel"><h2>Findings, each with the official document behind it</h2>

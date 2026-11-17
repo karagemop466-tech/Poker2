@@ -61,8 +61,17 @@ jobs:
       - name: Every /2026/ page reproduces exactly from the verified data
         run: python3 scripts/build2026.py --check
 
+      - name: A multi-event sheet never gives all its events one guarantee
+        run: python3 scripts/check_guarantees.py
+
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
+
+      - name: The source-recheck badge actually marks changed rows
+        run: python3 scripts/check_monitor_badge.py
+
+      - name: The site-wide search filters the committed index
+        run: node scripts/check_search.mjs
 
       - name: /2026/ dataset invariants
         run: |
@@ -88,7 +97,7 @@ jobs:
       - name: Regenerating /2026/ leaves no diff
         run: |
           python3 scripts/build2026.py
-          if [ -n "$(git status --porcelain -- 2026 data/verified2026/dataset.json)" ]; then
+          if [ -n "$(git status --porcelain -- 2026 data/verified2026/dataset.json data/verified2026/search-index.json)" ]; then
             echo "::error::Committed /2026/ output differs from the verified data. Run scripts/build2026.py and commit."
             git status --porcelain
             git diff --stat

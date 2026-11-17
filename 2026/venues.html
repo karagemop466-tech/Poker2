@@ -4,36 +4,36 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Venues &middot; Las Vegas Single-Entry Poker Trip Planner</title>
 <link rel="stylesheet" href="assets/site2026.css">
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site2026.js" defer></script>
 
 </head><body>
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
 <nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html">Trip cost</a><a href="venues.html" class="on">Venues</a><a href="summary.html">Executive summary</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+<div class="gsbar"><div class="wrap2">
+<label class="gs-label" for="gs">Search every table</label>
+<input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
+<button class="btn" id="gs-clear" type="button">Clear</button>
+<p class="note" id="gs-status">Loading the site-wide index&hellip;</p>
+<div id="gs-res"></div>
+</div></div>
 </div></header>
 <main class="wrap">
-
+<div class="pill-row" style="margin-bottom:12px"><a class="pill" href="venues/venetian.html">The Venetian</a><a class="pill" href="venues/other.html">Other rooms</a></div>
 
 <div class="hero"><h1>Venues</h1>
-<p class="lede">One page per poker room. The Venetian is the only Strip room that publishes a dated
-tournament schedule <em>and</em> a per-event official structure sheet, so it is the only room that can
-be ranked line by line. Everything the other rooms publish &mdash; and do not publish &mdash; is
-documented on the other-rooms page.</p></div>
-<div class="grid2">
-<div class="panel"><h2><a href="venues/venetian.html">The Venetian Resort</a></h2>
-<p><strong>DeepStack Extravaganza IV</strong> &mdash; November 16 to December 23, 2026.
-64 events, 94 scheduled rows, all 37 structure sheets read.</p>
-<p class="note">Poker room: The Palazzo, level 2, Grand Canal Shoppes. 50 tables across 14,000 sq ft,
-open 24 hours. Requires a Venetian Rewards card.</p>
-<p><a href="venues/venetian.html">Open the Venetian page &rarr;</a></p>
-</div>
-<div class="panel"><h2><a href="venues/other.html">Every other room</a></h2>
-<p>Wynn, Horseshoe, Caesars Palace, Bellagio, MGM Grand, Resorts World and Westgate &mdash; what each
-officially publishes, what it does not, and why none of them can be ranked today.</p>
-<p class="note">Every one of them either publishes no dated schedule, no structure sheet, or no
-tournament information at all.</p>
-<p><a href="venues/other.html">Open the other rooms page &rarr;</a></p>
-</div>
-</div>
+<p class="lede">One page per poker room, each listing that room's events and the hotels within walking
+distance of it. The Venetian is the only Strip room that publishes a dated tournament schedule
+<em>and</em> a per-event official structure sheet, so it is the only room that can be ranked line by
+line. Every other room gets the same page structure, with the gap documented rather than filled.</p></div>
+
+<div class="banner info"><strong>How to read a room page.</strong> The events table holds only rows
+transcribed from that room's own official document. Where the room publishes no dated event, the table
+is empty and the reason is quoted underneath with the page that was checked. The hotels table applies
+the 30-minute walking limit to routed estimates, with a Maps link on every row.</div>
+
+<div class="grid2"><div class='panel'><h2><a href='venues/venetian.html'>The Venetian Resort</a></h2><p class='note'><strong>Room:</strong> The Venetian poker room</p><p class='note'><strong>Hotels:</strong> 14 of 21 hotels within 30 min &middot; nearest: The Venetian</p><p>64 events, 94 scheduled rows, all 37 structure sheets read. The only room that publishes a dated schedule <em>and</em> a per-event structure sheet.</p><p><a href='venues/venetian.html'>Open the The Venetian Resort page &rarr;</a></p></div><div class='panel'><h2><a href='venues/wynn.html'>Wynn / Encore</a></h2><p class='note'><strong>Room:</strong> Wynn poker room</p><p class='note'><strong>Hotels:</strong> 9 of 21 hotels within 30 min &middot; nearest: Encore Las Vegas</p><p>Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry.</p><p><a href='venues/wynn.html'>Open the Wynn / Encore page &rarr;</a></p></div><div class='panel'><h2><a href='venues/horseshoe.html'>Horseshoe Las Vegas</a></h2><p class='note'><strong>Room:</strong> Hall of Fame poker room</p><p class='note'><strong>Hotels:</strong> 15 of 21 hotels within 30 min &middot; nearest: Horseshoe Las Vegas</p><p>Start times only. No buy-in, guarantee, structure or entry rule is officially published, so no row can be ranked.</p><p><a href='venues/horseshoe.html'>Open the Horseshoe Las Vegas page &rarr;</a></p></div><div class='panel'><h2><a href='venues/caesars-palace.html'>Caesars Palace</a></h2><p class='note'><strong>Room:</strong> Caesars Palace poker room</p><p class='note'><strong>Hotels:</strong> 13 of 21 hotels within 30 min &middot; nearest: Caesars Palace</p><p>No tournament schedule or structure sheet published on the official page.</p><p><a href='venues/caesars-palace.html'>Open the Caesars Palace page &rarr;</a></p></div><div class='panel'><h2><a href='venues/bellagio.html'>Bellagio</a></h2><p class='note'><strong>Room:</strong> Bellagio poker room</p><p class='note'><strong>Hotels:</strong> 14 of 21 hotels within 30 min &middot; nearest: Bellagio</p><p>Excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity on the verified sheet.</p><p><a href='venues/bellagio.html'>Open the Bellagio page &rarr;</a></p></div><div class='panel'><h2><a href='venues/mgm-grand.html'>MGM Grand</a></h2><p class='note'><strong>Room:</strong> MGM Grand poker room</p><p class='note'><strong>Hotels:</strong> 11 of 21 hotels within 30 min &middot; nearest: MGM Grand</p><p>Excluded from the single-entry ranking: the $11 gratuity buys 10,000 extra chips, a pay-for-advantage mechanic. The grid also has no year printed.</p><p><a href='venues/mgm-grand.html'>Open the MGM Grand page &rarr;</a></p></div><div class='panel'><h2><a href='venues/other.html'>Resorts World &amp; Westgate</a></h2><p class='note'>Two further rooms were checked and publish no tournament data on the pages read, so they have no page of their own beyond the other-rooms record.</p><p><a href='venues/other.html'>Open the other rooms page &rarr;</a></p></div></div>
 
 </main>
 <footer><div class="wrap">

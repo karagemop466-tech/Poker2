@@ -34,6 +34,24 @@ RETRIEVED = "2026-11-17"
 TAX = contentmod.ROOM_TAX["value"] / 100.0
 
 OUT_DATA = os.path.join(ROOT, "data", "verified2026")
+CHECKS_PATH = os.path.join(OUT_DATA, "checks.json")
+
+
+def load_checks():
+    """Latest scheduled re-check, keyed by URL. Absent file = the monitor has not run yet."""
+    if not os.path.exists(CHECKS_PATH):
+        return None, {}
+    try:
+        with open(CHECKS_PATH, encoding="utf-8") as f:
+            d = json.load(f)
+    except (OSError, ValueError):
+        return None, {}
+    runs = d.get("runs") or []
+    latest = runs[0] if runs else {}
+    return d, {r.get("url"): r for r in latest.get("results", []) if r.get("url")}
+
+
+CHECKS_META, CHECKS = load_checks()
 SITE = "2026"  # the consolidated surface lives under /2026/ so it never clobbers
               # the root dashboard owned by another session (see COORDINATION.md, S-11)
 ASSETS = os.path.join(ROOT, SITE, "assets")
@@ -95,6 +113,69 @@ def tminutes(t):
     if m.group(3) == "PM":
         h += 12
     return h * 60 + int(m.group(2))
+
+
+def guarantee_for_event(sheet, ev_no):
+    """The guarantee that belongs to THIS event, from a sheet that may serve several.
+
+    Some official sheets print one guarantee per event number, e.g. sheet 11 reads
+    "$30,000 (#16), $40,000 (#30), $50,000 (#54) - prize pool + total bounties". Taking the first
+    dollar figure on that sheet would give every event $30,000. Returns (value, note) where note
+    explains anything the reader needs to know about the number, or (None, reason) when the sheet
+    does not print a dollar guarantee at all (e.g. satellites that guarantee seats).
+    """
+    if not sheet:
+        return None, "no structure sheet"
+    g = sheet.get("guarantee") or ""
+    if not g.strip():
+        return None, "sheet prints no guarantee"
+    # two phrasings appear on the official sheets:
+    #   "$30,000 (#16), $40,000 (#30), $50,000 (#54)"
+    #   "$30,000 for Event #14 and #63; $40,000 for Event #28"
+    per = re.findall(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?\s*\(\s*#\s*(\d+)\s*\)", g, re.I)
+    # an "A for Event #14 and #63; B for Event #28" style block: split on ";" first so a value
+    # carries across the "and #n" numbers inside its own clause.
+    for chunk in re.split(r"\s*;\s*", g):
+        money = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?", chunk, re.I)
+        if not money:
+            continue
+        for n in re.findall(r"#\s*(\d+)", chunk):
+            tup = (money.group(1), money.group(2) or "", n)
+            if not any(x[0] == tup[0] and x[2] == tup[2] for x in per):
+                per.append(tup)
+    note_parts = []
+    if per:
+        hit = [p for p in per if int(p[2]) == ev_no]
+        if not hit:
+            return None, "sheet lists guarantees only for other event numbers"
+        raw, unit, _ = hit[0]
+        n = float(raw.replace(",", ""))
+        u = (unit or "").upper()
+        if u.startswith("K"):
+            n *= 1_000
+        elif u.startswith("M"):
+            n *= 1_000_000
+        if re.search(r"bount", g, re.I):
+            note_parts.append("printed guarantee includes bounty money")
+        return int(n), "; ".join(note_parts)
+    # single-guarantee sheet
+    if "SEATS" in g.upper() or "SEAT" in g.upper() and not re.search(r"\$", g):
+        return None, "guarantee is seats, not dollars: " + g
+    m = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?", g, re.I)
+    if not m:
+        return None, "no dollar guarantee printed"
+    n = float(m.group(1).replace(",", ""))
+    u = (m.group(2) or "").upper()
+    if u.startswith("K"):
+        n *= 1_000
+    elif u.startswith("M"):
+        n *= 1_000_000
+    if re.search(r"bount", g, re.I):
+        note_parts.append("printed guarantee includes bounty money")
+    if len(sheet.get("events", [])) > 1 and not per:
+        note_parts.append("sheet serves %d events and prints one guarantee for them"
+                          % len(sheet.get("events", [])))
+    return int(n), "; ".join(note_parts)
 
 
 def sheet_for_event(ev_no):
@@ -169,15 +250,12 @@ def build_events():
             base = re.sub(r"\s+", " ", re.sub(r"\s+1[A-Z](?=\s|$)", " ", base)).strip() or base
             flights = sorted(flights)
         gtds = sorted({r[5] for r in entry_rows if r[5]})
-        # per-event guarantee: prefer the structure sheet, fall back to the schedule row
-        gtd = None
-        if sheet:
-            g = sheet.get("guarantee") or ""
-            m = re.search(r"\$([\d,]+)(K)?", g)
-            if m and "SEATS" not in g.upper():
-                gtd = int(m.group(1).replace(",", "")) * (1_000 if m.group(2) else 1)
+        # per-event guarantee: resolved against the event number the sheet prints
+        gtd, gtd_note = guarantee_for_event(sheet, ev_no)
         if gtd is None and len(gtds) == 1:
             gtd = gtd_value(gtds[0])
+            if gtd is not None:
+                gtd_note = "from the schedule row, not the structure sheet"
         buy_in = sheet.get("buy_in") if sheet else None
         events.append(dict(
             event_no=ev_no,
@@ -199,6 +277,7 @@ def build_events():
             pool_per_entry=sheet.get("pool_per_entry") if sheet else None,
             fee_quote=(sheet.get("fee_quote") if sheet else None),
             gtd=gtd,
+            gtd_note=(gtd_note or None),
             gtd_text=(sheet.get("guarantee") if sheet else (gtds[0] if len(gtds) == 1 else None)),
             ratio=round(gtd / buy_in, 1) if (gtd and buy_in) else None,
             bounty=(sheet.get("bounty") if sheet else None),
@@ -222,6 +301,45 @@ def build_events():
     return events
 
 
+# Groups that a "primary event of the day" must not come from when anything else is running.
+# A satellite's prize is a seat, not money; a tag team needs two players; a multi-flight row is
+# one starting flight of a longer event and its guarantee belongs to the whole event.
+NOT_A_PRIMARY = ("satellite", "team", "multiflight")
+
+# How desirable a group is as the day's main event. Lower is better.
+GROUP_TIER = {"candidate": 0, "bounty": 1, "multiflight": 2, "spend": 3, "satellite": 4, "team": 5}
+
+
+def _selection_rank(x):
+    """Order candidate primaries: unrestricted first, then by group, then by money at stake."""
+    restricted = 1 if x.get("eligibility") else 0
+    tier = GROUP_TIER.get(x["group"], 3)
+    # earlier start breaks a tie within a tier, then the bigger guarantee, then the event number
+    return (restricted, tier, x["start_m"] or 0, -(x.get("gtd") or 0), x["event_no"])
+
+
+def choose_primary(entries):
+    """Pick the day's main event: the best event a player can actually buy into.
+
+    The previous rule simply took the earliest start, which made a $260 satellite the primary
+    event of 12 December instead of the $2,200 $1M-guarantee PokerAtlas title event starting 17
+    minutes later. Eligibility-restricted events (Seniors, Ladies) are never promoted, and
+    satellites / tag teams / multi-flight rows only become the primary when nothing else runs.
+    """
+    if not entries:
+        return None
+    open_to_all = [x for x in entries if not x.get("eligibility")]
+    pool = open_to_all or entries
+    ranked = sorted(pool, key=_selection_rank)
+    # prefer a start the player can reach first, but never at the cost of the tier
+    best = ranked[0]
+    if best["group"] in NOT_A_PRIMARY:
+        better = [x for x in pool if x["group"] not in NOT_A_PRIMARY]
+        if better:
+            best = sorted(better, key=_selection_rank)[0]
+    return best
+
+
 def build_days(events):
     """One entry per day: primary + conditional fallback, with overlap flags."""
     days = {}
@@ -239,6 +357,7 @@ def build_days(events):
                 start=r[3], start_m=tminutes(r[3]), reg_close=r[4],
                 reg_close_m=tminutes(r[4]) if r[4] else None,
                 buy_in=ev["buy_in"], gtd=ev["gtd"], sheet_url=ev["sheet_url"],
+                eligibility=ev.get("eligibility"),
                 date=d, dow=r[1],
             ))
             # restarts occupy the same day too
@@ -256,9 +375,13 @@ def build_days(events):
     for d in sorted(days):
         entries = sorted([x for x in days[d] if not x.get("restart")], key=lambda x: x["start_m"] or 0)
         restarts = sorted([x for x in days[d] if x.get("restart")], key=lambda x: x["start_m"] or 0)
-        primary = entries[0] if entries else None
+        primary = choose_primary(entries)
         fallbacks = []
-        for f in entries[1:]:
+        for f in entries:
+            if primary is not None and f is primary:
+                continue
+            if primary is not None and f["event_no"] == primary["event_no"] and f["start"] == primary["start"]:
+                continue
             if primary and f["reg_close_m"] and f["reg_close_m"] > primary["start_m"]:
                 note = ("Conditional: only if you are out of #%d %s before #%d %s's registration "
                         "closes at %s (official)."
@@ -276,8 +399,14 @@ def build_days(events):
                     f["event_no"], entry_title(f))
                 verdict = "unknown"
             fallbacks.append(dict(item=f, note=note, verdict=verdict))
+        # Events a player who meets the condition could play, which are never promoted to primary
+        # because they are restricted. Shown explicitly so an age-restricted morning event is not
+        # silently dropped from the day.
+        restricted_alts = [x for x in entries if x.get("eligibility")
+                           and (primary is None or x["event_no"] != primary["event_no"])]
         out.append(dict(date=d, dow=entries[0]["dow"] if entries else (restarts[0]["dow"] if restarts else ""),
                         entries=entries, restarts=restarts, primary=primary, fallbacks=fallbacks,
+                        restricted_alternatives=restricted_alts,
                         overlap=len(entries) > 1))
     return out
 
@@ -306,6 +435,19 @@ NAV = [
 SUBNAV = {
     "venues.html": [("venues/venetian.html", "The Venetian"), ("venues/other.html", "Other rooms")],
 }
+
+# Sub-navigation for pages that live in 2026/venues/. Authored relative to that directory.
+VENUE_SUBNAV = [("venetian.html", "The Venetian"), ("wynn.html", "Wynn / Encore"),
+                ("horseshoe.html", "Horseshoe"), ("caesars-palace.html", "Caesars Palace"),
+                ("bellagio.html", "Bellagio"), ("mgm-grand.html", "MGM Grand"),
+                ("other.html", "Other rooms")]
+
+# Human labels for the site-wide search results, keyed by page path.
+PAGE_LABEL = dict(NAV)
+PAGE_LABEL.update({
+    "venues/venetian.html": "The Venetian \u2014 events",
+    "venues/other.html": "Other rooms",
+})
 
 CSS = """
 :root{--bg:#0f1115;--panel:#161a22;--panel2:#1c2230;--line:#2a3242;--fg:#e7ecf3;--dim:#9aa7bb;
@@ -403,7 +545,21 @@ tr.hidden{display:none}
 .banner{border:1px solid var(--warn);background:rgba(251,191,36,.08);border-radius:10px;
 padding:12px 15px;margin-bottom:16px;font-size:.9rem}
 .banner.info{border-color:var(--link);background:rgba(125,211,252,.07)}
-@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}}
+.chk-row{display:flex;gap:14px;align-items:center;margin:6px 0 10px;flex-wrap:wrap}
+.gsbar{border-bottom:1px solid var(--line);background:var(--panel);padding:10px 0}
+.gsbar .wrap2{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;gap:6px;
+grid-template-columns:auto 1fr auto}
+.gs-label{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;align-self:center}
+.gsbar input{padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);
+font:inherit;min-width:0}
+.gsbar .note{margin:0;grid-column:1/-1}
+#gs-res{grid-column:1/-1}
+#gs-res:empty{display:none}
+.gs-group{margin:8px 0 12px}
+.gs-group h3{margin:0 0 4px}
+.gs-group .note{display:block;margin:2px 0 0;font-size:.8rem}
+@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}
+.gsbar .wrap2{grid-template-columns:1fr auto}.gs-label{display:none}}
 """
 
 
@@ -428,11 +584,20 @@ def page(title, body, active, extra_head="", subnav=None):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s &middot; Las Vegas Single-Entry Poker Trip Planner</title>
 <link rel="stylesheet" href="%sassets/site2026.css">
+<script src="%sassets/search-index.js" defer></script>
+<script src="%sassets/site2026.js" defer></script>
 %s
 </head><body>
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
 <nav class="main">%s<a class="xlink" href="../index.html">Root dashboard</a></nav>
+<div class="gsbar"><div class="wrap2">
+<label class="gs-label" for="gs">Search every table</label>
+<input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
+<button class="btn" id="gs-clear" type="button">Clear</button>
+<p class="note" id="gs-status">Loading the site-wide index&hellip;</p>
+<div id="gs-res"></div>
+</div></div>
 </div></header>
 <main class="wrap">
 %s
@@ -449,9 +614,16 @@ before you pay anything non-refundable. This <code>/2026/</code> surface is gene
 do not share a generator.</p>
 </div></footer>
 </body></html>
-""" % (title, "", extra_head, nav, sub, body, RETRIEVED)
+""" % (title, "", "", "", extra_head, nav, sub, body, RETRIEVED)
     if depth_prefix(active):
+        # subnav links are already written relative to the venue directory; protect them from the
+        # root-relative prefixing pass by marking them before it runs.
+        if sub:
+            out = out.replace(sub, "@@SUBNAV@@")
         out = relink(out)
+        if sub:
+            out = out.replace("@@SUBNAV@@", sub)
+
     return out
 
 
@@ -490,7 +662,12 @@ def gtd_cell(e):
                         + " <span class='note'>(%s)</span>" % esc(m.group(2).lower()))
             return money(t)
     if e.get("gtd"):
-        return "$" + format(e["gtd"], ",")
+        cell = "$" + format(e["gtd"], ",")
+        if e.get("gtd_note"):
+            cell += " <span class='note'>%s</span>" % esc(e["gtd_note"])
+        return cell
+    if e.get("gtd_note"):
+        return '<span class="blank">none published</span> <span class="note">%s</span>' % esc(e["gtd_note"])
     return '<span class="blank">none published</span>'
 
 
@@ -498,9 +675,38 @@ def esc(s):
     return html.escape(str(s)) if s is not None else ""
 
 
+def check_badge(*urls):
+    """Inline status of the scheduled re-check for the document(s) a row rests on.
+
+    The monitor never rewrites a value: it reports that the official document moved, so the
+    row is marked and a human re-reads it. A row whose document could not be fetched is marked
+    differently from a row whose document is unchanged.
+    """
+    if CHECKS_META is None:
+        return "<span class='note' title='The scheduled re-check has not run against this checkout yet'>not yet checked</span>"
+    hits = [CHECKS[u] for u in urls if u in CHECKS]
+    if not hits:
+        return "<span class='note'>document not in the monitor</span>"
+    if any(h.get("change") == "CHANGED" for h in hits):
+        return "<span class='tag t-bad' title='The official document changed after this value was transcribed'>source changed</span>"
+    if any(h.get("change") == "fetch error" for h in hits):
+        return "<span class='tag t-warn'>fetch error</span>"
+    if all(h.get("change") == "first check" for h in hits):
+        return "<span class='tag t-info'>baseline set</span>"
+    return "<span class='tag t-ok'>unchanged</span>"
+
+
+def row_changed(*urls):
+    """True when any document behind a row was flagged CHANGED by the latest re-check."""
+    return any(CHECKS.get(u, {}).get("change") == "CHANGED" for u in urls)
+
+
 def srclink(url, label=None):
     if not url:
         return '<span class="blank">no source</span>'
+    # a repository-relative citation (no scheme) is shown as code, never as a link
+    if not url.startswith(("http://", "https://")):
+        return '<code>%s</code>' % esc(url)
     host = re.sub(r"^https?://", "", url).split("/")[0]
     ok = host in OFFICIAL_HOSTS
     lab = label or (host + ("&#8203;" if len(host) > 24 else ""))
@@ -650,7 +856,7 @@ def p_tournaments(events):
         gtdcell = gtd_cell(e)
         rowshtml.append(
             '<tr id="ev%(no)d" data-group="%(g)s" data-dates="%(dates)s" '
-            'data-buyin="%(bi)s" data-gtd="%(gtdv)s" data-search="%(search)s">'
+            'data-buyin="%(bi)s" data-gtd="%(gtdv)s" data-changed="%(chg)s" data-search="%(search)s">'
             "<td class='num'>%(no)d</td>"
             "<td><span class='tag t-%(g)s'>%(gl)s</span></td>"
             "<td><strong>%(name)s</strong><div class='note'>%(meta)s</div></td>"
@@ -663,6 +869,7 @@ def p_tournaments(events):
             "<td class='num'>%(ratio)s</td>"
             "<td>%(sheet)s</td>"
             "<td class='num'>%(checked)s</td>"
+            "<td>%(recheck)s</td>"
             "</tr>" % dict(
                 no=e["event_no"], g=e["group"],
                 gl=esc(e["group_label"].split(" (")[0]),
@@ -677,6 +884,8 @@ def p_tournaments(events):
                 sheet=srclink(e["sheet_url"], "sheet %s" % e["sheet_no"]) if e["sheet_url"]
                 else '<span class="blank">no sheet</span>',
                 checked=RETRIEVED,
+                recheck=check_badge(e["sheet_url"]),
+                chg="1" if row_changed(e["sheet_url"]) else "0",
                 name=esc(e["name"][:90]),
                 meta=(("<span class='tag t-warn'>flights %s</span> " % ",".join(e["flights"]))
                       if e.get("flights") else "") + esc("; ".join(x for x in [
@@ -713,11 +922,15 @@ whose sheet is silent on re-entry, rebuy and add-on.</p></div>
 </div>
 <div class="pill-row">%(pills)s</div>
 <p class="note" id="count"></p>
+<p class="note"><strong>Source re-check</strong> is the scheduled monitor's verdict on the structure
+sheet this row was transcribed from: <em>unchanged</em>, <em>source changed</em> (the official document
+moved after transcription &mdash; re-read it before relying on the row), <em>fetch error</em>, or
+<em>baseline set</em> on the monitor's first run. The monitor reports; it never rewrites a value.</p>
 <div class="tbl-scroll"><table id="t"><thead><tr>
 <th class="num">#</th><th>Group</th><th>Event</th><th>Dates</th><th>Starts</th>
 <th class="num">Entry fee</th><th class="num">House fee</th><th class="num">To prize pool</th>
 <th class="num">Guarantee</th><th class="num">GTD&divide;entry</th><th>Structure sheet</th>
-<th class="num">Last checked</th>
+<th class="num">Last checked</th><th>Source re-check</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 </div>
 
@@ -831,6 +1044,17 @@ def p_schedule(days, events):
                    esc(it["reg_close"] or "not published"),
                    ("$" + format(it["buy_in"], ",")) if it["buy_in"] else "not published",
                    esc(fb["note"])))
+        if d.get("restricted_alternatives"):
+            ra = "".join(
+                "<p class='note'>#%d %s &mdash; starts %s, entry %s. <span class='tag t-warn'>not the "
+                "primary</span> %s</p>"
+                % (x["event_no"], esc(entry_title(x)[:64]), esc(x["start"]),
+                   ("$" + format(x["buy_in"], ",")) if x["buy_in"] else "not published",
+                   esc(x["eligibility"]))
+                for x in d["restricted_alternatives"])
+            lines.append("<div class='day'><h3>Also running &mdash; entry restricted</h3>%s"
+                         "<p class='small'>Listed so the day is complete. It is never made the primary "
+                         "because not every player can buy in.</p></div>" % ra)
         if d["restarts"]:
             rs = ", ".join("#%d %s &mdash; %s" % (x["event_no"], esc(entry_title(x)[:44]), x["start"])
                            for x in d["restarts"])
@@ -853,12 +1077,16 @@ time</strong>. What is published is each event's start time and its registration
 registration close is the real deadline: it is the latest moment you can still take your seat in the
 later event.</p></div>
 
-<div class="banner"><strong>Method.</strong> For each date, the earliest-starting genuine entry is the
-primary. Every later entry on the same date is a fallback, conditional on your being out of the primary
-before the fallback's registration closes. Where a fallback's registration closes before the primary
-even starts, the pair is flagged <em>cannot be sequenced</em>. Twelve of the rows in the official
-schedule are Day 2, Day 3 or streamed final tables; they are listed as continuations, not entries,
-because you cannot buy into them.</div>
+<div class="banner"><strong>How the primary is chosen.</strong> The primary is the day's best event
+that <em>any</em> player can buy into, ranked: unrestricted one-day events first, then bounty events,
+then multi-flight rows (which carry the day's biggest guarantees, such as the $1&nbsp;Million PokerAtlas
+title event on 12 December), then rake-discount rows, and only then satellites and tag teams. Earlier
+start breaks a tie, then the larger guarantee. Age- or gender-restricted events are never promoted, but
+they are listed under <em>Also running</em> so an eligible player still sees them. Every other entry is
+a fallback, conditional on your being out of the primary before that fallback's registration closes;
+where a fallback's registration closes before the primary starts, the pair is flagged <em>cannot be
+sequenced</em>. Twelve rows in the official schedule are Day 2, Day 3 or streamed final tables; they are
+listed as continuations, because you cannot buy into them.</div>
 
 <div class="panel">
 <div class="controls">
@@ -876,6 +1104,9 @@ def p_hotels():
     for h in hotelsmod.HOTELS:
         fee = ("$%d" % h["resort_fee"]) if h["resort_fee"] is not None else '<span class="blank">not published</span>'
         pr = ("from $%d" % h["poker_rate"]) if h["poker_rate"] else '<span class="blank">none published</span>'
+        canc = ('<span class="blank">not published</span>' if not h.get("cancel")
+                else esc(h["cancel"]) + "<div class='note'>%s</div>" % esc(h.get("cancel_type") or "")
+                + ("<div class='note'>%s</div>" % srclink(h["cancel_src"]) if h.get("cancel_src") else ""))
         rows.append(
             "<tr><td><strong>%s</strong><div class='note'>%s</div></td>"
             "<td>%s<div class='note'>%s</div></td>"
@@ -883,11 +1114,33 @@ def p_hotels():
             % (esc(h["name"]), esc(h["addr"]),
                fee, esc(h["resort_fee_note"] or ""),
                pr,
-               '<span class="blank">not published</span>' if h["tax_pct"] is None else ("%.2f%%" % h["tax_pct"]),
+               '<span class="blank">not published</span>' if h.get("tax_pct") is None
+               else ("%.2f%%" % h["tax_pct"] + ("<div class='note'>%s</div>" % srclink(h["tax_src"]) if h.get("tax_src") else "")),
                (esc(h["parking"]) if h["parking"] else '<span class="blank">not published</span>'),
-               ('<span class="blank">not published</span>' if not h["cancel"] else esc(h["cancel"])),
+               canc,
                ('<span class="blank">not published</span>' if not h["dated_total"] else esc(h["dated_total"])),
                srclink(h["resort_fee_src"])))
+
+    # Occupancy and early-departure charges, which change the true cost per night and are usually
+    # missed by a per-night comparison. Rendered only where the property publishes a figure.
+    extra = []
+    for h in hotelsmod.HOTELS:
+        if not (h.get("extra_guest_fee") or h.get("early_checkout_fee")):
+            continue
+        extra.append(
+            "<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td></tr>"
+            % (esc(h["name"]),
+               esc(h["extra_guest_fee"]) if h.get("extra_guest_fee") else '<span class="blank">not published</span>',
+               esc(h["early_checkout_fee"]) if h.get("early_checkout_fee") else '<span class="blank">not published</span>'))
+    extra_html = ("<div class='panel'><h2>Occupancy and early-departure charges</h2>"
+                  "<p class='note'>These are the charges that make a per-night rate quote not equal the "
+                  "bill. Both are taken verbatim from the property's own terms; a blank means the page "
+                  "read does not publish the figure.</p>"
+                  "<div class='tbl-scroll'><table><thead><tr><th>Hotel</th>"
+                  "<th>Extra occupant above double occupancy</th><th>Early check-out</th>"
+                  "</tr></thead><tbody>%s</tbody></table></div>"
+                  "<p class='note'>Sources: the Venetian/Palazzo, Bellagio and MGM Grand hotel terms "
+                  "linked in the table above.</p></div>") % "".join(extra)
     log = "".join(
         "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td class='note'>%s</td></tr>"
         % (esc(d), esc(hid), esc(field), esc(value),
@@ -948,9 +1201,11 @@ Source: %(srcrates)s</div>
 <th>Parking</th><th>Cancellation deadline</th><th>Dated checkout total</th><th>Fee source</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 <p class="note">Room tax is a Clark County levy, not a hotel charge, so it is the same for every
-property on the Strip. Only the Venetian's own terms print the number; the county's own guide is the
-authority. See flag <a href="flagged.html#F-07">F-07</a>.</p>
+property on the Strip. The Venetian's own terms print the number (re-read first-hand 2026-11-17); the
+county's own guide is the authority for the levy itself. See flag <a href="flagged.html#F-07">F-07</a>.</p>
 </div>
+
+%(extra)s
 
 <div class="panel"><h2>Dated rate log</h2>
 <p class="note">One line per reading, newest first. This is the point of keeping rates as a log: a rate
@@ -976,7 +1231,7 @@ Venetian Resort Las Vegas by calling 866.255.8936 and mentioning code EPOKR25.</
 <p class="note">Source: %(srcrates)s, retrieved %(ret)s. The poker rate cannot be combined with any
 other promotional rate, and the page does not state a cancellation deadline.</p>
 </div>
-""" % dict(rows="".join(rows), log=log, calc=calc, ret=RETRIEVED,
+""" % dict(rows="".join(rows), log=log, calc=calc, ret=RETRIEVED, extra=extra_html,
            srcrates=srclink("https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
            defs=defs)
     return page("Hotels & true cost", body, "hotels.html")
@@ -1097,29 +1352,48 @@ that night, so the buy-ins you add above are what keep the $119 room rate alive.
 
 
 def p_venues(events):
+    cards = []
+    for key, meta in ROOM_META.items():
+        wj, rows = _walk_rows_for(meta["walk_key"])
+        if rows:
+            ok = sum(1 for r in rows if r["within_30_min"])
+            stat = "%d of %d hotels within 30 min" % (ok, len(rows))
+            nearest = rows[0]["hotel"] if rows else ""
+        else:
+            stat, nearest = "walking data not in this checkout", ""
+        if key == "venetian":
+            pub = ("64 events, 94 scheduled rows, all 37 structure sheets read. The only room that "
+                   "publishes a dated schedule <em>and</em> a per-event structure sheet.")
+        else:
+            v = contentmod.OTHER_VENUES_BY_ID[key]
+            pub = esc(v["verdict"])
+        cards.append(
+            "<div class='panel'><h2><a href='%s'>%s</a></h2>"
+            "<p class='note'><strong>Room:</strong> %s</p>"
+            "<p class='note'><strong>Hotels:</strong> %s%s</p>"
+            "<p>%s</p><p><a href='%s'>Open the %s page &rarr;</a></p></div>"
+            % (meta["page"], esc(meta["title"]), esc(meta["room"]),
+               esc(stat), (" &middot; nearest: " + esc(nearest)) if nearest else "",
+               pub, meta["page"], esc(meta["title"])))
+    cards.append(
+        "<div class='panel'><h2><a href='venues/other.html'>Resorts World &amp; Westgate</a></h2>"
+        "<p class='note'>Two further rooms were checked and publish no tournament data on the pages "
+        "read, so they have no page of their own beyond the other-rooms record.</p>"
+        "<p><a href='venues/other.html'>Open the other rooms page &rarr;</a></p></div>")
     return page("Venues", """
 <div class="hero"><h1>Venues</h1>
-<p class="lede">One page per poker room. The Venetian is the only Strip room that publishes a dated
-tournament schedule <em>and</em> a per-event official structure sheet, so it is the only room that can
-be ranked line by line. Everything the other rooms publish &mdash; and do not publish &mdash; is
-documented on the other-rooms page.</p></div>
-<div class="grid2">
-<div class="panel"><h2><a href="venues/venetian.html">The Venetian Resort</a></h2>
-<p><strong>DeepStack Extravaganza IV</strong> &mdash; November 16 to December 23, 2026.
-%(n)s events, %(rows)s scheduled rows, all 37 structure sheets read.</p>
-<p class="note">Poker room: The Palazzo, level 2, Grand Canal Shoppes. 50 tables across 14,000 sq ft,
-open 24 hours. Requires a Venetian Rewards card.</p>
-<p><a href="venues/venetian.html">Open the Venetian page &rarr;</a></p>
-</div>
-<div class="panel"><h2><a href="venues/other.html">Every other room</a></h2>
-<p>Wynn, Horseshoe, Caesars Palace, Bellagio, MGM Grand, Resorts World and Westgate &mdash; what each
-officially publishes, what it does not, and why none of them can be ranked today.</p>
-<p class="note">Every one of them either publishes no dated schedule, no structure sheet, or no
-tournament information at all.</p>
-<p><a href="venues/other.html">Open the other rooms page &rarr;</a></p>
-</div>
-</div>
-""" % dict(n=len(events), rows=len(sched.ROWS)), "venues.html")
+<p class="lede">One page per poker room, each listing that room's events and the hotels within walking
+distance of it. The Venetian is the only Strip room that publishes a dated tournament schedule
+<em>and</em> a per-event official structure sheet, so it is the only room that can be ranked line by
+line. Every other room gets the same page structure, with the gap documented rather than filled.</p></div>
+
+<div class="banner info"><strong>How to read a room page.</strong> The events table holds only rows
+transcribed from that room's own official document. Where the room publishes no dated event, the table
+is empty and the reason is quoted underneath with the page that was checked. The hotels table applies
+the 30-minute walking limit to routed estimates, with a Maps link on every row.</div>
+
+<div class="grid2">%s</div>
+""" % "".join(cards), "venues.html", subnav=SUBNAV["venues.html"])
 
 
 def p_venue_venetian(events, days):
@@ -1177,7 +1451,149 @@ that series has ended and DSE IV is live. Do not rely on that label &mdash; use 
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
            series=srclink(sched.SERIES_URL, "series overview")),
-                        "venues/venetian.html", subnav=SUBNAV["venues.html"])
+                        "venues/venetian.html", subnav=VENUE_SUBNAV)
+
+
+
+# --------------------------------------------------------------------------------------
+# one page per poker room
+# --------------------------------------------------------------------------------------
+
+# Room -> the official venue label used in data/site/walking.json, plus what the room is.
+ROOM_META = {
+    "venetian": dict(
+        walk_key="V-VEN",
+        title="The Venetian Resort",
+        room="The Venetian poker room",
+        desc=("The poker room is indoors on level 2 of the Grand Canal Shoppes, reached by escalator "
+              "from the Waterfall Atrium. Requires a Venetian Rewards card."),
+        page="venues/venetian.html",
+    ),
+    "wynn": dict(
+        walk_key="V-WYN",
+        title="Wynn / Encore",
+        room="Wynn poker room",
+        desc="Host room for the WPT World Championship. Its own poker-room page returned a not-found page on 2026-11-17.",
+        page="venues/wynn.html",
+    ),
+    "horseshoe": dict(
+        walk_key="V-HS",
+        title="Horseshoe Las Vegas",
+        room="Hall of Fame poker room",
+        desc="20 tables, six tournament times a day advertised; no buy-in, guarantee or entry rule published.",
+        page="venues/horseshoe.html",
+    ),
+    "caesars-palace": dict(
+        walk_key="V-CP",
+        title="Caesars Palace",
+        room="Caesars Palace poker room",
+        desc="Publishes a daily NLH flyer PDF; no per-event structure sheet could be read.",
+        page="venues/caesars-palace.html",
+    ),
+    "bellagio": dict(
+        walk_key="V-BEL",
+        title="Bellagio",
+        room="Bellagio poker room",
+        desc="Publishes a hotel-terms page with a resort fee and a 72-hour cancellation window; no dated tournament schedule read.",
+        page="venues/bellagio.html",
+    ),
+    "mgm-grand": dict(
+        walk_key="V-MGM",
+        title="MGM Grand",
+        room="MGM Grand poker room",
+        desc="Publishes a weekly tournament-schedule PDF and hotel terms; no per-event entry rule read.",
+        page="venues/mgm-grand.html",
+    ),
+}
+
+
+def _walk_rows_for(walk_key):
+    """Routed walking estimate from every hotel to one poker room, shortest first."""
+    path = os.path.join(ROOT, "data", "site", "walking.json")
+    if not os.path.exists(path):
+        return None, None
+    with open(path, encoding="utf-8") as f:
+        wj = json.load(f)
+    rows = [r for r in wj["rows"] if r["venue_id"] == walk_key]
+    rows.sort(key=lambda r: r["walk_min"])
+    return wj, rows
+
+
+def _walk_panel(walk_key, room):
+    wj, rows = _walk_rows_for(walk_key)
+    if wj is None:
+        return ("<div class='panel'><h2>Hotels within walking distance</h2><p class='note'>The walking "
+                "dataset is not present in this checkout, so no distance is shown.</p></div>")
+    trs = "".join(
+        "<tr data-min='%s'><td>%s</td><td class='num'>%.1f min</td><td>%s</td><td>%s</td></tr>"
+        % (r["walk_min"], esc(r["hotel"]), r["walk_min"],
+           '<span class="tag t-ok">within 30 min</span>' if r["within_30_min"]
+           else '<span class="tag t-bad">over 30 min</span>',
+           '<a class="src" href="%s" target="_blank" rel="noopener">confirm on Google Maps</a>'
+           % esc(r["gmaps_link"]))
+        for r in rows)
+    ok = sum(1 for r in rows if r["within_30_min"])
+    return ("""
+<div class="panel"><h2>Hotels within walking distance of %(room)s</h2>
+<p class="note">%(ok)d of %(n)d hotels are inside the 30-minute limit. These are routing estimates from
+OpenStreetMap data with the OSRM foot profile, computed %(asof)s &mdash; not a Google or Apple Maps
+measurement, and the destination is a poker room inside a casino, not a street corner. Every row carries
+a Maps link so you can confirm the number yourself. Flag <a href="flagged.html#F-08">F-08</a>.</p>
+<div class="chk-row"><label class="chk"><input type="checkbox" id="w30" data-walk-room="%(key)s">
+Within 30 minutes only</label><span class="note" id="wc"></span></div>
+<div class="tbl-scroll"><table id="wt-%(key)s"><thead><tr><th>Hotel</th>
+<th class="num">Walking estimate</th><th>30-minute rule</th><th>Verify</th>
+</tr></thead><tbody>%(rows)s</tbody></table></div></div>
+""" % dict(room=esc(room), ok=ok, n=len(rows), asof=esc(wj["as_of"]), key=walk_key,
+           rows=trs))
+
+
+def p_venue_room(key, events):
+    meta = ROOM_META[key]
+    own = contentmod.OTHER_VENUES_BY_ID.get(key)
+    # events and hotels for this room
+    if key == "venetian":
+        ev_html = ("<p>64 events across 38 playable days, all 37 structure sheets read. "
+                   "<a href='../tournaments.html'>Open the full event table</a> or "
+                   "<a href='../schedule.html'>the day plan</a>.</p>")
+        hotel_count = 21
+    else:
+        ev_html = ('<p class="blank-cell">No dated event row is published by this room that could be '
+                   'transcribed, so this table is intentionally empty. The reason is recorded below '
+                   'with the source that was checked.</p>')
+        hotel_count = None
+    whats = ""
+    if own:
+        finds = "".join(
+            '<div class="quote">%s<div class="note">%s, retrieved %s</div></div>'
+            % (esc(f["text"]), srclink(f["url"]), esc(f["retrieved"]))
+            for f in own["earlier_findings"])
+        whats = ("""
+<div class="panel"><h2>What this room publishes</h2>
+<p><strong>Poker room:</strong> %(room)s. %(desc)s</p>
+<p><strong>Checked %(ret)s:</strong> %(status)s</p>
+%(finds)s
+<p><strong>Verdict:</strong> %(verdict)s</p>
+<p class="note">Official page: %(url)s &middot; provenance: %(prov)s</p></div>
+""" % dict(room=esc(own["poker_room"]), desc=esc(meta["desc"]), ret=RETRIEVED,
+           status=esc(own["status_this_session"]), finds=finds,
+           verdict=esc(own["verdict"]), url=srclink(own["url"]),
+           prov=esc(own["provenance"])))
+    body = """
+<div class="hero"><h1>%(title)s &mdash; %(room)s</h1>
+<p class="lede">%(desc)s</p></div>
+
+<div class="panel"><h2>Events</h2>%(ev)s</div>
+%(whats)s
+%(walk)s
+
+<div class="panel"><h2>Getting there</h2>
+<p class="note">The distances above are to the poker room as a destination. Re-check the room's own
+page for entrances, hours and any access requirement before you travel.</p></div>
+""" % dict(title=esc(meta["title"]), room=esc(meta["room"]), desc=esc(meta["desc"]),
+           ev=ev_html, whats=whats, walk=_walk_panel(meta["walk_key"], meta["room"]))
+    return page(meta["title"], body, meta["page"], subnav=VENUE_SUBNAV)
+
 
 
 def p_venue_other():
@@ -1210,7 +1626,7 @@ page. Westgate publishes room hours. Wynn's poker page returned a not-found page
 <a href="flagged.html#F-10">F-10</a>.</div>
 
 %s
-""" % "".join(blocks), "venues/other.html", subnav=SUBNAV["venues.html"])
+""" % "".join(blocks), "venues/other.html", subnav=VENUE_SUBNAV)
 
 
 def p_summary(events, days):
@@ -1501,6 +1917,18 @@ def p_sources(events):
         % (esc(s["kind"]), esc(s["name"]), srclink(s["url"]), esc(s["date"]), esc(s["use"]))
         for s in srcs)
     urls = sorted({s["url"] for s in srcs if s["url"]})
+    if CHECKS_META is None:
+        monitor = ('<p class="note">This checkout carries no completed re-check run yet, so every row '
+                   'shows <em>not yet checked</em> rather than an assumed-clean status. The first '
+                   'scheduled run sets the baseline hash.</p>')
+    else:
+        run = (CHECKS_META.get("runs") or [{}])[0]
+        monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs, '
+                   '<strong>%d changed</strong>, %d fetch errors, %d first-time checks. A fetch error is a '
+                   'monitoring failure, not evidence that the document did not change.</p>'
+                   % (esc(CHECKS_META.get("last_run") or run.get("checked") or "unknown"),
+                      CHECKS_META.get("monitored", 0), CHECKS_META.get("changed_this_run", 0),
+                      CHECKS_META.get("errors", 0), CHECKS_META.get("never_checked", 0)))
     return page("Sources", """
 <div class="hero"><h1>Source register</h1>
 <p class="lede">Every document this site is built from, with the date it was read and what it was used
@@ -1510,9 +1938,11 @@ aggregator, no forum, no mapping service.</p></div>
 <div class="panel"><h2>Scheduled re-check</h2>
 <p>A GitHub Actions job (<code>.github/workflows/recheck.yml</code>) re-fetches every official URL on
 this page every morning at 06:00 UTC, hashes the normalised text, and appends the run to
-<code>data/site/checks.json</code>. A changed hash is reported rather than guessed at &mdash; the site
-shows you which cited value may have moved so you can go and look. %(nurls)s URLs are monitored,
-including all 37 structure-sheet URLs.</p>
+<code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
+the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
+you know which cited value may have moved. %(nurls)s URLs are monitored, including all 37
+structure-sheet URLs.</p>
+%(monitor)s
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 </div>
@@ -1520,7 +1950,7 @@ into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), nurls=len(urls)), "sources.html")
+""" % dict(rows=rows, n=len(srcs), nurls=len(urls), monitor=monitor), "sources.html")
 
 
 def p_repo_review(events):
@@ -1556,13 +1986,22 @@ Found irregularity <a href="flagged.html#X-01">X-01</a>.</li>
 <td>Other venues, flags, questions, suggestions.</td></tr>
 <tr><td class="mono">scripts/build2026.py</td>
 <td>The generator. Every page and JSON file on this site comes from it, and nothing else writes them.</td></tr>
-<tr><td class="mono">assets/site2026.css, assets/site2026.js</td>
+<tr><td class="mono">2026/assets/site2026.css, 2026/assets/site2026.js</td>
 <td>The stylesheet and the search / filter / calculator logic.</td></tr>
 </tbody></table></div></div>
 
+<div class="panel"><h2>The site root is a separate, live surface</h2>
+<p>The repository root serves an older multi-venue dashboard that another session is still
+maintaining and regenerating from its own dataset (<code>data/master.json</code>) with its own
+generator (<code>scripts/build_site.py</code>). It is <strong>not</strong> legacy: it is simply a
+different surface with a different generator. This site lives under <code>/2026/</code> so the two
+never overwrite each other, and every page here links back to the root. Nothing in
+<code>/2026/</code> is derived from the root dashboard, and nothing on the root was edited to make
+this site.</p></div>
+
 <div class="panel"><h2>Legacy surfaces, still in the repository</h2>
-<p>Four earlier sessions published overlapping dashboards. They are still served so no existing link
-breaks, but they are superseded by the pages you are reading now and they are not maintained.</p>
+<p>Four earlier sessions published overlapping dashboards inside their own directories. They are
+still served so no existing link breaks, but they are superseded and are not maintained.</p>
 <div class="tbl-scroll"><table><thead><tr><th>Path</th><th>Origin</th><th>Status</th></tr></thead><tbody>
 <tr><td class="mono">docs/</td><td>arena/acd81e67-poker2</td><td>Superseded. Frozen.</td></tr>
 <tr><td class="mono">verified/</td><td>earlier integration session</td><td>Superseded. Frozen.</td></tr>
@@ -1713,6 +2152,65 @@ JS = r"""
     run4();
   }
 
+  // ---- single-room walking table (venue pages) --------------------------
+  var rw=$('#w30[data-walk-room]');
+  if(rw){
+    var rt=document.getElementById('wt-'+rw.getAttribute('data-walk-room'));
+    var rwc=document.getElementById('wc');
+    function runRoom(){
+      var rows=rt.tBodies[0].rows, n=0;
+      Array.prototype.forEach.call(rows,function(tr){
+        var m=parseFloat(tr.getAttribute('data-min'));
+        var ok=!rw.checked||(m<=30);
+        tr.classList.toggle('hidden',!ok); if(ok)n++;
+      });
+      rwc.textContent=n+' of '+rows.length+' hotels shown.';
+    }
+    rw.addEventListener('change',runRoom); runRoom();
+  }
+
+  // ---- site-wide search across every table on every page ----------------
+  function pagePrefix(){
+    // venues/*.html sits one level down
+    return location.pathname.indexOf('/venues/') !== -1 ? '../' : '';
+  }
+  var box=$('#gs'), res=$('#gs-res'), stat=$('#gs-status');
+  if(box && window.SEARCH_INDEX){
+    var IDX=window.SEARCH_INDEX, LIMIT=40;
+    function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+    function runSearch(){
+      var q=(box.value||'').toLowerCase().trim();
+      if(!q){res.innerHTML='';stat.textContent=IDX.length+' rows indexed across every table on the site.';return;}
+      var terms=q.split(/\s+/), hits=[];
+      for(var i=0;i<IDX.length;i++){
+        // search the table label, the row heading and every cell, not just the caption
+        var r=IDX[i], hay=(r.t+' '+r.h+' '+(r.x||'')).toLowerCase(), ok=true;
+        for(var j=0;j<terms.length;j++){ if(hay.indexOf(terms[j])===-1){ok=false;break;} }
+        if(ok) hits.push(r);
+      }
+      var byPage={};
+      hits.forEach(function(h){ (byPage[h.p]=byPage[h.p]||[]).push(h); });
+      var html='';
+      Object.keys(byPage).forEach(function(pg){
+        html+='<div class="gs-group"><h3><a href="'+pagePrefix()+pg+'">'+esc(byPage[pg][0].pl)+'</a>'
+             +' <span class="note">'+byPage[pg].length+' match'+(byPage[pg].length===1?'':'es')+'</span></h3><ul class="tight">';
+        byPage[pg].slice(0,LIMIT).forEach(function(h){
+          html+='<li><a href="'+pagePrefix()+pg+(h.a?'#'+h.a:'')+'">'+esc(h.h)+'</a>'
+               +' <span class="note">'+esc(h.t.slice(0,180))+'</span></li>';
+        });
+        if(byPage[pg].length>LIMIT) html+='<li class="note">&hellip; '+(byPage[pg].length-LIMIT)+' more in this table</li>';
+        html+='</ul></div>';
+      });
+      res.innerHTML=html;
+      stat.textContent=hits.length+' row'+(hits.length===1?'':'s')+' match \u201c'+box.value.trim()+'\u201d'
+        +' in '+Object.keys(byPage).length+' table'+(Object.keys(byPage).length===1?'':'s')+'.';
+    }
+    box.addEventListener('input',runSearch);
+    var clr=$('#gs-clear');
+    if(clr) clr.addEventListener('click',function(){box.value='';runSearch();box.focus();});
+    runSearch();
+  }
+
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
     var pick=$('#pick'), body=$('#cart').tBodies[0];
@@ -1755,7 +2253,66 @@ JS = r"""
 # build
 # --------------------------------------------------------------------------------------
 
-PAGES = {}
+SEARCH_INDEX = []
+
+
+def _strip_tags(t):
+    t = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", t)
+    t = re.sub(r"(?s)<[^>]+>", " ", t)
+    return re.sub(r"\s+", " ", html.unescape(t)).strip()
+
+
+def _row_label(raw_cells):
+    """Pick the cell that identifies a row for the search results.
+
+    Skips cells that carry only a status tag ("Multi-flight") or only a source link
+    ("confirm on Google Maps") - they are not a name a reader can usefully click - and takes the
+    first remaining cell with real text.
+    """
+    vals = []
+    for raw in raw_cells:
+        inner = re.sub(r"(?is)<span[^>]*class=[\"'][^\"']*\btag\b[^>]*>.*?</span>", " ", raw)
+        txt = _strip_tags(inner)
+        if re.fullmatch(r"(confirm on google maps|sheet \d+|county source|no sheet)", txt.strip(), re.I):
+            continue
+        vals.append(txt)
+    for v in vals:
+        if len(v) > 3 and not re.fullmatch(r"[\d\s.,%$\u00d7-]+", v):
+            return v[:120]
+    return (vals[0] if vals else "")[:120]
+
+
+def build_search_index(pages):
+    """One entry per table row, per table, per page - so the search box covers every table."""
+    idx = []
+    for path, text in pages.items():
+        for tm in re.finditer(r"(?is)<table([^>]*)>(.*?)</table>", text):
+            attrs, table = tm.group(1), tm.group(2)
+            tid = re.search(r"id=[\"']([^\"']+)", attrs)
+            tid = tid.group(1) if tid else ""
+            cap = re.search(r"(?is)<caption>(.*?)</caption>", table)
+            heads = [_strip_tags(h) for h in re.findall(r"(?is)<th[^>]*>(.*?)</th>", table)]
+            for tr in re.findall(r"(?is)<tr([^>]*)>(.*?)</tr>", table):
+                row_attrs, cells = tr
+                tds = re.findall(r"(?is)<td[^>]*>(.*?)</td>", cells)
+                if not tds:
+                    continue
+                vals = [_strip_tags(c) for c in tds]
+                label = path.replace(".html", "")
+                idx.append(dict(
+                    p=path,
+                    pl=PAGE_LABEL.get(path, label),
+                    t=tid,
+                    a=(re.search(r"id=[\"']([^\"']+)", row_attrs) or [None, ""])[1]
+                      if re.search(r"id=[\"']([^\"']+)", row_attrs) else "",
+                    # heading = the first cell that carries enough text to identify the row;
+                    # a leading row-number cell ("1") is not a useful label to click on.
+                    h=_row_label(tds),
+                    x=" | ".join(vals)[:400],
+                ))
+                idx[-1]["t"] = " ".join([tid, cap and _strip_tags(cap.group(1)) or "",
+                                         " ".join(heads[:4])]).strip()
+    return idx
 
 
 def write(path, text):
@@ -1799,6 +2356,11 @@ def main():
         "venues.html": p_venues(events),
         "venues/venetian.html": p_venue_venetian(events, days),
         "venues/other.html": p_venue_other(),
+        "venues/wynn.html": p_venue_room("wynn", events),
+        "venues/horseshoe.html": p_venue_room("horseshoe", events),
+        "venues/caesars-palace.html": p_venue_room("caesars-palace", events),
+        "venues/bellagio.html": p_venue_room("bellagio", events),
+        "venues/mgm-grand.html": p_venue_room("mgm-grand", events),
         "summary.html": p_summary(events, days),
         "questions.html": p_questions(),
         "suggestions.html": p_suggestions(),
@@ -1807,12 +2369,25 @@ def main():
         "repo-review.html": p_repo_review(events),
     }
 
+    # ---- site-wide search index: every row of every table we just rendered ----
+    global SEARCH_INDEX
+    SEARCH_INDEX = build_search_index(pages)
+
     if not check:
         os.makedirs(ASSETS, exist_ok=True)
         with open(os.path.join(ASSETS, "site2026.css"), "w", encoding="utf-8") as f:
             f.write(CSS)
         with open(os.path.join(ASSETS, "site2026.js"), "w", encoding="utf-8") as f:
             f.write(JS)
+        # The search index is a committed artefact so the page needs no fetch: it ships with the
+        # site and is regenerated only by this build, which CI then diff-checks.
+        with open(os.path.join(ASSETS, "search-index.js"), "w", encoding="utf-8") as f:
+            f.write("window.SEARCH_INDEX = "
+                    + json.dumps(SEARCH_INDEX, ensure_ascii=False, separators=(",", ":"))
+                    + ";\n")
+        os.makedirs(OUT_DATA, exist_ok=True)
+        with open(os.path.join(OUT_DATA, "search-index.json"), "w", encoding="utf-8") as f:
+            json.dump(SEARCH_INDEX, f, indent=1)
         for p, text in pages.items():
             write(p, text)
         # machine-readable dataset
@@ -1830,9 +2405,10 @@ def main():
                         confirmed_single_entry=0),
             room_tax_pct=contentmod.ROOM_TAX["value"],
             events=[{k: v for k, v in e.items() if k != "rows"} for e in events],
-            days=[{k: (v if k not in ("primary", "fallbacks") else
+            days=[{k: (v if k not in ("primary", "fallbacks", "restricted_alternatives") else
                        (v if k == "primary" else
-                        [dict(note=f["note"], verdict=f["verdict"], **f["item"]) for f in v]))
+                        [dict(note=f["note"], verdict=f["verdict"], **f["item"]) for f in v]
+                        if k == "fallbacks" else v))
                    for k, v in d.items()} for d in days],
             hotels=hotelsmod.HOTELS,
             rate_log=[dict(date=a, property=b, field=c, value=d, source=e, note=f)

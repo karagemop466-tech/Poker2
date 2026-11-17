@@ -17,6 +17,8 @@ SITE_ROOT = os.path.join(ROOT, SITE)
 PAGES = [
     "index.html", "tournaments.html", "entry-rules.html", "schedule.html", "hotels.html",
     "walking.html", "trip.html", "venues.html", "venues/venetian.html", "venues/other.html",
+    "venues/wynn.html", "venues/horseshoe.html", "venues/caesars-palace.html",
+    "venues/bellagio.html", "venues/mgm-grand.html",
     "summary.html", "questions.html", "suggestions.html", "flagged.html", "sources.html",
     "repo-review.html",
 ]
