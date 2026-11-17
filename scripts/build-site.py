@@ -672,6 +672,18 @@ def p_hotels():
             for r in RATES["entries"]:
                 if r["id"] == h["room_rate_log_id"]:
                     rate = r
+        # The 13.38% figure is not applied blind: where the county's own licensed-property
+        # schedule carries a row for the property, that row is cited next to the fee cell.
+        # A property the schedule does not list (or lists only under a former name) gets an
+        # explicit "not in the county list" note instead of a guessed rate.
+        tl = h.get("transient_lodging_tax") or {}
+        if tl.get("status") == "verified_official_county" and tl.get("rate_pct"):
+            tax_note = (badge("county row " + str(tl["licence"]), "ok") + " "
+                        + srclink(tl["source_url"], "county schedule"))
+        elif tl.get("status") == "not_in_county_list":
+            tax_note = badge("not in the county schedule", "warn")
+        else:
+            tax_note = badge("county row not read", "warn")
         fee = (h.get("resort_fee") or {}).get("amount")
         nightly = ""
         if rate and fee:
@@ -725,7 +737,8 @@ def p_hotels():
                   + "<td>" + rate_txt + "</td>"
                   + '<td class="num">' + nightly + "</td>"
                   + "<td>" + cell("resort_fee", "amount", lambda v: money(v) + " + tax")
-                  + '<div class="sm">' + feeexcerpt + "</div></td>"
+                  + '<div class="sm">' + feeexcerpt + "</div>"
+                  + '<div class="sm">13.38% &middot; ' + tax_note + "</div></td>"
                   + "<td>" + cell("parking", "guest_self_per_day", lambda v: ("included in the resort fee" if v == 0 else money(v) + "/day")) + "</td>"
                   + "<td>" + cell("occupancy", "extra_guest_charge", lambda v: money(v) + "/guest/night" if v else "none stated") + "</td>"
                   + "<td>" + cell("incidentals", "amount", lambda v: money(v) + "/night") + "</td>"

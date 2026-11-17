@@ -46,19 +46,35 @@ jobs:
       - name: Scrape the schedule page and diff it against the dataset
         run: node scripts/scrape-schedule.mjs
 
+      - name: Re-render plan/ from the datasets (never from the live fetch)
+        run: |
+          # The two steps above append to site-data/change-report.json and
+          # site-data/schedule-diff.json, which plan/flagged.html renders. Re-rendering here
+          # means the published page always reflects the run that just happened instead of the
+          # last committed one. This step used to be the job's own failure: the post-fetch
+          # check ran `build-site.py --check` *before* any re-render, so on every day the
+          # re-check wrote a result the page differed and the whole job went red
+          # (run 44124782058, main b832ae2). The check below is the honest version.
+          python3 scripts/build-site.py
+
       - name: Verify the generators still reproduce every dataset and page
         run: |
           # Non-blocking on purpose: when an official page changes, the transcriptions in
           # scripts/build-events.py stop matching, and that is exactly the situation we want
           # reported as a pull request rather than a red X with no artefacts.
+          # `--check` on build-events/build-schedule/build-walk still tells us whether the
+          # transcriptions still match; build-site is checked by the freshness gate below,
+          # which compares against the tree *after* this run's own re-render.
           { python3 scripts/build-events.py --check
             && python3 scripts/build-schedule.py --check
             && python3 scripts/build-walk.py --check
-            && python3 scripts/build-site.py --check
             && node scripts/scrape-schedule.mjs --selftest ; } > /tmp/verify.log 2>&1 \
             || echo failed > /tmp/verify.failed
           cat /tmp/verify.log
           [ -f /tmp/verify.failed ] && echo "GENERATOR CHECK FAILED: official text no longer matches the transcription - opening a review PR" || true
+
+      - name: Plan pages reproduce from the datasets and the reports are well-formed
+        run: python3 scripts/check_plan_fresh.py
 
       - name: Commit snapshots, or open a review PR when a source moved
         env:
