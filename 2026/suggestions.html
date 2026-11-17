@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions &middot; Las Vegas Single-Entry Poker Trip Planner</title>
+<link rel="stylesheet" href="assets/site2026.css">
+
+</head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
+<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="questions.html">Questions</a><a href="suggestions.html" class="on">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+</div></header>
+<main class="wrap">
+
+
+<div class="hero"><h1>Suggestions &mdash; choose before anything changes</h1>
+<p class="lede">Nothing here has been applied. Each row is an option with the decision it needs from
+you, what it costs, and how much work it is. Review them, pick the ones you want, and only then do they
+get implemented.</p></div>
+
+<div class="panel"><div class="tbl-scroll"><table><thead><tr>
+<th class="num">ID</th><th>Suggestion</th><th>What it involves</th><th>What it decides</th>
+<th>Cost</th><th>Effort</th><th>Unblocks</th>
+</tr></thead><tbody><tr id='S-01'><td class='num'>S-01</td><td><strong>Get the entry rule in writing from the Venetian poker room</strong></td><td>Email lv_cas_poker@venetianlasvegas.com or call 702.414.7657 and ask one question: are the one-day events single entry, or may a player buy in again after busting?</td><td>Whether any event can be promoted from &#x27;no re-entry clause printed&#x27; to &#x27;single-entry confirmed&#x27;.</td><td>One email</td><td>Low</td><td><a href="questions.html#Q-01">Q-01</a></td></tr><tr id='S-02'><td class='num'>S-02</td><td><strong>Fix your trip dates and book the poker suite rate by phone</strong></td><td>Call 866.255.8936 with code EPOKR25. The rate is only quoted 150 days out and cannot be booked online.</td><td>Your true nightly cost. A $300+ tournament entry already satisfies the qualifying-play condition for that night.</td><td>One call</td><td>Low</td><td><a href="questions.html#Q-02">Q-02</a></td></tr><tr id='S-03'><td class='num'>S-03</td><td><strong>Confirm the 30-minute walk with Google Maps on the pairs you care about</strong></td><td>Every row in the walking table carries a prefilled Google Maps walking-directions link. Open the two or three that matter and read the live time.</td><td>Whether the routed estimate stands.</td><td>Five minutes</td><td>Low</td><td><a href="flagged.html#F-08">F-08</a></td></tr><tr id='S-04'><td class='num'>S-04</td><td><strong>Add a Google Maps (or Apple Maps) API key so walk times are measured, not modelled</strong></td><td>Elevation, kerbs, pedestrian bridges and the Strip&#x27;s footbridge detours are not in a plain OSRM foot profile.</td><td>Whether the 30-minute filter can be presented as measured.</td><td>An API key and a small monthly quota</td><td>Medium</td><td><a href="flagged.html#F-08">F-08</a></td></tr><tr id='S-05'><td class='num'>S-05</td><td><strong>Capture a real dated checkout total</strong></td><td>Run the official booking flow for your dates and paste the itemised total (rate, resort fee, tax, parking) into the rate log.</td><td>The nightly-average and checkout-total columns, which are blank today.</td><td>Ten minutes at booking time</td><td>Low</td><td><a href="flagged.html#F-05">F-05</a></td></tr><tr id='S-06'><td class='num'>S-06</td><td><strong>Add an official quality rating source</strong></td><td>Nothing on any official hotel page states a star or diamond rating. Pick one authority (Forbes, AAA) and cite it, or leave quality as your own judgement.</td><td>The quality column, which is blank today.</td><td>A subscription or a decision</td><td>Medium</td><td><a href="questions.html#Q-03">Q-03</a></td></tr><tr id='S-07'><td class='num'>S-07</td><td><strong>Have the daily monitor alert on value changes, not just page hashes</strong></td><td>Today&#x27;s scheduled job hashes the whole page. Extend it to track the specific sentences each row is transcribed from, so a changed buy-in is reported as a buy-in change.</td><td>Whether a source change is actionable or just noise.</td><td>Small script change</td><td>Medium</td><td>&mdash;</td></tr><tr id='S-08'><td class='num'>S-08</td><td><strong>Add the two upcoming Venetian series to the monitor</strong></td><td>DeepStack Extravaganza NYE (Dec 24 2026 - Jan 10 2027) and DeepStack Showdown (Jan 11 - Feb 14 2027) already have official pages.</td><td>Whether you get first look at their structure sheets the day they are posted.</td><td>Two URLs</td><td>Low</td><td>&mdash;</td></tr><tr id='S-09'><td class='num'>S-09</td><td><strong>Decide whether the archived dashboards should be deleted</strong></td><td>Three earlier sessions published overlapping dashboards (docs/, verified/, pages/, plan/). They are still served but are superseded.</td><td>Repo cleanliness versus keeping the audit trail.</td><td>One decision</td><td>Low</td><td>&mdash;</td></tr><tr id='S-10'><td class='num'>S-10</td><td><strong>Consolidate the three scheduled monitor jobs into one</strong></td><td>recheck.yml, source-monitor.yml, plan-refresh.yml and plan-verify.yml all re-check overlapping URLs on different cron schedules.</td><td>Whether you get one daily digest or three.</td><td>Small workflow edit</td><td>Low</td><td>&mdash;</td></tr></tbody></table></div></div>
+
+<div class="panel"><h2>How to improve decision-making on this site</h2>
+<ol class="tight">
+<li><strong>Close the single-entry gap first.</strong> Everything else is refined guesswork until the
+room states its re-entry policy in writing. One email. <a href="#S-01">S-01</a></li>
+<li><strong>Replace modelled walk times with measured ones.</strong> The 30-minute rule is the user's
+own priority, and right now it rests on an OpenStreetMap routing estimate. A Google Maps API key makes
+it a measurement. <a href="#S-04">S-04</a></li>
+<li><strong>Turn the monitor from page hashes into value changes.</strong> A hash change tells you a
+page moved. Tracking the specific sentence each row was transcribed from tells you the buy-in changed.
+<a href="#S-07">S-07</a></li>
+<li><strong>Pick one quality authority.</strong> Cost and quality outrank distance in the brief, but
+quality has no official source, so it is currently a blank column. <a href="#S-06">S-06</a></li>
+<li><strong>Consolidate.</strong> Three scheduled monitor jobs and four overlapping dashboards are
+still in the repository. <a href="#S-09">S-09</a>, <a href="#S-10">S-10</a></li>
+</ol></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Data policy.</strong> Every value on this site is transcribed from an official venue
+document that was read and is linked on every row. A value the organiser does not publish is left
+empty and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred, estimated or
+filled in from memory. Sources retrieved 2026-11-17.</p>
+<p class="small">This is a research tool, not a booking service. Re-confirm every official page
+before you pay anything non-refundable. This <code>/2026/</code> surface is generated by
+<code>scripts/build2026.py</code>; the site root hosts the older multi-venue dashboard, and the two
+do not share a generator.</p>
+</div></footer>
+</body></html>

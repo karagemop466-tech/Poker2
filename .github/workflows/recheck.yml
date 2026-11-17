@@ -1,8 +1,11 @@
 name: Re-check official sources
 
+# Re-fetches every official URL the site is built from, hashes the content, and records a dated
+# snapshot. A changed hash is reported, never guessed at: the site shows you which cited value may
+# have moved so you can re-read it. This job never rewrites a table row.
 on:
   schedule:
-    - cron: "0 6 * * *"   # daily, 06:00 UTC
+    - cron: "0 6 * * *"   # daily, 06:00 UTC (23:00 Las Vegas)
   workflow_dispatch:
 
 permissions:
@@ -22,40 +25,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Re-check every official URL
-        run: python3 scripts/recheck_sources.py
+        run: python3 scripts/recheck2026.py
+
       - name: Summarise changes
+        id: summary
         run: |
           python3 - <<'EOF'
           import json, os
-          p = "data/site/checks.json"
-          d = json.load(open(p))
+          d = json.load(open("data/verified2026/checks.json"))
           print("::notice title=Source monitor::%d URLs, %d changed, %d errors in the latest run"
                 % (d["monitored"], d["changed_this_run"], d["errors"]))
           run = d["runs"][0]
-          changed = [r for r in run["results"] if r.get("change") == "CHANGED"]
           with open(os.environ["GITHUB_STEP_SUMMARY"], "w") as f:
-              f.write("# Official source re-check\n\n")
-              f.write("Run: %s\n\n" % run["checked"])
+              f.write("# Official source re-check\n\nRun: %s\n\n" % run["checked"])
               f.write("| Source | Status | Change |\n|---|---|---|\n")
               for r in run["results"]:
                   f.write("| %s | %s | %s |\n" % (r["key"], r.get("status"), r.get("change")))
-              f.write("\n%d changed this run.\n" % len(changed))
-          if changed:
+              f.write("\n%d changed this run.\n" % d["changed_this_run"])
+          if d["changed_this_run"]:
               with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-                  f.write("changed=%d\n" % len(changed))
+                  f.write("changed=%d\n" % d["changed_this_run"])
           EOF
-        id: summary
-      - name: Audit every row against its official source
-        run: python3 scripts/audit.py
-      - name: Rebuild the site against the fresh data
+
+      - name: Rebuild the site and verify it
         run: |
-          python3 scripts/build.py
-          python3 scripts/check_links.py
+          python3 scripts/build2026.py
+          python3 scripts/check2026.py
+
       - name: Commit the dated check log
         run: |
           git config user.name  "source-monitor"
           git config user.email "actions@users.noreply.github.com"
-          git add data/site/checks.json
+          git add data/verified2026/checks.json
           git diff --cached --quiet || git commit -m "chore: scheduled official-source re-check $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
