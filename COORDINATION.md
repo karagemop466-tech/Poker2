@@ -720,3 +720,21 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `build-events.py --check`, `build-site.py --check` OK · `node scripts/check_site.mjs` OK ·
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
+
+## Session arena/ec9cc26c-poker2 — verification sweep + final integration (2026-11-17)
+
+Base: `ba321e7` (main, PR #52 merged). Branch: `arena/ec9cc26c-poker2` (fixed by the session
+protocol; the task spec's `session-<id>/<task>` naming is not available — same deviation recorded
+as F02 by earlier sessions).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Claim board; disposition of stale open PRs #1/#24/#28 | in progress | arena/ec9cc26c-poker2 | `COORDINATION.md`, GitHub only |
+| K2 Fresh line-by-line verification pass (2026-11-17): re-read the official pages behind the published rows, compare field-by-field with `data/master.json`, refresh per-row `last_checked`, fix any defect found | in progress | arena/ec9cc26c-poker2 | `data/master.json`, `scripts/build_master.py`, `COORDINATION.md` |
+| K3 Read-through of the live site (root dashboard + `/plan/`) for rendering/defect review; fix defects found | in progress | arena/ec9cc26c-poker2 | root pages via generators, `COORDINATION.md` |
+| K4 Run every repo check on the combined tree (audit, build, link check, plan checks, CI simulation) | in progress | arena/ec9cc26c-poker2 | — |
+| K5 Final integration: PR → `main`, CI green, Pages deploy confirmed, record here | in progress | arena/ec9cc26c-poker2 | `COORDINATION.md` |
+
+Scope: files listed above. Legacy surfaces (`plan/`, `site-data/`, `docs/`, `verified/`, `pages/`)
+are read as inputs. Open decisions S-11 (one surface) and S-12 (merge monitor jobs) stay suggestions
+for user review — not implemented here.
