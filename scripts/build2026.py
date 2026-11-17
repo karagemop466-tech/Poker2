@@ -325,6 +325,13 @@ SUBNAV = {
     "venues.html": [("venues/venetian.html", "The Venetian"), ("venues/other.html", "Other rooms")],
 }
 
+# Human labels for the site-wide search results, keyed by page path.
+PAGE_LABEL = dict(NAV)
+PAGE_LABEL.update({
+    "venues/venetian.html": "The Venetian \u2014 events",
+    "venues/other.html": "Other rooms",
+})
+
 CSS = """
 :root{--bg:#0f1115;--panel:#161a22;--panel2:#1c2230;--line:#2a3242;--fg:#e7ecf3;--dim:#9aa7bb;
 --accent:#5eead4;--warn:#fbbf24;--bad:#fb7185;--good:#4ade80;--link:#7dd3fc;}
@@ -421,7 +428,20 @@ tr.hidden{display:none}
 .banner{border:1px solid var(--warn);background:rgba(251,191,36,.08);border-radius:10px;
 padding:12px 15px;margin-bottom:16px;font-size:.9rem}
 .banner.info{border-color:var(--link);background:rgba(125,211,252,.07)}
-@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}}
+.gsbar{border-bottom:1px solid var(--line);background:var(--panel);padding:10px 0}
+.gsbar .wrap2{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;gap:6px;
+grid-template-columns:auto 1fr auto}
+.gs-label{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;align-self:center}
+.gsbar input{padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);
+font:inherit;min-width:0}
+.gsbar .note{margin:0;grid-column:1/-1}
+#gs-res{grid-column:1/-1}
+#gs-res:empty{display:none}
+.gs-group{margin:8px 0 12px}
+.gs-group h3{margin:0 0 4px}
+.gs-group .note{display:block;margin:2px 0 0;font-size:.8rem}
+@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}
+.gsbar .wrap2{grid-template-columns:1fr auto}.gs-label{display:none}}
 """
 
 
@@ -446,11 +466,20 @@ def page(title, body, active, extra_head="", subnav=None):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s &middot; Las Vegas Single-Entry Poker Trip Planner</title>
 <link rel="stylesheet" href="%sassets/site2026.css">
+<script src="%sassets/search-index.js" defer></script>
+<script src="%sassets/site2026.js" defer></script>
 %s
 </head><body>
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
 <nav class="main">%s<a class="xlink" href="../index.html">Root dashboard</a></nav>
+<div class="gsbar"><div class="wrap2">
+<label class="gs-label" for="gs">Search every table</label>
+<input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
+<button class="btn" id="gs-clear" type="button">Clear</button>
+<p class="note" id="gs-status">Loading the site-wide index&hellip;</p>
+<div id="gs-res"></div>
+</div></div>
 </div></header>
 <main class="wrap">
 %s
@@ -467,7 +496,7 @@ before you pay anything non-refundable. This <code>/2026/</code> surface is gene
 do not share a generator.</p>
 </div></footer>
 </body></html>
-""" % (title, "", extra_head, nav, sub, body, RETRIEVED)
+""" % (title, "", "", "", extra_head, nav, sub, body, RETRIEVED)
     if depth_prefix(active):
         out = relink(out)
     return out
@@ -1814,6 +1843,48 @@ JS = r"""
     run4();
   }
 
+  // ---- site-wide search across every table on every page ----------------
+  function pagePrefix(){
+    // venues/*.html sits one level down
+    return location.pathname.indexOf('/venues/') !== -1 ? '../' : '';
+  }
+  var box=$('#gs'), res=$('#gs-res'), stat=$('#gs-status');
+  if(box && window.SEARCH_INDEX){
+    var IDX=window.SEARCH_INDEX, LIMIT=40;
+    function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+    function runSearch(){
+      var q=(box.value||'').toLowerCase().trim();
+      if(!q){res.innerHTML='';stat.textContent=IDX.length+' rows indexed across every table on the site.';return;}
+      var terms=q.split(/\s+/), hits=[];
+      for(var i=0;i<IDX.length;i++){
+        // search the table label, the row heading and every cell, not just the caption
+        var r=IDX[i], hay=(r.t+' '+r.h+' '+(r.x||'')).toLowerCase(), ok=true;
+        for(var j=0;j<terms.length;j++){ if(hay.indexOf(terms[j])===-1){ok=false;break;} }
+        if(ok) hits.push(r);
+      }
+      var byPage={};
+      hits.forEach(function(h){ (byPage[h.p]=byPage[h.p]||[]).push(h); });
+      var html='';
+      Object.keys(byPage).forEach(function(pg){
+        html+='<div class="gs-group"><h3><a href="'+pagePrefix()+pg+'">'+esc(byPage[pg][0].pl)+'</a>'
+             +' <span class="note">'+byPage[pg].length+' match'+(byPage[pg].length===1?'':'es')+'</span></h3><ul class="tight">';
+        byPage[pg].slice(0,LIMIT).forEach(function(h){
+          html+='<li><a href="'+pagePrefix()+pg+(h.a?'#'+h.a:'')+'">'+esc(h.h)+'</a>'
+               +' <span class="note">'+esc(h.t.slice(0,180))+'</span></li>';
+        });
+        if(byPage[pg].length>LIMIT) html+='<li class="note">&hellip; '+(byPage[pg].length-LIMIT)+' more in this table</li>';
+        html+='</ul></div>';
+      });
+      res.innerHTML=html;
+      stat.textContent=hits.length+' row'+(hits.length===1?'':'s')+' match \u201c'+box.value.trim()+'\u201d'
+        +' in '+Object.keys(byPage).length+' table'+(Object.keys(byPage).length===1?'':'s')+'.';
+    }
+    box.addEventListener('input',runSearch);
+    var clr=$('#gs-clear');
+    if(clr) clr.addEventListener('click',function(){box.value='';runSearch();box.focus();});
+    runSearch();
+  }
+
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
     var pick=$('#pick'), body=$('#cart').tBodies[0];
@@ -1856,7 +1927,66 @@ JS = r"""
 # build
 # --------------------------------------------------------------------------------------
 
-PAGES = {}
+SEARCH_INDEX = []
+
+
+def _strip_tags(t):
+    t = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", t)
+    t = re.sub(r"(?s)<[^>]+>", " ", t)
+    return re.sub(r"\s+", " ", html.unescape(t)).strip()
+
+
+def _row_label(raw_cells):
+    """Pick the cell that identifies a row for the search results.
+
+    Skips cells that carry only a status tag ("Multi-flight") or only a source link
+    ("confirm on Google Maps") - they are not a name a reader can usefully click - and takes the
+    first remaining cell with real text.
+    """
+    vals = []
+    for raw in raw_cells:
+        inner = re.sub(r"(?is)<span[^>]*class=[\"'][^\"']*\btag\b[^>]*>.*?</span>", " ", raw)
+        txt = _strip_tags(inner)
+        if re.fullmatch(r"(confirm on google maps|sheet \d+|county source|no sheet)", txt.strip(), re.I):
+            continue
+        vals.append(txt)
+    for v in vals:
+        if len(v) > 3 and not re.fullmatch(r"[\d\s.,%$\u00d7-]+", v):
+            return v[:120]
+    return (vals[0] if vals else "")[:120]
+
+
+def build_search_index(pages):
+    """One entry per table row, per table, per page - so the search box covers every table."""
+    idx = []
+    for path, text in pages.items():
+        for tm in re.finditer(r"(?is)<table([^>]*)>(.*?)</table>", text):
+            attrs, table = tm.group(1), tm.group(2)
+            tid = re.search(r"id=[\"']([^\"']+)", attrs)
+            tid = tid.group(1) if tid else ""
+            cap = re.search(r"(?is)<caption>(.*?)</caption>", table)
+            heads = [_strip_tags(h) for h in re.findall(r"(?is)<th[^>]*>(.*?)</th>", table)]
+            for tr in re.findall(r"(?is)<tr([^>]*)>(.*?)</tr>", table):
+                row_attrs, cells = tr
+                tds = re.findall(r"(?is)<td[^>]*>(.*?)</td>", cells)
+                if not tds:
+                    continue
+                vals = [_strip_tags(c) for c in tds]
+                label = path.replace(".html", "")
+                idx.append(dict(
+                    p=path,
+                    pl=PAGE_LABEL.get(path, label),
+                    t=tid,
+                    a=(re.search(r"id=[\"']([^\"']+)", row_attrs) or [None, ""])[1]
+                      if re.search(r"id=[\"']([^\"']+)", row_attrs) else "",
+                    # heading = the first cell that carries enough text to identify the row;
+                    # a leading row-number cell ("1") is not a useful label to click on.
+                    h=_row_label(tds),
+                    x=" | ".join(vals)[:400],
+                ))
+                idx[-1]["t"] = " ".join([tid, cap and _strip_tags(cap.group(1)) or "",
+                                         " ".join(heads[:4])]).strip()
+    return idx
 
 
 def write(path, text):
@@ -1908,12 +2038,25 @@ def main():
         "repo-review.html": p_repo_review(events),
     }
 
+    # ---- site-wide search index: every row of every table we just rendered ----
+    global SEARCH_INDEX
+    SEARCH_INDEX = build_search_index(pages)
+
     if not check:
         os.makedirs(ASSETS, exist_ok=True)
         with open(os.path.join(ASSETS, "site2026.css"), "w", encoding="utf-8") as f:
             f.write(CSS)
         with open(os.path.join(ASSETS, "site2026.js"), "w", encoding="utf-8") as f:
             f.write(JS)
+        # The search index is a committed artefact so the page needs no fetch: it ships with the
+        # site and is regenerated only by this build, which CI then diff-checks.
+        with open(os.path.join(ASSETS, "search-index.js"), "w", encoding="utf-8") as f:
+            f.write("window.SEARCH_INDEX = "
+                    + json.dumps(SEARCH_INDEX, ensure_ascii=False, separators=(",", ":"))
+                    + ";\n")
+        os.makedirs(OUT_DATA, exist_ok=True)
+        with open(os.path.join(OUT_DATA, "search-index.json"), "w", encoding="utf-8") as f:
+            json.dump(SEARCH_INDEX, f, indent=1)
         for p, text in pages.items():
             write(p, text)
         # machine-readable dataset

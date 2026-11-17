@@ -67,6 +67,9 @@ jobs:
       - name: The source-recheck badge actually marks changed rows
         run: python3 scripts/check_monitor_badge.py
 
+      - name: The site-wide search filters the committed index
+        run: node scripts/check_search.mjs
+
       - name: /2026/ dataset invariants
         run: |
           python3 - <<'PY'

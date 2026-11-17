@@ -119,6 +119,48 @@
     run4();
   }
 
+  // ---- site-wide search across every table on every page ----------------
+  function pagePrefix(){
+    // venues/*.html sits one level down
+    return location.pathname.indexOf('/venues/') !== -1 ? '../' : '';
+  }
+  var box=$('#gs'), res=$('#gs-res'), stat=$('#gs-status');
+  if(box && window.SEARCH_INDEX){
+    var IDX=window.SEARCH_INDEX, LIMIT=40;
+    function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+    function runSearch(){
+      var q=(box.value||'').toLowerCase().trim();
+      if(!q){res.innerHTML='';stat.textContent=IDX.length+' rows indexed across every table on the site.';return;}
+      var terms=q.split(/\s+/), hits=[];
+      for(var i=0;i<IDX.length;i++){
+        // search the table label, the row heading and every cell, not just the caption
+        var r=IDX[i], hay=(r.t+' '+r.h+' '+(r.x||'')).toLowerCase(), ok=true;
+        for(var j=0;j<terms.length;j++){ if(hay.indexOf(terms[j])===-1){ok=false;break;} }
+        if(ok) hits.push(r);
+      }
+      var byPage={};
+      hits.forEach(function(h){ (byPage[h.p]=byPage[h.p]||[]).push(h); });
+      var html='';
+      Object.keys(byPage).forEach(function(pg){
+        html+='<div class="gs-group"><h3><a href="'+pagePrefix()+pg+'">'+esc(byPage[pg][0].pl)+'</a>'
+             +' <span class="note">'+byPage[pg].length+' match'+(byPage[pg].length===1?'':'es')+'</span></h3><ul class="tight">';
+        byPage[pg].slice(0,LIMIT).forEach(function(h){
+          html+='<li><a href="'+pagePrefix()+pg+(h.a?'#'+h.a:'')+'">'+esc(h.h)+'</a>'
+               +' <span class="note">'+esc(h.t.slice(0,180))+'</span></li>';
+        });
+        if(byPage[pg].length>LIMIT) html+='<li class="note">&hellip; '+(byPage[pg].length-LIMIT)+' more in this table</li>';
+        html+='</ul></div>';
+      });
+      res.innerHTML=html;
+      stat.textContent=hits.length+' row'+(hits.length===1?'':'s')+' match \u201c'+box.value.trim()+'\u201d'
+        +' in '+Object.keys(byPage).length+' table'+(Object.keys(byPage).length===1?'':'s')+'.';
+    }
+    box.addEventListener('input',runSearch);
+    var clr=$('#gs-clear');
+    if(clr) clr.addEventListener('click',function(){box.value='';runSearch();box.focus();});
+    runSearch();
+  }
+
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
     var pick=$('#pick'), body=$('#cart').tBodies[0];

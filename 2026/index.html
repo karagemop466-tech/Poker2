@@ -4,11 +4,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dashboard &middot; Las Vegas Single-Entry Poker Trip Planner</title>
 <link rel="stylesheet" href="assets/site2026.css">
+<script src="assets/search-index.js" defer></script>
+<script src="assets/site2026.js" defer></script>
 
 </head><body>
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
 <nav class="main"><a href="index.html" class="on">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+<div class="gsbar"><div class="wrap2">
+<label class="gs-label" for="gs">Search every table</label>
+<input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
+<button class="btn" id="gs-clear" type="button">Clear</button>
+<p class="note" id="gs-status">Loading the site-wide index&hellip;</p>
+<div id="gs-res"></div>
+</div></div>
 </div></header>
 <main class="wrap">
 
