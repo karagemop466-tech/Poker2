@@ -17,6 +17,7 @@ import html
 import json
 import os
 import re
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1139,9 +1140,12 @@ def p_flagged():
         chg_table = ('<div class="tablewrap compact"><table><thead><tr><th>Checked</th><th>Source</th><th>State</th>'
                      "<th>What changed</th></tr></thead><tbody>" + chg_rows + "</tbody></table></div>")
     else:
-        chg_table = ('<div class="note bad">No monitor run yet. The workflow writes '
-                     "<code>site-data/change-report.json</code> on its first scheduled run (06:30 UTC daily), and "
-                     "affected rows on the event tables pick up a &ldquo;source changed&rdquo; badge automatically.</div>")
+        chg_table = ('<div class="note bad">No monitor run is recorded in the repository yet. '
+                     "<a href=\"" + WORKFLOW_URL + "\">"
+                     "<code>plan-refresh.yml</code></a> re-reads every official source on a schedule (06:30 UTC daily) "
+                     "and writes <code>site-data/change-report.json</code>; a row whose source moved picks up a "
+                     "&ldquo;source changed&rdquo; badge when that report is committed with the pages it feeds. "
+                     "Runs that have not been committed are still visible in the workflow log.</div>")
     items = ""
     for f in FLAGS["items"]:
         sev = "bad" if f["severity"] == "High" else ("warn" if f["severity"] == "Medium" else "info")
@@ -1169,7 +1173,8 @@ def p_flagged():
                           + '</td><td class="sm">' + esc(json.dumps(detail)) + "</td></tr>")
         if not items:
             items = '<tr><td colspan="4" class="muted">No differences: the live schedule page matches the dataset row for row.</td></tr>'
-        diff_html = ('<h2>Live schedule scrape &middot; last run ' + esc(sd.get("checked") or "?") + "</h2>"
+        _live = sd.get("checked") or "not run recorded in the repository yet"
+        diff_html = ('<h2>Live schedule scrape &middot; last run ' + esc(_live) + "</h2>"
                      + badge(str(sd.get("state", "?")), "ok" if sd.get("state") == "ok" else "bad")
                      + '<div class="tablewrap compact"><table><caption>Written by '
                      '<code>scripts/scrape-schedule.mjs</code> on its own schedule. The scrape never edits the dataset: '
@@ -1405,6 +1410,38 @@ def validate():
     return problems
 
 
+VOLATILE_INPUTS = ("change-report.json", "schedule-diff.json")
+
+
+def untracked_input_problems():
+    """Refuse to certify a page that was rendered from a file git has never seen.
+
+    Both monitor reports are written into ``site-data`` by the scheduled job and are consumed here
+    (the change-monitor table on ``plan/flagged.html`` and the ``changes`` array in
+    ``plan/assets/data.js``). While those files existed only in the runner's working tree, every
+    scheduled run produced pages that differed from the committed ones *by construction*, so the
+    "generators reproduce the committed output" step could never pass and the run that was supposed
+    to report a source change failed before it could publish anything. Two fixes belong together:
+    the refresh job commits the report and the pages in one commit, and this gate makes any future
+    un-committed page input an explicit error instead of a phantom drift.
+    """
+    out = []
+    if not os.path.isdir(os.path.join(ROOT, ".git")):
+        return out
+    for name in VOLATILE_INPUTS:
+        path = os.path.join(DATA, name)
+        if not os.path.exists(path):
+            continue
+        rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+        probe = subprocess.run(["git", "ls-files", "--error-unmatch", "--", rel],
+                               cwd=ROOT, capture_output=True)
+        if probe.returncode != 0:
+            out.append("%s is read by this build but is not committed to git, so the pages it feeds "
+                       "cannot be certified as reproducible (commit it with the regenerated pages, "
+                       "or delete it to render the 'no run recorded' state)" % rel)
+    return out
+
+
 def main():
     check = "--check" in sys.argv
     p_index()
@@ -1437,6 +1474,9 @@ def main():
                 stale.append(fname)
         if stale:
             problems.append("regenerated output differs from the committed page: " + ", ".join(sorted(stale)[:12]))
+        # extend, not +=: `problems` is the module-level list validate() already filled, and an
+        # augmented assignment here would rebind it as a local and lose every accumulated problem.
+        problems.extend(untracked_input_problems())
         probs = problems
     if probs:
         print("BUILD FAILED:")

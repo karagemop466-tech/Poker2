@@ -1,0 +1,18 @@
+{
+ "last_run": null,
+ "generator": "scripts/check_sources.mjs",
+ "sources_checked": 0,
+ "counts": {},
+ "needs_attention": 0,
+ "note": "Seed state committed so plan/flagged.html has a reproducible input. scripts/check_sources.mjs overwrites this file with the real result on every scheduled run of .github/workflows/plan-refresh.yml, and scripts/commit-refresh.sh commits the report together with the pages it feeds. An empty 'sources' list is what the page renders as 'no monitor run recorded yet'.",
+ "meaning": {
+  "ok": "content hash unchanged since the previous run",
+  "new": "first snapshot taken; nothing to compare yet",
+  "drifted": "the official page changed but none of the values this site depends on changed",
+  "changed": "a value this site depends on changed - re-run scripts/build-events.py and review the row",
+  "pattern-missing": "a tracked pattern no longer matches: the page was redesigned or the clause was removed",
+  "error": "the official URL could not be read; the last verified value stays on the site with its old date",
+  "error-new": "the official URL could not be read and no baseline exists yet"
+ },
+ "sources": []
+}

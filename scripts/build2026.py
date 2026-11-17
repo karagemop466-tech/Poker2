@@ -1473,7 +1473,9 @@ ROOM_META = {
         walk_key="V-WYN",
         title="Wynn / Encore",
         room="Wynn poker room",
-        desc="Host room for the WPT World Championship. Its own poker-room page returned a not-found page on 2026-11-17.",
+        desc="Host room for the WPT World Championship (Nov 27 - Dec 21) and the daily slate. Its page states "
+             "the Friday daily is a '$40,000 guaranteed NLH Rebuy' and prints no buy-in or entry limit for any "
+             "daily event, so no Wynn event can enter the single-entry table.",
         page="venues/wynn.html",
     ),
     "horseshoe": dict(
@@ -1599,6 +1601,15 @@ page for entrances, hours and any access requirement before you travel.</p></div
 def p_venue_other():
     blocks = []
     for v in contentmod.OTHER_VENUES:
+        # The date printed next to "Checked" must be the date recorded on *that* venue's own reading,
+        # never the build date: an earlier pass hardcoded 2026-11-17 here while five of the seven rooms
+        # say "Not re-read in this session". A checked-date that is really a build-date is how a page
+        # certifies evidence nobody looked at.
+        _read = max([f["retrieved"] for f in v["earlier_findings"] if f.get("retrieved")] or [RETRIEVED])
+        if v.get("checked"):
+            _when = "Checked %s:" % v["checked"]
+        else:
+            _when = "Not re-read in this pass (last read %s):" % _read
         finds = "".join(
             '<div class="quote">%s<div class="note">%s, retrieved %s</div></div>'
             % (esc(f["text"]), srclink(f["url"]), esc(f["retrieved"]))
@@ -1606,11 +1617,11 @@ def p_venue_other():
         blocks.append(
             "<div class='panel'><h2>%s</h2>"
             "<p class='note'><strong>Poker room:</strong> %s</p>"
-            "<p><strong>Checked 2026-11-17:</strong> %s</p>"
+            "<p><strong>%s</strong> %s</p>"
             "%s"
             "<p><strong>Verdict:</strong> %s</p>"
             "<p class='note'>Provenance: %s. Official page: %s</p></div>"
-            % (esc(v["name"]), esc(v["poker_room"]), esc(v["status_this_session"]), finds,
+            % (esc(v["name"]), esc(v["poker_room"]), esc(_when), esc(v["status_this_session"]), finds,
                esc(v["verdict"]), esc(v["provenance"]), srclink(v["url"])))
     return page("Other rooms", """
 <div class="hero"><h1>Other Strip poker rooms</h1>
@@ -1622,7 +1633,8 @@ documented rather than filled.</p></div>
 not a preference. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
 entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule.
 Horseshoe publishes six start times and nothing else. Resorts World's poker page redirects to a dining
-page. Westgate publishes room hours. Wynn's poker page returned a not-found page today. Flag
+page. Westgate publishes room hours. Wynn's live page states a Friday rebuy and prints no daily buy-in.
+Flag
 <a href="flagged.html#F-10">F-10</a>.</div>
 
 %s

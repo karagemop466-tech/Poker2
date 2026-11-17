@@ -18,9 +18,17 @@ OTHER_VENUES = [
     dict(
         name="Wynn / Encore",
         poker_room="Wynn Poker Room (WPT World Championship host room)",
-        status_this_session=("The official Wynn poker-room URL returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' "
-                             "(a not-found page) when requested on 2026-11-17. No dated schedule could be read."),
-        url="https://www.wynnlasvegas.com/casino/poker-room",
+        status_this_session=("Read first-hand on 2026-11-17 at https://www.wynnlasvegas.com/casino/poker. "
+                             "The room publishes three tournament documents - WPT World Championship (Nov 27 - "
+                             "Dec 21), the Wynn Signature Series (January 11-24, 2027) and a daily-tournament "
+                             "poster - and the page states the daily slate runs 'twice a day during non-event "
+                             "timeframes' with '$200,000 in guaranteed prize pools weekly'. No start time is "
+                             "printed on the page except the evening event ('a $10,000 guaranteed event every "
+                             "evening at 6 p.m.'), and no buy-in is printed for any daily event. The older URL "
+                             "this site used to cite, /casino/poker-room, returns Wynn's not-found page and is "
+                             "the reason the scheduled re-check logged HTTP 404 for this venue."),
+        url="https://www.wynnlasvegas.com/casino/poker",
+        checked="2026-11-17",
         earlier_findings=[
             dict(text="Wynn's official WPT World Championship structures PDF prints 'Unlimited re-entry until the start of level 9' for the $600 Turbo, the $600 mixed-game events, and the $400 / $1,100 PLO events.",
                  url="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
@@ -29,8 +37,12 @@ OTHER_VENUES = [
                  url="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
                  retrieved="2026-11-16"),
         ],
-        verdict="Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry.",
-        provenance="cited from an earlier session's reading, not re-read on 2026-11-17 (the page is currently unavailable)",
+        verdict=("Excluded from the single-entry ranking. Two independent official statements support the "
+                 "exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's "
+                 "own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second "
+                 "buy-in, so the event cannot enter a single-entry table on either reading."),
+        provenance=("page itself read first-hand 2026-11-17; the WPT structures PDF lines are cited from an "
+                    "earlier session's reading on 2026-11-16 and are labelled as such"),
     ),
     dict(
         name="Horseshoe Las Vegas",
@@ -197,12 +209,17 @@ FLAGS = [
          impact="The 30-minute filter is applied to the routed estimate and is labelled as an estimate.",
          source="https://www.openstreetmap.org/"),
     dict(id="F-09", area="Other venues",
-         title="Wynn's poker page is currently unavailable",
-         detail=("https://www.wynnlasvegas.com/casino/poker-room returned a not-found page on 2026-11-17. Wynn "
-                 "findings on this site are carried from an earlier session's reading of the official WPT "
-                 "structures PDF on 2026-11-16 and are labelled as such."),
-         impact="Wynn rows are marked 'cited, not re-read' and are not presented as current.",
-         source="https://www.wynnlasvegas.com/casino/poker-room"),
+         title="The Wynn poker citation on this site pointed at a page that no longer exists",
+         detail=("https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED "
+                 "OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on "
+                 "2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there "
+                 "first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that "
+                 "page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for "
+                 "the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures "
+                 "PDF lines still come from the 2026-11-16 reading and stay labelled as such."),
+         impact=("Until the room states an entry limit, no Wynn event can leave the 'not single-entry confirmed' "
+                 "group - the page was reachable, the missing values are genuinely unpublished, not unfetched."),
+         source="https://www.wynnlasvegas.com/casino/poker"),
     dict(id="F-10", area="Other venues",
          title="Only The Venetian publishes a dated schedule plus a per-event structure sheet",
          detail=("Every other Strip room checked either publishes no tournament schedule, no structure sheet, or "

@@ -4181,7 +4181,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-09",
   "h": "F-09",
-  "x": "F-09 | Other venues | Wynn's poker page is currently unavailable https://www.wynnlasvegas.com/casino/poker-room returned a not-found page on 2026-11-17. Wynn findings on this site are carried from an earlier session's reading of the official WPT structures PDF on 2026-11-16 and are labelled as such. | Wynn rows are marked 'cited, not re-read' and are not presented as current. | www.wynnlasvegas.co"
+  "x": "F-09 | Other venues | The Wynn poker citation on this site pointed at a page that no longer exists https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17"
  },
  {
   "p": "flagged.html",
@@ -4589,7 +4589,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-16 | Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry."
+  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-16 | Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on e"
  },
  {
   "p": "sources.html",
