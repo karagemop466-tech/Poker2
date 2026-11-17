@@ -1,69 +1,143 @@
-# Las Vegas Poker Trip Planner
+# Las Vegas Single-Entry Poker Trip Planner
 
-A source-audited static research dashboard for planning live poker tournament trips on and near the Las Vegas Strip.
+A source-audited research site for planning a live tournament poker trip on and near the Las Vegas
+Strip. The brief was specific: **single-entry tournaments only**, ranked by cost to enter and prize
+pool, with anything that lets money buy an advantage kept in a separate section — plus hotels within
+a reasonable walk, priced at their **true** nightly cost.
 
-**Published site:** <https://karagemop466-tech.github.io/Poker2/>
+**Live surface: <https://karagemop466-tech.github.io/Poker2/2026/>**
 
-The project distinguishes confirmed facts from unknowns. Tournament, hotel, and policy values are linked to the official source used; values that cannot be established from that source are left blank and documented on **Flagged for Review**. Schedules, policies, room rates, fees, and availability can change, so check the linked official source before booking or entering an event.
+The repository root serves an older multi-venue dashboard built by earlier parallel sessions from a
+different generator. This site is deliberately published **under `/2026/`** so the two surfaces do
+not overwrite each other; every page links back to the root dashboard.
 
-## Start here
+## The headline finding
 
-- [Dashboard](index.html) — current overview and trip-planning tools.
-- [Executive summary](summary.html) — what is known and the limits of the available evidence.
-- [Tournament table](tournaments.html) — search and filter the sourced event rows.
-- [Venue pages](venues.html) — venue directory, with individual pages under `venues/`.
-- [Hotels](hotels.html) and [rate log](rate-log.html) — published fees, dated rate records, and missing quote details.
-- [Trip planner](planner.html) and [schedule](schedule.html) — trip-cost and day-plan views; feasibility flags are not a guarantee that a full event can be completed before another starts.
-- [Entry rules](rules.html) and [single-entry evidence](single-entry.html) — per-event rule evidence and separate spend-advantage cases.
-- [Walking information](walking.html) — hotel/venue routes and the 30-minute threshold; unverified durations remain blank.
-- [Flagged for Review](flagged.html), [open questions](questions.html), and [suggestions](suggestions.html) — unresolved evidence and decision-support improvements.
-- [Source monitor](monitor.html) — latest recorded checks and any detected source changes.
+> No Strip poker room publishes a single-entry rule.
 
-## Evidence and ranking policy
+All **37** official Venetian DeepStack Extravaganza IV structure sheets were read individually. Not
+one contains a one-entry-only, freezeout or no-re-entry clause. That is not a gap in the reading —
+it is what the organiser publishes. So the site does the next best thing and says so plainly: it
+separates the events whose sheet is **silent** on re-entry, rebuy and add-on from the ones that
+expressly price a second buy-in, run multiple flights, pay bounties, or award seats.
 
-- A source's silence is **not** confirmation that re-entry, rebuy, or add-ons are prohibited. An event is not described as confirmed single-entry unless the source establishes that policy.
-- Guaranteed-pool ÷ total entry fee is a descriptive ratio, not a forecast or expected return. Events with bounties, flights, satellites, or other different mechanics are labeled separately rather than compared as if identical.
-- Hotel quote totals are date-, occupancy-, and room-specific. Starting rates and resort fees are not a checkout total. The nightly-cost calculation only uses values supported by the recorded rate and fee evidence; missing components stay blank rather than being inferred.
-- Schedule overlap flags are planning aids based on sourced start/registration information and explicitly identified duration assumptions. A day plan is not proof that an event can be completed before entering another.
-- Every event and hotel row should retain its official source and a last-checked date. Review the linked page or PDF again before a non-refundable purchase.
+**Confirmed single-entry events: 0.** That number is a finding, not a failure.
 
-## Repository layout and generated surfaces
+## What is verified (retrieved 2026-11-17)
 
-This repository currently publishes more than one historical dashboard surface; do not assume that similarly named pages share a generator or dataset.
+| Area | Status |
+|---|---|
+| Venetian DeepStack Extravaganza IV, Nov 16 – Dec 23 2026 | Read in full, from **both** the HTML event page and the official schedule PDF: 94 rows, 64 event numbers |
+| All 37 official structure sheets | Read one by one. Buy-in split, late-registration close, stack, level length, payout share, bounty mechanic, and the re-entry / rebuy / add-on finding for each |
+| Entry-rule classification | 16 best candidates · 30 bounty/PKO · 8 multi-flight · 7 satellites · 1 team · 2 that price a second buy-in |
+| Resort fees | Venetian/Palazzo $55, Wynn/Encore $55, Bellagio $55, MGM Grand $50 — each with its official page |
+| Poker suite rate | From $119 (Venetian) / $209 (Palazzo), code `EPOKR25`, phone only, with the qualifying-play condition |
+| Room tax | 13.38%, from Clark County's own transient lodging guide |
+| Seven other poker rooms | Checked. None publishes enough to rank even one event |
 
-| Surface / files | Role | Generator / data |
-|---|---|---|
-| Root pages (`index.html`, `tournaments.html`, `hotels.html`, `venue-*.html`, and other root pages) | Primary dashboard | `scripts/build_master.py` builds `data/master.json`; `scripts/build_site.py` renders the root pages from it. Inputs and provenance are recorded in `data/` and `data/verified/`. |
-| `walking.html`, `wpt-terms.html`, `rate-log.html`, `trip.html`, `archive.html` | Additional research pages linked from the root dashboard | `scripts/build_f0816fab.py` and the `data/site/*-f0816fab.json` / related data files. |
-| `/plan/` | Separate generated planning surface | `scripts/build-events.py`, `scripts/build-schedule.py`, and `scripts/build-site.py`, using `site-data/*.json`. |
-| `docs/`, `verified/`, `pages/`, and `archive/` | Earlier or retained pages/data for history and compatibility | Not the generator for the primary root dashboard. |
-| `COORDINATION.md` | Shared task board, ownership notes, verification records, and integration history | Read before editing shared/generated outputs. |
+## What is not verified, and is left blank
 
-Generated HTML should be changed through its corresponding generator and source data, not by hand. Consult `COORDINATION.md` for current file ownership; the root dashboard and `/plan/` have separate generators and checks.
+| Gap | Why |
+|---|---|
+| Any single-entry confirmation | No official document states one. Flag **F-01** |
+| Any finish time | No event publishes an end time, so no two events can be promised as a sequence. **F-04** |
+| Any dated hotel quote | Official booking engines render rates with JavaScript. **F-05** |
+| Any cancellation deadline | Not published on the pages read. **F-06** |
+| Any official quality rating | No hotel publishes a star or diamond rating for standard rooms |
+| Any measured walk time | The matrix is an OpenStreetMap routing estimate, labelled as such, with a Google Maps link on every row. **F-08** |
 
-## Local checks
+Every one of these is on the **Flagged for review** page with the source to check. Nothing on the
+site is inferred, estimated or filled in from memory.
 
-From the repository root:
+## Irregularities found in the official documents
 
-```sh
-python3 scripts/audit.py
-python3 scripts/build_master.py
-python3 scripts/build_site.py
-python3 scripts/check_links.py
+- **X-01** — The official schedule PDF prints a sponsor banner (`@PokerAtlas PRO`) or a series logo
+  where the date should be on **12 rows**. Every affected date was recovered from the official HTML
+  schedule page and is marked `date_from_html` in the data.
+- **X-02** — The official series overview still labels the **WPT Fall Festival** (Oct 28 – Nov 15
+  2026) as its "Current Series", even though that series has ended.
+- **F-02** — Events **18 and 58** price a *subsequent* buy-in at $200 on the official sheet, so more
+  than one buy-in per player is contemplated. They are moved out of the candidate group.
+- **F-03** — Bounty guarantees include bounty money, so they are not like-for-like with cash
+  guarantees. Bounty events are ranked in their own group.
 
-# Separate /plan/ surface
-python3 scripts/build-events.py
-python3 scripts/build-schedule.py
-python3 scripts/build-site.py
-node scripts/check_site.mjs
+## Site structure
+
+| Page | What it does |
+|---|---|
+| `2026/index.html` | Dashboard: headline counts, best-value and cheapest leaderboards |
+| `2026/tournaments.html` | All 64 events. Search box, date selector, entry-fee cap, single-entry toggle, sortable columns, group pills |
+| `2026/entry-rules.html` | Single-entry, re-entry, add-on and fee fields, one row per event, each with its source excerpt and retrieval date |
+| `2026/schedule.html` | One primary event per day plus a conditional fallback, with overlap flags built from official start times and registration closes |
+| `2026/hotels.html` | Resort fees, tax, parking, a **dated rate log**, and a true-cost-per-night calculator |
+| `2026/walking.html` | 21 hotels × 6 poker rooms, routed minutes, 30-minute filter, Google Maps link per row |
+| `2026/trip.html` | Estimated trip cost = entries × buy-ins + nights × true hotel cost |
+| `2026/venues.html` | One page per room |
+| `2026/summary.html` | Executive summary |
+| `2026/questions.html` | What must be answered before any decision |
+| `2026/suggestions.html` | Options to choose between before anything changes |
+| `2026/flagged.html` | Every unverified value and irregularity |
+| `2026/sources.html` | The source register and the scheduled re-check |
+| `2026/repo-review.html` | What the repository contains |
+
+## How the ranking works
+
+Guarantee ÷ total entry fee is shown **only** where both figures are printed on the official
+documents, and it is labelled a **descriptive ratio, not a forecast** — a guarantee is a floor the
+room commits to, not a predicted pool. Bounty and PKO events are ranked separately because their
+published guarantee includes bounty money. Multi-flight events are separate because a second flight
+is a second buy-in. Satellites pay in seats, not cash.
+
+## Build and check
+
+```bash
+python3 scripts/build2026.py          # regenerate 2026/*.html + data/verified2026/dataset.json
+python3 scripts/check2026.py          # no broken links, no non-official external hosts
+python3 scripts/build2026.py --check  # CI: fail if committed pages differ from the data
+python3 scripts/recheck2026.py        # re-fetch every official URL, hash it, log changes
+python3 -m http.server 8000           # then open /2026/index.html
 ```
 
-The root audit cross-checks transcribed rows against their cited documents; the root link checker checks internal links and approved external hosts. The `/plan/` generators and checker validate that surface separately. Rebuilding one surface can rewrite overlapping root filenames, so follow the ownership notes and CI workflow comments before running generators that touch shared outputs.
+`build2026.py` **aborts** rather than publishing a row whose structure sheet was not read, or whose
+citation points at a non-official host.
 
-## Scheduled monitoring
+## Data layout
 
-This checkout contains more than one scheduled source-check workflow. The root dashboard uses `.github/workflows/source-monitor.yml` and `scripts/monitor.py`; the separate `/plan/` surface uses `.github/workflows/plan-refresh.yml` with `scripts/check_sources.mjs` and `scripts/scrape-schedule.mjs`. There is also `.github/workflows/recheck.yml` for the earlier dataset. These workflows have different source registries and outputs; see [COORDINATION.md](COORDINATION.md) and [the source monitor page](monitor.html) before treating a check as comprehensive. A failed fetch is a monitoring error, not proof that the source did not change.
+| Path | Purpose |
+|---|---|
+| `data/sheets/part1–6.py` | Verified readings of all 37 official structure sheets, clause by clause |
+| `data/verified2026/schedule.py` | All 94 official schedule rows, with the X-01 date fix noted per row |
+| `data/verified2026/hotels.py` | Hotel fields plus the dated rate log |
+| `data/verified2026/content.py` | Other venues, flags, questions, suggestions |
+| `data/verified2026/dataset.json` | Generated. Do not hand-edit |
 
-## Current verification caveats
+## Monitoring
 
-The latest local checks recorded for this README repair were: `scripts/audit.py` passed (83 Venetian rows, 13 other-venue rows, 8 hotels, 60 sources); `scripts/check_links.py` passed (24 pages, 1,749 links). A manual `scripts/monitor.py` invocation reported **22 URLs and 22 fetch errors** in this sandbox. That run does not establish whether the scheduled GitHub Actions monitor can reach those sources; consult its latest report and rerun it in an environment with working outbound access. No rate, schedule, or policy value should be changed based on failed fetches alone.
+`.github/workflows/recheck.yml` runs daily at 06:00 UTC (23:00 Las Vegas): it re-fetches all **61** official URLs the
+site cites, hashes the normalised text (or the raw PDF bytes), appends the run to
+`data/verified2026/checks.json`, rebuilds the site and commits. A `CHANGED` row means the official
+document moved, so every value transcribed from it must be re-read. The job reports; it never
+rewrites a value.
+
+## Rules this repository follows
+
+1. **Official sources only.** No aggregator, no forum, no mapping service as a citation.
+2. **Blank beats guessed.** A blank cell is listed on the Flagged page with the reason.
+3. **Silence is not a prohibition.** "No re-entry clause printed" is never written as "single entry".
+4. **A guarantee is a floor, not a forecast.** GTD ÷ entry is descriptive only.
+5. **Bounty, multi-flight, satellite and team events are shown separately**, never mixed into a
+   like-for-like comparison.
+6. **Re-check the official pages before any non-refundable payment.**
+
+## Legacy surfaces
+
+Several earlier sessions published overlapping dashboards (`docs/`, `verified/`, `pages/`,
+`plan/`) plus their own generators. They are still served so no existing link breaks, but they are superseded
+and frozen. Their scheduled workflows were retired in favour of the single `recheck.yml`. Deleting
+the trees is offered as suggestion **S-09** rather than done unilaterally.
+
+## Coordination
+
+`COORDINATION.md` is the shared task board for parallel sessions. This site was built by session
+`arena/839a07d9-poker2` as the integration session; its claim, sources and completion record are
+logged there.
