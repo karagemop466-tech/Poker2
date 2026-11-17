@@ -301,6 +301,45 @@ def build_events():
     return events
 
 
+# Groups that a "primary event of the day" must not come from when anything else is running.
+# A satellite's prize is a seat, not money; a tag team needs two players; a multi-flight row is
+# one starting flight of a longer event and its guarantee belongs to the whole event.
+NOT_A_PRIMARY = ("satellite", "team", "multiflight")
+
+# How desirable a group is as the day's main event. Lower is better.
+GROUP_TIER = {"candidate": 0, "bounty": 1, "multiflight": 2, "spend": 3, "satellite": 4, "team": 5}
+
+
+def _selection_rank(x):
+    """Order candidate primaries: unrestricted first, then by group, then by money at stake."""
+    restricted = 1 if x.get("eligibility") else 0
+    tier = GROUP_TIER.get(x["group"], 3)
+    # earlier start breaks a tie within a tier, then the bigger guarantee, then the event number
+    return (restricted, tier, x["start_m"] or 0, -(x.get("gtd") or 0), x["event_no"])
+
+
+def choose_primary(entries):
+    """Pick the day's main event: the best event a player can actually buy into.
+
+    The previous rule simply took the earliest start, which made a $260 satellite the primary
+    event of 12 December instead of the $2,200 $1M-guarantee PokerAtlas title event starting 17
+    minutes later. Eligibility-restricted events (Seniors, Ladies) are never promoted, and
+    satellites / tag teams / multi-flight rows only become the primary when nothing else runs.
+    """
+    if not entries:
+        return None
+    open_to_all = [x for x in entries if not x.get("eligibility")]
+    pool = open_to_all or entries
+    ranked = sorted(pool, key=_selection_rank)
+    # prefer a start the player can reach first, but never at the cost of the tier
+    best = ranked[0]
+    if best["group"] in NOT_A_PRIMARY:
+        better = [x for x in pool if x["group"] not in NOT_A_PRIMARY]
+        if better:
+            best = sorted(better, key=_selection_rank)[0]
+    return best
+
+
 def build_days(events):
     """One entry per day: primary + conditional fallback, with overlap flags."""
     days = {}
@@ -318,6 +357,7 @@ def build_days(events):
                 start=r[3], start_m=tminutes(r[3]), reg_close=r[4],
                 reg_close_m=tminutes(r[4]) if r[4] else None,
                 buy_in=ev["buy_in"], gtd=ev["gtd"], sheet_url=ev["sheet_url"],
+                eligibility=ev.get("eligibility"),
                 date=d, dow=r[1],
             ))
             # restarts occupy the same day too
@@ -335,9 +375,13 @@ def build_days(events):
     for d in sorted(days):
         entries = sorted([x for x in days[d] if not x.get("restart")], key=lambda x: x["start_m"] or 0)
         restarts = sorted([x for x in days[d] if x.get("restart")], key=lambda x: x["start_m"] or 0)
-        primary = entries[0] if entries else None
+        primary = choose_primary(entries)
         fallbacks = []
-        for f in entries[1:]:
+        for f in entries:
+            if primary is not None and f is primary:
+                continue
+            if primary is not None and f["event_no"] == primary["event_no"] and f["start"] == primary["start"]:
+                continue
             if primary and f["reg_close_m"] and f["reg_close_m"] > primary["start_m"]:
                 note = ("Conditional: only if you are out of #%d %s before #%d %s's registration "
                         "closes at %s (official)."
@@ -355,8 +399,14 @@ def build_days(events):
                     f["event_no"], entry_title(f))
                 verdict = "unknown"
             fallbacks.append(dict(item=f, note=note, verdict=verdict))
+        # Events a player who meets the condition could play, which are never promoted to primary
+        # because they are restricted. Shown explicitly so an age-restricted morning event is not
+        # silently dropped from the day.
+        restricted_alts = [x for x in entries if x.get("eligibility")
+                           and (primary is None or x["event_no"] != primary["event_no"])]
         out.append(dict(date=d, dow=entries[0]["dow"] if entries else (restarts[0]["dow"] if restarts else ""),
                         entries=entries, restarts=restarts, primary=primary, fallbacks=fallbacks,
+                        restricted_alternatives=restricted_alts,
                         overlap=len(entries) > 1))
     return out
 
@@ -994,6 +1044,17 @@ def p_schedule(days, events):
                    esc(it["reg_close"] or "not published"),
                    ("$" + format(it["buy_in"], ",")) if it["buy_in"] else "not published",
                    esc(fb["note"])))
+        if d.get("restricted_alternatives"):
+            ra = "".join(
+                "<p class='note'>#%d %s &mdash; starts %s, entry %s. <span class='tag t-warn'>not the "
+                "primary</span> %s</p>"
+                % (x["event_no"], esc(entry_title(x)[:64]), esc(x["start"]),
+                   ("$" + format(x["buy_in"], ",")) if x["buy_in"] else "not published",
+                   esc(x["eligibility"]))
+                for x in d["restricted_alternatives"])
+            lines.append("<div class='day'><h3>Also running &mdash; entry restricted</h3>%s"
+                         "<p class='small'>Listed so the day is complete. It is never made the primary "
+                         "because not every player can buy in.</p></div>" % ra)
         if d["restarts"]:
             rs = ", ".join("#%d %s &mdash; %s" % (x["event_no"], esc(entry_title(x)[:44]), x["start"])
                            for x in d["restarts"])
@@ -1016,12 +1077,16 @@ time</strong>. What is published is each event's start time and its registration
 registration close is the real deadline: it is the latest moment you can still take your seat in the
 later event.</p></div>
 
-<div class="banner"><strong>Method.</strong> For each date, the earliest-starting genuine entry is the
-primary. Every later entry on the same date is a fallback, conditional on your being out of the primary
-before the fallback's registration closes. Where a fallback's registration closes before the primary
-even starts, the pair is flagged <em>cannot be sequenced</em>. Twelve of the rows in the official
-schedule are Day 2, Day 3 or streamed final tables; they are listed as continuations, not entries,
-because you cannot buy into them.</div>
+<div class="banner"><strong>How the primary is chosen.</strong> The primary is the day's best event
+that <em>any</em> player can buy into, ranked: unrestricted one-day events first, then bounty events,
+then multi-flight rows (which carry the day's biggest guarantees, such as the $1&nbsp;Million PokerAtlas
+title event on 12 December), then rake-discount rows, and only then satellites and tag teams. Earlier
+start breaks a tie, then the larger guarantee. Age- or gender-restricted events are never promoted, but
+they are listed under <em>Also running</em> so an eligible player still sees them. Every other entry is
+a fallback, conditional on your being out of the primary before that fallback's registration closes;
+where a fallback's registration closes before the primary starts, the pair is flagged <em>cannot be
+sequenced</em>. Twelve rows in the official schedule are Day 2, Day 3 or streamed final tables; they are
+listed as continuations, because you cannot buy into them.</div>
 
 <div class="panel">
 <div class="controls">
@@ -2340,9 +2405,10 @@ def main():
                         confirmed_single_entry=0),
             room_tax_pct=contentmod.ROOM_TAX["value"],
             events=[{k: v for k, v in e.items() if k != "rows"} for e in events],
-            days=[{k: (v if k not in ("primary", "fallbacks") else
+            days=[{k: (v if k not in ("primary", "fallbacks", "restricted_alternatives") else
                        (v if k == "primary" else
-                        [dict(note=f["note"], verdict=f["verdict"], **f["item"]) for f in v]))
+                        [dict(note=f["note"], verdict=f["verdict"], **f["item"]) for f in v]
+                        if k == "fallbacks" else v))
                    for k, v in d.items()} for d in days],
             hotels=hotelsmod.HOTELS,
             rate_log=[dict(date=a, property=b, field=c, value=d, source=e, note=f)
