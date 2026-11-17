@@ -575,8 +575,18 @@ master = dict(
 )
 for k, v in sources_b.items():
     master["sources"][k] = v
+# arena/ec9cc26c-poker2 (2026-11-17): the legacy official-check dataset keys these
+# five sources by slug; render them as human labels on the monitor/sources tables.
+_CHECK_SRC_LABELS = {
+    "venetian_structure_pdf_base": "Venetian DSE IV structure sheets (URL pattern, sheets 1–37)",
+    "caesars_poker_page": "Caesars Palace: poker room page",
+    "caesars_flyer": "Caesars Palace: daily NLH tournament flyer 2026 (PDF)",
+    "wynn_daily_structures": "Wynn: daily tournament structures (PDF)",
+    "golden_nugget_page": "Golden Nugget: daily tournaments page",
+}
 for k, v in check["sources"].items():
-    master["sources"].setdefault(k, {"label": k, "url": v, "publisher": "official", "type": "official"})
+    master["sources"].setdefault(k, {"label": _CHECK_SRC_LABELS.get(k, k), "url": v,
+                                     "publisher": "official", "type": "official"})
 master["sources"]["session_updates"] = {"label": "Session arena/8234a824-poker2 official reads",
                                         "url": "https://github.com/karagemop466-tech/Poker2", "publisher": "this repo", "type": "log"}
 
