@@ -164,7 +164,11 @@ def main():
             rec["fee_plus_pool_matches_buyin"] = None
 
         # Descriptive ratio only, and only when the guarantee is pure prize pool.
-        if rec["gtd"] and rec["total_entry_fee"]:
+        # A bounty-inclusive guarantee (sheet 1/11/15/16) counts money that is paid back
+        # as bounties, so dividing it by the entry fee would flatter the event. Those rows
+        # keep gtd but get no ratio; the page shows why. See FD-07.
+        if (rec["gtd"] and rec["total_entry_fee"]
+                and (rec["gtd_basis"] or "").strip().lower() == "prize pool"):
             rec["gtd_ratio_descriptive"] = round(rec["gtd"] / rec["total_entry_fee"], 2)
         else:
             rec["gtd_ratio_descriptive"] = None

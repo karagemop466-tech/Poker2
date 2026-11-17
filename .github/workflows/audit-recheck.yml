@@ -38,6 +38,15 @@ jobs:
         with:
           python-version: "3.12"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install the DOM test dependency
+        # A missing jsdom makes the build skip its DOM check, so install it here and let
+        # a failure in this step fail the job rather than quietly reducing coverage.
+        run: npm install --no-save --prefix scripts jsdom@^31
+
       - name: Prove the monitor's states before trusting it
         run: python3 scripts/audit_recheck.py --selftest
 
@@ -78,6 +87,8 @@ jobs:
           PY
 
       - name: Rebuild the audit site against the fresh monitor data
+        # audit_build.py refuses to finish if any row lacks an official source, if any
+        # link is broken, or if the DOM test fails. Those are the gates, not a warning.
         run: python3 scripts/audit_build.py
 
       - name: Commit the dated check log

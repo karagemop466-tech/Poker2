@@ -1,0 +1,11 @@
+{
+  "name": "poker2-audit-checks",
+  "private": true,
+  "description": "DOM checks for the /audit/ surface. Used by scripts/audit_build.py and the audit-recheck workflow.",
+  "scripts": {
+    "test": "node audit_dom_test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.1"
+  }
+}

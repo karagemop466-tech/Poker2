@@ -173,7 +173,15 @@ FLAGS = [
                          "list the two would look comparable and would not be."),
          evidence="data/audit/events.json gtd_basis column.",
          source_url=sheet(15),
-         action="Guarantee-per-entry is computed only for rows whose guarantee is pure prize pool; bounty-inclusive rows are labelled and kept in a separate section."),
+         action=("Guarantee-per-entry is computed only for rows whose guarantee is pure prize pool; "
+                 "bounty-inclusive rows are labelled and kept in a separate section."),
+         resolution=("Fixed 2026-11-17. The generator used to compute gtd_ratio_descriptive for "
+                     "every row with a guarantee, so 26 bounty-inclusive rows carried a ratio and "
+                     "the raw JSON contradicted this flag even though the page's ranking did not. "
+                     "The ratio is now emitted only when gtd_basis is exactly 'prize pool': 13 rows "
+                     "have a ratio, 26 keep the guarantee with no ratio, and the table prints "
+                     "'n/a - bounty GTD' with the reason on hover. verify/verify_events.py fails if "
+                     "a ratio ever reappears on a bounty-inclusive guarantee.")),
     dict(id="FD-08", severity="medium", area="walking",
          title="Walking times come from a routing service, not from an official venue page",
          finding=("No casino or poker room publishes a walking time between properties. The matrix "

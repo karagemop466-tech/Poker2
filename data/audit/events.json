@@ -657,7 +657,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-15",
@@ -800,7 +800,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-18",
@@ -878,7 +878,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-20",
@@ -956,7 +956,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-22",
@@ -995,7 +995,7 @@
    "notes": "",
    "total_entry_fee": 600,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-23",
@@ -1242,7 +1242,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-28",
@@ -1333,7 +1333,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-30",
@@ -1424,7 +1424,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-32",
@@ -1567,7 +1567,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-35",
@@ -2009,7 +2009,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-45",
@@ -2048,7 +2048,7 @@
    "notes": "",
    "total_entry_fee": 600,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 66.67
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-46",
@@ -2087,7 +2087,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-47",
@@ -2230,7 +2230,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-50",
@@ -2321,7 +2321,7 @@
    "notes": "",
    "total_entry_fee": 800,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 93.75
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-52",
@@ -2412,7 +2412,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-54",
@@ -2607,7 +2607,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-58",
@@ -3192,7 +3192,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-70",
@@ -3322,7 +3322,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-73",
@@ -3413,7 +3413,7 @@
    "notes": "Progressive knockout: half of each bounty is kept, half is added to the winner's own bounty.",
    "total_entry_fee": 1100,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 68.18
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-75",
@@ -3452,7 +3452,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-76",
@@ -3491,7 +3491,7 @@
    "notes": "",
    "total_entry_fee": 600,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 83.33
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-77",
@@ -3530,7 +3530,7 @@
    "notes": "Rule 10: the $15,000 guarantee 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
    "total_entry_fee": 300,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 50.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-78",
@@ -4024,7 +4024,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-88",
@@ -4102,7 +4102,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-90",
@@ -4180,7 +4180,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   },
   {
    "id": "EV-92",
@@ -4297,7 +4297,7 @@
    "notes": "",
    "total_entry_fee": 200,
    "fee_plus_pool_matches_buyin": true,
-   "gtd_ratio_descriptive": 40.0
+   "gtd_ratio_descriptive": null
   }
  ]
 }

@@ -6,7 +6,7 @@ Run:  python3 scripts/audit_build.py
 Fails if any published event/hotel row lacks an https source link, or if a page
 links to a file that does not exist.
 """
-import json, os, re, html, datetime, sys
+import json, os, re, html, datetime, sys, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "audit")
@@ -254,7 +254,10 @@ def ev_rows(rows, show_sheet=True):
             num(e["level_min"]),
             clock(e["late_reg_time"]),
             chip_rule(e["single_entry"]),
-            money(e["gtd_ratio_descriptive"]) if e["gtd_ratio_descriptive"] else "&mdash;",
+            (money(e["gtd_ratio_descriptive"]) if e["gtd_ratio_descriptive"]
+             else ('<span class="sm muted" title="the guarantee includes bounties, so it is '
+                   'not comparable with a pure prize pool">n/a &mdash; bounty GTD</span>')
+             if e["gtd"] else "&mdash;"),
             e["last_checked"],
             link(e["source_url"], "sheet %d" % e["sheet"]) if e["structure_read"]
             else link(e["source_url"], "schedule"),
@@ -340,6 +343,45 @@ def build_index():
       ["Dated room rates", "not obtainable &mdash; JavaScript booking engines", "0", AS_OF],
     ])}
   </div>
+</section>
+
+<section>
+  <h2>Every page</h2>
+  <div class="navgrid">
+    <a class="navcard" href="events.html"><b>Tournaments</b><span>94 rows, searchable by date and text</span></a>
+    <a class="navcard" href="schedule.html"><b>Day plan</b><span>one primary a day plus a conditional fallback</span></a>
+    <a class="navcard" href="hotels.html"><b>Hotels</b><span>fee, tax, parking and the measured walk</span></a>
+    <a class="navcard" href="cost.html"><b>Trip cost</b><span>entries &times; buy-in + nights &times; true cost</span></a>
+    <a class="navcard" href="rates.html"><b>Rate log</b><span>dated observations, including the failed ones</span></a>
+    <a class="navcard" href="venues.html"><b>Venues</b><span>one block per property</span></a>
+    <a class="navcard" href="walking.html"><b>Walking</b><span>the 30-minute rule, measured</span></a>
+    <a class="navcard" href="rules.html"><b>Entry rules</b><span>three-state evidence, quoted</span></a>
+    <a class="navcard" href="summary.html"><b>Summary</b><span>answers to each part of the brief</span></a>
+    <a class="navcard" href="questions.html"><b>Questions</b><span>what must be answered first</span></a>
+    <a class="navcard" href="suggestions.html"><b>Suggestions</b><span>options and the decision each needs</span></a>
+    <a class="navcard" href="flagged.html"><b>Flagged</b><span>every irregularity, with evidence</span></a>
+    <a class="navcard" href="sources.html"><b>Sources</b><span>every document read, and not read</span></a>
+    <a class="navcard" href="monitor.html"><b>Monitor</b><span>per-URL status and content hashes</span></a>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Other pages in this repository</h2>
+  <p class="sm">Earlier sessions built separate surfaces. They are kept so nothing breaks, but they
+  use different datasets and can disagree with the numbers here &mdash; recorded as
+  <a href="flagged.html#FD-15">FD-15</a>, with the choice of one surface as
+  <a href="suggestions.html">SG-01</a>.</p>
+  <ul class="tight sm">
+    <li><a href="../index.html">repository home</a> &middot; <a href="../summary.html">summary</a>
+        &middot; <a href="../tournaments.html">tournaments</a> &middot;
+        <a href="../hotels.html">hotels</a> &middot; <a href="../planner.html">planner</a>
+        &middot; <a href="../flagged.html">flagged</a></li>
+    <li><a href="../plan/index.html">/plan/</a> &mdash; generated planner surface</li>
+    <li><a href="../docs/index.html">/docs/</a>, <a href="../verified/index.html">/verified/</a>,
+        <a href="../pages/summary.html">/pages/</a> &mdash; frozen earlier builds</li>
+    <li><a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a>
+        &mdash; the parallel-session task board</li>
+  </ul>
 </section>
 
 <section class="panel">
@@ -995,10 +1037,18 @@ def build_flagged():
     for sev, label in [("high", "High &mdash; changes what a number means"),
                        ("medium", "Medium &mdash; changes how far a number can be trusted"),
                        ("low", "Low &mdash; disclosure only")]:
+        def what(f):
+            # a flag that has since been fixed says so, rather than reading as still open
+            txt = esc(f["action"])
+            if f.get("resolution"):
+                txt += ('<div class="sm" style="margin-top:5px;color:#7fd6a0"><b>&#10003; fixed</b> '
+                        '&mdash; %s</div>' % esc(f["resolution"]))
+            return txt
+
         section_rows = [['<span id="%s">%s</span>' % (f["id"], f["id"]),
                          "<b>%s</b>" % esc(f["title"]), esc(f["finding"]),
                          esc(f["why_it_matters"]), esc(f["evidence"]), link(f["source_url"]),
-                         esc(f["action"])] for f in by_sev.get(sev, [])]
+                         what(f)] for f in by_sev.get(sev, [])]
         sec += '<h2>%s (%d)</h2><div class="panel">%s</div>' % (
             label, len(section_rows),
             table(["ID", "Item", "Finding", "Why it matters", "Evidence", "Source", "What this build does"],
@@ -1162,8 +1212,9 @@ def link_check():
         p = os.path.join(OUT, fn)
         txt = open(p, encoding="utf-8").read()
         for href in re.findall(r'href="([^"#:]+\.html)(?:#[^"]*)?"', txt):
-            if not os.path.exists(os.path.join(OUT, href)):
-                bad.append("%s -> %s" % (fn, href))
+            # audit pages live in audit/; ../x.html reaches the repository root surfaces
+            bad.append("%s -> %s" % (fn, href)) if not os.path.exists(
+                os.path.normpath(os.path.join(OUT, href))) else None
         for href in re.findall(r'href="((?:\.\./)[^"]+)"', txt):
             if not os.path.exists(os.path.normpath(os.path.join(OUT, href))):
                 bad.append("%s -> %s" % (fn, href))
@@ -1190,10 +1241,40 @@ def main():
         for b in bad:
             print("  ", b)
         sys.exit(1)
+    # prove the built pages actually work: filters bind, counters move, and the cost
+    # calculator's arithmetic matches its own stated inputs. Skipped only if jsdom is
+    # absent, in which case the reason is printed rather than the check silently passing.
+    if os.path.exists(os.path.join(ROOT, "scripts", "audit_dom_test.js")):
+        try:
+            r = subprocess.run(
+                ["node", "audit_dom_test.js"],
+                cwd=os.path.join(ROOT, "scripts"),
+                capture_output=True, text=True, timeout=180)
+        except FileNotFoundError:
+            print("  DOM test skipped: node not installed")
+        except subprocess.TimeoutExpired:
+            print("  DOM test FAILED: timed out")
+            sys.exit(1)
+        else:
+            if r.returncode == 2:
+                print("  DOM test skipped: " + r.stderr.strip().splitlines()[0])
+            elif r.returncode != 0:
+                print("BUILD FAILED - DOM test:")
+                print(r.stdout[-3000:])
+                print(r.stderr[-1500:])
+                sys.exit(1)
+            else:
+                last = [l for l in r.stdout.strip().splitlines() if l.strip()][-1]
+                print("  DOM test " + last.strip())
+
     print("built %d pages into audit/" % len(PAGES))
     print("  events %d | hotels %d | walk rows %d | flags %d | questions %d | suggestions %d"
           % (len(EV), len(HO), len(WK), len(FL), len(QT), len(SG)))
 
+
+
+
+# --------------------------------------------------------------- root landing page
 
 if __name__ == "__main__":
     main()
