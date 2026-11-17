@@ -8,8 +8,13 @@ ROOM_TAX = dict(
     source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
     corroboration=("The official Venetian hotel terms state 'Clark County Room Tax of 13.38%' "
                    "(https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html)."),
-    retrieved="2026-11-16",
-    note="Read by an earlier session from the county's own published guide. Not re-read in this session.",
+    retrieved="2026-11-17",
+    note=("Re-read first-hand on 2026-11-17 from the county guide's own licence register, which lists "
+          "'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino, 3325 Las Vegas Blvd S - Licensed - "
+          "13.38% - RES - Transient Lodging Tax - Resort Hotel (PGC)'. Irregularity: the PDF the county "
+          "serves at a '...july-2021.pdf' slug carries the internal title 'Genl Info Guide for TLEs Sept "
+          "2018', so the document's own date and its URL disagree (flag F-15); the rate is also printed in "
+          "the Venetian's own hotel terms, which is the corroboration the hotel rows cite."),
 )
 
 # Other Strip-area poker rooms. `status_this_session` records what happened when this session
@@ -18,9 +23,17 @@ OTHER_VENUES = [
     dict(
         name="Wynn / Encore",
         poker_room="Wynn Poker Room (WPT World Championship host room)",
-        status_this_session=("The official Wynn poker-room URL returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' "
-                             "(a not-found page) when requested on 2026-11-17. No dated schedule could be read."),
-        url="https://www.wynnlasvegas.com/casino/poker-room",
+        status_this_session=("Read first-hand on 2026-11-17 at https://www.wynnlasvegas.com/casino/poker. "
+                             "The room publishes three tournament documents - WPT World Championship (Nov 27 - "
+                             "Dec 21), the Wynn Signature Series (January 11-24, 2027) and a daily-tournament "
+                             "poster - and the page states the daily slate runs 'twice a day during non-event "
+                             "timeframes' with '$200,000 in guaranteed prize pools weekly'. No start time is "
+                             "printed on the page except the evening event ('a $10,000 guaranteed event every "
+                             "evening at 6 p.m.'), and no buy-in is printed for any daily event. The older URL "
+                             "this site used to cite, /casino/poker-room, returns Wynn's not-found page and is "
+                             "the reason the scheduled re-check logged HTTP 404 for this venue."),
+        url="https://www.wynnlasvegas.com/casino/poker",
+        checked="2026-11-17",
         earlier_findings=[
             dict(text="Wynn's official WPT World Championship structures PDF prints 'Unlimited re-entry until the start of level 9' for the $600 Turbo, the $600 mixed-game events, and the $400 / $1,100 PLO events.",
                  url="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
@@ -29,8 +42,12 @@ OTHER_VENUES = [
                  url="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
                  retrieved="2026-11-16"),
         ],
-        verdict="Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry.",
-        provenance="cited from an earlier session's reading, not re-read on 2026-11-17 (the page is currently unavailable)",
+        verdict=("Excluded from the single-entry ranking. Two independent official statements support the "
+                 "exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's "
+                 "own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second "
+                 "buy-in, so the event cannot enter a single-entry table on either reading."),
+        provenance=("page itself read first-hand 2026-11-17; the WPT structures PDF lines are cited from an "
+                    "earlier session's reading on 2026-11-16 and are labelled as such"),
     ),
     dict(
         name="Horseshoe Las Vegas",
@@ -39,26 +56,41 @@ OTHER_VENUES = [
                              "poker room with 20 tables and '6 exciting tournament times daily' but publishes no "
                              "buy-ins, guarantees, dates or structure sheet."),
         url="https://www.caesars.com/horseshoe-las-vegas/casino",
+        checked="2026-11-17",
         earlier_findings=[
             dict(text="Caesars' own editorial page publishes the six daily start times: 9:00 AM, 11:00 AM, 2:00 PM, 5:00 PM, 8:00 PM and 11:00 PM.",
                  url="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
                  retrieved="2026-11-16"),
         ],
         verdict="Start times only. No buy-in, guarantee, structure or entry rule is officially published, so no row can be ranked.",
-        provenance="times cited from an earlier session's reading; the page was re-requested this session and the poker sub-page no longer resolves",
+        provenance=("the six times were read first-hand on 2026-11-17 on Caesars' own poker-tournaments page "
+                    "('9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m.'); the property's poker sub-page still "
+                    "publishes no schedule and no structure sheet"),
     ),
     dict(
         name="Caesars Palace",
         poker_room="Caesars Palace Poker Room",
-        status_this_session="Not re-read in this session.",
+        status_this_session=("Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily "
+                             "tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at "
+                             "10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with "
+                             "20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 "
+                             "minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That "
+                             "is the first time this site has an official buy-in, stack, guarantee and level length "
+                             "for a Caesars daily; it is still not a structure sheet, and the add-on is decisive."),
         url="https://www.caesars.com/caesars-palace/casino",
+        checked="2026-11-17",
         earlier_findings=[
             dict(text="Caesars' corporate disclaimer publishes only a resort-fee range: 'a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.' No single property value is published.",
                  url="https://www.caesars.com/corporate/disclaimer",
                  retrieved="2026-11-16"),
         ],
-        verdict="No tournament schedule or structure sheet published on the official page.",
-        provenance="cited from an earlier session's reading",
+        verdict=("Excluded from the single-entry table on the operator's own words: the published $50 add-on is a "
+                 "second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a "
+                 "separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed "
+                 "and priced, but it cannot be compared like-for-like with the sheet-silent Venetian candidates, "
+                 "and the buy-in still conflicts with the property's own daily flyer ($160 at 2 p.m. / 9 p.m., "
+                 "read 2026-11-16) - see F-14."),
+        provenance="read first-hand 2026-11-17 on the operator's own page; the flyer conflict is carried from 2026-11-16",
     ),
     dict(
         name="Bellagio",
@@ -197,12 +229,17 @@ FLAGS = [
          impact="The 30-minute filter is applied to the routed estimate and is labelled as an estimate.",
          source="https://www.openstreetmap.org/"),
     dict(id="F-09", area="Other venues",
-         title="Wynn's poker page is currently unavailable",
-         detail=("https://www.wynnlasvegas.com/casino/poker-room returned a not-found page on 2026-11-17. Wynn "
-                 "findings on this site are carried from an earlier session's reading of the official WPT "
-                 "structures PDF on 2026-11-16 and are labelled as such."),
-         impact="Wynn rows are marked 'cited, not re-read' and are not presented as current.",
-         source="https://www.wynnlasvegas.com/casino/poker-room"),
+         title="The Wynn poker citation on this site pointed at a page that no longer exists",
+         detail=("https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED "
+                 "OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on "
+                 "2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there "
+                 "first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that "
+                 "page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for "
+                 "the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures "
+                 "PDF lines still come from the 2026-11-16 reading and stay labelled as such."),
+         impact=("Until the room states an entry limit, no Wynn event can leave the 'not single-entry confirmed' "
+                 "group - the page was reachable, the missing values are genuinely unpublished, not unfetched."),
+         source="https://www.wynnlasvegas.com/casino/poker"),
     dict(id="F-10", area="Other venues",
          title="Only The Venetian publishes a dated schedule plus a per-event structure sheet",
          detail=("Every other Strip room checked either publishes no tournament schedule, no structure sheet, or "
@@ -247,6 +284,40 @@ FLAGS = [
          impact=("Until that job runs, every row reads 'not yet checked'. That is the honest state and "
                  "is deliberately not rendered as 'unchanged'."),
          source=".github/workflows/recheck.yml (repository file, not an external citation)"),
+    dict(id="F-14", area="Other venues",
+         title="Two official Caesars documents print different daily buy-ins for the same room",
+         detail=("Caesars' poker-tournaments page, re-read first-hand on 2026-11-17, prints '$100 buy-in ... "
+                 "$1,000 guaranteed prize pool' for the four daily Caesars Palace events. The property's own "
+                 "daily NLH flyer, read 2026-11-16, prints $160 for the 2 p.m. and 9 p.m. starts. Both are "
+                 "official; neither corrects the other. Nothing on this site picks a winner: the room is listed "
+                 "with both citations and is excluded from the ranking regardless, because the page also prints "
+                 "a $50 add-on."),
+         impact=("Any comparison of a Caesars daily against a Venetian DSE event is unsafe on price alone. Ask the "
+                 "room, or treat the higher figure as the cost of the seat."),
+         source="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"),
+    dict(id="F-15", area="Taxes",
+         title="The county tax guide's own title and its URL disagree by three years",
+         detail=("The Clark County transient-lodging guide the room-tax figure is cited from is served at a slug "
+                 "ending 'july-2021.pdf' while the document's internal title reads 'Genl Info Guide for TLEs Sept "
+                 "2018'. The rate itself was confirmed first-hand on 2026-11-17 from the licence register inside "
+                 "that document, which lists the Venetian / Palazzo at 13.38% under 'Transient Lodging Tax - "
+                 "Resort Hotel (PGC)', and the same 13.38% is printed in the Venetian's own hotel terms."),
+         impact=("The 13.38% used by the calculators is corroborated by two documents, but the county copy is not "
+                 "fresh-dated. Re-check the current rate with the room's checkout itemisation before you treat a "
+                 "true-cost figure as final."),
+         source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"),
+    dict(id="F-16", area="Monitoring",
+         title="Ten of the cited documents could not be read by the scheduled monitor",
+         detail=("The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not "
+                 "(Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM "
+                 "Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn "
+                 "poker-room URL 404s). Recheck2026.py now classifies each failure and the Sources page lists "
+                 "them, because 'could not read' and 'read, unchanged' are different statements - and the monitor "
+                 "refuses to record a run in which nothing at all was readable, so a sandbox with no outbound "
+                 "access cannot overwrite real coverage with zeroes."),
+         impact=("Those rows carry no fresh machine assurance; their values keep their own last human-verified "
+                 "date. Read the linked page by hand before a non-refundable payment."),
+         source=".github/workflows/recheck.yml and data/verified2026/checks.json (repository files, not external citations)"),
     dict(id="X-02", area="Official page defect",
          title="The Venetian series overview still labels an ended series as 'Current Series'",
          detail=("The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, "

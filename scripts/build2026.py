@@ -719,8 +719,15 @@ def check_badge(*urls):
         return "<span class='note'>document not in the monitor</span>"
     if any(h.get("change") == "CHANGED" for h in hits):
         return "<span class='tag t-bad' title='The official document changed after this value was transcribed'>source changed</span>"
-    if any(h.get("change") == "fetch error" for h in hits):
-        return "<span class='tag t-warn'>fetch error</span>"
+    errs = [h for h in hits if h.get("change") == "fetch error"]
+    if errs:
+        # Say which kind of failure it was: a property that refuses a datacenter runner is not a
+        # source that moved, and neither of them is a source that has been checked.
+        kinds = sorted({h.get("error_kind") for h in errs if h.get("error_kind")})
+        lab = ("monitor could not read it: " + ", ".join(kinds)) if kinds else "fetch error"
+        return ("<span class='tag t-warn' title='The scheduled re-check could not open this document, "
+                "so nothing about it is proven for this run. The value keeps its own last verified "
+                "date.'>%s</span>" % esc(lab))
     if all(h.get("change") == "first check" for h in hits):
         return "<span class='tag t-info'>baseline set</span>"
     return "<span class='tag t-ok'>unchanged</span>"
@@ -1533,7 +1540,9 @@ ROOM_META = {
         walk_key="V-WYN",
         title="Wynn / Encore",
         room="Wynn poker room",
-        desc="Host room for the WPT World Championship. Its own poker-room page returned a not-found page on 2026-11-17.",
+        desc="Host room for the WPT World Championship (Nov 27 - Dec 21) and the daily slate. Its page states "
+             "the Friday daily is a '$40,000 guaranteed NLH Rebuy' and prints no buy-in or entry limit for any "
+             "daily event, so no Wynn event can enter the single-entry table.",
         page="venues/wynn.html",
     ),
     "horseshoe": dict(
@@ -1659,6 +1668,15 @@ page for entrances, hours and any access requirement before you travel.</p></div
 def p_venue_other():
     blocks = []
     for v in contentmod.OTHER_VENUES:
+        # The date printed next to "Checked" must be the date recorded on *that* venue's own reading,
+        # never the build date: an earlier pass hardcoded 2026-11-17 here while five of the seven rooms
+        # say "Not re-read in this session". A checked-date that is really a build-date is how a page
+        # certifies evidence nobody looked at.
+        _read = max([f["retrieved"] for f in v["earlier_findings"] if f.get("retrieved")] or [RETRIEVED])
+        if v.get("checked"):
+            _when = "Checked %s:" % v["checked"]
+        else:
+            _when = "Not re-read in this pass (last read %s):" % _read
         finds = "".join(
             '<div class="quote">%s<div class="note">%s, retrieved %s</div></div>'
             % (esc(f["text"]), srclink(f["url"]), esc(f["retrieved"]))
@@ -1666,11 +1684,11 @@ def p_venue_other():
         blocks.append(
             "<div class='panel'><h2>%s</h2>"
             "<p class='note'><strong>Poker room:</strong> %s</p>"
-            "<p><strong>Checked 2026-11-17:</strong> %s</p>"
+            "<p><strong>%s</strong> %s</p>"
             "%s"
             "<p><strong>Verdict:</strong> %s</p>"
             "<p class='note'>Provenance: %s. Official page: %s</p></div>"
-            % (esc(v["name"]), esc(v["poker_room"]), esc(v["status_this_session"]), finds,
+            % (esc(v["name"]), esc(v["poker_room"]), esc(_when), esc(v["status_this_session"]), finds,
                esc(v["verdict"]), esc(v["provenance"]), srclink(v["url"])))
     return page("Other rooms", """
 <div class="hero"><h1>Other Strip poker rooms</h1>
@@ -1682,7 +1700,8 @@ documented rather than filled.</p></div>
 not a preference. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
 entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule.
 Horseshoe publishes six start times and nothing else. Resorts World's poker page redirects to a dining
-page. Westgate publishes room hours. Wynn's poker page returned a not-found page today. Flag
+page. Westgate publishes room hours. Wynn's live page states a Friday rebuy and prints no daily buy-in.
+Flag
 <a href="flagged.html#F-10">F-10</a>.</div>
 
 %s
@@ -1991,9 +2010,12 @@ def p_sources(events):
                                  url=url, date=str(h.get("retrieved") or ""),
                                  use="The %s this site publishes for %s." % (field, h["name"])))
     for v in contentmod.OTHER_VENUES:
+        # the date is the one recorded on that venue's own reading; an unread room must not be
+        # dated with this build's date just because its provenance text happens to say "session"
+        _vdate = v.get("checked") or max([f["retrieved"] for f in v["earlier_findings"]
+                                          if f.get("retrieved")] or ["2026-11-16"])
         srcs.append(dict(kind="Other venue", name=v["name"], url=v["url"],
-                         date=RETRIEVED if "this session" in v["provenance"] else "2026-11-16",
-                         use=v["verdict"]))
+                         date=_vdate, use=v["verdict"]))
         for f in v["earlier_findings"]:
             srcs.append(dict(kind="Other venue", name="%s \u2014 %s" % (v["name"], f["url"].rsplit("/", 1)[-1][:44]),
                              url=f["url"], date=f["retrieved"], use=f["text"]))
@@ -2035,6 +2057,47 @@ def p_sources(events):
                    % (esc(CHECKS_META.get("last_run") or run.get("checked") or "unknown"),
                       len(rows_) or CHECKS_META.get("monitored", 0), changed_n, err_n,
                       first_check, never_read))
+    cov = ""
+    if CHECKS_META:
+        _run = (CHECKS_META.get("runs") or [{}])[0]
+        _bad = [r for r in _run.get("results", []) if r.get("change") == "fetch error"]
+        # An older checks.json (written before the fetch classified its failures) still has to be
+        # read truthfully, so derive the kind from the status code rather than calling a documented
+        # 403 "unreachable".
+        _KIND = {401: "blocked", 403: "blocked", 429: "blocked", 301: "redirect-loop",
+                 302: "redirect-loop", 303: "redirect-loop", 307: "redirect-loop",
+                 404: "not found", 410: "not found", 451: "not found"}
+        _MEAN = {"blocked": "the property's bot protection refused the runner; the page is live for a "
+                            "person, so this value has to be re-read by hand",
+                 "redirect-loop": "the host keeps redirecting without serving content (a cookie or "
+                                  "region wall). Not evidence that the page moved",
+                 "not found": "the official URL no longer serves a document - the citation itself "
+                              "needs correcting",
+                 "unreachable": "the fetch failed; nothing about the document is proven"}
+        _rows = ""
+        for r in _bad:
+            kind = r.get("error_kind") or _KIND.get(r.get("status")) or "unreachable"
+            note = r.get("reason") or _MEAN.get(kind) or _MEAN["unreachable"]
+            if r.get("status") and int(r["status"]) >= 500:
+                kind = "server error"
+                note = "the official host returned 5xx. Retry before concluding anything"
+            _rows += ("<tr><td>%s</td><td class='num'>%s</td><td>%s</td><td class='note'>%s</td></tr>"
+                      % (srclink(r.get("url")), esc(r.get("status") or "no response"),
+                         esc(kind), esc(note)))
+        if _bad:
+            cov = ('<div class="panel"><h2>What the scheduled monitor could not read</h2>'
+                   '<p class="note">%d of %d cited documents could not be fetched in the latest run. '
+                   'Those rows carry <em>no</em> fresh assurance: a source the runner cannot open is '
+                   'not a source that has not changed. The value on the row keeps its own last '
+                   'human-verified date, and the badge on the table says so. Open the link and read '
+                   'it, or re-read it before any non-refundable payment.</p>'
+                   '<table><thead><tr><th>Document</th><th class="num">HTTP</th><th>Failure kind</th>'
+                   "<th>What that means</th></tr></thead><tbody>%s</tbody></table></div>"
+                   % (len(_bad), CHECKS_META.get("monitored", len(_run.get("results", []))), _rows))
+        else:
+            cov = ('<div class="panel"><h2>What the scheduled monitor could not read</h2><p class="note">'
+                   'Nothing: every cited document was fetched in the latest recorded run. That proves '
+                   'reachability and a hash comparison, not that any transcription is correct.</p></div>')
     return page("Sources", """
 <div class="hero"><h1>Source register</h1>
 <p class="lede">Every document this site is built from, with the date it was read and what it was used
@@ -2056,10 +2119,11 @@ either way; those rows keep their previous hash and their old read date.</p>
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 </div>
 
+%(cov)s
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}), nurls=monitored_n, monitor=monitor), "sources.html")
+""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}), nurls=monitored_n, monitor=monitor, cov=cov), "sources.html")
 
 
 def p_repo_review(events):

@@ -115,3 +115,14 @@ summary { cursor: pointer; font-weight: 600; }
 .globalsearch input[type="search"]:focus {
   outline: 2px solid var(--accent, #3b6ea5); outline-offset: 1px;
 }
+
+/* Grouped navigation. Each category is labelled, and a page this generator does not rebuild is
+   marked "static" so a preserved snapshot cannot be mistaken for a live table. */
+nav.site { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+nav.site .navgroup { font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--muted, #94a3b8); margin-right: 2px; padding-left: 6px;
+  border-left: 2px solid rgba(148,163,184,.35); }
+nav.site .navgroup:first-child { padding-left: 0; border-left: 0; }
+nav.site a.static { opacity: .78; border-bottom: 1px dotted rgba(148,163,184,.6); }
+nav.site a.static::after { content: "\2020"; margin-left: 3px; font-size: 10px; }
+nav.site a.cross { border-bottom: 1px solid rgba(34,211,238,.55); opacity: 1; }

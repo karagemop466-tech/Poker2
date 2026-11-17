@@ -35,6 +35,41 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Prove the committed pages match the committed data (clean checkout, before any fetch)
+        run: |
+          # Runs before anything is fetched on purpose. check_plan_fresh.py below re-checks
+          # reproducibility *after* this job has rendered, so a page that was hand-edited (or a
+          # dataset committed without its pages) would be silently overwritten by this job's own
+          # render step and pushed as if it were intended. On the clean tree there is nothing to
+          # blame but the last commit, so this is where that drift is visible. Non-blocking: the
+          # outcome is carried into scripts/commit-refresh.sh, which opens a review PR instead of
+          # ending the run with no artefacts.
+          rc=0
+          { python3 scripts/build-events.py --check \
+            && python3 scripts/build-schedule.py --check \
+            && python3 scripts/build-walk.py --check \
+            && python3 scripts/build-site.py --check \
+            && python3 scripts/check_plan_fresh.py --strict ; } > /tmp/pristine.log 2>&1 || rc=$?
+          cat /tmp/pristine.log
+          {
+            echo "## Clean-checkout reproducibility (before any fetch)"
+            echo
+            echo '```'
+            cat /tmp/pristine.log
+            echo '```'
+            if [ "$rc" -ne 0 ]; then
+              echo
+              echo "**exit $rc** - main's committed pages do not reproduce from main's committed data. " \
+                   "This job's render step will regenerate them, so review the diff in the pull request " \
+                   "rather than assuming the previous commit was right."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$rc" -ne 0 ]; then
+            echo failed >> /tmp/verify.failed
+            echo "::warning title=Committed output not reproducible::plan/** does not reproduce from site-data on a clean checkout"
+          fi
+          exit 0
+
       - name: Check every official source (hash + tracked values)
         run: |
           # The self-test runs the tracked patterns from site-data/sources.json against text that
@@ -84,8 +119,13 @@ jobs:
           cat /tmp/verify.log
           if [ "$verify_status" -ne 0 ]; then
             echo failed > /tmp/verify.failed
-            echo "GENERATOR CHECK FAILED: official text no longer matches the transcription - opening a review PR"
           fi
+          cat /tmp/verify.log /tmp/pristine.log 2>/dev/null > /tmp/verify.all || true
+          if [ -f /tmp/verify.failed ]; then
+            echo "GENERATOR CHECK FAILED: official text no longer matches the transcription (or the " \
+                 "committed pages were already unreproducible) - opening a review PR"
+          fi
+          true
 
       - name: Plan pages reproduce from the datasets and the reports are well-formed
         run: python3 scripts/check_plan_fresh.py

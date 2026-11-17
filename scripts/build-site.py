@@ -1167,9 +1167,12 @@ def p_flagged():
         chg_table = ('<div class="tablewrap compact"><table><thead><tr><th>Checked</th><th>Source</th><th>State</th>'
                      "<th>What changed</th></tr></thead><tbody>" + chg_rows + "</tbody></table></div>")
     else:
-        chg_table = ('<div class="note bad">No monitor run yet. The workflow writes '
-                     "<code>site-data/change-report.json</code> on its first scheduled run (06:30 UTC daily), and "
-                     "affected rows on the event tables pick up a &ldquo;source changed&rdquo; badge automatically.</div>")
+        chg_table = ('<div class="note bad">No monitor run is recorded in the repository yet. '
+                     "<a href=\"" + WORKFLOW_URL + "\">"
+                     "<code>plan-refresh.yml</code></a> re-reads every official source on a schedule (06:30 UTC daily) "
+                     "and writes <code>site-data/change-report.json</code>; a row whose source moved picks up a "
+                     "&ldquo;source changed&rdquo; badge when that report is committed with the pages it feeds. "
+                     "Runs that have not been committed are still visible in the workflow log.</div>")
     items = ""
     for f in FLAGS["items"]:
         sev = "bad" if f["severity"] == "High" else ("warn" if f["severity"] == "Medium" else "info")
@@ -1197,7 +1200,8 @@ def p_flagged():
                           + '</td><td class="sm">' + esc(json.dumps(detail)) + "</td></tr>")
         if not items:
             items = '<tr><td colspan="4" class="muted">No differences: the live schedule page matches the dataset row for row.</td></tr>'
-        diff_html = ('<h2>Live schedule scrape &middot; last run ' + esc(sd.get("checked") or "?") + "</h2>"
+        _live = sd.get("checked") or "not run recorded in the repository yet"
+        diff_html = ('<h2>Live schedule scrape &middot; last run ' + esc(_live) + "</h2>"
                      + badge(str(sd.get("state", "?")), "ok" if sd.get("state") == "ok" else "bad")
                      + '<div class="tablewrap compact"><table><caption>Written by '
                      '<code>scripts/scrape-schedule.mjs</code> on its own schedule. The scrape never edits the dataset: '
@@ -1468,6 +1472,8 @@ def main():
                 stale.append(fname)
         if stale:
             problems.append("regenerated output differs from the committed page: " + ", ".join(sorted(stale)[:12]))
+        # extend, not +=: `problems` is the module-level list validate() already filled, and an
+        # augmented assignment here would rebind it as a local and lose every accumulated problem.
         probs = problems
     if probs:
         print("BUILD FAILED:")

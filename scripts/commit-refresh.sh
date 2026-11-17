@@ -10,7 +10,10 @@ cd "$(git rev-parse --show-toplevel)"
 git config user.name  "source-refresh[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-FILES=(site-data/snapshots site-data/change-report.json site-data/schedule-diff.json)
+# plan/ is in the list because the change report is a *page input*: plan/flagged.html renders the
+# monitor table and plan/assets/data.js carries the changed-source overlay. Committing the report
+# without the pages that show it is what made the next run's drift check fail for the wrong reason.
+FILES=(site-data/snapshots site-data/change-report.json site-data/schedule-diff.json plan)
 ADD=()
 for f in "${FILES[@]}"; do [[ -e "$f" ]] && ADD+=("$f"); done
 if [ "${#ADD[@]}" -eq 0 ]; then
@@ -92,14 +95,18 @@ PY
     echo "gh pr create failed; branch is pushed and ready for a manual PR: $BRANCH"; exit 1; }
   echo "opened PR for ${NEEDS} source(s) needing review"
 else
-  git commit -q -m "refresh ${STAMP}: official sources unchanged (snapshots only)"
-  BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
-  # main can move while this job runs; rebase onto it and retry rather than failing the run.
+  git commit -q -m "refresh ${STAMP}: official sources unchanged (snapshots + rendered report)"
+  # main can move while this job runs; rebase onto it instead of losing the commit or the other
+  # session's work (same pattern recheck.yml uses).
   for i in 1 2 3; do
-    git pull --rebase --autostash origin "$BRANCH_NAME" && git push -q origin HEAD:"$BRANCH_NAME" && exit 0
-    echo "push attempt $i failed; retrying after rebase"
+    if git push -q origin HEAD:"$(git rev-parse --abbrev-ref HEAD)"; then
+      echo "committed snapshots: every official source matched its tracked values"
+      exit 0
+    fi
+    echo "push attempt $i rejected; rebasing onto origin/main and retrying"
+    git pull -q --rebase --autostash origin main || true
     sleep 5
   done
-  echo "could not push the snapshot commit after 3 attempts" >&2
+  echo "::error::could not push the snapshot commit after 3 attempts"
   exit 1
 fi

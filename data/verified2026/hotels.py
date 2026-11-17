@@ -211,6 +211,14 @@ HOTELS = [
 RATE_LOG = [
     ("2026-11-17", "venetian", "resort_fee", "$55 per night + tax",
      "https://www.venetianlasvegas.com/resort/resort-fee.html", "read this session"),
+    ("2026-11-17", "venetian", "resort_fee", "$55 plus tax per night, payable upon check-in",
+     "https://www.venetianlasvegas.com/resort/resort-fee.html",
+     "re-read first-hand 2026-11-17 by arena/7be88b38-poker2; the page lists the inclusions "
+     "(Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader)"),
+    ("2026-11-17", "venetian", "room_tax", "13.38% transient lodging tax, resort-hotel rate (Paradise Commercial Zone)",
+     "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+     "county licence register row 'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino ... 13.38% ... "
+     "Resort Hotel (PGC)', read 2026-11-17; see flag F-15 on the document's own date"),
     ("2026-11-17", "venetian", "poker_rate", "from $119 (Venetian) / $209 (Palazzo), code EPOKR25",
      "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html", "read this session"),
     ("2026-11-17", "venetian", "qualifying_play", "6 hrs live cash OR $300+ tournament buy-in, per night, before 2 a.m. last night",

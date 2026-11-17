@@ -1261,6 +1261,22 @@
   "t": "Date read Property Field Value",
   "a": "",
   "h": "venetian",
+  "x": "2026-11-17 | venetian | resort_fee | $55 plus tax per night, payable upon check-in | www.venetianlasvegas.com | re-read first-hand 2026-11-17 by arena/7be88b38-poker2; the page lists the inclusions (Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader)"
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
+  "t": "Date read Property Field Value",
+  "a": "",
+  "h": "venetian",
+  "x": "2026-11-17 | venetian | room_tax | 13.38% transient lodging tax, resort-hotel rate (Paradise Commercial Zone) | www.clarkcountynv.gov | county licence register row 'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino ... 13.38% ... Resort Hotel (PGC)', read 2026-11-17; see flag F-15 on the document's own date"
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
+  "t": "Date read Property Field Value",
+  "a": "",
+  "h": "venetian",
   "x": "2026-11-17 | venetian | poker_rate | from $119 (Venetian) / $209 (Palazzo), code EPOKR25 | www.venetianlasvegas.com | read this session"
  },
  {
@@ -4173,7 +4189,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-09",
   "h": "F-09",
-  "x": "F-09 | Other venues | Wynn's poker page is currently unavailable https://www.wynnlasvegas.com/casino/poker-room returned a not-found page on 2026-11-17. Wynn findings on this site are carried from an earlier session's reading of the official WPT structures PDF on 2026-11-16 and are labelled as such. | Wynn rows are marked 'cited, not re-read' and are not presented as current. | www.wynnlasvegas.co"
+  "x": "F-09 | Other venues | The Wynn poker citation on this site pointed at a page that no longer exists https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17"
  },
  {
   "p": "flagged.html",
@@ -4211,6 +4227,30 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
+  "a": "F-14",
+  "h": "F-14",
+  "x": "F-14 | Other venues | Two official Caesars documents print different daily buy-ins for the same room Caesars' poker-tournaments page, re-read first-hand on 2026-11-17, prints '$100 buy-in ... $1,000 guaranteed prize pool' for the four daily Caesars Palace events. The property's own daily NLH flyer, read 2026-11-16, prints $160 for the 2 p.m. and 9 p.m. starts. Both are official; neither corrects t"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-15",
+  "h": "F-15",
+  "x": "F-15 | Taxes | The county tax guide's own title and its URL disagree by three years The Clark County transient-lodging guide the room-tax figure is cited from is served at a slug ending 'july-2021.pdf' while the document's internal title reads 'Genl Info Guide for TLEs Sept 2018'. The rate itself was confirmed first-hand on 2026-11-17 from the licence register inside that document, which lists the"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-16",
+  "h": "F-16",
+  "x": "F-16 | Monitoring | Ten of the cited documents could not be read by the scheduled monitor The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not (Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn poker-room URL 404s). Recheck2026.py "
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
   "a": "X-02",
   "h": "X-02",
   "x": "X-02 | Official page defect | The Venetian series overview still labels an ended series as 'Current Series' The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, 2026' even though today is 2026-11-17 and the live series is DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026). | Do not rely on that page's 'Current Series' label; use the dated event page and sc"
@@ -4222,6 +4262,86 @@
   "a": "F-14",
   "h": "F-14",
   "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "bellagio.mgmresorts.com",
+  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "mgmgrand.mgmresorts.com",
+  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "bellagio.mgmresorts.com",
+  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "mgmgrand.mgmresorts.com",
+  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "assets.contentstack.io",
+  "x": "assets.contentstack.io | 422 | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | 404 | not found | the official URL no longer serves a document - the citation itself needs correcting"
  },
  {
   "p": "sources.html",
@@ -4685,7 +4805,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-16 | Excluded from the single-entry ranking: the official structure sheet states unlimited re-entry."
+  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-17 | Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on e"
  },
  {
   "p": "sources.html",
@@ -4725,7 +4845,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-16 | No tournament schedule or structure sheet published on the official page."
+  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-17 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed and priced, but it cannot be compared like-for-lik"
  },
  {
   "p": "sources.html",
@@ -4789,7 +4909,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-17 | No tournament data published on the official page."
+  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-16 | No tournament data published on the official page."
  },
  {
   "p": "sources.html",
