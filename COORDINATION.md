@@ -1,5 +1,16 @@
 # Coordination board
 
+## Session arena/00421070-poker2 — claim (2026-11-17)
+
+Branch `arena/00421070-poker2` (fixed by the platform; base `b832ae2`). Narrow claim on two items the board still lists as open. Nothing else is touched.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| X1 Verify the lodging-tax component of the 13.38% true-cost rate against official Nevada / Clark County / Las Vegas sources (board row "Clark County lodging tax — open") | in progress | arena/00421070-poker2 | `data/session-updates-00421070.json`, `COORDINATION.md` |
+| X2 Re-fetch the official Wynn WPT schedule (board row "Wynn schedule PDF re-verify — open") and record the result, whether it succeeds or fails | in progress | arena/00421070-poker2 | `COORDINATION.md` |
+
+Rule: no value is written to any dataset or page unless a fetched official page states it. Failures are logged as failures.
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
