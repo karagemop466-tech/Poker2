@@ -535,3 +535,46 @@ Started from `origin/main` at `7499702` (after PRs #43/#44, README repair). All 
 | PR to main, merge, confirm GitHub Pages deploy, record result | pending | arena/18aba6dd-poker2 | `COORDINATION.md` |
 
 Explicitly NOT claimed (blocked on user decision or out of scope): S-11 (surface consolidation), S-12 (monitor-job merge), FG-02 (written single-entry confirmation from the poker room — requires contacting the room), FG-05 (dated hotel quote — requires browser booking engine). The root-dashboard surface (`scripts/build_site.py` + `data/master.json` pipeline) is not touched by this session.
+
+## Session arena/18aba6dd-poker2 — completion record (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| S-02: read the 27 remaining official Venetian DSE IV structure sheets; transcribe entry rules + structural values | done | arena/18aba6dd-poker2 | `scripts/build-events.py`, `site-data/events.json`, `site-data/schedule.json`, `site-data/summary-stats.json`, `plan/**` |
+| Plan-surface verification rerun (build-events/build-schedule/build-site `--check`, `check_site.mjs`) | done | arena/18aba6dd-poker2 | `plan/**` |
+| S-06 (plan surface): routed walking minutes for all 12 hotel→venue pairs | done | arena/18aba6dd-poker2 | `site-data/walk.json`, `scripts/build-site.py`, `site-data/{summary,questions,suggestions}.json` |
+| Schedule-builder eligibility rule (primaries must be open to all; restricted candidates listed with reason) | done | arena/18aba6dd-poker2 | `scripts/build-schedule.py`, `site-data/schedule.json` |
+| PR to main, merge, confirm GitHub Pages deploy, record result | recorded below | arena/18aba6dd-poker2 | `COORDINATION.md` |
+
+### Sources read first-hand on 2026-11-17 (session arena/18aba6dd-poker2)
+
+The 27 remaining official Venetian DSE IV structure sheets, each read in full:
+`https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{2,3,4,9,12,13,14,16,17,19,20,21,22,23,24,25,26,27,28,30,31,32,33,34,35,36,37}.pdf`
+— completing the sweep of all 37 published sheets (sheets 1, 5, 6, 7, 8, 10, 11, 15, 18, 29 were read by earlier sessions on 2026-11-16 and were not re-read).
+
+Walking measurements (2 pairs measured fresh 2026-11-17; 10 pairs reused from the dated 2026-11-16 dataset `data/site/walking.json` with the same method):
+- OpenStreetMap Nominatim geocoding: `https://nominatim.openstreetmap.org/search?q=The+Cosmopolitan+of+Las+Vegas%2C+3708+Las+Vegas+Blvd+South&format=json` (geocoded exactly to the official 3708 S Las Vegas Blvd address)
+- OSRM foot profile (FOSSGIS public server): `https://routing.openstreetmap.de/routed-foot/route/v1/foot/...` — Cosmopolitan→Venetian poker room 22.6 min / 1,692 m; Bellagio→Cosmopolitan 16.5 min / 1,235 m
+
+### Verification performed
+
+- `python3 scripts/build-events.py` cross-checks: guarantee parsed from each event name must equal the guarantee printed on that event's sheet (94 rows, mismatch aborts); event-to-sheet tagging must match each sheet's own "Event Numbers" line (no orphan rows).
+- Result dataset: 94 Venetian rows, all sheet-verified (`sheet_read` true, 0 `unverified`); categories: 45 single_entry_candidate, 27 multi_flight, 11 day2_restart, 7 satellite, 2 spend_advantage, 1 team_format, 1 single_entry_2day (new).
+- `--check` modes of all three generators pass; `node scripts/check_site.mjs` passes (15 plan pages, 94 event rows, every data row carries an https official-source link); all pages served HTTP 200 from a local server.
+- Schedule rebuilt: 27 days with an open-to-all primary; 50+ Seniors rows (events 24/32) listed with their restriction instead of being scheduled; best 4-day window Dec 6–9, 2026 (entries $2,300, $170K GTD played, avg ratio 69.3x, every night poker-rate eligible).
+
+### Findings and irregularities from the sweep (published on the plan's Flagged/Unverified pages where relevant)
+
+1. **Event 39's schedule tag is misleading.** The schedule page tags it as a flight row, but its sheet defines exactly one Day 1 (Dec 10) + Day 2 restart — there are no multiple starting flights. Modeled as a new `single_entry_2day` category rather than asserting a "buy into another flight" rule the sheet does not contain. It is also female-only (sheet rule 02), so it stays out of the day plan.
+2. **LIPS events withhold an extra flat fee** for Vegas Connected, INC, DBA Ladies International Poker Series: $10 of the $600 buy-in (sheets 31, 33) and $20 of the $800 buy-in (sheet 32), on top of the house-fee split. Recorded verbatim on each row.
+3. **Satellites guarantee seats, not dollars** ("Guarantee: 2 Seats" on sheets 19, 24, 25): numeric guarantee stays blank by design; the seat text is quoted. The turbo-satellite sheet (25) prints no registration-close wall clock — only "6 levels" — so that field stays blank rather than computed.
+4. **Printed vs arithmetic reg-close times disagree on several multi-flight sheets** (e.g. sheet 2 prints "9 levels + Break (5:55 PM)" while 9×40 min from 11:10 AM lands at ~5:25 PM). The printed wall-clock text is transcribed verbatim, matching the convention used for sheets 1/8 in the earlier session.
+5. **Sheet 28's fee rule** extracts with a line-wrap artifact ("(Rake … - Staff)"); transcribed as extracted, consistent with how sheets 5/6/18/29 were transcribed.
+6. **Event 49's flights play to ~15% of the field** (sheet 20), not the 12.5% printed on the other flight sheets.
+7. **Events 56/59 publish early-registration rake discounts** ($40/$20 off house fees before the event starts, sheet 35/36 rule 07) — recorded in the fee text; not classified spend-advantage because a time-based discount lowers cost rather than buying an edge (unlike the PokerAtlas PRO membership discount on events 18/58).
+8. **Sheet 26 (event 17)**, previously a `not_read` placeholder, resolves cleanly: $400 PLO bounty, $60 fee/$340 pool, $100 bounties, 12.5% payout, silent on re-entry → single-entry candidate.
+
+### Integration / publication record
+
+- Branch `arena/18aba6dd-poker2` (fixed by the platform; file-ownership discipline kept instead of branch-per-task, as with every prior session).
+- PR and Pages deploy result: recorded below after merge.
