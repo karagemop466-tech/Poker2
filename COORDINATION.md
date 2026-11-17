@@ -1572,3 +1572,76 @@ and does not re-do them.
 | N4 Landing page: the root dashboard's nav is 26 flat links mixing live-generated pages with frozen contributor pages; group it by category and state on the landing page which surface is which (S-11 one-surface decision, executed as orientation rather than deletion) | in progress | arena/7be88b38-poker2 | `scripts/build_site.py`, `assets/dashboard.css`, root `*.html` |
 | N5 First-hand re-verification of the load-bearing sources on 2026-11-17, with links, recorded in `research/` | in progress | arena/7be88b38-poker2 | `research/7be88b38-official-recheck-2026-11-17.md` |
 | N6 Final integration: checks green, PR → `main`, merge, Pages deploy confirmed, record here | unclaimed → this session | arena/7be88b38-poker2 | `COORDINATION.md` |
+
+### Completion record — arena/7be88b38-poker2 (2026-11-17)
+
+| Task | Status | Notes |
+|---|---|---|
+| N1 scheduled monitor red on every run | **done** | root cause reproduced locally, fix merged; first green run is the next 06:30 UTC schedule |
+| N2 dead Wynn citation on `/2026/` | **done** | re-pointed to the live page after a first-hand read; flag F-09 rewritten |
+| N3 monitor coverage honesty | **done** | failure classes + reasons, unreadable-source panel, no-egress abort in both monitors |
+| N4 landing page / nav | **done** | five labelled categories, preserved-page marker computed from the generator's own output set, decision path on the dashboard |
+| N5 first-hand re-verification | **done** | `research/7be88b38-official-recheck-2026-11-17.md` |
+| N6 integration | **done** | PR #75 merged, CI green, Pages confirmed below |
+
+**Publication.** PR [#75](https://github.com/karagemop466-tech/Poker2/pull/75) → `main`, merged with
+`gh pr merge 75 --merge` at 22:27:02Z, integration commit `2427b679e68d060da63b72beac759c3cb86b8cc5`.
+On that commit: `Verify site` **success**, `Plan: generated pages match their data` **success**,
+`pages build and deployment` **success**, and the Pages build record reports
+`status: built, error: null` for `2427b67`. The **published** landing page was fetched and re-read (not
+the build log) and carries this session's changes: https://karagemop466-tech.github.io/Poker2/
+
+**Conflicts, and what was kept.** `main` moved four times while this work was in flight (PR #69, #70,
+#71, then #72/#73 and #74). Every conflict was the same append-at-the-end collision in this file and
+was resolved by keeping both sections — nothing from another session was dropped. Two conflicts were
+substantive and were resolved by judgement, not by picking a side:
+
+* `scripts/build2026.py` — `arena/8a8fa20f-poker2` rewrote the sources-page run summary (distinct
+  document count, first-check vs never-read separation) at the same place this session added the
+  unreadable-source panel. Both blocks are in the merged file; the panel uses their counts.
+* `.github/workflows/plan-refresh.yml` — `arena/8a8fa20f-poker2` diagnosed the *same* failing job
+  independently the same day and fixed it by separating published inputs from run artefacts
+  (`scripts/check_plan_fresh.py`). That boundary is better than this session's first answer, so this
+  session's seed files (`site-data/change-report.json`, `site-data/schedule-diff.json`) and its
+  "uncommitted page input" guard in `scripts/build-site.py` were **removed** in the merge — the guard
+  would have made their (correct) post-fetch render step fail. What this session still contributes is
+  the clean-checkout check that runs *before* any fetch, which their design cannot see: after the job's
+  own render step, a hand-edited committed page is silently overwritten and pushed as if intended.
+  Recorded here because deleting one's own fix in favour of another's is part of the record.
+
+**Verified first-hand on 2026-11-17** (full transcriptions in the research note): [DSE IV schedule
+page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html)
+· [structure sheet
+5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf)
+· [Wynn poker](https://www.wynnlasvegas.com/casino/poker) · [Caesars poker
+page](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip) · [Venetian
+resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) · [Clark County transient-lodging
+guide](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf).
+No event, fee or tax value moved, so **no row was rewritten**. Confirmed single-entry events: still
+**0** — the sheet read today again prints stack, levels, the $58/$242 split, the guarantee and the
+payout share, and no entry rule, which is the direct answer to "remove the unverified label from each
+event that is confirmed": the structural fields are labelled read, the entry rule is labelled silent.
+
+**New flags published:** F-14 (two official Caesars documents disagree on the same daily buy-in —
+$100 page vs $160 flyer; no figure chosen), F-15 (the county guide's internal title says Sept 2018
+while it is served at a `july-2021.pdf` slug), F-16 (10 of 61 cited documents are not machine-readable
+from the runner). Rate log gained two dated lines.
+
+**Still open after this session — for whoever picks it up:**
+
+1. `plan-refresh.yml` cannot be exercised from here: `gh workflow run` returns
+   `HTTP 403: Resource not accessible by integration` for the dispatch endpoint, as `recheck.yml`
+   pushes have shown before. The fix is proven by reproduction of the failure and by the checks running
+   green on the merged tree; **the next 06:30 UTC scheduled run is the end-to-end proof** — it should
+   now stay green and, when it commits, commit `plan/**` with the report that feeds it.
+2. `.github/workflows/source-monitor.yml` (the root registry, 87 URLs) has recorded **no run at all**
+   since it was created 2026-11-16. `recheck.yml` ran ~10 hours after its 06:00 cron and
+   `plan-refresh.yml` ~10 hours after 06:30, so the scheduler is queuing very late rather than skipping;
+   this session did not merge the three monitors' registries (S-12) — that is still a decision, not a
+   cron fix.
+3. F-05 (dated checkout quote) is still open: the Venetian booking widget answers with its default
+   calendar window and no price, and `/book` is a JS engine. Nothing was invented for it.
+4. This session's `N4` touched `scripts/build_site.py`, `assets/dashboard.css` and the generated root
+   pages; `scripts/build.py` still regenerates a subset of the same filenames and `verify.yml` restores
+   them, the no-op drift check `arena/32a40b2f-poker2` flagged. That split is still unresolved and still
+   a cross-surface decision.
