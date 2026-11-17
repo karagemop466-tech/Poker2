@@ -2,7 +2,7 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | in progress | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
+| Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | done | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
@@ -514,3 +514,11 @@ Publication record for PR #34 (2026-11-16):
   excerpt duplicated the single-entry excerpt verbatim when both came from the same sentence.
 - Follow-ups recorded for the next session: `S-11` (choose one surface to keep), `S-12` (merge the three scheduled
   monitor jobs), `S-02` (27 structure sheets unread), `FG-02` (get the single-entry answer in writing).
+
+## Session arena/f4e82c6f-poker2 — README repair and repository documentation audit (2026-11-17)
+
+- Claim commit: `81f366a` on the fixed active branch `arena/f4e82c6f-poker2`; pushed to that branch after `git pull --rebase origin main` confirmed it was current.
+- Replaced the malformed root README, which contained literal merge-conflict markers and duplicated/contradictory historical README text, with a current usage guide describing the root dashboard, the separate `/plan/` surface, retained archives, generator ownership, data policy, and monitoring workflows.
+- Checks: `python3 scripts/audit.py` passed (83 Venetian event rows, 13 other-venue rows, 8 hotel rows, 60 sources); `python3 scripts/build_site.py` completed (15 pages, 178 events, 10 hotels); `python3 scripts/check_links.py` passed (24 pages, 1,749 links, zero broken internal links and zero disallowed external hosts); `git diff --check` and README relative-link checks passed.
+- Irregularity: running `python3 scripts/monitor.py` in this sandbox checked 22 URLs and got 22 fetch errors. Its local report/registry changes were discarded so this documentation-only task does not publish errors as a fresh monitor run. This indicates an environment/network retrieval failure, not confirmation that sources are unchanged; check the scheduled Actions run/report. The repository has multiple monitor workflows with separate registries; consolidation remains a documented open integration decision (S-12).
+- No external source facts were added or changed in this task. The official-source evidence remains the cited dataset and links audited by `scripts/audit.py`.
