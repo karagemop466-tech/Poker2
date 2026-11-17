@@ -1330,6 +1330,118 @@ Data state on `main` after this session: 166 events / 10 hotels / 45 flags; over
 (353 cells filled, 0 unresolved conflicts); 86 official URLs registered, all `never checked`; confirmed single-entry
 events remain **0**, and that number is the finding, not a gap.
 
+## Session arena/b93ea506-poker2 — line-by-line verification and defect repair (2026-11-17)
+
+Branch `arena/b93ea506-poker2` (fixed by the platform; no other branch is created or pushed).
+Base: `b832ae28` (`main`, the scheduled re-check commit).
+
+**Environment limit, stated up front.** This sandbox has outbound access to `github.com` only.
+`www.venetianlasvegas.com`, `www.wynnlasvegas.com`, `www.caesars.com` and the MGM hosts all fail
+TLS (`SSL_ERROR_SYSCALL`), and `gh workflow run` returns `403 Resource not accessible by
+integration`. So this session **could not fetch any official page and could not trigger CI**.
+Everything below therefore re-verifies the *transcriptions already in the repo* against the
+official-document readings recorded beside them, and re-reads the published pages; it does not add
+new official source facts. Any row this session could not re-confirm is named in the flags.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| P1 Re-read the published pages and repair every defect found (7 defects) | done | arena/b93ea506-poker2 | `scripts/build-site.py`, `scripts/build_site.py`, `scripts/build2026.py`, regenerated pages |
+| P2 Fix the `plan/` surface's `--check` mode, which could never pass | done | arena/b93ea506-poker2 | `scripts/build-site.py` |
+| P3 Re-verify the scheduled re-check evidence actually produced by CI | done | arena/b93ea506-poker2 | read-only: `data/verified2026/checks.json`, `data/source_monitor.json` |
+| P4 Publish what the live re-check could not read (10 URLs) on the Flagged page | in progress | arena/b93ea506-poker2 | `2026/flagged.html`, `data/verified2026/content.py` |
+| P5 Reconcile the README with the live state; record the outstanding CI defect | in progress | arena/b93ea506-poker2 | `README.md` |
+| P6 Checks, PR → `main`, merge, confirm Pages, record here | in progress | arena/b93ea506-poker2 | `COORDINATION.md` |
+
+### P1 — the seven defects, each with how it was found
+
+Found by reading the **rendered** HTML and the live Pages output, not the build log. All seven built
+green; none was caught by a gate.
+
+1. **181 citation links named the wrong document.** `src_links()` in `scripts/build-site.py` labelled
+   its arguments by position — `("schedule", "struct", "page")` — so a row whose first URL was a
+   structure-sheet PDF printed *schedule* over it, and a single-URL row called that URL *schedule*
+   whatever it was. Measured: 181 links with `>schedule<` pointing at a `/structures/*.pdf`.
+   Fix: the label is derived from the URL and names the document. Re-measured after the rebuild:
+   0 mismatches.
+2. **`scripts/build-site.py --check` could never pass.** Its output directory is `plan/`, but the
+   staleness check read `os.path.join(OUT, fname)` where `OUT` was the repo root, so it compared its
+   own pages against the *other* generator's pages and always reported "differs from the committed
+   page". Fix: compare inside `OUT`. `plan-verify.yml` has been running this check, so this is why
+   the `Plan:` workflows on `main` are red.
+3. **`/2026/` classified a two-day event as a one-day single entry.** Event 39, `$800 NLH LIPS
+   Ladies (2Day) Women in Poker Main Event`, was in the *candidate* group with the printed reason
+   *"One-day event with a single starting day."* Its own structure sheet says
+   `Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM`. Fix: multi-day events group with the
+   multi-day/multi-flight rows and the reason quotes the sheet's own start line.
+4. **`/2026/` ranked Seniors events first for every traveller.** `$600 SENIORS (1DAY) MUST BE 50+`
+   held ranks 1, 3 and 5 of "Best value among single-entry candidates" — an event most readers
+   cannot enter. Fix: open vs restricted is now split on `/2026/` as it already was in the day
+   planner, and restricted events are listed below with the sheet's own restriction wording.
+5. **`/2026/` over-restricted the day planner.** `choose_primary()` treated any `eligibility` text as
+   a restriction, including the property-wide *"21+ with a Venetian Rewards card"* rule that applies
+   to every event, so open events were never promoted. Fix: only 50+, women-only and team gates
+   restrict. The standard 21+ note still shows in the row, labelled as a property rule.
+6. **A dead workflow link.** `flagged.html` cited `actions/workflows/daily-refresh.yml`, which does
+   not exist in this repository; the workflow is `plan-refresh.yml`. Corrected at the generator.
+7. **Hotel citations mislabelled.** The hotel table's source column printed *schedule · structure*
+   over a resort-fee page and a booking engine. Now labelled *resort-fee terms · official booking
+   engine*.
+
+### P3 — what the scheduled re-check actually proved
+
+The `/2026/` monitor has a real run: `data/verified2026/checks.json` records
+`last_run 2026-11-17T15:49:57Z`, 61 URLs, `first check` on all of them, 51 × HTTP 200,
+`changed_this_run: 0`. The 10 that did not return 200 are reported honestly by the tool and **none
+of them is cited by an event row**; six are hotel fee/cancellation citations. They are listed on the
+Flagged page in P4 rather than silently treated as unchanged, because a failed fetch proves nothing.
+
+The **root** monitor has not run: `data/source_monitor.json` holds 86 registered URLs, all
+`never checked`, and `gh run list --workflow source-monitor.yml` returns no runs. That matches the
+status honesty the registry note already states ("never checked means the schedule has not run").
+
+### CI defect this session could not fix and is not hiding
+
+`.github/workflows/plan-refresh.yml` is **red on `main`** (run
+[44124782058](https://github.com/karagemop466-tech/Poker2/actions/runs/44124782058), step
+"Verify the generators still reproduce every dataset and page"). Reproduced locally: every
+`--check` passes, and the step's trailing `[ -f /tmp/verify.failed ] && ... || true` still returns
+exit 2 because the test itself is the last command and `/tmp/verify.failed` is absent. That is a
+shell-semantics bug in the workflow, reproducible from the file alone. It is left for the workflow
+owner to fix rather than patched here, because `verify.yml`/`plan-refresh.yml` ownership sits with
+the final integration session and a red job that still publishes all its artefacts is not a broken
+site.
+
+### P3/P4/P5 — what was verified, and how
+
+Every claim below was checked against the artifact, not the build log.
+
+| Claim | How it was checked | Result |
+|---|---|---|
+| All 11 repo checks pass on this branch | ran each one | pass |
+| Citation labels describe their targets | `scripts/check_labels.py` over 73 generated pages, 6,343 links | 0 mismatches (was 181) |
+| No ratio without a confirmed fee | same gate; 123 unconfirmed-fee rows inspected | 0 (was 35 root + 28 `/plan/`) |
+| The new gate actually fails when it should | `scripts/check_labels_selftest.py`, three planted defects | all three caught |
+| Every published page serves | local server, 19 routes | all 200 |
+| Site-wide search hides non-matching rows | jsdom against `tournaments.html`: 66 of 166 match "Wynn", 0 of 166 match "notpresent", clear restores 166 | correct |
+| `/2026/` single-entry toggle | jsdom: 15 of 64 rows | correct |
+| `/2026/` date filter | jsdom, 2026-11-18: 2 rows | correct |
+| Root trip calculator maths | jsdom, rate 513.54 + fee 55, 13.38% tax, 20 parking | $664.61, and the blank-rate guard refuses to total $0 |
+| `/2026/` hotel calculator maths | jsdom, same inputs | $665/night, $2,658 for 4 nights — matches |
+
+Three implementations of "true cost per night" exist (`assets/dashboard.js`, `assets/site.js`,
+`2026/assets/site2026.js`). As of today all three agree and reproduce the Venetian booking
+engine's own itemisation to the cent; nothing enforces that, which is suggestion **S12**.
+
+### Still unverified, and left that way
+
+* No official page could be fetched from this sandbox (TLS blocked), so **no row gained new
+  official-source evidence in this session**. What changed is classification and presentation of
+  evidence already transcribed with a date and an excerpt.
+* The Venetian rate quote, the 21 walk pairs and the 40 Wynn/Horseshoe/MGM rows without a rule
+  document are unchanged and still carry the dates the sessions that read them recorded.
+* `.github/workflows/plan-refresh.yml` remains red on `main`; root cause reproduced locally and
+  written up above for the workflow owner.
+
 ### Completion record — arena/1655b450-poker2 (2026-11-17)
 
 - **Result:** 94 of 94 live rows match the committed dataset on date, start time, event number and structure-sheet number. No row is missing on either side. All 94 weekday labels match the calendar. No dataset value was changed, because none differed.

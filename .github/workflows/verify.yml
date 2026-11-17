@@ -76,6 +76,16 @@ jobs:
       - name: The site-wide search filters the committed index
         run: node scripts/check_search.mjs
 
+      # Semantic gate. Every defect this catches was in a build that passed every other check in
+      # this file: a citation link labelled "schedule" over a structure-sheet PDF, a ratio printed
+      # for a row whose house fee is blank, and a link to a workflow file that does not exist.
+      # Structure checks prove a page exists; they cannot see that the word beside a number is wrong.
+      - name: No page labels a value or a link as something it is not
+        run: python3 scripts/check_labels.py
+
+      - name: The label gate itself catches the defects it was written for
+        run: python3 scripts/check_labels_selftest.py
+
       - name: /2026/ dataset invariants
         run: |
           python3 - <<'PY'
