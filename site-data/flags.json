@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "intro": "Everything that could not be confirmed from an official source, plus every inconsistency found while reading one. Nothing here blocks the site; each item says what to do next. 'Unverified' is a state, not an estimate.",
  "items": [
   {
@@ -26,11 +26,11 @@
    "id": "FG-03",
    "area": "Coverage",
    "severity": "Medium",
-   "title": "27 of 37 structure sheets have not been read",
-   "detail": "11 one-day rows (events 08, 17, 20, 24, 27, 32, 36, 40, 43, 52, 57) are published with date/time/name/guarantee only: fee, house cut, starting stack, level length and registration cutoff stay blank and the row is marked UNVERIFIED. Multi-flight rows also lack fee data except where a read sheet covers them.",
+   "title": "23 of 37 structure sheets have now been read; 14 remain",
+   "detail": "13 more official sheets were read in full on 2026-11-17 (documents 2, 3, 4, 9, 12, 13, 14, 16, 17, 19, 20, 21, 22), on top of the 10 read on 2026-11-16 (1, 5, 6, 7, 8, 10, 11, 15, 18, 29). Every newly read sheet was cross-checked against its schedule-page row: buy-in, guarantee, start time, late-registration close and the Day 2 restart time agree on all 13 - zero mismatches. None of the 13 prints a rebuy, add-on or re-entry clause; sheet 4 prices a $20 house-fee discount for registering before the start of Day 1A, and sheets 2, 3, 4, 9, 12, 13, 14, 20, 21 state the multi-flight/Day-2-bagging rule instead. 14 sheets (23-28, 30-38 by document number: 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37) are still unread: their rows keep blank fee/stack/level/registration cells and the UNVERIFIED label.",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "action": "The daily GitHub Actions job fetches every sheet URL and reports changes; reading the remaining 27 is a follow-up pass (suggestion S-02).",
-   "status": "open task"
+   "action": "Read the remaining 14 PDFs and add them to SHEETS in scripts/build-events.py, then re-run python3 scripts/build-events.py && python3 scripts/build-schedule.py && python3 scripts/build-site.py. The 2026-11-17 pass stopped because the document fetcher began returning signature errors for the remaining URLs; retry from a browser or re-run the job.",
+   "status": "partly resolved - 23 of 37 read as of 2026-11-17"
   },
   {
    "id": "FG-04",
@@ -207,10 +207,10 @@
    "area": "Site data",
    "severity": "Low",
    "title": "Buy-in convention for unread sheets",
-   "detail": "For the 34 rows whose sheet was read, the buy-in is fee-inclusive ('$90 of the $600 Buy-In is withheld for house fees'). For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter is shown as the published buy-in with a caveat.",
+   "detail": "For the 34 rows whose sheet was read, the buy-in is fee-inclusive ('$90 of the $600 Buy-In is withheld for house fees'). For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter is shown as the published buy-in with a caveat. Confirmed on the 2026-11-17 pass: for all 13 sheets read that day, the buy-in stated in the schedule-page event name equals the buy-in in the sheet's house-fee line, so no row needed to change.",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
    "action": "Reading the remaining sheets closes this.",
-   "status": "open task"
+   "status": "checked - no mismatch on the 13 sheets read 2026-11-17"
   },
   {
    "id": "FG-20",
@@ -221,6 +221,26 @@
    "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
    "action": "None; naming deviation is environmental.",
    "status": "noted"
+  },
+  {
+   "id": "FG-21",
+   "area": "Venetian structure sheets",
+   "severity": "minor",
+   "title": "Sheet 13 cross-references a flight set that its own header does not cover",
+   "detail": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf is headed \"Day B+D @ 5:10 PM\" and its footer says \"SEE OTHER STRUCTURE SHEET FOR DAYS A+C+F\", while dse_nov_2026-structure_12.pdf (header \"Day A+C+E @ 11:10 AM\") says \"SEE OTHER STRUCTURE SHEET FOR DAYS B+D+F\". The six flights published for Event #26 are 1A/1C/1E (11:10, sheet 12), 1B/1D (5:10 PM, sheet 13) and 1F Turbo (5:10 PM, sheet 14), so at least one footer is stale. The dataset follows the schedule page, not the footers.",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "action": "Ask the Venetian poker room which footer is correct before relying on the cross-reference; no published value in the dataset depends on it.",
+   "status": "flagged for review"
+  },
+  {
+   "id": "FG-22",
+   "area": "Verification tooling",
+   "severity": "process",
+   "title": "14 sheets stay unread because the document fetcher failed mid-pass on 2026-11-17",
+   "detail": "The 2026-11-17 re-read pass completed 13 of the 27 outstanding PDFs and then the fetch tool began returning signature errors for every remaining URL from the same host, including retries after a pause. The 14 unread sheets are document numbers 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36 and 37. They are NOT marked verified and their rows stay blank + labelled UNVERIFIED.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "Re-run the pass (browser save of each PDF, then transcribe into scripts/build-events.py) - the sheet URLs are stable and the build aborts if a transcription disagrees with the schedule page.",
+   "status": "open"
   }
  ]
 }

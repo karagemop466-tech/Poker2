@@ -85,12 +85,12 @@
   },
   {
    "id": "S-02",
-   "title": "Read the remaining 27 structure sheets",
+   "title": "Finish the last 14 structure sheets",
    "category": "data",
-   "what": "Extend the refresh job to extract the rule block from each sheet and promote rows automatically when a sheet states an entry limit.",
-   "why": "Turns 11 unverified one-day rows into either qualifying or excluded rows, and makes 'confirmed' mean something for events 08, 17, 20, 24, 27, 32, 36, 40, 43, 52, 57.",
+   "what": "23 of the 37 official Venetian sheets have now been read in full (10 on 2026-11-16, 13 more on 2026-11-17). 14 remain: documents 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37.",
+   "why": "Each sheet read turns an UNVERIFIED row into either a sheet-silent single-entry candidate or a confirmed spend-more event, and fills its fee, stack, level and registration cells. The 2026-11-17 pass resolved 12 of the 15 unverified rows the surface had carried.",
    "effort": "one workflow change, no API key",
-   "status": "awaiting your choice"
+   "status": "partly implemented 2026-11-17 - 14 sheets left"
   },
   {
    "id": "S-03",
