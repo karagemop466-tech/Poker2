@@ -143,6 +143,13 @@
     "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
     "publisher": "Clark County Department of Business License",
     "retrieved": "2026-11-17"
+   },
+   "venue_location": {
+    "value": "The poker room's official location string is \"The Palazzo, level 2, Grand Canal Shoppes\"; the street address above is the county licence address for the Venetian/Palazzo complex.",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "retrieved": "2026-11-16",
+    "note": "Kept so the in-building directions are not lost to the street address."
    }
   },
   {
@@ -213,6 +220,13 @@
     "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
     "publisher": "Clark County Department of Business License",
     "retrieved": "2026-11-17"
+   },
+   "venue_location": {
+    "value": "The Palazzo, level 2, Grand Canal Shoppes (poker room location)",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "retrieved": "2026-11-16",
+    "note": "The poker room's own official location string, kept alongside the street address rather than replaced by it."
    }
   },
   {
