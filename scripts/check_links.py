@@ -16,6 +16,7 @@ OFFICIAL = (
     "openstreetmap.org",
     # added by arena/e1c079dc-poker2: operator and county official domains
     "westgateresorts.com", "southpointcasino.com", "clarkcountynv.gov",
+    "treasureisland.com", "bellagio.com", "goldennugget.com",
 )
 PAGES = [
     "index.html", "tournaments.html", "schedule.html", "hotels.html", "venues.html",

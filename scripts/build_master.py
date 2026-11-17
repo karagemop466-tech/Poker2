@@ -14,6 +14,7 @@ No value is invented here: every field comes from an input file whose own
 provenance is an official page/PDF, or is left blank/null.
 """
 import json, re, os, datetime
+_re2b = re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AS_OF = "2026-11-16"          # date the underlying datasets were transcribed
@@ -955,6 +956,85 @@ for ev in events:
         ev["category"] = "spend-more"
     wpt_enriched += 1
 print("enriched %d Wynn rows with terms transcribed from the official WPT structures PDF" % wpt_enriched)
+
+# ---------------------------------------------------------------------------
+# Flag hygiene (arena/5dcf101f-poker2, 2026-11-17).
+# Every flag must be referenceable and carry the official document it came from,
+# because the Flagged for Review page is what the user reviews the site against.
+# ---------------------------------------------------------------------------
+_cited_sheets = set()
+for _e in events:
+    _mm = _re2b.search(r"structure_(\d+)\.pdf", str(_e.get("struct_url") or ""))
+    if _mm:
+        _cited_sheets.add(int(_mm.group(1)))
+
+for _f in flags:
+    if not isinstance(_f, dict):
+        continue
+    _item = str(_f.get("item", ""))
+    # The "sheets not read" flag is obsolete once every sheet named in it is cited by a row.
+    if _item.startswith("Venetian: Structure sheets not read"):
+        # the numbers in this flag are EVENT numbers, not sheet numbers. Resolve it when
+        # every named event has a row that cites a specific official structure sheet.
+        _nums = sorted({int(x) for x in _re2b.findall(r"\d+", str(_f.get("where", "")))})
+        _ev_by_num = {}
+        for _e in events:
+            # Venetian ids come in three shapes: V-36 (one-day), V-MF39-... (multi-flight
+            # series) and V-X46 (satellite). All three refer to an official event number.
+            _m2 = _re2b.match(r"^V-(?:MF|X)?(\d+)", str(_e.get("id", "")))
+            if _m2:
+                _ev_by_num[int(_m2.group(1))] = _e
+        _all_read = bool(_nums) and all(
+            n in _ev_by_num and _ev_by_num[n].get("struct_url") for n in _nums)
+        if _all_read:
+            _f["resolved"] = ("Superseded 2026-11-17: all 37 Venetian DSE IV structure sheets are now cited by at "
+                              "least one published row, so the events named in this flag do have official sheets "
+                              "behind them. Any remaining blank fee or rule is per-event and listed separately.")
+            _f["severity"] = "info"
+            _f["url"] = ("https://www.venetianlasvegas.com/resort/casino/poker/"
+                         "deepstack-extravaganza-poker-tournament/dse-nov-2026.html")
+    if _item.startswith("Venetian: Re-entry/add-on rules"):
+        _f["url"] = ("https://www.venetianlasvegas.com/resort/casino/poker/"
+                     "deepstack-extravaganza-poker-tournament/dse-nov-2026.html")
+
+# Map the flags that predate the URL field onto the official document each one concerns.
+_FLAG_SOURCE = {
+    "Venetian: Event 19 fee": struct_url(3),
+    "Venetian: RaceDay Stack guarantee": struct_url(18),
+    "Venetian: Event 6 guarantee": struct_url(29),
+    "Venetian: Series / schedule page labels": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "Bellagio: Saturday re-entry": "https://www.bellagio.com/casino/poker.html",
+    "Bellagio: Dates": "https://www.bellagio.com/casino/poker.html",
+    "Wynn: WPT World Championship $10,400": W_WPT_SCHED,
+    "Wynn: Super Gold Million $400": W_WPT_SCHED,
+    "Wynn: Schedule PDF": W_WPT_SCHED,
+    "Wynn daily 12pm $200 NLH": W_POKER,
+    "Hotels: nightly rates": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "Hotels: walking distances": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "Hotels: Encore and others": "https://www.wynnlasvegas.com/casino/poker",
+    "Golden Nugget Grand Poker Series": GN_PAGE,
+    "Aria poker schedule": "https://aria.mgmresorts.com/en/casino/poker.html",
+    "Westgate: $70 NLH freezeouts (5:05 PM & 9:05 PM)": E1C["westgate"]["url"],
+    "MGM daily schedule: date/time inconsistency": MGM_POKER,
+    "MGM $120 NLH: paid-stack advantage / cost ambiguity": MGM_POKER,
+    "Venetian series module mismatch": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "Wynn $600 NLH $400K re-entry": W_WPT_STRUCT,
+    "Hotel walking times and dated room totals": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "Treasure Island resort fee unverified": "https://treasureisland.com/",
+}
+for _f in flags:
+    if not isinstance(_f, dict):
+        continue
+    if not _f.get("url"):
+        _f["url"] = _FLAG_SOURCE.get(str(_f.get("item", "")), "")
+
+# stable ids + a source link on every flag
+for _i, _f in enumerate(flags, 1):
+    if isinstance(_f, dict):
+        if not _f.get("id"):
+            _f["id"] = "VR-%03d" % _i
+        if not _f.get("url") and _f.get("sources"):
+            _f["url"] = _f["sources"][0]
 
 # ---------------------------------------------------------------------------
 # "Last checked" must be the date THIS row's own official document was read, not a

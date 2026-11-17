@@ -759,13 +759,26 @@ table row citing it gets a <span class="badge b-bad">source changed — re-check
 <tbody>{''.join(rows_m)}</tbody></table>"""
 
     # ---------------- flagged ----------------
-    fl = "".join(
-        f'<div class="flag"><strong>{esc(f.get("item",""))}</strong>'
-        f'{(" · " + esc(f.get("where",""))) if f.get("where") else ""}'
-        f'<br>{esc(f.get("detail",""))}'
-        f'{(" · <a href=" + chr(34) + esc(f.get("url","")) + chr(34) + " target=_blank rel=noopener>source</a>") if f.get("url") else ""}'
-        f'<small class="note">recorded by {esc(f.get("source",""))}</small></div>'
-        for f in master["flags"])
+    def flag_html(f):
+        fid = esc(f.get("id", ""))
+        sev = (f.get("severity") or "").lower()
+        sev_badge = ""
+        if sev in ("high", "medium", "critical"):
+            sev_badge = f' <span class="badge b-bad">{esc(sev)}</span>'
+        elif sev == "info":
+            sev_badge = ' <span class="badge b-good">superseded</span>'
+        src = (f' · <a href="{esc(f["url"])}" target="_blank" rel="noopener">official source</a>'
+               if f.get("url") else ' · <span class="badge b-warn">no official link recorded</span>')
+        resolved = (f'<div class="resolved"><strong>Update {esc(AS_OF)}:</strong> {esc(f["resolved"])}</div>'
+                    if f.get("resolved") else "")
+        return (f'<div class="flag" id="{fid}"><strong>{fid} · {esc(f.get("item",""))}</strong>{sev_badge}'
+                f'{(" · " + esc(f.get("where",""))) if f.get("where") else ""}'
+                f'<br>{esc(f.get("detail",""))}{src}'
+                f'{resolved}'
+                f'<small class="note">recorded by {esc(f.get("source",""))}'
+                f'{(" · retrieved " + esc(f.get("retrieved"))) if f.get("retrieved") else ""}</small></div>')
+
+    fl = "".join(flag_html(f) for f in master["flags"] if isinstance(f, dict))
     body_f = f"""
 <h1>Flagged for review</h1>
 <p class="lead">{n_flags} irregularities and open items. None of these blocks the data — review them and request changes.

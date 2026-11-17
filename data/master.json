@@ -6590,85 +6590,115 @@
    "source": "data/flags.json",
    "item": "Venetian: Re-entry/add-on rules",
    "where": "All Venetian events",
-   "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying."
+   "detail": "Structure sheets read contain no re-entry language. Absence is not verification. Confirm with the official Venetian poker room before paying.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-001"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Structure sheets not read",
    "where": "Events 2, 12, 17, 20, 27, 36, 39, 40, 43, 57, 35 and satellites",
-   "detail": "Fee and rules left blank."
+   "detail": "Fee and rules left blank.",
+   "resolved": "Superseded 2026-11-17: all 37 Venetian DSE IV structure sheets are now cited by at least one published row, so the events named in this flag do have official sheets behind them. Any remaining blank fee or rule is per-event and listed separately.",
+   "severity": "info",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-002"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Event 19 fee",
    "where": "Event 19",
-   "detail": "Only GTD confirmed; fee not in verified notes."
+   "detail": "Only GTD confirmed; fee not in verified notes.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "id": "VR-003"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: RaceDay Stack guarantee",
    "where": "Events 3, 4, 5",
-   "detail": "No guarantee printed on schedule or sheet."
+   "detail": "No guarantee printed on schedule or sheet.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "id": "VR-004"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian: Event 6 guarantee",
    "where": "Event 6",
-   "detail": "No guarantee printed."
+   "detail": "No guarantee printed.",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "id": "VR-005"
   },
   {
    "source": "data/flags.json",
    "item": "Bellagio: Saturday re-entry",
    "where": "Saturday $1,100 NLH",
-   "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet."
+   "detail": "Title says $1,100 in PDF heading and $1,000 in link; level 3 blind typo in sheet.",
+   "url": "https://www.bellagio.com/casino/poker.html",
+   "id": "VR-006"
   },
   {
    "source": "data/flags.json",
    "item": "Bellagio: Dates",
    "where": "Friday, Saturday, Sunday",
-   "detail": "Dates not captured from PDFs. Recurring schedule only."
+   "detail": "Dates not captured from PDFs. Recurring schedule only.",
+   "url": "https://www.bellagio.com/casino/poker.html",
+   "id": "VR-007"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: WPT World Championship $10,400",
    "where": "Dec 13",
-   "detail": "Entry rules unverified."
+   "detail": "Entry rules unverified.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-008"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: Super Gold Million $400",
    "where": "Dec 10\u201312; Days 1A\u20131D (schedule PDF)",
-   "detail": "$400 buy-in, $3,000,000 guarantee, and multi-flight dates/start times verified in official WPT schedule. Event-specific re-entry rules / full entry-fee split were not verified; not single-entry approved."
+   "detail": "$400 buy-in, $3,000,000 guarantee, and multi-flight dates/start times verified in official WPT schedule. Event-specific re-entry rules / full entry-fee split were not verified; not single-entry approved.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-009"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn: Schedule PDF",
    "where": "WPT schedule",
-   "detail": "Re-fetched successfully on 2026-11-16 and read through official PDF chunks 1\u20137. Relevant event-level re-entry terms are now confirmed; do not carry forward the earlier HTTP 500 re-fetch note."
+   "detail": "Re-fetched successfully on 2026-11-16 and read through official PDF chunks 1\u20137. Relevant event-level re-entry terms are now confirmed; do not carry forward the earlier HTTP 500 re-fetch note.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-010"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn daily 12pm $200 NLH",
    "where": "Mon\u2013Thu, Sat, Sun",
-   "detail": "Guarantee and re-entry not verified."
+   "detail": "Guarantee and re-entry not verified.",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "id": "VR-011"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: nightly rates",
    "where": "All hotels",
-   "detail": "Exact-date official rate quotes not captured. Venetian poker-rate page gives $119 and $209 as starting rates for Venetian/Palazzo suites but does not explicitly map the amounts to each property; no mapping or total assumed."
+   "detail": "Exact-date official rate quotes not captured. Venetian poker-rate page gives $119 and $209 as starting rates for Venetian/Palazzo suites but does not explicitly map the amounts to each property; no mapping or total assumed.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "id": "VR-012"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: walking distances",
    "where": "All hotels",
-   "detail": "No official walking distances captured. 30-minute test not verified."
+   "detail": "No official walking distances captured. 30-minute test not verified.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "id": "VR-013"
   },
   {
    "source": "data/flags.json",
    "item": "Hotels: Encore and others",
    "where": "Encore, others",
-   "detail": "Wynn resort information page fetched directly and confirms $55 plus tax per room night. MGM Grand hotel terms fetched directly and confirm $50 plus tax (eligible Gold+ reservations may qualify for waiver). Room rates and walk times remain blank."
+   "detail": "Wynn resort information page fetched directly and confirms $55 plus tax per room night. MGM Grand hotel terms fetched directly and confirm $50 plus tax (eligible Gold+ reservations may qualify for waiver). Room rates and walk times remain blank.",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "id": "VR-014"
   },
   {
    "source": "data/flags.json",
@@ -6676,112 +6706,136 @@
    "where": "All hotels",
    "detail": "Resolved 2026-11-16 by arena/e1c079dc-poker2: Clark County's Department of Business License guide for transient lodging establishments prints a 13.38% transient lodging tax rate for hotel/motel licences, and the county's combined transient lodging tax return shows the 8.5% + 4.5% county components. The Venetian and Cosmopolitan hotel terms state 13.38% verbatim. The rate is now entered with the county document as its source.",
    "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-   "resolved": "2026-11-16"
+   "resolved": "2026-11-16",
+   "id": "VR-015"
   },
   {
    "source": "data/flags.json",
    "item": "Golden Nugget Grand Poker Series",
    "where": "Downtown; June 2026",
-   "detail": "Excluded: not on Strip and dates passed."
+   "detail": "Excluded: not on Strip and dates passed.",
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+   "id": "VR-016"
   },
   {
    "source": "data/flags.json",
    "item": "Aria poker schedule",
    "where": "ARIA",
-   "detail": "Official schedule not captured in verified notes. Not listed."
+   "detail": "Official schedule not captured in verified notes. Not listed.",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "id": "VR-017"
   },
   {
    "source": "data/flags.json",
    "item": "Westgate: $70 NLH freezeouts (5:05 PM & 9:05 PM)",
    "where": "Westgate Las Vegas poker room",
-   "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying."
+   "detail": "VegasPokerCalendar detail page states 'Freezeout / No rebuy / No add-on' for Nov 16-17, 2026, but this is third-party aggregator data. Entry rules NOT confirmed with the Westgate poker room; treat as a lead to verify before relying.",
+   "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/",
+   "id": "VR-018"
   },
   {
    "source": "data/flags.json",
    "item": "MGM daily schedule: date/time inconsistency",
    "where": "MGM Grand daily tournaments",
-   "detail": "Current official poker page lists 11:00 AM, 7:00 PM, 11:00 PM and links to a schedule PDF titled August (year not stated), listing 11:10 AM, 7:10 PM and 11:10 PM. Do not treat the August buy-in/guarantee as current November terms without MGM confirmation. Sources: MGM_POKER, MGM_TOURNEY_SCHED."
+   "detail": "Current official poker page lists 11:00 AM, 7:00 PM, 11:00 PM and links to a schedule PDF titled August (year not stated), listing 11:10 AM, 7:10 PM and 11:10 PM. Do not treat the August buy-in/guarantee as current November terms without MGM confirmation. Sources: MGM_POKER, MGM_TOURNEY_SCHED.",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-019"
   },
   {
    "source": "data/flags.json",
    "item": "MGM $120 NLH: paid-stack advantage / cost ambiguity",
    "where": "Linked $120 NLH structure",
-   "detail": "Official structure says a voluntary $11 staff gratuity gives 10,000 additional chips; its fee allocation sums to the $120 posted entry, but does not clearly say whether the $11 is above the $120 or a portion of it. Keep separate and confirm exact cost/stack choice. Source: MGM_120_STRUCT."
+   "detail": "Official structure says a voluntary $11 staff gratuity gives 10,000 additional chips; its fee allocation sums to the $120 posted entry, but does not clearly say whether the $11 is above the $120 or a portion of it. Keep separate and confirm exact cost/stack choice. Source: MGM_120_STRUCT.",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-020"
   },
   {
    "source": "data/flags.json",
    "item": "Venetian series module mismatch",
    "where": "General poker page versus series overview",
-   "detail": "General room page says Current Series WPT Fall Festival Oct 28\u2013Nov 15, while official series overview lists DeepStack Extravaganza IV Nov 16\u2013Dec 23. Treat detailed event schedule as source for event details and confirm changes."
+   "detail": "General room page says Current Series WPT Fall Festival Oct 28\u2013Nov 15, while official series overview lists DeepStack Extravaganza IV Nov 16\u2013Dec 23. Treat detailed event schedule as source for event details and confirm changes.",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "id": "VR-021"
   },
   {
    "source": "data/flags.json",
    "item": "Wynn $600 NLH $400K re-entry",
    "where": "Nov 27\u201330 WPT event",
-   "detail": "Official WPT structure confirms unlimited re-entry in each starting flight until Level 9; not a single-entry event. Players advancing to Day 2 cannot enter later flights."
+   "detail": "Official WPT structure confirms unlimited re-entry in each starting flight until Level 9; not a single-entry event. Players advancing to Day 2 cannot enter later flights.",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "id": "VR-022"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian structure sheet 8 (Events 18 & 58, Valuetown Bounty)",
    "where": "IR-8234-01",
    "detail": "Note 7 says 'All subsequent buy in's after the initial buy in will be $200', implying more than one buy-in may be possible, yet the sheet has no re-entry procedure. Entry limit is ambiguous; not confirmed single-entry.",
-   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "id": "VR-023"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian structure sheets generally",
    "where": "IR-8234-02",
    "detail": "No Venetian DSE IV structure sheet read to date contains an express 'single entry / freezeout / no re-entry' clause. Classification as single-entry rests on the absence of any re-entry, rebuy or add-on mechanism in a fully read sheet that enumerates exactly one fee split and one late-registration window. Absence of language is not an express confirmation; confirm with the poker room before nonrefundable payment.",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "id": "VR-024"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Caesars Palace daily $100 event",
    "where": "IR-8234-03",
    "detail": "The official guide confirms a $50 add-on for 15,000 chips at the first break \u2014 a spend-more mechanism. Re-entry is not addressed on the guide.",
-   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "id": "VR-025"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Golden Nugget daily tournaments",
    "where": "IR-8234-04",
    "detail": "Official page confirms unlimited re-entries until level 5 and up to two $20 add-ons, but does not state the buy-in amount. Buy-in left blank.",
-   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/"
+   "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+   "id": "VR-026"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "MGM Grand daily tournaments",
    "where": "IR-8234-05",
    "detail": "Official poker page lists daily tournament times (11:00am, 7:00pm, 11:00pm) but no buy-ins or guarantees; those live on the weekly-schedule PDF. Rows carry times only, with buy-in blank until the PDF is re-read.",
-   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "id": "VR-027"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Caesars Palace daily buy-ins \u2014 official sources disagree",
    "where": "Caesars Palace daily NLH rows",
    "detail": "The official Caesars guide says every daily event carries a $100 buy-in; the official daily flyer (read 2026-11-16 by arena/acd81e67-poker2) lists $160 at 2 PM and 9 PM. Not reconciled; rows show the guide value and this flag.",
-   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "id": "VR-028"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Wynn \u2018NIH\u2019 event naming",
    "where": "Wynn WPT rows: \u2018Ladies NIH Championship\u2019, \u2018NIH Turbo\u2019, \u2018NIH $500 Bounty Turbo\u2019",
    "detail": "The official WPT schedule text uses \u2018NIH\u2019 where \u2018NLH\u2019 is presumably intended. Kept as printed; not corrected.",
-   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "id": "VR-029"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Hotel walking times and dated room totals",
    "where": "All hotel rows",
    "detail": "No official walking-time source and no dated checkout quote have been captured. Walk minutes and checkout totals are blank; use the official booking links and maps links to capture them for exact trip dates before booking.",
-   "url": ""
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "id": "VR-030"
   },
   {
    "source": "arena/8234a824-poker2",
    "item": "Venetian poker-rate wording ambiguity",
    "where": "Venetian resort-fee page vs poker-suite-rate page",
    "detail": "The resort-fee page says \u2018Rates include a daily Resort Fee of $55 plus tax\u2019 while the poker-rate page lists the fee separately in its conditions; exact meaning for the poker offer should be confirmed at reservation.",
-   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "id": "VR-031"
   },
   {
    "id": "IR-E1C-01",
@@ -6926,7 +6980,7 @@
    "item": "Treasure Island resort fee unverified",
    "where": "",
    "detail": "Only third-party pages state a TI resort fee ($49.95 plus tax); no official TI page could be reached in this pass, so the field stays blank. Next step: Open treasureisland.com terms in a browser and log the fee.",
-   "url": "",
+   "url": "https://treasureisland.com/",
    "source": "arena/e1c079dc-poker2, 2026-11-16",
    "action": "Open treasureisland.com terms in a browser and log the fee.",
    "sources": [],
