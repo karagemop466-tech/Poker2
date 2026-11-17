@@ -85,7 +85,7 @@
    "options": [
     "A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).",
     "B) Keep static tables sorted by value.",
-    "C) Add a day planner that builds an 8 AM–close schedule from verified start times."
+    "C) Add a day planner that builds an 8 AM\u2013close schedule from verified start times."
    ],
    "tradeoff": "A and C add real decision value. B is what is built now.",
    "status": "Partly implemented",
@@ -102,7 +102,7 @@
    ],
    "tradeoff": "A keeps data current but needs hosting; B is cheap; C risks stale data.",
    "status": "Awaiting decision",
-   "recommendation": "Option A, already wired — it just needs a first baseline",
+   "recommendation": "Option A, already wired \u2014 it just needs a first baseline",
    "implemented_as": "Three workflows exist (recheck.yml, source-monitor.yml, plan-refresh.yml) and 82 official URLs are in data/source_monitor.json, but no hash baseline has been taken yet, so nothing can be diffed. The next run of source-monitor.yml establishes the baseline; until then the monitor page shows 82 URLs as 'never checked'."
   },
   {
@@ -115,7 +115,7 @@
     "C) Use both: sheet-based by default, confirmation for events the user will play."
    ],
    "tradeoff": "A is clear but depends on documents; B is strongest but slow; C balances both.",
-   "status": "Implementing — the wording was already changed to match",
+   "status": "Implementing \u2014 the wording was already changed to match",
    "recommendation": "Option C",
    "implemented_as": "Every Venetian one-day row reads 'sheet silent on re-entry' and the 45 of them sit in their own category, never in the single-entry group. The structure-sheet register states the standard in one place, and Q01 and Q09 record that a poker-room answer is still needed before any row is called single-entry."
   },
@@ -129,6 +129,42 @@
     "C) Use a GitHub Actions build (needs a workflow file)."
    ],
    "tradeoff": "A is in place now. B keeps the root clean. C allows a build step but adds a workflow.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S11",
+   "title": "Delete or wire up the inert assets/site.js",
+   "category": "Repo hygiene",
+   "options": [
+    "A) Delete it and drop the <script> tag from the four legacy pages that load it.",
+    "B) Keep it as an archived file with a header saying it is superseded (done on 2026-11-17).",
+    "C) Wire it back up by giving the generators the element ids it expects."
+   ],
+   "tradeoff": "Found 2026-11-17: none of the #evtable / #f-date / #c-* ids it binds exists on any of the 30 published root pages, so every feature in it is dead code. B was taken because deleting a file another session owns is a scope decision. C would duplicate the working assets/dashboard.js. A is the clean end state.",
+   "status": "Partly implemented (annotated, not deleted)"
+  },
+  {
+   "id": "S12",
+   "title": "Make the trip-cost calculator one function, not three",
+   "category": "Correctness",
+   "options": [
+    "A) Keep the three implementations and add a test that pins them to the same answer.",
+    "B) Extract one shared formula file that all three pages load.",
+    "C) Leave them."
+   ],
+   "tradeoff": "There are three true-cost implementations: assets/dashboard.js, assets/site.js and 2026/assets/site2026.js. Today all three agree ((rate+fee)*(1+tax)+parking) and reproduce the Venetian quote's own checkout itemisation to the cent ($644.61 for the 7-night stay). Nothing enforces that. A is cheapest and catches the drift that already happened once, when the quote cell labelled a fee-inclusive average as a room rate.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S13",
+   "title": "Give the plan/ surface its own output directory",
+   "category": "Repo hygiene",
+   "options": [
+    "A) Leave as is.",
+    "B) Move scripts/build-site.py output to /plan/ and update its asset paths.",
+    "C) Retire the /plan/ surface and keep one site."
+   ],
+   "tradeoff": "scripts/build-site.py writes 22 pages with the same filenames as the root dashboard (index.html, flagged.html, ...) but its OUT is the repository root, so its files collide with the root surface's on every build and its --check could never pass (fixed 2026-11-17). Two generators, one directory is the underlying problem.",
    "status": "Awaiting decision"
   }
  ]

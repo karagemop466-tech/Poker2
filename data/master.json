@@ -15956,6 +15956,37 @@
    "sources": [
     "https://www.wynnlasvegas.com/casino/poker"
    ]
+  },
+  {
+   "id": "Q13",
+   "question": "Which of the two published surfaces is the one to plan from?",
+   "status": "Open \u2014 a decision, not a data gap",
+   "answer": "The repository publishes the root dashboard (scripts/build_site.py, 166 rows, all six rooms) and the /2026/ surface (scripts/build2026.py, 64 Venetian events with all 37 sheets read). They agree on the facts they share \u2014 0 confirmed single-entry events, the 13.38% tax, the $55 resort fee \u2014 but they are separate datasets with separate monitors, so a row fixed on one does not move on the other. This is suggestion S13.",
+   "needed": "A decision on whether /2026/ is the primary surface or an archive.",
+   "how_to_find": "Compare the two dashboards on the same event, then choose one home for the data.",
+   "sources": []
+  },
+  {
+   "id": "Q14",
+   "question": "Has the root source monitor ever run, and what does 'never checked' mean?",
+   "status": "Answered \u2014 it has not run, and the page says so",
+   "answer": "data/source_monitor.json registers 86 official URLs and every one reads 'never checked', and the GitHub Actions API reports no run of source-monitor.yml at all (checked 2026-11-17). The /2026/ monitor has run: 61 URLs, 51 read successfully, 0 changed, 10 unread. A never-checked URL is not an unchanged URL and the monitor page states that distinction.",
+   "needed": "A first successful run of source-monitor.yml to establish baselines. Until then no root row can be marked 'changed' or 'unchanged'.",
+   "how_to_find": "gh run list --workflow source-monitor.yml (currently empty), or dispatch it once.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker2/actions/workflows/source-monitor.yml"
+   ]
+  },
+  {
+   "id": "Q15",
+   "question": "How many candidate events are open to any player?",
+   "status": "Answered",
+   "answer": "Of the 15 one-day, no-bounty, no-printed-re-entry events, 13 are open to any player aged 21+ and 2 are restricted to age 50+ (events 24 and 32, $600 Seniors). The $800 LIPS Ladies main event was previously counted in this group; its own sheet schedules Day 1 and Day 2, so it is a two-day event and is now grouped with the multi-day rows. Both surfaces now split open from restricted instead of ranking an event the reader may not be able to enter.",
+   "needed": "Nothing further \u2014 this is a reading of the official sheets.",
+   "how_to_find": "Structure sheets 24, 32 and 32 (LIPS) on the Venetian site.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ]
   }
  ],
  "questions_intro": "Questions that need answers before a decision. 'Open' means the data does not answer it. The 'How to find it' column lists where to look.",
@@ -16087,6 +16118,42 @@
     "C) Use a GitHub Actions build (needs a workflow file)."
    ],
    "tradeoff": "A is in place now. B keeps the root clean. C allows a build step but adds a workflow.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S11",
+   "title": "Delete or wire up the inert assets/site.js",
+   "category": "Repo hygiene",
+   "options": [
+    "A) Delete it and drop the <script> tag from the four legacy pages that load it.",
+    "B) Keep it as an archived file with a header saying it is superseded (done on 2026-11-17).",
+    "C) Wire it back up by giving the generators the element ids it expects."
+   ],
+   "tradeoff": "Found 2026-11-17: none of the #evtable / #f-date / #c-* ids it binds exists on any of the 30 published root pages, so every feature in it is dead code. B was taken because deleting a file another session owns is a scope decision. C would duplicate the working assets/dashboard.js. A is the clean end state.",
+   "status": "Partly implemented (annotated, not deleted)"
+  },
+  {
+   "id": "S12",
+   "title": "Make the trip-cost calculator one function, not three",
+   "category": "Correctness",
+   "options": [
+    "A) Keep the three implementations and add a test that pins them to the same answer.",
+    "B) Extract one shared formula file that all three pages load.",
+    "C) Leave them."
+   ],
+   "tradeoff": "There are three true-cost implementations: assets/dashboard.js, assets/site.js and 2026/assets/site2026.js. Today all three agree ((rate+fee)*(1+tax)+parking) and reproduce the Venetian quote's own checkout itemisation to the cent ($644.61 for the 7-night stay). Nothing enforces that. A is cheapest and catches the drift that already happened once, when the quote cell labelled a fee-inclusive average as a room rate.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S13",
+   "title": "Give the plan/ surface its own output directory",
+   "category": "Repo hygiene",
+   "options": [
+    "A) Leave as is.",
+    "B) Move scripts/build-site.py output to /plan/ and update its asset paths.",
+    "C) Retire the /plan/ surface and keep one site."
+   ],
+   "tradeoff": "scripts/build-site.py writes 22 pages with the same filenames as the root dashboard (index.html, flagged.html, ...) but its OUT is the repository root, so its files collide with the root surface's on every build and its --check could never pass (fixed 2026-11-17). Two generators, one directory is the underlying problem.",
    "status": "Awaiting decision"
   }
  ],

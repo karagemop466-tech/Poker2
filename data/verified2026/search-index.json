@@ -4216,6 +4216,14 @@
   "x": "X-02 | Official page defect | The Venetian series overview still labels an ended series as 'Current Series' The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, 2026' even though today is 2026-11-17 and the live series is DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026). | Do not rely on that page's 'Current Series' label; use the dated event page and sc"
  },
  {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-14",
+  "h": "F-14",
+  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+ },
+ {
   "p": "sources.html",
   "pl": "Sources",
   "t": "Kind Document URL Retrieved",

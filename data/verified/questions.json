@@ -5,8 +5,8 @@
   {
    "id": "Q01",
    "question": "Which tournaments are single-entry, one-day events with no re-entry, rebuy or add-on?",
-   "status": "Answered for The Venetian — the answer is 'none can be confirmed'",
-   "answer": "All 37 Venetian DeepStack Extravaganza IV structure sheets have been read in full (2026-11-17). Not one prints a clause limiting play to a single entry, and not one prints a re-entry, rebuy or add-on clause either: 13 print only the Day-2 bagging rule for multi-flight events, and 24 say nothing about entries. So 45 one-day Venetian rows are 'sheet silent on re-entry' — a category of their own, not a single-entry list. Two further rows (Events 18 and 58) are entry-limit ambiguous because their sheet prices a subsequent buy-in. Wynn's printed terms allow re-entry, so Wynn events sit in the spend-more list.",
+   "status": "Answered for The Venetian \u2014 the answer is 'none can be confirmed'",
+   "answer": "All 37 Venetian DeepStack Extravaganza IV structure sheets have been read in full (2026-11-17). Not one prints a clause limiting play to a single entry, and not one prints a re-entry, rebuy or add-on clause either: 13 print only the Day-2 bagging rule for multi-flight events, and 24 say nothing about entries. So 45 one-day Venetian rows are 'sheet silent on re-entry' \u2014 a category of their own, not a single-entry list. Two further rows (Events 18 and 58) are entry-limit ambiguous because their sheet prices a subsequent buy-in. Wynn's printed terms allow re-entry, so Wynn events sit in the spend-more list.",
    "needed": "A written answer from The Venetian poker room on whether a one-day event may be re-entered. Until then no row can be called single-entry.",
    "how_to_find": "Ask the poker room in writing (email or at the desk) and record the answer with its date, or find an official tournament-rules page that states an entry limit.",
    "sources": [
@@ -29,7 +29,7 @@
   {
    "id": "Q03",
    "question": "What is the true nightly cost of each hotel for the user's dates?",
-   "status": "Partly answered — fees and tax verified, room rate open",
+   "status": "Partly answered \u2014 fees and tax verified, room rate open",
    "answer": "The mandatory resort fee is $55 plus tax per night at The Venetian, The Palazzo and Wynn, and the room tax is 13.38% for the Strip corridor (13.00% at South Point). What is missing is a room rate: the Venetian poker-rate page prints starting rates of $119 and $209 for a suite 'in either The Venetian or The Palazzo' without saying which property is which, and no dated checkout quote for the trip dates has been captured. True cost per night therefore stays blank rather than being estimated.",
    "needed": "A dated checkout quote per hotel for the exact stay dates, with resort fee, tax line, parking, cancellation deadline and the time it was read.",
    "how_to_find": "Use each hotel's official booking page for the exact dates and log the total, not the headline rate.",
@@ -45,7 +45,7 @@
    "question": "Is each hotel within a 30-minute walk of the tournament venue?",
    "status": "Answered as far as routing services allow",
    "answer": "No casino publishes a walk time, so routing services were used and labelled as such. Google Maps walking directions (read 2026-11-17) and an independent OSRM foot matrix agree on every 30-minute verdict for The Venetian Poker Room: Palazzo 4-6 min, Venetian 5 min, Wynn 12-13 min, Caesars Palace 19-20 min, Horseshoe 21-24 min and Bellagio 28 min are inside the limit; MGM Grand (37-42 min) and ARIA (31-37 min) are outside it. The Wynn poker room is covered by the OSRM matrix alone: Wynn, Encore, Resorts World, Venetian, Palazzo, Westgate, Harrah's, LINQ and Flamingo are inside; Horseshoe, Caesars Palace, Bellagio and everything south of them are outside.",
-   "needed": "A second router on the Wynn side, and an in-person check of the two tight calls: Bellagio to the Venetian (28-30 min depending on router) and ARIA to the Venetian (30.6 min by OSRM, 37 min by Google — the only pair where the two routers land on opposite sides of the limit).",
+   "needed": "A second router on the Wynn side, and an in-person check of the two tight calls: Bellagio to the Venetian (28-30 min depending on router) and ARIA to the Venetian (30.6 min by OSRM, 37 min by Google \u2014 the only pair where the two routers land on opposite sides of the limit).",
    "how_to_find": "Walk the two tight pairs once and record the time; or read a second routing service for the Wynn side.",
    "sources": [
     "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas&destination=The+Venetian+Poker+Room&travelmode=walking",
@@ -56,7 +56,7 @@
    "id": "Q05",
    "question": "What are the user's travel dates, party size and budget?",
    "status": "Open",
-   "answer": "Not provided. Venetian single-entry rows run Nov 18 – Dec 23, 2026. Wynn WPT runs Nov 27 – Dec 21, 2026.",
+   "answer": "Not provided. Venetian single-entry rows run Nov 18 \u2013 Dec 23, 2026. Wynn WPT runs Nov 27 \u2013 Dec 21, 2026.",
    "needed": "Dates, nights, budget per night and per entry, and maximum buy-in.",
    "how_to_find": "The user supplies these; no external source can answer them.",
    "sources": []
@@ -72,7 +72,7 @@
   },
   {
    "id": "Q07",
-   "question": "Do Wynn daily events run during the WPT World Championship (Nov 27 – Dec 21)?",
+   "question": "Do Wynn daily events run during the WPT World Championship (Nov 27 \u2013 Dec 21)?",
    "status": "Open",
    "answer": "Not stated in the sources read.",
    "needed": "A Wynn statement about the daily schedule during the WPT.",
@@ -134,6 +134,37 @@
    "how_to_find": "Re-open the official pages and compare dates and buy-ins.",
    "sources": [
     "https://www.wynnlasvegas.com/casino/poker"
+   ]
+  },
+  {
+   "id": "Q13",
+   "question": "Which of the two published surfaces is the one to plan from?",
+   "status": "Open \u2014 a decision, not a data gap",
+   "answer": "The repository publishes the root dashboard (scripts/build_site.py, 166 rows, all six rooms) and the /2026/ surface (scripts/build2026.py, 64 Venetian events with all 37 sheets read). They agree on the facts they share \u2014 0 confirmed single-entry events, the 13.38% tax, the $55 resort fee \u2014 but they are separate datasets with separate monitors, so a row fixed on one does not move on the other. This is suggestion S13.",
+   "needed": "A decision on whether /2026/ is the primary surface or an archive.",
+   "how_to_find": "Compare the two dashboards on the same event, then choose one home for the data.",
+   "sources": []
+  },
+  {
+   "id": "Q14",
+   "question": "Has the root source monitor ever run, and what does 'never checked' mean?",
+   "status": "Answered \u2014 it has not run, and the page says so",
+   "answer": "data/source_monitor.json registers 86 official URLs and every one reads 'never checked', and the GitHub Actions API reports no run of source-monitor.yml at all (checked 2026-11-17). The /2026/ monitor has run: 61 URLs, 51 read successfully, 0 changed, 10 unread. A never-checked URL is not an unchanged URL and the monitor page states that distinction.",
+   "needed": "A first successful run of source-monitor.yml to establish baselines. Until then no root row can be marked 'changed' or 'unchanged'.",
+   "how_to_find": "gh run list --workflow source-monitor.yml (currently empty), or dispatch it once.",
+   "sources": [
+    "https://github.com/karagemop466-tech/Poker2/actions/workflows/source-monitor.yml"
+   ]
+  },
+  {
+   "id": "Q15",
+   "question": "How many candidate events are open to any player?",
+   "status": "Answered",
+   "answer": "Of the 15 one-day, no-bounty, no-printed-re-entry events, 13 are open to any player aged 21+ and 2 are restricted to age 50+ (events 24 and 32, $600 Seniors). The $800 LIPS Ladies main event was previously counted in this group; its own sheet schedules Day 1 and Day 2, so it is a two-day event and is now grouped with the multi-day rows. Both surfaces now split open from restricted instead of ranking an event the reader may not be able to enter.",
+   "needed": "Nothing further \u2014 this is a reading of the official sheets.",
+   "how_to_find": "Structure sheets 24, 32 and 32 (LIPS) on the Venetian site.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
    ]
   }
  ]
