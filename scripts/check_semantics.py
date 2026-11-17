@@ -132,6 +132,24 @@ if hot and os.path.exists(hotels):
                 problems.append("plan/hotels.html: %s fee excerpt is not rendered on the page"
                                 % h["id"])
 
+# --------------------------------------- 5: no rate printed for a property the county omits
+if hot and os.path.exists(hotels):
+    for h in hot["hotels"]:
+        tl = h.get("transient_lodging_tax") or {}
+        if tl.get("status") != "not_in_county_list":
+            continue
+        row = re.search(r'<tr data-key="' + re.escape(h["id"]) + r'"(.*?)</tr>', raw(hotels), re.S)
+        # scoped to the fee cell: the note beside it legitimately quotes the former name's rate
+        # as context, but the cell that applies a rate must not carry one for this property.
+        cell = re.search(r"resort_fee.*?</td>", row.group(1), re.S) if row else None
+        if cell:
+            # the assertion is about the applied rate, not about a quoted sentence: strip the
+            # explanatory note (which may quote the former name's rate) before looking
+            applied = re.split(r'<div class="sm">The county schedule', cell.group(0))[0]
+            if re.search(r"\d+\.\d+%", applied):
+                problems.append("plan/hotels.html: %s has no county row but its tax cell applies a rate"
+                                % h["id"])
+
 if problems:
     print("SEMANTIC GATE FAILED")
     for p in problems:

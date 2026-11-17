@@ -678,12 +678,16 @@ def p_hotels():
         # explicit "not in the county list" note instead of a guessed rate.
         tl = h.get("transient_lodging_tax") or {}
         if tl.get("status") == "verified_official_county" and tl.get("rate_pct"):
-            tax_note = (badge("county row " + str(tl["licence"]), "ok") + " "
-                        + srclink(tl["source_url"], "county schedule"))
+            tax_cell = (esc("%.2f%%" % tl["rate_pct"]) + " " + badge("county row " + str(tl["licence"]), "ok")
+                        + " " + srclink(tl["source_url"], "county schedule"))
         elif tl.get("status") == "not_in_county_list":
-            tax_note = badge("not in the county schedule", "warn")
+            # Never print a rate for a property the county schedule does not list: the
+            # country's own table gives a former name at that address, and transferring a
+            # rate across a renaming is an inference, not a citation.
+            tax_cell = ("&mdash; " + badge("not in the county schedule", "warn")
+                        + '<div class="sm">' + esc((tl.get("note") or "")[:260]) + "</div>")
         else:
-            tax_note = badge("county row not read", "warn")
+            tax_cell = "&mdash; " + badge("county row not read", "warn")
         fee = (h.get("resort_fee") or {}).get("amount")
         nightly = ""
         if rate and fee:
@@ -738,7 +742,7 @@ def p_hotels():
                   + '<td class="num">' + nightly + "</td>"
                   + "<td>" + cell("resort_fee", "amount", lambda v: money(v) + " + tax")
                   + '<div class="sm">' + feeexcerpt + "</div>"
-                  + '<div class="sm">13.38% &middot; ' + tax_note + "</div></td>"
+                  + '<div class="sm">' + tax_cell + "</div></td>"
                   + "<td>" + cell("parking", "guest_self_per_day", lambda v: ("included in the resort fee" if v == 0 else money(v) + "/day")) + "</td>"
                   + "<td>" + cell("occupancy", "extra_guest_charge", lambda v: money(v) + "/guest/night" if v else "none stated") + "</td>"
                   + "<td>" + cell("incidentals", "amount", lambda v: money(v) + "/night") + "</td>"
