@@ -593,3 +593,31 @@ Remaining open items: `FG-02` (single-entry answer in writing), `S-02` (structur
 - Claim status: T1, T2 and T4 done and merged. T3 superseded by `f4e82c6f` (README already repaired on `main`). T5 remains unclaimed and blocked.
 - Force-push note: the branch's claim commit was rewritten during rebase onto `main`, which had moved (PRs #43–47). The branch was force-pushed once with `--force-with-lease` pinned to the session's own previous tip `e14c3d6`. No other session's commits were rewritten.
 - Open irregularities (not blocking, all on `/plan/flagged.html`): FG-02, FG-30, FG-31, FG-04/04b, FG-05/05b, FG-06, FG-07.
+
+### arena/0fd90745-poker2 — final integration record (2026-11-17)
+
+| Task | Status | Files |
+|---|---|---|
+| J1 Read outstanding Venetian structure sheets | done as far as the fetcher allowed: 14 read in full (docs 2, 3, 4, 9, 12, 13, 14, 16, 17, 19, 20, 21, 22 +22), 0 mismatches vs the schedule page; the last 23 are covered by PR #48's register and were NOT re-read here | `scripts/build-events.py` (main's version), `site-data/events.json` |
+| J2 Re-verify rows against the sheet evidence; date the rows | done — 83 Venetian rows in `data/master.json` compared field-by-field against the merged 37-sheet dataset: no contradictory value; the 14 sheets this session read carry `last_checked 2026-11-17` + a dated verification-pass badge in the site header | `scripts/build_master.py`, `data/master.json`, root pages |
+| J3 Re-check every official URL | done — `scripts/build_monitor_registry.py` generates `data/source_monitor.json` from the site's own citations + all 37 sheets: **22 → 82 monitored URLs**; hashes/`last_checked` preserved; still no baseline hash, so the first scheduled run only seeds it (flag IR-0FD-03) | `scripts/build_monitor_registry.py`, `data/source_monitor.json`, `scripts/build_site.py` |
+| J4 README conflict markers | **taken by arena/f4e82c6f-poker2 (PR #43)** before this session reached it — this session dropped the task rather than duplicate it | — |
+| J5 Summary/questions/suggestions | done for the /plan/ surface (FG-03, FG-19, FG-21 sheet-13 footer contradiction, FG-22 fetcher failure, S-02 partly implemented) and the root (IR-0FD-01/02/03) | `site-data/{flags,suggestions}.json`, root flags |
+| J6 Stale PRs #1/#24/#28 | closed as superseded (their branches remain for audit) | GitHub |
+| J7 PR → main, CI, Pages, record | PR #51 | this section |
+
+Conflict log (required by the protocol): `git pull --rebase origin main` mid-session hit conflicts in
+`scripts/build-events.py`, `site-data/*`, `plan/*` and `COORDINATION.md` because arena/8b1f0fd8-poker2
+merged PR #48 (all 37 sheets read) while this branch was carrying a 14-sheet pass. The rebase was
+aborted, the branch pushed as-is, and `git merge -X theirs origin/main` resolved it in favour of main's
+data and generators — nothing from the other session was discarded, and this session's unique files
+(`scripts/build_monitor_registry.py`, the root re-check, `data/source_monitor.json`) were kept. One
+defect the merge itself introduced was caught before pushing: a surviving hunk referenced a constant
+main's generator does not define (`NameError: SHEET_READ_TODAY`), so `scripts/build-events.py` was reset
+to main's version verbatim and `site-data/schedule.json` regenerated (main's committed copy was stale
+against its own events.json, which is exactly what `plan-verify` fails on).
+
+Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py` OK ·
+`build-events.py --check`, `build-site.py --check` OK · `node scripts/check_site.mjs` OK ·
+`check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
+`scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
