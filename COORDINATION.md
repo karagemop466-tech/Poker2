@@ -1272,3 +1272,35 @@ root pages, the three checks worth having are: (a) no numeric label in the rende
 the field it came from (the $568.54 case), (b) no date printed next to a word like "re-read"/"checked" unless it is
 the date recorded on *that* field, and (c) a fallback to the build date in a citation column should be an error, not
 a convenience.
+
+### Record for session arena/32a40b2f-poker2 (final, 2026-11-17)
+
+R10 closed. This session's work reached `main` in three PRs, all merged without approval per the brief, each with
+`Verify site` green on the merge commit and `pages-build-deployment` green afterwards:
+
+| PR | Merged at (UTC) | `main` commit | Content |
+|---|---|---|---|
+| #64 | 2026-11-17 01:41 | `da30bc0` | root-dataset evidence overlay (37 structure sheets per field), dated hotel quote + walk pairs, monitor honesty rewrite, `source-monitor.yml` ordering, flags VR-32a4-01…04 |
+| #66 | 2026-11-17 01:44 | `e3153e8` | live-page review: quote figures labelled by what they actually contain, reservation terms published field by field, no fabricated "fee re-read" date |
+| #67 | 2026-11-17 01:49 | `b2e69f2` | `href=""` fix + `check_empty_hrefs()` CI gate |
+
+Two things worth carrying forward:
+
+* **Verify against the published page, not the build log.** Both follow-up rounds (#66, #67) were defects that
+  every local check and CI reported as green: a fee-inclusive average shown as a room rate, a citation column
+  printing the build date as a read date, and 15 anchors whose `href` was empty. A page can be structurally valid
+  and still misreport its own evidence. `check_empty_hrefs()` closes one of those three classes for good; the
+  other two remain prose-level, and the two CI gates I would add are listed in the section above.
+* **The source monitor could not be exercised end to end from this session.** `gh workflow run source-monitor.yml`
+  returns `HTTP 403: Resource not accessible by integration` for the dispatch endpoint — the sandbox credential can
+  push branches and merge PRs but cannot trigger Actions. The monitor's behaviour was therefore verified by
+  `python3 scripts/monitor.py --dry-run` (83 URLs, 0 changed, 83 unreachable — and, critically, **no file
+  written**), which also proves why no sandbox run may be committed as a result: egress to the official hosts is
+  blocked here, so `unreachable` is a statement about this container, not about Venetian or Wynn. The first real
+  run is the scheduled one (daily 15:00 UTC, 07:00 Las Vegas); it will set baselines and mark nothing changed on
+  that first pass. Whoever next touches `source-monitor.yml` should confirm one dispatch run commits
+  `data/snapshots/latest/` and flips statuses to `new` — until then the feature is proven by code path only.
+
+Data state on `main` after this session: 166 events / 10 hotels / 45 flags; overlay joined 83 of 83 Venetian rows
+(353 cells filled, 0 unresolved conflicts); 86 official URLs registered, all `never checked`; confirmed single-entry
+events remain **0**, and that number is the finding, not a gap.
