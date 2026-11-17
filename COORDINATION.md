@@ -1386,3 +1386,33 @@ owner to fix rather than patched here, because `verify.yml`/`plan-refresh.yml` o
 the final integration session and a red job that still publishes all its artefacts is not a broken
 site.
 
+### P3/P4/P5 — what was verified, and how
+
+Every claim below was checked against the artifact, not the build log.
+
+| Claim | How it was checked | Result |
+|---|---|---|
+| All 11 repo checks pass on this branch | ran each one | pass |
+| Citation labels describe their targets | `scripts/check_labels.py` over 73 generated pages, 6,343 links | 0 mismatches (was 181) |
+| No ratio without a confirmed fee | same gate; 123 unconfirmed-fee rows inspected | 0 (was 35 root + 28 `/plan/`) |
+| The new gate actually fails when it should | `scripts/check_labels_selftest.py`, three planted defects | all three caught |
+| Every published page serves | local server, 19 routes | all 200 |
+| Site-wide search hides non-matching rows | jsdom against `tournaments.html`: 66 of 166 match "Wynn", 0 of 166 match "notpresent", clear restores 166 | correct |
+| `/2026/` single-entry toggle | jsdom: 15 of 64 rows | correct |
+| `/2026/` date filter | jsdom, 2026-11-18: 2 rows | correct |
+| Root trip calculator maths | jsdom, rate 513.54 + fee 55, 13.38% tax, 20 parking | $664.61, and the blank-rate guard refuses to total $0 |
+| `/2026/` hotel calculator maths | jsdom, same inputs | $665/night, $2,658 for 4 nights — matches |
+
+Three implementations of "true cost per night" exist (`assets/dashboard.js`, `assets/site.js`,
+`2026/assets/site2026.js`). As of today all three agree and reproduce the Venetian booking
+engine's own itemisation to the cent; nothing enforces that, which is suggestion **S12**.
+
+### Still unverified, and left that way
+
+* No official page could be fetched from this sandbox (TLS blocked), so **no row gained new
+  official-source evidence in this session**. What changed is classification and presentation of
+  evidence already transcribed with a date and an excerpt.
+* The Venetian rate quote, the 21 walk pairs and the 40 Wynn/Horseshoe/MGM rows without a rule
+  document are unchanged and still carry the dates the sessions that read them recorded.
+* `.github/workflows/plan-refresh.yml` remains red on `main`; root cause reproduced locally and
+  written up above for the workflow owner.
