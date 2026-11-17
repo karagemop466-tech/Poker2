@@ -807,3 +807,61 @@ another session's work):
 Re-verified on the merged tree: `build-events.py --check`, `build-schedule.py --check`, `build-site.py
 --check`, `check_site.mjs` (15 plan pages / 94 rows / 13 UI ids), `check_links.py` (0 broken internal links,
 no non-official hosts), `audit.py` (166 events / 10 hotels / 41 flags OK), HTTP smoke test all plan pages 200.
+
+---
+
+## Session arena/97730311-poker2 — claims and record (2026-11-17)
+
+**Scope claimed** (all under `/plan/`, which shares no file path with the root dashboard):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Read all 37 Venetian DSE IV structure sheets and fold them into the canonical row set | done (merged with arena/8b1f0fd8-poker2's PR #49, which read 13 of the same sheets in parallel) | arena/97730311-poker2 | `scripts/build-events.py`, `site-data/events.json` |
+| Capture a dated, itemised hotel quote from an official booking engine | done for The Venetian | arena/97730311-poker2 | `site-data/rates.json`, `site-data/hotels.json` |
+| Port the routed walking matrix into the planner (S-06 / S-13) | done | arena/97730311-poker2 | `scripts/build-walk.py` (new), `data/site/walk-overlay.json` (new), `site-data/walk.json` |
+| Re-read every other-venue source that is fetchable (Bellagio, Caesars Palace, Wynn, MGM Grand, Golden Nugget) | done | arena/97730311-poker2 | `site-data/other-venues.json` |
+| Render eligibility/notes/level-note and the `multi_day` class on the site | done | arena/97730311-poker2 | `scripts/build-site.py`, `plan/assets/site.css`, `plan/assets/site.js` |
+| Workflow wiring for the new walk generator | done | arena/97730311-poker2 | `.github/workflows/plan-verify.yml`, `.github/workflows/plan-refresh.yml` |
+
+Notes:
+
+- **Two new files: `scripts/build-walk.py` and `data/site/walk-overlay.json`.** It reads `data/site/walking.json` (the OSRM/Nominatim matrix an earlier
+  session produced) and writes `site-data/walk.json`; `--check` fails when the committed JSON drifts. It is now
+  part of the regenerate step in `plan-verify.yml` and the check chain in `plan-refresh.yml`, so the walk page
+  cannot silently go stale. The overlay carries what the script cannot regenerate — the routed-via service
+  name, the date each route was routed, the routed distance, and the verbatim official interior-route wording
+  with its source — captured by earlier sessions and preserved rather than re-derived. It is idempotent — the per-pair `route_retrieved` date is pinned to the day the
+  routes were generated (2026-11-16), not to the build date.
+- **Every one of the 37 sheets was fetched and read.** Zero rows are now `unverified` on the Venetian set.
+  Two facts came out of it that no earlier pass had: eligibility gates (50+ on the Seniors, women-only on the
+  LIPS Ladies events, each with the sheet's own forfeiture language) and event #39 being a *multi-day* event
+  with a single starting day rather than a multi-flight one. A new `multi_day` category was added for it.
+- **Merge note.** `arena/8b1f0fd8-poker2` (PR #49) read 13 of the same sheets and landed them on `main` while
+  this session was working. Both transcriptions were compared sheet by sheet before merging: they agree on
+  every structural value (start, levels, buy-in, pool, guarantee, late-registration close) and differ only in
+  prose. The merged `SHEETS` takes main's — it carries per-sheet `gate` wording for all 19 sheets with an
+  eligibility rule and `note` text for the early-bird and Day 2 facts — and adds this session's fuller
+  rule-02 forfeiture wording as `gate_excerpt` on sheets 17/19/20/31/32, plus per-sheet `notes` on 19/24/25/31.
+  Main's version also keeps the `AS_OF`/`SHEET_AS_OF` split and the hard cross-check that aborts the build
+  when a sheet's start time or fee+pool disagrees with the schedule row, both of which are kept.
+- **The Horseshoe daily start times were deleted, not repeated.** An earlier session had recorded 9/11 AM and
+  2/5/8/11 PM; those times appear on no official page, so the row is now `unverified` rather than carrying a
+  number nobody can produce a source for.
+- **Two real dated quotes were captured from the Venetian booking engine** (4-night and 7-night, Nov 2026,
+  2 adults) and itemised to the cent. Both imply 13.3804% tax, which corroborates the Clark County rate
+  independently of the county notice, and both tax the resort fee — which is the assumption the whole
+  true-cost formula rests on. This closes FG-03, FG-05 and FG-19, corroborates FG-13 and narrows FG-04 and
+  FG-09…FG-11. Wynn and the MGM properties still have no quote: their engines build prices after page load
+  and return nothing to a static fetch. That gap is recorded as suggestion **S-15** rather than filled in.
+- **Not one official document in this dataset says "one entry per player."** FG-02 stays open. The site says
+  "candidate" on all 45 rows and now says so explicitly in Q-03 with the email address to ask.
+- Deliberately not done: quoting Wynn/MGM via a headless browser (S-15 — needs your decision), an official
+  quality-rating source (S-04 / FG-12), and any consolidation of the two surfaces (S-11 / S-12).
+
+Second merge, same day: `arena/18aba6dd-poker2` (PR #53) landed on `main` after this branch was pushed, and
+re-syncing took a second pass. Two of its findings covered the same ground as mine — the count of
+single-entry candidates and the walking minutes — so they were merged into one finding each rather than
+published twice, with the number taken from the regenerated dataset (45, because this session classifies
+Event #39 as a two-day event rather than a one-day candidate). Main's walk.json carried 12 pairs; this
+branch carries 70 generated from the full OSRM matrix, so the 70-pair set is kept and main's per-pair
+hand-verified detail is folded in through the overlay file above rather than lost.

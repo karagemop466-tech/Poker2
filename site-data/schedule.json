@@ -658,20 +658,6 @@
      "buy_in": 600,
      "gtd": 25000,
      "ratio": 41.7
-    },
-    {
-     "event_no": "39",
-     "start": "10:10",
-     "name": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event",
-     "buy_in": 800,
-     "gtd": 40000,
-     "ratio": 50.0,
-     "restricted": {
-      "value": "Female, 21+, with a Venetian Rewards card",
-      "excerpt": "Must be a female 21+ years of age and have a Venetian Rewards card to participate.",
-      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
-      "retrieved": "2026-11-17"
-     }
     }
    ],
    "flags": []

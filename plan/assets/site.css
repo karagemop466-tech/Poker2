@@ -92,3 +92,11 @@ footer.site { border-top: 1px solid var(--line); color: var(--muted); font-size:
 .muted { color: var(--muted) }
 .nowrap { white-space: nowrap }
 @media (max-width: 720px) { main { padding: 14px } h1 { font-size: 21px } .tablewrap { max-height: none } }
+
+/* Dated-quote itemisation, appended under a rate-log row */
+tr.detailrow > td { background: #f7f9fb; padding: 10px 12px }
+.quote { font-weight: 600; margin-bottom: 6px }
+table.mini { width: auto; min-width: 340px; margin: 6px 0 8px; font-size: 12.5px }
+table.mini th, table.mini td { padding: 3px 10px 3px 0; border-bottom: 1px dotted var(--line) }
+table.mini thead th { position: static; background: transparent; text-transform: none; letter-spacing: 0 }
+tr.detailrow .line { max-width: 520px; font-size: 12.5px }

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "intro": "The decision cannot be closed on published data alone. Each question states what is already answered from official sources, what is missing, and exactly who to ask. 'Blocks' refers to the six-step decision sequence on the Summary page.",
  "items": [
   {
@@ -23,13 +23,33 @@
    "blocks": "hotel shortlist"
   },
   {
+   "id": "Q-14",
+   "step": 1,
+   "question": "Who is coming, and does sharing change the cost?",
+   "status": "needs_you",
+   "what_we_have": "Occupancy economics: the Venetian's rate is quoted on single/double occupancy and adds $50/night per guest aged 13+; Park MGM adds $40 plus tax per occupant above two; Wynn adds $50 per night above the room's stated capacity and caps standard rooms at four people ($500 per person beyond the cap, up to $3,000).",
+   "what_is_missing": "Party size. Two players splitting a $119+fee room halves the lodging cost per player and doubles the qualifying-play obligation, since play from all registered guests counts toward the requirement.",
+   "how_to_find": "Decide the party; the trip calculator has an occupancy control that applies the surcharge lines automatically.",
+   "blocks": "the per-player cost comparison between hotels"
+  },
+  {
+   "id": "Q-15",
+   "step": 1,
+   "question": "Do your dates avoid the 19-21 November 2026 price spike?",
+   "status": "needs_you",
+   "what_we_have": "In the 7-night quote captured 2026-11-17 the Venetian room rate is $164.25 on Sun 18 Nov, then $614.25, $1,011.75 and $1,311.75 on Thu 19 - Sat 21, then back to $164.25 for Sun 22, Mon 23 and Tue 24. The engine states no reason. Three nights are therefore carrying most of the cost of the week.",
+   "what_is_missing": "Your dates, and a quote for them.",
+   "how_to_find": "Quote a Sunday-Thursday stay and compare it with the same length of stay that includes a Thursday or Friday night. The rate log keeps both so the comparison is like-for-like.",
+   "blocks": "hotel quote"
+  },
+  {
    "id": "Q-03",
    "step": 2,
    "question": "Is the event you want actually single-entry?",
    "status": "answered_with_caveat",
-   "what_we_have": "All 37 structure sheets read in full (ten on 2026-11-16, twenty-seven on 2026-11-17): none of the one-day sheets contains a rebuy, add-on or re-entry clause. The Valuetown sheet proves the room writes such clauses when they exist (rule 07: 'All subsequent buy in's after the initial buy in will be $200'), so the 46 one-day rows without such language are treated as candidates, not confirmations.",
+   "what_we_have": "All 37 Venetian structure sheets have now been read in full, plus the Bellagio Friday/Saturday/Sunday sheets, the Caesars Palace 2026 daily flyer, the Wynn daily structures PDF, the MGM Grand schedule PDF and the Golden Nugget daily page. 45 Venetian rows carry no rebuy, add-on or re-entry clause and are candidates. NOT ONE official document in this whole dataset contains the sentence 'one entry per player'. The strongest published state is silence, which is why the site says candidate and not confirmed.",
    "what_is_missing": "A one-line written answer from the poker room for the specific events you enter.",
-   "how_to_find": "Venetian poker room: 702.414.7657 or lv_cas_poker@venetianlasvegas.com (both printed on the official poker page). Ask: 'is Event NN limited to one entry, with no rebuy or add-on?' and keep the reply.",
+   "how_to_find": "Email lv_cas_poker@venetianlasvegas.com (the address printed on the official poker-rate page) or call 702.414.7657 and ask: 'Is Event #__ strictly one entry per player, with no re-entry, no rebuy and no add-on?' Get it in writing. Until then every candidate row is a candidate.",
    "blocks": "whether any event qualifies at all (FG-02)"
   },
   {
@@ -41,6 +61,16 @@
    "what_is_missing": "The PokerAtlas Valuetown events where a PRO member pays $180 instead of $200 for the first entry.",
    "how_to_find": "Read the remaining sheets (the daily job already fetches them) or ask the cage.",
    "blocks": "ranking, because the guarantee-to-cost ratio changes if the fee is additive"
+  },
+  {
+   "id": "Q-16",
+   "step": 2,
+   "question": "Are you eligible for every event you plan to enter?",
+   "status": "answered",
+   "what_we_have": "Reading the sheets surfaced three eligibility rules the site did not previously carry, and they are now on the rows. The $600 Seniors events (#24, #32) and the $1,100 Seniors (#49) require players to be 50+, and the sheet says a player under 50 who buys in gets no prize money and no refund. The LIPS Ladies events (#33, #37, #39) require female players; #39 is women-only, #35 is female/female or female/male tag teams, and #43 is open to all.",
+   "what_is_missing": "Nothing - this is answered from the sheets.",
+   "how_to_find": "Filter the tournaments table and read the Eligibility line under each event.",
+   "blocks": "event selection"
   },
   {
    "id": "Q-05",
@@ -73,13 +103,23 @@
    "blocks": "the 'one event per day, evening only if you can exit' rule"
   },
   {
+   "id": "Q-13",
+   "step": 3,
+   "question": "Which Strip rooms have been left out, and does that change the answer?",
+   "status": "partially_answered",
+   "what_we_have": "Every room with an official source that can be fetched is now in the dataset: Venetian (94 rows, all sourced), Wynn (4 daily + 4 WPT), Caesars Palace (4 daily), Bellagio (3 weekly), MGM Grand (dailies from an undated PDF), Golden Nugget (3 daily). The gaps that remain are Horseshoe's times (on no official page) and every ARIA number, because ARIA publishes no schedule document.",
+   "what_is_missing": "Horseshoe's daily times and buy-ins, and anything at all from ARIA.",
+   "how_to_find": "Suggestion S-03: read one venue per refresh run and grow the same three-state classification, instead of trusting an aggregator.",
+   "blocks": "the claim that these Venetian events are the 'best' on the Strip - today it is only 'the best verified'"
+  },
+  {
    "id": "Q-08",
    "step": 4,
    "question": "What is the true nightly cost for your stay - itemised?",
-   "status": "needs_you",
-   "what_we_have": "Every component except the room rate: $55 fee plus tax, 13.38% room tax, $50/night per additional guest 13+ (Venetian), $40/night per additional occupant (Park MGM), $20/day guest parking, $150/night (Venetian) or $100/day (Park MGM) incidentals, $100 plus tax for checking out early at the Venetian, Wynn bundling free self-parking for two vehicles into its fee and charging a $50 extra-guest surcharge.",
-   "what_is_missing": "A dated, per-night room rate for your dates, from the booking page or the itemised checkout total. Nothing else is missing from the formula.",
-   "how_to_find": "Open the official booking deep link on the Hotels page, select your room and copy the itemisation into the rate log format (the log template is on the Rate Log page).",
+   "status": "partially_answered",
+   "what_we_have": "Two real dated quotes, captured 2026-11-17 from the Venetian's own booking engine, itemised to the cent. Nov 18-22 2026 (4 nights, Two Queen): room $2,827.00 + resort fee $220.00 + tax $407.69 = $3,454.69, i.e. $863.67 per night all-in. Nov 18-25 2026 (7 nights, King): room $3,594.75 + resort fee $385.00 + tax $532.51 = $4,512.26, i.e. $644.61 per night all-in. Both imply a 13.3804% tax, which independently confirms the published Clark County rate and proves the resort fee is itself taxed.",
+   "what_is_missing": "A quote for YOUR dates, and any quote at all for Wynn, ARIA, Bellagio, Park MGM, Caesars, Paris, Horseshoe or the Cosmopolitan - those engines build their prices after page load and returned nothing to a static fetch on 2026-11-17.",
+   "how_to_find": "Open the booking link on the Hotels page with your dates, expand 'See full price breakdown', and paste the total into the rate log. Or ring the property and ask for a written quote for your dates that itemises room rate, resort fee, tax and parking.",
    "blocks": "any like-for-like hotel comparison (FG-05)"
   },
   {
@@ -96,11 +136,21 @@
    "id": "Q-10",
    "step": 4,
    "question": "Is the walk actually under 30 minutes - and does it stay outdoors?",
-   "status": "answered",
-   "what_we_have": "Two official route facts: the poker room is inside the Palazzo (in-resort directions published, no minutes) and Bellagio/Cosmopolitan/Vdara share an interior bridge. The Venetian complex is the tournament anchor for every row in the ranked table.",
-   "what_is_missing": "Minutes are now filled with routing estimates (OSM Nominatim geocodes + OSRM foot profile; 10 pairs 2026-11-16, the Cosmopolitan and Bellagio-to-Cosmopolitan pairs 2026-11-17). What remains: your own confirmation of any pair you will actually walk - every row carries a prefilled Google and Apple Maps walking link - and whether the route is covered (a real factor in August, not in December).",
+   "status": "partially_answered",
+   "what_we_have": "45 of 70 hotel-to-poker-room pairs now have a walking duration (OpenStreetMap/OSRM foot routing), and 30 of them are 30 minutes or less. The pairs that matter most: The Venetian to its own poker room 0 min, The Palazzo 6 min, Wynn 13 min, Caesars Palace 19.5 min, Horseshoe 20.5 min, Bellagio 27.6 min. MGM Grand is 36.5 min from The Venetian - over the limit.",
+   "what_is_missing": "A measured duration rather than a routed estimate, and any duration at all for ARIA, Golden Nugget and The Cosmopolitan. Also missing: whether the route is indoors or on the street, which in Las Vegas heat is a different question from the number of minutes.",
    "how_to_find": "Use the Google/Apple Maps links on the Walking page for each pair, or approve S-06 so the daily job records durations from a routing API.",
    "blocks": "the 30-minute filter, which today correctly returns 'unknown' for every pair (FG-11)"
+  },
+  {
+   "id": "Q-17",
+   "step": 4,
+   "question": "Will the Wynn dailies still be running when you are there?",
+   "status": "open",
+   "what_we_have": "Wynn's four daily structure sheets all warn the event 'may be suspended during Seniors Events, Classic Events, or other Tournament Series', and the WPT World Championship occupies the same room 27 Nov - 21 Dec 2026.",
+   "what_is_missing": "A yes or no from the room for your dates.",
+   "how_to_find": "Phone the Wynn poker room and ask which daily events are running on your dates.",
+   "blocks": "any Wynn fallback day"
   },
   {
    "id": "Q-11",
@@ -113,6 +163,16 @@
    "blocks": "the difference between a $119 and a prevailing-rate night, which can double the lodging cost"
   },
   {
+   "id": "Q-18",
+   "step": 5,
+   "question": "Is a bounty event the right thing to enter at all?",
+   "status": "answered_warning",
+   "what_we_have": "Bounty and PKO events are labelled separately on the tournaments table, because the guarantee on them is described by the sheet as 'prize pool + total bounties' - part of the guaranteed number is money you can only win by knocking players out, not by finishing deep. Event #52 ($1,100 PKO, $75K GTD) and #08 ($200 PKO, $8K GTD) work differently again: the bounty on your own head grows as you eliminate people.",
+   "what_is_missing": "Nothing from the sources. The judgement - whether you want variance in the bounty pool - is yours.",
+   "how_to_find": "Read the bounty note on each row; the ratio column treats the guarantee the same way for all events, so read the label before you read the number.",
+   "blocks": "event selection"
+  },
+  {
    "id": "Q-12",
    "step": 6,
    "question": "Are the schedules still standing the week before you fly?",
@@ -121,26 +181,6 @@
    "what_is_missing": "A pre-payment re-check ritual: series page, event sheet, hotel rate, cancellation deadline, all on the same day.",
    "how_to_find": "The Change report page shows the last run and which sources moved; re-run the workflow manually (workflow_dispatch) the morning you pay.",
    "blocks": "non-refundable payment"
-  },
-  {
-   "id": "Q-13",
-   "step": 3,
-   "question": "Which Strip rooms have been left out, and does that change the answer?",
-   "status": "open",
-   "what_we_have": "Only The Venetian's schedule is in the ranked dataset, because it is the only one with a dated, per-event official document set we have read. Wynn, Caesars Palace, Horseshoe, MGM Grand, Bellagio, ARIA and Golden Nugget appear in the spend-advantage / unverified tables with their official links.",
-   "what_is_missing": "Bellagio's three weekly term sheets, MGM's dated schedule, ARIA's current calendar, plus Planet Hollywood, LINQ, Paris, Luxor/Excalibur/NY-NY and downtown (Circa, The STRAT) - none read in this pass.",
-   "how_to_find": "Suggestion S-03: read one venue per refresh run and grow the same three-state classification, instead of trusting an aggregator.",
-   "blocks": "the claim that these Venetian events are the 'best' on the Strip - today it is only 'the best verified'"
-  },
-  {
-   "id": "Q-14",
-   "step": 1,
-   "question": "Who is coming, and does sharing change the cost?",
-   "status": "needs_you",
-   "what_we_have": "Occupancy economics: the Venetian's rate is quoted on single/double occupancy and adds $50/night per guest aged 13+; Park MGM adds $40 plus tax per occupant above two; Wynn adds $50 per night above the room's stated capacity and caps standard rooms at four people ($500 per person beyond the cap, up to $3,000).",
-   "what_is_missing": "Party size. Two players splitting a $119+fee room halves the lodging cost per player and doubles the qualifying-play obligation, since play from all registered guests counts toward the requirement.",
-   "how_to_find": "Decide the party; the trip calculator has an occupancy control that applies the surcharge lines automatically.",
-   "blocks": "the per-player cost comparison between hotels"
   }
  ]
 }
