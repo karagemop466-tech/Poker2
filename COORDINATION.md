@@ -1572,3 +1572,90 @@ deviation as F02).
   re-running the failing workflow step verbatim under `bash -e -o pipefail` reproduces
   `syntax error near unexpected token '&&'` (exit 2) — the `{ … \n && … ; }` construct is invalid bash,
   so `/tmp/verify.failed` bookkeeping and the snapshot/PR step never run.
+
+### Completion record — arena/594db405-poker2 (2026-11-17)
+
+**V1 — daily official-source refresh repaired.** Runs 43943838443 and 44124782058 of
+`plan-refresh.yml` both died at the "Verify the generators…" step before `commit-refresh.sh`
+ever ran, so the automatic re-check never completed one end-to-end run. Proximate cause,
+re-verified locally on bash 5.2 with a minimal script file: the step body was written as
+`{ cmd \n && cmd ; }` and a newline before `&&` terminates the command in bash — parse error,
+exit 2, later steps skipped. (Session `arena/8a8fa20f-poker2` had diagnosed the same two runs
+as a post-fetch drift problem and added the re-render + `check_plan_fresh.py` freshness gate;
+that fix is real and kept — the drift and the syntax error are two separate defects of the same
+step.) Resolution kept both: their re-render ordering and freshness gate, the check chain
+without `build-site.py --check` (a tautology after the re-render), and a valid
+`set +e`/`verify_status` step body. `commit-refresh.sh` also gained a rebase-and-retry push
+(3 attempts) so a concurrent push to `main` cannot fail a run. All five workflow files'
+`run:` blocks now pass `bash -n`; the merged `plan-refresh.yml` six steps all parse. The
+sandbox credential cannot dispatch workflows (`gh workflow run` → HTTP 403, confirmed earlier
+by `arena/32a40b2f-poker2`), so the first live run is the next scheduled one (cron `30 6 * * *`);
+whoever sees it pass should confirm it commits `site-data/snapshots/` and flips states to `new`.
+
+**V2 — live verification sweep.** Transcript: `research/594db405-verification-sweep.md`;
+structured record: `data/session-updates-594db405.json`; applied through
+`scripts/build_master.py` (change-record overlay, fill-only elsewhere). Official pages read
+first-hand 2026-11-17 via the page-fetch tool (sandbox curl cannot reach casino hosts):
+[Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html),
+[Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html),
+[Venetian poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html),
+[Wynn resort information](https://www.wynnlasvegas.com/about-us/resort-information),
+[ARIA terms](https://aria.mgmresorts.com/en/terms-and-conditions.html),
+[MGM Grand terms](https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html),
+[Westgate resort-fee FAQ](https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/),
+[Caesars corporate disclaimer](https://www.caesars.com/corporate/disclaimer),
+[Horseshoe hotel page](https://www.caesars.com/horseshoe-las-vegas/hotel),
+[South Point poker room](https://southpointcasino.com/casino/poker-room),
+[South Point daily schedule](https://southpointcasino.com/casino/poker-room/daily-tournament-schedule),
+structure sheets [5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf) and
+[6](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf).
+All tracked values matched except one, which is the point of the feature:
+
+* **VR-594-01 (changed source).** The Caesars Hotel Disclaimer printed "between $45-$50 plus
+  applicable tax" on 2026-11-16 and prints "between $45-$60 plus applicable tax" on 2026-11-17.
+  The dataset now carries the live text with both readings and the change is published on the
+  Flagged page and in the Horseshoe/Caesars Palace fee cells. Property fee cells stay blank —
+  the page publishes a range only.
+* Structure sheets 5 and 6 matched their transcribed rows word for word (V-02: $58/$242/$10K;
+  V-10: $65/$335/$15K), including the "no re-entry clause" reading.
+* New nuance, no row contradicted: Wynn's general guarantee policy is one night at booking
+  (resort-information page) while the row's full-stay deposit quote is from three offer-terms
+  pages; both are now recorded on H-WYN.
+* Irregularities published: the Caesars range move (above); Horseshoe prints no fee amount on
+  any reachable official page (its fitness page confirms a fee exists); South Point's daily
+  schedule is image-only (JPG rules sheets, "Oct2026" in file names); Westgate's $36.99 figure
+  is absent from the page body that prints $49.99; the Venetian fee wording differs between its
+  two pages without a numeric conflict.
+
+**V3 — requirements gap check and fixes.** Every feature in the brief was located in the
+published UI (trip calculator `planner.html`/`trip.html` with the exact
+entries × buy-ins + nights × true hotel cost formula; date selector and single-entry toggle on
+the events table; ≤30-min walk filter `walking.html`; dated rate log; per-venue pages; overlap
+flags and primary/fallback day plan; structured rule fields with excerpts and dates; monitor
+badges). Three gaps found and fixed: (1) `schedule.html`, `single-entry.html` and
+`sources.html` had no search box — `assets/site.js` grew a generic per-table search
+(`input.search[data-filter-table]`) wired to six tables; (2) the official Caesars fee range was
+data-only — `scripts/build_site.py` now renders it on the hotel rows with its disclaimer link,
+read date and change note (three pages embed those rows); (3) the brief's six-step decision
+workflow is now an ordered panel on `planner.html`. Deliberately not built: a per-room daily
+schedule scraper beyond what official sources support — only the Venetian publishes a
+machine-readable schedule, South Point's is image-only, and the other rooms publish nothing
+rankable (documented finding, not a gap in tooling).
+
+**Verification performed on the merged tree (all green):** `audit.py` ("every row reconciles
+with the official document it cites"), `check_links.py`, `check2026.py`, `build2026.py --check`,
+`check_guarantees.py`, `check_monitor_badge.py`, `check_search.mjs`, `check_plan_fresh.py`,
+`build-events.py --check`, `build-schedule.py --check`, `build-walk.py --check`,
+`build-site.py --check`, `scrape-schedule.mjs --selftest`, `check_sources.mjs --selftest`;
+verify.yml's ownership contract simulated locally (build.py → restore the 16 integration-owned
+pages → clean tree); every workflow `run:` block passes `bash -n` under PyYAML extraction.
+
+**Merge-policy note for this branch:** `main` moved three times during the session (PRs
+#69/#70/#71, then #72/#74). Each merge kept both sides' COORDINATION.md sections; the
+`plan-refresh.yml` conflict kept both fixes as described under V1; `data/master.json` was
+regenerated from the merged generator rather than textually merged (ARIA/Bellagio cancellation
+evidence upgraded from placeholder to the verified 72-hour rule).
+
+**Not verified (published on Flagged, does not block):** any dated hotel quote (booking engines
+render prices with JavaScript — F-05), hotel quality ratings (no official source), any
+single-entry confirmation in writing (FG-02), finish times (F-04), Westgate's $36.99 origin.
