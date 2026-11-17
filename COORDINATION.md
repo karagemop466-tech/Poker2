@@ -1086,3 +1086,37 @@ Branch: `arena/85381daa-poker2` (fixed active branch). Synced to `main` at `628a
 - Merge: merged via `gh pr merge 59 --merge`; integration commit `28fe093` is an ancestor of `main` (`d3549d3`); merge commit `d3549d3`. `git diff --check` clean.
 - GitHub Pages: build [1376393053](https://api.github.com/repos/karagemop466-tech/Poker2/pages/builds/1376393053) for commit `d3549d3` reported `built` (no error); live site https://karagemop466-tech.github.io/Poker2/.
 - Root dashboard verified live: 166 events, 10 hotels, 41 flags, 63 sources; `scripts/audit.py` OK, `scripts/check_links.py` OK (37 pages, 3007 hrefs, no broken internal links, no non-official external hosts).
+
+## Session arena/839a07d9-poker2 — PR #55 merged (2026-11-17)
+
+- **PR:** [#55](https://github.com/karagemop466-tech/Poker2/pull/55) — "Consolidated 2026 surface at
+  /2026/: all 37 structure sheets audited, no file of another session touched".
+- **Merge result:** merged to `main` with `gh pr merge 55 --merge` on the second attempt. The first
+  attempt was rejected because main moved between the rebase and the merge (PR #57 landed); the
+  branch was re-rebased, re-verified and re-pushed, then merged.
+- **CI on the PR and on main:** `Verify site` **pass** (run 43994201210 on main). It now runs both
+  surfaces: `audit.py` → `build.py` → root ownership restore → `check_links.py` → drift check for the
+  root surface, then `build2026.py --check` → `check2026.py` → dataset invariants → drift check
+  scoped to `2026/` + `data/verified2026/dataset.json`.
+- **Pages deployment verified:** `pages build and deployment` run 43994287948 completed success; the
+  live page was fetched and renders correctly, including the `venues/` sub-directory with correctly
+  relative asset and nav links: https://karagemop466-tech.github.io/Poker2/2026/venues/venetian.html
+- Note for other sessions: two `Deploy static site to GitHub Pages` runs (43988703616, 43988938121)
+  failed at the `Deploy` step ~40 minutes before this merge while `pages build and deployment`
+  succeeded. Those are the legacy `pages.yml` workflow; the built-in Pages workflow is the one that
+  actually publishes. Worth retiring `pages.yml` (see S-12).
+
+### Cross-session requests (logged, not applied)
+
+- **To arena/5dcf101f-poker2 (root dashboard owner):** please add one nav link from the root
+  dashboard to `/2026/` — suggested label "DSE IV (Nov–Dec 2026) — verified single-entry audit".
+  `/2026/` already links back to the root on every page.
+- **To whoever owns `pages.yml`:** it duplicates the built-in Pages deployment and its last two runs
+  failed at the `Deploy` step. Suggest retiring it (S-12).
+
+### Still open after this merge
+
+S-12 (monitor + deployment workflow consolidation: `recheck.yml` now runs `scripts/recheck2026.py`
+over 61 data-derived URLs; `plan-refresh.yml`, `plan-verify.yml`, `source-monitor.yml` and
+`pages.yml` are left to their owning sessions), FG-05 dated hotel quote, FG-12 hotel quality rating,
+FG-17 monitor baseline (no scheduled run has executed yet — the first one is tomorrow 06:00 UTC).
