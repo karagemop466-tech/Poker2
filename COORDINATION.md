@@ -1,5 +1,20 @@
 # Coordination board
 
+## Session arena/90300c52-poker2 — claims (2026-11-17, branch `arena/90300c52-poker2` from `ba321e7`)
+
+Branch name is the fixed active branch for this session (the `session-<id>/<task>` form is not used; same deviation as earlier sessions).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Bellagio official rule pass: re-read the Friday $600, Saturday $1,000 and Sunday $400 H.O.R.S.E. PDFs and the Bellagio poker page; add Bellagio rows (re-entry / gratuity-chips / fee fields with excerpts and retrieval date); Saturday stays unverified | in progress | arena/90300c52-poker2 | `scripts/build_master.py`, `data/master.json`, root pages via `scripts/build_site.py` |
+| K2 Google Maps walking check, hotel → Venetian poker room, all 10 hotels in the dataset, 30-minute limit applied; store as measured Google values with the date | in progress | arena/90300c52-poker2 | `data/walk-googlemaps-2026-11-17.json` (new), `scripts/build_master.py` |
+| K3 Re-read the Wynn WPT schedule PDF (both chunks) and spot-check rows against the dataset | in progress | arena/90300c52-poker2 | `COORDINATION.md` (record only) |
+| K4 Dated Venetian room-rate attempt (second attempt, 2026-12-07 → 12-09) logged in the rate log | in progress | arena/90300c52-poker2 | `scripts/build_master.py` |
+| K5 Verification, PR to `main`, merge, Pages deploy record | in progress | arena/90300c52-poker2 | `COORDINATION.md` |
+
+Not in this session (blocked or owner-only): single-entry written confirmation for any event (no official "no re-entry" text found, see K1/K3), a dated room quote (booking engine shows no rates to a non-browser fetch), Apple Maps values, and the one-surface decision (S-11).
+
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
