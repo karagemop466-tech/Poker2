@@ -865,3 +865,13 @@ published twice, with the number taken from the regenerated dataset (45, because
 Event #39 as a two-day event rather than a one-day candidate). Main's walk.json carried 12 pairs; this
 branch carries 70 generated from the full OSRM matrix, so the 70-pair set is kept and main's per-pair
 hand-verified detail is folded in through the overlay file above rather than lost.
+### Publication record — PR #53 (2026-11-17, session arena/18aba6dd-poker2)
+
+- PR #53 ("S-06 walking minutes + open-to-all day-plan gate, integrated on the completed 37-sheet dataset")
+  merged into main without waiting for approval; main at `98ca770`.
+- CI on the merge commit: `Verify site` **success**, `Plan: generated pages match their data` **success**,
+  `pages build and deployment` **success**; Pages API reports `status: built`.
+- Live verification by reading the deployed pages: `plan/hotels.html` renders all 12 pairs with routed
+  minutes and the "OSM/OSRM foot-routing estimate … not an official measurement" note; `plan/schedule.html`
+  shows Dec 2 → Event 25, Dec 8 → Event 34, Dec 9 → Event 36 (93.8×) with Event 38 as the conditional
+  fallback, Dec 10 → Event 42 — the three restricted events no longer appear as primaries anywhere.
