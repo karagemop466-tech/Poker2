@@ -1043,3 +1043,46 @@ that surface's owner), FG-05 dated hotel quote, FG-12 hotel quality rating, FG-1
 - Carried forward: FG-02 (no official document says "one entry per player"), S-15 (headless-browser
   quotes for Wynn and the MGM properties), S-04 / FG-12 (no official quality-rating source),
   S-11 and S-12 (surface consolidation).
+
+## Session arena/85381daa-poker2 — integration and verification record (2026-11-17)
+
+Branch: `arena/85381daa-poker2` (fixed active branch). Synced to `main` at `628abe4` (PR #57 merged). Root dashboard surface byte-identical to the prior base; only my session's coordination record is added on top.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Re-verify root dashboard dataset and run repo checks | done | arena/85381daa-poker2 | `data/master.json`, `scripts/audit.py`, `scripts/check_links.py` |
+| K2 Verify official sources cited by published rows | done | arena/85381daa-poker2 | Venetian schedule page, structure sheet 5, resort-fee page; Caesars poker guide |
+| K3 Flag irregularities / verification limits | done | arena/85381daa-poker2 | `flagged.html`, `COORDINATION.md` |
+| K4 PR -> `main`, merge, Pages deploy confirmed, record | in progress | arena/85381daa-poker2 | `COORDINATION.md` |
+
+### Verification performed (first-hand against official documents)
+
+- `python3 scripts/audit.py` → OK: 166 events, 10 hotels, 41 flags; every row reconciles with the official document it cites (83 Venetian + 13 other, 8 hotels, 60 sources).
+- `python3 scripts/check_links.py` → OK: 37 pages, 3007 hrefs, no broken internal links, no non-official external hosts.
+- Venetian DeepStack schedule page (dse-nov-2026.html) re-read; structure-sheet links and row data match the published dataset.
+- Venetian structure sheet `dse_nov_2026-structure_5.pdf` (Events 2/12): $300 buy-in, $58 house fee withheld, $242 to prize pool per entry, $10,000 guarantee, 40,000 starting chips, 30-minute levels, late registration closes after level 10 + break (~4:55 PM), pays 12.5% of field. **No re-entry / rebuy / add-on clause appears anywhere in the sheet.** Matches `data/master.json` row V-02 exactly.
+- Venetian resort-fee page: daily resort fee $55 plus tax per night. Confirmed.
+- Caesars poker-tournaments page (caesars.com) renders; cites Caesars Palace poker room (16-table, 24/7) and Horseshoe Hall of Fame Poker Room. Confirmed official source host.
+- Wynn poker page did not surface its tournament schedule via static fetch; Wynn entry rules remain flagged unverified (no value inferred).
+
+### Publication policy upheld (no values inferred)
+
+- No event on any official document read states "one entry per player." **Zero events are labelled confirmed single-entry.** The 45 Venetian "single" rows are "sheet silent on re-entry" (silence is not a freezeout guarantee) and are listed as candidates only; spend-advantage events (re-entry/rebuy/add-on confirmed) are kept in a separate section and out of the ranking — directly answering the "single entry only" request with the truthful finding.
+- Guarantee ÷ total entry fee shown as a descriptive ratio only, not a forecast; bounty/flight/team/satellite events labeled separately.
+- Hotel costs: rate + resort fee + tax; no dated room quote obtainable from a static fetch (booking engines return masked prices), so components stay blank/flagged rather than inferred.
+- No official walking time obtained; map links provided for manual confirmation; the ≤30-minute rule is a filter criterion, not applied to unverified routed estimates.
+- No 8:00 AM tournament printed anywhere; earliest verified start is 10:10 AM (Venetian) / 9:00 AM Horseshoe (Horseshoe publishes no buy-in, guarantee or entry rule, so that row stays unverified).
+
+### Irregularities published for review (do not block merge)
+
+- No confirmed single-entry event (open, FG-02): requires written maximum-entry / no-rebuy / no-add-on confirmation from each poker room.
+- No official walking time; no dated room quote; Wynn entry rules unverified.
+- Wynn daily tournaments during the WPT window marked unavailable, not confirmed either way.
+- Event names preserve official typos as printed (e.g. "No LImit Hold'em").
+
+### Integration result
+
+- PR: [#59](https://github.com/karagemop466-tech/Poker2/pull/59) (`arena/85381daa-poker2` -> `main`).
+- Merge: merged via `gh pr merge 59 --merge`; integration commit `28fe093` is an ancestor of `main` (`d3549d3`); merge commit `d3549d3`. `git diff --check` clean.
+- GitHub Pages: build [1376393053](https://api.github.com/repos/karagemop466-tech/Poker2/pages/builds/1376393053) for commit `d3549d3` reported `built` (no error); live site https://karagemop466-tech.github.io/Poker2/.
+- Root dashboard verified live: 166 events, 10 hotels, 41 flags, 63 sources; `scripts/audit.py` OK, `scripts/check_links.py` OK (37 pages, 3007 hrefs, no broken internal links, no non-official external hosts).
