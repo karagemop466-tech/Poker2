@@ -2,6 +2,15 @@ name: Source monitor
 
 # Re-check every official URL on a schedule and mark rows whose source changed.
 # Runs daily at 07:00 Las Vegas time (PST, UTC-8 → 15:00 UTC).
+#
+# Scope note: this is the ROOT surface's monitor. It reads the registry
+# (data/source_monitor.json) that scripts/build_monitor_registry.py generates from the
+# citations inside data/master.json, so it covers exactly the sources the root pages
+# publish. The /plan/ surface runs its own check (.github/workflows/plan-refresh.yml +
+# scripts/check_sources.mjs) over site-data/, and the /2026/ surface has
+# scripts/recheck2026.py; those registries are separate and their reports must not be
+# read as covering this surface's rows. Unifying them is an open decision (S-12 in
+# COORDINATION.md), not something a scheduled job should decide by itself.
 on:
   schedule:
     - cron: '0 15 * * *'
@@ -16,19 +25,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Re-check official URLs (hash compare + daily snapshots)
+      # Order matters: regenerate the dataset first (so any source a row newly cites is
+      # in the registry before the fetch), then register, fetch, and only then render.
+      - name: Regenerate the dataset from the verified inputs
+        run: python3 scripts/build_master.py
+
+      - name: Rebuild the monitored-URL registry from the dataset's own citations
+        run: python3 scripts/build_monitor_registry.py
+
+      - name: Re-check official URLs (hash compare + snapshots when bytes differ)
         run: python3 scripts/monitor.py
 
-      - name: Rebuild site (rows with changed sources get flagged)
-        run: python3 scripts/build_master.py && python3 scripts/build_site.py
+      - name: Render the pages (rows citing a changed source get flagged)
+        run: python3 scripts/build_site.py
 
       - name: Commit monitoring results
         run: |
           git config user.name "poker2-source-monitor"
           git config user.email "actions@users.noreply.github.com"
-          git add data/source_monitor.json data/monitor-report.md data/snapshots data/master.json
-          git add index.html summary.html tournaments.html venue-venetian.html venue-wynn.html \
-                  venue-others.html hotels.html planner.html planning.html ranking.html rules.html \
-                  monitor.html flagged.html questions.html suggestions.html repo-review.html
-          git diff --cached --quiet || git commit -m "Source monitor: re-check official URLs $(date -u +%F)"
-          git push
+          # Stage the generator's whole output set, never a hand-picked subset: an earlier
+          # version of this step listed 18 pages while build_site.py writes 20, so a change
+          # could land half-committed and leave main's pages out of date with main's data.
+          git add -A -- data/source_monitor.json data/monitor-report.md data/snapshots \
+                        data/master.json '*.html'
+          if git diff --cached --quiet; then
+            echo "No source content changed; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Source monitor: re-check official URLs $(date -u +%F)"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+
+      - name: Report
+        if: always()
+        run: cat data/monitor-report.md

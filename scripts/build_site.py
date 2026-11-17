@@ -90,6 +90,7 @@ CATS = {
     "ambiguous": ('b-warn', "Entry limit ambiguous"),
     "spend-more": ('b-bad', "Spend-more (re-entry/add-on)"),
     "multi-flight": ('b-info', "Multi-flight"),
+    "multi-day": ('b-info', "Multi-day (one starting day)"),
     "satellite": ('b-chip', "Satellite"),
     "team": ('b-chip', "Team event"),
     "unverified": ('b-warn', "UNVERIFIED"),
@@ -99,10 +100,26 @@ def cat_badge(cat):
     cls, label = CATS.get(cat, ('b-chip', cat))
     return f'<span class="badge {cls}">{esc(label)}</span>'
 
-def rule_badge(rules):
-    se = rules.get("single_entry", "")
+def rule_badge(rules, entry=None):
+    """Entry-rule badge. Driven by what the document says, never by inference."""
+    entry = entry or {}
+    state = entry.get("entry_state")
+    if state == "stated":
+        return ('<span class="badge b-bad" title="The sheet states the entry rule; read the field detail">sheet states the rule · '
+                'not single-entry</span>')
+    if state == "stated_multi_entry":
+        return '<span class="badge b-bad">sheet prices further buy-ins</span>'
+    if state == "silent":
+        return ('<span class="badge b-good" title="Structure sheet read in full: no re-entry, rebuy or '
+                'add-on clause is printed. Silence is not a published freezeout rule.">sheet read · no '
+                're-entry/rebuy/add-on printed</span>')
+    if state == "not_stated":
+        return '<span class="badge b-warn">no rule document published</span>'
+    se = rules.get("single_entry", "") or ""
+    if not isinstance(se, str):
+        se = str(se)
     if se.startswith("not stated"):
-        return '<span class="badge b-good">sheet read · no re-entry/rebuy/add-on</span>'
+        return '<span class="badge b-good">sheet read · no re-entry/rebuy/add-on printed</span>'
     if se.startswith("ambiguous"):
         return '<span class="badge b-warn">ambiguous wording</span>'
     if se.startswith("no"):
@@ -120,6 +137,72 @@ def fmt_hm(t):
     suf = "AM" if h < 12 else "PM"
     return "%d:%s %s" % ((h % 12) or 12, mi, suf)
 
+
+FIELD_LABELS = [("single_entry", "Single entry"), ("re_entry", "Re-entry"), ("add_on", "Add-on"),
+                ("fee", "House fee"), ("guarantee", "Guarantee"), ("payout", "Payout"),
+                ("bounty", "Bounty")]
+STATUS_WORDS = {"explicit": "stated on the sheet", "explicit_no": "stated on the sheet",
+                "not_stated_sheet_read": "read in full · not stated", "not_read": "not read",
+                "not_stated": "not stated"}
+
+
+def rule_detail(e):
+    """Per-field entry-rule evidence: value, status, the sheet's own words, its URL and the date
+    it was retrieved. Nothing here is inferred — a field that the document does not state is
+    shown as unread/no-provision, with the sheet link so the reader can check it."""
+    f = e.get("rules_fields") or {}
+    if not f:
+        return ""
+    items = []
+    for key, label in FIELD_LABELS:
+        rec = f.get(key)
+        if not isinstance(rec, dict):
+            continue
+        val = rec.get("value")
+        if val is None or val == "":
+            val = "not stated"
+        st = STATUS_WORDS.get(str(rec.get("status")), str(rec.get("status") or "—"))
+        src = rec.get("source_url") or e.get("struct_url") or ""
+        link = (f' <a href="{esc(src)}" target="_blank" rel="noopener">sheet</a>' if src else "")
+        exc = rec.get("excerpt") or ""
+        items.append(
+            f'<li><strong>{esc(label)}</strong>: {esc(val)} '
+            f'<small class="note">· {esc(st)} · retrieved {esc(rec.get("retrieved") or e.get("sheet_retrieved") or "")}{link}</small>'
+            + (f'<div class="excerpt">&ldquo;{esc(exc)}&rdquo;</div>' if exc else "") + "</li>")
+    if not items:
+        return ""
+    gate = ""
+    el = e.get("eligibility") or {}
+    if isinstance(el, dict) and el.get("value"):
+        gate = (f'<div class="excerpt"><strong>Eligibility:</strong> {esc(el["value"])} '
+                f'&ldquo;{esc(el.get("excerpt") or "")}&rdquo; '
+                f'<a href="{esc(el.get("source_url") or "")}" target="_blank" rel="noopener">source</a>'
+                f' · retrieved {esc(el.get("retrieved") or "")}</div>')
+    spend = ""
+    if e.get("spend_advantage"):
+        spend = (f'<div class="excerpt"><strong>Spend advantage:</strong> {esc(e["spend_advantage"])} '
+                 f'<a href="{esc(e.get("spend_advantage_source") or "")}" target="_blank" '
+                 f'rel="noopener">source</a></div>')
+    return (f'<details><summary class="note">Entry-rule evidence, field by field</summary>'
+            f'<ul class="tight">{"".join(items)}</ul>{gate}{spend}</details>')
+
+
+def struct_cell(e):
+    """Starting stack, blind length and the registration window — the comparison fields the
+    structure sheets publish. A blank stays blank when no document states it."""
+    bits = []
+    if e.get("chips"):
+        bits.append(f'{int(e["chips"]):,} chips' if str(e.get("chips")).isdigit() else f'{esc(e["chips"])} chips')
+    if e.get("level_min"):
+        bits.append(f'{esc(e["level_min"])}-min levels')
+    lr = e.get("late_reg") or ""
+    if lr:
+        bits.append(esc(lr))
+    if e.get("pays_pct"):
+        bits.append(f'pays {e["pays_pct"]}% of field')
+    if not bits:
+        return '<span class="badge b-warn">not published</span>'
+    return "<small class=\"note\">" + " · ".join(bits) + "</small>"
 
 def changed_flag(url):
     """Mark rows whose monitored source changed since the stored hash."""
@@ -154,20 +237,30 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
             gtd = '<span class="badge b-chip">none published</span>'
         ratio = f'{e["gtd_ratio"]:.2f}×' if e.get("gtd_ratio") else "—"
         tags = " ".join(f'<span class="badge b-chip">{esc(t)}</span>' for t in e.get("tags", []))
+        gate = ""
+        el = e.get("eligibility")
+        if isinstance(el, dict) and el.get("value"):
+            gate = (f' <span class="badge b-chip" title="{esc(el.get("excerpt") or "")} '
+                    f'· retrieved {esc(el.get("retrieved") or "")}">restricted field: {esc(el["value"])}</span>')
+        elif isinstance(el, str) and el.strip():
+            gate = f' <span class="badge b-chip">restricted field: {esc(el)}</span>'
         # a row that is not available in its own window must say so in the table, not only in prose
         avail = (f'<div class="badge b-bad">{esc(e["availability_note"])}</div>'
                  if e.get("availability_note") else "")
         walk = ""
         cb = (f'<td><input type="checkbox" data-buyin="{e.get("buy_in") or 0}"></td>' if show_checkboxes else "")
+        extra = (f'<td>{struct_cell(e)}</td>' if extra_cols else "")
         rows.append(f"""<tr data-date="{esc(e.get('date',''))}" data-cat="{esc(e.get('category',''))}" data-tags="{esc(' '.join(e.get('tags',[])))}">
 <td>{esc(e.get('date'))}</td><td>{esc(e.get('start'))}</td><td>{esc(e.get('venue'))}</td>
-<td><strong>{esc(e.get('name'))}</strong>{tags}{avail}</td>
+<td><strong>{esc(e.get('name'))}</strong>{tags}{gate}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
-<td>{cat_badge(e.get('category'))} {rule_badge(e.get('rules'))}</td>
-<td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
+<td>{cat_badge(e.get('category'))} {rule_badge(e, e)}{rule_detail(e)}</td>
+{extra}<td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
 {cb}</tr>""")
     head = ("<th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th>"
-            "<th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th><th>Sources / last checked</th>"
+            "<th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th>"
+            + ("<th>Stack · levels · registration · payout</th>" if extra_cols else "")
+            + "<th>Sources / last checked</th>"
             + ("<th>Trip</th>" if show_checkboxes else ""))
     return f'<table class="data" id="{table_id}"><thead><tr>{head}</tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>"
 
@@ -178,10 +271,11 @@ def toolbar(table_id, dates=None, with_walk=False, cat_options=True):
             '<option value="ambiguous">Entry limit ambiguous</option>'
             '<option value="spend-more">Spend-more (re-entry/add-on)</option>'
             '<option value="multi-flight">Multi-flight</option>'
+            '<option value="multi-day">Multi-day (one starting day)</option>'
             '<option value="satellite">Satellite</option>'
             '<option value="team">Team</option>'
             '<option value="unverified">Unverified</option>')
-    walk = ('<label><input type="checkbox" data-bind-walk="' + table_id + '"> ≤30-min walk verified only</label>'
+    walk = ('<label><input type="checkbox" data-bind-walk="' + table_id + '"> ≤30-min walk (routed estimate) only</label>'
             if with_walk else "")
     silent_box = ""
     if cat_options:
@@ -206,44 +300,123 @@ def hotel_table(hotels, table_id, show_calc=True):
         fee_cell = (money(fee) + " /night" if fee is not None else '<span class="badge b-warn">blank</span>')
         if h.get("resort_fee_text"):
             fee_cell += f'<small class="note">{esc(h["resort_fee_text"])}</small>'
+        fe = h.get("fee_evidence") or {}
+        if fe.get("excerpt"):
+            fee_cell += (f'<small class="excerpt">&ldquo;{esc(fe["excerpt"])}&rdquo; '
+                         f'<span class="badge b-good">official terms</span> · read {esc(fe.get("retrieved"))}'
+                         f'</small>')
+        elif fe.get("status") in ("not_stated_officially", "not_read_official_page", "page_does_not_state",
+                                  "superseded_by_reread"):
+            fee_cell += (f'<small class="excerpt note"><span class="badge b-warn">no official figure</span> '
+                         f'{esc(fe.get("note") or fe.get("rule") or "")}</small>')
+        elif fe.get("status") == "conflict_page_does_not_state":
+            fee_cell += (f'<small class="excerpt note"><span class="badge b-bad">cited page does not state this</span> '
+                         f'{esc(fe.get("note") or "")} <a href="{esc(fe.get("replacement_url"))}" target="_blank" '
+                         f'rel="noopener">the page that does</a> · read {esc(fe.get("replacement_retrieved"))}</small>')
+        elif h.get("conflict"):
+            c = h["conflict"]
+            fee_cell += (f'<small class="excerpt note"><span class="badge b-bad">conflicting figures</span> '
+                         f'{esc(c.get("note") or c.get("conflict") or c)}</small>')
+        elif h.get("fee_last_read") and h.get("resort_fee_src"):
+            fee_cell += f'<small class="excerpt note">read on the linked official page · {esc(h["fee_last_read"])}</small>'
         tax = h.get("tax_rate")
         tax_cell = (f"{tax*100:.2f}%" if tax else '<span class="badge b-warn">blank</span>')
         if h.get("tax_note"):
             tax_cell += f'<small class="note">{esc(h["tax_note"])}</small>'
-        rl = h.get("rate_log") or []
+        # --- the rate cell: a dated QUOTE first, then a dated from-price, then a logged attempt.
+        #     These are different kinds of claim and are labelled as such; a from-price is never
+        #     presented as what a room costs.
+        rl_all = h.get("rate_log") or []
+        rl = [x for x in rl_all if x.get("rate") is not None]
         shared = (MASTER.get("rate_log_shared") or {})
-        if rl:
+        quote = h.get("quote") or {}
+        prefill = ""
+        prefill_src = ""
+        if quote.get("checkout_total_usd") is not None:
+            rate_cell = (f'<strong>{money(quote["nightly_average_usd"])}</strong>'
+                         f'<small class="note">/night average of the itemised official quote · '
+                         f'{esc(quote.get("stay_start"))} → {esc(quote.get("stay_end"))} · '
+                         f'{quote.get("nights")} nights · {esc(str(quote.get("adults")))} adults · '
+                         f'{esc(quote.get("suite_type"))}</small>'
+                         f'<small class="note">checkout total {money(quote["checkout_total_usd"])} = '
+                         f'room {money(quote.get("room_subtotal_usd"))} + resort fee '
+                         f'{money(quote.get("resort_fee_total_usd"))} + tax {money(quote.get("taxes_usd"))}'
+                         + (f' ({quote["tax_pct_implied"]}%)' if quote.get("tax_pct_implied") else "")
+                         + '</small>'
+                         + (f'<small class="excerpt note">{esc(quote.get("rate_caveat"))}</small>'
+                            if quote.get("rate_caveat") else "")
+                         + (f'<small class="note">true cost/night {money(quote.get("true_cost_per_night_usd"))}'
+                            + (f' (+{money(quote.get("parking_per_day_usd"))}/day parking, not in the engine total)'
+                               if quote.get("parking_per_day_usd") else "") + '</small>'
+                            if quote.get("true_cost_per_night_usd") is not None else "")
+                         + f'<small class="note">quoted {esc(quote.get("retrieved"))}</small>')
+            prefill = (round(quote["room_subtotal_usd"] / quote["nights"], 2)
+                       if quote.get("room_subtotal_usd") and quote.get("nights") else "")
+            if prefill:
+                prefill_src = "prefilled from the dated official quote (room subtotal ÷ nights)"
+        elif rl:
             latest = rl[-1]
-            rate_cell = f'{money(latest["rate"])} <small class="note">{esc(latest["basis"])} · logged {esc(latest["date"])}</small>'
+            rate_cell = (f'{money(latest["rate"])} <small class="note">{esc(latest["basis"])} · logged '
+                         f'{esc(latest["date"])} <span class="badge b-chip">from-price, not a quote</span></small>')
+            prefill = latest["rate"]
+            prefill_src = "prefilled from the last logged rate — a published from-price, not a dated quote"
         elif h.get("id") in shared.get("hotel_ids", []):
             ent = shared["entries"][-1]
             rate_cell = ('<span class="badge b-warn">not attributed</span> <small class="note">'
-                         'official page prints '
+                         'the official poker-rate page prints '
                          + " / ".join(money(v) for v in ent["values"])
-                         + ' for either property — see the shared rate log</small>')
+                         + ' for either property without saying which — see the shared rate log</small>')
         else:
-            rate_cell = '<span class="badge b-warn">no dated quote</span>'
+            rate_cell = ('<span class="badge b-warn">no dated quote</span> '
+                         '<small class="note">every official calendar reachable rendered masked prices — '
+                         'see the log below</small>')
         calc = ""
         if show_calc:
             calc = f"""<div data-hotel-calc data-fee="{fee or 0}" data-tax="{tax or 0}" data-parking="{h.get('parking_value') or 0}">
-<input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+<input type="number" class="hc-rate" min="0" step="1" value="{prefill}" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
+{f'<div class="small note">{esc(prefill_src)}</div>' if prefill_src else '<div class="small note">no dated rate on file — enter one to compute</div>'}
 <div class="hc-out small note"></div></div>"""
-        walk = h.get("walk", {})
+        walk = h.get("walk") or {}
+
         def leg(minutes, ok, verified_twice):
             if minutes is None:
                 return '<span class="badge b-warn">not routed</span>'
             b = ('<span class="badge b-ok">≤30 min</span>' if ok else '<span class="badge b-bad">over 30 min</span>')
             twin = ' · 2 routers' if verified_twice else ' · 1 router'
             return f'<strong>{minutes:g} min</strong> {b}<small class="note">{twin}</small>'
+
         v_min, w_min = walk.get("venetian_min"), walk.get("wynn_min")
         walk_cell = ('<div class="walk-leg">Venetian: '
                      + leg(v_min, walk.get("within_30_to_venetian"), walk.get("routers_agree_30min") is not None)
                      + '</div><div class="walk-leg">Wynn: '
                      + leg(round(w_min) if w_min is not None else None,
                            walk.get("within_30_to_wynn"), False) + '</div>')
-        walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")) else "0"
-        walk_cell += (f'<small class="note"><a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">Venetian route ↗</a>'
-                      f' · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">Wynn route ↗</a></small>')
+        # every other poker room the routing matrix covers, so a hotel can be shortlisted
+        # against a series the reader may actually be playing
+        pairs = h.get("walk_pairs") or []
+        timed = [p for p in pairs if p.get("minutes") is not None
+                 and p.get("venue_id") not in ("V-VEN", "V-WYN")]
+        if timed:
+            chips = " ".join(
+                f'<span class="badge {"b-good" if p.get("within_30_min") else "b-warn"}" '
+                f'title="{esc(p.get("venue"))} · {esc(p.get("kind") or "routed")}">'
+                f'{esc(p.get("venue").replace("Las Vegas", "").replace(" The ", " ").strip())} '
+                f'{p["minutes"]:g}{"′"}</span>'
+                for p in sorted(timed, key=lambda x: x["minutes"]))
+            walk_cell += f'<div class="walk-leg small">{chips}</div>'
+        _pair_links = [p for p in pairs if p.get("google_maps")
+                       and p.get("venue_id") in ("V-CP", "V-HS", "V-BEL", "V-MGM")]
+        if walk.get("maps_venetian") or walk.get("maps_wynn"):
+            walk_cell += (f'<small class="note"><a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">Venetian route ↗</a>'
+                          f' · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">Wynn route ↗</a></small>')
+        if _pair_links:
+            walk_cell += ('<div class="small note">' + " · ".join(
+                f'<a href="{esc(p["google_maps"])}" target="_blank" rel="noopener">{esc(p["venue"].split()[0])} ↗</a>'
+                for p in _pair_links) + "</div>")
+        # the ≤30-min filter is honest only if it reads the same evidence the cell shows: a hotel
+        # qualifies when either main venue, or any routed pair, is inside the limit
+        walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")
+                          or any(p.get("within_30_min") for p in pairs)) else "0"
         rows.append(f"""<tr data-cat="hotel" data-walk-ok="{walk_ok}">
 <td><strong>{esc(h['name'])}</strong><small class="note">{esc(h.get('area',''))}</small></td>
 <td>{esc(h.get('address',''))}</td>
@@ -251,22 +424,162 @@ def hotel_table(hotels, table_id, show_calc=True):
 <td>{esc(h.get('parking','')) or '—'}</td>
 <td>{calc}</td>
 <td>{walk_cell}</td>
-<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">checked {AS_OF}</small></td>
+<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">fee re-read {esc(h.get('fee_last_checked') or h.get('fee_last_read') or h.get('retrieved') or AS_OF)}</small></td>
 </tr>""")
-    head = ("<th>Hotel</th><th>Address</th><th>Latest logged rate</th><th>Resort fee</th><th>Tax</th>"
+    head = ("<th>Hotel</th><th>Address</th><th>Dated quote / latest logged rate</th><th>Resort fee</th><th>Tax</th>"
             "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
     return f'<table class="data" id="{table_id}"><thead><tr>{head}</tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>"
 
+def _ev(value):
+    """One evidence cell: a plain sentence, or a structured record with its own excerpt, URL and
+    retrieval date. A record that says the page was not read stays visibly unverified — it is never
+    rendered as if it were a finding."""
+    if value in (None, "", {}, []):
+        return None
+    if not isinstance(value, dict):
+        return esc(str(value))
+    bits = []
+    if value.get("value"):
+        bits.append(esc(str(value["value"])))
+    if value.get("rule"):
+        bits.append(esc(str(value["rule"])))
+    if value.get("amount") is not None:
+        unit = value.get("per") or "night"
+        bits.append("%s per %s" % (money(value["amount"]), esc(unit)))
+    for k in ("guest_self_per_day", "valet_per_day", "non_guest"):
+        if value.get(k) is not None:
+            label = {"guest_self_per_day": "self-parking, guest",
+                     "valet_per_day": "valet"}.get(k, k.replace("_", " "))
+            v = value[k]
+            bits.append("%s %s" % (esc(label), money(v) if isinstance(v, (int, float)) else esc(str(v))))
+    st = value.get("status")
+    if st == "verified_official":
+        bits.append('<span class="badge b-good">stated on the official page</span>')
+    elif st in ("not_read_official_page", "not_stated_officially", "page_does_not_state"):
+        bits.append('<span class="badge b-warn">not read / not stated officially</span>')
+    elif st == "superseded_by_reread":
+        bits.append('<span class="badge b-chip">placeholder superseded by a later read</span>')
+    elif st:
+        bits.append('<span class="badge b-chip">%s</span>' % esc(str(st)))
+    if value.get("excerpt"):
+        bits.append('<span class="excerpt">&ldquo;%s&rdquo;</span>' % esc(str(value["excerpt"])))
+    if value.get("note"):
+        bits.append('<span class="note">%s</span>' % esc(str(value["note"])))
+    if value.get("conflict") or value.get("conflicting_figures"):
+        bits.append('<span class="badge b-bad">conflicting figures on the official pages</span>')
+    src, ret = value.get("source_url"), value.get("retrieved")
+    if src:
+        bits.append('<a href="%s" target="_blank" rel="noopener">source</a>%s'
+                    % (esc(src), (" · read " + esc(str(ret))) if ret else ""))
+    elif value.get("source_url_to_read"):
+        bits.append('to be read on: <a href="%s" target="_blank" rel="noopener">official page</a>'
+                    % esc(value["source_url_to_read"]))
+    return " ".join(b if not b.startswith("<") else b for b in bits if b) or None
+
+
+def hotel_terms_html(h):
+    """Everything the property's own terms page states about what a stay costs besides the room:
+    deposit hold, incidentals, extra occupant, check-in/out, cancellation and its fee, parking,
+    smoking and early departure. Each line keeps its own source and date, and an unread page is
+    shown as unread."""
+    fields = [("Resort fee", h.get("fee_evidence") or {"amount": h.get("resort_fee_value"),
+                                                      "excerpt": None}),
+              ("Cancellation policy", None),
+              ("Cancellation deadline", h.get("cancellation_deadline")),
+              ("Cancellation / no-show fee", h.get("cancellation_fee")),
+              ("Deposit hold", h.get("deposit")),
+              ("Incidentals", h.get("incidentals")),
+              ("Additional occupant", h.get("additional_occupant")),
+              ("Check-in / check-out", h.get("check_in_out")),
+              ("Parking", h.get("parking_evidence") or h.get("parking")),
+              ("Smoking / early departure", h.get("smoking") or h.get("early_checkout")),
+              ("Resort-fee waiver", h.get("fee_waiver")),
+              ("Room tax", {"value": h.get("tax_note"), "source_url": None}),
+              ("Quality rating", h.get("quality"))]
+    # a cancellation rule can be recorded twice on the same row: a real one, and an earlier pass's
+    # "page not read" placeholder. The rule wins; the placeholder is never shown on its own next to
+    # a read that supersedes it.
+    _ce, _cr = h.get("cancellation_evidence") or {}, h.get("cancellation")
+    _can = None
+    if isinstance(_ce, dict) and (_ce.get("rule") or _ce.get("value")):
+        _can = dict(_ce)
+    elif _cr:
+        _can = {"value": _cr,
+                "source_url": (_ce.get("source_url") if isinstance(_ce, dict) else None)
+                or h.get("resort_fee_src"),
+                "status": (_ce.get("status") if isinstance(_ce, dict) and _ce.get("status") == "verified_official"
+                           else None),
+                "retrieved": (_ce.get("retrieved") if isinstance(_ce, dict) else None)
+                or h.get("fee_last_checked") or h.get("retrieved")}
+        if isinstance(_ce, dict) and _ce.get("note"):
+            _can["note"] = _ce["note"]
+    elif isinstance(_ce, dict):
+        _can = _ce
+    fields[1] = ("Cancellation policy", _can)
+    items = []
+    for label, val in fields:
+        cell = _ev(val)
+        if cell:
+            items.append("<li><strong>%s:</strong> %s</li>" % (esc(label), cell))
+    if h.get("notes"):
+        items.append("<li><strong>Reading note:</strong> %s</li>" % esc(h["notes"]))
+    if not items:
+        return ""
+    return ('<ul class="tight terms">' + "".join(items) + "</ul>"
+            "<p class=\"note\">Every line above is this property's own page, quoted with the date it was read; "
+            "a field whose page could not be read stays marked unread rather than assumed. "
+            "Resort fees are quoted per night plus tax and are never included in an advertised room rate; "
+            "the tax percentage is the county transient-lodging rate, not a hotel figure.</p>")
+
+
 def rate_log_html(h):
+    """A rate log, not a rate: every entry keeps the date it was captured, the dates it applies
+    to, the occupancy and room type it was quoted for, and the page it came from. Entries are
+    appended, never overwritten, so a price that moved stays visible."""
     rl = h.get("rate_log") or []
     if not rl:
-        return '<p class="excerpt">No dated rate entries yet. Rates are logged here with a date and source — never overwritten.</p>'
-    items = "".join(
-        f"<li><strong>{esc(r['date'])}</strong>: {money(r['rate'])} — {esc(r.get('basis',''))}"
-        f"{(' · ' + esc(r.get('conditions'))) if r.get('conditions') else ''}"
-        f" · <a href=\"{esc(r.get('source_url',''))}\" target=\"_blank\" rel=\"noopener\">source</a></li>"
-        for r in rl)
-    return f"<ul class='tight'>{items}</ul>"
+        return ('<p class="excerpt">No dated rate entries yet. Rates are logged here with a date and '
+                'source — never overwritten.</p>')
+    items = []
+    for r in rl:
+        head = (f"<strong>{esc(r.get('date'))}</strong>: {money(r.get('rate'))}"
+                if r.get("rate") is not None else f"<strong>{esc(r.get('date'))}</strong>: no price obtainable")
+        bits = [b for b in (r.get("basis"), r.get("stay"), r.get("suite"), r.get("occupancy"),
+                            r.get("offer")) if b]
+        line = head + (f" — {esc(' · '.join(bits))}" if bits else "")
+        if r.get("checkout_total") is not None:
+            line += (f" <small class=\"note\">checkout total {money(r['checkout_total'])} · "
+                     f"room {money(r.get('room_subtotal'))} + resort fee {money(r.get('resort_fee_total'))}"
+                     f" + tax {money(r.get('taxes'))}"
+                     + (f" ({r.get('tax_pct_implied')}%)" if r.get("tax_pct_implied") else "")
+                     + f" · nightly average {money(r.get('nightly_average'))}"
+                     + f" · true cost/night {money(r.get('true_cost_per_night'))}"
+                     + (f" (+{money(r.get('parking_per_day'))}/day parking, not in the engine total)"
+                        if r.get("parking_per_day") else "")
+                     + "</small>")
+        if r.get("excerpt"):
+            line += f'<div class="excerpt">&ldquo;{esc(r["excerpt"])}&rdquo;</div>'
+        if r.get("itemisation"):
+            line += f'<div class="excerpt note">{esc(r["itemisation"])}</div>'
+        if r.get("caveat"):
+            line += f'<div class="excerpt note"><strong>Caveat:</strong> {esc(r["caveat"])}</div>'
+        if r.get("cancellation"):
+            line += f'<div class="excerpt note"><strong>Cancellation:</strong> {esc(r["cancellation"])}'
+            line += (f' (deadline: {esc(r["cancellation_deadline"])})' if r.get("cancellation_deadline")
+                     else ' (no fixed deadline published)') + "</div>"
+        if r.get("nightly"):
+            per = " · ".join(f"{esc(n.get('date'))} {money(n.get('room_rate_usd'))}"
+                             + (f" + fee {money(n.get('resort_fee_usd'))}" if n.get("resort_fee_usd") is not None else "")
+                             for n in r["nightly"])
+            line += f'<div class="excerpt note"><strong>Per night:</strong> {per}</div>'
+        if r.get("conditions"):
+            line += f'<div class="excerpt note">{esc(r["conditions"])}</div>'
+        src = r.get("source_url")
+        if src:
+            line += (f' <small class="note"><a href="{esc(src)}" target="_blank" rel="noopener">source</a>'
+                     f'{(" · " + esc(r.get("status"))) if r.get("status") else ""}</small>')
+        items.append(f"<li>{line}</li>")
+    return "<ul class='tight'>" + "".join(items) + "</ul>"
 
 # =============================================================== pages
 def shared_rate_log_html():
@@ -437,8 +750,15 @@ document was last read.</p>
     _singles_timed = sorted([e for e in singles
                              if _start_min(e) is not None and _start_min(e) >= 5 * 60], key=_start_min)
     earliest_single = _singles_timed[0]["start"] if _singles_timed else "n/a"
-    _today = _dt.date(2026, 11, 17)
-    n_upcoming = len([e for e in evs if re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("date")) or "")
+    # The data is a snapshot, so "today" is the date the snapshot was verified — never the
+    # machine's clock and never a date hard-coded in this file. A build that silently
+    # re-labels old rows as "upcoming" is worse than one that states its own date.
+    _as_of = str(master.get("as_of") or "")
+    try:
+        _today = _dt.date(*map(int, _as_of.split("-")))
+    except Exception:
+        _today = None
+    n_upcoming = len([e for e in evs if _today and re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("date")) or "")
                       and _dt.date(*map(int, e["date"].split("-"))) >= _today])
 
     # ---- findings, rendered with the corrections found in this verification pass ----
@@ -661,6 +981,54 @@ source does not publish that value; blanks are listed on the <a href="flagged.ht
         venue_pages[meta["slug"]] = (meta["title"], body_v)
 
     # ---------------- hotels ----------------
+    # ---- everything in this section's prose is computed from the rows above it ----
+    _quoted = [h for h in hotels if h.get("quote")]
+    _routed = [(h, p) for h in hotels for p in (h.get("walk_pairs") or []) if p.get("minutes") is not None]
+    _within = [(h, p) for h in hotels for p in (h.get("walk_pairs") or []) if p.get("within_30_min")]
+    _no_walk = [h["name"] for h in hotels if not any(p.get("minutes") is not None
+                                                      for p in (h.get("walk_pairs") or []))]
+    _by_venue = {}
+    for _h, _p in _routed:
+        _by_venue.setdefault(_p.get("venue_label"), []).append((_h["name"], _p["minutes"]))
+    _best = {k: min(v, key=lambda t: t[1]) for k, v in _by_venue.items()}
+    quote_status = (
+        "<p><strong>%d of %d properties carry a dated quote read off the official booking engine's own price "
+        "breakdown</strong> (%s). Each is itemised to the cent — per-night room rate, per-night resort fee, the tax "
+        "line and the checkout total — so it can be compared like-for-like with another quote for the same room and "
+        "dates. The other %d properties have no dated quote: every official calendar reachable from this build renders "
+        "nightly prices as <code>$XXX</code> behind a cookie wall, so the log records the <em>attempt</em>, not a "
+        "number. A quote only enters the log with its check-in, check-out, occupancy, room type, resort fee, tax line, "
+        "parking, cancellation deadline and the timestamp it was read.</p>"
+        % (len(_quoted), len(hotels),
+           ", ".join("%s — %s nights from %s at %s/night" % (
+               h["name"], (h.get("quote") or {}).get("nights"), (h.get("quote") or {}).get("stay_start"),
+               money((h.get("quote") or {}).get("nightly_average_usd")))
+               for h in _quoted) or "none yet",
+           len(hotels) - len(_quoted)))
+    _pairs_total = sum(len(h.get("walk_pairs") or []) for h in hotels)
+    walk_status = (
+        "<p><strong>%d of %d hotel–venue pairs have a routed duration, %d of them within the 30-minute "
+        "limit.</strong> Those are routing-engine estimates (OSRM foot profile) computed on the properties' own "
+        "published addresses — <em>not</em> an official or measured walk time, and no property page publishes one. "
+        "They are shown so a hotel can be shortlisted, and each carries Google and Apple directions links so the pair "
+        "can be confirmed in one tap before it decides anything. %s</p>"
+        % (len(_routed), _pairs_total, len(_within),
+           ("Properties with no duration at all: " + ", ".join(_no_walk) + ".")
+           if _no_walk else "Every property has at least one routed duration."))
+    if _best:
+        _rows = ""
+        for _k, _v in sorted(_best.items(), key=lambda kv: kv[1][1]):
+            _ok = ('<span class="badge b-good">yes</span>' if _v[1] <= 30
+                   else '<span class="badge b-warn">no</span>')
+            _rows += ("<tr><td>%s</td><td>%s</td><td>%.0f</td><td>%s</td></tr>"
+                      % (esc(_k), esc(_v[0]), _v[1], _ok))
+        walk_status += (
+            '<div class="panel"><h2>Closest property for each poker room (routed estimate)</h2>'
+            '<table class="data"><thead><tr><th>Poker room</th><th>Closest property</th><th>Minutes</th>'
+            '<th>Within 30 min?</th></tr></thead><tbody>' + _rows + '</tbody></table>'
+            '<p class="note">Ranked on the routed estimate only; quality, rate and the true nightly cost still '
+            'decide the stay, and no duration here is an official or measured one.</p></div>')
+
     body_h = f"""
 <h1>Hotels — true cost per night</h1>
 <p class="lead">True cost/night = (room rate + mandatory resort fee) × (1 + tax) + parking. The 13.38% room tax is the
@@ -672,25 +1040,25 @@ target="_blank" rel="noopener">County guide (PDF)</a> ·
 <a href="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:46abba4b-3467-42d5-849b-c33a4e527b33/original/as/non-resort-within-sd-outside-pgc.pdf"
 target="_blank" rel="noopener">county tax return components (PDF)</a>.
 Rates are kept as a <strong>dated log</strong>, never a single value.</p>
-<div class="panel"><h2>Rate log status — read this before trusting any nightly number</h2>
-<p><strong>No dated room quote has been captured yet.</strong> Every official booking calendar reachable from this build
-rendered nightly prices as <code>$XXX</code> behind a cookie wall, so the log below records the <em>attempt</em> rather than
-a number. A price only enters the log together with its check-in, check-out, occupancy, room type, resort fee, tax line,
-parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
-<p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
-target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
-<p><strong>Walking times:</strong> no casino page publishes a walk time, so the figures come from routing services
-instead, labelled as such. Google Maps walking directions were read on 2026-11-17 for eight hotels' trips to The Venetian
-Poker Room, and an independent OSRM foot-profile matrix (computed 2026-11-16 from geocoded official addresses) covers
-twenty-one hotels. The two agree on the 30-minute verdict everywhere both cover, which is why the filter below can be
-applied. The Wynn side rests on the OSRM matrix alone, so those figures are labelled "1 router" rather than
-quoted as confirmed.</p></div>
+<div class="panel"><h2>Rate log and walking status — read this before trusting any nightly number</h2>
+{quote_status}
+{walk_status}
+<p class="note">Walking figures for The Venetian come from two unrelated services where both cover the pair (Google
+directions read 2026-11-17 for eight hotels, plus an OSRM foot-profile matrix computed 2026-11-16 from geocoded
+official addresses); the Wynn side rests on the OSRM matrix alone, so those figures are labelled “1 router”. No casino
+page publishes a walk time. Official street addresses for every hotel and poker room are in the table below, so any
+pair can be re-checked directly. Resort fees and tax percentages there come from each property's own reservation terms
+page, with the date that page was read.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
 {walking_check_html()}
 <h2>Dated rate logs</h2>
 {shared_rate_log_html()}
-{''.join(f'<details><summary>{esc(h["name"])}</summary>{rate_log_html(h)}</details>' for h in hotels)}
+<h2>Reservation terms, field by field</h2>
+<p class="note">Fee, deposit, incidentals, extra-occupant charge, check-in/out, cancellation and parking as each
+property's own terms page states them, with the date that page was read. This is what a nightly rate does
+<em>not</em> include, so it is the second half of the true-cost figure above.</p>
+{''.join(f'<details><summary>{esc(h["name"])} — dated rate log</summary>{rate_log_html(h)}<h4>Reservation terms</h4>{hotel_terms_html(h)}</details>' for h in hotels)}
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
@@ -877,27 +1245,78 @@ official sources. Bounty and multi-flight events are shown in separate tables be
 </ul>"""
 
     # ---------------- rules ----------------
+    def _fld(e, key):
+        """Return (value, status, excerpt, retrieved) for one structured rule field."""
+        f = (e.get("rules_fields") or {}).get(key)
+        if isinstance(f, dict):
+            return (f.get("value"), f.get("status") or "", f.get("excerpt") or "", f.get("retrieved") or "")
+        r = e.get("rules") or {}
+        return (r.get(key), "", r.get("excerpt") or "", r.get("retrieved") or "")
+
+    def _cell(e, key):
+        v, st, exc, ret = _fld(e, key)
+        word = v if v not in (None, "") else "not stated"
+        badge = {"explicit": "b-good", "explicit_no": "b-bad", "not_stated_sheet_read": "b-warn",
+                 "not_read": "b-warn", "verified_official": "b-good"}.get(st, "b-chip")
+        st_txt = {"explicit": "stated", "explicit_no": "stated", "not_stated_sheet_read": "read · silent",
+                  "not_read": "no document", "verified_official": "stated"}.get(st, st or "")
+        html = f"<div>{esc(word)}</div>"
+        if st_txt:
+            html += f'<div><span class="badge {badge}">{esc(st_txt)}</span></div>'
+        if exc:
+            html += f'<div class="excerpt">&ldquo;{esc(exc)}&rdquo;</div>'
+        html += f'<div class="small note">retrieved {esc(ret or "—")}</div>'
+        return html
+
     rule_rows = []
     for e in sorted(evs, key=lambda x: (x.get("venue", ""), x.get("date", ""), x.get("start", ""))):
         r = e.get("rules", {})
-        excerpt = esc(r.get("excerpt", ""))[:220]
+        fee_v, fee_st, fee_exc, fee_ret = _fld(e, "fee")
+        fee_cell = f"{money(e.get('fee'))}{' / ' + money(e.get('pool_per_entry')) + ' to the pool per entry' if e.get('pool_per_entry') else ''}"
+        if fee_exc:
+            fee_cell += f'<div class="excerpt">&ldquo;{esc(fee_exc)}&rdquo;</div>'
+        fee_cell += f'<div class="small note">retrieved {esc(fee_ret or "—")}</div>'
+        gate = e.get("eligibility")
+        gate_txt = ""
+        if isinstance(gate, dict) and gate.get("value"):
+            gate_txt = (f'<div class="small note"><strong>Field:</strong> {esc(gate["value"])} · '
+                        f'retrieved {esc(gate.get("retrieved") or "—")}</div>')
+        elif isinstance(gate, str) and gate.strip():
+            gate_txt = f'<div class="small note"><strong>Field:</strong> {esc(gate)}</div>'
         rule_rows.append(f"""<tr data-cat="{esc(e.get('category'))}">
 <td>{esc(e.get('venue'))}</td><td>{esc(e.get('date'))} {esc(e.get('start'))}</td>
-<td>{esc(e.get('name'))}</td>
-<td>{rule_badge(r)}<small class="note">{esc(r.get('single_entry',''))}</small></td>
-<td>{esc(r.get('re_entry',''))}</td><td>{esc(r.get('add_on',''))}</td>
-<td>{money(e.get('fee'))}{' / ' + money(e.get('pool_per_entry')) + ' pool' if e.get('pool_per_entry') else ''}</td>
-<td class="excerpt">{excerpt}</td>
-<td>{esc(r.get('retrieved',''))}</td>
-<td class="src">{src_links(e.get('struct_url') or e.get('source_url'))}</td></tr>""")
+<td>{esc(e.get('name'))}<div class="small note">sheet {esc(e.get('sheet') or '—')} · event {esc(e.get('event_no') or '—')}</div>{gate_txt}</td>
+<td>{rule_badge(r, e)}{_cell(e, 'single_entry')}</td>
+<td>{_cell(e, 're_entry')}</td><td>{_cell(e, 'add_on')}</td>
+<td>{fee_cell}</td>
+<td>{money(e.get('total_entry_fee')) if e.get('total_entry_fee') else '<span class="badge b-warn">blank</span>'}
+<div class="small note">what one entry costs; the ranking divides the guarantee by this figure</div></td>
+<td class="src">{src_links(e.get('struct_url') or e.get('source_url'))}
+<div class="small note">row checked {esc(e.get('last_checked') or '—')}</div></td></tr>""")
     body_rules = f"""
 <h1>Structured entry-rule fields</h1>
-<p class="lead">Single-entry, re-entry, add-on and fee values are stored as separate fields per event, each with its
-source excerpt and retrieval date. Excerpts are quoted from the official structure sheet or page.</p>
+<p class="lead">Single-entry, re-entry, add-on, fee, guarantee, payout and bounty are stored as separate fields per
+event, each carrying its own status, the source's own words, and the date that source was retrieved. The Venetian
+fields come from that event's official structure sheet; the Wynn WPT fields from the official WPT terms document.
+<strong>&ldquo;read · silent&rdquo; is not a freezeout rule</strong>: it means the document was read in full and prints
+no such provision, which is why no row here is labelled confirmed single-entry.</p>
+<p class="note">{len([e for e in evs if e.get('entry_state') == 'stated'])} Venetian rows carry an entry rule the sheet
+states in words (the multi-flight &ldquo;may not play a subsequent flight&rdquo; clause);
+{len([e for e in evs if e.get('entry_state') == 'stated_multi_entry'])} carry a stated further-buy-in price and are
+therefore spend-more by definition;
+{len([e for e in evs if e.get('entry_state') == 'silent'])} are read-and-silent candidates; and
+{len([e for e in evs if e.get('entry_state') in ('not_stated', None)] + [e for e in evs if not e.get('entry_state')])}
+rows across all venues have no rule document published anywhere.</p>
+<div class="panel"><h2>Legend</h2><ul class="tight">
+<li><span class="badge b-good">stated</span> — the document says it, and the quoted text is shown in the cell.</li>
+<li><span class="badge b-warn">read · silent</span> — the document was read in full and prints no such provision. Not a prohibition.</li>
+<li><span class="badge b-warn">no document</span> — no rule document exists for this row at all; the field is blank, never guessed.</li>
+<li><span class="badge b-bad">stated</span> on a single-entry field — the sheet states a rule that removes the event from a single-entry plan (a further buy-in is priced, or a flight restriction applies).</li>
+</ul></div>
 {toolbar('tbl-rules', all_dates)}
 <table class="data" id="tbl-rules"><thead><tr>
 <th>Venue</th><th>Date / start</th><th>Event</th><th>Single-entry field</th><th>Re-entry field</th>
-<th>Add-on field</th><th>Fee (house / pool)</th><th>Source excerpt</th><th>Retrieved</th><th>Source</th>
+<th>Add-on field</th><th>Fee (house / pool)</th><th>Total entry fee</th><th>Source · last checked</th>
 </tr></thead><tbody>{''.join(rule_rows)}</tbody></table>"""
 
     # ---------------- monitor ----------------
@@ -911,24 +1330,67 @@ source excerpt and retrieval date. Excerpts are quoted from the official structu
         for u in (h.get("resort_fee_src"), h.get("booking_url")):
             if u:
                 affected[u] = affected.get(u, 0) + 1
+    def _st_cls(st):
+        s = str(st or "")
+        if s.startswith("changed"):
+            return "b-bad"
+        if s.startswith("unreachable") or s.startswith("fetch error"):
+            return "b-bad"
+        if s.startswith("unchanged"):
+            return "b-good"
+        if s.startswith("new"):
+            return "b-warn"
+        return "b-chip"
+
     for u in monitor.get("urls", []):
         st = u.get("status", "never checked")
-        cls = {"changed": "b-bad", "unchanged": "b-good", "new": "b-warn"}.get(st, "b-chip")
+        lc = u.get("last_checked")
+        lc_cell = esc(lc) if lc else ('<span class="badge b-warn">never fetched</span>'
+                                      + (f'<div class="small note">last attempted {esc(u.get("last_attempt"))}</div>'
+                                         if u.get("last_attempt") else ""))
         rows_m.append(f"""<tr><td>{esc(u.get('label',''))}</td>
 <td class="src"><a href="{esc(u.get('url',''))}" target="_blank" rel="noopener">{esc(u.get('url',''))[:70]}…</a></td>
-<td>{esc(u.get('last_checked','—'))}</td><td><span class="badge {cls}">{esc(st)}</span></td>
+<td>{lc_cell}</td><td><span class="badge {_st_cls(st)}">{esc(st)}</span></td>
 <td>{affected.get(u.get('url',''), 0)}</td></tr>""")
+    _run = monitor.get("last_run_summary") or {}
+    _last_run = monitor.get("last_run")
+    state_cell = (
+        "<strong>Current state:</strong> %d URLs registered · %d changed · %d unchanged · %d baselines still to "
+        "establish · %d unreachable on the last run. Last run: %s."
+        % (len(monitor.get('urls', [])),
+           sum(1 for u in monitor.get('urls', []) if str(u.get('status', '')).startswith('changed')),
+           sum(1 for u in monitor.get('urls', []) if str(u.get('status', '')).startswith('unchanged')),
+           sum(1 for u in monitor.get('urls', []) if not u.get('sha256')),
+           int(_run.get('unreachable') or 0),
+           esc(_last_run) if _last_run else
+           '<span class="badge b-warn">the scheduled job has not run in this branch yet</span>'))
+    never_note = ""
+    if not _last_run or all(not u.get("sha256") for u in (monitor.get("urls") or [{}])):
+        never_note = (
+            "<p class=\"panel\"><strong>Read that state correctly.</strong> “never fetched” means the monitor has not "
+            "completed a run against that page yet — it is <em>not</em> a finding that the source is unchanged. Until a "
+            "baseline hash exists, no row can be marked changed, so the absence of a "
+            "<span class=\"badge b-bad\">source changed — re-check</span> badge proves nothing. The dates on the "
+            "tournament and hotel rows come from a person or agent actually opening the cited page, which is a "
+            "different and stronger claim than a matching hash.</p>")
     body_mon = f"""
 <h1>Source monitor</h1>
 <p class="lead">A scheduled GitHub Actions job re-fetches every official URL on this list, compares a content hash with
-the stored one, saves daily snapshots under <code>data/snapshots/</code>, and marks rows whose source changed.
-Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.</p>
-<div class="panel"><strong>Current state:</strong> {len(monitor.get('urls', []))} URLs registered ·
-{sum(1 for u in monitor.get('urls', []) if u.get('status') == 'changed')} changed ·
-{sum(1 for u in monitor.get('urls', []) if u.get('status') == 'unchanged')} unchanged.
-Hashes are established on the first scheduled run; after that, any hash mismatch marks the URL “changed” and every
-table row citing it gets a <span class="badge b-bad">source changed — re-check</span> badge.</div>
-<table class="data"><thead><tr><th>Source</th><th>URL</th><th>Last checked</th><th>Status</th><th>Rows citing it</th></tr></thead>
+the stored one, saves a snapshot when the bytes differ, and marks rows whose source changed.
+Workflow: <code>.github/workflows/source-monitor.yml</code> (daily at 07:00 Las Vegas time) + <code>scripts/monitor.py</code>.
+The registry itself is generated from the citations in the published rows
+(<code>scripts/build_monitor_registry.py</code>), so a new source cannot be left unmonitored by forgetting to add it
+to a hand-kept list.</p>
+<div class="panel">{state_cell}</div>
+{never_note}
+<p class="note"><strong>What each status claims:</strong> <span class="badge b-good">unchanged</span> the page bytes
+match the stored hash — the source moved nothing, but a matching hash does not re-verify a value this site transcribed
+from that page. <span class="badge b-warn">new</span> first successful fetch; this run only sets the baseline.
+<span class="badge b-bad">changed</span> the bytes differ, and every row citing the URL is badged
+<span class="badge b-bad">source changed — re-check</span>. <span class="badge b-bad">unreachable</span> the fetch
+failed (blocked, timed out, or no route from the runner): the previous status and the row's verification date are left
+alone, because a failed fetch proves nothing about the page.</p>
+<table class="data"><thead><tr><th>Source</th><th>URL</th><th>Last successful check</th><th>Status</th><th>Rows citing it</th></tr></thead>
 <tbody>{''.join(rows_m)}</tbody></table>"""
 
     # ---------------- flagged ----------------

@@ -1,0 +1,67 @@
+{
+  "session": "arena/32a40b2f-poker2",
+  "retrieved": "2026-11-17",
+  "how_read": "Each page below was opened in full through the page reader on 2026-11-17 (UTC) and the quoted text was copied from the page itself. No value in this file is inferred, rounded or carried over from a third-party tracker.",
+  "hotel_terms_reads": {
+    "H-ARIA": {
+      "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17",
+      "resort_fee_usd": 55.0,
+      "resort_fee_excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and 24-hour cardio center access for guests 18+.",
+      "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (subject to eligibility and other terms and conditions available at https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)",
+      "incidentals_usd_per_day": 150.0,
+      "incidentals_excerpt": "We will place an authorization against this account to cover applicable charges for room, tax and resort fees, as well as a per day incidental amount of $150 for Deluxe Rooms, $250 for Tower Suites, $350 for Sky Suites and $500 for Villas",
+      "additional_occupant": "$50 plus tax per occupant, per night, above 2 occupants per room.",
+      "check_in_out": "Check in time is 3:00 pm and check out time is 11:00 am.",
+      "cancellation": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+      "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
+      "cancellation_fee": "$165 mid-week or $200 weekend (Friday, Saturday or Sunday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
+      "tax_note": "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law. Taxes are shown on the final invoice at check-out."
+    },
+    "H-BEL": {
+      "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17",
+      "resort_fee_usd": 55.0,
+      "resort_fee_excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+      "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible members with Gold+ Tier Level status with eligible reservations (https://www.mgmresorts.com/en/mgm-rewards/daily-resort-fee-waiver.html)",
+      "incidentals_usd_per_day": 150.0,
+      "incidentals_excerpt": "We will place an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day",
+      "additional_occupant": "$50 plus tax per occupant, per night, above 2 occupants per room.",
+      "check_in_out": "Check in time is 3:00 pm and check out time is 11:00 am.",
+      "cancellation": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+      "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
+      "cancellation_fee": "$165 mid-week or $200 weekend (Friday or Saturday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
+      "tax_note": "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law."
+    },
+    "H-MGM": {
+      "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+      "retrieved": "2026-11-17",
+      "resort_fee_usd": 50.0,
+      "resort_fee_excerpt": "Daily Resort Fee. A daily resort fee of $50.00 plus applicable tax will be applied to all reservations. The resort fee includes: In-room wireless internet access; unlimited local, domestic long distance (the 50 United States and DC) and toll-free calls; access to Paramount+ with SHOWTIME On Demand via in-room television; airline boarding pass printing; digital newspaper and magazine access; and fitness center access for guests 18+.",
+      "fee_waiver": "Daily resort fees will be waived (i.e., removed from the bill at check out) for eligible MGM Rewards Program members with Gold+ Tier Level status with eligible reservations",
+      "incidentals_usd_per_day": 100.0,
+      "incidentals_excerpt": "We will place an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $100 incidental amount per day",
+      "additional_occupant": "$40 plus tax per occupant, per night, above 2 occupants per room.",
+      "check_in_out": "Check in time is 3:00 pm and check out time is 11:00 am.",
+      "cancellation": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 877.880.0880 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+      "cancellation_deadline": "72 hours before the arrival date for the refundable first-night deposit; the booked offer can exclude it",
+      "cancellation_fee": "$110 mid-week or $155 weekend (Friday, Saturday or Sunday night), plus tax, for a complimentary stay not cancelled 72 hours ahead",
+      "early_checkout": "Checking out before the confirmed departure date is charged the applicable rate and taxes for the night departed (early departure assessment).",
+      "tax_note": "Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law."
+    }
+  },
+  "westgate_resort_fee_recheck": {
+    "retrieved": "2026-11-17",
+    "fee_supported_by": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/",
+    "excerpt": "At Westgate Las Vegas Resort & Casino the resort fee is $49.99 plus tax per night, though special discounts and exceptions may apply throughout the year. Please consult individual rates available at our website for further details.",
+    "finding": "The property FAQ page does state $49.99 plus tax per night, so the value on the hotel row is supported by an official page. The URL the root dataset was citing for it (https://www.westgateresorts.com/terms-and-conditions/) does NOT state it: that page is the Westgate Resorts timeshare terms, and it never names a Westgate Las Vegas nightly resort fee. The citation has been corrected to the FAQ page. The $36.99 figure recorded in the FAQ's embedded structured answer is not reproduced on the page body and remains flagged.",
+    "irregularity": "Cited source did not contain the value it was cited for (found 2026-11-17; the value itself is confirmed on the property's own FAQ page)."
+  },
+  "caesars_palace_recheck": {
+    "retrieved": "2026-11-17",
+    "url": "https://www.caesars.com/caesars-palace/hotel",
+    "finding": "The official Caesars Palace hotel page publishes no nightly resort-fee figure. What it does state, in its own 'Why Book With Us' panel, is 'FREE 48-Hour Cancellation*' (asterisked, terms not on the page) and a Best Rate Guarantee. No resort fee, tax, parking or checkout total is published here, so those cells stay blank.",
+    "resort_fee_usd": null,
+    "cancellation_marketing": "FREE 48-Hour Cancellation* (as printed on the official property page; the asterisked terms are not on the page)"
+  }
+}

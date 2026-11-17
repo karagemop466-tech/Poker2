@@ -1179,3 +1179,74 @@ conflict was a pure appending collision at the end of this file (two sessions ap
 place). Nothing from either side was dropped: both sections are kept. Per the protocol, this branch does not
 edit files owned by an in-flight session — PR #56 (`arena/18aba6dd-poker2`, `COORDINATION.md` only) is
 superseded for this file and is recorded below rather than merged here.
+
+## Session arena/32a40b2f-poker2 — root-surface evidence overlay + monitor honesty (2026-11-17)
+
+Branch `arena/32a40b2f-poker2` (fixed by the platform; no other branch is created or pushed).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| R1 Reconcile the root dashboard against `site-data/` line by line (37 structure sheets, walk matrix, rate log) without overwriting verified cells | done | arena/32a40b2f-poker2 | `scripts/build_master.py`, `data/master.json` |
+| R2 Per-field structured entry-rule evidence on every Venetian row (value + status + the sheet's own words + URL + retrieval date), silence labelled as silence | done | arena/32a40b2f-poker2 | `scripts/build_master.py`, `scripts/build_site.py`, `tournaments.html`, `rules.html`, `single-entry.html` |
+| R3 Fix the mis-categorised row (`V-MF39-12-10-10:10AM` was `multi-flight`; the official series page prints it as a two-day event) → new `multi-day` category | done | arena/32a40b2f-poker2 | `scripts/build_master.py`, `scripts/build_site.py` |
+| R4 Re-read the hotel terms pages first-hand and record fee / deposit / incidental / smoking / cancellation with an excerpt and date; correct the Westgate citation, which pointed at a page that never states the fee | done | arena/32a40b2f-poker2 | `data/session-updates-32a40b2f.json`, `scripts/build_master.py`, `hotels.html` |
+| R5 Render the dated room quote (checkout itemisation, nightly average, implied tax %) and the routed walk pairs with Google/Apple links; prefill the trip calculator from data instead of leaving it empty | done | arena/32a40b2f-poker2 | `scripts/build_site.py`, `hotels.html` |
+| R6 `scripts/monitor.py` honesty rewrite: a failed fetch is never reported as `unchanged`, dates only advance on a successful read, snapshots kept only when bytes change, `--dry-run` writes nothing | done | arena/32a40b2f-poker2 | `scripts/monitor.py`, `monitor.html` |
+| R7 Monitor registry rebuild no longer drops monitor state; registry note explains that `never checked` means "the schedule has not run", not "the source is unchanged" | done | arena/32a40b2f-poker2 | `scripts/build_monitor_registry.py`, `data/source_monitor.json` |
+| R8 `source-monitor.yml` ordering fixed (regenerate dataset → rebuild registry → fetch → render) and the commit step stages the whole generated set instead of a hand-picked 18 pages | done | arena/32a40b2f-poker2 | `.github/workflows/source-monitor.yml` |
+| R9 Publish the four verification gaps this session found as flags (VR-32a4-01 … -04) and rewrite the two headline numbers the data contradicted | done | arena/32a40b2f-poker2 | `scripts/build_master.py`, `flagged.html`, `summary.html`, `questions.html` |
+| R10 Checks (`audit.py`, `check_links.py` incl. `check_tables()`), merge `main` into this branch without discarding either side, PR → `main`, Pages deploy confirmed, record here | in progress | arena/32a40b2f-poker2 | `COORDINATION.md` |
+
+### Merge policy used for `origin/main` (PRs #56–#63)
+
+`main` had moved on while this work was in flight: it added its own walking block, a shared rate log,
+`rule_badge`, `changed_flag`, `silent_box`, six venue pages and a rewritten `verify.yml`, and it had
+re-rolled `data/master.json`. A rebase would have replayed this branch's edits over a file the other side
+had already restructured, so the merge was done as a real merge with the mechanical parts resolved by hand:
+
+* `scripts/build_master.py` — both blocks kept. `main`'s Google/OSRM walk and `rate_log_shared` pass runs
+  first; this session's overlay runs after it and was switched to **fill-only** on the walk cells
+  (`setdefault` + a `is None` guard) so it can add the per-venue `walk_pairs` matrix without clobbering a
+  duration `main` published from a source it read.
+* `scripts/build_site.py` — five conflicts, all resolved by keeping `main`'s feature and layering this
+  session's on top: `fmt_hm`, `rule_badge`, `changed_flag` and `silent_box` survive; `hotel_table()` was
+  rewritten so the rate cell prefers a dated quote, then a logged from-price (explicitly labelled as not a
+  quote), then `main`'s unattributed shared-rate branch, then "no dated quote"; the walk cell keeps `main`'s
+  two-venue legs with the 2-router/1-router label and adds the other rooms as badges.
+* `data/master.json` — regenerated from the merged generator rather than textually merged, which is the only
+  resolution that cannot invent a state no generator produces.
+* `COORDINATION.md` — `main`'s full board kept, this section appended. Nothing from either side deleted.
+
+### Requests to other owners (not edited here, per the board)
+
+* **`scripts/build.py` owner:** it writes `index/tournaments/hotels/rules/monitor/flagged/questions/summary/
+  suggestions/repo-review/planner/ranking/planning/venue-{venetian,wynn,others}.html`, and `verify.yml`
+  restores exactly those 16 filenames after building. This session regenerated the same filenames from
+  `scripts/build_site.py` + `data/master.json`, so on `main` those files are now `build_site.py` output while
+  CI still validates them with `build.py` and then restores them — the drift check for these 16 pages is
+  therefore a no-op. Either `verify.yml` should build with `build_site.py` for them, or the two generators
+  need splitting by directory. Flagged, not fixed: it is a cross-surface decision.
+* **`plan/**`, `site-data/**`, `2026/**`, `data/verified2026/**`: untouched here. `site-data/` is only ever
+  *read* by `scripts/build_master.py` (fill-only overlay), never written.
+* **S-12 (workflow consolidation):** `source-monitor.yml` now regenerates its own registry from the dataset's
+  citations, so a newly cited page is monitored without anyone editing the workflow; it does not touch
+  `plan-refresh.yml` / `recheck.yml` / `pages.yml`.
+
+### Second merge with `main` (PR #65, `arena/ec9cc26c-poker2`) — 2026-11-17
+
+`arena/ec9cc26c-poker2` landed K1–K4 while PR #64 was open, so this branch merged `main` again rather than
+rebasing over it. Where the two touched the same code:
+
+* `scripts/build_monitor_registry.py` — both features kept in one block: their raw-slug → human-label upgrade
+  runs first, then this branch's whole-record carry-over (`entry = dict(keep); entry.update({...})`) so the
+  label upgrade is applied *and* monitor state (`last_attempt`, `consecutive_failures`, `snapshot`) survives a
+  registry rebuild.
+* `scripts/build_master.py` — auto-merge kept their K2 sweep (per-row `last_checked` = 2026-11-17 on 161 rows,
+  the Bally's/Horseshoe county-tax note, `_CHECK_SRC_LABELS`) and this session's overlay; the overlay only ever
+  fills blanks, so no K2 value was overwritten. Verified after regeneration, not assumed.
+* `data/master.json`, root `*.html` — regenerated from the merged generators (`build_master.py` →
+  `build_monitor_registry.py` → `build_site.py`), which is the only resolution that cannot produce a state no
+  generator can reproduce. `research/ec9cc26c-*.md` transcripts untouched.
+* Checks re-run on the merged tree: `audit.py`, `build.py` + the 16-page restore + `check_links.py` + no-diff,
+  `build2026.py --check`, `check_guarantees.py`, `check2026.py`, `check_monitor_badge.py`, `check_search.mjs` —
+  all green.
