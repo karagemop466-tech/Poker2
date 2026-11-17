@@ -16,7 +16,8 @@ provenance is an official page/PDF, or is left blank/null.
 import json, re, os, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AS_OF = "2026-11-16"
+AS_OF = "2026-11-16"          # date the underlying datasets were transcribed
+LAST_VERIFIED = "2026-11-17"  # date this session re-read the official sources
 
 def load(p):
     with open(os.path.join(ROOT, p)) as f:
@@ -979,6 +980,7 @@ for ev in events:
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
+master["as_of"] = LAST_VERIFIED
 with open(os.path.join(ROOT, "data/master.json"), "w") as f:
     json.dump(master, f, indent=1, sort_keys=False)
 print("data/master.json written: %d events, %d hotels, %d flags"

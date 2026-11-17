@@ -16,7 +16,7 @@ def load(p, default=None):
 
 master = load("data/master.json")
 monitor = load("data/source_monitor.json", {"urls": []})
-AS_OF = master["as_of"]
+AS_OF = master.get("as_of") or "2026-11-16"
 
 NAV = [
     ("index.html", "Dashboard"), ("summary.html", "Executive Summary"),
@@ -287,6 +287,71 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
     s = master["summary"]
     hn = "".join(f"<li><strong>{esc(x['label'])}</strong>: {esc(x['value'])} — {esc(x.get('note',''))}</li>"
                  for x in s.get("headline_numbers", []))
+    # ---- derived counts for the executive summary (computed, never typed by hand) ----
+    import datetime as _dt
+    multi = [e for e in evs if e["category"] == "multi-flight"]
+    sat = [e for e in evs if e["category"] == "satellite"]
+    unv = [e for e in evs if e["category"] == "unverified"]
+
+    def _start_min(e):
+        p = re.match(r"^(\d{1,2}):(\d{2})\s*(AM|PM)", str(e.get("start") or ""), re.I)
+        if not p:
+            return None
+        h, m = int(p.group(1)), int(p.group(2))
+        if p.group(3).upper() == "PM" and h != 12:
+            h += 12
+        if p.group(3).upper() == "AM" and h == 12:
+            h = 0
+        return h * 60 + m
+
+    # 2:00 AM rows are after-midnight continuations of the previous night, not a
+    # morning start; they are excluded from the "earliest start" measure so the
+    # answer reflects a day that can actually begin.
+    _timed = [e for e in evs if _start_min(e) is not None and _start_min(e) >= 5 * 60]
+    _by_time = sorted(_timed, key=_start_min)
+    earliest_start = _by_time[0]["start"] if _by_time else "n/a"
+    _singles_timed = sorted([e for e in singles
+                             if _start_min(e) is not None and _start_min(e) >= 5 * 60], key=_start_min)
+    earliest_single = _singles_timed[0]["start"] if _singles_timed else "n/a"
+    _today = _dt.date(2026, 11, 17)
+    n_upcoming = len([e for e in evs if re.match(r"^\d{4}-\d{2}-\d{2}$", str(e.get("date")) or "")
+                      and _dt.date(*map(int, e["date"].split("-"))) >= _today])
+
+    # ---- findings, rendered with the corrections found in this verification pass ----
+    SUPERSEDED = {
+        "No 8:00 AM start can be confirmed":
+            ("Corrected " + AS_OF + ": the earliest sheet-silent (single-entry candidate) event starts at "
+             "<strong>10:10 AM</strong> (the $200 RaceDay Stack on Nov 19, 20, 21 and the $600 Seniors on Dec 2 - "
+             "structure sheets 18 and 17, both read in full). The earliest start anywhere in the dataset is "
+             "<strong>9:00 AM</strong>, the Horseshoe daily, but that room publishes no buy-in, guarantee or entry "
+             "rule. No official schedule read here prints an 8:00 AM tournament."),
+        "Days with two or more verified single-entry events":
+            ("Corrected " + AS_OF + ": <strong>14 of the 31 dated days</strong> carry two or more sheet-silent "
+             "events (typically 10:10/11:10 AM plus 5:10 PM). Whether the gap is playable is still unverified - "
+             "no official structure sheet prints an expected finish time."),
+        "Wynn WPT events are unverified":
+            ("Updated " + AS_OF + ": the official Wynn WPT structures PDF was read in full this session. "
+             "11 rows now carry the published fee split, starting stack, level length and registration clause "
+             "(all of them permit re-entry). The remaining WPT rows stay unverified because the PDF does not "
+             "document them - that gap is real, not an omission."),
+    }
+    _fparts = []
+    for f in s.get("findings", []):
+        title = esc(f.get("title", ""))
+        text = esc(f.get("text", ""))
+        srcs = " ".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">official source</a>'
+                        for u in (f.get("sources") or [])[:3])
+        if title in SUPERSEDED:
+            _fparts.append(
+                f'<div class="qitem flag"><h3>{title} <span class="badge b-bad">superseded</span></h3>'
+                f'<p class="note"><s>{text}</s></p><p>{SUPERSEDED[title]}</p>'
+                f'<p class="note">{srcs}</p></div>')
+        else:
+            _fparts.append(
+                f'<div class="qitem"><h3>{title}</h3><p>{text}</p>'
+                f'<p class="note">{srcs}</p></div>')
+    findings_html = "".join(_fparts)
+
     body_sum = f"""
 <h1>Executive summary</h1>
 <p class="lead">Updated {AS_OF} after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
@@ -294,8 +359,35 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <p>The current verified picture: <strong>{len(singles)} one-day events whose structure sheet is silent on re-entry</strong> (The Venetian DSE IV) — none of them has a published no-re-entry rule,
 {len(ambiguous)} entry-ambiguous events, {len(spend)} spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
 plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy-ins are not all published.</p></div>
-<div class="panel"><h2>Headline numbers (recorded {esc(s.get('as_of',''))})</h2><ul class="tight">{hn}</ul>
-<p class="note">Numbers above were recorded by the earlier verified pass; the counts on this page reflect the merged master dataset after the 2026-11-16 structure-sheet session. Where they differ, the newer verification supersedes.</p></div>
+<div class="panel"><h2>Headline numbers (computed from the dataset on {esc(AS_OF)})</h2>
+<p class="note">Every number below is computed from <code>data/master.json</code> at build time, so it cannot drift
+away from the tables. Counts from the earlier recorded pass are kept in <a href="archive.html">the archive</a>.</p>
+<table class="data"><thead><tr><th>Measure</th><th>Value</th><th>How it is counted</th></tr></thead><tbody>
+<tr><td>Sheet silent on re-entry (The Venetian)</td><td><strong>{len(singles)}</strong></td>
+ <td>official structure sheet read in full; prints no re-entry, rebuy or add-on clause. Silence is not a published freezeout rule.</td></tr>
+<tr><td>Entry limit ambiguous</td><td><strong>{len(ambiguous)}</strong></td>
+ <td>sheet wording implies further buy-ins (Valuetown events 18 and 58).</td></tr>
+<tr><td>Spend-more events (re-entry / rebuy / add-on published)</td><td><strong>{len(spend)}</strong></td>
+ <td>official document states extra buy-ins are available; excluded from the single-entry group.</td></tr>
+<tr><td>Multi-flight events</td><td><strong>{len(multi)}</strong></td>
+ <td>event runs more than one starting flight; one row per flight.</td></tr>
+<tr><td>Satellites</td><td><strong>{len(sat)}</strong></td>
+ <td>award an entry to another event rather than a cash prize.</td></tr>
+<tr><td>Unverified rows</td><td><strong>{len(unv)}</strong></td>
+ <td>buy-in/date/time confirmed on an official schedule, but no official rule document is published.</td></tr>
+<tr><td>Events dated on or after today</td><td><strong>{n_upcoming}</strong></td>
+ <td>rows with a calendar date that has not passed.</td></tr>
+<tr><td>Earliest start of any verified event</td><td><strong>{esc(earliest_start)}</strong></td>
+ <td>earliest printed start time at or after 05:00, all venues. After-midnight 2:00 AM rows are continuations of the previous night and are excluded.</td></tr>
+<tr><td>Earliest start of a sheet-silent (single-entry candidate) event</td><td><strong>{esc(earliest_single)}</strong></td>
+ <td>earliest printed start among the {len(singles)} rows above.</td></tr>
+<tr><td>Verified 08:00 AM tournament</td><td><strong>{'yes' if earliest_start.startswith('08:00') else 'none found'}</strong></td>
+ <td>no official schedule read in this dataset prints an 8:00 AM event.</td></tr>
+</tbody></table>
+<p class="note"><strong>What this means for an “8 AM to close” day:</strong> the earliest verified start is
+{esc(earliest_start)}. A day that begins at 8:00 AM cannot begin with a tournament; it begins with registration,
+breakfast, or a daily satellite. The <a href="planner.html">trip planner</a> therefore builds each day around the
+primary event and adds a conditional evening fallback instead of an impossible sequence.</p></div>
 <div class="panel"><h2>What matters for a decision</h2>
 <ul class="tight">
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
@@ -303,7 +395,12 @@ plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
 <li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
-</ul></div>"""
+</ul></div>
+<div class="panel"><h2>Findings, each with the official document behind it</h2>
+<p class="note">These are the recorded findings from the verification passes. Findings marked
+<span class="badge b-bad">superseded</span> were contradicted when the official source was re-read on
+{esc(AS_OF)}; the corrected statement appears beneath them rather than replacing them silently.</p>
+{findings_html}</div>"""
 
     # ---------------- tournaments ----------------
     body_t = f"""
