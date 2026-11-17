@@ -2017,6 +2017,75 @@ if os.path.exists(_reg_path):
             r["sheet_read"] = sh["url"]
             r["flight_rule"] = sh["entry_rule"]
 
+# ===========================================================================
+# VERIFICATION SWEEP APPLIED — arena/594db405-poker2 (2026-11-17)
+# ---------------------------------------------------------------------------
+# data/session-updates-594db405.json holds the pages this session opened LIVE
+# on 2026-11-17 through the page-fetch tool (transcript:
+# research/594db405-verification-sweep.md). This block does three things and
+# nothing else: (1) applies the one value that CHANGED on its official page
+# (the Caesars disclaimer fee range, $45-$50 -> $45-$60), (2) records per-row
+# confirmation metadata for the pages actually re-read, and (3) appends a flag
+# for the change. Evidence objects that merely matched are left untouched.
+# ===========================================================================
+SWEEP_PATH = os.path.join(ROOT, "data", "session-updates-594db405.json")
+sweep = _json_load(SWEEP_PATH) or {}
+hotel_by_id = {h["id"]: h for h in hotels}
+
+_chg = (sweep.get("change_records") or {}).get("caesars_resort_fee_range")
+if _chg:
+    master["caesars_resort_fee_range"] = {
+        "text": _chg["text"], "excerpt": _chg["excerpt"], "url": _chg["url"],
+        "retrieved": _chg["retrieved"],
+        "previous_value": {"text": _chg["previous_text"], "retrieved": _chg["previous_retrieved"]},
+        "change_detected": True,
+        "note": _chg["note"],
+    }
+    for _hid in ("H-HS", "H-CZP"):
+        _h = hotel_by_id.get(_hid)
+        if _h is not None:
+            _h["fee_range"] = master["caesars_resort_fee_range"]
+    flags.append({
+        "source": "arena/594db405-poker2 re-read 2026-11-17",
+        "item": "Caesars corporate disclaimer fee range changed on the official page",
+        "where": "Hotels (Horseshoe / Caesars Palace rows), caesars_resort_fee_range",
+        "detail": ("The Hotel Disclaimer section of https://www.caesars.com/corporate/disclaimer printed "
+                   "\u201cbetween $45-$50 plus applicable tax\u201d when read 2026-11-16 and prints "
+                   "\u201cbetween $45-$60 plus applicable tax\u201d when read 2026-11-17. The dataset now "
+                   "carries the live text with both readings; any estimate that used the old upper bound "
+                   "understates the worst case by $10/night before tax. Property-level fee cells stay "
+                   "blank: the page publishes a range only."),
+        "url": "https://www.caesars.com/corporate/disclaimer",
+        "severity": "high",
+        "id": "VR-594-01"})
+
+for _hid, _rec in (sweep.get("confirmed_reads") or {}).items():
+    _h = hotel_by_id.get(_hid)
+    if _h is None:
+        continue
+    _h["verification_594db405"] = {
+        "url": _rec.get("url"), "retrieved": _rec.get("retrieved"),
+        "fields_confirmed": _rec.get("fields_confirmed") or [],
+        "note": _rec.get("note") or "",
+        "transcript": "research/594db405-verification-sweep.md",
+    }
+    if _hid == "H-HS" and sweep.get("horseshoe_cancellation_quote"):
+        _q = sweep["horseshoe_cancellation_quote"]
+        _h["cancellation"] = ("Free 48-hour cancellation advertised on the official hotel page (2026-11-17, "
+                              "arena/594db405-poker2 live read).")
+        _h["cancellation_evidence"] = {
+            "status": "verified_official",
+            "rule": "Free cancellation up to 48 hours before check-in (advertised on the official hotel page).",
+            "excerpt": _q["excerpt"], "source_url": _q["url"], "retrieved": _q["retrieved"],
+        }
+    if _hid == "H-WYN" and sweep.get("wynn_guarantee_note"):
+        _w = sweep["wynn_guarantee_note"]
+        _e = _h.setdefault("cancellation_evidence", {})
+        _e["standard_policy_note"] = {
+            "excerpt": _w["standard_policy_excerpt"], "source_url": _w["standard_policy_url"],
+            "retrieved": _w["retrieved"], "note": _w["note"],
+        }
+
 # events 18 and 58 carry the PokerAtlas PRO discount; keep the category honest —
 # the sheet only prints a discounted *initial* buy-in, it never says a player may
 # not buy in again, so they stay "ambiguous" rather than single.
