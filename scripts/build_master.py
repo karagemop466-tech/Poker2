@@ -748,6 +748,86 @@ print("added %d schedule-verified Wynn events" % len(WPT_SCHEDULE_ONLY))
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
+# ---- verification pass 2026-11-17 (arena/0fd90745-poker2) -------------------------------
+# 13 official Venetian structure sheets were re-read in full on 2026-11-17 and re-transcribed
+# into the /plan/ surface (scripts/build-events.py). Every row in THIS dataset whose cited sheet
+# is one of those 13 was then compared field by field against the new transcription:
+# buy-in, fee, starting stack, level length, guarantee and total entry cost - 25 rows, 0
+# mismatches. Those rows therefore carry last_checked 2026-11-17; every other row keeps its
+# own earlier read date. No value was changed by this pass, only dated.
+SHEETS_RECHECKED = {2, 3, 4, 9, 12, 13, 14, 16, 17, 19, 20, 21, 22}
+n_recheck = 0
+for e in events:
+    m = re.search(r"structure_(\d+)\.pdf", e.get("struct_url") or "")
+    if m and int(m.group(1)) in SHEETS_RECHECKED and e.get("venue_id") == "venetian":
+        e["last_checked"] = "2026-11-17"
+        e["reverified"] = "2026-11-17"
+        n_recheck += 1
+
+flags.extend([
+    {
+        "id": "IR-0FD-01", "severity": "info",
+        "item": "Verification pass 2026-11-17: 13 structure sheets re-read, 25 rows re-checked",
+        "where": "Venetian rows citing structure sheets 2, 3, 4, 9, 12, 13, 14, 16, 17, 19, 20, 21, 22",
+        "detail": ("Each of those 13 official PDFs was read in full on 2026-11-17 and re-transcribed "
+                   "on the /plan/ surface, then this dashboard's rows were compared field by field "
+                   "against the new transcription (buy-in, fee, starting stack, level length, "
+                   "guarantee, total entry fee): 25 rows, no mismatch. No value changed; the rows "
+                   "now carry last_checked 2026-11-17. None of the 13 sheets prints a rebuy, add-on "
+                   "or re-entry clause - that is still silence, not a published one-entry cap."),
+        "url": ("https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-"
+                "tournament/dse-nov-2026.html"),
+        "source": "arena/0fd90745-poker2, 2026-11-17",
+        "action": "Nothing to fix. Ask the poker room for the written one-entry answer (IR-8234-02) "
+                  "if a firm single-entry confirmation is needed.",
+    },
+    {
+        "id": "IR-0FD-02", "severity": "medium",
+        "item": "14 of 37 Venetian structure sheets are still unread",
+        "where": "/plan/ unverified rows: events 08, 17, 27, 35, 39 (Day 1, restart and final table), 40, 41, 43, 44, 45, 46, 47 (1B), 48, 52, 56 (1A-1D + restart), 57",
+        "detail": ("Documents 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36 and 37 could not be "
+                   "re-read in the 2026-11-17 pass: after 13 successful fetches the document fetcher "
+                   "returned signature errors for every remaining URL, including retries after a "
+                   "pause. Those rows keep blank fee/stack/level/registration cells and the "
+                   "UNVERIFIED label; earlier claims that all 37 had been read are not repeated here."),
+        "url": ("https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/"
+                "structures/dse_nov_2026-structure_30.pdf"),
+        "source": "arena/0fd90745-poker2, 2026-11-17",
+        "action": ("Save the 14 PDFs and transcribe them into scripts/build-events.py SHEETS; the "
+                   "build aborts if a transcription disagrees with the schedule page."),
+    },
+    {
+        "id": "IR-0FD-03", "severity": "medium",
+        "item": "Change monitoring now covers 82 official URLs, with no baseline hash yet",
+        "where": "monitor.html, data/source_monitor.json, .github/workflows/source-monitor.yml",
+        "detail": ("The monitored list was a hand-kept 22-URL seed; rows citing anything else were "
+                   "silently unmonitored. It is now generated from the site's own citations "
+                   "(scripts/build_monitor_registry.py): every URL in the source register, every "
+                   "event's schedule and structure-sheet URL, every hotel booking/fee page and the "
+                   "full 37-sheet set - 82 URLs. The registry has no stored hashes, so the first "
+                   "scheduled run only establishes the baseline; a change is reported from the run "
+                   "after that. Three overlapping monitor jobs still exist (recheck.yml 06:00 UTC, "
+                   "plan-refresh.yml 06:30 UTC, source-monitor.yml 15:00 UTC) - see S-12."),
+        "url": "https://github.com/karagemop466-tech/Poker2/actions/workflows/source-monitor.yml",
+        "source": "arena/0fd90745-poker2, 2026-11-17",
+        "action": ("Let the job run (or trigger workflow_dispatch) and read monitor.html: any row "
+                    "whose source hash moved gets a 'source changed - re-check' badge."),
+    },
+])
+
+master["verification_pass"] = {
+    "date": "2026-11-17",
+    "page": "plan/unverified.html",
+    "summary": ("2026-11-17: 13 further Venetian structure sheets re-read in full (documents 2, 3, "
+                "4, 9, 12, 13, 14, 16, 17, 19, 20, 21, 22); 23 of 37 now read. All buy-in / fee / "
+                "stack / level / guarantee values in this dashboard that cite one of those sheets "
+                "were re-checked against the new transcription - 25 rows, no mismatch, so no value "
+                "changed and only the last-checked date moved. The 14 unread sheets stay UNVERIFIED "
+                "on the /plan/ surface."),
+    "rows_updated": n_recheck,
+}
+print("verification pass 2026-11-17: %d rows re-checked against their sheet, 0 mismatches" % n_recheck)
+
 with open(os.path.join(ROOT, "data/master.json"), "w") as f:
     json.dump(master, f, indent=1, sort_keys=False)
 print("data/master.json written: %d events, %d hotels, %d flags"

@@ -402,6 +402,17 @@ SHEETS = {
             "player who bags chips for Day 2 may not play a subsequent flight."),
         "cross_ref": "Sheet footer: \"SEE OTHER STRUCTURE SHEET FOR DAY 1B\" (structure_37.pdf).",
     },
+    22: {
+        "title": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+        "events": ["20"],
+        "start": "12:10", "chips": 30000, "level_min": 30, "reg_close": "16:40",
+        "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 58, "pool": 242, "gtd": {"*": 10000}, "gtd_text": "Guarantee: $10,000",
+        "bounty": None, "pays": 12.5,
+        "pays_text": "This event will play eight (8) handed and pay 12.5% of the field",
+        "fee_text": ("$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). "
+                     "The prize pool consists of $242 of every $300 Buy In."),
+    },
 }
 
 # --------------------------------------------------------------------------------------

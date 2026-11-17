@@ -1971,77 +1971,71 @@
    "name": "$300 Pot Limit Omaha $10K GTD (1Day) - Double Board Bomb Pot",
    "buy_in": 300,
    "gtd": 10000,
-   "gtd_source": "official schedule name",
-   "fee": null,
+   "gtd_source": "structure sheet",
+   "fee": 58,
    "total_entry_cost": 300,
-   "pool_per_entry": null,
-   "chips": null,
-   "level_min": null,
-   "reg_close": null,
-   "reg_close_text": null,
-   "pays_pct": null,
+   "pool_per_entry": 242,
+   "chips": 30000,
+   "level_min": 30,
+   "reg_close": "16:40",
+   "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+   "pays_pct": 12.5,
    "bounty": null,
    "sheet": 22,
-   "sheet_read": false,
+   "sheet_read": true,
    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "schedule_checked": "2026-11-16",
    "kind": "DAY",
    "rules": {
     "single_entry": {
      "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "status": "not_stated_sheet_read",
+     "excerpt": "Read in full: the sheet lists no rebuy, no add-on and no re-entry provision. It states a late-registration window only.",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
     "re_entry": {
      "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "status": "not_stated_sheet_read",
+     "excerpt": "Read in full: the sheet lists no rebuy, no add-on and no re-entry provision. It states a late-registration window only.",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
     "add_on": {
      "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "status": "not_stated_sheet_read",
+     "excerpt": "Read in full: the sheet contains no add-on provision.",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
     "fee": {
-     "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "value": 58,
+     "status": "explicit",
+     "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
     "guarantee": {
-     "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "value": 10000,
+     "status": "explicit",
+     "excerpt": "Guarantee: $10,000",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
     "payout": {
-     "value": null,
-     "status": "not_read",
-     "excerpt": null,
+     "value": 12.5,
+     "status": "explicit",
+     "excerpt": "This event will play eight (8) handed and pay 12.5% of the field",
      "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
+     "retrieved": "2026-11-17"
     },
-    "bounty": {
-     "value": null,
-     "status": "not_read",
-     "excerpt": null,
-     "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": null
-    }
+    "bounty": null
    },
-   "category": "unverified",
+   "category": "single_entry_candidate",
    "ratio_gtd_to_buyin": 33.3,
-   "earliest_plausible_finish": null
+   "earliest_plausible_finish": 1030
   },
   {
    "id": "V21-20261129-1710",

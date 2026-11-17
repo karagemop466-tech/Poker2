@@ -236,7 +236,7 @@
   "2026-11-29": {
    "date": "2026-11-29",
    "dow": "Sun",
-   "qualifying_events": 1,
+   "qualifying_events": 2,
    "primary": {
     "id": "V21-20261129-1710",
     "event_no": "21",
@@ -256,7 +256,16 @@
     "last_checked": "2026-11-16"
    },
    "fallback": null,
-   "skipped_events": [],
+   "skipped_events": [
+    {
+     "event_no": "20",
+     "start": "12:10",
+     "name": "$300 Pot Limit Omaha $10K GTD (1Day) - Double Board Bomb Pot",
+     "buy_in": 300,
+     "gtd": 10000,
+     "ratio": 33.3
+    }
+   ],
    "flags": [
     {
      "type": "poker_rate",
