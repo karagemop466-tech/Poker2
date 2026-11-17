@@ -57,10 +57,10 @@
    "area": "Hotel cost",
    "severity": "Medium",
    "title": "Parking: two official statements, no reconciliation",
-   "detail": "Hotel terms: registered guests pay $20/day. Poker room page: 'Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more ... receive complimentary self-parking.' Whether a registered player's $20/day is also waived is not stated.",
+   "detail": "Two official Venetian pages state parking differently and neither reconciles with the other. Hotel terms (read 2026-11-17): 'The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day.' Poker-room self-parking page (read 2026-11-17): 'Venetian Rewards Sapphire members and above receive complimentary self-parking ... Players in the poker room who play three hours or more in tournament or cash games will receive complimentary self-parking for the day. Players must visit a supervisor at the end of their session to confirm qualifications.' What is still not stated: whether that poker benefit cancels the $20/day room charge for a guest who is also playing, or sits beside it as a second entitlement. Because the answer changes the trip total, parking is a separate line in the calculator rather than folded into the nightly figure.",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "action": "Ask the poker desk; the trip calculator keeps parking as an optional line so the estimate is not inflated or deflated by the ambiguity.",
-   "status": "needs review"
+   "action": "Ask the poker-room supervisor at the end of the first session and note it on the folio. If the benefit cancels the guest charge, the trip cost drops by $20 x nights; the calculator already shows that line separately so you can see the difference.",
+   "status": "needs review (both statements re-read 2026-11-17)"
   },
   {
    "id": "FG-09",
@@ -176,11 +176,11 @@
    "id": "FG-13",
    "area": "Tax",
    "severity": "Medium",
-   "title": "The 13.38% figure comes from a 2016 county notice",
-   "detail": "The county document adopting 13.38% (12.0% + 0.5% LVCVA + 0.88% stadium) is dated November 15, 2016. The Venetian's own current terms still say 13.38%. STRENGTHENED 2026-11-17: two live dated quotes from the Venetian's booking engine imply 13.3804% to four decimal places (407.69 / 3,047.00 and 532.51 / 3,979.75), so the rate is now confirmed by the amount actually charged, not only by the notice.",
+   "title": "The 13.38% figure is corroborated three ways, and its county source has now been read in full",
+   "detail": "The county document adopting 13.38% (12.0% + 0.5% LVCVA + 0.88% stadium) is dated November 15, 2016. The Venetian's own current terms still say 13.38%. Two live dated quotes from the Venetian's booking engine imply 13.3804% to four decimal places (407.69 / 3,047.00 and 532.51 / 3,979.75). ADDED 2026-11-17: the county's licensed-property guide was read in full and its Appendix III prints the component table the 13.38% is built from - 'Resort Hotel in SD & PGC: 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%' - and the property schedule that follows gives each hotel its own row at 13.38% / RES / PGC. That schedule does NOT list a Horseshoe row: it lists 'Bally's Las Vegas, 3645 Las Vegas Blvd S' at 13.38%, so Horseshoe's rate is left unentered rather than transferred from a former name. Read 2026-11-17. CORROBORATED AGAIN 2026-11-17: the City of Las Vegas Room Tax packet (Rev. March 2026) states the same split - 13.38% inside the Primary Gaming Corridor, 13.00% outside - and requires the tax to be 'shown as a separate charge', which is how this site computes it. Jurisdiction caveat recorded on the hotels page: that packet governs City-of-Las-Vegas licensees, while the Strip hotels here are licensed by Clark County, so the county guide remains the per-property citation.",
    "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
-   "action": "Re-confirm with the Clark County Department of Business License before any non-refundable payment.",
-   "status": "corroborated"
+   "action": "Nothing to change in the cost formula. If a property's own registration ever differs from 13.38%, the county schedule row - not an assumption about a former name - decides it.",
+   "status": "corroborated (county guide + city packet read 2026-11-17)"
   },
   {
    "id": "FG-21",
@@ -286,11 +286,11 @@
    "id": "FG-17",
    "area": "Automation",
    "severity": "Low",
-   "title": "Change monitoring starts with no baseline hashes",
-   "detail": "The refresh job runs on GitHub's runners, which can reach the hotel sites; this sandbox cannot (outbound access is limited to GitHub, npm and PyPI), so snapshot hashes are written by the first scheduled run instead of being pre-seeded here. The extraction side is not left untested: `node scripts/check_sources.mjs --selftest` runs all 34 tracked patterns from site-data/sources.json against text containing the sentences they must match, and both plan-verify.yml and plan-refresh.yml run it before doing anything else, so a broken pattern fails loudly instead of reporting 'no change' forever.",
+   "title": "Change monitoring has no baseline yet, and the daily job that writes one could not succeed",
+   "detail": "The refresh job runs on GitHub's runners, which can reach the hotel sites; this sandbox cannot (outbound access is limited to GitHub, npm and PyPI), so snapshot hashes are written by the first scheduled run instead of being pre-seeded here. The extraction side is not left untested: `node scripts/check_sources.mjs --selftest` runs all 35 tracked patterns from site-data/sources.json against text containing the sentences they must match. FOUND AND FIXED 2026-11-17: the scheduled job had run and failed every day - run 44124782058 on main b832ae2 is one - because its own post-fetch step ran `build-site.py --check` after writing site-data/change-report.json and site-data/schedule-diff.json, which plan/flagged.html renders. The job could therefore never succeed, which is why no baseline exists. It now re-renders first and then runs scripts/check_plan_fresh.py, which gates the pages on reproducibility from the published dataset and validates the two run reports for shape instead of forbidding them to change.",
    "source": "https://github.com/karagemop466-tech/Poker2/blob/main/.github/workflows/daily-refresh.yml",
-   "action": "After the first run (06:30 UTC daily) the report page will show ok/changed/error per source.",
-   "status": "needs one scheduled run"
+   "action": "The next scheduled run (06:30 UTC daily) should now commit site-data/snapshots/** and flip every source from 'no run yet' to ok/changed/error. If it fails again, the log will name the step; the freshness gate is the only blocking one.",
+   "status": "blocking cause fixed 2026-11-17; baseline awaits the next scheduled run"
   },
   {
    "id": "FG-20",

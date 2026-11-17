@@ -454,6 +454,39 @@ SUGGESTIONS = [
          cost="About a day; the per-row excerpts already exist", effort="Medium", blocks="F-13"),
 ]
 
+# Read from data/verified2026/checks.json (the run of 2026-11-17T15:49:57Z) rather than typed by
+# hand, so the ten URLs named here are exactly the ten the monitor could not read.
+def _unread_flags():
+    import json, os
+    here = os.path.dirname(os.path.abspath(__file__))
+    try:
+        d = json.load(open(os.path.join(here, "checks.json"), encoding="utf8"))
+    except (OSError, ValueError):
+        return []
+    run = (d.get("runs") or [{}])[0]
+    bad = [r for r in run.get("results", []) if r.get("status") != 200]
+    if not bad:
+        return []
+    rows = "".join(
+        "<li><code>%s</code> &mdash; %s (%s)</li>"
+        % (r.get("url"), r.get("status") if r.get("status") else "no response",
+           (r.get("error") or "no error text recorded").split(":")[0][:60])
+        for r in bad)
+    return [dict(id="F-14", area="Monitoring",
+                 title="Ten of the 61 monitored official URLs could not be read on the last scheduled run",
+                 detail=("The scheduled re-check ran on %s and read 51 of 61 URLs successfully. The ten "
+                         "below returned an HTTP error, a redirect or a timeout, so the site can say only "
+                         "that they were not read - not that they are unchanged. None of the ten is cited "
+                         "by a tournament row; six are hotel fee or cancellation citations.<ul>%s</ul>"
+                         % (run.get("checked") or "the last run", rows)),
+                 impact=("A hotel fee or cancellation term sourced from one of these pages rests on the "
+                         "reading date shown on that hotel's row, not on the latest check. Re-open the "
+                         "link before you rely on the term."),
+                 source=(bad[0].get("url") if bad else ""))]
+
+
+FLAGS = FLAGS + _unread_flags()
+
 SUMMARY_HEADLINE = ("No Strip poker room publishes a single-entry rule. The Venetian is the only room "
                    "that publishes enough to rank line by line. Silence on re-entry is recorded as "
                    "silence, never as a promise.")

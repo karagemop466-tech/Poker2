@@ -35,45 +35,38 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Prove the committed pages reproduce from the committed data
+      - name: Prove the committed pages match the committed data (clean checkout, before any fetch)
         run: |
-          # This runs FIRST, before anything is fetched, and that ordering is the fix for a job that
-          # was red on every scheduled run (43943838443, 44124782058) while passing every local rerun.
-          # The generator check reads site-data/change-report.json and site-data/schedule-diff.json -
-          # the reports the fetch steps below are about to write. As long as the check ran after them,
-          # it compared committed pages with reports git has never held, so "the committed output
-          # differs" was guaranteed and the job died before its commit step could publish the very
-          # review PR the failure was meant to open. scripts/build-site.py now also refuses to certify
-          # a page fed by an uncommitted input, so the class of bug cannot come back quietly.
-          #
-          # Still non-blocking on purpose: when an official page changes, the transcriptions in
-          # scripts/build-events.py stop matching, and that is reviewable information, not a reason to
-          # lose the artefacts. The outcome is written to the step summary and carried into the commit
-          # step, which turns it into a pull request.
+          # Runs before anything is fetched on purpose. check_plan_fresh.py below re-checks
+          # reproducibility *after* this job has rendered, so a page that was hand-edited (or a
+          # dataset committed without its pages) would be silently overwritten by this job's own
+          # render step and pushed as if it were intended. On the clean tree there is nothing to
+          # blame but the last commit, so this is where that drift is visible. Non-blocking: the
+          # outcome is carried into scripts/commit-refresh.sh, which opens a review PR instead of
+          # ending the run with no artefacts.
           rc=0
           { python3 scripts/build-events.py --check
             && python3 scripts/build-schedule.py --check
             && python3 scripts/build-walk.py --check
             && python3 scripts/build-site.py --check
-            && node scripts/scrape-schedule.mjs --selftest
-            && node scripts/check_sources.mjs --selftest ; } > /tmp/verify.log 2>&1 || rc=$?
-          cat /tmp/verify.log
+            && python3 scripts/check_plan_fresh.py --strict ; } > /tmp/pristine.log 2>&1 || rc=$?
+          cat /tmp/pristine.log
           {
-            echo "## Generator drift check (clean checkout, before any fetch)"
+            echo "## Clean-checkout reproducibility (before any fetch)"
             echo
             echo '```'
-            cat /tmp/verify.log
+            cat /tmp/pristine.log
             echo '```'
             if [ "$rc" -ne 0 ]; then
               echo
-              echo "**exit $rc** - a transcription no longer reproduces the committed output. " \
-                   "Read the cited official document, update \`scripts/build-events.py\`, and re-run the generators. " \
-                   "A review pull request is opened below; the site keeps showing the last verified values until then."
+              echo "**exit $rc** - main's committed pages do not reproduce from main's committed data. " \
+                   "This job's render step will regenerate them, so review the diff in the pull request " \
+                   "rather than assuming the previous commit was right."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
           if [ "$rc" -ne 0 ]; then
-            echo failed > /tmp/verify.failed
-            echo "::warning title=Generator drift::committed /plan/ pages differ from site-data (exit $rc) - opening a review PR"
+            echo failed >> /tmp/verify.failed
+            echo "::warning title=Committed output not reproducible::plan/** does not reproduce from site-data on a clean checkout"
           fi
           exit 0
 
@@ -88,14 +81,40 @@ jobs:
       - name: Scrape the schedule page and diff it against the dataset
         run: node scripts/scrape-schedule.mjs
 
-      - name: Render the new reports into the /plan/ pages
+      - name: Re-render plan/ from the datasets (never from the live fetch)
         run: |
-          # The change-monitor table on plan/flagged.html and the `changes` array in
-          # plan/assets/data.js are views of the reports the two steps above just wrote. Regenerate
-          # them here so whatever this run commits is self-consistent, then re-run the check to prove it.
+          # The two steps above append to site-data/change-report.json and
+          # site-data/schedule-diff.json, which plan/flagged.html renders. Re-rendering here
+          # means the published page always reflects the run that just happened instead of the
+          # last committed one. This step used to be the job's own failure: the post-fetch
+          # check ran `build-site.py --check` *before* any re-render, so on every day the
+          # re-check wrote a result the page differed and the whole job went red
+          # (run 44124782058, main b832ae2). The check below is the honest version.
           python3 scripts/build-site.py
-          python3 scripts/build-site.py --check
-          python3 scripts/build-events.py --check
+
+      - name: Verify the generators still reproduce every dataset and page
+        run: |
+          # Non-blocking on purpose: when an official page changes, the transcriptions in
+          # scripts/build-events.py stop matching, and that is exactly the situation we want
+          # reported as a pull request rather than a red X with no artefacts.
+          # `--check` on build-events/build-schedule/build-walk still tells us whether the
+          # transcriptions still match; build-site is checked by the freshness gate below,
+          # which compares against the tree *after* this run's own re-render.
+          { python3 scripts/build-events.py --check
+            && python3 scripts/build-schedule.py --check
+            && python3 scripts/build-walk.py --check
+            && node scripts/scrape-schedule.mjs --selftest ; } > /tmp/verify.log 2>&1 \
+            || echo failed > /tmp/verify.failed
+          cat /tmp/verify.log
+          cat /tmp/verify.log /tmp/pristine.log 2>/dev/null > /tmp/verify.all || true
+          if [ -f /tmp/verify.failed ]; then
+            echo "GENERATOR CHECK FAILED: official text no longer matches the transcription (or the " \
+                 "committed pages were already unreproducible) - opening a review PR"
+          fi
+          true
+
+      - name: Plan pages reproduce from the datasets and the reports are well-formed
+        run: python3 scripts/check_plan_fresh.py
 
       - name: Commit snapshots, or open a review PR when a source moved
         env:

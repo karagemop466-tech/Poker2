@@ -29,7 +29,7 @@ expressly price a second buy-in, run multiple flights, pay bounties, or award se
 |---|---|
 | Venetian DeepStack Extravaganza IV, Nov 16 – Dec 23 2026 | Read in full, from **both** the HTML event page and the official schedule PDF: 94 rows, 64 event numbers |
 | All 37 official structure sheets | Read one by one. Buy-in split, late-registration close, stack, level length, payout share, bounty mechanic, and the re-entry / rebuy / add-on finding for each |
-| Entry-rule classification | 16 best candidates · 30 bounty/PKO · 8 multi-flight · 7 satellites · 1 team · 2 that price a second buy-in |
+| Entry-rule classification | 15 best candidates (13 open to any player, 2 restricted to 50+) · 30 bounty/PKO · 9 multi-day/multi-flight · 7 satellites · 1 team · 2 that price a second buy-in |
 | Resort fees | Venetian/Palazzo $55, Wynn/Encore $55, Bellagio $55, MGM Grand $50 — each with its official page |
 | Poker suite rate | From $119 (Venetian) / $209 (Palazzo), code `EPOKR25`, phone only, with the qualifying-play condition |
 | Room tax | 13.38%, from Clark County's own transient lodging guide |
@@ -45,6 +45,7 @@ expressly price a second buy-in, run multiple flights, pay bounties, or award se
 | Any cancellation deadline | Not published on the pages read. **F-06** |
 | Any official quality rating | No hotel publishes a star or diamond rating for standard rooms |
 | Any measured walk time | The matrix is an OpenStreetMap routing estimate, labelled as such, with a Google Maps link on every row. **F-08** |
+| Ten monitored URLs | The 2026-11-17 scheduled run read 51 of 61. The other ten returned 403/404/302/422 or timed out, so they are reported as *not read*, never as unchanged. **F-14** |
 
 Every one of these is on the **Flagged for review** page with the source to check. Nothing on the
 site is inferred, estimated or filled in from memory.
