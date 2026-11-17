@@ -117,6 +117,7 @@ def main():
             "level_min": None, "late_reg_time": None, "late_reg_text": None,
             "gtd": None, "gtd_basis": None, "pays_pct": None,
             "bounty_amount": None, "single_entry": None, "re_entry": None, "add_on": None,
+            "eligibility": None, "game": None,
             "entry_excerpt": None, "fee_excerpt": None, "source_url": None,
             "unverified": [], "notes": "",
         }
@@ -135,6 +136,7 @@ def main():
                 "gtd_basis": s["guarantee_basis"],
                 "pays_pct": s["pays_pct"],
                 "bounty_amount": s["bounty_amount"],
+                "eligibility": s.get("eligibility"),
                 "single_entry": s["single_entry"],
                 "re_entry": s["re_entry"],
                 "add_on": s["add_on"],

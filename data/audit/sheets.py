@@ -493,6 +493,7 @@ SHEETS = [
                  "'Any player who buys into this event that is not 50+ years of age will not be "
                  "entitled to any prize money or a refund of their buy in.' Pays 15%, not the 12.5% "
                  "used almost everywhere else in this series, so it is not payout-comparable.",
+        "eligibility": "Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in.",
     },
     {
         "sheet": 19,
@@ -516,6 +517,7 @@ SHEETS = [
                  "prizes are direct entry into the $800 LIPS Ladies Event #39 with odd monies as "
                  "one additional payout. Open to female players 21+. There is no dollar prize pool "
                  "to divide, so this row can never carry a GTD-per-entry ratio.",
+        "eligibility": "Open to Female players who must 21+ years of age and have a Venetian Rewards card to participate.",
     },
     {
         "sheet": 20,
@@ -539,6 +541,7 @@ SHEETS = [
                  "says each flight stops at 'approximately 15% of the field remaining', but no "
                  "payout percentage line is printed, so pays_pct is blank rather than copied from "
                  "that flight-stop figure.",
+        "eligibility": "Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in.",
     },
     {
         "sheet": 22,
@@ -776,6 +779,7 @@ SHEETS = [
                  "female/male. IMPORTANT: fee is recorded as $90 because $80 is house fees and a "
                  "further $10 is a flat fee for a third party (LIPS/Vegas Connected); $80 + $10 + "
                  "$510 prize pool = $600. See flag FD-17.",
+        "eligibility": "Teams: Female / Female OR Female / Male. Both players must be 21+.",
     },
     {
         "sheet": 32,
@@ -802,6 +806,7 @@ SHEETS = [
                  "7:00 PM on Dec 11 and streamed by PokerGO, which is why the schedule carries a "
                  "third Dec 11 row at 7:00 PM. Fee is $110: $90 house plus a $20 third-party LIPS "
                  "fee. No payout percentage line is printed.",
+        "eligibility": "Must be a female 21+ years of age and have a Venetian Rewards card to participate.",
     },
     {
         "sheet": 33,

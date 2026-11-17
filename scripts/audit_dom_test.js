@@ -46,6 +46,17 @@ const oneDayRead = events.filter(
   (e) => e.category === 'single' && e.structure_read
 );
 const wantRows = oneDayRead.length;
+// the events page renders one filterable section per evidence group, and a group with no
+// rows is omitted entirely. derive the expected count instead of hard-coding 3, so
+// completing a source read does not look like a regression.
+const otherRows = events.filter((e) =>
+  ['multi_flight', 'satellite', 'team'].includes(e.category)
+).length;
+const unreadRows = events.filter(
+  (e) => e.category === 'single' && !e.structure_read
+).length;
+const wantSections =
+  (wantRows ? 1 : 0) + (otherRows ? 1 : 0) + (unreadRows ? 1 : 0);
 
 const load = (name) =>
   new JSDOM(fs.readFileSync(path.join(OUT, name), 'utf8'), {
@@ -61,7 +72,10 @@ console.log('\nevents page — search and date filter');
   const dom = load('events.html');
   const d = dom.window.document;
   const bars = d.querySelectorAll('.bar');
-  ok(bars.length === 3, `events page has 3 filter bars, got ${bars.length}`);
+  ok(
+    bars.length === wantSections,
+    `events page has ${wantSections} filter bars (one per non-empty section), got ${bars.length}`
+  );
 
   const tbl = d.getElementById('s-read');
   ok(!!tbl, 'the single-entry sheet-read table is present');

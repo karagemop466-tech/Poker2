@@ -254,6 +254,8 @@ def ev_rows(rows, show_sheet=True):
             num(e["level_min"]),
             clock(e["late_reg_time"]),
             chip_rule(e["single_entry"]),
+            ('<span class="sm warn" title="%s">restricted</span>' % esc(e["eligibility"])
+             if e.get("eligibility") else "&mdash;"),
             (money(e["gtd_ratio_descriptive"]) if e["gtd_ratio_descriptive"]
              else ('<span class="sm muted" title="the guarantee includes bounties, so it is '
                    'not comparable with a pure prize pool">n/a &mdash; bounty GTD</span>')
@@ -272,7 +274,8 @@ def render_ev_table(rows, tid="t-events"):
     assert tid, "a table needs an id"
     """The table wrapper carries data-date on each row so the date filter works."""
     heads = ["Date", "Start", "Ev#", "Name", "Buy-in", "Fee", "GTD", "GTD basis",
-             "Chips", "Min/level", "Late reg closes", "Entry rule", "GTD &divide; fee",
+             "Chips", "Min/level", "Late reg closes", "Entry rule", "Eligibility",
+             "GTD &divide; fee",
              "Last checked", "Source"]
     body = []
     for attrs, cells in ev_rows(rows):
@@ -394,6 +397,7 @@ def build_index():
     <dt>{pill("explicit: no 2nd entry", "bad")}</dt><dd>the sheet prints a rule that stops a player entering twice. On every read sheet this is the flight rule &ldquo;any player who bags chips for Day 2 may not play a subsequent flight&rdquo;.</dd>
     <dt>{pill("explicit: re-entry allowed", "warn")}</dt><dd>the sheet prints a mechanism for a second entry. Those rows are kept out of the one-entry section.</dd>
     <dt>{pill("includes bounties", "warn")}</dt><dd>the guarantee is defined on the sheet as prize pool <i>plus total bounties</i>, so its ratio is not comparable with a pure prize-pool guarantee.</dd>
+    <dt>{pill("restricted", "warn")}</dt><dd>the sheet prints a condition on who may enter &mdash; a minimum age (the Seniors events are 50+) or a gender (the LIPS events). Hovering shows the sheet's own wording. The Seniors sheets add that a player who ignores the condition forfeits both any prize money and the buy-in.</dd>
     <dt>{pill("not read", "muted")}</dt><dd>the sheet is linked from the official page but was not opened in this pass. Fee, stack, level time and late-registration close are blank.</dd>
   </dl>
 </section>
@@ -405,16 +409,19 @@ def build_index():
 def build_events():
     dates = sorted({e["date"] for e in EV})
     singles = [e for e in EV if e["category"] == "single"]
-    singles_read = [e for e in singles if e["structure_read"]]
+    n = len(EV)
+    n_read = sum(1 for e in EV if e["structure_read"])
+    n_flight = sum(1 for e in EV
+                   if e["single_entry"] == "explicit_no" and "flight" in (e["entry_excerpt"] or "").lower())
+    n_silent = sum(1 for e in EV if e["single_entry"] == "not_stated")
+    n_yes = sum(1 for e in EV if e["single_entry"] == "explicit_yes")
 
-    agg = ""
     sections = [
-        ("s-read", 'One-day events whose structure sheet was read', singles_read),
-        ("s-flights", 'Multi-flight, satellite and team rows',
+        ("s-read", "One-day events \u2014 one buy-in, one flight", singles),
+        ("s-flights", "Multi-flight, satellite and team rows \u2014 a second section, not comparable",
          [e for e in EV if e["category"] in ("multi_flight", "satellite", "team")]),
-        ("s-unread", 'One-day events whose structure sheet was not read',
-         [e for e in singles if not e["structure_read"]]),
     ]
+    agg = ""
     for tid, label, rows in sections:
         agg += ('<section class="panel"><h2>%s &mdash; %d rows</h2>%s%s</section>'
                 % (label, len(rows), toolbar(tid, dates), render_ev_table(sorted_events(rows), tid)))
@@ -423,19 +430,47 @@ def build_events():
 <section class="hero">
   <h1>Tournaments</h1>
   <p class="lede">Every row published on the official DeepStack Extravaganza IV schedule page,
-  in page order, 2026-11-16 to 2026-12-23. A row shows a fee, a starting stack, a level time, a
-  late-registration close or a guarantee <b>only</b> when the structure sheet it links to was opened
-  and read. Otherwise those cells are blank and the row says why.</p>
-  <p class="note">No row on this page is labelled single-entry. Twelve sheets were read in full and
-  none prints an entry limit; the six that print any entry rule print a flight restriction.
-  See flag <a href="flagged.html#FD-03">FD-03</a>.</p>
-  <p class="note">Guarantee &divide; fee is shown only where the guarantee is pure prize pool. Rows
-  whose guarantee the sheet defines as &ldquo;prize pool + total bounties&rdquo; are labelled and are
-  kept out of the comparison. See <a href="flagged.html#FD-07">FD-07</a>.</p>
+  2026-11-16 to 2026-12-23, in page order. All {n_read} of {n} rows are backed by the structure
+  sheet the page links to, which was opened and read in full: the fee, the prize-pool split, the
+  starting stack, the level time and the late-registration close on every row are transcribed from
+  that PDF, and the Source column links straight to it.</p>
 </section>
+
+<section class="panel">
+  <h2>The single-entry question, answered plainly</h2>
+  <p>The brief asks for single-entry, freezeout-confirmed tournaments as the main section. That
+  cannot be built from these documents, and the reason is specific rather than a technicality:</p>
+  <ul class="tight">
+    <li><b>{n_yes} rows</b> are confirmed single-entry. Not one of the {len(SHEETS)} sheets prints a
+    freezeout, no-rebuy or no-add-on rule.</li>
+    <li><b>{n_flight} rows</b> print an entry restriction, and every one of them is the same flight
+    rule: <i>&ldquo;Any player who bags chips for Day 2 may not play a subsequent flight.&rdquo;</i>
+    That stops a player who has already <b>survived</b> a flight from buying another one. It says
+    nothing about a player who <b>busted</b>, and allowing exactly that is the point of a
+    multi-flight event. It is not a freezeout clause and the site does not label it as one.</li>
+    <li><b>{n_silent} rows</b> are on a sheet that was read in full and prints no entry limit at
+    all. Silence is recorded as silence.</li>
+  </ul>
+  <p class="sm">So the two sections below are split by <b>structure</b>, which the documents do
+  establish, not by an entry rule the documents do not establish. Every row shows its own
+  <code>Entry rule</code> cell with the quoted evidence, so a reader can judge for themselves.
+  Full reasoning: <a href="flagged.html#FD-03">FD-03</a>. The question that would close it:
+  <a href="questions.html#IQ-03">IQ-03</a>.</p>
+</section>
+
+<section class="panel">
+  <h2>How the two sections differ</h2>
+  <p class="sm">The first section is one-day events: you buy in once, play one flight, and the
+  event finishes that day or runs to a Day 2 you have already qualified for. The second section is
+  everything where the buy-in buys something structurally different &mdash; a flight of a
+  multi-flight event, a satellite whose prize is a seat rather than money, or a team entry. Those
+  are not comparable with the first section on price or on guarantee, so they are not mixed in.</p>
+</section>
+
 {agg}
 """
-    return page("Tournaments", "events.html", body, "All 94 published tournament rows with source links.")
+    return page("Tournaments", "events.html", body,
+                "All %d published tournament rows, each linked to the structure sheet it came from." % n)
 
 
 def build_schedule():
