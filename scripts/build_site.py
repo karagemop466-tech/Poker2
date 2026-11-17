@@ -245,6 +245,30 @@ def build():
     n_flags = len(master["flags"])
 
     # ---------------- index ----------------
+    # ---- venue index cards for the dashboard ----
+    _vslug = {
+        "The Venetian": "venue-venetian.html", "Wynn Las Vegas": "venue-wynn.html",
+        "Horseshoe Las Vegas": "venue-horseshoe.html", "Caesars Palace": "venue-caesars.html",
+        "MGM Grand": "venue-mgm.html", "Bellagio": "venue-bellagio.html",
+        "Golden Nugget (downtown)": "venue-goldennugget.html",
+    }
+    _vcount = {}
+    _vcheck = {}
+    for _e in evs:
+        _v = _e.get("venue")
+        _vcount[_v] = _vcount.get(_v, 0) + 1
+        _vcheck.setdefault(_v, set()).add(_e.get("last_checked"))
+    _cards = []
+    for _v, _n in sorted(_vcount.items(), key=lambda kv: -kv[1]):
+        _slug = _vslug.get(_v)
+        _sing = len([e for e in evs if e.get("venue") == _v and e["category"] == "single"])
+        _checked = ", ".join(sorted(x for x in _vcheck[_v] if x))
+        _link = f'<a href="{_slug}">{esc(_v)}</a>' if _slug else esc(_v)
+        _cards.append(f'<div class="card"><div class="k">{_link}</div>'
+                      f'<div class="v">{_n}</div>'
+                      f'<div class="s">{_sing} sheet-silent · checked {esc(_checked)}</div></div>')
+    venue_cards = '<div class="cards">' + "".join(_cards) + '</div>'
+
     body = f"""
 <h1>Dashboard</h1>
 <p class="lead">A verified-source planner for live tournament poker on and near the Las Vegas Strip.
@@ -276,6 +300,11 @@ build the trip in the <a href="planner.html">trip planner</a>.</p>
 <p class="note">Pool ÷ fee figures are descriptive ratios of published numbers only, not forecasts of value or ROI.</p>
 </div>
 <div class="panel">
+<h2>Jump to a venue</h2>
+<p class="note">One page per venue, each listing that venue's events and its hotel(s).
+Counts are computed from the dataset; “last checked” is the date that venue's own official
+document was last read.</p>
+{venue_cards}
 <h2>Quick tools</h2>
 <ul class="tight">
 <li><a href="planner.html">Trip cost calculator</a> — entries × buy-ins + nights × true hotel cost.</li>
