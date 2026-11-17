@@ -160,7 +160,7 @@
   },
   {
    "id": "caesars-com--caesars-com-caesars-palace-casino-poker",
-   "label": "caesars_poker_page",
+   "label": "Caesars Palace: poker room page",
    "url": "https://www.caesars.com/caesars-palace/casino/poker",
    "cited_by": "source register",
    "sha256": null,
@@ -199,7 +199,7 @@
   },
   {
    "id": "caesars-com-m-content-dam-empire-clv-casino-poker-to",
-   "label": "caesars_flyer",
+   "label": "Caesars Palace: daily NLH tournament flyer 2026 (PDF)",
    "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "cited_by": "source register",
    "sha256": null,
@@ -277,7 +277,7 @@
   },
   {
    "id": "cdn-wynnresorts-com-s-com-image-upload-v1752011191-visitwynn",
-   "label": "wynn_daily_structures",
+   "label": "Wynn: daily tournament structures (PDF)",
    "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
    "cited_by": "source register",
    "sha256": null,
@@ -316,7 +316,7 @@
   },
   {
    "id": "goldennugget-com-et-com-las-vegas-casino-poker-room-daily",
-   "label": "golden_nugget_page",
+   "label": "Golden Nugget: daily tournaments page",
    "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
    "cited_by": "source register",
    "sha256": null,
@@ -953,7 +953,7 @@
   },
   {
    "id": "venetianlasvegas-com-svegas-com-content-dam-vlvweb-casino-pok",
-   "label": "venetian_structure_pdf_base",
+   "label": "Venetian DSE IV structure sheets (URL pattern, sheets 1–37)",
    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{N}.pdf",
    "cited_by": "source register",
    "sha256": null,
