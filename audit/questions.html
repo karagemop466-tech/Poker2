@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions &middot; Vegas poker audit</title>
+<meta name="description" content="What is unknown, why it matters, and how to close it.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels</a>
+<a href="cost.html">Trip cost</a>
+<a href="rates.html">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html" aria-current="page">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Questions that must be answered before a decision</h1>
+  <p class="lede">Each item names what is unknown, why it matters, exactly how to close it, and
+  whether it can be closed from a document that already exists.</p>
+  <p class="note">12 items. Four can be closed from documents already linked on this site;
+  the rest need a booking engine, a phone call or a decision from you.</p>
+</section>
+<div class="panel">
+<div class="tw"><table id="t-q" class="data"><thead><tr><th>ID</th><th>Question</th><th>Why it matters</th><th>How to close it</th><th>Closable from a document?</th><th>What it blocks</th><th>Status</th><th>Source</th></tr></thead><tbody>
+<tr><td id="IQ-01">IQ-01</td><td>What is printed on the 25 structure sheets that were not read?</td><td>46 of 94 published rows have no fee, stack, level time or late-registration close. Without them those rows cannot be compared with the 48 that do.</td><td>Open each sheet URL and transcribe the same fields into data/audit/sheets.py.</td><td>yes - it is 25 more documents, not a missing source</td><td>Like-for-like comparison of 46 rows</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-02">IQ-02</td><td>What is the actual checkout total for specific dates?</td><td>No dated room rate exists. The hotel side of the trip cost is unknown, so total cost cannot be ranked between properties.</td><td>Enter the dates on the official booking engine and record the itemised checkout total, or call the poker rate line (866.255.8936, code EPOKR25) and ask for the total including resort fee and tax.</td><td>no - requires a JavaScript booking engine or a phone call</td><td>Any statement of true cost per night</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/book" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-03">IQ-03</td><td>Does any Venetian one-day event actually forbid re-entry?</td><td>Twelve sheets were read in full and none prints an entry limit. &#x27;Single entry&#x27; is currently an assumption about silence.</td><td>Ask the poker room in writing (lv_cas_poker@venetianlasvegas.com, 702.414.7657) whether a one-day event permits a second entry.</td><td>no - needs the venue to answer</td><td>Labelling any event &#x27;single entry&#x27;</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-04">IQ-04</td><td>Is the resort fee taxed at 13.38%, and is parking taxed?</td><td>The properties say &#x27;plus applicable tax&#x27; without printing the arithmetic. The calculator applies the room tax to the resort fee; that is a computation, not a quotation.</td><td>Read the tax lines on a real checkout confirmation for one night.</td><td>no - needs a checkout confirmation</td><td>Exact fees-only nightly figure</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-05">IQ-05</td><td>Which guarantee figures include bounties?</td><td>Guarantee-per-entry is only comparable across rows when the guarantee is pure prize pool.</td><td>Already answered for the 12 sheets read (gtd_basis column); the remaining 25 sheets need the same line checked.</td><td>yes for the read set</td><td>Cross-row ratio comparison</td><td><span class="p ok">partly answered</span></td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-06">IQ-06</td><td>Can the trip actually be filled from 8 AM to night?</td><td>No event starts before 9:10 AM and the earliest one-day event is 10:10 AM, so part of the morning is free by construction.</td><td>Accept a 10:10 AM start, or add a second venue with an earlier daily event and verify its schedule.</td><td>partly - the Venetian answer is no</td><td>An 8 AM itinerary</td><td><span class="p ok">answered: no 8 AM event exists</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-07">IQ-07</td><td>What is the real walk from the hotel lobby to the poker room?</td><td>Measured times are street address to street address.</td><td>Re-route to &#x27;The Venetian Poker Room&#x27; as the destination rather than the street address, and compare.</td><td>yes</td><td>Tight connections between the hotel and a 10:10 AM start</td><td><span class="p warn">open</span></td><td><a href="https://www.google.com/maps" target="_blank" rel="noopener">google.com</a></td></tr>
+<tr><td id="IQ-08">IQ-08</td><td>Does any other Strip room run a daily tournament earlier than 10:10 AM?</td><td>The full-day goal needs an earlier start, and other rooms run recurring dailies whose official schedules were not read in this pass.</td><td>Read the daily schedule pages of the other Strip poker rooms and transcribe them the same way.</td><td>yes - sources exist, not read yet</td><td>A plan that starts before 10 AM</td><td><span class="p warn">open</span></td><td><a href="https://www.wynnlasvegas.com/casino/poker" target="_blank" rel="noopener">wynnlasvegas.com</a></td></tr>
+<tr><td id="IQ-09">IQ-09</td><td>What is the cancellation deadline and deposit for each property?</td><td>It decides how long the trip can stay flexible and whether a prepaid rate is safe.</td><td>Recorded for Bellagio, ARIA, MGM Grand (72 hours) and Wynn (prepaid, non-refundable); missing for Caesars, Horseshoe, Cosmopolitan, Westgate, South Point.</td><td>partly</td><td>Choosing a refundable vs prepaid rate</td><td><span class="p ok">partly answered</span></td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-10">IQ-10</td><td>How many players enter each event?</td><td>Guarantee-per-entry is a descriptive ratio. Whether a guarantee is likely to be met, and therefore whether the ratio means anything, depends on field size, which no organiser publishes in advance.</td><td>Use historical results for the same event in earlier series if the venue publishes them.</td><td>partly - results pages exist</td><td>Any statement about value</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-11">IQ-11</td><td>Is the Venetian poker-suite rate available on the chosen dates?</td><td>The $119/$209 figures are &#x27;from&#x27; prices subject to occupancy and blackout dates; availability is unknown.</td><td>Call the poker rate line with the dates.</td><td>no - needs a phone call</td><td>Using the poker rate in the cost model</td><td><span class="p warn">open</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td id="IQ-12">IQ-12</td><td>Which surface of this repository is the one to keep?</td><td>Root, /plan/ and the frozen trees disagree on headline counts.</td><td>Choose one surface; the rest are archived. See suggestion SG-01.</td><td>needs a decision</td><td>Any single set of published numbers</td><td><span class="p warn">open</span></td><td><a href="https://karagemop466-tech.github.io/Poker2/" target="_blank" rel="noopener">karagemop466-tech.github.io</a></td></tr>
+</tbody></table></div>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+
+</body>
+</html>

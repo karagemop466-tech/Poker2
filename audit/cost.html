@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip cost &middot; Vegas poker audit</title>
+<meta name="description" content="entries x buy-in + nights x true hotel cost, with the missing term named.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels</a>
+<a href="cost.html" aria-current="page">Trip cost</a>
+<a href="rates.html">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Trip cost</h1>
+  <p class="lede">The formula is <b>entries &times; buy-in + nights &times; true hotel cost</b>.
+  The first half is computed exactly from published numbers. The second half cannot be, because no
+  dated room rate exists, so the calculator returns the part it can prove and names the part it
+  cannot. Pick the entries on the left; the hotel line will say &ldquo;unknown&rdquo; rather than
+  invent a number.</p>
+</section>
+
+<div class="grid2">
+ <div class="panel" id="calc">
+  <h2>Calculator</h2>
+  <div class="f">
+    <label>Entries (ctrl/cmd-click for more than one)<select id="c-ev" multiple size="8"></select></label>
+    <label>Hotel<select id="c-hotel"></select></label>
+    <label>Nights<input id="c-nights" type="number" min="0" max="30" value="4"></label>
+    <label>Room rate / night<input id="c-rate" type="number" min="0" step="1" placeholder="blank = unknown"></label>
+    <label>Nights parked<input id="c-park" type="number" min="0" max="30" value="0"></label>
+  </div>
+  <div id="c-out" class="out"></div>
+ </div>
+ <div class="panel">
+  <h2>What each line is</h2>
+  <table class="kv">
+   <tr><th>entries &times; buy-in</th><td>A published buy-in from the official schedule page. Exact.</td></tr>
+   <tr><th>fee withheld</th><td>Printed on the structure sheet as &ldquo;$X of the $Y Buy-In is withheld for house fees&rdquo;. It is already inside the buy-in and is never added on top.</td></tr>
+   <tr><th>nights &times; resort fee</th><td>The property's own published nightly fee, where one was read.</td></tr>
+   <tr><th>tax</th><td>13.38% Clark County transient lodging tax, applied to rate and fee. That the fee is taxed comes from the properties' wording (&ldquo;plus applicable tax&rdquo;); it is not a printed arithmetic. See <a href="questions.html#IQ-04">IQ-04</a>.</td></tr>
+   <tr><th>parking</th><td>Venetian and Palazzo $20/day for registered guests; free self-parking is claimed for South Point by an earlier session and not re-read; nothing published for the rest.</td></tr>
+   <tr><th>room rate</th><td><b>Missing.</b> No dated quote was obtainable. See <a href="flagged.html#FD-05">FD-05</a>.</td></tr>
+  </table>
+ </div>
+</div>
+
+<div class="panel">
+  <h2>Worked example &mdash; the four cheapest verified one-day entries</h2>
+  <p class="sm">Chosen only because their buy-in and fee are both published. This is arithmetic,
+  not a recommendation.</p>
+  <div class="tw"><table class="data"><thead><tr><th>Date</th><th>Event</th><th>Buy-in</th><th>Fee withheld</th><th>GTD</th><th>GTD &divide; fee</th><th>Source</th></tr></thead><tbody>
+<tr><td><span class="nowrap">2026-11-19</span></td><td>$200 NLH RaceDay Stack (1Day) / Race to finish before the Race</td><td>$200</td><td>$35</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" target="_blank" rel="noopener">sheet 18</a></td></tr>
+<tr><td><span class="nowrap">2026-11-20</span></td><td>$200 NLH RaceDay Stack (1Day) / Race to finish before the Race</td><td>$200</td><td>$35</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" target="_blank" rel="noopener">sheet 18</a></td></tr>
+<tr><td><span class="nowrap">2026-11-21</span></td><td>$200 NLH RaceDay Stack (1Day) / Race to finish before the Race</td><td>$200</td><td>$35</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf" target="_blank" rel="noopener">sheet 18</a></td></tr>
+<tr><td><span class="nowrap">2026-11-24</span></td><td>$200 No Limit Hold&#x27;em Bounty $8K GTD (1Day)</td><td>$200</td><td>$40</td><td>$8,000</td><td>$40</td><td><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf" target="_blank" rel="noopener">sheet 1</a></td></tr>
+</tbody></table></div>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+<script>
+const EVENTS = [{"date": "2026-11-16", "name": "$300 No Limit Hold'em 1A $75K GTD", "buy_in": 300, "fee": 60}, {"date": "2026-11-16", "name": "$300 No Limit Hold'em 1B $75K GTD", "buy_in": 300, "fee": null}, {"date": "2026-11-17", "name": "$300 No Limit Hold'em 1C $75K GTD", "buy_in": 300, "fee": 60}, {"date": "2026-11-17", "name": "$300 No Limit Hold'em 1D $75K GTD", "buy_in": 300, "fee": null}, {"date": "2026-11-18", "name": "$300 No LImit Hold'em $10K GTD (1Day)", "buy_in": 300, "fee": 58}, {"date": "2026-11-19", "name": "$200 NLH RaceDay Stack (1Day) / Race to finish before the Race", "buy_in": 200, "fee": 35}, {"date": "2026-11-20", "name": "$200 NLH RaceDay Stack (1Day) / Race to finish before the Race", "buy_in": 200, "fee": 35}, {"date": "2026-11-21", "name": "$200 NLH RaceDay Stack (1Day) / Race to finish before the Race", "buy_in": 200, "fee": 35}, {"date": "2026-11-22", "name": "$200 No LImit Hold'em (1Day)", "buy_in": 200, "fee": null}, {"date": "2026-11-23", "name": "$400 No Limit Hold'em 1A $75K GTD", "buy_in": 400, "fee": null}, {"date": "2026-11-23", "name": "$200 No Limit Hold'em $8K GTD (1Day) / Progressive Knock-Out Bounty (PKO)", "buy_in": 200, "fee": null}, {"date": "2026-11-24", "name": "$400 No Limit Hold'em 1B $75K GTD", "buy_in": 400, "fee": null}, {"date": "2026-11-24", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-11-25", "name": "$400 No LImit Hold'em $15K GTD (1Day)", "buy_in": 400, "fee": null}, {"date": "2026-11-25", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-11-26", "name": "$300 No LImit Hold'em $10K GTD (1Day)", "buy_in": 300, "fee": 58}, {"date": "2026-11-26", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-11-27", "name": "$600 No Limit Hold'em $30K GTD (1Day)", "buy_in": 600, "fee": 90}, {"date": "2026-11-27", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-11-28", "name": "$600 No Limit Hold'em Bounty $30K GTD (1Day) / $200 bounties to start & $500 bounties in the money", "buy_in": 600, "fee": 90}, {"date": "2026-11-28", "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)", "buy_in": 400, "fee": null}, {"date": "2026-11-28", "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) / POKERATLAS PRO MEMBER $20 RAKE DISCOUNT", "buy_in": 200, "fee": null}, {"date": "2026-11-29", "name": "$400 No Limit Hold'em 1A $75K GTD", "buy_in": 400, "fee": null}, {"date": "2026-11-29", "name": "$300 Pot Limit Omaha $10K GTD (1Day) / Double Board Bomb Pot", "buy_in": 300, "fee": null}, {"date": "2026-11-29", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-11-30", "name": "$400 No Limit Hold'em 1B $75K GTD", "buy_in": 400, "fee": null}, {"date": "2026-11-30", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-01", "name": "$400 No Limit Hold'em 1C $75K GTD", "buy_in": 400, "fee": null}, {"date": "2026-12-01", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-02", "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) / Must be 50+ years of age to participate", "buy_in": 600, "fee": null}, {"date": "2026-12-02", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-03", "name": "$800 No Limit Hold'em 1A $500K GTD", "buy_in": 800, "fee": 110}, {"date": "2026-12-03", "name": "$600 BIG O $25K GTD (1Day)", "buy_in": 600, "fee": null}, {"date": "2026-12-03", "name": "$800 No Limit Hold'em 1B $500K GTD", "buy_in": 800, "fee": null}, {"date": "2026-12-04", "name": "$800 No Limit Hold'em 1C $500K GTD", "buy_in": 800, "fee": 110}, {"date": "2026-12-04", "name": "$800 No Limit Hold'em 1D $500K GTD", "buy_in": 800, "fee": null}, {"date": "2026-12-05", "name": "$800 No Limit Hold'em 1E $500K GTD", "buy_in": 800, "fee": 110}, {"date": "2026-12-05", "name": "$800 No Limit Hold'em 1F (Turbo) $500K GTD", "buy_in": 800, "fee": null}, {"date": "2026-12-06", "name": "$600 No Limit Hold'em $40K GTD (1Day)", "buy_in": 600, "fee": 90}, {"date": "2026-12-06", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-07", "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day) / $200 bounties to start & $500 bounties in the money", "buy_in": 600, "fee": 90}, {"date": "2026-12-07", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-08", "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) / Must be 50+ years of age to participate", "buy_in": 600, "fee": null}, {"date": "2026-12-08", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-09", "name": "$800 No Limit Hold'em Bounty $75K GTD (1Day) / $200 bounties to start & $500 bounties in the money", "buy_in": 800, "fee": 100}, {"date": "2026-12-09", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-10", "name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)", "buy_in": 600, "fee": null}, {"date": "2026-12-10", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-11", "name": "$600 No Limit Hold'em LIPS $30K GTD (1Day) / KINGS and QUEENS Bounty - Open to all players", "buy_in": 600, "fee": null}, {"date": "2026-12-12", "name": "$2,200 No Limit Hold'em 1A $1 Mill GTD / PokerAtlas Championship Title Event", "buy_in": 2200, "fee": 225}, {"date": "2026-12-12", "name": "$2,200 No Limit Hold'em 1B $1 Mill GTD / PokerAtlas Championship Title Event", "buy_in": 2200, "fee": null}, {"date": "2026-12-13", "name": "$1,100 No Limit Hold'em Seniors 1A $300K GTD / Must be 50+ years of age to participate", "buy_in": 1100, "fee": null}, {"date": "2026-12-13", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-14", "name": "$1,100 No Limit Hold'em Seniors 1B $300K GTD / Must be 50+ years of age to participate", "buy_in": 1100, "fee": null}, {"date": "2026-12-14", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-15", "name": "$1,100 No Limit Hold'em $75K GTD (1Day) / Progressive Knock-Out Bounty (PKO)", "buy_in": 1100, "fee": 130}, {"date": "2026-12-15", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-16", "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day) / $200 bounties to start & $500 bounties in the money", "buy_in": 600, "fee": 90}, {"date": "2026-12-16", "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)", "buy_in": 300, "fee": 50}, {"date": "2026-12-17", "name": "$1,100 No Limit Hold'em 1A $500K GTD / $40 Rake Discount for Entries Before 10:10 a.m.", "buy_in": 1100, "fee": null}, {"date": "2026-12-17", "name": "$600 Pot Limit Omaha $25K GTD (1Day) / Double Board Bomb Pot", "buy_in": 600, "fee": null}, {"date": "2026-12-17", "name": "$1,100 No Limit Hold'em 1B $500K GTD / $40 Rake Discount for Entries Before 6:10 p.m.", "buy_in": 1100, "fee": null}, {"date": "2026-12-18", "name": "$1,100 No Limit Hold'em 1C $500K GTD", "buy_in": 1100, "fee": null}, {"date": "2026-12-18", "name": "$1,100 No Limit Hold'em 1D $500K GTD", "buy_in": 1100, "fee": null}, {"date": "2026-12-19", "name": "$1,100 No Limit Hold'em 1E $500K GTD", "buy_in": 1100, "fee": null}, {"date": "2026-12-19", "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) / POKERATLAS PRO MEMBER $20 RAKE DISCOUNT", "buy_in": 200, "fee": null}, {"date": "2026-12-20", "name": "$600 No Limit Hold'em 1A $150K GTD / $20 Rake Discount for Entries Before 11:10 a.m.", "buy_in": 600, "fee": 95}, {"date": "2026-12-20", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-21", "name": "$600 No Limit Hold'em 1B $150K GTD", "buy_in": 600, "fee": 95}, {"date": "2026-12-21", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-22", "name": "$600 No Limit Hold'em 1C $150K GTD", "buy_in": 600, "fee": 95}, {"date": "2026-12-22", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}, {"date": "2026-12-23", "name": "$600 No Limit Hold'em $30K GTD (1Day)", "buy_in": 600, "fee": 90}, {"date": "2026-12-23", "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)", "buy_in": 200, "fee": 40}];
+const HOTELS = [{"id": "HT-01", "name": "The Venetian Resort Las Vegas", "fee": 55.0, "park": 20.0}, {"id": "HT-02", "name": "The Palazzo at The Venetian", "fee": 55.0, "park": 20.0}, {"id": "HT-03", "name": "Wynn Las Vegas", "fee": 55.0, "park": null}, {"id": "HT-04", "name": "Bellagio", "fee": 55.0, "park": null}, {"id": "HT-05", "name": "Caesars Palace", "fee": null, "park": null}, {"id": "HT-06", "name": "Horseshoe Las Vegas", "fee": null, "park": null}, {"id": "HT-07", "name": "The Cosmopolitan of Las Vegas", "fee": null, "park": null}, {"id": "HT-08", "name": "ARIA Resort & Casino", "fee": 55.0, "park": null}, {"id": "HT-09", "name": "MGM Grand", "fee": 50.0, "park": null}, {"id": "HT-10", "name": "Westgate Las Vegas Resort & Casino", "fee": null, "park": null}, {"id": "HT-11", "name": "South Point Hotel, Casino & Spa", "fee": null, "park": 0.0}];
+const TAX = 0.1338;
+const sel = document.getElementById('c-ev'), hs = document.getElementById('c-hotel');
+EVENTS.forEach(function(e, i){
+  const o = document.createElement('option');
+  o.value = i;
+  o.textContent = e.date + '  ·  ' + e.name + '  ·  $' + e.buy_in;
+  sel.appendChild(o);
+});
+HOTELS.forEach(function(h){
+  const o = document.createElement('option');
+  o.value = h.id;
+  o.textContent = h.name + (h.fee === null ? '  —  fee not published' : '  —  fee $' + h.fee);
+  hs.appendChild(o);
+});
+function money(n){ return '$' + Number(n).toLocaleString(undefined,{maximumFractionDigits:2}); }
+function calc(){
+  const picks = Array.prototype.slice.call(sel.selectedOptions).map(function(o){ return EVENTS[+o.value]; });
+  const entries = picks.reduce(function(a,e){ return a + (e.buy_in || 0); }, 0);
+  const fees = picks.reduce(function(a,e){ return a + (e.fee || 0); }, 0);
+  const nights = +document.getElementById('c-nights').value || 0;
+  const parkN = +document.getElementById('c-park').value || 0;
+  const rateRaw = document.getElementById('c-rate').value;
+  const rate = rateRaw === '' ? null : +rateRaw;
+  const h = HOTELS.filter(function(x){ return x.id === hs.value; })[0] || {};
+  const feeN = (h.fee === null || h.fee === undefined) ? null : h.fee;
+  const park = h.park || 0;
+  const lines = [];
+  lines.push(['Entries × buy-in (' + picks.length + ')', money(entries), 'exact, from published buy-ins', true]);
+  lines.push(['of which withheld as house fees', money(fees), 'already inside the buy-in', true]);
+  if (feeN === null){
+    lines.push(['Resort fee × nights', 'unknown', 'this property publishes no resort fee that was reachable', false]);
+  } else {
+    lines.push(['Resort fee × nights', money(feeN * nights), money(feeN) + ' × ' + nights + ' nights, before tax', true]);
+  }
+  if (rate === null){
+    lines.push(['Room rate × nights', 'unknown', 'no dated quote exists — enter a rate to model it, or book and read the checkout', false]);
+    lines.push(['Tax at 13.38%', 'unknown', 'needs the room rate', false]);
+  } else {
+    lines.push(['Room rate × nights', money(rate * nights), money(rate) + ' × ' + nights + ' (your assumption, not a verified rate)', true]);
+    const taxable = (rate + (feeN || 0)) * nights;
+    lines.push(['Tax at 13.38%', money(taxable * TAX), 'on room rate' + (feeN === null ? '' : ' + resort fee'), true]);
+  }
+  let hotelTotal = null;
+  if (rate !== null && feeN !== null){
+    hotelTotal = (rate + feeN) * nights * (1 + TAX) + park * parkN;
+    lines.push(['Parking', money(park * parkN), park ? money(park) + ' × ' + parkN + ' nights' : 'free / not published', true]);
+    lines.push(['Hotel total (tax included)', money(hotelTotal), 'room + resort fee + tax' + (park ? ' + parking' : ''), true]);
+  } else {
+    lines.push(['Hotel total', 'INCOMPLETE', 'a term of the hotel side is missing', false]);
+  }
+  let html = '<table class="kv"><tr><th>Line</th><th>Amount</th><th>Note</th></tr>';
+  lines.forEach(function(l){
+    html += '<tr class="' + (l[3] ? '' : 'miss') + '"><th>' + l[0] + '</th><td class="num">' + l[1] + '</td><td class="sm">' + l[2] + '</td></tr>';
+  });
+  html += '</table>';
+  if (hotelTotal === null){
+    html += '<p class="big">Tournament entries: <b>' + money(entries) + '</b> &middot; Trip total: <b>INCOMPLETE</b></p>';
+    html += '<p class="note bad">This is deliberately incomplete. The hotel half of the formula has no verified input on this site, and a made-up nightly rate would hide that. <a href="flagged.html#FD-05">FD-05</a></p>';
+  } else {
+    html += '<p class="big">Trip total: <b>' + money(entries + hotelTotal) + '</b></p>';
+    html += '<p class="note warn">The room rate above is a number you typed. It is not verified. Replace it with an itemised checkout total and store it in the <a href="rates.html">rate log</a>.</p>';
+  }
+  document.getElementById('c-out').innerHTML = html;
+}
+sel.addEventListener('change', calc); hs.addEventListener('change', calc);
+['c-nights','c-park','c-rate'].forEach(function(id){ document.getElementById(id).addEventListener('input', calc); });
+calc();
+</script>
+</body>
+</html>

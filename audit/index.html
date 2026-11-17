@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard &middot; Vegas poker audit</title>
+<meta name="description" content="Verified-source audit of Las Vegas Strip poker tournaments and hotels.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html" aria-current="page">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels</a>
+<a href="cost.html">Trip cost</a>
+<a href="rates.html">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Las Vegas Strip poker trip &mdash; verified-source audit</h1>
+  <p class="lede">A trip planner built only from documents a venue or a county publishes. Every
+  row links to the page or PDF it came from, carries the date it was checked, and leaves the cell
+  blank when the document does not print the value. This build covers
+  <b>The Venetian DeepStack Extravaganza IV</b>, 2026-11-16 to 2026-12-23 (94 published rows) and
+  eleven Las Vegas hotels.</p>
+  <p class="lede dim">Three things on this site are uncomfortable and are stated anyway: no event is
+  confirmed single-entry, no dated hotel rate exists, and an 8&nbsp;AM start is not on any schedule.</p>
+</section>
+
+<section class="cards"><div class="card"><b>94</b><span>published schedule rows</span><em>every &lt;tr&gt; on the official DSE IV page, transcribed in order</em></div><div class="card"><b>48</b><span>rows with structure data</span><em>12 of 37 structure-sheet PDFs read in full</em></div><div class="card"><b>46</b><span>rows structure not read</span><em>date, time, event no, name and sheet link only</em></div><div class="card"><b>0</b><span>events confirmed single-entry</span><em>no sheet read prints an entry limit &mdash; see FD-03</em></div><div class="card"><b>13</b><span>rows with a usable GTD &divide; fee</span><em>only where the guarantee is pure prize pool</em></div><div class="card"><b>6 / 11</b><span>hotels inside the 30-minute walk</span><em>measured, third-party routing &mdash; see FD-08</em></div><div class="card"><b>0</b><span>dated room rates captured</span><em>every booking engine is JavaScript-only &mdash; see FD-05</em></div><div class="card"><b>15</b><span>items flagged for review</span><em>every one names the document that shows it</em></div></section>
+
+<section class="grid2">
+  <div class="panel">
+    <h2>Start here</h2>
+    <ol class="tight">
+      <li><a href="summary.html"><b>Summary</b></a> &mdash; the answer to each question you asked, and whether it is answered, partly answered or blocked.</li>
+      <li><a href="events.html"><b>Tournaments</b></a> &mdash; all 94 rows, searchable and filterable by date, with the fee and structure only where the sheet was read.</li>
+      <li><a href="schedule.html"><b>Day plan</b></a> &mdash; one primary event per day plus a conditional fallback, built from real start times and late-registration closes.</li>
+      <li><a href="hotels.html"><b>Hotels</b></a> &mdash; fees, tax, parking and the measured walk, with the room rate explicitly missing.</li>
+      <li><a href="cost.html"><b>Trip cost</b></a> &mdash; entries &times; buy-in computed exactly; nights &times; true cost shown as fees-only until a rate exists.</li>
+    </ol>
+  </div>
+  <div class="panel">
+    <h2>What is verified, and how</h2>
+    <div class="tw"><table class="data"><thead><tr><th>Input</th><th>How it was read</th><th>Rows</th><th>Date</th></tr></thead><tbody>
+<tr><td>Official DSE IV schedule page</td><td>all four page chunks, one row per table row</td><td>94</td><td>2026-11-17</td></tr>
+<tr><td>Official structure-sheet PDFs</td><td>each PDF opened and read in full</td><td>12 of 37</td><td>2026-11-17</td></tr>
+<tr><td>Venetian resort fee / hotel terms</td><td>official property pages</td><td>1 property</td><td>2026-11-17</td></tr>
+<tr><td>Bellagio, ARIA, MGM Grand, Wynn terms</td><td>official property terms pages</td><td>4 properties</td><td>2026-11-17</td></tr>
+<tr><td>Clark County transient lodging tax</td><td>county licensing guide (PDF)</td><td>13.38%</td><td>2026-11-17</td></tr>
+<tr><td>Walking times</td><td>Google Maps walking directions, address to address</td><td>11 pairs</td><td>2026-11-17</td></tr>
+<tr><td>Dated room rates</td><td>not obtainable &mdash; JavaScript booking engines</td><td>0</td><td>2026-11-17</td></tr>
+</tbody></table></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>How to read the labels</h2>
+  <dl class="keys">
+    <dt><span class="p warn">sheet silent</span></dt><dd>the structure sheet was read in full and prints no re-entry, rebuy, add-on or entry-limit clause. That is <b>silence</b>, not a published freezeout rule.</dd>
+    <dt><span class="p bad">explicit: no 2nd entry</span></dt><dd>the sheet prints a rule that stops a player entering twice. On every read sheet this is the flight rule &ldquo;any player who bags chips for Day 2 may not play a subsequent flight&rdquo;.</dd>
+    <dt><span class="p warn">explicit: re-entry allowed</span></dt><dd>the sheet prints a mechanism for a second entry. Those rows are kept out of the one-entry section.</dd>
+    <dt><span class="p warn">includes bounties</span></dt><dd>the guarantee is defined on the sheet as prize pool <i>plus total bounties</i>, so its ratio is not comparable with a pure prize-pool guarantee.</dd>
+    <dt><span class="p muted">not read</span></dt><dd>the sheet is linked from the official page but was not opened in this pass. Fee, stack, level time and late-registration close are blank.</dd>
+  </dl>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+
+</body>
+</html>

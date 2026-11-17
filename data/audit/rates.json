@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "as_of": "2026-11-17",
+  "rule": "A rate is a dated observation with a source URL, never a single standing value. Every row below is one observation made on the date shown. A row with no price is kept, not deleted, so the next observation can be compared against it.",
+  "what_a_complete_row_requires": [
+   "arrival_date",
+   "departure_date",
+   "nights",
+   "occupancy",
+   "room_type",
+   "rate_plan",
+   "nightly_rate",
+   "resort_fee",
+   "tax",
+   "parking",
+   "total_at_checkout",
+   "cancellation_deadline",
+   "source_url",
+   "captured_at"
+  ],
+  "blocking_reason": "Every official booking engine found (venetianlasvegas.com/book, wynnlasvegas.com/book, the MGM property sites, caesars.com) renders date-specific prices only inside JavaScript. A static site cannot read them, and no request from this workspace returned a price. No dated total is therefore claimed. This is the single largest gap on the site."
+ },
+ "rates": [
+  {
+   "id": "R-01",
+   "hotel": "The Venetian Resort Las Vegas",
+   "hotel_id": "HT-01",
+   "captured": "2026-11-17",
+   "basis": "published from-price, conditional",
+   "room_type": "Luxury King Suite",
+   "occupancy": "single/double",
+   "nightly_rate": 119.0,
+   "currency": "USD",
+   "conditions": "Poker suite rate. Must book by phone (866.255.8936, code EPOKR25) and play 6 hours of live cash poker or buy in to a $300+ tournament for each night stayed; otherwise the nightly rate reverts to the prevailing rate.",
+   "includes_fee": false,
+   "includes_tax": false,
+   "excerpt": "These rates will start as low as $119 and $209 and can be higher.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "verified": true,
+   "is_not_a_quote": "A floor, not a quote. It is not tied to a date and it is not an itemised checkout total."
+  },
+  {
+   "id": "R-02",
+   "hotel": "The Palazzo at The Venetian",
+   "hotel_id": "HT-02",
+   "captured": "2026-11-17",
+   "basis": "published from-price, conditional",
+   "room_type": "Luxury King Suite",
+   "occupancy": "single/double",
+   "nightly_rate": 209.0,
+   "currency": "USD",
+   "conditions": "Same poker suite rate terms and qualifying-play requirement as R-01.",
+   "includes_fee": false,
+   "includes_tax": false,
+   "excerpt": "These rates will start as low as $119 and $209 and can be higher.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "verified": true,
+   "is_not_a_quote": "The page prints the two numbers together in the order Venetian, Palazzo, without labelling each; the pairing is the site's reading, not a label on the page. See flag FD-06.",
+   "caveat": true
+  },
+  {
+   "id": "R-03",
+   "hotel": "The Venetian / The Palazzo",
+   "hotel_id": "HT-01",
+   "captured": "2026-11-17",
+   "basis": "published resort fee",
+   "nightly_rate": null,
+   "resort_fee": 55.0,
+   "includes_fee": true,
+   "includes_tax": false,
+   "excerpt": "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.",
+   "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "verified": true,
+   "is_not_a_quote": "A fee component, not a room rate."
+  },
+  {
+   "id": "R-04",
+   "hotel": "All properties in the dataset",
+   "hotel_id": "all",
+   "captured": "2026-11-17",
+   "basis": "room tax rate",
+   "nightly_rate": null,
+   "tax_rate": 0.1338,
+   "excerpt": "Clark County Room Tax of 13.38% (The Venetian's hotel terms); the Clark County licensing guide lists resort-hotel accounts at 13.38%.",
+   "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "secondary_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "verified": true,
+   "is_not_a_quote": "A tax rate, not a room rate."
+  },
+  {
+   "id": "R-05",
+   "hotel": "Any property, trip window",
+   "hotel_id": "all",
+   "captured": "2026-11-17",
+   "basis": "dated checkout quote",
+   "nightly_rate": null,
+   "verified": false,
+   "excerpt": "Not captured. The booking engine requires JavaScript.",
+   "source_url": "https://www.venetianlasvegas.com/book",
+   "is_not_a_quote": "The missing row. It stays in the log with a null price so the gap is counted instead of hidden."
+  }
+ ]
+}

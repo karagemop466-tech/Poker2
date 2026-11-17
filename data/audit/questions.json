@@ -1,0 +1,128 @@
+{
+ "meta": {
+  "as_of": "2026-11-17",
+  "count": 12
+ },
+ "questions": [
+  {
+   "id": "IQ-01",
+   "question": "What is printed on the 25 structure sheets that were not read?",
+   "why": "46 of 94 published rows have no fee, stack, level time or late-registration close. Without them those rows cannot be compared with the 48 that do.",
+   "how_to_close": "Open each sheet URL and transcribe the same fields into data/audit/sheets.py.",
+   "can_be_closed_here": "yes - it is 25 more documents, not a missing source",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "status": "open",
+   "blocks": "Like-for-like comparison of 46 rows"
+  },
+  {
+   "id": "IQ-02",
+   "question": "What is the actual checkout total for specific dates?",
+   "why": "No dated room rate exists. The hotel side of the trip cost is unknown, so total cost cannot be ranked between properties.",
+   "how_to_close": "Enter the dates on the official booking engine and record the itemised checkout total, or call the poker rate line (866.255.8936, code EPOKR25) and ask for the total including resort fee and tax.",
+   "can_be_closed_here": "no - requires a JavaScript booking engine or a phone call",
+   "source_url": "https://www.venetianlasvegas.com/book",
+   "status": "open",
+   "blocks": "Any statement of true cost per night"
+  },
+  {
+   "id": "IQ-03",
+   "question": "Does any Venetian one-day event actually forbid re-entry?",
+   "why": "Twelve sheets were read in full and none prints an entry limit. 'Single entry' is currently an assumption about silence.",
+   "how_to_close": "Ask the poker room in writing (lv_cas_poker@venetianlasvegas.com, 702.414.7657) whether a one-day event permits a second entry.",
+   "can_be_closed_here": "no - needs the venue to answer",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "open",
+   "blocks": "Labelling any event 'single entry'"
+  },
+  {
+   "id": "IQ-04",
+   "question": "Is the resort fee taxed at 13.38%, and is parking taxed?",
+   "why": "The properties say 'plus applicable tax' without printing the arithmetic. The calculator applies the room tax to the resort fee; that is a computation, not a quotation.",
+   "how_to_close": "Read the tax lines on a real checkout confirmation for one night.",
+   "can_be_closed_here": "no - needs a checkout confirmation",
+   "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "status": "open",
+   "blocks": "Exact fees-only nightly figure"
+  },
+  {
+   "id": "IQ-05",
+   "question": "Which guarantee figures include bounties?",
+   "why": "Guarantee-per-entry is only comparable across rows when the guarantee is pure prize pool.",
+   "how_to_close": "Already answered for the 12 sheets read (gtd_basis column); the remaining 25 sheets need the same line checked.",
+   "can_be_closed_here": "yes for the read set",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "status": "partly answered",
+   "blocks": "Cross-row ratio comparison"
+  },
+  {
+   "id": "IQ-06",
+   "question": "Can the trip actually be filled from 8 AM to night?",
+   "why": "No event starts before 9:10 AM and the earliest one-day event is 10:10 AM, so part of the morning is free by construction.",
+   "how_to_close": "Accept a 10:10 AM start, or add a second venue with an earlier daily event and verify its schedule.",
+   "can_be_closed_here": "partly - the Venetian answer is no",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "status": "answered: no 8 AM event exists",
+   "blocks": "An 8 AM itinerary"
+  },
+  {
+   "id": "IQ-07",
+   "question": "What is the real walk from the hotel lobby to the poker room?",
+   "why": "Measured times are street address to street address.",
+   "how_to_close": "Re-route to 'The Venetian Poker Room' as the destination rather than the street address, and compare.",
+   "can_be_closed_here": "yes",
+   "source_url": "https://www.google.com/maps",
+   "status": "open",
+   "blocks": "Tight connections between the hotel and a 10:10 AM start"
+  },
+  {
+   "id": "IQ-08",
+   "question": "Does any other Strip room run a daily tournament earlier than 10:10 AM?",
+   "why": "The full-day goal needs an earlier start, and other rooms run recurring dailies whose official schedules were not read in this pass.",
+   "how_to_close": "Read the daily schedule pages of the other Strip poker rooms and transcribe them the same way.",
+   "can_be_closed_here": "yes - sources exist, not read yet",
+   "source_url": "https://www.wynnlasvegas.com/casino/poker",
+   "status": "open",
+   "blocks": "A plan that starts before 10 AM"
+  },
+  {
+   "id": "IQ-09",
+   "question": "What is the cancellation deadline and deposit for each property?",
+   "why": "It decides how long the trip can stay flexible and whether a prepaid rate is safe.",
+   "how_to_close": "Recorded for Bellagio, ARIA, MGM Grand (72 hours) and Wynn (prepaid, non-refundable); missing for Caesars, Horseshoe, Cosmopolitan, Westgate, South Point.",
+   "can_be_closed_here": "partly",
+   "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "status": "partly answered",
+   "blocks": "Choosing a refundable vs prepaid rate"
+  },
+  {
+   "id": "IQ-10",
+   "question": "How many players enter each event?",
+   "why": "Guarantee-per-entry is a descriptive ratio. Whether a guarantee is likely to be met, and therefore whether the ratio means anything, depends on field size, which no organiser publishes in advance.",
+   "how_to_close": "Use historical results for the same event in earlier series if the venue publishes them.",
+   "can_be_closed_here": "partly - results pages exist",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "status": "open",
+   "blocks": "Any statement about value"
+  },
+  {
+   "id": "IQ-11",
+   "question": "Is the Venetian poker-suite rate available on the chosen dates?",
+   "why": "The $119/$209 figures are 'from' prices subject to occupancy and blackout dates; availability is unknown.",
+   "how_to_close": "Call the poker rate line with the dates.",
+   "can_be_closed_here": "no - needs a phone call",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "status": "open",
+   "blocks": "Using the poker rate in the cost model"
+  },
+  {
+   "id": "IQ-12",
+   "question": "Which surface of this repository is the one to keep?",
+   "why": "Root, /plan/ and the frozen trees disagree on headline counts.",
+   "how_to_close": "Choose one surface; the rest are archived. See suggestion SG-01.",
+   "can_be_closed_here": "needs a decision",
+   "source_url": "https://karagemop466-tech.github.io/Poker2/",
+   "status": "open",
+   "blocks": "Any single set of published numbers"
+  }
+ ]
+}

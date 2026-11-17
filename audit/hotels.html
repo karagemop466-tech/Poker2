@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels &middot; Vegas poker audit</title>
+<meta name="description" content="Resort fees, tax, parking and measured walking times for eleven Las Vegas hotels.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html" aria-current="page">Hotels</a>
+<a href="cost.html">Trip cost</a>
+<a href="rates.html">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Hotels</h1>
+  <p class="lede">Eleven properties. The fee, tax, occupancy and parking figures come from each
+  property's own terms page where one could be read; four properties publish none that was
+  reachable and are shown blank. The walking figure is a measured routing estimate, not a venue
+  claim. <b>No dated room rate was captured for any property.</b></p>
+  <p class="note">Six of eleven are inside the 30-minute walk to the Venetian poker room:
+  Venetian, Palazzo, Wynn, Bellagio, Caesars Palace and Horseshoe. Cosmopolitan (33 min), Westgate
+  (34), ARIA (42), MGM Grand (45) and South Point (about 3 h) are outside it.</p>
+</section>
+<div class="panel">
+<div class="bar"><input type="search" data-q placeholder="Search this table&hellip;" aria-label="Search this table"><span class="count" data-count></span></div>
+<div class="tw"><table id="t-hotels" class="data"><thead><tr><th>Hotel</th><th>Address</th><th>Resort fee</th><th>Extra occupant</th><th>Tax</th><th>Parking</th><th>Walk</th><th>30-min rule</th><th>Dated rate</th><th>Fee source</th></tr></thead><tbody>
+<tr><td><a href="#HT-01">The Venetian Resort Las Vegas</a></td><td>3355 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>$55</td><td>$50 (+ tax)</td><td>13.38%</td><td>$20</td><td>0 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><a href="#HT-02">The Palazzo at The Venetian</a></td><td>3325 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>$55</td><td>$50 (+ tax)</td><td>13.38%</td><td>$20</td><td>7 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><a href="#HT-03">Wynn Las Vegas</a></td><td>3131 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>$55</td><td>$50 (+ tax)</td><td>13.38%</td><td>&mdash;</td><td>26 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td><a href="https://www.wynnlasvegas.com/terms-and-conditions/850257" target="_blank" rel="noopener">wynnlasvegas.com</a></td></tr>
+<tr><td><a href="#HT-04">Bellagio</a></td><td>3600 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>$55</td><td>$50 (+ tax)</td><td>13.38%</td><td>&mdash;</td><td>26 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">bellagio.mgmresorts.com</a></td></tr>
+<tr><td><a href="#HT-05">Caesars Palace</a></td><td>3570 S Las Vegas Blvd, Las Vegas, NV 89109</td><td><span class="p bad">not published</span></td><td>&mdash;</td><td>13.38%</td><td>&mdash;</td><td>25 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><a href="#HT-06">Horseshoe Las Vegas</a></td><td>3645 S Las Vegas Blvd, Las Vegas, NV 89109</td><td><span class="p bad">not published</span></td><td>&mdash;</td><td>13.38%</td><td>&mdash;</td><td>24 min</td><td><span class="p ok">within 30 min</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><a href="#HT-07">The Cosmopolitan of Las Vegas</a></td><td>3708 S Las Vegas Blvd, Las Vegas, NV 89109</td><td><span class="p bad">not published</span></td><td>&mdash;</td><td>13.38%</td><td>&mdash;</td><td>33 min</td><td><span class="p bad">fails 30 min</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><a href="#HT-08">ARIA Resort &amp; Casino</a></td><td>3730 S Las Vegas Blvd, Las Vegas, NV 89158</td><td>$55</td><td>$50 (+ tax)</td><td>13.38%</td><td>&mdash;</td><td>42 min</td><td><span class="p bad">fails 30 min</span></td><td>&mdash;</td><td><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">aria.mgmresorts.com</a></td></tr>
+<tr><td><a href="#HT-09">MGM Grand</a></td><td>3799 S Las Vegas Blvd, Las Vegas, NV 89109</td><td>$50</td><td>$40 (+ tax)</td><td>13.38%</td><td>&mdash;</td><td>45 min</td><td><span class="p bad">fails 30 min</span></td><td>&mdash;</td><td><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">mgmgrand.mgmresorts.com</a></td></tr>
+<tr><td><a href="#HT-10">Westgate Las Vegas Resort &amp; Casino</a></td><td>3000 Paradise Rd, Las Vegas, NV 89109</td><td><span class="p bad">not published</span></td><td>&mdash;</td><td>13.38%</td><td>&mdash;</td><td>34 min</td><td><span class="p bad">fails 30 min</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><a href="#HT-11">South Point Hotel, Casino &amp; Spa</a></td><td>9777 S Las Vegas Blvd, Las Vegas, NV 89183</td><td><span class="p bad">not published</span></td><td>&mdash;</td><td>13.38%</td><td>$0</td><td>185 min</td><td><span class="p bad">fails 30 min</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="panel" id="HT-01">
+  <h3>The Venetian Resort Las Vegas <span class="sm">3355 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$55
+      <span class="ex">The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Daily rates do not include the applicable Clark County Room Tax of 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>$50 / night
+      <span class="ex">For reservations with more than 2 guests per suite, a charge of $50 is added to the daily rate for each additional guest 13 years of age or older.</span></td></tr>
+    <tr><th>Parking</th><td>$20
+      <span class="ex">The daily fee for registered hotel guests is $20/day, seven days a week.</span></td></tr>
+    <tr><th>Cancellation</th><td>Deposit equal to the first night&#x27;s stay or prepayment of the entire stay, depending on the offer.</td></tr>
+    <tr><th>Check in / out</th><td>3:00 p.m. / 11:00 a.m.</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>0 min
+      (0) <a href="https://www.venetianlasvegas.com/resort/casino/poker.html" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: the official booking engine renders prices only in JavaScript and no checkout total was captured.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.venetianlasvegas.com/book" target="_blank" rel="noopener">official site</a> &middot; <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">Also publishes a conditional poker suite rate (see rates.json, R-VEN-POKER).</p>
+</div>
+<div class="panel" id="HT-02">
+  <h3>The Palazzo at The Venetian <span class="sm">3325 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$55
+      <span class="ex">Same Venetian Resort terms page: a standard Las Vegas Resort Fee of $55 plus applicable tax per night.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County Room Tax of 13.38% (same Venetian terms page).</span></td></tr>
+    <tr><th>Extra occupant</th><td>$50 / night
+      <span class="ex">Same Venetian terms page: $50 per additional guest 13+ above 2 per suite.</span></td></tr>
+    <tr><th>Parking</th><td>$20
+      <span class="ex">Same Venetian terms page: $20/day for registered hotel guests.</span></td></tr>
+    <tr><th>Cancellation</th><td>Same Venetian terms page.</td></tr>
+    <tr><th>Check in / out</th><td>3:00 p.m. / 11:00 a.m.</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>7 min
+      (0.2 mile) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3325+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: no checkout total captured.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.venetianlasvegas.com/book" target="_blank" rel="noopener">official site</a> &middot; <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">Palazzo is operated under The Venetian&#x27;s hotel terms; the poker suite page quotes from-$209 for Palazzo.</p>
+</div>
+<div class="panel" id="HT-03">
+  <h3>Wynn Las Vegas <span class="sm">3131 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$55
+      <span class="ex">A daily resort fee of $55 plus tax will be added to your room account for each room night.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">The Wynn terms page says &#x27;plus tax&#x27; and prints no rate. The Clark County licensing guide lists Wynn/Encore (account 2000013.RES-001) at 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>$50 / night
+      <span class="ex">A $50 surcharge per night shall be added for each guest exceeding the two or four guests in a room, as applicable.</span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex">Complimentary self-parking for up to two vehicles is included in the resort fee; no separate published price.</span></td></tr>
+    <tr><th>Cancellation</th><td>A full deposit of all room nights and tax will be charged at the time of booking. Reservations are non-cancellable, non-refundable, and non-changeable.</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>26 min
+      (1.1 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: no checkout total captured.</li><li>Check-in / check-out times not printed on the terms page that was read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.wynnlasvegas.com/book" target="_blank" rel="noopener">official site</a> &middot; <a href="https://www.wynnlasvegas.com/terms-and-conditions/850257" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">The terms page read is an offer-specific terms page; the $55 fee and the $50 occupancy surcharge are stated on it.</p>
+</div>
+<div class="panel" id="HT-04">
+  <h3>Bellagio <span class="sm">3600 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$55
+      <span class="ex">A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">The Bellagio terms page says &#x27;plus applicable tax&#x27; and prints no rate. Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>$50 / night
+      <span class="ex">There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.</span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>The first night&#x27;s deposit is fully refundable provided a timely notice of cancellation is received at least 72 hours prior to the arrival date.</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>26 min
+      (1.1 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: no checkout total captured.</li><li>Parking fee not published on the terms page that was read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://bellagio.mgmresorts.com/en/hotel.html" target="_blank" rel="noopener">official site</a> &middot; <a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">Resort fee waived for MGM Rewards Gold+ members on eligible reservations.</p>
+</div>
+<div class="panel" id="HT-05">
+  <h3>Caesars Palace <span class="sm">3570 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td><span class="p bad">not verified</span>
+      <span class="ex"></span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>&mdash;</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>25 min
+      (1.0 mile) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Resort fee: www.caesars.com/caesars-palace/hotel-policy redirected to the Caesars Palace home page, which prints no fee.</li><li>Dated room rate for the trip window: no checkout total captured.</li><li>Occupancy surcharge, parking, cancellation deadline: no official page read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.caesars.com/caesars-palace" target="_blank" rel="noopener">official site</a> &middot; &mdash;</td></tr>
+  </table>
+  <p class="sm">NOT VERIFIED for fees. The site deliberately shows blanks rather than a remembered figure.</p>
+</div>
+<div class="panel" id="HT-06">
+  <h3>Horseshoe Las Vegas <span class="sm">3645 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td><span class="p bad">not verified</span>
+      <span class="ex"></span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>&mdash;</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>24 min
+      (1.0 mile) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Resort fee: no official Horseshoe terms page was read.</li><li>Dated room rate for the trip window: no checkout total captured.</li><li>Occupancy surcharge, parking, cancellation deadline: no official page read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.caesars.com/horseshoe-las-vegas" target="_blank" rel="noopener">official site</a> &middot; &mdash;</td></tr>
+  </table>
+  <p class="sm">NOT VERIFIED for fees.</p>
+</div>
+<div class="panel" id="HT-07">
+  <h3>The Cosmopolitan of Las Vegas <span class="sm">3708 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td><span class="p bad">not verified</span>
+      <span class="ex"></span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>&mdash;</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>33 min
+      (1.4 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3708+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Resort fee: no official Cosmopolitan terms page was read in this pass.</li><li>Dated room rate for the trip window: no checkout total captured.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.cosmopolitanlasvegas.com/" target="_blank" rel="noopener">official site</a> &middot; &mdash;</td></tr>
+  </table>
+  <p class="sm">NOT VERIFIED for fees.</p>
+</div>
+<div class="panel" id="HT-08">
+  <h3>ARIA Resort &amp; Casino <span class="sm">3730 S Las Vegas Blvd, Las Vegas, NV 89158</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$55
+      <span class="ex">A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">The ARIA terms page says &#x27;plus applicable tax&#x27; and prints no rate. Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>$50 / night
+      <span class="ex">There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.</span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>The first night&#x27;s deposit is fully refundable provided a timely notice of cancellation is received at least 72 hours prior to the arrival date.</td></tr>
+    <tr><th>Check in / out</th><td>3:00 pm / 11:00 am</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>42 min
+      (1.8 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: no checkout total captured.</li><li>Parking fee not published on the terms page that was read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://aria.mgmresorts.com/en/hotel.html" target="_blank" rel="noopener">official site</a> &middot; <a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">Fails the 30-minute walking rule to the Venetian (42 min).</p>
+</div>
+<div class="panel" id="HT-09">
+  <h3>MGM Grand <span class="sm">3799 S Las Vegas Blvd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td>$50
+      <span class="ex">A daily resort fee of $50.00 plus applicable tax will be applied to all reservations.</span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">The MGM Grand terms page says &#x27;plus applicable tax&#x27; and prints no rate. Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>$40 / night
+      <span class="ex">There is an additional charge of $40 plus tax per occupant, per night, above 2 occupants per room.</span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>The first night&#x27;s deposit is fully refundable provided a timely notice of cancellation is received at least 72 hours prior to the arrival date.</td></tr>
+    <tr><th>Check in / out</th><td>3:00 pm / 11:00 am</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>45 min
+      (2.0 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Dated room rate for the trip window: no checkout total captured.</li><li>Parking fee not published on the terms page that was read.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://mgmgrand.mgmresorts.com/en/hotel.html" target="_blank" rel="noopener">official site</a> &middot; <a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" target="_blank" rel="noopener">terms</a></td></tr>
+  </table>
+  <p class="sm">Fails the 30-minute walking rule to the Venetian (45 min).</p>
+</div>
+<div class="panel" id="HT-10">
+  <h3>Westgate Las Vegas Resort &amp; Casino <span class="sm">3000 Paradise Rd, Las Vegas, NV 89109</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td><span class="p bad">not verified</span>
+      <span class="ex"></span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Parking</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Cancellation</th><td>&mdash;</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>34 min
+      (1.4 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3000+Paradise+Rd,+Las+Vegas,+NV+89109&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Resort fee: no official Westgate terms page was read in this pass.</li><li>Dated room rate for the trip window: no checkout total captured.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/" target="_blank" rel="noopener">official site</a> &middot; &mdash;</td></tr>
+  </table>
+  <p class="sm">Fails the 30-minute walking rule to the Venetian (34 min).</p>
+</div>
+<div class="panel" id="HT-11">
+  <h3>South Point Hotel, Casino &amp; Spa <span class="sm">9777 S Las Vegas Blvd, Las Vegas, NV 89183</span></h3>
+  <table class="kv">
+    <tr><th>Resort fee / night</th><td><span class="p bad">not verified</span>
+      <span class="ex"></span></td></tr>
+    <tr><th>Room tax</th><td>13.38% <span class="ex">Clark County licensing guide: 13.38%.</span></td></tr>
+    <tr><th>Extra occupant</th><td>&mdash;
+      <span class="ex"></span></td></tr>
+    <tr><th>Parking</th><td>$0
+      <span class="ex">Self-parking is free (stated on the property&#x27;s poker page, per an earlier session&#x27;s note; not re-read in this pass).</span></td></tr>
+    <tr><th>Cancellation</th><td>&mdash;</td></tr>
+    <tr><th>Check in / out</th><td>&mdash; / &mdash;</td></tr>
+    <tr><th>Walk to the Venetian poker room</th><td>185 min
+      (8.2 miles) <a href="https://www.google.com/maps/dir/?api=1&amp;origin=9777+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89183&amp;destination=3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;travelmode=walking" target="_blank" rel="noopener">routing</a></td></tr>
+    <tr><th>Dated room rate</th><td><span class="p bad">not captured</span>
+      <span class="ex">The official booking engine renders prices only inside JavaScript.</span></td></tr>
+    <tr><th>Still missing</th><td><ul class="tight"><li>Resort fee: no official South Point terms page was read in this pass.</li><li>Dated room rate for the trip window: no checkout total captured.</li></ul></td></tr>
+    <tr><th>Book / verify</th><td><a href="https://southpointcasino.com/hotel" target="_blank" rel="noopener">official site</a> &middot; &mdash;</td></tr>
+  </table>
+  <p class="sm">9 miles / about 3 hours on foot from the Venetian: outside the walking corridor entirely.</p>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+
+</body>
+</html>

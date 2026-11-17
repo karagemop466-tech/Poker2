@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions &middot; Vegas poker audit</title>
+<meta name="description" content="Options with the decision each one needs.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels</a>
+<a href="cost.html">Trip cost</a>
+<a href="rates.html">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html" aria-current="page">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Suggestions</h1>
+  <p class="lede">Changes worth making, each with the problem it solves, the options, the trade-off
+  and the decision it needs from you. Nothing here is implemented without being listed, and the
+  four already implemented are named as such.</p>
+  <p class="note">Implemented already because they remove a false statement at no cost: SG-06
+  (per-URL monitor status), SG-07 (ratio labelled as a floor), SG-08 (day plan as a decision tree),
+  SG-09 (every flag names the decision it blocks).</p>
+</section>
+<div class="panel">
+<div class="tw"><table id="t-s" class="data"><thead><tr><th>ID</th><th>Suggestion</th><th>Problem</th><th>Options</th><th>Trade-off</th><th>Decision needed</th><th>Effort</th><th>Pick</th></tr></thead><tbody>
+<tr><td>SG-01</td><td><b>Keep one surface, archive the rest</b></td><td>Four generated dashboards publish different counts for the same questions.</td><td>A) keep /audit/ and redirect root, /plan/, /docs/, /verified/, /pages/ · B) keep root and archive /audit/ · C) leave all four and add a banner to each</td><td>A is clearest for a reader and the most work; C is free and keeps the confusion.</td><td>Yes - this is a product decision, not a data one.</td><td>medium</td><td><span class="p ok">recommended: A</span></td></tr>
+<tr><td>SG-02</td><td><b>Read the remaining 25 structure sheets</b></td><td>46 of 94 rows have no fee, stack or late-registration close.</td><td>A) transcribe all 25 · B) transcribe only the 14 one-day events · C) leave them blank</td><td>Each sheet is one document and about ten numbers; the only cost is time.</td><td>No - it is mechanical.</td><td>2-3 hours</td><td><span class="p ok">recommended: A</span></td></tr>
+<tr><td>SG-03</td><td><b>Add a targeted, dated rate capture instead of a general one</b></td><td>No booking engine returns a price to a static site.</td><td>A) a scheduled job against the one official JSON price endpoint, storing only the itemised total · B) a monthly manual capture of a single date range into rates.json · C) keep rates blank and link the engine</td><td>A is the only automatic option but depends on an endpoint the property can change without notice; B is honest and slow.</td><td>Pick A or B; C is the current state.</td><td>A: 1 day · B: 15 min/month</td><td><span class="p ok">recommended: B until A is proven stable</span></td></tr>
+<tr><td>SG-04</td><td><b>Ask the poker room for a written entry-rule schedule</b></td><td>No sheet prints an entry limit, so &#x27;single entry&#x27; cannot be published.</td><td>A) email the poker room and paste the reply into the site with its date · B) keep the three-state label · C) treat silence as single entry</td><td>C is the only option that is not honest.</td><td>Send the email (A) or keep the current label (B).</td><td>one email</td><td><span class="p ok">recommended: A, fall back to B</span></td></tr>
+<tr><td>SG-05</td><td><b>Score hotels on published facts only, and show the blanks</b></td><td>Quality is often scored with star ratings that no official page publishes here.</td><td>A) score on published fee, tax, walk time and cancellation only · B) add a third-party star rating, clearly labelled · C) no score</td><td>B introduces a third-party judgement; A measures what is verifiable.</td><td>Whether a third-party quality signal is acceptable on an official-source site.</td><td>low</td><td><span class="p ok">recommended: A</span></td></tr>
+<tr><td>SG-06</td><td><b>Make the change monitor write a real status per URL</b></td><td>The existing monitor files are placeholders after a day of scheduled runs.</td><td>A) per-URL status with HTTP code, hash and tracked values, failing loudly · B) hash only · C) none</td><td>A costs one page and answers &#x27;has anything moved since I last looked&#x27;.</td><td>No.</td><td>done in this session for /audit/ sources</td><td><span class="p ok">recommended: A</span></td></tr>
+<tr><td>SG-07</td><td><b>Show the ratio as a range, not a point</b></td><td>Guarantee / entry fee is printed to two decimals, which implies precision that a floor does not have.</td><td>A) print the ratio plus &#x27;guarantee is a floor&#x27; inline · B) round to a whole number · C) drop the ratio</td><td>A keeps the signal and removes the false precision.</td><td>No.</td><td>low</td><td><span class="p ok">recommended: A</span></td></tr>
+<tr><td>SG-08</td><td><b>Publish the day plan as a decision tree, not a timetable</b></td><td>A timetable implies the player will be free at 5 PM; the first event usually will not be over.</td><td>A) each day: primary + &#x27;if you bust before HH:MM, enter X&#x27; · B) fixed timetable · C) list only</td><td>A matches how a tournament day actually works.</td><td>No.</td><td>low</td><td><span class="p ok">recommended: A (implemented on the schedule page)</span></td></tr>
+<tr><td>SG-09</td><td><b>Add a &#x27;what would change my mind&#x27; line to every flag</b></td><td>A flag that only says &#x27;unverified&#x27; does not tell a reader how much it matters.</td><td>A) each flag names the decision it blocks · B) severity only · C) neither</td><td>A is what makes the flag list usable.</td><td>No.</td><td>low</td><td><span class="p ok">recommended: A (implemented)</span></td></tr>
+<tr><td>SG-10</td><td><b>Keep the COORDINATION.md board as the source of truth for ownership</b></td><td>Three sessions regenerated the same root files and produced four dashboards.</td><td>A) hard file ownership enforced by CI · B) advisory board only (current) · C) one generator for everything</td><td>A prevents the four-dashboard problem; C is the long-run answer.</td><td>Yes.</td><td>A: 1 hour · C: 1 day</td><td><span class="p ok">recommended: A now, C next</span></td></tr>
+</tbody></table></div>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+ "meta": {
+  "as_of": "2026-11-17",
+  "count": 10
+ },
+ "suggestions": [
+  {
+   "id": "SG-01",
+   "title": "Keep one surface, archive the rest",
+   "problem": "Four generated dashboards publish different counts for the same questions.",
+   "options": "A) keep /audit/ and redirect root, /plan/, /docs/, /verified/, /pages/ · B) keep root and archive /audit/ · C) leave all four and add a banner to each",
+   "trade_off": "A is clearest for a reader and the most work; C is free and keeps the confusion.",
+   "needs_decision": "Yes - this is a product decision, not a data one.",
+   "effort": "medium",
+   "recommendation": "A"
+  },
+  {
+   "id": "SG-02",
+   "title": "Read the remaining 25 structure sheets",
+   "problem": "46 of 94 rows have no fee, stack or late-registration close.",
+   "options": "A) transcribe all 25 · B) transcribe only the 14 one-day events · C) leave them blank",
+   "trade_off": "Each sheet is one document and about ten numbers; the only cost is time.",
+   "needs_decision": "No - it is mechanical.",
+   "effort": "2-3 hours",
+   "recommendation": "A"
+  },
+  {
+   "id": "SG-03",
+   "title": "Add a targeted, dated rate capture instead of a general one",
+   "problem": "No booking engine returns a price to a static site.",
+   "options": "A) a scheduled job against the one official JSON price endpoint, storing only the itemised total · B) a monthly manual capture of a single date range into rates.json · C) keep rates blank and link the engine",
+   "trade_off": "A is the only automatic option but depends on an endpoint the property can change without notice; B is honest and slow.",
+   "needs_decision": "Pick A or B; C is the current state.",
+   "effort": "A: 1 day · B: 15 min/month",
+   "recommendation": "B until A is proven stable"
+  },
+  {
+   "id": "SG-04",
+   "title": "Ask the poker room for a written entry-rule schedule",
+   "problem": "No sheet prints an entry limit, so 'single entry' cannot be published.",
+   "options": "A) email the poker room and paste the reply into the site with its date · B) keep the three-state label · C) treat silence as single entry",
+   "trade_off": "C is the only option that is not honest.",
+   "needs_decision": "Send the email (A) or keep the current label (B).",
+   "effort": "one email",
+   "recommendation": "A, fall back to B"
+  },
+  {
+   "id": "SG-05",
+   "title": "Score hotels on published facts only, and show the blanks",
+   "problem": "Quality is often scored with star ratings that no official page publishes here.",
+   "options": "A) score on published fee, tax, walk time and cancellation only · B) add a third-party star rating, clearly labelled · C) no score",
+   "trade_off": "B introduces a third-party judgement; A measures what is verifiable.",
+   "needs_decision": "Whether a third-party quality signal is acceptable on an official-source site.",
+   "effort": "low",
+   "recommendation": "A"
+  },
+  {
+   "id": "SG-06",
+   "title": "Make the change monitor write a real status per URL",
+   "problem": "The existing monitor files are placeholders after a day of scheduled runs.",
+   "options": "A) per-URL status with HTTP code, hash and tracked values, failing loudly · B) hash only · C) none",
+   "trade_off": "A costs one page and answers 'has anything moved since I last looked'.",
+   "needs_decision": "No.",
+   "effort": "done in this session for /audit/ sources",
+   "recommendation": "A"
+  },
+  {
+   "id": "SG-07",
+   "title": "Show the ratio as a range, not a point",
+   "problem": "Guarantee / entry fee is printed to two decimals, which implies precision that a floor does not have.",
+   "options": "A) print the ratio plus 'guarantee is a floor' inline · B) round to a whole number · C) drop the ratio",
+   "trade_off": "A keeps the signal and removes the false precision.",
+   "needs_decision": "No.",
+   "effort": "low",
+   "recommendation": "A"
+  },
+  {
+   "id": "SG-08",
+   "title": "Publish the day plan as a decision tree, not a timetable",
+   "problem": "A timetable implies the player will be free at 5 PM; the first event usually will not be over.",
+   "options": "A) each day: primary + 'if you bust before HH:MM, enter X' · B) fixed timetable · C) list only",
+   "trade_off": "A matches how a tournament day actually works.",
+   "needs_decision": "No.",
+   "effort": "low",
+   "recommendation": "A (implemented on the schedule page)"
+  },
+  {
+   "id": "SG-09",
+   "title": "Add a 'what would change my mind' line to every flag",
+   "problem": "A flag that only says 'unverified' does not tell a reader how much it matters.",
+   "options": "A) each flag names the decision it blocks · B) severity only · C) neither",
+   "trade_off": "A is what makes the flag list usable.",
+   "needs_decision": "No.",
+   "effort": "low",
+   "recommendation": "A (implemented)"
+  },
+  {
+   "id": "SG-10",
+   "title": "Keep the COORDINATION.md board as the source of truth for ownership",
+   "problem": "Three sessions regenerated the same root files and produced four dashboards.",
+   "options": "A) hard file ownership enforced by CI · B) advisory board only (current) · C) one generator for everything",
+   "trade_off": "A prevents the four-dashboard problem; C is the long-run answer.",
+   "needs_decision": "Yes.",
+   "effort": "A: 1 hour · C: 1 day",
+   "recommendation": "A now, C next"
+  }
+ ]
+}

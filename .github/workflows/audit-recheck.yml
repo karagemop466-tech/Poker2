@@ -1,0 +1,89 @@
+name: "Audit: re-check official sources and mark changed rows"
+
+# Re-fetches every URL the /audit/ site depends on (the Venetian schedule page, each
+# structure-sheet PDF that was read, the hotel terms pages, the county tax document),
+# records an HTTP code plus a SHA-256 of the response body per URL, and rebuilds
+# /audit/monitor.html so the site states the result instead of claiming one.
+#
+# A row whose bytes moved is marked CHANGED, never "verified". A fetch failure is an
+# error, never a pass. If every row comes back unprobed the job says so in the summary
+# and does not pretend the sources are unchanged.
+#
+# Scope note (see COORDINATION.md): this workflow touches only audit/**,
+# data/audit/** and scripts/audit_*.py. It does not run or modify the root dashboard,
+# the /plan/ surface or the frozen legacy trees, so it cannot fight another session's build.
+
+on:
+  schedule:
+    - cron: "15 5 * * *"   # daily, 05:15 UTC (about 21:15 Las Vegas the previous evening)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audit-recheck
+  cancel-in-progress: false
+
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Prove the monitor's states before trusting it
+        run: python3 scripts/audit_recheck.py --selftest
+
+      - name: Re-fetch every official URL
+        run: python3 scripts/audit_recheck.py
+
+      - name: Report into the job summary
+        run: |
+          python3 - <<'PY'
+          import json, os
+          d = json.load(open("data/audit/monitor.json"))
+          run = d["runs"][-1]
+          lines = ["# Official-source re-check", "",
+                   "| metric | value |", "|---|---|",
+                   "| URLs | %d |" % run["checked"],
+                   "| unchanged | %d |" % run["ok"],
+                   "| CHANGED | %d |" % run["changed"],
+                   "| errors | %d |" % run["errors"],
+                   "| unprobed | %d |" % run["unprobed"],
+                   "", "| URL | HTTP | Status |", "|---|---|---|"]
+          for u in d["urls"]:
+              flag = "**%s**" % u["status"] if u["status"] == "CHANGED" else u["status"]
+              lines.append("| %s | %s | %s |" % (u["id"], u.get("http", ""), flag))
+          changed = [u for u in d["urls"] if u["status"] == "CHANGED"]
+          if changed:
+              lines += ["", "## Re-read these documents", ""]
+              for u in changed:
+                  lines.append("- **%s** — %s" % (u["id"], u["url"]))
+          if run["unprobed"] == run["checked"] and run["checked"]:
+              lines += ["", "::warning::Every URL came back unprobed. The runner could not open "
+                            "outbound TLS to the venue hosts. This is not evidence that the "
+                            "sources are unchanged."]
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh:
+              fh.write("\n".join(lines) + "\n")
+              if changed:
+                  fh.write("\n::warning::%d source(s) CHANGED — the cited values may have moved.\n"
+                           % len(changed))
+          PY
+
+      - name: Rebuild the audit site against the fresh monitor data
+        run: python3 scripts/audit_build.py
+
+      - name: Commit the dated check log
+        run: |
+          git config user.name  "audit-source-monitor"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audit/monitor.json audit/
+          git diff --cached --quiet || git commit -m "audit: source re-check $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate log &middot; Vegas poker audit</title>
+<meta name="description" content="Dated, sourced hotel rate observations.">
+<link rel="stylesheet" href="assets/audit.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="index.html">Vegas poker audit</a>
+      <span class="date">official sources only &middot; every value dated 2026-11-17</span></div>
+    <nav><a href="index.html">Dashboard</a>
+<a href="events.html">Tournaments</a>
+<a href="schedule.html">Day plan</a>
+<a href="hotels.html">Hotels</a>
+<a href="cost.html">Trip cost</a>
+<a href="rates.html" aria-current="page">Rate log</a>
+<a href="venues.html">Venues</a>
+<a href="walking.html">Walking</a>
+<a href="rules.html">Entry rules</a>
+<a href="summary.html">Summary</a>
+<a href="questions.html">Questions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="flagged.html">Flagged</a>
+<a href="sources.html">Sources</a>
+<a href="monitor.html">Monitor</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Rate log</h1>
+  <p class="lede">A rate here is a dated observation with a source, not a standing value. The log
+  keeps the rows that failed as well as the rows that succeeded, so the next capture has something
+  to be compared against.</p>
+  <p class="note">A complete row needs: arrival_date; departure_date; nights; occupancy; room_type; rate_plan; nightly_rate; resort_fee; tax; parking; total_at_checkout; cancellation_deadline; source_url; captured_at.</p>
+</section>
+<div class="panel">
+<div class="tw"><table id="t-rates" class="data"><thead><tr><th>ID</th><th>Hotel</th><th>Captured</th><th>Basis</th><th>Nightly rate</th><th>Resort fee</th><th>Tax</th><th>Status</th><th>What the page says</th><th>Source</th></tr></thead><tbody>
+<tr><td><b>R-01</b></td><td>The Venetian Resort Las Vegas</td><td>2026-11-17</td><td>published from-price, conditional</td><td>$119</td><td>&mdash;</td><td>&mdash;</td><td><span class="p ok">verified</span></td><td><span class="ex">These rates will start as low as $119 and $209 and can be higher.</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><b>R-02</b></td><td>The Palazzo at The Venetian</td><td>2026-11-17</td><td>published from-price, conditional</td><td>$209</td><td>&mdash;</td><td>&mdash;</td><td><span class="p ok">verified</span></td><td><span class="ex">These rates will start as low as $119 and $209 and can be higher.</span></td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><b>R-03</b></td><td>The Venetian / The Palazzo</td><td>2026-11-17</td><td>published resort fee</td><td>&mdash;</td><td>$55</td><td>&mdash;</td><td><span class="p ok">verified</span></td><td><span class="ex">The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.</span></td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><b>R-04</b></td><td>All properties in the dataset</td><td>2026-11-17</td><td>room tax rate</td><td>&mdash;</td><td>&mdash;</td><td>13.38%</td><td><span class="p ok">verified</span></td><td><span class="ex">Clark County Room Tax of 13.38% (The Venetian&#x27;s hotel terms); the Clark County licensing guide lists resort-hotel accounts at 13.38%.</span></td><td><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+<tr><td><b>R-05</b></td><td>Any property, trip window</td><td>2026-11-17</td><td>dated checkout quote</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="p bad">NOT a quote</span></td><td><span class="ex">Not captured. The booking engine requires JavaScript.</span></td><td><a href="https://www.venetianlasvegas.com/book" target="_blank" rel="noopener">venetianlasvegas.com</a></td></tr>
+</tbody></table></div>
+</div>
+<div class="note bad"><b>Why there is no dated total.</b> Every official booking engine found (venetianlasvegas.com/book, wynnlasvegas.com/book, the MGM property sites, caesars.com) renders date-specific prices only inside JavaScript. A static site cannot read them, and no request from this workspace returned a price. No dated total is therefore claimed. This is the single largest gap on the site.</div>
+<div class="panel">
+  <h2>What the poker rate actually requires</h2>
+  <p class="sm">Quoted from the property's own 2026 poker suite-rate page:</p>
+  <ul class="tight">
+    <li>Book by phone on 866.255.8936 quoting code EPOKR25, with a Venetian Rewards number ready so play can be tracked.</li>
+    <li>Play six hours of active live cash poker <b>or</b> buy in to a $300-or-higher tournament, for each night stayed.</li>
+    <li>The requirement must be met before 2 a.m. on the last night stayed.</li>
+    <li>Fail a night and that night reverts to the prevailing rate.</li>
+    <li>Single or double occupancy, Luxury King Suite; every upgrade is charged on top.</li>
+    <li>Future rates are published only 150 days out, and blackout dates apply.</li>
+  </ul>
+  <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html" target="_blank" rel="noopener">suite-rates.html</a>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <p>Built from official venue pages and structure-sheet PDFs, a county tax document and a
+  published walking-routing service. Blank means not confirmed, never estimated.
+  Data: 2026-11-17. <a href="../index.html">Root dashboard</a> &middot;
+  <a href="../plan/index.html">/plan/</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2">Repository</a> &middot;
+  <a href="https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md">COORDINATION.md</a></p>
+  <p class="tiny">Guarantee &divide; entry fee is a descriptive ratio of two published numbers.
+  It is not a forecast, an expected value, or advice. Re-check every official page before paying.</p>
+</footer>
+
+</body>
+</html>

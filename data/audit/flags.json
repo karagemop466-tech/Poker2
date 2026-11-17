@@ -1,0 +1,173 @@
+{
+ "meta": {
+  "as_of": "2026-11-17",
+  "count": 15
+ },
+ "flags": [
+  {
+   "id": "FD-01",
+   "severity": "high",
+   "area": "repo",
+   "title": "A claim of automatic change monitoring that has never run",
+   "finding": "Four workflows register a schedule (recheck.yml 06:00 UTC, plan-refresh.yml 06:30 UTC, source-monitor.yml 15:00 UTC, url-check.yml). The Actions API returns no scheduled run for any of them, and the two files that would hold the results are still placeholders: data/site/checks.json has last_run: null and data/source_monitor.json has sha256: null for all 60 URLs.",
+   "why_it_matters": "On main, 'the site is re-checked daily' describes a configuration, not an observation. A reader cannot tell whether any cited value has changed since 2026-11-16.",
+   "evidence": "gh run list --workflow=recheck.yml and --workflow=source-monitor.yml return no runs.",
+   "source_url": "https://github.com/karagemop466-tech/Poker2/actions",
+   "action": "This session adds a monitor that records a per-URL status and fails loudly instead of reporting a pass it did not earn."
+  },
+  {
+   "id": "FD-02",
+   "severity": "high",
+   "area": "repo",
+   "title": "No scheduled workflow can be started from this environment",
+   "finding": "gh workflow run returns HTTP 403 'Resource not accessible by integration' for this repository, so a session cannot dispatch, retry or prove any workflow. Only runs triggered by a push are observable.",
+   "why_it_matters": "Any 'we tested the schedule' claim would be unverifiable. None is made here.",
+   "evidence": "gh workflow run plan-refresh.yml --ref main -> HTTP 403.",
+   "source_url": "https://docs.github.com/en/rest/actions/workflows",
+   "action": "Recorded as an environment limitation. The monitor added here is verified by running the same script locally against the real URLs."
+  },
+  {
+   "id": "FD-03",
+   "severity": "high",
+   "area": "rules",
+   "title": "Silence on a structure sheet is not a single-entry rule",
+   "finding": "None of the 12 Venetian structure sheets read in this pass prints an entry limit for a one-day event. Each prints its fee split, level time, late-registration close and payout percentage, and none prints 'no re-entry', 'no rebuy' or 'no add-on'. Six sheets print a flight restriction instead: 'Any player who bags chips for Day 2 may not play a subsequent flight'.",
+   "why_it_matters": "A row labelled 'single entry' on that basis would be an inference. The honest label is 'sheet silent', and the decision to treat silence as a freezeout has to be made explicitly, in writing, by the player or by the venue.",
+   "evidence": "sheets 1, 5, 7, 11, 15, 16, 18, 34 read in full; none prints an entry-limit clause.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "action": "Every row carries single_entry = not_stated / explicit_no / explicit_yes, and the site never upgrades silence."
+  },
+  {
+   "id": "FD-04",
+   "severity": "medium",
+   "area": "events",
+   "title": "25 of 37 structure sheets were not read, so 46 of 94 rows have no structure data",
+   "finding": "The official schedule page links 37 distinct structure PDFs. This pass read 12 of them, covering 48 of the 94 published rows. The remaining 46 rows carry the schedule's date, time, event number, name and sheet link, and nothing else.",
+   "why_it_matters": "Fee, stack, level time and late-registration close for those rows are unknown, so they cannot be compared like-for-like.",
+   "evidence": "data/audit/events.json: structure_read = false on 46 rows; unread sheet numbers listed in meta.sheets_not_read.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "Rows stay in the table with blank structural fields and a per-row unverified list. Reading the remaining sheets is question IQ-01."
+  },
+  {
+   "id": "FD-05",
+   "severity": "high",
+   "area": "hotels",
+   "title": "No dated room rate exists on the site, so 'true cost per night' has no room-rate term",
+   "finding": "Every official booking engine renders prices only in JavaScript. No request returned a checkout total for any property on any date. The only price published as text is the Venetian poker-suite 'from' rate ($119 Venetian / $209 Palazzo), which is conditional on 6 hours of cash play or a $300+ tournament buy-in per night and is not tied to a date.",
+   "why_it_matters": "A trip total without a room rate is not a trip total. Any figure that looked complete would be an estimate, and this site does not publish estimates as if they were observations.",
+   "evidence": "data/audit/rates.json R-05; booking URLs render no price server-side.",
+   "source_url": "https://www.venetianlasvegas.com/book",
+   "action": "The calculator computes entries x buy-in exactly, and states the hotel side as a fees-only figure with the room rate explicitly missing."
+  },
+  {
+   "id": "FD-06",
+   "severity": "medium",
+   "area": "hotels",
+   "title": "The poker-suite page prints two prices without labelling which property each is",
+   "finding": "The page reads 'These rates will start as low as $119 and $209 and can be higher.' It names The Venetian and The Palazzo earlier in the paragraph but does not put a number next to a name.",
+   "why_it_matters": "Reading $119 as Venetian and $209 as Palazzo is an ordering assumption, not a quotation.",
+   "evidence": "suite-rates.html, paragraph 1.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "action": "Recorded as the site's reading in R-02 and marked; the raw sentence is shown next to it."
+  },
+  {
+   "id": "FD-07",
+   "severity": "medium",
+   "area": "events",
+   "title": "A published guarantee is not always prize money",
+   "finding": "Six of the twelve sheets read define the guarantee to include bounties: sheet 1 ($8,000 'prize pool + total bounties'), sheet 11 ($30,000 / $40,000 / $50,000), sheet 15 ($15,000), sheet 16 ($75,000) and sheet 34 ($75,000). Sheet 15 rule 10 says the $15,000 'consists of the actual prize pool plus the total amount of $100 bounties that are awarded'.",
+   "why_it_matters": "Dividing a bounty-inclusive guarantee by the buy-in produces a bigger number than dividing a pure prize-pool guarantee by it. On a single ranked list the two would look comparable and would not be.",
+   "evidence": "data/audit/events.json gtd_basis column.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "action": "Guarantee-per-entry is computed only for rows whose guarantee is pure prize pool; bounty-inclusive rows are labelled and kept in a separate section."
+  },
+  {
+   "id": "FD-08",
+   "severity": "medium",
+   "area": "walking",
+   "title": "Walking times come from a routing service, not from an official venue page",
+   "finding": "No casino or poker room publishes a walking time between properties. The matrix here was read from Google Maps walking directions on 2026-11-17, address to address.",
+   "why_it_matters": "It is a third-party model's estimate at a point in time, and it measures street address to street address: the Venetian poker room is deep inside the property, so the real walk from the front door is longer.",
+   "evidence": "data/audit/walking.json basis = third_party_routing on every row.",
+   "source_url": "https://www.google.com/maps/dir/?api=1&travelmode=walking",
+   "action": "Every walking row is labelled third_party_routing with its request URL, and the site does not call it official."
+  },
+  {
+   "id": "FD-09",
+   "severity": "medium",
+   "area": "hotels",
+   "title": "Four of eleven hotels publish no resort fee on any page that could be read",
+   "finding": "Caesars Palace (www.caesars.com/caesars-palace/hotel-policy redirects to the property home page), Horseshoe, The Cosmopolitan and Westgate have no verified resort fee, because no official terms page printing one was reached.",
+   "why_it_matters": "Their true cost per night cannot be compared with the properties whose fee is published.",
+   "evidence": "data/audit/hotels.json fee_verified = false on HT-05, HT-06, HT-07, HT-10.",
+   "source_url": "https://www.caesars.com/caesars-palace",
+   "action": "Fee field left blank with the redirect recorded; the calculator refuses to total those hotels."
+  },
+  {
+   "id": "FD-10",
+   "severity": "low",
+   "area": "tax",
+   "title": "The county tax document's revision date does not match its URL",
+   "finding": "The Clark County guide URL contains 'july-2021' but the document's own title line reads 'Genl Info Guide for TLEs Sept 2018'. The 13.38% rate is repeated in the guide's account listing (e.g. Wynn/Encore 2000013.RES-001) and in The Venetian's hotel terms.",
+   "why_it_matters": "The current rate is corroborated twice over, but the county document's age is not what its URL implies.",
+   "evidence": "PDF page 12 account table; title metadata.",
+   "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "action": "Rate used with the age of the source disclosed."
+  },
+  {
+   "id": "FD-11",
+   "severity": "medium",
+   "area": "schedule",
+   "title": "There is no 8 AM tournament, so a full day cannot start at 8 AM",
+   "finding": "The earliest start on the DSE IV schedule is 9:10 AM (a $260 turbo milestone satellite on 2026-12-12). The earliest one-day event start is 10:10 AM (the $200 RaceDay Stack on 11/19, 11/20, 11/21 and the $600 Seniors events). Most days start at 11:10 AM.",
+   "why_it_matters": "A plan built around an 8 AM start describes a schedule that does not exist.",
+   "evidence": "94 transcribed schedule rows; minimum start time 09:10.",
+   "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "The day plan is built from the real start times, and the 8 AM target is answered directly in the questions page."
+  },
+  {
+   "id": "FD-12",
+   "severity": "medium",
+   "area": "schedule",
+   "title": "Two events on the same day can overlap even when their start times do not",
+   "finding": "Late registration on the $300 one-day event closes at 4:55 PM and on the $300 bounty at 9:40 PM. A player still in the afternoon event cannot enter the 5:10 PM event, because registering on time requires being out of the first one.",
+   "why_it_matters": "Start times alone would say 11:10 AM and 5:10 PM do not clash. They can.",
+   "evidence": "sheet 5 late registration; sheet 15 late registration.",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "action": "The day plan treats a later event as conditional on the earlier one being exited before the later one's late-registration close."
+  },
+  {
+   "id": "FD-13",
+   "severity": "medium",
+   "area": "repo",
+   "title": "README.md ships unresolved merge-conflict markers",
+   "finding": "README.md still contains <<<<<<<, ======= and >>>>>>> lines from an unresolved merge.",
+   "why_it_matters": "It is the first file a reader opens, and it presents two contradictory descriptions of the site as if both were current.",
+   "evidence": "grep -n '<<<<<<<' README.md",
+   "source_url": "https://github.com/karagemop466-tech/Poker2/blob/main/README.md",
+   "action": "Left alone here because open PR #43 already owns the file; this session does not edit another session's claimed file."
+  },
+  {
+   "id": "FD-14",
+   "severity": "low",
+   "area": "hotels",
+   "title": "Wynn states resort fee and occupancy surcharge on an offer-specific terms page",
+   "finding": "The Wynn page read is titled 'Concours Sip and Savor Experience and Accommodation Package 2026'. It states the $55 daily resort fee, the $50 occupancy surcharge, the $150/night incidental hold and the prepaid, non-cancellable terms.",
+   "why_it_matters": "Those terms may be package-specific rather than the property default.",
+   "evidence": "wynnlasvegas.com/terms-and-conditions/850257.",
+   "source_url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "action": "Values used and the page's context disclosed on the hotels page."
+  },
+  {
+   "id": "FD-15",
+   "severity": "high",
+   "area": "repo",
+   "title": "Three dashboards publish different numbers for the same questions",
+   "finding": "The repository root, /plan/ and the frozen /docs/, /verified/ and /pages/ trees are separate generated sites. The root dashboard says 45 rows are 'sheet silent on re-entry'; /plan/ says 30 events are rankable and 10 of 37 sheets were read. Both are generated from different datasets.",
+   "why_it_matters": "A reader who lands on the wrong page gets a different answer to 'how many events qualify'.",
+   "evidence": "index.html vs plan/index.html KPI blocks.",
+   "source_url": "https://karagemop466-tech.github.io/Poker2/",
+   "action": "/audit/ states its own numbers from its own dataset and links the other surfaces rather than silently disagreeing with them. Choosing one surface is suggestion SG-01."
+  }
+ ]
+}

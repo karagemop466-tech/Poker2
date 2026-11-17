@@ -1,0 +1,351 @@
+{
+ "meta": {
+  "purpose": "Re-fetch every URL the /audit/ site depends on and record a status per URL. A hash change means the bytes moved; it is never read as proof that a cited value changed.",
+  "statuses": {
+   "new": "first observation; hash stored as the baseline",
+   "ok": "fetched and byte-identical to the baseline",
+   "CHANGED": "fetched and different from the baseline - re-read the document",
+   "error:*": "fetch failed; never counted as ok",
+   "UNPROBED:egress-blocked": "this environment's egress proxy refused the TLS connection, so the URL was neither confirmed nor refuted; no claim is made either way"
+  },
+  "schedule": ".github/workflows/audit-recheck.yml, daily 05:15 UTC"
+ },
+ "urls": [
+  {
+   "id": "DOC-VEN-DSE4-SCHEDULE",
+   "kind": "html",
+   "label": "Venetian DSE IV schedule page (94 rows)",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "tracked": [
+    "94 published rows",
+    "series window 2026-11-16 to 2026-12-23"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SERIES",
+   "kind": "html",
+   "label": "Venetian DeepStack series overview",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "tracked": [
+    "current series label",
+    "next series dates"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-RESORTFEE",
+   "kind": "html",
+   "label": "Venetian resort fee page",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "tracked": [
+    "$55 plus tax per night"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-HOTELTC",
+   "kind": "html",
+   "label": "Venetian hotel terms",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "tracked": [
+    "13.38% room tax",
+    "$50 extra guest",
+    "$20/day parking"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-POKERRATE",
+   "kind": "html",
+   "label": "Venetian poker suite rates",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "tracked": [
+    "$119 / $209 from-prices",
+    "6 hours or $300+ buy-in per night"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-WYN-TERMS",
+   "kind": "html",
+   "label": "Wynn terms and conditions",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "tracked": [
+    "$55 resort fee",
+    "$50 extra guest",
+    "prepaid non-refundable"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-BEL-TERMS",
+   "kind": "html",
+   "label": "Bellagio terms and conditions",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "tracked": [
+    "$55 resort fee",
+    "$50 extra guest",
+    "72-hour cancellation"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-ARIA-TERMS",
+   "kind": "html",
+   "label": "ARIA terms and conditions",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "tracked": [
+    "$55 resort fee",
+    "$50 extra guest",
+    "72-hour cancellation"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-MGM-TERMS",
+   "kind": "html",
+   "label": "MGM Grand terms and conditions",
+   "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "tracked": [
+    "$50 resort fee",
+    "$40 extra guest",
+    "72-hour cancellation"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-COUNTY-TAX",
+   "kind": "pdf",
+   "label": "Clark County transient lodging guide",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "tracked": [
+    "13.38% resort-hotel transient lodging tax"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-CZP-POLICY",
+   "kind": "html",
+   "label": "Caesars Palace hotel policy (redirects to home page)",
+   "url": "https://www.caesars.com/caesars-palace/hotel-policy",
+   "tracked": [
+    "resort fee - NOT PUBLISHED at this URL"
+   ],
+   "last_checked": "2026-11-17T00:46:09Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-01",
+   "kind": "pdf",
+   "label": "Structure sheet 1 - $200 No Limit Hold'em Bounty (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "tracked": [
+    "Late Registration: 8 levels + Break (9:40 PM)",
+    "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-04",
+   "kind": "pdf",
+   "label": "Structure sheet 4 - $600 No Limit Hold'em (Event 59)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "tracked": [
+    "Late Registration: 9 levels + Break (5:55 PM)",
+    "$95 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-05",
+   "kind": "pdf",
+   "label": "Structure sheet 5 - $300 No Limit Hold'em (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "tracked": [
+    "Late Registration: 10 levels + Break (~ 4:55 PM)",
+    "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-07",
+   "kind": "pdf",
+   "label": "Structure sheet 7 - $600 No Limit Hold'em (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "tracked": [
+    "Late Registration: 10 levels + Break (~ 4:55 PM)",
+    "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-10",
+   "kind": "pdf",
+   "label": "Structure sheet 10 - $300 No Limit Hold'em (Event 01)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "tracked": [
+    "Late Registration: 6 levels + Break (~ 3:40 PM)",
+    "$60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-11",
+   "kind": "pdf",
+   "label": "Structure sheet 11 - $600 No Limit Hold'em Bounty (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "tracked": [
+    "Late Registration: 10 levels + Break (4:55 PM)",
+    "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-12",
+   "kind": "pdf",
+   "label": "Structure sheet 12 - $800 No Limit Hold'em (Event 26, flights A/C/E)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "tracked": [
+    "Late Registration: 6 levels + Break (~ 3:40 PM)",
+    "$110 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize poo"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-15",
+   "kind": "pdf",
+   "label": "Structure sheet 15 - $300 No Limit Hold'em Bounty (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "tracked": [
+    "Late Registration: 8 levels + Break (9:40 PM)",
+    "$50 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-16",
+   "kind": "pdf",
+   "label": "Structure sheet 16 - $800 No Limit Hold'em Bounty (1Day)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "tracked": [
+    "Late Registration: 10 levels + Break (4:55 PM)",
+    "$100 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize poo"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-18",
+   "kind": "pdf",
+   "label": "Structure sheet 18 - $200 No Limit Hold'em (1Day) RaceDay Stack",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "tracked": [
+    "Late Registration: 6 levels + Break (~ 12:25 PM)",
+    "$35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-21",
+   "kind": "pdf",
+   "label": "Structure sheet 21 - $2,200 No Limit Hold'em PokerAtlas Championship Title Event (Event 47)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "tracked": [
+    "Late Registration: 9 levels + Break (~ 4:55 PM)",
+    "$225 of the $2,200 Buy-In is withheld for house fees (Rake + Staff). The prize p"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  },
+  {
+   "id": "DOC-VEN-SHEET-34",
+   "kind": "pdf",
+   "label": "Structure sheet 34 - $1,100 No Limit Hold'em (1Day) Progressive Knock-Out Bounty",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "tracked": [
+    "Late Registration: 10 levels + Break (4:55 PM)",
+    "$130 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize p"
+   ],
+   "last_checked": "2026-11-17T00:46:10Z",
+   "sha256": null,
+   "http": "",
+   "status": "UNPROBED:egress-blocked"
+  }
+ ],
+ "runs": [
+  {
+   "run_at": "2026-11-17T00:46:10Z",
+   "checked": 23,
+   "ok": 0,
+   "changed": 0,
+   "errors": 0,
+   "unprobed": 23,
+   "network": "blocked for this environment",
+   "note": "A full run of UNPROBED rows means the runner could not open outbound TLS to the venue hosts. It does not mean the sources are down. The GitHub Actions job runs on a runner with normal egress."
+  }
+ ]
+}
