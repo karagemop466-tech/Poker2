@@ -72,6 +72,13 @@ checks.push(["no-match reports zero rather than going blank", /^0 rows match/.te
 clr.fire("click");
 checks.push(["clear restores the full index", stat.textContent.includes(String(total))]);
 
+// The committed index must describe the committed pages: a stale index silently serves a search
+// result whose label does not match the row it links to (this happened: the index still read
+// "assets/site2026.css" after the page text became "2026/assets/site2026.css").
+const page = fs.readFileSync(path.join(ROOT, "2026/repo-review.html"), "utf8");
+const idxRow = global.window.SEARCH_INDEX.find((r) => r.p === "repo-review.html" && /site2026\.css/.test(r.h));
+checks.push(["index labels match the rendered page", !!idxRow && page.includes(idxRow.h.split(" | ")[0])]);
+
 let bad = 0;
 for (const [name, ok] of checks) {
   console.log((ok ? "ok   " : "FAIL ") + name);

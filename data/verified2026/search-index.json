@@ -4756,8 +4756,8 @@
   "pl": "Repo review",
   "t": "Path What it is",
   "a": "",
-  "h": "assets/site2026.css, assets/site2026.js",
-  "x": "assets/site2026.css, assets/site2026.js | The stylesheet and the search / filter / calculator logic."
+  "h": "2026/assets/site2026.css, 2026/assets/site2026.js",
+  "x": "2026/assets/site2026.css, 2026/assets/site2026.js | The stylesheet and the search / filter / calculator logic."
  },
  {
   "p": "repo-review.html",
