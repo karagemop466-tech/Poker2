@@ -4,8 +4,8 @@
   "pl": "Dashboard",
   "t": "# Event Entry Guarantee",
   "a": "",
-  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
-  "x": "1 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-02"
+  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
+  "x": "1 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | $90 | 66.7\u00d7 | 12-06"
  },
  {
   "p": "index.html",
@@ -13,15 +13,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "2 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | $90 | 66.7\u00d7 | 12-06"
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
-  "x": "3 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-08"
+  "x": "2 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
  },
  {
   "p": "index.html",
@@ -29,23 +21,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "4 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN E",
-  "x": "5 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN E | $800 | $40,000 | $90 | 50.0\u00d7 | 12-10"
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "6 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 12-23"
+  "x": "3 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 12-23"
  },
  {
   "p": "index.html",
@@ -53,7 +29,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 BIG O (1DAY)",
-  "x": "7 | $600 BIG O (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-03"
+  "x": "4 | $600 BIG O (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-03"
  },
  {
   "p": "index.html",
@@ -61,7 +37,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "8 | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-17"
+  "x": "5 | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | $90 | 41.7\u00d7 | 12-17"
  },
  {
   "p": "index.html",
@@ -69,7 +45,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$400 NO LIMIT HOLD'EM (1DAY)",
-  "x": "9 | $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | $65 | 37.5\u00d7 | 11-25"
+  "x": "6 | $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | $65 | 37.5\u00d7 | 11-25"
  },
  {
   "p": "index.html",
@@ -77,7 +53,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "10 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-18"
+  "x": "7 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-18"
  },
  {
   "p": "index.html",
@@ -85,7 +61,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "11 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-26"
+  "x": "8 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-26"
  },
  {
   "p": "index.html",
@@ -93,7 +69,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "12 | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-29"
+  "x": "9 | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $300 | $10,000 | $58 | 33.3\u00d7 | 11-29"
  },
  {
   "p": "index.html",
@@ -134,6 +110,22 @@
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM (1DAY)",
   "x": "5 | $300 NO LIMIT HOLD'EM (1DAY) | $300 | 11-18"
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
+  "x": "1 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in."
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
+  "x": "2 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in."
  },
  {
   "p": "tournaments.html",
@@ -325,7 +317,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev24",
   "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Bre",
-  "x": "24 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in. | 2026-12-02 | 10:10 "
+  "x": "24 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize mone"
  },
  {
   "p": "tournaments.html",
@@ -389,7 +381,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev32",
   "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Bre",
-  "x": "32 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in. | 2026-12-08 | 10:10 "
+  "x": "32 | Best single-entry candidates | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 15% of the field; late reg: 10 levels + Break (~3:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize mone"
  },
  {
   "p": "tournaments.html",
@@ -397,7 +389,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev33",
   "h": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid",
-  "x": "33 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-08 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | sheet 19 | 2026-11-17 | baseline set"
+  "x": "33 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); 21+ with a Venetian Rewards card (property rule) -- Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-08 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | "
  },
  {
   "p": "tournaments.html",
@@ -429,7 +421,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev37",
   "h": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid",
-  "x": "37 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-09 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | sheet 19 | 2026-11-17 | baseline set"
+  "x": "37 | Satellites | $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 seats into Event #39; odd monies paid as one additional payout; late reg: 6 levels + Break (~6:25 PM); 21+ with a Venetian Rewards card (property rule) -- Open to Female players who must be 21+ years of age and have a Venetian Rewards card. | 2026-12-09 | 4:10 PM | $100 | $20 | $80 | 2 SEATS | \u2014 | "
  },
  {
   "p": "tournaments.html",
@@ -445,7 +437,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev39",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-s",
-  "x": "39 | Best single-entry candidates | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 | $40,000 | 50.0\u00d7 | sheet 32 | 2026-11-17 | ba"
+  "x": "39 | Multi-flight | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 | $40,000 "
  },
  {
   "p": "tournaments.html",
@@ -525,7 +517,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev49",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE each flight plays to ~15% remaining; Day 2 combi",
-  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM | $1,100 | $140 | $960 | $300,000 | 272.7\u00d7 | sheet 20 | 2026-11-17 | ba"
+  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM | $1,100 | $140 | $"
  },
  {
   "p": "tournaments.html",
@@ -766,14 +758,6 @@
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
   "x": "63 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | silent | silent | silent | $90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In. | sheet 7"
- },
- {
-  "p": "entry-rules.html",
-  "pl": "Entry rules",
-  "t": "# Event Entry Re-entry clause",
-  "a": "",
-  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32"
  },
  {
   "p": "entry-rules.html",
@@ -1054,6 +1038,14 @@
   "a": "",
   "h": "$800 NO LIMIT HOLD'EM",
   "x": "26 | $800 NO LIMIT HOLD'EM | $800 | silent on re-entry between flights | silent | silent | $110 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $690 of every $800 Buy In. | sheet 12"
+ },
+ {
+  "p": "entry-rules.html",
+  "pl": "Entry rules",
+  "t": "# Event Entry Re-entry clause",
+  "a": "",
+  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32"
  },
  {
   "p": "entry-rules.html",
@@ -2741,7 +2733,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Best single-entry candidates"
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Multi-flight"
  },
  {
   "p": "venues/venetian.html",
@@ -3789,7 +3781,7 @@
   "t": "Group Events What it means",
   "a": "",
   "h": "Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official ",
-  "x": "Best single-entry candidates | 16 | Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official sheet."
+  "x": "Best single-entry candidates | 15 | Best available evidence of single entry: one-day, one starting day, no re-entry, rebuy or add-on clause on the official sheet."
  },
  {
   "p": "summary.html",
@@ -3805,7 +3797,7 @@
   "t": "Group Events What it means",
   "a": "",
   "h": "More than one starting flight. A second flight is a second buy-in.",
-  "x": "Multi-flight | 8 | More than one starting flight. A second flight is a second buy-in."
+  "x": "Multi-flight | 9 | More than one starting flight. A second flight is a second buy-in."
  },
  {
   "p": "summary.html",
@@ -3868,16 +3860,8 @@
   "pl": "Executive summary",
   "t": "# Event Entry Guarantee",
   "a": "",
-  "h": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER",
-  "x": "5 | #39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER | $800 | $40,000 | 50.0\u00d7 | 12-10"
- },
- {
-  "p": "summary.html",
-  "pl": "Executive summary",
-  "t": "# Event Entry Guarantee",
-  "a": "",
   "h": "#63 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "6 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
+  "x": "5 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
  },
  {
   "p": "summary.html",
@@ -3885,7 +3869,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#27 $600 BIG O (1DAY)",
-  "x": "7 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
+  "x": "6 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
  },
  {
   "p": "summary.html",
@@ -3893,7 +3877,15 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "8 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
+  "x": "7 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "#10 $400 NO LIMIT HOLD'EM (1DAY)",
+  "x": "8 | #10 $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | 37.5\u00d7 | 11-25"
  },
  {
   "p": "questions.html",
@@ -4222,6 +4214,14 @@
   "a": "X-02",
   "h": "X-02",
   "x": "X-02 | Official page defect | The Venetian series overview still labels an ended series as 'Current Series' The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, 2026' even though today is 2026-11-17 and the live series is DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026). | Do not rely on that page's 'Current Series' label; use the dated event page and sc"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-14",
+  "h": "F-14",
+  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
  },
  {
   "p": "sources.html",
@@ -4582,6 +4582,102 @@
   "a": "",
   "h": "Clark County transient lodging tax guide",
   "x": "Tax | Clark County transient lodging tax guide | www.clarkcountynv.gov | 2026-11-16 | 13.38% from the county's own published guide."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Venetian Resort resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Venetian Resort parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Wynn Las Vegas resort fee source | www.wynnlasvegas.com |  | The resort fee this site publishes for Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Wynn Las Vegas parking source | www.wynnlasvegas.com |  | The parking this site publishes for Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Encore at Wynn Las Vegas resort fee source | www.wynnlasvegas.com |  | The resort fee this site publishes for Encore at Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Encore at Wynn Las Vegas parking source | www.wynnlasvegas.com |  | The parking this site publishes for Encore at Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Bellagio resort fee source | bellagio.mgmresorts.com |  | The resort fee this site publishes for Bellagio."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | MGM Grand resort fee source | mgmgrand.mgmresorts.com |  | The resort fee this site publishes for MGM Grand."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Caesars Palace resort fee source | www.caesars.com |  | The resort fee this site publishes for Caesars Palace."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Horseshoe Las Vegas resort fee source | www.caesars.com |  | The resort fee this site publishes for Horseshoe Las Vegas."
  },
  {
   "p": "sources.html",

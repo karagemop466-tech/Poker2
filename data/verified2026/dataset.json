@@ -1901,9 +1901,9 @@
    "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
-   "group": "candidate",
-   "group_label": "Best single-entry candidates",
-   "reason": "One-day event with a single starting day. The official structure sheet contains no re-entry, rebuy or add-on clause.",
+   "group": "multiflight",
+   "group_label": "Multi-flight (second flight = second buy-in)",
+   "reason": "The official structure sheet schedules Day 1 and Day 2 as separate days (Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM), so this is not a one-day event and cannot be played as a same-day single entry. Returning on Day 2 is a continuation of the same entry, not a second buy-in, but the trip does not get a free day back.",
    "dates": [
     "2026-12-10"
    ],
@@ -5433,7 +5433,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5528,7 +5528,7 @@
      "verdict": "conditional fallback",
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5588,7 +5588,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5669,7 +5669,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
      "flight": "restart",
      "row_gtd": "",
@@ -5687,7 +5687,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS FINAL TABLE STREAMED FINAL TABLE (POKERGO)",
      "flight": "restart",
      "row_gtd": "",
@@ -7538,6 +7538,14 @@
    "detail": "The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, 2026' even though today is 2026-11-17 and the live series is DeepStack Extravaganza IV (Nov 16 - Dec 23, 2026).",
    "impact": "Do not rely on that page's 'Current Series' label; use the dated event page and schedule PDF.",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+  },
+  {
+   "id": "F-14",
+   "area": "Monitoring",
+   "title": "Ten of the 61 monitored official URLs could not be read on the last scheduled run",
+   "detail": "The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or cancellation citations.<ul><li><code>https://bellagio.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://www.caesars.com/caesars-palace/casino</code> &mdash; 403 (HTTP 403)</li><li><code>https://www.caesars.com/horseshoe-las-vegas/casino</code> &mdash; 403 (HTTP 403)</li><li><code>https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://bellagio.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://www.caesars.com/corporate/disclaimer</code> &mdash; 302 (HTTP 302)</li><li><code>https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip</code> &mdash; 302 (HTTP 302)</li><li><code>https://mgmgrand.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf</code> &mdash; 422 (HTTP 422)</li><li><code>https://www.wynnlasvegas.com/casino/poker-room</code> &mdash; 404 (HTTP 404)</li></ul>",
+   "impact": "A hotel fee or cancellation term sourced from one of these pages rests on the reading date shown on that hotel's row, not on the latest check. Re-open the link before you rely on the term.",
+   "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
   }
  ],
  "questions": [

@@ -1,4 +1,19 @@
-/* Search, filters and the trip-cost calculator. No dependencies, no network calls. */
+/* SUPERSEDED - kept for the record, loads on four legacy pages, does nothing there.
+ *
+ * This file was written for the 2026-11 generation of the root dashboard, which is no longer the
+ * one published. It binds #evtable (tournaments), #q / #f-date / #f-class / #f-max / #f-single
+ * (filters) and the #c-* trip-calculator inputs. None of those element ids exists on any page the
+ * generators now produce, so every feature here is inert: the page loads, no handler attaches, and
+ * nothing errors. Verified 2026-11-17 across all 30 root pages.
+ *
+ * The live root features are in assets/dashboard.js, which the current generators reference:
+ * data-search / data-date / data-cat table filters, the #site-search box, and the
+ * #trip-calc calculator (true cost/night = (room rate + resort fee) x (1 + tax) + parking).
+ *
+ * It is left in place rather than deleted because four legacy pages still <script> it, and the
+ * pages still render without it. Deleting it is recorded as a suggestion, not done unilaterally.
+ *
+ * Search, filters and the trip-cost calculator. No dependencies, no network calls. */
 (function () {
   "use strict";
 

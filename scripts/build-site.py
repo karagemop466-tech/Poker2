@@ -57,8 +57,19 @@ def num(v, dash="&mdash;"):
     return dash if v is None or v == "" else "{:,}".format(v)
 
 
-def ratio(v, dash="&mdash;"):
-    return dash if v in (None, "") else "{:.1f}&times;".format(float(v))
+def ratio(v, dash="&mdash;", fee=None):
+    """A guarantee ÷ buy-in ratio, shown only when the entry cost is itself confirmed.
+
+    `fee` is the house fee from the row. When it is None the row's total entry cost is unknown,
+    and a ratio computed from a buy-in the page will not stand behind reads as a ranked value it
+    is not. 28 rows were doing exactly that before this guard.
+    """
+    if v in (None, ""):
+        return dash
+    if fee is None:
+        return ('<span class="sm" title="the house fee is not confirmed, so total entry cost is '
+                'unknown">fee unconfirmed</span>')
+    return "{:.1f}&times;".format(float(v))
 
 
 def host_of(u):
@@ -353,7 +364,7 @@ def event_row(r):
         '<td class="num">' + money(r["fee"]) + "</td>",
         '<td class="num">' + money(r["pool"]) + "</td>",
         '<td class="num">' + money(r["gtd"]) + "</td>",
-        '<td class="num">' + ratio(r["ratio"]) + "</td>",
+        '<td class="num">' + ratio(r["ratio"], fee=r.get("fee")) + "</td>",
         '<td class="num">' + num(r["chips"]) + "</td>",
         '<td class="num">' + (str(r["level"]) + " min" if r["level"] else "&mdash;") + "</td>",
         '<td class="nowrap">' + clock(r["reg_close"]) + "</td>",
@@ -598,7 +609,7 @@ def p_schedule():
                     + flags + "</td>"
                     + '<td class="num">' + money(p["buy_in"]) + "</td>"
                     + '<td class="num">' + money(p["gtd"]) + "</td>"
-                    + '<td class="num">' + ratio(p["ratio"]) + "</td>"
+                    + '<td class="num">' + ratio(p["ratio"], fee=p.get("fee")) + "</td>"
                     + "<td>" + fcell + "</td>"
                     + '<td class="num">' + money(both) + "</td>"
                     + "<td>" + srclink(p["sheet_url"], "sheet " + str(p["sheet"])) + " "
@@ -672,6 +683,22 @@ def p_hotels():
             for r in RATES["entries"]:
                 if r["id"] == h["room_rate_log_id"]:
                     rate = r
+        # The 13.38% figure is not applied blind: where the county's own licensed-property
+        # schedule carries a row for the property, that row is cited next to the fee cell.
+        # A property the schedule does not list (or lists only under a former name) gets an
+        # explicit "not in the county list" note instead of a guessed rate.
+        tl = h.get("transient_lodging_tax") or {}
+        if tl.get("status") == "verified_official_county" and tl.get("rate_pct"):
+            tax_cell = (esc("%.2f%%" % tl["rate_pct"]) + " " + badge("county row " + str(tl["licence"]), "ok")
+                        + " " + srclink(tl["source_url"], "county schedule"))
+        elif tl.get("status") == "not_in_county_list":
+            # Never print a rate for a property the county schedule does not list: the
+            # country's own table gives a former name at that address, and transferring a
+            # rate across a renaming is an inference, not a citation.
+            tax_cell = ("&mdash; " + badge("not in the county schedule", "warn")
+                        + '<div class="sm">' + esc((tl.get("note") or "")[:260]) + "</div>")
+        else:
+            tax_cell = "&mdash; " + badge("county row not read", "warn")
         fee = (h.get("resort_fee") or {}).get("amount")
         nightly = ""
         if rate and fee:
@@ -725,7 +752,8 @@ def p_hotels():
                   + "<td>" + rate_txt + "</td>"
                   + '<td class="num">' + nightly + "</td>"
                   + "<td>" + cell("resort_fee", "amount", lambda v: money(v) + " + tax")
-                  + '<div class="sm">' + feeexcerpt + "</div></td>"
+                  + '<div class="sm">' + feeexcerpt + "</div>"
+                  + '<div class="sm">' + tax_cell + "</div></td>"
                   + "<td>" + cell("parking", "guest_self_per_day", lambda v: ("included in the resort fee" if v == 0 else money(v) + "/day")) + "</td>"
                   + "<td>" + cell("occupancy", "extra_guest_charge", lambda v: money(v) + "/guest/night" if v else "none stated") + "</td>"
                   + "<td>" + cell("incidentals", "amount", lambda v: money(v) + "/night") + "</td>"
@@ -1193,7 +1221,7 @@ Everything else is either a source contradiction to watch or a dataset-hygiene n
 <p class="sm">Configuration: <code>scripts/check_sources.mjs</code> reads <code>site-data/sources.json</code> plus every
 structure-sheet URL in <code>site-data/events.json</code>, hashes each page, compares the tracked values, and writes
 <code>site-data/change-report.json</code>. It runs on a schedule in
-<a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/daily-refresh.yml">the refresh workflow</a>
+<a href="https://github.com/karagemop466-tech/Poker2/actions/workflows/plan-refresh.yml">the refresh workflow</a>
 and can be triggered manually before a non-refundable payment.</p>
 </section>"""
     page("flagged.html", "Flagged for review", body)
@@ -1432,6 +1460,9 @@ def main():
     if check:
         stale = []
         for fname, txt in generated.items():
+            # Compare against THIS surface's own output directory. It was reading the repository
+            # root, which is the other generator's directory, so --check reported its own pages
+            # "stale" (and would have called the root dashboard fresh) no matter what was written.
             disk = os.path.join(OUT, fname)
             if not os.path.exists(disk) or open(disk, encoding="utf8").read() != txt:
                 stale.append(fname)

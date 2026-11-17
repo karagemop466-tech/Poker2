@@ -46,22 +46,37 @@ jobs:
       - name: Scrape the schedule page and diff it against the dataset
         run: node scripts/scrape-schedule.mjs
 
+      - name: Re-render plan/ from the datasets (never from the live fetch)
+        run: |
+          # The two steps above append to site-data/change-report.json and
+          # site-data/schedule-diff.json, which plan/flagged.html renders. Re-rendering here
+          # means the published page always reflects the run that just happened instead of the
+          # last committed one. This step used to be the job's own failure: the post-fetch
+          # check ran `build-site.py --check` *before* any re-render, so on every day the
+          # re-check wrote a result the page differed and the whole job went red
+          # (run 44124782058, main b832ae2). The check below is the honest version.
+          python3 scripts/build-site.py
+
       - name: Verify the generators still reproduce every dataset and page
         run: |
           # Non-blocking on purpose: when an official page changes, the transcriptions in
           # scripts/build-events.py stop matching, and that is exactly the situation we want
           # reported as a pull request rather than a red X with no artefacts.
+          # `--check` on build-events/build-schedule/build-walk still tells us whether the
+          # transcriptions still match; build-site is checked by the freshness gate below,
+          # which compares against the tree *after* this run's own re-render.
           #
-          # (This block used to be written as `{ cmd \n && cmd ; }`, which is a bash syntax
-          # error - a newline before `&&` terminates the command - so the step died with exit 2
-          # on every run and the commit/PR step below was always skipped. Runs 43943838443 and
-          # 44124782058 both failed this way; see COORDINATION.md, session arena/594db405-poker2.)
+          # (This block used to be written as `{ cmd \n && cmd ; }` - a bash syntax error,
+          # because a newline before `&&` terminates the command - so the step died with
+          # exit 2 on every run (43943838443, 44124782058) and every later step was skipped.
+          # Re-verified on bash 5.2 with a minimal script file; see COORDINATION.md,
+          # session arena/594db405-poker2. Runs 43943838443 / 44124782058 also predate
+          # the re-render step below, so the drift fix and the syntax fix are both needed.)
           set +e
           {
             python3 scripts/build-events.py --check \
               && python3 scripts/build-schedule.py --check \
               && python3 scripts/build-walk.py --check \
-              && python3 scripts/build-site.py --check \
               && node scripts/scrape-schedule.mjs --selftest
           } > /tmp/verify.log 2>&1
           verify_status=$?
@@ -71,6 +86,9 @@ jobs:
             echo failed > /tmp/verify.failed
             echo "GENERATOR CHECK FAILED: official text no longer matches the transcription - opening a review PR"
           fi
+
+      - name: Plan pages reproduce from the datasets and the reports are well-formed
+        run: python3 scripts/check_plan_fresh.py
 
       - name: Commit snapshots, or open a review PR when a source moved
         env:

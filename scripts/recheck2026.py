@@ -141,7 +141,13 @@ def main():
         last_run=now,
         monitored=len(results),
         changed_this_run=len(changed),
-        never_checked=sum(1 for r in results if r["change"] == "first check"),
+        # "first check" is the opposite of "never checked": it means the baseline hash was
+        # just established. This field used to count it under never_checked, so the site
+        # reported "51 first-time checks" from a value documented as never_checked. Both
+        # counts are now published, each under the name that says what it is.
+        first_check=sum(1 for r in results if r["change"] == "first check"),
+        never_checked=sum(1 for r in results
+                          if r["change"] not in ("first check", "unchanged", "CHANGED", "fetch error")),
         errors=sum(1 for r in results if r["change"] == "fetch error"),
         note=("HTML is hashed from normalised visible text; PDFs are hashed as raw response bytes. "
               "A CHANGED row means the official document moved, so every value transcribed from it "

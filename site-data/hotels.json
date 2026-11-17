@@ -30,6 +30,13 @@
     "excerpt": "Live booking-engine arithmetic, captured 2026-11-17, Nov 18-22 2026 stay: room $2,827.00 + resort fee $220.00 = $3,047.00 taxable; Taxes $407.69; Total $3,454.69. And Nov 18-25 2026: room $3,594.75 + resort fee $385.00 = $3,979.75 taxable; Taxes $532.51; Total $4,512.26.",
     "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
     "publisher": "The Venetian (official booking engine)"
+   },
+   {
+    "excerpt": "'The room tax rate for properties located INSIDE the Primary Gaming Corridor is 13.38% (see map in Appendix II). The room tax rate for properties OUTSIDE the Primary Gaming Corridor is 13.00%.' and 'Room tax should be collected from the guest and shown as a separate charge. The tax may NOT be included in the price of the room.'",
+    "source_url": "https://files.lasvegasnevada.gov/business-licensing/RoomTaxPacket.pdf",
+    "publisher": "City of Las Vegas, Business License Division - Transient Lodging Establishment Room Tax Instructions & Guidelines, Rev. March 2026",
+    "retrieved": "2026-11-17",
+    "note": "Corroborates both the rate and the method the calculator uses (tax added on top of the room rate and the resort fee, never treated as included). Jurisdiction caveat: this packet governs establishments inside City of Las Vegas limits, while the Strip properties in this dataset sit in unincorporated Clark County - which is why the Clark County guide, not this packet, is the citable source for each property's own row. Both official documents state the same 13.38% / 13.00% PGC split."
    }
   ],
   "cross_check": "Both dated quotes imply exactly 13.3804% (407.69 / 3,047.00 and 532.51 / 3,979.75). The rate is therefore confirmed twice over: the county notice states it, and the hotel's own engine charges it. The engine also taxes the resort fee, which is the assumption behind the true-cost formula below."
@@ -47,9 +54,11 @@
     "booking_start": "https://www.venetianlasvegas.com/book"
    },
    "address": {
-    "value": null,
-    "status": "not_captured",
-    "note": "No street address was taken from an official page in this pass. The poker room's own official location string is used instead: \"The Palazzo, level 2, Grand Canal Shoppes\"."
+    "value": "3325 Las Vegas Blvd S, Las Vegas, NV (Clark County licence 1000389.RES-001, which prints 'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino' at this one address)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-17",
+    "note": "Street address as printed in the county's licensed-property schedule read 2026-11-17."
    },
    "resort_fee": {
     "amount": 55,
@@ -124,6 +133,23 @@
      "7N_2026-11-18": 644.61
     },
     "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar"
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "1000389.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
+   },
+   "venue_location": {
+    "value": "The poker room's official location string is \"The Palazzo, level 2, Grand Canal Shoppes\"; the street address above is the county licence address for the Venetian/Palazzo complex.",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "retrieved": "2026-11-16",
+    "note": "Kept so the in-building directions are not lost to the street address."
    }
   },
   {
@@ -136,10 +162,11 @@
     "book_with_dates": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-22&view=calendar"
    },
    "address": {
-    "value": "The Palazzo, level 2, Grand Canal Shoppes (poker room location, official)",
-    "status": "verified_official",
-    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-    "retrieved": "2026-11-16"
+    "value": "3325 Las Vegas Blvd S, Las Vegas, NV (Clark County licence 1000389.RES-001, which prints 'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino' at this one address)",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-17",
+    "note": "Street address as printed in the county's licensed-property schedule read 2026-11-17."
    },
    "resort_fee": {
     "amount": 55,
@@ -183,7 +210,24 @@
     "value": null,
     "status": "not_verified"
    },
-   "walk_note": "The poker room is inside this property: official directions run from the Palazzo casino floor, up to level 2 of Grand Canal Shoppes, straight ahead. Indoor, same building - minutes not published."
+   "walk_note": "The poker room is inside this property: official directions run from the Palazzo casino floor, up to level 2 of Grand Canal Shoppes, straight ahead. Indoor, same building - minutes not published.",
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "1000389.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
+   },
+   "venue_location": {
+    "value": "The Palazzo, level 2, Grand Canal Shoppes (poker room location)",
+    "status": "verified_official",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "retrieved": "2026-11-16",
+    "note": "The poker room's own official location string, kept alongside the street address rather than replaced by it."
+   }
   },
   {
    "id": "H-WYN",
@@ -196,8 +240,11 @@
     "book_start": "https://www.wynnlasvegas.com/book"
    },
    "address": {
-    "value": null,
-    "status": "not_captured"
+    "value": "3131 Las Vegas Blvd S, Las Vegas, NV (Clark County licence 2000013.RES-001, printed as 'Wynn Las Vegas / Encore at Wynn Las Vegas')",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-17",
+    "note": "Street address as printed in the county's licensed-property schedule read 2026-11-17."
    },
    "resort_fee": {
     "amount": 55,
@@ -256,6 +303,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "2000013.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -327,6 +384,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "1002194.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -339,15 +406,20 @@
     "poker": "https://aria.mgmresorts.com/en/casino/poker.html"
    },
    "address": {
-    "value": "3730 Las Vegas Blvd S (unverified: this address was not present in the county list read in this pass)",
-    "status": "not_captured"
+    "value": "3730 Las Vegas Blvd S, Las Vegas, NV (Clark County licence 2000035.RES-001, printed as 'Aria Resort & Casino')",
+    "status": "verified_official_county",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-17",
+    "note": "Street address as printed in the county's licensed-property schedule read 2026-11-17."
    },
    "resort_fee": {
-    "amount": null,
-    "plus_tax": null,
-    "status": "not_read_official_page",
-    "note": "A prior session recorded \"$55 plus tax\" from ARIA's terms page; that page has not been re-read in this pass, so the value is deliberately left blank here.",
-    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.",
+    "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "parking": {
     "guest_self_per_day": 20,
@@ -357,19 +429,27 @@
     "retrieved": "2026-11-16"
    },
    "incidentals": {
-    "amount": null,
-    "status": "not_read_official_page"
+    "amount": 150,
+    "per": "night",
+    "status": "verified_official",
+    "excerpt": "We will place an authorization against this account to cover applicable charges for room, tax and resort fees, as well as a per day incidental amount of $150 for Deluxe Rooms, $250 for Tower Suites, $350 for Sky Suites and $500 for Villas",
+    "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "note": "The $150 figure applies to Deluxe Rooms; suites carry $250-$500. Standard-room figure used here."
    },
    "occupancy": {
-    "basis": null,
-    "extra_guest_charge": null,
-    "status": "not_read_official_page",
-    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    "basis": "2 occupants per room included",
+    "extra_guest_charge": 50,
+    "extra_guest_rule": "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+    "status": "verified_official",
+    "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "cancellation": {
-    "rule": null,
-    "status": "not_read_official_page",
-    "source_url_to_read": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before arrival (and no shows) forfeit the first night's deposit.",
+    "status": "verified_official",
+    "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "room_rate_log_id": null,
    "quality": {
@@ -380,6 +460,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "2000035.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -400,9 +490,13 @@
     "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
    },
    "resort_fee": {
-    "amount": null,
-    "status": "not_read_official_page",
-    "source_url_to_read": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.",
+    "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "parking": {
     "guest_self_per_day": 20,
@@ -412,14 +506,26 @@
     "retrieved": "2026-11-16"
    },
    "incidentals": {
-    "amount": null,
-    "status": "not_read_official_page"
+    "amount": 150,
+    "per": "day",
+    "status": "verified_official",
+    "excerpt": "We will place an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day",
+    "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "occupancy": {
-    "status": "not_read_official_page"
+    "basis": "2 occupants per room included",
+    "extra_guest_charge": 50,
+    "extra_guest_rule": "There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+    "status": "verified_official",
+    "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "cancellation": {
-    "status": "not_read_official_page"
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer. Cancellations less than 72 hours before arrival (and no shows) forfeit the first night's deposit.",
+    "status": "verified_official",
+    "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "room_rate_log_id": null,
    "quality": {
@@ -431,6 +537,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "1003760.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -447,9 +563,13 @@
     "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
    },
    "resort_fee": {
-    "amount": null,
-    "status": "not_read_official_page",
-    "source_url_to_read": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html"
+    "amount": 55,
+    "plus_tax": true,
+    "per": "room night",
+    "status": "verified_official",
+    "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be added to all reservations.",
+    "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "parking": {
     "guest_self_per_day": 20,
@@ -458,13 +578,28 @@
     "retrieved": "2026-11-16"
    },
    "incidentals": {
-    "status": "not_read_official_page"
+    "amount": 150,
+    "per": "day",
+    "status": "verified_official",
+    "excerpt": "We will place an authorization against this account to cover applicable charges for room, taxes and resort fees, as well as a $150 incidental amount per day ... An incidental deposit of $1,000 per night will be authorized ... if a Bungalow or Chelsea Penthouse is reserved.",
+    "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "note": "$150/day for ordinary rooms; $1,000/night for a Bungalow or Chelsea Penthouse."
    },
    "occupancy": {
-    "status": "not_read_official_page"
+    "basis": "2 occupants per room included",
+    "extra_guest_charge": 50,
+    "extra_guest_rule": "There is an additional charge of $50 plus tax per occupant, per night, above two (2) occupants per room. Maximum occupancy is four (4) persons per room unless otherwise stated.",
+    "status": "verified_official",
+    "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17",
+    "max_occupancy": 4
    },
    "cancellation": {
-    "status": "not_read_official_page"
+    "rule": "The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 877.551.7772 at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.",
+    "status": "verified_official",
+    "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+    "retrieved": "2026-11-17"
    },
    "room_rate_log_id": null,
    "quality": {
@@ -475,6 +610,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "2000039.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -516,6 +661,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "1136233.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'. The same row's address cell reads '35/0 Las Vegas Blvd S' in the PDF text layer - a garbled house number - so the rate is used and the address is left blank.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -555,6 +710,16 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": 13.38,
+    "status": "verified_official_county",
+    "category": "Resort Hotel (PGC)",
+    "licence": "2000032.RES-001",
+    "excerpt": "Appendix III, 'Resort Hotel in SD & PGC': 5.5% + 2% + 1% + 1% + 3% + .88% = 13.38%. The property schedule that follows prints this property's own row at 13.38%, 'Transient Lodging Tax - Resort Hotel (PGC)'.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "publisher": "Clark County Department of Business License",
+    "retrieved": "2026-11-17"
    }
   },
   {
@@ -594,6 +759,13 @@
     "status": "not_verified",
     "captured": "2026-11-17",
     "note": "No dated quote. The property's booking engine builds its prices after page load (Wynn and the MGM sites returned an empty shell or a 404 for every dated URL tried on 2026-11-17), so there is no official figure to record. Left blank rather than estimated - use the booking link above, or ask the property for a written quote for your dates."
+   },
+   "transient_lodging_tax": {
+    "rate_pct": null,
+    "status": "not_in_county_list",
+    "note": "The county schedule read 2026-11-17 lists 'Bally's Las Vegas, 3645 Las Vegas Blvd S' at 13.38% (Resort Hotel, PGC) but has no 'Horseshoe' row. Treating Bally's as Horseshoe is an inference the document does not make, so no rate is entered for this property here.",
+    "source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "retrieved": "2026-11-17"
    }
   }
  ],

@@ -98,6 +98,21 @@ already been done here — exactly how it was done, so you can accept it or ask 
 <td>A is in place now. B keeps the root clean. C allows a build step but adds a workflow.</td>
 <td><span class="badge b-info">Awaiting decision</span>
 
+</td></tr><tr><td>S11</td><td><strong>Delete or wire up the inert assets/site.js</strong><small class="note">Repo hygiene</small></td>
+<td>A) Delete it and drop the &lt;script&gt; tag from the four legacy pages that load it.<br>B) Keep it as an archived file with a header saying it is superseded (done on 2026-11-17).<br>C) Wire it back up by giving the generators the element ids it expects.</td>
+<td>Found 2026-11-17: none of the #evtable / #f-date / #c-* ids it binds exists on any of the 30 published root pages, so every feature in it is dead code. B was taken because deleting a file another session owns is a scope decision. C would duplicate the working assets/dashboard.js. A is the clean end state.</td>
+<td><span class="badge b-info">Partly implemented (annotated, not deleted)</span>
+
+</td></tr><tr><td>S12</td><td><strong>Make the trip-cost calculator one function, not three</strong><small class="note">Correctness</small></td>
+<td>A) Keep the three implementations and add a test that pins them to the same answer.<br>B) Extract one shared formula file that all three pages load.<br>C) Leave them.</td>
+<td>There are three true-cost implementations: assets/dashboard.js, assets/site.js and 2026/assets/site2026.js. Today all three agree ((rate+fee)*(1+tax)+parking) and reproduce the Venetian quote&#x27;s own checkout itemisation to the cent ($644.61 for the 7-night stay). Nothing enforces that. A is cheapest and catches the drift that already happened once, when the quote cell labelled a fee-inclusive average as a room rate.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
+</td></tr><tr><td>S13</td><td><strong>Give the plan/ surface its own output directory</strong><small class="note">Repo hygiene</small></td>
+<td>A) Leave as is.<br>B) Move scripts/build-site.py output to /plan/ and update its asset paths.<br>C) Retire the /plan/ surface and keep one site.</td>
+<td>scripts/build-site.py writes 22 pages with the same filenames as the root dashboard (index.html, flagged.html, ...) but its OUT is the repository root, so its files collide with the root surface&#x27;s on every build and its --check could never pass (fixed 2026-11-17). Two generators, one directory is the underlying problem.</td>
+<td><span class="badge b-info">Awaiting decision</span>
+
 </td></tr></tbody></table>
 <div class="panel"><h2>Added by this session</h2>
 <ul class="tight">
