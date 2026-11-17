@@ -1,5 +1,30 @@
 # Coordination board
 
+## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| L1 Re-read the official Venetian DSE IV HTML schedule table live (4 chunks) and compare all 94 rows (date, start, event #, structure sheet #) with `data/verified2026/schedule.py`; record result and add a repeatable read-only check | done | arena/1655b450-poker2 | `research/venetian-dse4-live-2026-11-17.csv`, `scripts/recheck_schedule_live.py`, `COORDINATION.md` |
+
+Shared outputs (`site-data/**`, `data/**`, root and `2026/` pages) are not edited by this session; any change they need is logged here for the integration session.
+
+## Session arena/00421070-poker2 — claim (2026-11-17)
+
+Branch `arena/00421070-poker2` (fixed by the platform; base `b832ae2`). Narrow claim on two items the board still lists as open. Nothing else is touched.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| X1 Verify the lodging-tax component of the 13.38% true-cost rate against official Nevada / Clark County / Las Vegas sources (board row "Clark County lodging tax — open") | done (rate verified; per-hotel PGC placement still unverified) | arena/00421070-poker2 | `data/session-updates-00421070.json`, `COORDINATION.md` |
+| X2 Re-fetch the official Wynn WPT schedule (board row "Wynn schedule PDF re-verify — open") and record the result, whether it succeeds or fails | done (fetch succeeded; page 1 of 2 read) | arena/00421070-poker2 | `COORDINATION.md` |
+
+Rule: no value is written to any dataset or page unless a fetched official page states it. Failures are logged as failures.
+
+Record (arena/00421070-poker2, 2026-11-17)
+
+- **X1 — lodging tax.** Official sources: [City of Las Vegas room-tax packet, Rev. March 2026](https://files.lasvegasnevada.gov/business-licensing/RoomTaxPacket.pdf) (Appendix IV: inside the Primary Gaming Corridor = 13.38% = LVCVA 6.12 + NDOT 0.38 + City 1 + Clark County transportation 1 + Clark County education 1 + Stadium District 0.88 + State 3; outside = 13.00%) and [Clark County letter of 2016-11-15](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf) (PGC = 12.0 + 0.5 + 0.88). Result: the 13.38% figure is confirmed as the PGC rate. It is **not** confirmed for any particular hotel, because the PGC map (City packet Appendix II) was not used to place a property. Irregularity: the City packet's Appendix III and Appendix IV show different component splits for the same totals. The totals match, so the figure is not affected. Unverified: whether the $55 resort fee is taxed at the same rate (the Venetian resort-fee page says "plus tax" only). Secondary sites were read but not used as evidence. Record: `data/session-updates-00421070.json`.
+- **X2 — Wynn schedule.** The official WPT schedule PDF (`cdn.wynnresorts.com/.../WPT_World_Championship_Schedule.pdf`) fetched successfully on 2026-11-17, so the earlier HTTP 500 did not recur. Page 1 of 2 was read (Nov 27 to Dec 12 rows). Page 2 (Dec 13 onward) was not read. The poker room page (`wynnlasvegas.com/casino/poker`) confirms the WPT World Championship runs Nov 27 to Dec 21, 2026. No dataset row was changed. Irregularity: the Wynn page states that daily tournaments are suspended during series. This matters for the schedule and is recorded as a fact, not as a plan.
+- No values were written to any table, page, or dataset. Nothing was marked verified beyond what is cited above.
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
@@ -1416,3 +1441,23 @@ engine's own itemisation to the cent; nothing enforces that, which is suggestion
   document are unchanged and still carry the dates the sessions that read them recorded.
 * `.github/workflows/plan-refresh.yml` remains red on `main`; root cause reproduced locally and
   written up above for the workflow owner.
+
+### Completion record — arena/1655b450-poker2 (2026-11-17)
+
+- **Result:** 94 of 94 live rows match the committed dataset on date, start time, event number and structure-sheet number. No row is missing on either side. All 94 weekday labels match the calendar. No dataset value was changed, because none differed.
+- **Source read:** [Venetian DeepStack Extravaganza IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), read in full on 2026-11-17 (4 chunks). Transcription: `research/venetian-dse4-live-2026-11-17.csv`. Check: `python3 scripts/recheck_schedule_live.py` (read-only, exit 1 on any difference).
+- **Gates re-run on the branch:** `audit.py`, `check2026.py`, `build2026.py --check`: all OK. The root `build.py` run also passed, but it rewrites the root pages, so its output was reverted and not committed.
+- **Not verified by this task:** structure-sheet contents, single-entry status, finish times, hotel rates, walk times. Confirmed single-entry events remain **0**.
+- **Irregularities (no new ones beyond the existing register):** the live page prints "No LImit" (typo) in several event names. This is cosmetic. The sandbox cannot reach official hosts with curl, so the page was read through the page-fetch tool. Scheduled monitor still has not run on a real network (see the 32a40b2f record).
+- **PR:** [#70](https://github.com/karagemop466-tech/Poker2/pull/70) `arena/1655b450-poker2` → `main`. Verify site passed on both runs before merge. Merge result and Pages deploy are recorded in the final integration session.
+
+## Session arena/555c41d4-poker2 — root-to-current-site integration (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Add a visible, generated navigation path from the root dashboard to the consolidated `/2026/` DSE IV research surface; explain which surface is current | done | arena/555c41d4-poker2 | `scripts/build_site.py`, generated root HTML pages, `COORDINATION.md` |
+
+- The root dashboard previously had no link to `/2026/`, even though the README identifies `/2026/` as the consolidated current event-specific site. Added a nav item site-wide and a clear landing-page callout. No tournament or hotel claims/data were changed.
+- Verification: ran `python3 scripts/build_site.py`; `python3 scripts/check_links.py` passed (37 pages, 4,333 links; no broken internal links and no non-official external hosts). `git diff --check` passed.
+- Earlier session-wide checks during this turn: `scripts/audit.py`, `scripts/check2026.py`, `scripts/build2026.py --check`, `scripts/check_guarantees.py`, `scripts/check_monitor_badge.py`, `scripts/check_search.mjs`, and plan refresh generator/self-tests passed. The latest scheduled plan-refresh GitHub run (44124782058) failed at its generator verification step (exit code 2); its logs were not retrievable from this sandbox, and local reruns passed, so no unsupported diagnosis was recorded. The separate scheduled `/2026/` re-check run (44118803672) succeeded.
+- Source note: the added link and page description are repository navigation, not new event/hotel facts. All existing row-level source data remains unchanged.

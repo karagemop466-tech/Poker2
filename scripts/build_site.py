@@ -20,7 +20,7 @@ monitor = load("data/source_monitor.json", {"urls": []})
 AS_OF = master.get("as_of") or "2026-11-16"
 
 NAV = [
-    ("index.html", "Dashboard"), ("summary.html", "Executive Summary"),
+    ("index.html", "Dashboard"), ("2026/", "DSE IV · 2026"), ("summary.html", "Executive Summary"),
     ("tournaments.html", "Tournaments"), ("venue-venetian.html", "Venetian"),
     ("venue-wynn.html", "Wynn"),
     ("venue-horseshoe.html", "Horseshoe"), ("venue-caesars.html", "Caesars Palace"),
@@ -755,6 +755,9 @@ def build():
 Start with the <a href="summary.html">executive summary</a>, filter the <a href="tournaments.html">tournament table</a>
 to <em>sheet silent on re-entry</em>, then price the stay on the <a href="hotels.html">hotels page</a> and
 build the trip in the <a href="planner.html">trip planner</a>.</p>
+<div class="panel"><strong>Current 2026 event audit:</strong> for the consolidated Venetian DeepStack Extravaganza IV schedule,
+37 structure-sheet review, date filters, rule evidence, hotel research and flagged items, open the
+<a href="2026/">DSE IV 2026 planner</a>. That section is the current event-specific research surface; this dashboard retains the broader multi-venue index.</div>
 <div class="cards">
   <div class="card"><div class="k">Sheet silent on re-entry</div><div class="v">{len(singles)}</div>
     <div class="s">sheet read; no re-entry/rebuy/add-on mechanism</div></div>
