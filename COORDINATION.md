@@ -533,3 +533,12 @@ Publication record for PR #34 (2026-11-16):
 - Removed only `.github/workflows/pages.yml` so the configured, successful canonical publisher is the single deployment path. No site content, data, or Pages source settings were changed. Validate the post-merge `pages build and deployment` and site verification runs before marking this claim complete.
 
 - Cleanup integration: PR [#46](https://github.com/karagemop466-tech/Poker2/pull/46) merged at `8acae0c449a17b67fa8b75d2b881304e018d26d1`. Both verification jobs passed in PR and after merge. With the duplicate workflow removed, the canonical Pages build and deployment [run 43989177852](https://github.com/karagemop466-tech/Poker2/actions/runs/43989177852) succeeded; root verification [43989178134](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178134) and plan verification [43989178065](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178065) also passed. Pages API reports `built` for commit `8acae0c`; live site https://karagemop466-tech.github.io/Poker2/. The duplicate artifact failure no longer recurs because its publisher was removed.
+## Session arena/8b1f0fd8-poker2 — claims and record (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Read every remaining Venetian DSE IV structure sheet (27 of 37 were unread on main); record the sheet's own text for buy-in, guarantee, fee, starting chips, level length, late-registration, and re-entry / add-on / flight wording | in progress | arena/8b1f0fd8-poker2 | `scripts/build-events.py` (SHEETS block), `site-data/events.json` |
+| T2 Remove the "unverified" label only from events whose official schedule row and structure sheet agree (name, guarantee, start); keep the single-entry status as the sheet states it | in progress | arena/8b1f0fd8-poker2 | `site-data/events.json`, `site-data/flags.json` |
+| T3 Repair unresolved merge-conflict markers left in `README.md` on main (irregularity IR-README) | in progress | arena/8b1f0fd8-poker2 | `README.md` |
+| T4 Rebuild generated pages from the updated dataset; run the repo's own checks (audit, build, link check, plan check) | pending | arena/8b1f0fd8-poker2 | generated pages under `plan/`, `venues/` |
+| T5 Hotel live-rate lookup, Google/Apple walking routes, and scheduled daily schedule scrape | not started by this session — blocked, see record | — | — |
