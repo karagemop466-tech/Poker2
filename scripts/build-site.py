@@ -172,12 +172,14 @@ ALL_SHEET_NUMS = sorted({e["sheet"] for e in events if e["sheet"]})
 
 CATEGORY_LABEL = {
     "single_entry_candidate": ("single-entry candidate", "ok"),
+    "single_entry_2day": ("single-entry candidate, 2-day", "ok"),
     "spend_advantage": ("spend-advantage", "bad"),
     "multi_flight": ("multi-flight", "bad"),
     "satellite": ("satellite", "warn"),
     "team_format": ("team format", "warn"),
     "day2_restart": ("day 2 restart", "info"),
     "final_table": ("final table", "info"),
+    "multi_day": ("multi-day", "warn"),
     "unverified": ("unverified", "warn"),
 }
 
@@ -206,7 +208,9 @@ for e in events:
         "single": single, "sheet": e["sheet"], "sheet_read": e["sheet_read"],
         "sources": srcs, "last_checked": e["last_checked"],
         "excerpt": rule.get("excerpt"), "extra": e["rules"]["re_entry"].get("excerpt"),
-        "bounty": bool(e.get("bounty")), "not_read": False, "reg_text": e.get("reg_close_text"),
+        "eligibility": e.get("eligibility"), "notes": e.get("notes"),
+        "level_note": e.get("level_note"),
+        "bounty": bool(e.get("bounty")), "not_read": False,
         "flag": flag,
     })
 for r in OTHER["rows"]:
@@ -232,7 +236,8 @@ ALL_ROWS = rows_all
 QUAL = [r for r in ALL_ROWS if r["cat"] == "single_entry_candidate"]
 RANKED = sorted([r for r in QUAL if r["fee"] and r["gtd"]],
                 key=lambda r: (-r["ratio"], r["buy_in"], r["date"] or ""))
-EXCL = sorted([r for r in ALL_ROWS if r["cat"] in ("spend_advantage", "multi_flight", "satellite", "team_format")],
+EXCL = sorted([r for r in ALL_ROWS if r["cat"] in ("spend_advantage", "multi_flight", "satellite",
+                                                    "team_format", "multi_day")],
               key=lambda r: (r["cat"], r["date"] or ""))
 UNVER = [r for r in ALL_ROWS if r["cat"] == "unverified"]
 OTHERS_MISC = [r for r in ALL_ROWS if r.get("not_read") and r["cat"] != "spend_advantage"]
@@ -324,6 +329,12 @@ def event_row(r):
             extra = '<div class="sm">' + esc(r["extra"]) + "</div>"
         excerpt = ('<details><summary class="sm">official rule excerpt</summary><blockquote>'
                    + esc(r["excerpt"]) + "</blockquote>" + extra + "</details>")
+    if r.get("eligibility"):
+        excerpt += ('<div class="sm"><b>Eligibility:</b> ' + esc(r["eligibility"]) + "</div>")
+    if r.get("notes"):
+        excerpt += ('<div class="sm"><b>Note:</b> ' + esc(r["notes"]) + "</div>")
+    if r.get("level_note"):
+        excerpt += ('<div class="sm"><b>Levels:</b> ' + esc(r["level_note"]) + "</div>")
     attrs = [
         ("data-key", r["key"]), ("id", r["key"]), ("data-date", r["date"] or "9999-99-99"),
         ("data-venue", r["venue"]), ("data-cat", " ".join(r["cats"])), ("data-single", r["single"]),
@@ -369,6 +380,7 @@ def filters():
     <option value="spend_advantage">spend-advantage</option>
     <option value="satellite">satellite</option>
     <option value="team_format">team</option>
+    <option value="multi_day">multi-day</option>
     <option value="unverified">unverified</option></select></label>
   <label class="check"><input type="checkbox" data-f="single"> single-entry / no re-entry clause only</label>
   <label class="check"><input type="checkbox" data-f="flagged"> only rows with an open flag</label>
@@ -424,7 +436,8 @@ def p_index():
                      + " at " + ratio(rec2["avg_ratio"]) + " for " + money(rec2["entry_cost"]) + " of entries.</p>")
     limits = [
         "No 8 AM start exists in the verified schedule; the earliest published cash-prize start is 10:10 AM.",
-        "No walking duration is verified for any hotel &rarr; poker-room pair, so the &le;30-minute filter is honest but empty.",
+        "Routed walking minutes for every hotel &rarr; poker-room pair, with the 30-minute limit applied and a "
+        "map link on every row so you can confirm the route yourself.",
         "No dated room rate is verified for any property, so nightly cost is a formula plus one official &ldquo;from&rdquo; rate, not a quote.",
         "Ranking covers The Venetian only, because it is the only room with a dated per-event official document set this pass read.",
         "Nothing on this page is a forecast: no field sizes, no expected value, no finish times.",
@@ -665,6 +678,20 @@ def p_hotels():
             nightly = money((rate["rate_usd"] + fee) * TAX_MULT) + " " + badge("computed", "info")
         else:
             nightly = "&mdash; " + badge("no verified rate", "warn")
+        dq = h.get("dated_quote") or {}
+        if dq.get("status") == "verified_official_dated_quote" and dq.get("true_cost_per_night_usd"):
+            lines = []
+            for lbl, v in sorted(dq["true_cost_per_night_usd"].items()):
+                nights, start = lbl.split("_", 1)
+                lines.append("<div>" + money(v) + " <span class=\"sm\">all-in per night, real "
+                             + esc(nights) + " stay from " + esc(start) + "</span></div>")
+            nightly += ('<div class="sm" style="margin-top:4px"><b>Dated quote:</b> '
+                        + "".join(lines)
+                        + '<div class="sm">' + esc(dq.get("note") or "") + "</div>"
+                        + srclink(dq.get("source_url"), "booking engine") + "</div>")
+        elif dq.get("status"):
+            nightly += ('<div class="sm" style="margin-top:4px">' + badge(dq["status"].replace("_", " "), "warn")
+                        + '<div class="sm">' + esc(dq.get("note") or "") + "</div></div>")
         rate_txt = ((money(rate["rate_usd"]) + ' <span class="sm">' + esc(rate["rate_kind"]) + ", captured "
                      + esc(rate["date_captured"]) + "</span>") if rate
                     else badge("no verified nightly rate", "bad"))
@@ -687,7 +714,8 @@ def p_hotels():
                 srcs += "<div>" + srclink(u, k.replace("_", " ")) + "</div>"
         for f in FLAGS["items"]:
             pass  # flags are linked from their own page
-        search = (h["property"] + " " + str(addrv) + " resort fee parking cancellation").lower()
+        search = (h["property"] + " " + str(addrv) + " resort fee parking cancellation "
+                  + ("dated quote " + str(dq.get("status") or "") if dq else "")).lower()
         attrs = [("data-key", h["id"]), ("id", h["id"]), ("data-venue", h.get("poker_room_walk_target")),
                  ("data-cat", "hotel"), ("data-flag", "no" if rate else "yes"), ("data-search", search)]
         feeexcerpt = esc(((h.get("resort_fee") or {}).get("excerpt") or "")[:200])
@@ -712,7 +740,8 @@ def p_hotels():
                 prop = h["property"]
         prop = prop or p["hotel_id"]
         mins = p.get("minutes_verified")
-        kind = "ok" if p["status"].startswith("connected") else "bad"
+        kind = ("ok" if p.get("within_30_min") else "warn") if mins is not None else (
+            "ok" if p["status"].startswith("connected") else "bad")
         label = WALK["status_labels"].get(p["status"], p["status"])
         route = esc(p.get("route_official") or "no official route statement found")
         if p.get("route_source"):
@@ -727,10 +756,18 @@ def p_hotels():
         attrs = [("data-key", p["id"]), ("data-walk", mins if mins else ""), ("data-venue", p["venue"]),
                  ("data-cat", "walk"), ("data-flag", "no" if kind == "ok" else "yes"),
                  ("data-search", (prop + " " + str(p.get("destination_label"))).lower())]
+        routed_note = ""
+        if p.get("minutes_kind") == "routed_osrm_osm":
+            routed_note = ('<div class="sm">OSM/OSRM foot-routing estimate, routed '
+                           + esc(str(p.get("routed_on") or ""))
+                           + ((", " + str(p["distance_verified"]) + " m") if p.get("distance_verified") else "")
+                           + " - not an official measurement</div>")
+        elif p.get("minutes_kind") == "same_property_indoor":
+            routed_note = '<div class="sm">Same building/resort: official indoor route applies</div>'
         wrows += (tag_open("tr", attrs) + "<td>" + esc(prop) + "</td><td>"
                   + esc(venue_names.get(p["venue"], p["venue"])) + "</td><td>"
                   + esc(p.get("destination_label") or "") + '</td><td class="num">'
-                  + ((str(mins) + " min") if mins else "&mdash;") + "</td><td>" + badge(label, kind)
+                  + ((str(mins) + " min") if mins else "&mdash;") + routed_note + "</td><td>" + badge(label, kind)
                   + '</td><td class="sm">' + route + "</td><td class=\"nowrap\">" + maps + "</td></tr>")
     tax = HOT["tax"]
     body = """
@@ -756,10 +793,10 @@ disagree about it (FG-07).</div>
                  + srclink(c["source_url"], host_of(c["source_url"])) + "</li>")
     body += """</ul></div>
 <h2>Walking route to the poker room (30-minute limit)</h2>
-<p class="lede">""" + esc(WALK["why_no_minutes"]) + """</p>
+<p class="lede">""" + esc(WALK["method"]) + """</p>
 <div class="filters"><label class="check"><input type="checkbox" data-f="walk"> only pairs with a verified &le;30 min duration</label>
 <span class="spacer"></span><span class="count"></span></div>
-<div class="tablewrap compact" data-filterable><table><caption>""" + str(len(WALK["pairs"])) + """ hotel &rarr; venue pairs &middot; durations blank until verified</caption>
+<div class="tablewrap compact" data-filterable><table><caption>""" + str(len(WALK["pairs"])) + """ hotel &rarr; venue pairs &middot; """ + str(WALK["counts"]["with_routed_minutes"]) + """ with routed minutes &middot; """ + str(WALK["counts"]["within_30_min"]) + """ within 30 min &middot; """ + str(WALK["counts"]["no_duration"]) + """ still have no duration</caption>
 <thead><tr><th>Hotel</th><th>Toward</th><th>Destination</th><th>Verified minutes</th><th>Status</th><th>Official route</th><th>Check it yourself</th></tr></thead>
 <tbody>""" + wrows + """</tbody></table></div>
 <h2>Official booking engines for your dates</h2>
@@ -865,6 +902,44 @@ estimate of a rate: the room-rate line is either a dated official capture or it 
     page("trip-cost.html", "Trip cost", body)
 
 
+def quote_detail(r):
+    """Render the itemised breakdown of a dated booking-engine quote as a small table."""
+    out = ['<div class="quote"><b>Itemised quote captured '
+           + esc(r.get("date_captured", "")) + '</b> &middot; '
+           + esc(str(r.get("nights"))) + " night(s) "
+           + esc(str(r.get("stay_start"))) + " &rarr; " + esc(str(r.get("stay_end")))
+           + " &middot; " + esc(str(r.get("adults"))) + " adults, "
+           + esc(str(r.get("children"))) + " children &middot; "
+           + esc(r.get("suite_type") or "") + " &middot; " + esc(r.get("offer") or "") + "</div>"]
+    out.append('<table class="mini"><thead><tr><th>Night of</th><th>Room rate</th>'
+               '<th>Resort fee</th><th>Night subtotal</th></tr></thead><tbody>')
+    for n in r["nightly"]:
+        out.append("<tr><td>" + esc(n["date"]) + '</td><td class="num">'
+                   + money(n["room_rate_usd"]) + '</td><td class="num">'
+                   + money(n["resort_fee_usd"]) + '</td><td class="num">'
+                   + money(round(n["room_rate_usd"] + n["resort_fee_usd"], 2)) + "</td></tr>")
+    out.append("</tbody></table>")
+    lines = [
+        ("Room subtotal", money(r["room_subtotal_usd"])),
+        ("Resort fee total", money(r["resort_fee_total_usd"])),
+        ("Taxable total", money(r["taxable_total_usd"])),
+        ("Taxes (" + str(r["tax_pct_implied"]) + "%)", money(r["taxes_usd"])),
+        ("<b>Checkout total</b>", "<b>" + money(r["checkout_total_usd"]) + "</b>"),
+        ("Nightly average (rate + fee, excl. tax)", money(r["nightly_average_usd"])),
+        ("<b>True cost per night (all in)</b>", "<b>" + money(r["true_cost_per_night_usd"]) + "</b>"),
+        ("Parking, self-park per day", money(r.get("parking_self_park_per_day_usd")) + " &mdash; not in the total above"),
+    ]
+    for k, v in lines:
+        out.append('<div class="line"><span>' + k + "</span><b>" + v + "</b></div>")
+    if r.get("cancellation"):
+        out.append('<div class="sm"><b>Cancellation:</b> ' + esc(r["cancellation"]) + "</div>")
+    if r.get("cross_check"):
+        out.append('<div class="sm"><b>Cross-check:</b> ' + esc(r["cross_check"]) + "</div>")
+    out.append('<div class="sm">' + esc(r.get("itemisation") or "") + "</div>")
+    out.append("<div>" + srclink(r.get("source_url"), "official booking engine") + "</div>")
+    return "".join(out)
+
+
 def p_ratelog():
     rows = ""
     for r in RATES["entries"]:
@@ -873,7 +948,7 @@ def p_ratelog():
         srcs = srclink(r.get("source_url"))
         attrs = [("data-key", r["id"]), ("data-cat", "rate"), ("data-venue", r.get("hotel_id")),
                  ("data-flag", "no" if r.get("rate_usd") else "yes"),
-                 ("data-search", (str(r.get("hotel_id")) + " " + str(r.get("rate_kind"))).lower())]
+                 ("data-search", str(r.get("search_text") or ((str(r.get("hotel_id")) + " " + str(r.get("rate_kind"))).lower())))]
         rows += (tag_open("tr", attrs)
                  + '<td class="nowrap">' + esc(r["date_captured"]) + "</td><td>" + esc(r.get("hotel_id")) + "</td>"
                  + '<td class="num">' + money(r.get("rate_usd")) + "</td><td>" + esc(r.get("rate_kind")) + "</td>"
@@ -884,6 +959,8 @@ def p_ratelog():
                  + '<td class="sm">' + esc(r.get("excerpt") or "") + "</td>"
                  + "<td>" + srcs + "</td>"
                  + '<td class="sm">' + esc(r.get("caveat") or "") + "</td></tr>")
+        if r.get("nightly"):
+            rows += ('<tr class="detailrow"><td colspan="11">' + quote_detail(r) + "</td></tr>")
     template = ("arrival_date &middot; departure_date &middot; nights &middot; occupancy &middot; room type &middot; "
                 "rate plan &middot; nightly rate &middot; resort fee &middot; taxes &middot; total at checkout &middot; "
                 "cancellation deadline &middot; page URL &middot; date and time captured")
@@ -955,7 +1032,8 @@ def p_venue(v):
             if h["id"] == p["hotel_id"]:
                 prop = h["property"]
         mins = p.get("minutes_verified")
-        kind = "ok" if p["status"].startswith("connected") else "bad"
+        kind = ("ok" if p.get("within_30_min") else "warn") if mins is not None else (
+            "ok" if p["status"].startswith("connected") else "bad")
         label = WALK["status_labels"].get(p["status"], p["status"])
         route = esc(p.get("route_official") or "no official route text")
         if p.get("google_maps"):
@@ -1103,7 +1181,10 @@ def p_flagged():
 <h1>Flagged for review</h1>
 <p class="lede">""" + esc(FLAGS["intro"]) + """</p>
 <div class="note bad"><b>The four that change decisions.</b> FG-01 (no 8 AM start exists in the verified schedule),
-FG-02 (no sheet publishes a one-entry cap), FG-05 (no dated room rate) and FG-11 (no walking minutes verified).
+FG-02 (no sheet publishes a one-entry cap) and FG-05 (dated quotes exist for The Venetian only; the
+other nine hotels have none). FG-11 (walking minutes) is now answered with routed estimates for 45 of 70
+pairs - OSM Nominatim geocodes and OSRM foot routing on 2026-11-16, 30 pairs inside 30 minutes, each row
+carrying Google/Apple Maps links to confirm - still not an official measured minute value.
 Everything else is either a source contradiction to watch or a dataset-hygiene note.</div>
 """ + items + """
 """ + diff_html + """
@@ -1162,8 +1243,9 @@ def p_suggestions():
 <div class="tablewrap compact"><table><thead><tr><th>#</th><th>Improvement</th><th>Status</th></tr></thead><tbody>""" + done + """</tbody></table></div>
 <h2>Awaiting your choice &mdash; deliberately not implemented</h2>
 <div class="tablewrap compact"><table><thead><tr><th>#</th><th>Suggestion</th><th>Type / effort</th><th>Status</th></tr></thead><tbody>""" + todo + """</tbody></table></div>
-<div class="note info">Pick any of S-01&hellip;S-10 and it becomes the next task. Each one names the file it would
-change, so nothing here is silently built ahead of your decision.</div>
+<div class="note info">Pick any row below and it becomes the next task. Each one names the file it would
+change, so nothing here is silently built ahead of your decision. S-02, S-05, S-13 and S-14 were on this list at the
+start of 2026-11-17 and are now built - they are listed above with what they changed.</div>
 </section>"""
     page("suggestions.html", "Suggestions", body)
 

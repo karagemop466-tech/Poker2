@@ -6449,7 +6449,7 @@
    "notes": "Official 2026 poker-suite-rate page (re-read 2026-11-17) prints ONE pair of starting rates \u2014 'as low as $119 and $209' \u2014 for a Luxury King Suite 'in either The Venetian or The Palazzo' and states play requirements ($300+ tournament buy-in, or six hours of live cash, per night stayed). It does not say which property carries which number, so no rate is attributed to this hotel; both numbers are recorded once, in rate_log_shared below. A dated checkout quote for exact trip dates has NOT been captured.",
    "walk": {
     "venetian_min": 5,
-    "wynn_min": null,
+    "wynn_min": 18.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6459,7 +6459,8 @@
     "venetian_distance": "0.1 mile",
     "within_30_to_venetian": true,
     "status_to_venetian": "5 min walk (0.1 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "19 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
     "osrm_venetian_min": 0.0,
     "routers_agree_30min": true
    }
@@ -6484,7 +6485,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 4,
-    "wynn_min": null,
+    "wynn_min": 16.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3325+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6494,7 +6495,8 @@
     "venetian_distance": "443 ft",
     "within_30_to_venetian": true,
     "status_to_venetian": "4 min walk (443 ft) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "17 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
     "osrm_venetian_min": 6.0,
     "routers_agree_30min": true
    }
@@ -6519,7 +6521,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 12,
-    "wynn_min": null,
+    "wynn_min": 8.8,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3131+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6529,7 +6531,8 @@
     "venetian_distance": "0.5 mile",
     "within_30_to_venetian": true,
     "status_to_venetian": "12 min walk (0.5 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": true,
+    "status_to_wynn": "9 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
     "osrm_venetian_min": 13.0,
     "routers_agree_30min": true
    }
@@ -6554,7 +6557,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 37,
-    "wynn_min": null,
+    "wynn_min": 46.4,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3730+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6564,8 +6567,10 @@
     "venetian_distance": "1.6 miles",
     "within_30_to_venetian": false,
     "status_to_venetian": "37 min walk (1.6 miles) to The Venetian Poker Room \u2014 outside the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
-    "osrm_venetian_min": null
+    "within_30_to_wynn": false,
+    "status_to_wynn": "46 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 30.6,
+    "routers_agree_30min": true
    }
   },
   {
@@ -6588,7 +6593,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 28,
-    "wynn_min": null,
+    "wynn_min": 41.5,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3600+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6598,7 +6603,8 @@
     "venetian_distance": "1.1 miles",
     "within_30_to_venetian": true,
     "status_to_venetian": "28 min walk (1.1 miles) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "42 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
     "osrm_venetian_min": 27.6,
     "routers_agree_30min": true
    }
@@ -6623,7 +6629,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 42,
-    "wynn_min": null,
+    "wynn_min": 53.2,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3799+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6633,7 +6639,8 @@
     "venetian_distance": "1.8 miles",
     "within_30_to_venetian": false,
     "status_to_venetian": "42 min walk (1.8 miles) to The Venetian Poker Room \u2014 outside the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "53 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
     "osrm_venetian_min": 36.5,
     "routers_agree_30min": true
    }
@@ -6658,7 +6665,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 24,
-    "wynn_min": null,
+    "wynn_min": 36.3,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3645+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6668,7 +6675,8 @@
     "venetian_distance": "1.0 mile",
     "within_30_to_venetian": true,
     "status_to_venetian": "24 min walk (1.0 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": false,
+    "status_to_wynn": "36 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
     "osrm_venetian_min": 20.5,
     "routers_agree_30min": true
    }
@@ -6693,7 +6701,7 @@
    "quality": "",
    "walk": {
     "venetian_min": 19,
-    "wynn_min": null,
+    "wynn_min": 35.3,
     "status": "UNVERIFIED \u2014 no official walking-time source captured; use the maps links for manual check (30-minute limit)",
     "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+Poker+Room%2C+3355+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
     "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=3570+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=Wynn+Las+Vegas+Poker+Room%2C+3131+S+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV&travelmode=walking",
@@ -6703,8 +6711,10 @@
     "venetian_distance": "0.8 mile",
     "within_30_to_venetian": true,
     "status_to_venetian": "19 min walk (0.8 mile) to The Venetian Poker Room \u2014 within the 30-minute limit",
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
-    "osrm_venetian_min": null
+    "within_30_to_wynn": false,
+    "status_to_wynn": "35 min routed estimate to the Wynn poker room \u2014 outside the 30-minute limit; single router",
+    "osrm_venetian_min": 19.5,
+    "routers_agree_30min": true
    },
    "fee_range": {
     "text": "$45-$50 plus applicable tax",
@@ -6753,8 +6763,9 @@
     "venetian_min": null,
     "within_30_to_venetian": null,
     "status_to_venetian": "not read \u2014 open the maps link for a manual check",
-    "wynn_min": null,
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "wynn_min": 24.6,
+    "within_30_to_wynn": true,
+    "status_to_wynn": "25 min routed estimate to the Wynn poker room \u2014 within the 30-minute limit; single router",
     "osrm_venetian_min": 39.4
    }
   },
@@ -6792,7 +6803,8 @@
     "within_30_to_venetian": null,
     "status_to_venetian": "not read \u2014 open the maps link for a manual check",
     "wynn_min": null,
-    "status_to_wynn": "not read \u2014 open the maps link for a manual check",
+    "within_30_to_wynn": null,
+    "status_to_wynn": "not routed \u2014 open the maps link for a manual check",
     "osrm_venetian_min": null
    }
   }
@@ -6839,10 +6851,10 @@
   {
    "id": "Q04",
    "question": "Is each hotel within a 30-minute walk of the tournament venue?",
-   "status": "Answered for the Venetian side, open for Wynn",
-   "answer": "No casino publishes a walk time, so routing services were used and labelled as third-party estimates. Google Maps walking directions (read 2026-11-17) put Wynn at 12 min, The Palazzo 4 min, The Venetian 5 min, Horseshoe 24 min and Caesars Palace 19 min from The Venetian Poker Room \u2014 all inside the 30-minute limit \u2014 while Bellagio is 28 min (inside, but barely), and ARIA 37 min and MGM Grand 42 min are outside it. An independent OSRM foot matrix computed from geocoded official addresses agrees with every one of those 30-minute verdicts. Trips to the Wynn poker room have not been read.",
-   "needed": "Walking routes to the Wynn poker room, and an in-person check of the Bellagio and Horseshoe timings.",
-   "how_to_find": "Open the prefilled maps link in each hotel row, read the walking time, and log it with the date.",
+   "status": "Answered as far as routing services allow",
+   "answer": "No casino publishes a walk time, so routing services were used and labelled as such. Google Maps walking directions (read 2026-11-17) and an independent OSRM foot matrix agree on every 30-minute verdict for The Venetian Poker Room: Palazzo 4-6 min, Venetian 5 min, Wynn 12-13 min, Caesars Palace 19-20 min, Horseshoe 21-24 min and Bellagio 28 min are inside the limit; MGM Grand (37-42 min) and ARIA (31-37 min) are outside it. The Wynn poker room is covered by the OSRM matrix alone: Wynn, Encore, Resorts World, Venetian, Palazzo, Westgate, Harrah's, LINQ and Flamingo are inside; Horseshoe, Caesars Palace, Bellagio and everything south of them are outside.",
+   "needed": "A second router on the Wynn side, and an in-person check of the two tight calls: Bellagio to the Venetian (28-30 min depending on router) and ARIA to the Venetian (30.6 min by OSRM, 37 min by Google \u2014 the only pair where the two routers land on opposite sides of the limit).",
+   "how_to_find": "Walk the two tight pairs once and record the time; or read a second routing service for the Wynn side.",
    "sources": [
     "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas&destination=The+Venetian+Poker+Room&travelmode=walking",
     "https://www.venetianlasvegas.com/resort/casino/poker.html"
@@ -7009,7 +7021,7 @@
    "tradeoff": "A and B are verifiable; C is an estimate and conflicts with the 'never infer' rule.",
    "status": "Implemented",
    "recommendation": "Option A, and it is what the site now does",
-   "implemented_as": "Google Maps walking directions were read 2026-11-17 for eight hotels' trips to The Venetian Poker Room, and every figure was checked against a second, independent router: the OSRM foot-profile matrix already in data/site/walking.json. The two agree on all six 30-minute verdicts they share, so none of the filter's calls rests on a single map. Each row states the date read and links the live route, so it can be re-checked by hand. Wynn-side routes are still unread and stay blank."
+   "implemented_as": "Google Maps walking directions were read 2026-11-17 for eight hotels' trips to The Venetian Poker Room, and every figure was checked against a second, independent router: the OSRM foot-profile matrix built 2026-11-16 from geocoded official addresses. The two agree on the 30-minute verdict for every pair they share. The Wynn side is covered by the OSRM matrix alone and is labelled 'single router'. Each row states the date read, the router count and a live route link, so any figure can be re-checked by hand."
   },
   {
    "id": "S07",

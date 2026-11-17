@@ -100,12 +100,23 @@
     function ratesFor(hid) {
       return (D.rates.entries || []).filter(function (r) { return r.hotel_id === hid && r.rate_usd; });
     }
+    // A dated quote (it carries a per-night breakdown from the booking engine) is the strongest
+    // evidence there is, so it is listed first and labelled as a quote. A "from" rate is a
+    // published floor and is labelled as one - see flag FG-05.
+    function isQuote(r) { return !!(r && r.nightly && r.nightly.length); }
+    function rateLabel(r) {
+      var kind = r.rate_kind || 'rate';
+      var when = r.applies_to_dates ? (' · ' + r.applies_to_dates) : '';
+      return '<option value="' + r.id + '">$' + r.rate_usd + ' · '
+        + (isQuote(r) ? 'DATED QUOTE' : 'published floor') + ' · ' + kind + when
+        + ' (captured ' + r.date_captured + ')</option>';
+    }
     function fillRates() {
-      var list = ratesFor(hotelSel.value);
+      var list = ratesFor(hotelSel.value).slice().sort(function (a, b) {
+        return (isQuote(b) ? 1 : 0) - (isQuote(a) ? 1 : 0);
+      });
       rateSel.innerHTML = list.length
-        ? list.map(function (r) {
-          return '<option value="' + r.id + '">$' + r.rate_usd + ' · ' + r.rate_kind + ' (captured ' + r.date_captured + ')</option>';
-        }).join('')
+        ? list.map(rateLabel).join('')
         : '<option value="">no verified nightly rate for this property</option>';
       rateSel.disabled = !list.length;
     }
@@ -147,7 +158,9 @@
       var total = entries + lodging + parking;
 
       var warn = [];
-      if (!r) warn.push('No verified nightly rate exists for ' + h.property + ', so lodging contributes only fees and tax here. Capture the itemised checkout total (suggestion S-05) to make this a real trip cost.');
+      if (!r) warn.push('No verified nightly rate exists for ' + h.property + ', so lodging contributes only fees and tax here. Capture the itemised checkout total to make this a real trip cost.');
+      if (r && !isQuote(r)) warn.push('$' + r.rate_usd + ' is a published floor, not your quote (FG-05). The Venetian dated quotes captured 2026-11-17 came out at $568.54–$761.75 per night before tax for the same property — pick one of the dated-quote rows above to see what a real stay costs.');
+      if (r && isQuote(r) && r.tax_pct_implied) warn.push('This quote implies ' + r.tax_pct_implied + '% tax, computed from its own tax line (not from the county notice) — the two agree to four decimal places.');
       if (!feeKnown) warn.push('This property’s resort fee is not read from an official page yet, so it is excluded from the nightly cost rather than guessed.');
       var unread = ids.filter(function (id) { return byId[id] && !byId[id].sheet_read; });
       if (unread.length) warn.push(unread.length + ' chosen event(s) have no read structure sheet: fee treatment, stack, levels and entry limits are unverified.');
@@ -159,7 +172,8 @@
 
       out.innerHTML =
         '<div class="line"><span>Entries (' + ids.length + ')</span><b>' + money(entries) + '</b></div>' + lines +
-        '<div class="line"><span>Room rate per night ' + (r ? '<span class="badge b-ok">official from-rate</span>' : '<span class="badge b-bad">not verified</span>') + '</span><b>' + (r ? money(r.rate_usd) : '—') + '</b></div>' +
+        '<div class="line"><span>Room rate per night ' + (r ? (isQuote(r) ? '<span class="badge b-ok">dated official quote</span>' : '<span class="badge b-warn">published floor, not a quote</span>') : '<span class="badge b-bad">not verified</span>') + '</span><b>' + (r ? money(r.rate_usd) : '—') + '</b></div>' +
+        (r && isQuote(r) && r.checkout_total_usd ? '<div class="line"><span>Cross-check — what the engine actually charged</span><b>' + money(r.checkout_total_usd) + ' over ' + r.nights + ' night(s)</b></div>' : '') +
         '<div class="line"><span>Resort fee per night ' + (feeKnown ? '<span class="badge b-ok">official</span>' : '<span class="badge b-warn">not read</span>') + '</span><b>' + (feeKnown ? money(fee) : '—') + '</b></div>' +
         (extraGuests ? '<div class="line"><span>Extra occupants (' + extraGuests + ' × ' + money(extraPer) + ')</span><b>' + money(extraPer * extraGuests) + '</b></div>' : '') +
         '<div class="line"><span>Room tax at ' + (TAX * 100).toFixed(2) + '%</span><b>' + ((r || feeKnown) ? money(taxEach) : '—') + '</b></div>' +

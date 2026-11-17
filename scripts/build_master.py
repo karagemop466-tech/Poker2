@@ -1102,12 +1102,25 @@ for ev in events:
     else:
         ev["last_checked"] = ev.get("last_checked") or AS_OF
 
-# ---------------------------------------------------------------------------
-# The Venetian publishes one pair of poker starting rates for "either The Venetian
-# or The Palazzo" without saying which number belongs to which property. Record the
-# pair once, attributed to the document, instead of guessing a mapping per hotel.
-# ---------------------------------------------------------------------------
-# Fill the walking field from the routes actually read (see WALK_TO_VENETIAN).
+_osrm, _osrm_wynn = {}, {}
+try:
+    _wk = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                                      "data", "site", "walking.json"), encoding="utf-8"))
+    _osrm, _osrm_wynn = {}, {}
+    for _r in _wk["rows"]:
+        if _r.get("venue_id") == "V-VEN":
+            _osrm[_r["hotel_id"]] = _r["walk_min"]
+        elif _r.get("venue_id") == "V-WYN":
+            _osrm_wynn[_r["hotel_id"]] = _r["walk_min"]
+    # the /plan/ dataset uses shorter hotel ids for two hotels
+    for _a, _b in (("H-ARI", "H-ARIA"), ("H-CP", "H-CZP")):
+        if _a in _osrm:
+            _osrm[_b] = _osrm[_a]
+        if _a in _osrm_wynn:
+            _osrm_wynn[_b] = _osrm_wynn[_a]
+except (OSError, KeyError, ValueError) as _exc:   # matrix missing: rows stay blank
+    master["walking_matrix_error"] = str(_exc)
+
 for h in hotels:
     w = h.get("walk") or {}
     got = WALK_TO_VENETIAN.get(h["id"])
@@ -1125,24 +1138,43 @@ for h in hotels:
         w["venetian_min"] = None
         w["within_30_to_venetian"] = None
         w["status_to_venetian"] = "not read \u2014 open the maps link for a manual check"
-    # Wynn walking routes were NOT read; keep it explicit rather than guessing
-    w["wynn_min"] = None
-    w["status_to_wynn"] = "not read \u2014 open the maps link for a manual check"
+    # Wynn-side: the OSRM matrix covers every hotel, so publish it as a single-router
+    # estimate and say so. No second router was read on this side, so the row is not
+    # presented as cross-checked.
+    _wo = _osrm_wynn.get(h["id"])
+    if _wo is not None:
+        w["wynn_min"] = _wo
+        w["within_30_to_wynn"] = _wo <= 30
+        w["status_to_wynn"] = ("%.0f min routed estimate to the Wynn poker room \u2014 %s the 30-minute limit; single router"
+                               % (_wo, "within" if _wo <= 30 else "outside"))
+    else:
+        w["wynn_min"] = None
+        w["within_30_to_wynn"] = None
+        w["status_to_wynn"] = "not routed \u2014 open the maps link for a manual check"
     h["walk"] = w
 
 # Independent cross-check: data/site/walking.json holds an OSRM foot-routing matrix built
 # 2026-11-16 from geocoded official addresses. Compare it with the Google figures above and
 # publish both, so the 30-minute call rests on two unrelated routers.
+_osrm, _osrm_wynn = {}, {}
 try:
     _wk = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
                                       "data", "site", "walking.json"), encoding="utf-8"))
-    _osrm = {}
+    _osrm, _osrm_wynn = {}, {}
     for _r in _wk["rows"]:
         if _r.get("venue_id") == "V-VEN":
             _osrm[_r["hotel_id"]] = _r["walk_min"]
+        elif _r.get("venue_id") == "V-WYN":
+            _osrm_wynn[_r["hotel_id"]] = _r["walk_min"]
+    # the /plan/ dataset uses shorter hotel ids for two hotels
+    for _a, _b in (("H-ARI", "H-ARIA"), ("H-CP", "H-CZP")):
+        if _a in _osrm:
+            _osrm[_b] = _osrm[_a]
+        if _a in _osrm_wynn:
+            _osrm_wynn[_b] = _osrm_wynn[_a]
     disagreements = []
     for h in hotels:
-        w = h["walk"]
+        w = h.setdefault("walk", {})
         o = _osrm.get(h["id"])
         w["osrm_venetian_min"] = o
         if o is not None and w.get("venetian_min") is not None:

@@ -32,6 +32,7 @@ jobs:
         run: |
           python3 scripts/build-events.py
           python3 scripts/build-schedule.py
+          python3 scripts/build-walk.py
           python3 scripts/build-site.py
       - name: Fail if the committed output differs
         run: |

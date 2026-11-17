@@ -1,246 +1,306 @@
 {
-  "as_of": "2026-11-16",
-  "intro": "Everything that could not be confirmed from an official source, plus every inconsistency found while reading one. Nothing here blocks the site; each item says what to do next. 'Unverified' is a state, not an estimate.",
-  "items": [
-    {
-      "id": "FG-01",
-      "area": "Scheduling",
-      "severity": "High",
-      "title": "No 8 AM start exists in the official Venetian series",
-      "detail": "The brief asks for a day that starts at 8 AM. Across all 94 published rows of DeepStack Extravaganza IV the earliest start is 09:10 (a satellite on Dec 12) and the earliest cash-prize start is 10:10 AM. The only 9 AM start found in any official Strip source is the recurring Horseshoe schedule; nothing published supports an 8 AM first event.",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-      "action": "Either move the day's start to 10:10 AM (Venetian) / 9:00 AM (Horseshoe) or add a morning cash session; do not plan a tournament that is not published.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-02",
-      "area": "Single-entry policy",
-      "severity": "High",
-      "title": "No Venetian structure sheet states a one-entry cap",
-      "detail": "All 37 official Venetian structure sheets were read in full (ten on 2026-11-16, twenty-seven on 2026-11-17). None of the one-day sheets contains a single-entry or 'no re-entry' clause; they state only a late-registration window. The multi-flight sheets say that a player who does not bag Day 2 chips may play another flight, so those events are not single-entry. The Valuetown sheet (events 18/58) is the counter-example: it prices 'subsequent buy in's' at $200, which shows the room does write additional-buy-in rules when they exist.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-      "action": "Get the answer in writing from the room (702.414.7657 / lv_cas_poker@venetianlasvegas.com) for the events you enter; the site keeps these rows as 'single-entry candidate', not 'confirmed'.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-03",
-      "area": "Coverage",
-      "severity": "Resolved",
-      "title": "All 37 structure sheets read (resolved 2026-11-17)",
-      "detail": "Previously 27 sheets were unread and 11 one-day rows were UNVERIFIED. All 37 sheets were read on 2026-11-17 and each row was checked against its sheet (start time, buy-in = fee + prize pool). The 11 rows are now confirmed against their sheet and carry fee, chips, level length, late-registration cutoff and guarantee. No row is confirmed single-entry: the sheets state no one-entry cap (FG-02).",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-      "action": "Nothing further for the Venetian sheets. Re-check changes via the daily source monitor.",
-      "status": "open task"
-    },
-    {
-      "id": "FG-04",
-      "area": "Other venues",
-      "severity": "High",
-      "title": "Wynn, Caesars, MGM, Bellagio and Golden Nugget rows are cited, not re-read",
-      "detail": "Their values come from official documents read by earlier sessions on 2026-11-16 (recorded in research/e3cb221d-official-follow-up.md and data/verified/). This pass did not re-fetch them; Wynn's daily poster PDF is known to have returned HTTP 500 once. They are therefore excluded from ranking and shown only in the spend-advantage / unverified tables.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/research/e3cb221d-official-follow-up.md",
-      "action": "Re-read on the next refresh (the monitor will tell you if any of those URLs changed).",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-04b",
-      "area": "Other venues",
-      "severity": "Medium",
-      "title": "The Caesars guide is a recurring-format article, not a dated calendar",
-      "detail": "It lists daily start times but no buy-ins, guarantees or entry limits for the Horseshoe schedule, and states the Caesars Palace $100 event has a $50 add-on for 15,000 chips at the first break.",
-      "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-      "action": "Treat the whole Caesars block as 'verify the day you travel'.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-05",
-      "area": "Hotel cost",
-      "severity": "High",
-      "title": "No dated room quote is available for any property",
-      "detail": "Every booking engine renders prices client-side, and this workspace blocks outbound requests to hotel hosts, so no rate could be captured for the actual stay dates. The Venetian also publishes poker rates only up to 150 days out.",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-      "action": "Fix the dates, capture the itemised checkout total from the booking flow, and add it to the rate log; the calculator then stops being scenario-based.",
-      "status": "blocked on you"
-    },
-    {
-      "id": "FG-05b",
-      "area": "Hotel cost",
-      "severity": "Low",
-      "title": "Which number belongs to which hotel: '119 and 209'",
-      "detail": "The official sentence is 'These rates will start as low as $119 and $209 and can be higher' for 'a Luxury King Suite in The Venetian or The Palazzo'. The order maps naturally to the order of naming but the page never says 'Venetian $119, Palazzo $209'.",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-      "action": "Confirm with reservations (866.255.8936, code EPOKR25) before using either number as a budget.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-06",
-      "area": "Hotel cost",
-      "severity": "Medium",
-      "title": "Venetian states its resort fee two different ways",
-      "detail": "Hotel Terms: '$55 plus applicable tax per night, payable upon check-in'. The 2026 poker suite-rate page: 'There is a $55 resort fee per night stayed' (no tax wording). The resort-fee page says 'Rates include a daily Resort Fee of $55 plus tax' per an earlier session.",
-      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-      "action": "The cost model taxes the fee (Park MGM's terms state lodging tax applies to 'any resort fee'), and the site labels that as an interpretation, not a quote.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-07",
-      "area": "Hotel cost",
-      "severity": "Medium",
-      "title": "Parking: two official statements, no reconciliation",
-      "detail": "Hotel terms: registered guests pay $20/day. Poker room page: 'Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more ... receive complimentary self-parking.' Whether a registered player's $20/day is also waived is not stated.",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-      "action": "Ask the poker desk; the trip calculator keeps parking as an optional line so the estimate is not inflated or deflated by the ambiguity.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-08",
-      "area": "Source hygiene",
-      "severity": "Low",
-      "title": "Venetian's 'Current Series' module is stale",
-      "detail": "The poker page and the series overview still present 'WPT Fall Festival, October 28 - November 15, 2026' as the current series while DSE IV (which began Nov 16) is shown as the next one. The dated schedule page itself is correct.",
-      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
-      "action": "Ignore the marketing module; use the dated schedule page. The monitor tracks this string so you see when it is fixed.",
-      "status": "noted"
-    },
-    {
-      "id": "FG-09",
-      "area": "Other venues",
-      "severity": "Medium",
-      "title": "Bellagio Saturday sheet contradicts itself on the buy-in",
-      "detail": "An earlier session recorded that the PDF heading says $1,100 while the file name says $1,000. Nothing is published here until the document is re-read.",
-      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
-      "action": "Re-read and reconcile; until then the row shows blanks.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-10",
-      "area": "Other venues",
-      "severity": "Medium",
-      "title": "MGM Grand schedule PDF has no year and disagrees with the web page on the start time",
-      "detail": "The PDF is titled 'August' with no year, and the Saturday event starts 11:10 AM in the PDF versus 11:00 AM on the page. Relevance to the Nov-Dec 2026 window is unproven.",
-      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
-      "action": "Do not build a day around this event until a dated schedule is published.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-11",
-      "area": "Walking",
-      "severity": "High",
-      "title": "Zero verified walking durations for every hotel-to-poker-room pair",
-      "detail": "Official sources describe routes (Venetian/Palazzo indoor directions; the Bellagio-Cosmopolitan-Vdara interior bridge) but publish no minute values, and no map-provider access exists in this environment. The 30-minute rule therefore cannot be applied to any pair yet; the filter shows 'unknown' rather than a pass.",
-      "source": "https://www.mgmresorts.com/en/things-to-do/parking.html",
-      "action": "Run the pair through Google/Apple Maps once (links are on the walking page) and record the minutes in site-data/walk.json - or approve suggestion S-06 to automate it.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-12",
-      "area": "Hotels",
-      "severity": "Medium",
-      "title": "Quality floor cannot be set from official sources",
-      "detail": "'Cost and quality of hotel are higher priority than distance' needs a quality measure. No hotel publishes a star tier on its own reservation pages, and third-party ratings (Forbes, AAA) are outside the official-source rule this repo follows.",
-      "source": "https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards",
-      "action": "Choose a rating source (suggestion S-04). Until then quality cells are blank and the ranking uses cost + fee certainty + walk status only.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-13",
-      "area": "Tax",
-      "severity": "Medium",
-      "title": "The 13.38% figure comes from a 2016 county notice",
-      "detail": "The county document adopting 13.38% (12.0% + 0.5% LVCVA + 0.88% stadium) is dated November 15, 2016, effective for lodging nights from January 2017. The Venetian's own current terms still say 13.38%, so the rate is corroborated, but the county PDF is old.",
-      "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
-      "action": "Re-confirm with the Clark County Department of Business License before any non-refundable payment.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-14",
-      "area": "Repo data",
-      "severity": "Medium",
-      "title": "Earlier datasets attributed structure-sheet values to the schedule page",
-      "detail": "data/tournaments.json carried reg_closes / chips / level on rows sourced only to the schedule page, and another session flagged them as not reproducible from that page. They are real values, but they come from the structure sheets (verified: '$90 of the $600 Buy-In... Late Registration: 10 levels + Break (~ 4:55 PM)', starting stack 40,000, 30-minute levels). The consolidated dataset attributes each value to its own document.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/data/tournaments.json",
-      "action": "Use site-data/events.json; the old files are kept for audit only.",
-      "status": "resolved by this pass"
-    },
-    {
-      "id": "FG-15",
-      "area": "Repo data",
-      "severity": "Medium",
-      "title": "Earlier datasets called rows 'verified single-entry' on silence alone",
-      "detail": "data/venetian-dse4-official-check.json lists 47 rows as single_entry and data/verified/tournaments.json lists 32, each justified by 'sheet read: no re-entry or add-on clause'. Under the 'never infer' rule that is a candidate state, not a confirmed one (see FG-02). Also, flighted events were counted as single-entry rows because each flight is a separate buy-in.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/data/venetian-dse4-official-check.json",
-      "action": "Superseded by the three-state classification in site-data/events.json.",
-      "status": "resolved by this pass"
-    },
-    {
-      "id": "FG-16",
-      "area": "Repo structure",
-      "severity": "Medium",
-      "title": "Three dashboards existed at once; consolidated into one",
-      "detail": "The root site, /docs/ (session acd81e67) and /verified/ (session a22d577b) each rendered their own tables from three different datasets, so the same event could appear with different labels on one site. This pass made the root site canonical and removed the two duplicate front-ends; all their data files remain in the repo.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
-      "action": "If you preferred the old /docs/ view, it is in git history at the merge of PR #7 and can be restored.",
-      "status": "done"
-    },
-    {
-      "id": "FG-17",
-      "area": "Automation",
-      "severity": "Low",
-      "title": "Change monitoring starts with no baseline hashes",
-      "detail": "The refresh job runs on GitHub's runners, which can reach the hotel sites; this sandbox cannot (outbound access is limited to GitHub, npm and PyPI), so snapshot hashes are written by the first scheduled run instead of being pre-seeded here. The extraction side is not left untested: `node scripts/check_sources.mjs --selftest` runs all 34 tracked patterns from site-data/sources.json against text containing the sentences they must match, and both plan-verify.yml and plan-refresh.yml run it before doing anything else, so a broken pattern fails loudly instead of reporting 'no change' forever.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/.github/workflows/daily-refresh.yml",
-      "action": "After the first run (06:30 UTC daily) the report page will show ok/changed/error per source.",
-      "status": "needs one scheduled run"
-    },
-    {
-      "id": "FG-18",
-      "area": "Hotel cost",
-      "severity": "Low",
-      "title": "Wynn's $55 fee text is written for specific room types",
-      "detail": "'This Resort Fee is only applicable to reservations for the following room types: Wynn Resort King and Wynn Resort Two Queens.' Other room types are not covered by the sentence read.",
-      "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
-      "action": "Check the fee line on your own reservation summary before comparing Wynn against Park MGM.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-19",
-      "area": "Site data",
-      "severity": "Low",
-      "title": "Buy-in convention for unread sheets",
-      "detail": "For every Venetian row whose sheet was read (all of them as of 2026-11-17), the buy-in is fee-inclusive: fee + prize pool equals the published buy-in, and the build fails if it does not. For the other-venue rows, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter shows the published buy-in with a caveat.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-      "action": "Reading the remaining sheets closes this.",
-      "status": "open task"
-    },
-    {
-      "id": "FG-20",
-      "area": "Coordination",
-      "severity": "Low",
-      "title": "Session branch naming does not follow the protocol",
-      "detail": "The protocol asks for branches named session-<id>/<task>; Arena fixes each session's branch (this one is arena/72ca3e9d-poker2). Recorded again because every prior session hit the same rule.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
-      "action": "None; naming deviation is environmental.",
-      "status": "noted"
-    },
-    {
-      "id": "FG-30",
-      "area": "Eligibility",
-      "severity": "Medium",
-      "title": "Age- and card-gated events sit inside the ranked table",
-      "detail": "Most Venetian rows are gated, not open to all. Per the sheets: 21+ with a Venetian Rewards card for sheets 19, 21–28, 30–37 (sheet 19 and 32 also require female); 50+ with a Rewards card for the Seniors sheets 17 and 20; sheet 31 requires a female/female or female/male team. Each row's gate is recorded in site-data/events.json (eligibility field) and in research/structure-sheets-register.md; the plan tables do not yet display it. A reader who does not meet a gate cannot enter that event, so gated rows must not be read as open-field options.",
-      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
-      "action": "Until the plan tables show the gate, check each row's eligibility in research/structure-sheets-register.md before choosing an event. Do not rank gated rows against open-field rows without that caveat.",
-      "status": "needs review"
-    },
-    {
-      "id": "FG-31",
-      "area": "Repo structure",
-      "severity": "Medium",
-      "title": "Root dashboard still shows the old Venetian statuses",
-      "detail": "The root pages (tournaments.html, index.html, flagged.html, venue-venetian.html) are generated by scripts/build.py and scripts/build_site.py from data/verified/* and data/venetian-dse4-official-check.json, which were built before the 37 sheets were read. They still label 11 Venetian rows 'unverified' and say sheets are unread. The /plan/ surface (site-data/events.json) is the current one. Repointing the root pages is a consolidation decision (suggestion S-A14), not made in this pass.",
-      "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
-      "action": "Choose one surface (suggestion S-A14) or have the owner of scripts/build_site.py regenerate the root tables from site-data/events.json.",
-      "status": "needs review"
-    }
-  ]
+ "as_of": "2026-11-16",
+ "intro": "Everything that could not be confirmed from an official source, plus every inconsistency found while reading one. Nothing here blocks the site; each item says what to do next. 'Unverified' is a state, not an estimate.",
+ "items": [
+  {
+   "id": "FG-01",
+   "area": "Scheduling",
+   "severity": "High",
+   "title": "No 8 AM start exists in the official Venetian series",
+   "detail": "The brief asks for a day that starts at 8 AM. Across all 94 published rows of DeepStack Extravaganza IV the earliest start is 09:10 (a satellite on Dec 12) and the earliest cash-prize start is 10:10 AM. The only 9 AM start found in any official Strip source is the recurring Horseshoe schedule; nothing published supports an 8 AM first event.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "Either move the day's start to 10:10 AM (Venetian) / 9:00 AM (Horseshoe) or add a morning cash session; do not plan a tournament that is not published.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-02",
+   "area": "Single-entry policy",
+   "severity": "High",
+   "title": "No Venetian structure sheet states a one-entry cap",
+   "detail": "All 37 official Venetian structure sheets were read in full (ten on 2026-11-16, twenty-seven on 2026-11-17). None of the one-day sheets contains a single-entry or 'no re-entry' clause; they state only a late-registration window. The multi-flight sheets say that a player who does not bag Day 2 chips may play another flight, so those events are not single-entry. The Valuetown sheet (events 18/58) is the counter-example: it prices 'subsequent buy in's' at $200, which shows the room does write additional-buy-in rules when they exist.",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "action": "Get the answer in writing from the room (702.414.7657 / lv_cas_poker@venetianlasvegas.com) for the events you enter; the site keeps these rows as 'single-entry candidate', not 'confirmed'.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-04b",
+   "area": "Other venues",
+   "severity": "Medium",
+   "title": "The Caesars guide is a recurring-format article, not a dated calendar",
+   "detail": "It lists daily start times but no buy-ins, guarantees or entry limits for the Horseshoe schedule, and states the Caesars Palace $100 event has a $50 add-on for 15,000 chips at the first break.",
+   "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "action": "Treat the whole Caesars block as 'verify the day you travel'.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-05b",
+   "area": "Hotel cost",
+   "severity": "Low",
+   "title": "Which number belongs to which hotel: '119 and 209'",
+   "detail": "The official sentence is 'These rates will start as low as $119 and $209 and can be higher' for 'a Luxury King Suite in The Venetian or The Palazzo'. The order maps naturally to the order of naming but the page never says 'Venetian $119, Palazzo $209'.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "action": "Confirm with reservations (866.255.8936, code EPOKR25) before using either number as a budget.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-06",
+   "area": "Hotel cost",
+   "severity": "Medium",
+   "title": "Venetian states its resort fee two different ways",
+   "detail": "Hotel Terms: '$55 plus applicable tax per night, payable upon check-in'. The 2026 poker suite-rate page: 'There is a $55 resort fee per night stayed' (no tax wording). The resort-fee page says 'Rates include a daily Resort Fee of $55 plus tax' per an earlier session.",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "action": "The cost model taxes the fee (Park MGM's terms state lodging tax applies to 'any resort fee'), and the site labels that as an interpretation, not a quote.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-07",
+   "area": "Hotel cost",
+   "severity": "Medium",
+   "title": "Parking: two official statements, no reconciliation",
+   "detail": "Hotel terms: registered guests pay $20/day. Poker room page: 'Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more ... receive complimentary self-parking.' Whether a registered player's $20/day is also waived is not stated.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+   "action": "Ask the poker desk; the trip calculator keeps parking as an optional line so the estimate is not inflated or deflated by the ambiguity.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-09",
+   "area": "Other venues",
+   "severity": "Medium",
+   "title": "Bellagio Saturday sheet contradicts itself on the buy-in",
+   "detail": "CONFIRMED AND QUOTED 2026-11-17. The Saturday sheet is inconsistent in two places. Its heading reads 'NLH $1100 BUY-IN', but rule 7 reads 'Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity' - and the file name says $1000. Separately, rule 4 names a specific past date: 'Combined Final Day 2 (9/13/26) will begin at 12pm', which means the document was not written for the current season. Do not price this event from this sheet.",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "action": "Re-read and reconcile; until then the row shows blanks.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-10",
+   "area": "Other venues",
+   "severity": "Medium",
+   "title": "MGM Grand schedule PDF has no year and disagrees with the web page on the start time",
+   "detail": "CONFIRMED 2026-11-17. The PDF is titled 'MGM Grand August Tournament Schedule' and prints no year. It lists an 11:10am start for every day including Saturday, while MGM's web page shows 11:00. The PDF itself is otherwise clear: $120 dailies at 11:10am, 7:10pm and 11:10pm with 25,000 chips and 15-minute levels, and a Saturday $150 with a $2,000 guarantee and 20-minute levels. It states no re-entry, rebuy or add-on rule at all.",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
+   "action": "Do not build a day around this event until a dated schedule is published.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-11",
+   "area": "Walking",
+   "severity": "High",
+   "title": "Walking durations are routed estimates, not measured walks",
+   "detail": "PARTIALLY RESOLVED 2026-11-17. 45 of 70 hotel-to-poker-room pairs now carry a walking duration, so the 30-minute filter returns a real shortlist (30 pairs pass). The caveat matters: the durations come from an OpenStreetMap/OSRM foot-profile routing run, not from a Google or Apple Maps measurement, and they exclude time spent inside casinos, at crossings and in lifts. Every pair carries a prefilled Google Maps and Apple Maps link so you can confirm it. 25 pairs still have no duration because ARIA and Golden Nugget have no routed destination in the source matrix and The Cosmopolitan has no row in it.",
+   "source": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "action": "Run the pair through Google/Apple Maps once (links are on the walking page) and record the minutes in site-data/walk.json - or approve suggestion S-06 to automate it.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-12",
+   "area": "Hotels",
+   "severity": "Medium",
+   "title": "Quality floor cannot be set from official sources",
+   "detail": "'Cost and quality of hotel are higher priority than distance' needs a quality measure. No hotel publishes a star tier on its own reservation pages, and third-party ratings (Forbes, AAA) are outside the official-source rule this repo follows.",
+   "source": "https://www.wynnlasvegas.com/stories/wynn-resorts-culinary-hospitality-awards",
+   "action": "Choose a rating source (suggestion S-04). Until then quality cells are blank and the ranking uses cost + fee certainty + walk status only.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-18",
+   "area": "Hotel cost",
+   "severity": "Low",
+   "title": "Wynn's $55 fee text is written for specific room types",
+   "detail": "'This Resort Fee is only applicable to reservations for the following room types: Wynn Resort King and Wynn Resort Two Queens.' Other room types are not covered by the sentence read.",
+   "source": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
+   "action": "Check the fee line on your own reservation summary before comparing Wynn against Park MGM.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-22",
+   "area": "Hotel cost",
+   "severity": "Medium",
+   "title": "Three consecutive nights in the planned window are priced far above the rest",
+   "detail": "In the Nov 18-25 2026 quote the room rate is $164.25 on Sun 18, then $614.25 (Thu 19), $1,011.75 (Fri 20), $1,311.75 (Sat 21), then back to $164.25 for Sun 22, Mon 23 and Tue 24. The engine gives no reason and no event name. Whatever the cause, it moves the true cost of that 7-night stay from $644.61/night to a figure dominated by three nights - a Sun-Thu-only stay would be dramatically cheaper. This is exactly the like-for-like comparison the rate log is for, and it is why the dates need fixing before any non-refundable booking.",
+   "source": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
+   "action": "Pick dates that avoid Thu 19 - Sat 21 Nov 2026, or accept the premium knowingly. Re-quote before paying.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-23",
+   "area": "Coverage",
+   "severity": "Low",
+   "title": "Two rows on the schedule page could not be re-read because the page chunk boundary cut through them",
+   "detail": "The official schedule page is served in four chunks and the boundary falls inside the Saturday 28 November 2026 rows, so events #16 (11:10 AM) and #17 (12:10 PM) were not re-read from the table itself on 2026-11-17. Both were confirmed the other way round instead: structure sheet 11 lists 'Event Numbers: 16, 30, and 54' with Start Time 11:10 AM, and structure sheet 26 is headed 'Event Number: 17' with Start Time 12:10 PM - both of which match the row already in the dataset. The dates for those two rows therefore rest on the earlier read plus the sheet, not on a fresh read of the table.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "Re-read the schedule page (the daily monitor job does this automatically and will report a change if the table moves).",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-24",
+   "area": "Schedule",
+   "severity": "High",
+   "title": "Wynn's daily tournaments may be suspended for most of your trip",
+   "detail": "Every one of the four Wynn daily structure sheets carries the same sentence: 'The Tournament will be offered [Mon-Thu / Friday / Sat & Sun / Nightly] and may be suspended during Seniors Events, Classic Events, or other Tournament Series.' The WPT World Championship runs in the SAME poker room (Encore at Wynn Las Vegas) from 27 November to 21 December 2026 - which covers almost the whole of the Venetian series window. Treat every Wynn daily row as provisional and phone the room before building a day around one.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "action": "Call the Wynn poker room and ask whether the daily 12 p.m. and 6 p.m. events are running on your dates.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-30",
+   "area": "Eligibility",
+   "severity": "Medium",
+   "title": "Age- and card-gated events sit inside the ranked table",
+   "detail": "Most Venetian rows are gated, not open to all. Per the sheets: 21+ with a Venetian Rewards card for sheets 19, 21–28, 30–37 (sheet 19 and 32 also require female); 50+ with a Rewards card for the Seniors sheets 17 and 20; sheet 31 requires a female/female or female/male team. Each row's gate is recorded in site-data/events.json (eligibility field) and in research/structure-sheets-register.md; the plan tables do not yet display it. A reader who does not meet a gate cannot enter that event, so gated rows must not be read as open-field options.",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "action": "Until the plan tables show the gate, check each row's eligibility in research/structure-sheets-register.md before choosing an event. Do not rank gated rows against open-field rows without that caveat.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-31",
+   "area": "Repo structure",
+   "severity": "Medium",
+   "title": "Root dashboard still shows the old Venetian statuses",
+   "detail": "The root pages (tournaments.html, index.html, flagged.html, venue-venetian.html) are generated by scripts/build.py and scripts/build_site.py from data/verified/* and data/venetian-dse4-official-check.json, which were built before the 37 sheets were read. They still label 11 Venetian rows 'unverified' and say sheets are unread. The /plan/ surface (site-data/events.json) is the current one. Repointing the root pages is a consolidation decision (suggestion S-A14), not made in this pass.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
+   "action": "Choose one surface (suggestion S-A14) or have the owner of scripts/build_site.py regenerate the root tables from site-data/events.json.",
+   "status": "needs review"
+  },
+  {
+   "id": "FG-04",
+   "area": "Other venues",
+   "severity": "High",
+   "title": "Wynn WPT rows are cited, not re-read (was: five rooms)",
+   "detail": "NARROWED 2026-11-17. Four of the five 'cited, not re-read' sources have now been read in full: the Bellagio Friday / Saturday / Sunday structure sheets, the Caesars Palace 2026 daily NLH flyer, the Wynn daily tournament structures PDF, the MGM Grand schedule PDF and the Golden Nugget daily tournaments page. What remains cited-but-not-re-read is the WPT World Championship structures PDF (an eight-chunk document) - its four rows keep that label. One row got worse, not better: the Horseshoe daily start times an earlier session recorded (9 AM / 11 AM / 2 PM / 5 PM / 8 PM / 11 PM) are on no official page, so they were deleted rather than repeated.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/research/e3cb221d-official-follow-up.md",
+   "action": "Re-read on the next refresh (the monitor will tell you if any of those URLs changed).",
+   "status": "partially resolved"
+  },
+  {
+   "id": "FG-13",
+   "area": "Tax",
+   "severity": "Medium",
+   "title": "The 13.38% figure comes from a 2016 county notice",
+   "detail": "The county document adopting 13.38% (12.0% + 0.5% LVCVA + 0.88% stadium) is dated November 15, 2016. The Venetian's own current terms still say 13.38%. STRENGTHENED 2026-11-17: two live dated quotes from the Venetian's booking engine imply 13.3804% to four decimal places (407.69 / 3,047.00 and 532.51 / 3,979.75), so the rate is now confirmed by the amount actually charged, not only by the notice.",
+   "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf",
+   "action": "Re-confirm with the Clark County Department of Business License before any non-refundable payment.",
+   "status": "corroborated"
+  },
+  {
+   "id": "FG-21",
+   "area": "Hotel cost",
+   "severity": "Medium",
+   "title": "The booking calendar's nightly figure is not the price of that night inside a multi-night stay",
+   "detail": "The calendar strip footnotes 'Pricing shown is best available suite and rate, includes daily resort fee, excludes taxes', and for Wed 18 - Tue 24 Nov 2026 it shows $XXX (selected) while the surrounding days show figures such as $165 and $190. Inside the 7-night quote captured the same day, 22 Nov is $164.25 + $55 = $219.25, not $165. The calendar number is therefore the best available rate for a one-night stay beginning that day, and it must not be multiplied by the number of nights to estimate a stay. The itemised quotes in the rate log are the only figures to plan from.",
+   "source": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
+   "action": "None needed for planning - use the itemised quotes. Noted so nobody reconciles the calendar to the total and thinks the data is wrong.",
+   "status": "explained"
+  },
+  {
+   "id": "FG-25",
+   "area": "Rules",
+   "severity": "Medium",
+   "title": "Bellagio sells half the starting stack, and calls it a gratuity",
+   "detail": "All three Bellagio sheets price a 'voluntary' staff gratuity that buys chips: $40 buys an extra 15,000 of the 30,000 starting stack on Fridays, $40 buys an extra 20,000 of 40,000 on Saturdays, and $25 buys an extra 15,000 of 30,000 on the Sunday H.O.R.S.E. Bellagio states the money goes to staff and that it withholds nothing from the prize pool, which is true - but at the table the effect is that a player who pays more starts with twice the stack. Combined with re-entry through level 8 on Friday and Sunday, none of the three is single-entry.",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "action": "No action if you are filtering to single-entry - all three are already excluded. Noted so the exclusion is understood rather than assumed.",
+   "status": "explained"
+  },
+  {
+   "id": "FG-26",
+   "area": "Rules",
+   "severity": "Low",
+   "title": "Wynn's Friday event allows unlimited rebuys but explicitly forbids re-entry",
+   "detail": "The Friday $240 sheet says 'Re-entry is NOT allowed. All rebuys must be done immediately from the player's original seat', while allowing unlimited $200 rebuys whenever a player is at 15,000 chips or fewer. That is the opposite of the usual pattern and it is the only event in this dataset that separates the two ideas so explicitly. A player who busts is out; a player who gets short can keep buying chips. It is still excluded from single-entry, but for a different reason than the re-entry events.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "action": "None. Recorded so the exclusion reason on the row is accurate.",
+   "status": "explained"
+  },
+  {
+   "id": "FG-03",
+   "area": "Coverage",
+   "severity": "Medium",
+   "title": "All 37 structure sheets have now been read (was: 27 unread)",
+   "detail": "RESOLVED 2026-11-17. Every one of dse_nov_2026-structure_1.pdf ... _37.pdf was fetched and read in full, and every one of the 94 published rows is now backed by its own sheet: fee, prize pool per entry, starting stack, level length, registration cutoff, payout percentage and bounty are populated for all of them. Zero rows remain labelled unverified. Two sheets (17, 20) revealed eligibility rules the site did not previously carry: the Seniors events require 50+, and the LIPS Ladies events are female-only. One sheet (32, event #39) revealed that the LIPS Main Event has a single Day 1, so it is a two-day event, not a multi-flight one; it is reclassified accordingly. The sheets were also cross-checked against the schedule table: every guarantee printed on a sheet matches the guarantee in that event's published name, and the build aborts if they ever disagree.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "action": "The daily GitHub Actions job fetches every sheet URL and reports changes; reading the remaining 27 is a follow-up pass (suggestion S-02).",
+   "status": "resolved"
+  },
+  {
+   "id": "FG-05",
+   "area": "Hotel cost",
+   "severity": "High",
+   "title": "Dated quotes exist for The Venetian only, and only for some date ranges",
+   "detail": "PARTIALLY RESOLVED 2026-11-17. The Venetian's own booking engine publishes a full itemised breakdown in its HTML (each night's room rate, each night's $55 resort fee, the tax line, the checkout total), so two real dated quotes were captured and are in the rate log: Nov 18-22 2026 (4 nights, Two Queen) total $3,454.69 and Nov 18-25 2026 (7 nights, King) total $4,512.26. Wynn and every MGM property still return an empty shell or a 404 for dated URLs, so no quote is claimed for them - they stay blank. The Venetian engine also failed to render a rate block for two December requests, so coverage is not guaranteed for every date range. Fix your dates and re-run the capture; until then the calculator uses the Venetian quotes as its default and shows the arithmetic openly.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "action": "Fix the dates, capture the itemised checkout total from the booking flow, and add it to the rate log; the calculator then stops being scenario-based.",
+   "status": "resolved"
+  },
+  {
+   "id": "FG-19",
+   "area": "Site data",
+   "severity": "Low",
+   "title": "Buy-in convention is now settled for every row (was: unread sheets only)",
+   "detail": "RESOLVED 2026-11-17. With all 37 sheets read, every row's buy-in is known to be fee-inclusive - each sheet says so in its own words ('$90 of the $600 Buy-In is withheld for house fees'). The only remaining ambiguity is the opposite direction: three events add a $10 or $20 flat LIPS fee on top of the stated house fee (#35, #39, #43), and four events discount the buy-in for early registration (#59 Day 1A, #56 Day 1A and 1B). Those are recorded verbatim on the row.",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "action": "Reading the remaining sheets closes this.",
+   "status": "resolved"
+  },
+  {
+   "id": "FG-08",
+   "area": "Source hygiene",
+   "severity": "Low",
+   "title": "Venetian's 'Current Series' module is stale",
+   "detail": "The poker page and the series overview still present 'WPT Fall Festival, October 28 - November 15, 2026' as the current series while DSE IV (which began Nov 16) is shown as the next one. The dated schedule page itself is correct.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "action": "Ignore the marketing module; use the dated schedule page. The monitor tracks this string so you see when it is fixed.",
+   "status": "noted"
+  },
+  {
+   "id": "FG-14",
+   "area": "Repo data",
+   "severity": "Medium",
+   "title": "Earlier datasets attributed structure-sheet values to the schedule page",
+   "detail": "data/tournaments.json carried reg_closes / chips / level on rows sourced only to the schedule page, and another session flagged them as not reproducible from that page. They are real values, but they come from the structure sheets (verified: '$90 of the $600 Buy-In... Late Registration: 10 levels + Break (~ 4:55 PM)', starting stack 40,000, 30-minute levels). The consolidated dataset attributes each value to its own document.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/data/tournaments.json",
+   "action": "Use site-data/events.json; the old files are kept for audit only.",
+   "status": "resolved by this pass"
+  },
+  {
+   "id": "FG-15",
+   "area": "Repo data",
+   "severity": "Medium",
+   "title": "Earlier datasets called rows 'verified single-entry' on silence alone",
+   "detail": "data/venetian-dse4-official-check.json lists 47 rows as single_entry and data/verified/tournaments.json lists 32, each justified by 'sheet read: no re-entry or add-on clause'. Under the 'never infer' rule that is a candidate state, not a confirmed one (see FG-02). Also, flighted events were counted as single-entry rows because each flight is a separate buy-in.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/data/venetian-dse4-official-check.json",
+   "action": "Superseded by the three-state classification in site-data/events.json.",
+   "status": "resolved by this pass"
+  },
+  {
+   "id": "FG-16",
+   "area": "Repo structure",
+   "severity": "Medium",
+   "title": "Three dashboards existed at once; consolidated into one",
+   "detail": "The root site, /docs/ (session acd81e67) and /verified/ (session a22d577b) each rendered their own tables from three different datasets, so the same event could appear with different labels on one site. This pass made the root site canonical and removed the two duplicate front-ends; all their data files remain in the repo.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
+   "action": "If you preferred the old /docs/ view, it is in git history at the merge of PR #7 and can be restored.",
+   "status": "done"
+  },
+  {
+   "id": "FG-17",
+   "area": "Automation",
+   "severity": "Low",
+   "title": "Change monitoring starts with no baseline hashes",
+   "detail": "The refresh job runs on GitHub's runners, which can reach the hotel sites; this sandbox cannot (outbound access is limited to GitHub, npm and PyPI), so snapshot hashes are written by the first scheduled run instead of being pre-seeded here. The extraction side is not left untested: `node scripts/check_sources.mjs --selftest` runs all 34 tracked patterns from site-data/sources.json against text containing the sentences they must match, and both plan-verify.yml and plan-refresh.yml run it before doing anything else, so a broken pattern fails loudly instead of reporting 'no change' forever.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/.github/workflows/daily-refresh.yml",
+   "action": "After the first run (06:30 UTC daily) the report page will show ok/changed/error per source.",
+   "status": "needs one scheduled run"
+  },
+  {
+   "id": "FG-20",
+   "area": "Coordination",
+   "severity": "Low",
+   "title": "Session branch naming does not follow the protocol",
+   "detail": "The protocol asks for branches named session-<id>/<task>; Arena fixes each session's branch (this one is arena/72ca3e9d-poker2). Recorded again because every prior session hit the same rule.",
+   "source": "https://github.com/karagemop466-tech/Poker2/blob/main/COORDINATION.md",
+   "action": "None; naming deviation is environmental.",
+   "status": "noted"
+  }
+ ]
 }

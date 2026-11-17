@@ -43,10 +43,10 @@
   {
    "id": "Q04",
    "question": "Is each hotel within a 30-minute walk of the tournament venue?",
-   "status": "Answered for the Venetian side, open for Wynn",
-   "answer": "No casino publishes a walk time, so routing services were used and labelled as third-party estimates. Google Maps walking directions (read 2026-11-17) put Wynn at 12 min, The Palazzo 4 min, The Venetian 5 min, Horseshoe 24 min and Caesars Palace 19 min from The Venetian Poker Room — all inside the 30-minute limit — while Bellagio is 28 min (inside, but barely), and ARIA 37 min and MGM Grand 42 min are outside it. An independent OSRM foot matrix computed from geocoded official addresses agrees with every one of those 30-minute verdicts. Trips to the Wynn poker room have not been read.",
-   "needed": "Walking routes to the Wynn poker room, and an in-person check of the Bellagio and Horseshoe timings.",
-   "how_to_find": "Open the prefilled maps link in each hotel row, read the walking time, and log it with the date.",
+   "status": "Answered as far as routing services allow",
+   "answer": "No casino publishes a walk time, so routing services were used and labelled as such. Google Maps walking directions (read 2026-11-17) and an independent OSRM foot matrix agree on every 30-minute verdict for The Venetian Poker Room: Palazzo 4-6 min, Venetian 5 min, Wynn 12-13 min, Caesars Palace 19-20 min, Horseshoe 21-24 min and Bellagio 28 min are inside the limit; MGM Grand (37-42 min) and ARIA (31-37 min) are outside it. The Wynn poker room is covered by the OSRM matrix alone: Wynn, Encore, Resorts World, Venetian, Palazzo, Westgate, Harrah's, LINQ and Flamingo are inside; Horseshoe, Caesars Palace, Bellagio and everything south of them are outside.",
+   "needed": "A second router on the Wynn side, and an in-person check of the two tight calls: Bellagio to the Venetian (28-30 min depending on router) and ARIA to the Venetian (30.6 min by OSRM, 37 min by Google — the only pair where the two routers land on opposite sides of the limit).",
+   "how_to_find": "Walk the two tight pairs once and record the time; or read a second routing service for the Wynn side.",
    "sources": [
     "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas&destination=The+Venetian+Poker+Room&travelmode=walking",
     "https://www.venetianlasvegas.com/resort/casino/poker.html"

@@ -223,19 +223,21 @@ def hotel_table(hotels, table_id, show_calc=True):
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div>"""
         walk = h.get("walk", {})
-        wm = walk.get("venetian_min")
-        if wm is None:
-            walk_cell = '<span class="badge b-warn">not read</span>'
-            walk_ok = "0"
-        else:
-            ok = walk.get("within_30_to_venetian")
-            walk_cell = (f'<strong>{wm} min</strong> <small class="note">({esc(walk.get("venetian_distance",""))})</small> '
-                         + ('<span class="badge b-ok">≤30 min</span>' if ok
-                            else '<span class="badge b-bad">over 30 min</span>'))
-            walk_ok = "1" if ok else "0"
-        walk_cell += (f'<small class="note">to The Venetian Poker Room · '
-                      f'<a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">route ↗</a>'
-                      f' · Wynn: not read · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">route ↗</a></small>')
+        def leg(minutes, ok, verified_twice):
+            if minutes is None:
+                return '<span class="badge b-warn">not routed</span>'
+            b = ('<span class="badge b-ok">≤30 min</span>' if ok else '<span class="badge b-bad">over 30 min</span>')
+            twin = ' · 2 routers' if verified_twice else ' · 1 router'
+            return f'<strong>{minutes:g} min</strong> {b}<small class="note">{twin}</small>'
+        v_min, w_min = walk.get("venetian_min"), walk.get("wynn_min")
+        walk_cell = ('<div class="walk-leg">Venetian: '
+                     + leg(v_min, walk.get("within_30_to_venetian"), walk.get("routers_agree_30min") is not None)
+                     + '</div><div class="walk-leg">Wynn: '
+                     + leg(round(w_min) if w_min is not None else None,
+                           walk.get("within_30_to_wynn"), False) + '</div>')
+        walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")) else "0"
+        walk_cell += (f'<small class="note"><a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">Venetian route ↗</a>'
+                      f' · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">Wynn route ↗</a></small>')
         rows.append(f"""<tr data-cat="hotel" data-walk-ok="{walk_ok}">
 <td><strong>{esc(h['name'])}</strong><small class="note">{esc(h.get('area',''))}</small></td>
 <td>{esc(h.get('address',''))}</td>
@@ -246,7 +248,7 @@ def hotel_table(hotels, table_id, show_calc=True):
 <td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'))} <small class="note">checked {AS_OF}</small></td>
 </tr>""")
     head = ("<th>Hotel</th><th>Address</th><th>Latest logged rate</th><th>Resort fee</th><th>Tax</th>"
-            "<th>Parking</th><th>True cost / night</th><th>Walking time (30-min limit)</th><th>Sources / last checked</th>")
+            "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
     return f'<table class="data" id="{table_id}"><thead><tr>{head}</tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>"
 
 def rate_log_html(h):
@@ -300,14 +302,18 @@ def walking_check_html():
         else:
             verdict = "<span class=\"badge b-warn\">one router only</span>"
         rows.append(f"""<tr><td>{esc(h["name"])}</td><td>{g if g is not None else "not read"}</td>
-<td>{("%.0f" % o) if o is not None else "not covered"}</td><td>{verdict}</td></tr>""")
+<td>{("%.0f" % o) if o is not None else "not covered"}</td><td>{("%.0f" % w["wynn_min"]) if w.get("wynn_min") is not None else "not covered"}</td><td>{verdict}</td></tr>""")
     dis = ", ".join(wc.get("disagreements") or []) or "none"
     return f"""<div class="panel"><h3>Walking check to The Venetian Poker Room — two routers compared</h3>
 <p>{esc(wc.get("note",""))}</p>
 <table class="data"><thead><tr><th>Hotel</th><th>Google Maps (read {esc(wc.get("google_as_of",""))})</th>
-<th>OSRM foot profile (computed {esc(wc.get("osrm_as_of",""))})</th><th>30-minute verdict</th></tr></thead>
+<th>OSRM foot profile → Venetian (computed {esc(wc.get("osrm_as_of",""))})</th>
+<th>OSRM → Wynn (single router)</th><th>30-minute verdict, Venetian side</th></tr></thead>
 <tbody>{"".join(rows)}</tbody></table>
 <p class="note">Disagreements on the 30-minute threshold: {esc(dis)}.
+The Wynn-side column is the same OSRM matrix only — no second router was read there — and it shows the
+trip is short for Wynn, Palazzo, Venetian, Resorts World, Westgate, Harrah's, LINQ and Flamingo, and over the
+limit for Horseshoe, Caesars Palace, Bellagio, MGM Grand and the rest of the south Strip.
 Neither router is a casino document; both are routing estimates, so a tight call should be walked once in person.</p></div>"""
 
 
@@ -681,7 +687,7 @@ applied. Routes to the Wynn poker room have not been read and stay blank.</p></d
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
-<li>Walking times to The Venetian Poker Room are recorded for every hotel whose route was read, and the 30-minute call is confirmed by a second, independent router (see the hotels page). Wynn-side walking routes have not been read yet — the maps links stay in each row for that check.</li>
+<li>Walking times to The Venetian Poker Room are recorded for every hotel whose route was read, and the 30-minute call is confirmed by a second, independent router (see the hotels page). The Wynn side is covered by the OSRM matrix alone, so those rows say "1 router"; the two tight Venetian-side calls (ARIA and Bellagio) are the ones still worth walking in person.</li>
 <li>Official resort-fee amounts for Caesars properties (shown in the official booking flow at checkout; Diamond+ waives).</li>
 </ul>
 <p class="note">The trip calculator on the <a href="planner.html">Trip Planner</a> uses the same formula, per hotel, over your stay.</p></div>"""
@@ -960,7 +966,7 @@ booking/registration decision needs. Suggestions for discovering the missing inf
 <tbody>{q_rows}</tbody></table>
 <div class="panel"><h2>Added by this session</h2><ul class="tight">
 <li><strong>Q-A:</strong> What is the dated checkout total (with tax and resort fee) for the exact trip dates at Venetian, Palazzo and Wynn? — Open. Use the official booking links on the <a href="hotels.html">hotels page</a>; log the quote with its timestamp in the rate log.</li>
-<li><strong>Q-B:</strong> Walking routes to the Wynn poker room have not been read; only the Venetian-side trips are recorded (and double-checked). Use the per-row maps links to add the Wynn side.</li>
+<li><strong>Q-B:</strong> The Wynn-side walking figures rest on a single router (OSRM); only the Venetian side has been confirmed twice. ARIA is also the one hotel where the two routers straddle the 30-minute line (30.6 vs 37 min).</li>
 <li><strong>Q-C:</strong> Do the Venetian DSE sheets’ “no re-entry clause” silence and the Valuetown “subsequent buy in’s” note mean unlimited re-entry is allowed after all? — Open. Only the poker room can settle it (flag IR-8234-01/02).</li>
 <li><strong>Q-D:</strong> Which Caesars Palace daily buy-in figure is current — $100 (official guide) or $160 at 2 PM/9 PM (official flyer)? — Open; two official sources disagree.</li>
 <li><strong>Q-E:</strong> What are the Horseshoe and MGM Grand daily buy-ins and guarantees? — Open; not published on their official pages (Horseshoe) or only on the weekly PDF (MGM).</li>

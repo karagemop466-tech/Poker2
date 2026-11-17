@@ -53,6 +53,7 @@ jobs:
           # reported as a pull request rather than a red X with no artefacts.
           { python3 scripts/build-events.py --check
             && python3 scripts/build-schedule.py --check
+            && python3 scripts/build-walk.py --check
             && python3 scripts/build-site.py --check
             && node scripts/scrape-schedule.mjs --selftest ; } > /tmp/verify.log 2>&1 \
             || echo failed > /tmp/verify.failed
