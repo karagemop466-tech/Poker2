@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trip cost &middot; Las Vegas Single-Entry Poker Trip Planner</title>
+<link rel="stylesheet" href="assets/site2026.css">
+
+</head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
+<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html" class="on">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+</div></header>
+<main class="wrap">
+
+
+<div class="hero"><h1>Trip cost estimator</h1>
+<p class="lede">Estimated cost of a trip = entries &times; buy-ins + nights &times; true hotel cost
+per night. Both halves use only figures printed on official documents: entry fees from the structure
+sheets, and hotel cost from the resort fee, tax and rate you enter below.</p></div>
+
+<div class="panel"><h2>Entries</h2>
+<p class="note">Pick the events you plan to enter. Each entry is one buy-in at the official total entry
+fee. Multi-flight events cost one buy-in per flight entered &mdash; if you plan to fire two flights,
+add the event twice.</p>
+<div class="controls">
+<label>Add an event<select id="pick"><option value="3" data-buyin="200" data-pool="165">#3 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="4" data-buyin="200" data-pool="165">#4 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="5" data-buyin="200" data-pool="165">#5 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="6" data-buyin="200" data-pool="160">#6 &mdash; $200 NO LIMIT HOLD&#x27;EM (1DAY) ($200)</option><option value="8" data-buyin="200" data-pool="160">#8 &mdash; $200 NO LIMIT HOLD&#x27;EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY  ($200)</option><option value="9" data-buyin="200" data-pool="160">#9 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="11" data-buyin="200" data-pool="160">#11 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="13" data-buyin="200" data-pool="160">#13 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="15" data-buyin="200" data-pool="160">#15 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="21" data-buyin="200" data-pool="160">#21 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="22" data-buyin="200" data-pool="160">#22 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="23" data-buyin="200" data-pool="160">#23 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="25" data-buyin="200" data-pool="160">#25 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="60" data-buyin="200" data-pool="160">#60 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="61" data-buyin="200" data-pool="160">#61 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="62" data-buyin="200" data-pool="160">#62 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="64" data-buyin="200" data-pool="160">#64 &mdash; $200 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($200)</option><option value="2" data-buyin="300" data-pool="242">#2 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300)</option><option value="12" data-buyin="300" data-pool="242">#12 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300)</option><option value="20" data-buyin="300" data-pool="242">#20 &mdash; $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($300)</option><option value="29" data-buyin="300" data-pool="250">#29 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="31" data-buyin="300" data-pool="250">#31 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="34" data-buyin="300" data-pool="250">#34 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="38" data-buyin="300" data-pool="250">#38 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="42" data-buyin="300" data-pool="250">#42 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="50" data-buyin="300" data-pool="250">#50 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="51" data-buyin="300" data-pool="250">#51 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="53" data-buyin="300" data-pool="250">#53 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="55" data-buyin="300" data-pool="250">#55 &mdash; $300 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) ($300)</option><option value="10" data-buyin="400" data-pool="335">#10 &mdash; $400 NO LIMIT HOLD&#x27;EM (1DAY) ($400)</option><option value="17" data-buyin="400" data-pool="340">#17 &mdash; $400 POT LIMIT OMAHA BOUNTY (1DAY) ($400)</option><option value="14" data-buyin="600" data-pool="510">#14 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option><option value="16" data-buyin="600" data-pool="510">#16 &mdash; $600 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) $200 BOUNTIES FROM THE ($600)</option><option value="24" data-buyin="600" data-pool="510">#24 &mdash; $600 NO LIMIT HOLD&#x27;EM SENIORS (1DAY) MUST BE 50+ YEARS OF  ($600)</option><option value="27" data-buyin="600" data-pool="510">#27 &mdash; $600 BIG O (1DAY) ($600)</option><option value="28" data-buyin="600" data-pool="510">#28 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option><option value="30" data-buyin="600" data-pool="510">#30 &mdash; $600 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) $200 BOUNTIES TO START ($600)</option><option value="32" data-buyin="600" data-pool="510">#32 &mdash; $600 NO LIMIT HOLD&#x27;EM SENIORS (1DAY) MUST BE 50+ YEARS OF  ($600)</option><option value="40" data-buyin="600" data-pool="510">#40 &mdash; $600 POT LIMIT OMAHA BOUNTY (1DAY) ($600)</option><option value="43" data-buyin="600" data-pool="510">#43 &mdash; $600 NO LIMIT HOLD&#x27;EM LIPS (1DAY) KINGS AND QUEENS BOUNTY  ($600)</option><option value="54" data-buyin="600" data-pool="510">#54 &mdash; $600 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) $200 BOUNTIES TO START ($600)</option><option value="57" data-buyin="600" data-pool="510">#57 &mdash; $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($600)</option><option value="63" data-buyin="600" data-pool="510">#63 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option><option value="36" data-buyin="800" data-pool="700">#36 &mdash; $800 NO LIMIT HOLD&#x27;EM BOUNTY (1DAY) $200 BOUNTIES TO START ($800)</option><option value="39" data-buyin="800" data-pool="690">#39 &mdash; $800 NO LIMIT HOLD&#x27;EM LIPS LADIES (2DAY) WOMEN IN POKER -  ($800)</option><option value="52" data-buyin="1100" data-pool="970">#52 &mdash; $1,100 NO LIMIT HOLD&#x27;EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNT ($1,100)</option></select></label>
+<button class="btn" id="add">Add</button>
+</div>
+<table id="cart"><thead><tr><th class="num">#</th><th>Event</th><th class="num">Entry fee</th>
+<th class="num">To prize pool</th><th></th></tr></thead><tbody></tbody>
+<tfoot><tr><th colspan="2">Total entry fees</th><th class="num" id="sum-buyin">$0</th>
+<th class="num" id="sum-pool">$0</th><th></th></tr></tfoot></table>
+</div>
+
+<div class="panel"><h2>Hotel</h2>
+<div class="calc">
+<label>Nightly room rate ($)<input type="number" id="t-rate" value="119" min="0" step="1"></label>
+<label>Resort fee / night ($)<input type="number" id="t-fee" value="55" min="0" step="1"></label>
+<label>Room tax (%)<input type="number" id="t-tax" value="13.38" min="0" step="0.01"></label>
+<label>Parking / night ($)<input type="number" id="t-park" value="0" min="0" step="1"></label>
+<label>Nights<input type="number" id="t-nights" value="5" min="0" step="1"></label>
+</div>
+<p class="note">Resort fee is taxable, so tax applies to rate + fee. Parking is not taxable.</p>
+</div>
+
+<div class="panel"><h2>Total</h2>
+<div class="calc">
+<div class="out"><div class="k">Entry fees</div><div class="v" id="tot-buyin">$0</div></div>
+<div class="out"><div class="k">True cost per night</div><div class="v" id="tot-night">$0</div></div>
+<div class="out"><div class="k">Hotel for the stay</div><div class="v" id="tot-hotel">$0</div></div>
+<div class="out"><div class="k">Estimated trip cost</div><div class="v" id="tot-all">$0</div></div>
+</div>
+<p class="note">Excludes flights, food, cash-game bankroll and anything else the official pages do not
+price. A $300+ tournament entry also satisfies the Venetian poker-rate qualifying-play condition for
+that night, so the buy-ins you add above are what keep the $119 room rate alive.</p>
+</div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Data policy.</strong> Every value on this site is transcribed from an official venue
+document that was read and is linked on every row. A value the organiser does not publish is left
+empty and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred, estimated or
+filled in from memory. Sources retrieved 2026-11-17.</p>
+<p class="small">This is a research tool, not a booking service. Re-confirm every official page
+before you pay anything non-refundable. This <code>/2026/</code> surface is generated by
+<code>scripts/build2026.py</code>; the site root hosts the older multi-venue dashboard, and the two
+do not share a generator.</p>
+</div></footer>
+</body></html>
