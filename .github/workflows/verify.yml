@@ -64,6 +64,9 @@ jobs:
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
 
+      - name: The source-recheck badge actually marks changed rows
+        run: python3 scripts/check_monitor_badge.py
+
       - name: /2026/ dataset invariants
         run: |
           python3 - <<'PY'

@@ -34,6 +34,24 @@ RETRIEVED = "2026-11-17"
 TAX = contentmod.ROOM_TAX["value"] / 100.0
 
 OUT_DATA = os.path.join(ROOT, "data", "verified2026")
+CHECKS_PATH = os.path.join(OUT_DATA, "checks.json")
+
+
+def load_checks():
+    """Latest scheduled re-check, keyed by URL. Absent file = the monitor has not run yet."""
+    if not os.path.exists(CHECKS_PATH):
+        return None, {}
+    try:
+        with open(CHECKS_PATH, encoding="utf-8") as f:
+            d = json.load(f)
+    except (OSError, ValueError):
+        return None, {}
+    runs = d.get("runs") or []
+    latest = runs[0] if runs else {}
+    return d, {r.get("url"): r for r in latest.get("results", []) if r.get("url")}
+
+
+CHECKS_META, CHECKS = load_checks()
 SITE = "2026"  # the consolidated surface lives under /2026/ so it never clobbers
               # the root dashboard owned by another session (see COORDINATION.md, S-11)
 ASSETS = os.path.join(ROOT, SITE, "assets")
@@ -498,6 +516,32 @@ def esc(s):
     return html.escape(str(s)) if s is not None else ""
 
 
+def check_badge(*urls):
+    """Inline status of the scheduled re-check for the document(s) a row rests on.
+
+    The monitor never rewrites a value: it reports that the official document moved, so the
+    row is marked and a human re-reads it. A row whose document could not be fetched is marked
+    differently from a row whose document is unchanged.
+    """
+    if CHECKS_META is None:
+        return "<span class='note' title='The scheduled re-check has not run against this checkout yet'>not yet checked</span>"
+    hits = [CHECKS[u] for u in urls if u in CHECKS]
+    if not hits:
+        return "<span class='note'>document not in the monitor</span>"
+    if any(h.get("change") == "CHANGED" for h in hits):
+        return "<span class='tag t-bad' title='The official document changed after this value was transcribed'>source changed</span>"
+    if any(h.get("change") == "fetch error" for h in hits):
+        return "<span class='tag t-warn'>fetch error</span>"
+    if all(h.get("change") == "first check" for h in hits):
+        return "<span class='tag t-info'>baseline set</span>"
+    return "<span class='tag t-ok'>unchanged</span>"
+
+
+def row_changed(*urls):
+    """True when any document behind a row was flagged CHANGED by the latest re-check."""
+    return any(CHECKS.get(u, {}).get("change") == "CHANGED" for u in urls)
+
+
 def srclink(url, label=None):
     if not url:
         return '<span class="blank">no source</span>'
@@ -650,7 +694,7 @@ def p_tournaments(events):
         gtdcell = gtd_cell(e)
         rowshtml.append(
             '<tr id="ev%(no)d" data-group="%(g)s" data-dates="%(dates)s" '
-            'data-buyin="%(bi)s" data-gtd="%(gtdv)s" data-search="%(search)s">'
+            'data-buyin="%(bi)s" data-gtd="%(gtdv)s" data-changed="%(chg)s" data-search="%(search)s">'
             "<td class='num'>%(no)d</td>"
             "<td><span class='tag t-%(g)s'>%(gl)s</span></td>"
             "<td><strong>%(name)s</strong><div class='note'>%(meta)s</div></td>"
@@ -663,6 +707,7 @@ def p_tournaments(events):
             "<td class='num'>%(ratio)s</td>"
             "<td>%(sheet)s</td>"
             "<td class='num'>%(checked)s</td>"
+            "<td>%(recheck)s</td>"
             "</tr>" % dict(
                 no=e["event_no"], g=e["group"],
                 gl=esc(e["group_label"].split(" (")[0]),
@@ -677,6 +722,8 @@ def p_tournaments(events):
                 sheet=srclink(e["sheet_url"], "sheet %s" % e["sheet_no"]) if e["sheet_url"]
                 else '<span class="blank">no sheet</span>',
                 checked=RETRIEVED,
+                recheck=check_badge(e["sheet_url"]),
+                chg="1" if row_changed(e["sheet_url"]) else "0",
                 name=esc(e["name"][:90]),
                 meta=(("<span class='tag t-warn'>flights %s</span> " % ",".join(e["flights"]))
                       if e.get("flights") else "") + esc("; ".join(x for x in [
@@ -713,11 +760,15 @@ whose sheet is silent on re-entry, rebuy and add-on.</p></div>
 </div>
 <div class="pill-row">%(pills)s</div>
 <p class="note" id="count"></p>
+<p class="note"><strong>Source re-check</strong> is the scheduled monitor's verdict on the structure
+sheet this row was transcribed from: <em>unchanged</em>, <em>source changed</em> (the official document
+moved after transcription &mdash; re-read it before relying on the row), <em>fetch error</em>, or
+<em>baseline set</em> on the monitor's first run. The monitor reports; it never rewrites a value.</p>
 <div class="tbl-scroll"><table id="t"><thead><tr>
 <th class="num">#</th><th>Group</th><th>Event</th><th>Dates</th><th>Starts</th>
 <th class="num">Entry fee</th><th class="num">House fee</th><th class="num">To prize pool</th>
 <th class="num">Guarantee</th><th class="num">GTD&divide;entry</th><th>Structure sheet</th>
-<th class="num">Last checked</th>
+<th class="num">Last checked</th><th>Source re-check</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 </div>
 
@@ -876,6 +927,9 @@ def p_hotels():
     for h in hotelsmod.HOTELS:
         fee = ("$%d" % h["resort_fee"]) if h["resort_fee"] is not None else '<span class="blank">not published</span>'
         pr = ("from $%d" % h["poker_rate"]) if h["poker_rate"] else '<span class="blank">none published</span>'
+        canc = ('<span class="blank">not published</span>' if not h.get("cancel")
+                else esc(h["cancel"]) + "<div class='note'>%s</div>" % esc(h.get("cancel_type") or "")
+                + ("<div class='note'>%s</div>" % srclink(h["cancel_src"]) if h.get("cancel_src") else ""))
         rows.append(
             "<tr><td><strong>%s</strong><div class='note'>%s</div></td>"
             "<td>%s<div class='note'>%s</div></td>"
@@ -883,11 +937,33 @@ def p_hotels():
             % (esc(h["name"]), esc(h["addr"]),
                fee, esc(h["resort_fee_note"] or ""),
                pr,
-               '<span class="blank">not published</span>' if h["tax_pct"] is None else ("%.2f%%" % h["tax_pct"]),
+               '<span class="blank">not published</span>' if h.get("tax_pct") is None
+               else ("%.2f%%" % h["tax_pct"] + ("<div class='note'>%s</div>" % srclink(h["tax_src"]) if h.get("tax_src") else "")),
                (esc(h["parking"]) if h["parking"] else '<span class="blank">not published</span>'),
-               ('<span class="blank">not published</span>' if not h["cancel"] else esc(h["cancel"])),
+               canc,
                ('<span class="blank">not published</span>' if not h["dated_total"] else esc(h["dated_total"])),
                srclink(h["resort_fee_src"])))
+
+    # Occupancy and early-departure charges, which change the true cost per night and are usually
+    # missed by a per-night comparison. Rendered only where the property publishes a figure.
+    extra = []
+    for h in hotelsmod.HOTELS:
+        if not (h.get("extra_guest_fee") or h.get("early_checkout_fee")):
+            continue
+        extra.append(
+            "<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td></tr>"
+            % (esc(h["name"]),
+               esc(h["extra_guest_fee"]) if h.get("extra_guest_fee") else '<span class="blank">not published</span>',
+               esc(h["early_checkout_fee"]) if h.get("early_checkout_fee") else '<span class="blank">not published</span>'))
+    extra_html = ("<div class='panel'><h2>Occupancy and early-departure charges</h2>"
+                  "<p class='note'>These are the charges that make a per-night rate quote not equal the "
+                  "bill. Both are taken verbatim from the property's own terms; a blank means the page "
+                  "read does not publish the figure.</p>"
+                  "<div class='tbl-scroll'><table><thead><tr><th>Hotel</th>"
+                  "<th>Extra occupant above double occupancy</th><th>Early check-out</th>"
+                  "</tr></thead><tbody>%s</tbody></table></div>"
+                  "<p class='note'>Sources: the Venetian/Palazzo, Bellagio and MGM Grand hotel terms "
+                  "linked in the table above.</p></div>") % "".join(extra)
     log = "".join(
         "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td class='note'>%s</td></tr>"
         % (esc(d), esc(hid), esc(field), esc(value),
@@ -948,9 +1024,11 @@ Source: %(srcrates)s</div>
 <th>Parking</th><th>Cancellation deadline</th><th>Dated checkout total</th><th>Fee source</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 <p class="note">Room tax is a Clark County levy, not a hotel charge, so it is the same for every
-property on the Strip. Only the Venetian's own terms print the number; the county's own guide is the
-authority. See flag <a href="flagged.html#F-07">F-07</a>.</p>
+property on the Strip. The Venetian's own terms print the number (re-read first-hand 2026-11-17); the
+county's own guide is the authority for the levy itself. See flag <a href="flagged.html#F-07">F-07</a>.</p>
 </div>
+
+%(extra)s
 
 <div class="panel"><h2>Dated rate log</h2>
 <p class="note">One line per reading, newest first. This is the point of keeping rates as a log: a rate
@@ -976,7 +1054,7 @@ Venetian Resort Las Vegas by calling 866.255.8936 and mentioning code EPOKR25.</
 <p class="note">Source: %(srcrates)s, retrieved %(ret)s. The poker rate cannot be combined with any
 other promotional rate, and the page does not state a cancellation deadline.</p>
 </div>
-""" % dict(rows="".join(rows), log=log, calc=calc, ret=RETRIEVED,
+""" % dict(rows="".join(rows), log=log, calc=calc, ret=RETRIEVED, extra=extra_html,
            srcrates=srclink("https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
            defs=defs)
     return page("Hotels & true cost", body, "hotels.html")
@@ -1501,6 +1579,18 @@ def p_sources(events):
         % (esc(s["kind"]), esc(s["name"]), srclink(s["url"]), esc(s["date"]), esc(s["use"]))
         for s in srcs)
     urls = sorted({s["url"] for s in srcs if s["url"]})
+    if CHECKS_META is None:
+        monitor = ('<p class="note">This checkout carries no completed re-check run yet, so every row '
+                   'shows <em>not yet checked</em> rather than an assumed-clean status. The first '
+                   'scheduled run sets the baseline hash.</p>')
+    else:
+        run = (CHECKS_META.get("runs") or [{}])[0]
+        monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs, '
+                   '<strong>%d changed</strong>, %d fetch errors, %d first-time checks. A fetch error is a '
+                   'monitoring failure, not evidence that the document did not change.</p>'
+                   % (esc(CHECKS_META.get("last_run") or run.get("checked") or "unknown"),
+                      CHECKS_META.get("monitored", 0), CHECKS_META.get("changed_this_run", 0),
+                      CHECKS_META.get("errors", 0), CHECKS_META.get("never_checked", 0)))
     return page("Sources", """
 <div class="hero"><h1>Source register</h1>
 <p class="lede">Every document this site is built from, with the date it was read and what it was used
@@ -1510,9 +1600,11 @@ aggregator, no forum, no mapping service.</p></div>
 <div class="panel"><h2>Scheduled re-check</h2>
 <p>A GitHub Actions job (<code>.github/workflows/recheck.yml</code>) re-fetches every official URL on
 this page every morning at 06:00 UTC, hashes the normalised text, and appends the run to
-<code>data/site/checks.json</code>. A changed hash is reported rather than guessed at &mdash; the site
-shows you which cited value may have moved so you can go and look. %(nurls)s URLs are monitored,
-including all 37 structure-sheet URLs.</p>
+<code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
+the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
+you know which cited value may have moved. %(nurls)s URLs are monitored, including all 37
+structure-sheet URLs.</p>
+%(monitor)s
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 </div>
@@ -1520,7 +1612,7 @@ into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), nurls=len(urls)), "sources.html")
+""" % dict(rows=rows, n=len(srcs), nurls=len(urls), monitor=monitor), "sources.html")
 
 
 def p_repo_review(events):

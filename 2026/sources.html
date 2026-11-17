@@ -21,9 +21,11 @@ aggregator, no forum, no mapping service.</p></div>
 <div class="panel"><h2>Scheduled re-check</h2>
 <p>A GitHub Actions job (<code>.github/workflows/recheck.yml</code>) re-fetches every official URL on
 this page every morning at 06:00 UTC, hashes the normalised text, and appends the run to
-<code>data/site/checks.json</code>. A changed hash is reported rather than guessed at &mdash; the site
-shows you which cited value may have moved so you can go and look. 58 URLs are monitored,
-including all 37 structure-sheet URLs.</p>
+<code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
+the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
+you know which cited value may have moved. 58 URLs are monitored, including all 37
+structure-sheet URLs.</p>
+<p class="note">This checkout carries no completed re-check run yet, so every row shows <em>not yet checked</em> rather than an assumed-clean status. The first scheduled run sets the baseline hash.</p>
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 </div>

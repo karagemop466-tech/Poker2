@@ -6644,7 +6644,9 @@
    "resort_fee_note": "$55 per night, plus tax. Includes Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader.",
    "resort_fee_src": "https://www.venetianlasvegas.com/resort/resort-fee.html",
    "resort_fee_checked": "2026-11-17",
-   "tax_pct": null,
+   "tax_pct": 13.38,
+   "tax_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "tax_checked": "2026-11-17",
    "poker_rate": 119,
    "poker_rate_note": "Poker suite rate starts as low as $119 at The Venetian (and $209 at The Palazzo). Book by phone 866.255.8936, code EPOKR25. Conditional: six hours of active live cash play OR a buy-in to a $300-or-higher tournament for each night stayed, completed before 2 a.m. on the last night; otherwise the night is re-rated to the prevailing rate. Cannot be combined with other promotional rates. Blackout dates may apply.",
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
@@ -6652,7 +6654,12 @@
    "parking": "Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
    "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "parking_note": "The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
-   "cancel": null,
+   "cancel": "No cancellation deadline is printed for the poker suite rate. The general hotel terms say a deposit (first night or entire stay, depending on the offer) is billed at confirmation, that prepaid offers are non-cancellable and non-refundable unless the offer says otherwise, and that check-out before the scheduled departure date costs an additional $100 plus tax.",
+   "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "general hotel terms; not specific to the poker rate",
+   "extra_guest_fee": "$50 per night for each additional guest 13 or older above double occupancy (Prestige: $50 for 5-20, $75 for 21+).",
+   "early_checkout_fee": "$100 plus tax",
    "quality": "No official star or diamond rating is published by the resort for standard suites.",
    "dated_total": null
   },
@@ -6665,7 +6672,9 @@
    "resort_fee_note": "Same resort-fee page as The Venetian: $55 per night, plus tax.",
    "resort_fee_src": "https://www.venetianlasvegas.com/resort/resort-fee.html",
    "resort_fee_checked": "2026-11-17",
-   "tax_pct": null,
+   "tax_pct": 13.38,
+   "tax_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "tax_checked": "2026-11-17",
    "poker_rate": 209,
    "poker_rate_note": "Poker suite rate starts as low as $209 at The Palazzo. Same code EPOKR25 and the same per-night qualifying-play condition.",
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
@@ -6673,7 +6682,12 @@
    "parking": "Same resort parking terms as The Venetian.",
    "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "parking_note": null,
-   "cancel": null,
+   "cancel": "Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed.",
+   "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "general hotel terms; not specific to the poker rate",
+   "extra_guest_fee": "$50 per night for each additional guest 13 or older above double occupancy.",
+   "early_checkout_fee": "$100 plus tax",
    "quality": "No official star or diamond rating is published by the resort for standard suites.",
    "dated_total": null
   },
@@ -6694,7 +6708,12 @@
    "parking": "Complimentary self-parking for up to two vehicles, included in the resort fee.",
    "parking_src": "https://www.wynnlasvegas.com/about-us/resort-information",
    "parking_note": null,
-   "cancel": null,
+   "cancel": "No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whether that deposit is refundable.",
+   "cancel_src": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "deposit terms only; refund window not published",
+   "extra_guest_fee": null,
+   "early_checkout_fee": null,
    "quality": "No official star or diamond rating read.",
    "dated_total": null
   },
@@ -6715,7 +6734,12 @@
    "parking": "Complimentary self-parking for up to two vehicles, included in the resort fee.",
    "parking_src": "https://www.wynnlasvegas.com/about-us/resort-information",
    "parking_note": null,
-   "cancel": null,
+   "cancel": "No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whether that deposit is refundable.",
+   "cancel_src": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "deposit terms only; refund window not published",
+   "extra_guest_fee": null,
+   "early_checkout_fee": null,
    "quality": "No official star or diamond rating read.",
    "dated_total": null
   },
@@ -6736,7 +6760,12 @@
    "parking": null,
    "parking_src": null,
    "parking_note": "Not stated on the pages read.",
-   "cancel": null,
+   "cancel": "First night's deposit is fully refundable if Room Reservations (888.987.6667) receives cancellation at least 72 hours before arrival, unless the booked offer excludes it. Later cancellation or a no-show forfeits the first night's deposit. A complimentary first night cancelled late costs $165 mid-week or $200 for a Friday/Saturday arrival.",
+   "cancel_src": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "general reservation terms",
+   "extra_guest_fee": "$50 plus tax per occupant per night above 2 occupants.",
+   "early_checkout_fee": null,
    "quality": "No official star or diamond rating read.",
    "dated_total": null
   },
@@ -6757,7 +6786,12 @@
    "parking": null,
    "parking_src": null,
    "parking_note": "Not stated on the pages read.",
-   "cancel": null,
+   "cancel": "First night's deposit is fully refundable if Room Reservations (877.880.0880) receives cancellation at least 72 hours before arrival, unless the booked offer excludes it. Later cancellation or a no-show forfeits the first night's deposit. A complimentary first night cancelled late costs $110 mid-week or $155 for a Friday/Saturday/Sunday arrival.",
+   "cancel_src": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "general reservation terms",
+   "extra_guest_fee": "$40 plus tax per occupant per night above 2 occupants.",
+   "early_checkout_fee": null,
    "quality": "No official star or diamond rating read.",
    "dated_total": null
   },
@@ -6777,9 +6811,14 @@
    "poker_rate_checked": null,
    "parking": null,
    "parking_src": null,
-   "parking_note": null,
-   "cancel": null,
-   "quality": "No official star or diamond rating read.",
+   "parking_note": "The hotel page says only 'Valet and self-parking available'; no rate is printed.",
+   "cancel": "The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read.",
+   "cancel_src": "https://www.caesars.com/caesars-palace/hotel",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "headline claim only; conditions not published",
+   "extra_guest_fee": null,
+   "early_checkout_fee": null,
+   "quality": "No official star or diamond rating read for the standard rooms. The property states that its separate Villa product holds a AAA Five Diamond designation.",
    "dated_total": null
   },
   {
@@ -6798,8 +6837,13 @@
    "poker_rate_checked": null,
    "parking": null,
    "parking_src": null,
-   "parking_note": null,
-   "cancel": null,
+   "parking_note": "The hotel page says only 'Valet and self-parking available'; no rate is printed.",
+   "cancel": "The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read.",
+   "cancel_src": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+   "cancel_checked": "2026-11-17",
+   "cancel_type": "headline claim only; conditions not published",
+   "extra_guest_fee": null,
+   "early_checkout_fee": null,
    "quality": "No official star or diamond rating read.",
    "dated_total": null
   }
@@ -6836,6 +6880,86 @@
    "value": "Registered guests $20/day; 3+ hrs play earns free self-parking for non-guests",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "note": "read this session"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "venetian",
+   "field": "room_tax_rate",
+   "value": "13.38% (re-read first-hand: \u201cClark County Room Tax of 13.38%\u201d)",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "note": "this session re-read the page and confirms the figure; F-07 narrowed to the county levy only"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "venetian",
+   "field": "cancellation",
+   "value": "no poker-rate deadline printed; prepaid offers non-cancellable/non-refundable; early check-out $100 + tax",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "note": "read this session (F-06 partly resolved)"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "venetian",
+   "field": "extra_guest_fee",
+   "value": "$50/night per additional guest 13+ above double occupancy",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "note": "read this session; matters for occupancy above 2"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "wynn",
+   "field": "resort_fee",
+   "value": "$55 plus tax per night, re-read first-hand",
+   "source": "https://www.wynnlasvegas.com/about-us/resort-information",
+   "note": "this session re-read the page; the 2026-11-16 figure is confirmed"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "bellagio",
+   "field": "resort_fee",
+   "value": "$55.00 plus applicable tax, re-read first-hand",
+   "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "note": "this session re-read the page; the 2026-11-16 figure is confirmed"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "bellagio",
+   "field": "cancellation",
+   "value": "72 hours before arrival, first night's deposit refundable",
+   "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "note": "read this session (resolves F-06 for Bellagio)"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "mgm-grand",
+   "field": "resort_fee",
+   "value": "$50.00 plus applicable tax, re-read first-hand",
+   "source": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "note": "this session re-read the page; the 2026-11-16 figure is confirmed"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "mgm-grand",
+   "field": "cancellation",
+   "value": "72 hours before arrival, first night's deposit refundable",
+   "source": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+   "note": "read this session (resolves F-06 for MGM Grand)"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "caesars-palace",
+   "field": "cancellation",
+   "value": "\u201cFREE 48-Hour Cancellation*\u201d headline only; conditions not published",
+   "source": "https://www.caesars.com/caesars-palace/hotel",
+   "note": "read this session; resort fee still not published on the pages read"
+  },
+  {
+   "date": "2026-11-17",
+   "property": "horseshoe",
+   "field": "cancellation",
+   "value": "\u201cFREE 48-Hour Cancellation*\u201d headline only; conditions not published",
+   "source": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+   "note": "read this session; resort fee still not published on the pages read"
   },
   {
    "date": "2026-11-16",
@@ -6889,9 +7013,9 @@
    "date": "2026-11-17",
    "property": "ALL",
    "field": "cancellation_deadline",
-   "value": "not read",
+   "value": "partial: Bellagio and MGM Grand publish 72 h; Caesars properties publish a 48 h headline; Venetian/Palazzo publish prepaid and early-checkout terms; Wynn publishes deposit terms only",
    "source": null,
-   "note": "No cancellation deadline was published on the pages read. See F-06."
+   "note": "See F-06 for the per-property status."
   }
  ],
  "flags": [
