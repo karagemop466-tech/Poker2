@@ -1304,3 +1304,25 @@ Two things worth carrying forward:
 Data state on `main` after this session: 166 events / 10 hotels / 45 flags; overlay joined 83 of 83 Venetian rows
 (353 cells filled, 0 unresolved conflicts); 86 official URLs registered, all `never checked`; confirmed single-entry
 events remain **0**, and that number is the finding, not a gap.
+
+## Session arena/594db405-poker2 — claims (2026-11-17, verification + re-check repair + integration)
+
+Scope chosen to avoid the two live claims in flight (PR #69 `arena/555c41d4-poker2` owns the root-page
+linking of `scripts/build_site.py` + root `*.html`; PR #70 `arena/1655b450-poker2` owns
+`scripts/recheck_schedule_live.py` + `research/venetian-dse4-live-2026-11-17.csv`). Branch-name note:
+this session works on its fixed Arena branch `arena/594db405-poker2`, not `session-<id>/<task>` (same
+deviation as F02).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Repair the daily official-source refresh: `plan-refresh.yml` step "Verify the generators…" is a bash syntax error (newline before `&&`), so the job dies every run (runs 43943838443, 44124782058 = both `failure`) BEFORE `commit-refresh.sh` can seed snapshots or open a review PR. The "automatic re-check on a schedule" feature has never completed one end-to-end run. | claimed | arena/594db405-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` (if needed) |
+| V2 Live verification sweep of the official URLs behind the datasets (fetch tool, since sandbox curl cannot reach casino hosts): confirm each cited source resolves and its tracked values still match; refresh per-row `last_checked` / `as_of`; record transcript + irregularities | claimed | arena/594db405-poker2 | `research/594db405-*`, `scripts/*`, `data/*`, `site-data/*` (regenerated via generators only) |
+| V3 Requirements gap check across the published surfaces (trip-cost calculator, date filter, search box, single-entry toggle, ≤30-min walk filter, dated rate log, per-venue pages, primary/fallback day plan, overlap flags, rule fields with excerpts) and fix anything missing | claimed | arena/594db405-poker2 | `2026/**`, `plan/**`, `scripts/*` (root `*.html` only after PR #69 merges) |
+| V4 Final integration: merge `main` (including #69/#70 once green), re-verify combined data, PR → `main`, CI green, Pages deploy confirmed, record here | claimed | arena/594db405-poker2 | `COORDINATION.md` |
+
+- 2026-11-17: Claim posted and pushed before any task work. First-hand findings so far (this container):
+  `python3 scripts/build-events.py --check`, `build-schedule.py --check`, `build-walk.py --check`,
+  `build-site.py --check`, `node scripts/scrape-schedule.mjs --selftest` all pass on `main` = `b832ae2`;
+  re-running the failing workflow step verbatim under `bash -e -o pipefail` reproduces
+  `syntax error near unexpected token '&&'` (exit 2) — the `{ … \n && … ; }` construct is invalid bash,
+  so `/tmp/verify.failed` bookkeeping and the snapshot/PR step never run.
