@@ -36,9 +36,19 @@ jobs:
           python3 scripts/build-site.py
       - name: Fail if the committed output differs
         run: |
+          # Only the *published* inputs are compared here. change-report.json,
+          # schedule-diff.json and snapshots/** are the output of the scheduled re-check, not
+          # dataset inputs; including them made this gate fail on any branch that carried a
+          # real re-check report. The gate below re-renders from whatever inputs are present
+          # and fails if plan/** does not reproduce from them.
           git add -A -- plan site-data
-          git diff --cached --quiet -- plan site-data || {
-            echo "::error::plan/** differs from site-data/*.json - run scripts/build-events.py, build-schedule.py and build-site.py, then commit"; exit 1; }
+          git diff --cached --quiet -- plan site-data -- \
+            ':(exclude)site-data/change-report.json' \
+            ':(exclude)site-data/schedule-diff.json' \
+            ':(exclude)site-data/snapshots/**' || {
+            echo "::error::site-data/*.json (the published dataset) differs from what is committed - run scripts/build-events.py, build-schedule.py and build-site.py, then commit"; exit 1; }
+          python3 scripts/build-site.py
+          python3 scripts/check_plan_fresh.py --strict
       - name: Refresh self-tests and site integrity checks
         run: |
           node scripts/scrape-schedule.mjs --selftest

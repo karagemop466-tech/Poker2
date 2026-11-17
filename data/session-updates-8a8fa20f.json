@@ -1,0 +1,126 @@
+{
+ "_meta": {
+  "session": "arena/8a8fa20f-poker2",
+  "purpose": "First-hand re-read of the official reservation-terms pages for the four properties whose resort fee was blank in site-data/hotels.json, plus the Venetian terms page that is the published source of the 13.38% room tax, the $55 fee, the $20/day guest parking and the $150/night incidental deposit. Written as an audit trail; the only file this record changes is site-data/hotels.json.",
+  "retrieved": "2026-11-17",
+  "method": "Each page was fetched and read in full at the URL below on 2026-11-17. The excerpt field holds the sentence the value was taken from, copied as printed (one normalised space). A property whose page does not contain the clause is left blank in site-data/hotels.json and its attempt is recorded under 'not_found'.",
+  "not_a_value_source": "No aggregator, forum, map provider or prior session's transcription was used for any amount in this file."
+ },
+ "fees_confirmed": [
+  {
+   "hotel_id": "H-ARIA",
+   "property": "ARIA Resort & Casino",
+   "field": "resort_fee",
+   "amount": 55,
+   "plus_tax": true,
+   "per": "room night",
+   "status": "verified_official",
+   "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.",
+   "also_printing": "Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+   "source_url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "publisher": "ARIA Resort & Casino (official hotel reservation terms)",
+   "retrieved": "2026-11-17",
+   "note": "The same page states a $150 per day incidental hold for Deluxe Rooms, check-in 3:00 pm / check-out 11:00 am, and a first-night deposit refundable if cancelled at least 72 hours before arrival."
+  },
+  {
+   "hotel_id": "H-BEL",
+   "property": "Bellagio",
+   "field": "resort_fee",
+   "amount": 55,
+   "plus_tax": true,
+   "per": "room night",
+   "status": "verified_official",
+   "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.",
+   "also_printing": "Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above 2 occupants per room.",
+   "source_url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "publisher": "Bellagio (official hotel reservation terms)",
+   "retrieved": "2026-11-17",
+   "note": "The page carries a footer date, 'Updated on August 26, 2026'. It also states a $150 incidental amount per day, a first-night deposit refundable on at least 72 hours' notice, and a $165 mid-week / $200 weekend cancellation fee on complimentary stays. Parking is not priced on this page: it links to bellagio.com/parking."
+  },
+  {
+   "hotel_id": "H-COSMO",
+   "property": "The Cosmopolitan of Las Vegas",
+   "field": "resort_fee",
+   "amount": 55,
+   "plus_tax": true,
+   "per": "room night",
+   "status": "verified_official",
+   "excerpt": "Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be added to all reservations.",
+   "also_printing": "Additional Occupant Charge. There is an additional charge of $50 plus tax per occupant, per night, above two (2) occupants per room. Maximum occupancy is four (4) persons per room unless otherwise stated.",
+   "source_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/terms-and-conditions.html",
+   "publisher": "The Cosmopolitan of Las Vegas (official hotel reservation terms)",
+   "retrieved": "2026-11-17",
+   "note": "Also states a $150 incidental amount per day ($1,000 per night for a Bungalow or Chelsea Penthouse), check-in 3:00 pm / check-out 11:00 am, and a first-night deposit refundable on at least 72 hours' notice."
+  }
+ ],
+ "not_found": [
+  {
+   "hotel_id": "H-CAES",
+   "property": "Caesars Palace",
+   "attempted_urls": [
+    "https://www.caesars.com/caesars-palace/casino",
+    "https://www.caesars.com/corporate/disclaimer"
+   ],
+   "result": "Neither page, read in full on 2026-11-17, states a Caesars Palace nightly resort fee. The casino page links to a poker tournament flyer and advertises 'FREE 48-Hour Cancellation*' but prints no fee amount. Left blank in site-data/hotels.json.",
+   "note": "A prior session (data/session-updates-e1c079dc.json) recorded a $45-$50 range from the corporate disclaimer page; that sentence was not present in the page as served on 2026-11-17, so it is not republished here."
+  },
+  {
+   "hotel_id": "H-HORSE",
+   "property": "Horseshoe Las Vegas",
+   "attempted_urls": ["https://www.caesars.com/horseshoe-las-vegas/hotel"],
+   "result": "The hotel page read on 2026-11-17 advertises 'FREE 48-Hour Cancellation*' and room products; it prints no resort-fee amount. Left blank.",
+   "note": "A prior session recorded the same page advertising free 48-hour cancellation; that is consistent with what this read found."
+  },
+  {
+   "hotel_id": "H-PARIS",
+   "property": "Paris Las Vegas",
+   "attempted_urls": [],
+   "result": "Not attempted in this session. Left blank."
+  }
+ ],
+ "venetian_terms_recheck": {
+  "hotel_ids": ["H-VEN", "H-PAL"],
+  "source_url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+  "retrieved": "2026-11-17",
+  "values_confirmed": {
+   "room_tax_pct": {
+    "value": 13.38,
+    "excerpt": "Daily rates do not include the applicable Clark County Room Tax of 13.38%."
+   },
+   "resort_fee": {
+    "value": 55,
+    "plus_tax": true,
+    "excerpt": "The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in."
+   },
+   "guest_self_parking_per_day": {
+    "value": 20,
+    "excerpt": "The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day."
+   },
+   "incidentals": {
+    "value": 150,
+    "excerpt": "A credit card incidental deposit of $150 per night is required upon check-in for suite charging privileges for non-Signature Suites."
+   },
+   "early_checkout": {
+    "value": 100,
+    "excerpt": "Check-out prior to your scheduled departure date will result in an additional charge of $100 plus tax."
+   }
+  },
+  "note": "The separate resort-fee page states the same $55 plus tax: 'Rates include a daily Resort Fee of $55 plus tax per night, payable upon check-in.' Both pages agree. The poker suite-rate page (https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) prices the fee line as 'There is a $55 resort fee per night' without the words 'plus tax', which stays flagged as FG-06."
+ },
+ "workflow_defect": {
+  "id": "L2",
+  "title": "The daily /plan/ refresh job could not succeed on any run that wrote a re-check result",
+  "evidence": {
+   "workflow": ".github/workflows/plan-refresh.yml",
+   "failing_run": "https://github.com/karagemop466-tech/Poker2/actions/runs/44124782058",
+   "run_head": "b832ae2",
+   "failing_step": "Verify the generators still reproduce every dataset and page",
+   "cause": "That step ran `python3 scripts/build-site.py --check` after the preceding steps had appended to site-data/change-report.json and site-data/schedule-diff.json. plan/flagged.html renders both files, so on any day the re-check wrote a result the committed page no longer reproduced and the check failed; the later commit step was then skipped. `git log --all -- site-data/change-report.json` is empty, i.e. no run has ever committed a report.",
+   "reproduced_locally": "With a change-report.json present, `python3 scripts/build-site.py --check` prints 'BUILD FAILED: - regenerated output differs from the committed page: flagged.html' and exits 1; the same two files also broke plan-verify.yml's `git diff --cached --quiet -- plan site-data` gate."
+  },
+  "fix": [
+   "plan-refresh.yml now re-renders plan/ from the datasets after the fetch (`python3 scripts/build-site.py`) and then runs `python3 scripts/check_plan_fresh.py`, which gates plan/** on reproducibility from the published dataset and validates the two run reports for shape.",
+   "plan-verify.yml excludes the three run artefacts (change-report.json, schedule-diff.json, snapshots/**) from the committed-dataset diff, re-renders, and runs the same checker with --strict."
+  ]
+ }
+}

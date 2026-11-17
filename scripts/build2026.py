@@ -1872,6 +1872,21 @@ range is published, so no single value is entered.</li>
     return page("Flagged for review", body, "flagged.html")
 
 
+def _monitored_urls():
+    """Every URL scripts/recheck2026.py actually fetches, read from its source builder.
+
+    Imported lazily: recheck2026 imports the same data modules build2026 does, so a
+    top-level import would be circular. Falling back to an empty set keeps the page
+    buildable if the monitor module is absent, and the sentence then describes only the
+    register's own URLs.
+    """
+    try:
+        import recheck2026
+        return {url for _label, url in recheck2026.sources().values()}
+    except Exception:  # noqa: BLE001 - a missing monitor must not stop the site building
+        return set()
+
+
 def p_sources(events):
     srcs = []
     srcs.append(dict(kind="Schedule", name="Venetian DSE IV schedule page",
@@ -1905,6 +1920,16 @@ def p_sources(events):
     srcs.append(dict(kind="Tax", name="Clark County transient lodging tax guide",
                      url=contentmod.ROOM_TAX["source"], date="2026-11-16",
                      use="13.38% from the county's own published guide."))
+    # The scheduled re-check watches every hotel fee/parking page the hotels dataset cites,
+    # so those pages belong in this register too. Before this list existed the page said
+    # "58 URLs are monitored" while the run summary on the same page said 61: the three
+    # hotel fee pages below were watched but never listed, so a reader could not open them.
+    for h in hotelsmod.HOTELS:
+        for field, url in (("resort fee", h.get("resort_fee_src")), ("parking", h.get("parking_src"))):
+            if url:
+                srcs.append(dict(kind="Hotel", name="%s %s source" % (h["name"], field),
+                                 url=url, date=str(h.get("retrieved") or ""),
+                                 use="The %s this site publishes for %s." % (field, h["name"])))
     for v in contentmod.OTHER_VENUES:
         srcs.append(dict(kind="Other venue", name=v["name"], url=v["url"],
                          date=RETRIEVED if "this session" in v["provenance"] else "2026-11-16",
@@ -1917,22 +1942,44 @@ def p_sources(events):
         % (esc(s["kind"]), esc(s["name"]), srclink(s["url"]), esc(s["date"]), esc(s["use"]))
         for s in srcs)
     urls = sorted({s["url"] for s in srcs if s["url"]})
+    # The paragraph below sits directly above the run summary, so it must count the same thing
+    # that summary counts. The re-check watches each hotel fee/parking page the hotels dataset
+    # cites (some of those pages are not rows on this register); quoting only this register's
+    # count beside a run that fetched more made the page contradict itself (58 vs 61 on the
+    # 2026-11-17 run). The register rows above are the documents, one row per document used.
+    monitored_n = len({u for u in _monitored_urls()} | set(urls))
     if CHECKS_META is None:
         monitor = ('<p class="note">This checkout carries no completed re-check run yet, so every row '
                    'shows <em>not yet checked</em> rather than an assumed-clean status. The first '
                    'scheduled run sets the baseline hash.</p>')
     else:
         run = (CHECKS_META.get("runs") or [{}])[0]
-        monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs, '
-                   '<strong>%d changed</strong>, %d fetch errors, %d first-time checks. A fetch error is a '
-                   'monitoring failure, not evidence that the document did not change.</p>'
+        # Count from the run's own per-URL results rather than from the summary fields.
+        # The summary in a committed checks.json can predate a change in how it is computed
+        # (the 2026-11-17 file recorded "never_checked: 51", which counted pages whose
+        # baseline had *just* been established). The results list is the evidence.
+        rows_ = run.get("results") or []
+        first_check = sum(1 for r in rows_ if r.get("change") == "first check")
+        changed_n = sum(1 for r in rows_ if r.get("change") == "CHANGED")
+        err_n = sum(1 for r in rows_ if r.get("change") == "fetch error")
+        ever = set()
+        for past in CHECKS_META.get("runs") or []:
+            for r in past.get("results") or []:
+                if r.get("hash"):
+                    ever.add(r.get("key"))
+        never_read = sum(1 for r in rows_ if not r.get("hash") and r.get("key") not in ever)
+        monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs: '
+                   '<strong>%d changed</strong>, %d fetch errors, %d whose baseline hash was set by that '
+                   'run, %d that no run has ever read successfully. A fetch error is a monitoring '
+                   'failure, not evidence that the document did not change.</p>'
                    % (esc(CHECKS_META.get("last_run") or run.get("checked") or "unknown"),
-                      CHECKS_META.get("monitored", 0), CHECKS_META.get("changed_this_run", 0),
-                      CHECKS_META.get("errors", 0), CHECKS_META.get("never_checked", 0)))
+                      len(rows_) or CHECKS_META.get("monitored", 0), changed_n, err_n,
+                      first_check, never_read))
     return page("Sources", """
 <div class="hero"><h1>Source register</h1>
 <p class="lede">Every document this site is built from, with the date it was read and what it was used
-for. %(n)s documents. All of them are official venue, operator or government pages &mdash; no
+for. <strong>%(ndocs)s distinct document(s)</strong> behind %(n)s register rows. All of them are official
+venue, operator or government pages &mdash; no
 aggregator, no forum, no mapping service.</p></div>
 
 <div class="panel"><h2>Scheduled re-check</h2>
@@ -1941,7 +1988,9 @@ this page every morning at 06:00 UTC, hashes the normalised text, and appends th
 <code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
 the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
 you know which cited value may have moved. %(nurls)s URLs are monitored, including all 37
-structure-sheet URLs.</p>
+structure-sheet URLs. A <em>fetch error</em> means the job could not read the document &mdash; often a
+bot wall (HTTP 403) or a 302 redirect on a property that restricts scripts &mdash; and it proves nothing
+either way; those rows keep their previous hash and their old read date.</p>
 %(monitor)s
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
@@ -1950,7 +1999,7 @@ into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), nurls=len(urls), monitor=monitor), "sources.html")
+""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}), nurls=monitored_n, monitor=monitor), "sources.html")
 
 
 def p_repo_review(events):
