@@ -4226,6 +4226,86 @@
  {
   "p": "sources.html",
   "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "bellagio.mgmresorts.com",
+  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "mgmgrand.mgmresorts.com",
+  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "bellagio.mgmresorts.com",
+  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.caesars.com",
+  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "mgmgrand.mgmresorts.com",
+  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "assets.contentstack.io",
+  "x": "assets.contentstack.io | 422 | unreachable | the fetch failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | 404 | not found | the official URL no longer serves a document - the citation itself needs correcting"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Schedule",
@@ -4589,7 +4669,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-16 | Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on e"
+  "x": "Other venue | Wynn / Encore | www.wynnlasvegas.com | 2026-11-17 | Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on e"
  },
  {
   "p": "sources.html",
@@ -4613,7 +4693,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Horseshoe Las Vegas | www.caesars.com | 2026-11-17 | Start times only. No buy-in, guarantee, structure or entry rule is officially published, so no row can be ranked."
+  "x": "Other venue | Horseshoe Las Vegas | www.caesars.com | 2026-11-16 | Start times only. No buy-in, guarantee, structure or entry rule is officially published, so no row can be ranked."
  },
  {
   "p": "sources.html",
@@ -4693,7 +4773,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-17 | No tournament data published on the official page."
+  "x": "Other venue | Resorts World Las Vegas | www.rwlasvegas.com | 2026-11-16 | No tournament data published on the official page."
  },
  {
   "p": "sources.html",
