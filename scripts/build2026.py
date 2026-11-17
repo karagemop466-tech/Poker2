@@ -2091,6 +2091,10 @@ def p_sources(events):
                    'not a source that has not changed. The value on the row keeps its own last '
                    'human-verified date, and the badge on the table says so. Open the link and read '
                    'it, or re-read it before any non-refundable payment.</p>'
+                   '<p class="note">This table is the monitor\'s own run log, kept as history. A URL this '
+                   'site has since corrected stays listed until the next scheduled run &mdash; that is how '
+                   'the Wynn poker-room link became visible in the first place: the log saw it fail, the '
+                   'citation was then fixed. The failure and the correction are both the point.</p>'
                    '<table><thead><tr><th>Document</th><th class="num">HTTP</th><th>Failure kind</th>'
                    "<th>What that means</th></tr></thead><tbody>%s</tbody></table></div>"
                    % (len(_bad), CHECKS_META.get("monitored", len(_run.get("results", []))), _rows))
