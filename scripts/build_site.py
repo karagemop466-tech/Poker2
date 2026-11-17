@@ -261,7 +261,14 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
             gtd += ' <span class="badge b-chip">incl. bounties</span>'
         elif not gtd:
             gtd = '<span class="badge b-chip">none published</span>'
-        ratio = f'{e["gtd_ratio"]:.2f}×' if e.get("gtd_ratio") else "—"
+        # A ratio is only shown where BOTH numbers were confirmed. 16 Wynn rows publish a
+        # guarantee and a buy-in but no house fee, so the site cannot say what the entry actually
+        # costs; printing 62.50x next to "UNVERIFIED" is a ratio of a number the reader cannot act
+        # on. ranking.html already refused to rank them ("ranking requires confirmed fee and
+        # guarantee"); the table has to agree with it.
+        ratio = (f'{e["gtd_ratio"]:.2f}×' if (e.get("gtd_ratio") and e.get("fee") is not None)
+                 else ('<span class="muted" title="the house fee is not confirmed, so total entry cost is unknown">fee unconfirmed</span>'
+                       if e.get("gtd_ratio") else "—"))
         tags = " ".join(f'<span class="badge b-chip">{esc(t)}</span>' for t in e.get("tags", []))
         gate = ""
         el = e.get("eligibility")
@@ -492,7 +499,7 @@ def hotel_table(hotels, table_id, show_calc=True):
 <td>{esc(h.get('parking','')) or '—'}</td>
 <td>{calc}</td>
 <td>{walk_cell}</td>
-<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'), labels=('resort-fee terms', 'official booking engine'))} <small class="note">{fee_when}</small></td>
+<td class="src">{src_links(h.get('resort_fee_src'), h.get('booking_url'), labels=('fee/cancellation source', 'official booking page'))} <small class="note">{fee_when}</small></td>
 </tr>""")
     head = ("<th>Hotel</th><th>Address</th><th>Dated quote / latest logged rate</th><th>Resort fee</th><th>Tax</th>"
             "<th>Parking</th><th>True cost / night</th><th>Walking estimate (30-min limit)</th><th>Sources / last checked</th>")
