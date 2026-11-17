@@ -94,4 +94,18 @@ tr.hidden{display:none}
 .banner{border:1px solid var(--warn);background:rgba(251,191,36,.08);border-radius:10px;
 padding:12px 15px;margin-bottom:16px;font-size:.9rem}
 .banner.info{border-color:var(--link);background:rgba(125,211,252,.07)}
-@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}}
+.chk-row{display:flex;gap:14px;align-items:center;margin:6px 0 10px;flex-wrap:wrap}
+.gsbar{border-bottom:1px solid var(--line);background:var(--panel);padding:10px 0}
+.gsbar .wrap2{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;gap:6px;
+grid-template-columns:auto 1fr auto}
+.gs-label{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;align-self:center}
+.gsbar input{padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);
+font:inherit;min-width:0}
+.gsbar .note{margin:0;grid-column:1/-1}
+#gs-res{grid-column:1/-1}
+#gs-res:empty{display:none}
+.gs-group{margin:8px 0 12px}
+.gs-group h3{margin:0 0 4px}
+.gs-group .note{display:block;margin:2px 0 0;font-size:.8rem}
+@media(max-width:720px){th{position:static}.tbl-scroll{max-height:none}
+.gsbar .wrap2{grid-template-columns:1fr auto}.gs-label{display:none}}

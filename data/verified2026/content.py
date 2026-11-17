@@ -168,12 +168,22 @@ FLAGS = [
          impact="The true-cost calculator needs you to enter the nightly rate you are quoted; it is not prefilled.",
          source="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
     dict(id="F-06", area="Hotels",
-         title="No cancellation deadline published on the pages read",
-         detail="None of the official hotel pages read states a cancellation cutoff for a flexible rate.",
-         impact="The cancellation column stays blank. Confirm it before any non-refundable payment.",
-         source="https://www.venetianlasvegas.com/resort/resort-fee.html"),
+         title="Cancellation deadlines are partial: two properties publish 72 hours, the rest do not",
+         detail=("Partly resolved on 2026-11-17 by reading each property's own terms page first-hand. "
+                 "Bellagio and MGM Grand both publish a 72-hour window: the first night's deposit is "
+                 "fully refundable if Room Reservations is told at least 72 hours before arrival, and a "
+                 "late cancellation or no-show forfeits it. Caesars Palace and Horseshoe advertise "
+                 "'FREE 48-Hour Cancellation*' with an asterisk whose condition is not printed on the "
+                 "page read. The Venetian and Palazzo publish no poker-rate deadline, but do publish "
+                 "that prepaid offers are non-cancellable and non-refundable unless the offer says "
+                 "otherwise, and that checking out early costs $100 plus tax. Wynn publishes deposit "
+                 "terms only (one night charged at booking) and no refund window."),
+         impact=("For a Bellagio or MGM Grand stay you can plan a refundable hold until 72 hours out. "
+                 "For the Venetian poker rate, which is the rate this plan depends on, the deadline is "
+                 "still not established, so treat the deposit as committed."),
+         source="https://bellagio.mgmresorts.com/en/terms-and-conditions.html"),
     dict(id="F-07", area="Taxes",
-         title="Room tax rate is sourced to the county, not re-read this session",
+         title="Room tax: the hotel's own terms are re-read, the county levy is not",
          detail=("13.38% comes from Clark County's own 'General Information Guide for Transient Lodging "
                  "Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 "
                  "by an earlier session and was not re-read today."),
@@ -201,6 +211,42 @@ FLAGS = [
                  "year; Bellagio's Saturday sheet contradicts itself."),
          impact="The ranked tables are Venetian DSE IV only. That is a coverage limit, not a preference.",
          source="https://www.caesars.com/horseshoe-las-vegas/casino"),
+    dict(id="F-11", area="Hotels",
+         title="A per-night rate is not the bill: occupancy and early-departure charges",
+         detail=("The properties charge more than the nightly rate and resort fee in two ways a rate "
+                 "comparison misses. The Venetian and Palazzo add $50 per night for each additional "
+                 "guest 13 or older above double occupancy, and $100 plus tax for checking out before "
+                 "the scheduled departure date. Bellagio adds $50 plus tax per occupant per night above "
+                 "two. MGM Grand adds $40 plus tax per occupant per night above two. Caesars Palace and "
+                 "Horseshoe do not publish an occupancy charge on the page read."),
+         impact=("As a pair, the published rates and the calculator are right. With a third adult in "
+                 "the room the nightly cost rises by $50 (Venetian) or $40 (MGM Grand) plus tax, which "
+                 "can exceed the difference between two hotels."),
+         source="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"),
+    dict(id="F-12", area="Hotels",
+         title="Caesars Palace and Horseshoe do not publish a resort fee on the page read",
+         detail=("Both properties' official pages were read on 2026-11-17: the resort-hotel page, the "
+                 "casino page and the hotel page. None prints a resort-fee amount; only a 48-hour "
+                 "cancellation headline and 'valet and self-parking available' appear. Figures of "
+                 "$54.95 and $49.95 are widely repeated by aggregator sites and are deliberately not "
+                 "used here."),
+         impact=("Those two properties cannot be costed on this site, so they cannot win a cost "
+                 "comparison. They stay in the walking tables because distance is published."),
+         source="https://www.caesars.com/horseshoe-las-vegas/hotel"),
+    dict(id="F-13", area="Monitoring",
+         title="The scheduled re-check had never run, and this sandbox cannot reach the venue sites",
+         detail=("GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline "
+                 "hash existed for any official URL. Two consequences were visible in the site text: it "
+                 "pointed at data/site/checks.json, which the scheduled job does not write (it writes "
+                 "data/verified2026/checks.json), and nothing read that file to mark rows. Both are fixed "
+                 "- every tournament row now carries a Source re-check cell driven by the real file, and "
+                 "scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. "
+                 "This sandbox has no outbound access to the venue hosts (curl returns "
+                 "SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline "
+                 "can only be set by the 06:00 UTC job running on main."),
+         impact=("Until that job runs, every row reads 'not yet checked'. That is the honest state and "
+                 "is deliberately not rendered as 'unchanged'."),
+         source=".github/workflows/recheck.yml (repository file, not an external citation)"),
     dict(id="X-02", area="Official page defect",
          title="The Venetian series overview still labels an ended series as 'Current Series'",
          detail=("The DeepStack overview page shows 'Current Series: WPT Fall Festival, October 28 - November 15, "
@@ -209,6 +255,15 @@ FLAGS = [
          impact="Do not rely on that page's 'Current Series' label; use the dated event page and schedule PDF.",
          source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"),
 ]
+
+# Look-up used by the per-room venue pages. Keys match ROOM_META in scripts/build2026.py.
+OTHER_VENUES_BY_ID = {
+    "wynn": next(v for v in OTHER_VENUES if "Wynn" in v["name"]),
+    "horseshoe": next(v for v in OTHER_VENUES if "Horseshoe" in v["name"]),
+    "caesars-palace": next(v for v in OTHER_VENUES if "Caesars Palace" in v["name"]),
+    "bellagio": next(v for v in OTHER_VENUES if "Bellagio" in v["name"]),
+    "mgm-grand": next(v for v in OTHER_VENUES if "MGM Grand" in v["name"]),
+}
 
 QUESTIONS = [
     dict(id="Q-01", q="Do you want only events whose sheet is silent on re-entry, or only events the poker room confirms in writing are one-entry-only?",
@@ -259,6 +314,17 @@ QUESTIONS = [
          why="The ratio is descriptive, not a forecast. A $500K guarantee on an $800 buy-in is a floor set by the room; the actual pool depends on entries.",
          blocks="How the ranking column should be read.",
          answer=None),
+    dict(id="Q-13", q="Will you travel with more than two adults in the room?",
+         why=("The Venetian, Palazzo, Bellagio and MGM Grand all surcharge a third adult, from $40 to "
+              "$50 plus tax per night, which changes the cheapest-hotel answer."),
+         blocks="The hotel half of the trip cost and the cost comparison between properties.",
+         answer=None),
+    dict(id="Q-14", q="Do you accept a booking with no published cancellation deadline?",
+         why=("The Venetian poker rate, which the whole plan leans on, publishes no cancellation "
+              "deadline. Bellagio and MGM Grand publish 72 hours. Booking the Venetian means treating "
+              "the deposit as committed."),
+         blocks="Whether the Venetian poker rate can be used for a trip whose dates are not yet fixed.",
+         answer=None),
 ]
 
 SUGGESTIONS = [
@@ -302,6 +368,21 @@ SUGGESTIONS = [
          what="recheck.yml, source-monitor.yml, plan-refresh.yml and plan-verify.yml all re-check overlapping URLs on different cron schedules.",
          decides="Whether you get one daily digest or three.",
          cost="Small workflow edit", effort="Low", blocks=None),
+    dict(id="S-11", title="Show a per-row source-change badge, and keep the monitor honest",
+         what=("Done on 2026-11-17. Every tournament row now carries a Source re-check cell "
+               "(unchanged / source changed / fetch error / baseline set) generated from "
+               "data/verified2026/checks.json, and scripts/check_monitor_badge.py fails the build if the "
+               "badge stops marking changed rows."),
+         decides="Whether a row you are about to act on has moved under you since it was transcribed.",
+         cost="Already implemented", effort="Done", blocks="F-13"),
+    dict(id="S-12", title="Turn the page-hash monitor into a per-sentence diff",
+         what=("The monitor hashes a whole page, so a change tells you the document moved, not which "
+               "value moved. Tracking the sentence each row was transcribed from would tell you the "
+               "buy-in changed. This is the remaining half of S-07."),
+         decides="Whether a changed source needs one row re-read or all of them.",
+         cost="About a day; the per-row excerpts already exist", effort="Medium", blocks="F-13"),
 ]
 
-SUMMARY_HEADLINE = "No Strip poker room publishes a single-entry rule. The Venetian is the only room that publishes enough to rank."
+SUMMARY_HEADLINE = ("No Strip poker room publishes a single-entry rule. The Venetian is the only room "
+                   "that publishes enough to rank line by line. Silence on re-entry is recorded as "
+                   "silence, never as a promise.")
