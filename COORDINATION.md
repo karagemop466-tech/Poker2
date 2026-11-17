@@ -2,6 +2,10 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | in progress | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Extend scheduled source checks to include each of the 37 individual Venetian structure-sheet URLs | done (monitor report awaits first live run) | arena/96765ae0-poker2 | `COORDINATION.md`, `scripts/dataset.py`, `scripts/recheck_sources.py`, `README.md`, `sources.html`, `summary.html`, `index.html`, `data/site/*` |
 
 | Task | Status | Owner | Files |
