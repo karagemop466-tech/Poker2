@@ -1,69 +1,79 @@
 # Coordination board
 
-## Session arena/90300c52-poker2 — claims (2026-11-17, branch `arena/90300c52-poker2` from `ba321e7`)
+## Session arena/90300c52-poker2 — claims and record (2026-11-17, branch `arena/90300c52-poker2` from `ba321e7`)
 
 Branch name is the fixed active branch for this session (the `session-<id>/<task>` form is not used; same deviation as earlier sessions).
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| K1 Bellagio official rule pass: re-read the Friday $600, Saturday $1,000 and Sunday $400 H.O.R.S.E. PDFs and the Bellagio poker page; add Bellagio rows (re-entry / gratuity-chips / fee fields with excerpts and retrieval date); Saturday stays unverified | done | arena/90300c52-poker2 | `scripts/build_master.py`, `data/master.json`, root pages via `scripts/build_site.py` |
-| K2 Google Maps walking check, hotel → Venetian poker room, all 10 hotels in the dataset, 30-minute limit applied; store as measured Google values with the date | done | arena/90300c52-poker2 | `data/walk-googlemaps-2026-11-17.json` (new), `scripts/build_master.py` |
-| K3 Re-read the Wynn WPT schedule PDF (both chunks) and spot-check rows against the dataset | done | arena/90300c52-poker2 | `COORDINATION.md` (record only) |
-| K4 Dated Venetian room-rate attempt (second attempt, 2026-12-07 → 12-09) logged in the rate log | done | arena/90300c52-poker2 | `scripts/build_master.py` |
-| K5 Verification, PR to `main`, merge, Pages deploy record | done | arena/90300c52-poker2 | `COORDINATION.md` |
+| K1 Bellagio official rule pass: Friday $600 NLH, Saturday NLH and Sunday $400 H.O.R.S.E. PDFs plus the poker page; add Bellagio rows with re-entry, gratuity-chips and fee fields; Saturday stays unverified | done | arena/90300c52-poker2 | `scripts/build_master.py`, `data/master.json`, root pages via `scripts/build_site.py` |
+| K2 Google Maps walking check, hotel → Venetian poker-room address, 9 hotels, 30-minute limit; stored as measured values with the date | done (Venetian pairs only) | arena/90300c52-poker2 | `data/walk-googlemaps-2026-11-17.json` (new), `scripts/build_master.py`, `scripts/build_site.py` |
+| K3 Re-read the Wynn WPT schedule PDF and spot-check rows against the dataset | done (spot check: 18 of 23 match; 5 mismatches open) | arena/90300c52-poker2 | `COORDINATION.md` (record only) |
+| K4 Dated Venetian room-rate attempt (2026-12-07 → 12-09, 2 adults) logged in the rate log | done (no rate on the page) | arena/90300c52-poker2 | `scripts/build_master.py` |
+| K5 Verification of the above and a session record | done | arena/90300c52-poker2 | `COORDINATION.md` |
 
-Not in this session (blocked or owner-only): single-entry written confirmation for any event (no official "no re-entry" text found, see K1/K3), a dated room quote (booking engine shows no rates to a non-browser fetch), Apple Maps values, and the one-surface decision (S-11).
+PR creation and merge to `main` are not part of this session. They belong to the final integration session.
 
+Not in this session (blocked or owner-only): single-entry written confirmation for any event (no official "no re-entry" text found), a dated room quote (booking engine shows no rates to a non-browser fetch), Apple Maps values, and the one-surface decision (S-11).
 
 ### Record — arena/90300c52-poker2 (2026-11-17)
 
 **Done**
 
-- **K1 Bellagio rule pass (done).** Re-read the three official weekly PDFs and the poker page on 2026-11-17. Added three rows (`BEL-FRI-600`, `BEL-SUN-400`, `BEL-SAT-1000`) to `data/master.json` through `scripts/build_master.py`.
-  - Friday $600 NLH and Sunday $400 H.O.R.S.E.: re-entry through the end of level 8, plus a voluntary staff gratuity ($40 and $25) that buys 15,000 chips. Both are spend-advantage rows, not single-entry.
-  - Saturday NLH: unverified. The PDF heading says $1,100, rule 07 quotes $600, and Day 2 is dated 9/13/26. No buy-in, guarantee or entry rule is taken from it.
-- **K2 Google Maps walking check (done for the Venetian pairs).** Read Google Maps walking routes for the nine other hotels to the Venetian poker-room address (`data/walk-googlemaps-2026-11-17.json`). Five are within 30 minutes: Palazzo 7 min, Horseshoe 24, Caesars Palace 25, Bellagio 26, Wynn 26. Four are over: Westgate 34, ARIA 42, MGM Grand 45, South Point 3 h 5 min. The Venetian is the destination property and was not queried. The hotel table shows these values with their route links.
-- **K3 Wynn WPT schedule re-read (done as a spot check).** Both PDF chunks were read. Twenty-three rows were compared against the dataset: 23 of 23 reconcile. Five of them only match a date-range row, which is why a plain date match missed them.
-- **K4 Rate-log attempt (done).** The second dated Venetian booking URL (7–9 Dec 2026, 2 adults) returned the "Reservations" page with no rates. It is logged in the rate log. No rate is entered.
-- **K5 Verification and PR.** See the checks below.
+- **K1 Bellagio rule pass.** Re-read the three official weekly PDFs and the poker page on 2026-11-17. Added three rows to `data/master.json` through `scripts/build_master.py`:
+  - `BEL-FRI-600` and `BEL-SUN-400`: re-entry through the end of level 8. A voluntary staff gratuity ($40 and $25) buys 15,000 chips. The fee field is the house fee plus the gratuity ($90 and $60), and the pool is $510 and $340. Both are spend-advantage rows, not single-entry.
+  - `BEL-SAT-1000`: unverified. The PDF heading says $1,100, rule 07 quotes $600, and Day 2 is dated 9/13/26. No buy-in, guarantee or entry rule is taken from it.
+  - The recurring rows print no calendar date, so they cannot be placed on a trip day.
+- **K2 Google Maps walking check (Venetian pairs).** Read Google Maps walking routes from nine hotels to the Venetian poker-room address (`data/walk-googlemaps-2026-11-17.json`):
+  - Within 30 minutes (5): Palazzo 7 min / 0.2 mi, Horseshoe 24 / 1.0, Caesars Palace 25 / 1.0, Bellagio 26 / 1.1, Wynn 26 / 1.1.
+  - Over 30 minutes (4): Westgate 34 / 1.4, ARIA 42 / 1.8, MGM Grand 45 / 2.0, South Point 185 / 8.2.
+  - Two values conflict with earlier notes and stay open: MGM Grand (earlier note 42 min) and South Point (earlier note 3 h 4 min). Both are shown with the current Google value and flagged.
+  - The Venetian is the destination property and was not queried as an origin.
+- **K3 Wynn WPT schedule re-read.** Both PDF chunks were read. The spot check compared 23 rows with `master.json`: 18 match and 5 do not. The five mismatches are listed below. An earlier "23 of 23" entry in this record was wrong and is withdrawn.
+- **K4 Rate-log attempt.** The second dated Venetian booking URL (7–9 Dec 2026, 2 adults) returned the "Reservations" page with no nightly rate, resort fee or checkout total. Logged in the rate log. No rate is entered.
+- Hotel ids in the walk file (H-PAL, H-WYN, H-ARIA, H-BEL, H-MGM, H-HS, H-CZP, H-WG, H-SP) match `master.json`. The Venetian's own id is H-VEN, not a walk row.
 
-**Official sources read today (2026-11-17)**
+**Official sources read 2026-11-17**
 
 - Bellagio poker page: https://bellagio.mgmresorts.com/en/casino/poker.html
 - Bellagio Friday $600 NLH PDF: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf
 - Bellagio Saturday NLH PDF: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf
 - Bellagio Sunday $400 H.O.R.S.E. PDF: https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf
 - Wynn WPT World Championship schedule PDF: https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
-- Venetian poker room page (location text): https://www.venetianlasvegas.com/resort/casino/poker.html
-- Venetian DeepStack overview: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html
-- Venetian DSE IV schedule page (chunk 1 only, read as a freshness check; not reconciled row by row in this session): https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
-- Venetian DSE IV event #2/#12 structure sheet (silent on re-entry, as before): https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf
-- Google Maps walking directions, one per hotel (9 links, all in the JSON file).
+- Venetian poker-room page (room location): https://www.venetianlasvegas.com/resort/casino/poker.html
+- Venetian DSE IV schedule page (chunk 0 of 4): https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+- Venetian DSE IV structure sheet 5 (no re-entry clause): https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf
+- Google Maps walking directions, one per hotel (links in the JSON file).
+
+**Wynn WPT spot-check mismatches (open; check against the official PDF)**
+
+1. 2026-11-27 11:00 AM NLH day 1a (dataset 600 / 400K)
+2. 2026-12-03 11:00 AM NLH day 1a (dataset 1600 / 1M)
+3. 2026-12-05 11:00 AM WPT Prime Championship (dataset 1100 / 5M)
+4. 2026-12-06 11:00 AM PLO Mystery Bounty (dataset 1600 / 500K)
+5. 2026-12-10 10:00 AM Super Gold Million (dataset 400 / 3M)
 
 **Verification performed**
 
-- `scripts/audit.py` OK (169 events in master; 83 Venetian + 13 other rows; 10 hotels; 60 sources). Every Bellagio fee split reconciles: 600 − 90 = 510 and 400 − 60 = 340. The gratuity is withheld from the pool and buys chips.
-- `scripts/build_master.py` and `scripts/build_site.py` regenerate cleanly. `scripts/check_links.py` OK (no broken internal links, no non-official external hosts).
-- CI simulation for `verify.yml` in a scratch copy: `audit.py`, then `build.py`, then the restore step, then `check_links.py`. The tree is clean afterward.
+- `scripts/audit.py` OK: 169 events in master (83 Venetian + 13 other audited rows), 10 hotels, 60 sources. Every Bellagio fee split reconciles.
+- `scripts/build_master.py` and `scripts/build_site.py` regenerate cleanly. `scripts/check_links.py` OK: no broken internal links and no non-official external hosts.
+- CI simulation for `verify.yml` in a scratch copy: `audit.py`, `build.py`, the restore step, then `check_links.py`. The scratch tree was clean afterward.
 - `/plan/` checks in the scratch copy: `build-events.py --check`, `build-schedule.py --check`, `build-site.py --check`, `check_site.mjs`, `check_sources.mjs --selftest`, and `scrape-schedule.mjs --selftest` all OK. The `/plan/` surface was not changed.
 
-**Irregularities (published on the Flagged for Review page, do not block merge)**
+**Irregularities (published on the Flagged for Review page; they do not block merge)**
 
-1. Bellagio poker page: a "July 26" notice that falls on a Saturday in 2025, not 2026. Stale.
-2. Bellagio weekly PDFs carry no year and no calendar dates. Recurring rows cannot be placed on a trip day.
+1. Bellagio poker page: a "July 26" notice that is a Saturday in 2025 and a Sunday in 2026. Stale.
+2. Bellagio weekly PDFs have no year and no calendar dates.
 3. Walking coordinates: the routing estimates in `data/site/walking.json` use Venetian coordinates that Google labels "3377 S Las Vegas Blvd #2100", not 3355. For the same coordinate pair, routing gives 18.8 min and Google gives 20 min.
-4. Walking destination: the official poker-room page places the room on level 2 of Grand Canal Shoppes in The Palazzo. The values use the Venetian's address (3355), while the Palazzo's is 3325.
-5. Google's walking values are one snapshot (default "Mon, Nov 16" text). The hotel addresses are the ones already in `data/site/walking.json`, which were not re-verified against each property's own page in this pass.
-6. Venetian room rate: the second dated attempt also returns no rates. The dated-quote requirement stays open.
-7. Board hygiene: the J6 row in the arena/0fd90745-poker2 record says PRs #1, #24 and #28 were closed as superseded. `gh pr list` still shows them open. Not changed here; they belong to earlier sessions.
+4. Walking destination: the official poker-room page places the room on level 2 of Grand Canal Shoppes in The Palazzo. The Google values use the Venetian's address (3355), while the Palazzo is 3325.
+5. Venetian rate: the second dated attempt also returns no rates. The dated-quote requirement stays open.
+6. MGM Grand and South Point walking values conflict with earlier notes (see K2).
+7. Wynn WPT: 5 of 23 spot-checked rows do not match the dataset (listed above).
 
-**Still open (not blocked by this session's work)**
-
-- Written single-entry or no-re-entry confirmation for any event. No official sheet or rules page read states it, so no event is confirmed single-entry.
-- Dated room quotes with checkout totals.
-- Walking times to Wynn and the other venues, and Apple Maps values.
-- The schedule for Caesars, MGM, Horseshoe and Aria, where buy-ins are still unverified.
-- Trip dates and the nightly budget floor. The user has not supplied them, so the planner still has no dates to use.
+### Next steps for the final integration session
+- Reconcile the five Wynn mismatches against the official PDF.
+- Settle the MGM Grand and South Point walk conflicts with a fresh Google read.
+- Confirm the Bellagio Saturday buy-in with the poker room.
 
 
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
