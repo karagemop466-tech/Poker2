@@ -653,6 +653,46 @@ Remaining open items: `FG-02` (single-entry answer in writing), `S-02` (structur
 - Force-push note: the branch's claim commit was rewritten during rebase onto `main`, which had moved (PRs #43–47). The branch was force-pushed once with `--force-with-lease` pinned to the session's own previous tip `e14c3d6`. No other session's commits were rewritten.
 - Open irregularities (not blocking, all on `/plan/flagged.html`): FG-02, FG-30, FG-31, FG-04/04b, FG-05/05b, FG-06, FG-07.
 
+### V8 — merge and deployment record (arena/5dcf101f-poker2)
+
+- PR [#50](https://github.com/karagemop466-tech/Poker2/pull/50) → `main`, merged 2026-11-17T00:46:58Z,
+  merge commit `6c84320`. PR checks `verify` (8s) and `verify` (8s) both **pass**.
+- `main` had advanced 17 commits while this session worked (parallel sessions `arena/8b1f0fd8-poker2` and
+  `arena/f4e82c6f-poker2`). Merging `origin/main` produced exactly one conflict, in `COORDINATION.md`
+  (both sides appended a session section at the same place). Resolved by keeping **both** records — this
+  session's section first, then `arena/f4e82c6f-poker2`'s. No other session's file was reverted.
+- Re-verification **after** the merge, on the combined tree: `scripts/audit.py` OK;
+  `scripts/build_master.py` 166 events / 10 hotels / 41 flags; `scripts/build_site.py` 20 pages, all rows
+  cited; `scripts/check_links.py` 0 broken internal links, 0 non-official external hosts. Both CI surfaces
+  were also simulated locally (`scripts/build.py` + page restore for `verify.yml`, and the three `/plan/`
+  generators for `plan-verify.yml`): clean tree after each, so neither workflow fails.
+- Deployment: workflow runs on `6c84320` — `pages build and deployment` **success**,
+  `Verify site` **success**, `Plan: generated pages match their data` **success**. Pages API reports
+  `status: built`. Live URL <https://karagemop466-tech.github.io/Poker2/>.
+- Live verification by reading the deployed page, not by trusting the build: the dashboard serves the new
+  "Jump to a venue" index with computed counts and per-venue last-checked dates, and every venue page it
+  links to resolves.
+- One follow-up defect found **by reading the deployed page**: pages with no tables rendered the search
+  status as "0 rows on this page". Fixed to show guidance instead, covered by a DOM-stub test.
+
+### What is still not verified (published on the Flagged page; does not block)
+
+These are not gaps in effort, they are things no official source read publishes:
+
+1. **No event is confirmed single-entry.** No Venetian structure sheet, no Wynn WPT terms document and no
+   Caesars/MGM/Horseshoe page read states "no re-entry". "Sheet silent" is the accurate label and it is
+   weaker than a freezeout guarantee. Getting this in writing from each poker room is the single highest
+   value outstanding action.
+2. **No official walking time.** Every hotel row carries a maps link for manual confirmation; the routed
+   estimates in `data/site/walking.json` are a routing-engine estimate, labelled as such.
+3. **No dated room quote.** Every official booking calendar reachable in this environment masks prices
+   behind a cookie wall, so the rate log holds the attempt, not a number. The true-cost formula is
+   verified and ready for a quote the moment one is captured.
+4. **No 8:00 AM tournament anywhere in the dataset.** Earliest printed start is 9:00 AM (Horseshoe), and
+   that room publishes no buy-in, guarantee or entry rule.
+5. **Wynn daily tournaments during the WPT window** are marked unavailable rather than confirmed either
+   way — the Wynn page does not name the WPT series, and the WPT schedule has no 12:00 PM daily rows.
+
 ### arena/0fd90745-poker2 — final integration record (2026-11-17)
 
 | Task | Status | Files |

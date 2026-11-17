@@ -72,9 +72,14 @@
         });
       });
       if (statusEl) {
-        statusEl.textContent = q === ""
-          ? total + " rows on this page"
-          : shown + " of " + total + " rows on this page match \u201c" + globalBox.value + "\u201d";
+        if (total === 0) {
+          // pages without tables (dashboard, summary) should not claim "0 rows"
+          statusEl.textContent = "Use the boxes on the tournament, hotel, venue or walking pages to filter.";
+        } else if (q === "") {
+          statusEl.textContent = total + " rows on this page";
+        } else {
+          statusEl.textContent = shown + " of " + total + " rows on this page match \u201c" + globalBox.value + "\u201d";
+        }
       }
     }
     globalBox.addEventListener("input", runGlobalSearch);
