@@ -1518,6 +1518,39 @@ the next scheduled run (06:30 UTC) should commit `site-data/snapshots/**`; Horse
 the Caesars/Horseshoe/Paris resort fees (the official pages read state no fee); S-12 workflow
 consolidation; FG-02 (no official document states a one-entry cap).
 
+### P6 completion record — arena/b93ea506-poker2 (2026-11-17)
+
+| Task | Status | Result |
+|---|---|---|
+| P1 seven defects repaired | **done** | merged to `main` in [PR #72](https://github.com/karagemop466-tech/Poker2/pull/72), merge commit `7406d12` |
+| P2 `plan/` `--check` fixed | **done** | same PR |
+| P3 re-check evidence verified | **done** | `/2026/` monitor: 61 URLs, 51 read, 0 changed, 10 unread. Root monitor: no run exists |
+| P4 unread URLs published as F-14 | **done** | live at `/2026/flagged.html` |
+| P5 README reconciled | **done** | candidate counts and F-14 recorded |
+| P6 merge + deploy confirmed | **done** | see below |
+
+* **Checks on the merged commit:** all 13 pass locally (`audit.py`, `check_links.py`,
+  `build2026.py --check`, `check2026.py`, `check_guarantees.py`, `check_monitor_badge.py`,
+  `build-site.py --check`, `build_master.py --check`, `check_labels.py`,
+  `check_labels_selftest.py`, `check_semantics.py`, `check_site.mjs`, `check_search.mjs`).
+  `Verify site` green on `main` at `7406d12`; `pages build and deployment` completed successfully.
+* **Live verification after deploy**, not just a green build: `/ranking.html` now renders
+  "DSE IV schedule · structure sheet" (previously every one of those said "schedule"), and a
+  separate "Restricted field — you may not be able to enter" table. `/2026/` now shows 15 best
+  candidates (13 open + 2 restricted) with the two Seniors events moved out of the ranking, and
+  `/2026/flagged.html` carries F-14 with all ten unread URLs. The first fetch after deploy served
+  the previous page from cache; the same URL returned the new content on a cache-busted fetch.
+* **Two merge rounds were required.** `main` advanced twice while this branch was open, once with
+  a workflow change to `verify.yml`. In round two the only conflict was a generated file
+  (`2026/assets/search-index.js`), resolved by regenerating it rather than hand-merging. Both
+  sessions' `COORDINATION.md` sections are kept verbatim; nothing from either side was dropped.
+* **Two semantic gates now run.** This session added `check_labels.py` (citation labels,
+  ratio-without-fee, workflow links). A parallel session added `check_semantics.py` (monitor
+  arithmetic, fee provenance) in PR #73. They check different things and both run in `verify.yml`.
+* **Still open, none of it blocking:** the `plan-refresh.yml` generator step (root cause written up
+  above); the root monitor's first baseline run; F-05 dated hotel quotes; F-08 measured walk times;
+  Q13 (which surface is primary) and S11–S13 as decisions for you.
+
 ## Session arena/7be88b38-poker2 — claims (2026-11-17)
 
 Branch `arena/7be88b38-poker2` (fixed by the platform; no other branch is created or pushed).
