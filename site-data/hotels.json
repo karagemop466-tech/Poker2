@@ -30,6 +30,13 @@
     "excerpt": "Live booking-engine arithmetic, captured 2026-11-17, Nov 18-22 2026 stay: room $2,827.00 + resort fee $220.00 = $3,047.00 taxable; Taxes $407.69; Total $3,454.69. And Nov 18-25 2026: room $3,594.75 + resort fee $385.00 = $3,979.75 taxable; Taxes $532.51; Total $4,512.26.",
     "source_url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-25&view=calendar",
     "publisher": "The Venetian (official booking engine)"
+   },
+   {
+    "excerpt": "'The room tax rate for properties located INSIDE the Primary Gaming Corridor is 13.38% (see map in Appendix II). The room tax rate for properties OUTSIDE the Primary Gaming Corridor is 13.00%.' and 'Room tax should be collected from the guest and shown as a separate charge. The tax may NOT be included in the price of the room.'",
+    "source_url": "https://files.lasvegasnevada.gov/business-licensing/RoomTaxPacket.pdf",
+    "publisher": "City of Las Vegas, Business License Division - Transient Lodging Establishment Room Tax Instructions & Guidelines, Rev. March 2026",
+    "retrieved": "2026-11-17",
+    "note": "Corroborates both the rate and the method the calculator uses (tax added on top of the room rate and the resort fee, never treated as included). Jurisdiction caveat: this packet governs establishments inside City of Las Vegas limits, while the Strip properties in this dataset sit in unincorporated Clark County - which is why the Clark County guide, not this packet, is the citable source for each property's own row. Both official documents state the same 13.38% / 13.00% PGC split."
    }
   ],
   "cross_check": "Both dated quotes imply exactly 13.3804% (407.69 / 3,047.00 and 532.51 / 3,979.75). The rate is therefore confirmed twice over: the county notice states it, and the hotel's own engine charges it. The engine also taxes the resort fee, which is the assumption behind the true-cost formula below."
