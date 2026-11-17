@@ -1082,4 +1082,7 @@ Branch: `arena/85381daa-poker2` (fixed active branch). Synced to `main` at `628a
 
 ### Integration result
 
-- PR / merge / Pages: pending — to be recorded here once PR is merged to `main` and GitHub Pages deploys.
+- PR: [#59](https://github.com/karagemop466-tech/Poker2/pull/59) (`arena/85381daa-poker2` -> `main`).
+- Merge: merged via `gh pr merge 59 --merge`; integration commit `28fe093` is an ancestor of `main` (`d3549d3`); merge commit `d3549d3`. `git diff --check` clean.
+- GitHub Pages: build [1376393053](https://api.github.com/repos/karagemop466-tech/Poker2/pages/builds/1376393053) for commit `d3549d3` reported `built` (no error); live site https://karagemop466-tech.github.io/Poker2/.
+- Root dashboard verified live: 166 events, 10 hotels, 41 flags, 63 sources; `scripts/audit.py` OK, `scripts/check_links.py` OK (37 pages, 3007 hrefs, no broken internal links, no non-official external hosts).
