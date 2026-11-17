@@ -1,5 +1,13 @@
 # Coordination board
 
+## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| L1 Re-read the official Venetian DSE IV HTML schedule table live (4 chunks) and compare all 94 rows (date, start, event #, structure sheet #) with `data/verified2026/schedule.py`; record result and add a repeatable read-only check | in progress | arena/1655b450-poker2 | `research/venetian-dse4-live-2026-11-17.csv`, `scripts/recheck_schedule_live.py`, `COORDINATION.md` |
+
+Shared outputs (`site-data/**`, `data/**`, root and `2026/` pages) are not edited by this session; any change they need is logged here for the integration session.
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
