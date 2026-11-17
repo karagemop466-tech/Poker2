@@ -57,10 +57,10 @@
    "area": "Hotel cost",
    "severity": "Medium",
    "title": "Parking: two official statements, no reconciliation",
-   "detail": "Hotel terms: registered guests pay $20/day. Poker room page: 'Complimentary Self-Parking - Enjoy convenient, free self-parking when you play with us. Non-registered hotel guests who play for three hours or more ... receive complimentary self-parking.' Whether a registered player's $20/day is also waived is not stated.",
+   "detail": "Two official Venetian pages state parking differently and neither reconciles with the other. Hotel terms (read 2026-11-17): 'The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day.' Poker-room self-parking page (read 2026-11-17): 'Venetian Rewards Sapphire members and above receive complimentary self-parking ... Players in the poker room who play three hours or more in tournament or cash games will receive complimentary self-parking for the day. Players must visit a supervisor at the end of their session to confirm qualifications.' What is still not stated: whether that poker benefit cancels the $20/day room charge for a guest who is also playing, or sits beside it as a second entitlement. Because the answer changes the trip total, parking is a separate line in the calculator rather than folded into the nightly figure.",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
-   "action": "Ask the poker desk; the trip calculator keeps parking as an optional line so the estimate is not inflated or deflated by the ambiguity.",
-   "status": "needs review"
+   "action": "Ask the poker-room supervisor at the end of the first session and note it on the folio. If the benefit cancels the guest charge, the trip cost drops by $20 x nights; the calculator already shows that line separately so you can see the difference.",
+   "status": "needs review (both statements re-read 2026-11-17)"
   },
   {
    "id": "FG-09",
