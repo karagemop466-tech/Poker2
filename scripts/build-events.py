@@ -739,17 +739,7 @@ def build():
                              "source_url": SHEET_URL.format(n=sheetno), "retrieved": SHEET_AS_OF}
                             if read and sheet.get("gate") else None),
         }
-        if sheet:
-            if sheet.get("eligibility"):
-                ev["eligibility"] = sheet["eligibility"]
-            for k in ("discount_note", "cross_ref", "irregularity"):
-                if sheet.get(k):
-                    ev.setdefault("sheet_notes", []).append(sheet[k])
-            if sheet.get("satellite_seats"):
-                ev["satellite_seats"] = sheet["satellite_seats"]
         # ---- structured rule fields, each with its own source excerpt + retrieval date ----
-        got = TODAY if (read and sheetno in SHEET_READ_TODAY) else (AS_OF if read else None)
-
         def field(value, status, excerpt, url):
             return {"value": value, "status": status, "excerpt": excerpt,
                     "source_url": url, "retrieved": SHEET_AS_OF if read else None}
@@ -758,22 +748,17 @@ def build():
             entry_status = "explicit_no" if "re_entry_explicit" in sheet else "silent"
             ev["rules"] = {
                 "single_entry": field(
-                    "yes" if one_entry else None,
-                    "explicit" if one_entry else (
-                        "explicit_no" if priced else "not_stated_sheet_read"),
-                    sheet.get("one_entry_explicit") or (
-                        "Sheet rule 07 prices subsequent buy-ins (see re_entry)." if priced
-                        else SILENT_ENTRY),
+                    None,
+                    "explicit_no" if "re_entry_explicit" in sheet else "not_stated_sheet_read",
+                    ("Sheet rule 07 prices subsequent buy-ins (see re_entry)."
+                     if "re_entry_explicit" in sheet else SILENT_ENTRY),
                     ev["sheet_url"]),
                 "re_entry": field(
-                    "subsequent buy-ins priced at $200" if priced else None,
-                    "explicit" if priced else "not_stated_sheet_read",
+                    "subsequent buy-ins priced at $200" if "re_entry_explicit" in sheet else None,
+                    "explicit" if "re_entry_explicit" in sheet else "not_stated_sheet_read",
                     sheet.get("re_entry_explicit") or SILENT_ENTRY,
                     ev["sheet_url"]),
-                "add_on": field(
-                    None, "not_stated_sheet_read", SILENT_ADDON, ev["sheet_url"])
-                if not sheet.get("add_on_explicit") else field(
-                    "add-on offered", "explicit", sheet["add_on_explicit"], ev["sheet_url"]),
+                "add_on": field(None, "not_stated_sheet_read", SILENT_ADDON, ev["sheet_url"]),
                 "fee": field(sheet["fee"], "explicit", sheet["fee_text"], ev["sheet_url"]),
                 "guarantee": field(gtd_sheet, "explicit", sheet["gtd_text"], ev["sheet_url"]),
                 "payout": field(sheet.get("pays"), "explicit", sheet.get("pays_text", PAY125), ev["sheet_url"])

@@ -439,6 +439,7 @@
     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
     "last_checked": "2026-11-16"
    },
+   "fallback": null,
    "skipped_events": [],
    "flags": []
   },
