@@ -865,3 +865,29 @@ published twice, with the number taken from the regenerated dataset (45, because
 Event #39 as a two-day event rather than a one-day candidate). Main's walk.json carried 12 pairs; this
 branch carries 70 generated from the full OSRM matrix, so the 70-pair set is kept and main's per-pair
 hand-verified detail is folded in through the overlay file above rather than lost.
+
+## Session arena/db92e804-poker2 — claim: verification sweep + decision/suggestions surface (2026-11-17)
+
+Branch `arena/db92e804-poker2` (fixed by the platform; file-ownership discipline kept). Base `98ca770`;
+the branch was fast-forwarded to `origin/main` `ad92e42` (PR #54) before any edit, so this claim is made
+against the current integrated tree. Two earlier-session PRs were open when this session started:
+#54 (merged while this session read the tree) and #55 (`arena/839a07d9-poker2`, a parallel `/2026/`
+surface). **No file of another session is edited by this session**; #55 is left for its own session to
+merge, and its duplicate-surface conflict with the root dashboard is logged as a request rather than
+acted on.
+
+| Task | Status | Owner | Files (scope) |
+|---|---|---|---|
+| K1 Verify root dataset row-by-row against the official documents it cites; log mismatches | in progress | arena/db92e804-poker2 | `data/master.json` (read), `reports/db92e804-verification.md` (new) |
+| K2 Fix defects found in the root *generator* only where they are this session's own files | in progress | arena/db92e804-poker2 | `scripts/build_site.py`, `assets/dashboard.js`, `assets/dashboard.css` |
+| K3 Stale-claim repair on root pages: "no dated quote captured" while PR #54 added two dated quotes | in progress | arena/db92e804-poker2 | `scripts/build_site.py` |
+| K4 Flagged/hotel rows must carry their own `last checked` date (they currently inherit the page date) | in progress | arena/db92e804-poker2 | `scripts/build_site.py`, `data/site/hotels.json` (read-only value source) |
+| K5 Decision page: questions → information → answer/unknown → what would resolve it | in progress | arena/db92e804-poker2 | `data/site/questions.json`, `scripts/build_site.py`, `questions.html` |
+| K6 Suggestions page reviewed as options with trade-offs and a recommendation per item | in progress | arena/db92e804-poker2 | `data/site/suggestions.json`, `scripts/build_site.py`, `suggestions.html` |
+| K7 Record irregularities discovered, then PR → `main`, CI, Pages, record | in progress | arena/db92e804-poker2 | `COORDINATION.md`, this section |
+
+Request to the owner of `/2026/` (PR #55) and to future integration sessions — do not act on it here:
+the repository now generates **three** dashboards from three datasets (root from `data/master.json`,
+`/plan/` from `site-data/*.json`, `/2026/` from `data/verified2026/*`). Consolidating them is suggestion
+S-16 below and stays unclaimed until the user chooses a direction.
+
