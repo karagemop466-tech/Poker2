@@ -1349,3 +1349,20 @@ events remain **0**, and that number is the finding, not a gap.
 - Verification: ran `python3 scripts/build_site.py`; `python3 scripts/check_links.py` passed (37 pages, 4,333 links; no broken internal links and no non-official external hosts). `git diff --check` passed.
 - Earlier session-wide checks during this turn: `scripts/audit.py`, `scripts/check2026.py`, `scripts/build2026.py --check`, `scripts/check_guarantees.py`, `scripts/check_monitor_badge.py`, `scripts/check_search.mjs`, and plan refresh generator/self-tests passed. The latest scheduled plan-refresh GitHub run (44124782058) failed at its generator verification step (exit code 2); its logs were not retrievable from this sandbox, and local reruns passed, so no unsupported diagnosis was recorded. The separate scheduled `/2026/` re-check run (44118803672) succeeded.
 - Source note: the added link and page description are repository navigation, not new event/hotel facts. All existing row-level source data remains unchanged.
+
+## Session arena/8a8fa20f-poker2 — hotel-evidence + /plan/ refresh gate (2026-11-17)
+
+Branch `arena/8a8fa20f-poker2` (fixed by the platform; no other branch is created or pushed).
+Base at claim time: `345a657` (main after PR #70).
+
+Scope chosen to be **non-overlapping** with the two sessions in flight when this one started
+(PR #70 `arena/1655b450-poker2`, PR #71 `arena/00421070-poker2`, both on `COORDINATION.md` +
+a per-session data file only). This session therefore does **not** touch `COORDINATION.md` beyond
+this section, `site-data/events.json`, `site-data/schedule.json`, or anything under `2026/`.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| L1 First-hand re-read of the official reservation-terms pages for the four properties whose fee is still blank in `site-data/hotels.json` (ARIA, Bellagio, The Cosmopolitan, Caesars Palace / Horseshoe) and record value + own words + retrieval date | in progress | arena/8a8fa20f-poker2 | `site-data/hotels.json` |
+| L2 Fix the reason the daily `Plan: daily official-source refresh` job has failed on every scheduled run (run 44124782058, main `b832ae2`): its post-fetch step runs `build-site.py --check`, which fails the moment the job writes `site-data/change-report.json` / `site-data/snapshots/**` — the workflow cannot succeed on any day its own output changes, which is every day | in progress | arena/8a8fa20f-poker2 | `.github/workflows/plan-refresh.yml`, `.github/workflows/plan-verify.yml` |
+| L3 Re-read the Venetian hotel-terms page (the source of the 13.38% tax, the $55 fee, parking and deposit values already published) first-hand, and check the county guide's Appendix III rate table against the 13.38% attribution | in progress | arena/8a8fa20f-poker2 | `site-data/hotels.json`, `site-data/sources.json` |
+| L4 Record this session in the board, run `build-events` → `build-schedule` → `build-walk` → `build-site` → `audit.py` → `check_links.py` → `plan-verify` chain, PR → `main`, confirm Pages | in progress | arena/8a8fa20f-poker2 | `COORDINATION.md` |
