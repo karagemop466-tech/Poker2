@@ -49,16 +49,29 @@ def fmt(m):
     return f"{hh}:{mm:02d} {ap}"
 
 
+def demographic_restriction(e):
+    """Return the gate text when it actually restricts who can play (age 50+, female-only,
+    team composition). The venue-wide "21+, with a Venetian Rewards card" gate is the standard
+    requirement for anyone playing at the property and does not restrict an open-to-all trip."""
+    el = e.get("eligibility")
+    if not el:
+        return None
+    v = el.get("value") or ""
+    if "50+" in v or "emale" in v or v.startswith("Teams"):
+        return v
+    return None
+
+
 def main():
     check = "--check" in sys.argv
     d = json.load(open(EV, encoding="utf8"))
     events = d["events"]
     qual = [e for e in events if e["category"] == "single_entry_candidate"
             and e["fee"] is not None and e["gtd"] is not None
-            and not e.get("eligibility")]
+            and not demographic_restriction(e)]
     restricted = [e for e in events if e["category"] == "single_entry_candidate"
                   and e["fee"] is not None and e["gtd"] is not None
-                  and e.get("eligibility")]
+                  and demographic_restriction(e)]
     by_day = defaultdict(list)
     for e in qual:
         by_day[e["date"]].append(e)
@@ -175,6 +188,16 @@ def main():
             })
         cur += timedelta(days=1)
     best_ratio = sorted(windows, key=lambda w: (-w["avg_ratio"], w["entry_cost"]))
+    # keep the top distinct windows so narrative pages cite canonical numbers instead of ad-hoc math
+    top_windows, seen_days = [], set()
+    for w in best_ratio:
+        key = tuple(w["days"])
+        if key in seen_days:
+            continue
+        seen_days.add(key)
+        top_windows.append(w)
+        if len(top_windows) == 4:
+            break
     best_poker = [w for w in windows if w["poker_rate_eligible_nights"] == w["entries"]]
     cheapest = sorted(windows, key=lambda w: (w["entry_cost"], -w["avg_ratio"]))
     out = {
@@ -229,6 +252,7 @@ def main():
         "best_poker_window": (sorted(best_poker, key=lambda w: (-w["avg_ratio"], w["entry_cost"])) or [None])[0],
         "best_ratio_window": (best_ratio or [None])[0],
         "cheapest_window": (cheapest or [None])[0],
+        "top_windows": top_windows,
     }
     stxt = json.dumps(stats, indent=1, ensure_ascii=False) + "\n"
     if check:

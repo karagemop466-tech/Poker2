@@ -775,3 +775,35 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `build-events.py --check`, `build-site.py --check` OK · `node scripts/check_site.mjs` OK ·
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
+
+### Integration sync after merging main (PRs #51/#52), 2026-11-17 (continued)
+
+Main moved to `ba321e7` while this branch was working: PR #48/#51/#52 had completed the 37-sheet sweep
+independently and rewrote the events dataset and generators. Resolution, per protocol (never discard
+another session's work):
+
+- `scripts/build-events.py`, `site-data/events.json`: **main's versions taken wholesale**; this branch's
+  duplicate transcription was dropped (kept only in git history on commits `21d4489`/`8100cb9`).
+- `scripts/build-schedule.py`: this branch's open-to-all gate re-applied on top of main's payload — now
+  keyed off main's per-row `eligibility` field, skipping only *demographic* restrictions (50+, female-only,
+  team composition); the venue-wide "21+, with a Venetian Rewards card" gate stays schedulable. Regenerated
+  day plan: Dec 2 → Event 25, Dec 8 → Event 34, Dec 10 → Event 42 (Events 24/32/39 listed in
+  `skipped_events` with the restriction text; `restricted_single_entry_rows` = 3).
+- `summary.json` recommendation synced to the regenerated schedule (main's committed narrative said
+  "Event 38 primary on Dec 9" while its own committed `schedule.json` had Event 36 — the summary was
+  written ahead of a gated rebuild that never ran). Now: Dec 9 primary Event 36 (93.8x incl. bounties),
+  Event 38 as a conditional fallback gated on registration close; window numbers now cite the canonical
+  `top_windows` stats (Dec 6–9: 69.3x avg, $2,300 entries, $170K GTD, 4/4 poker-rate nights).
+- `scripts/build-schedule.py` now emits `top_windows` (top 4 distinct windows) so narrative pages cite
+  canonical numbers instead of ad-hoc math.
+- Walking minutes (S-06), walk.json, Q-10 answer, FG-11 resolution and the S-02/S-06 suggestion records
+  were re-applied onto main's narrative files (main still had the pre-S-06 "unverified" state).
+- Root surface (`build.py`, root pages, `data/master.json`): untouched; a local run of the legacy
+  `scripts/build.py` clobbered root pages during CI simulation and was reverted immediately — root pages
+  belong to main's `build_site.py` session (PR #52).
+- `scripts/check_sources.mjs` fetch runs in this sandbox have no network, so `site-data/change-report.json`
+  and `site-data/snapshots/` it wrote locally were deleted, not committed (the scheduled workflow owns them).
+
+Re-verified on the merged tree: `build-events.py --check`, `build-schedule.py --check`, `build-site.py
+--check`, `check_site.mjs` (15 plan pages / 94 rows / 13 UI ids), `check_links.py` (0 broken internal links,
+no non-official hosts), `audit.py` (166 events / 10 hotels / 41 flags OK), HTTP smoke test all plan pages 200.

@@ -13,7 +13,8 @@
  },
  "sheets_read": 37,
  "sheets_published": 37,
- "qualifying_rows": 42,
+ "qualifying_rows": 39,
+ "restricted_single_entry_rows": 3,
  "spend_advantage_rows": 29,
  "cheapest_qualifying_entry": 200,
  "highest_ratio": 93.8,
@@ -32,12 +33,12 @@
   ],
   "nights": 4,
   "entries": 4,
-  "entry_cost": 2600,
-  "gtd_played": 195000,
-  "avg_ratio": 73.5,
+  "entry_cost": 2300,
+  "gtd_played": 170000,
+  "avg_ratio": 69.3,
   "poker_rate_eligible_nights": 4,
   "has_overlap_flag": true,
-  "fallback_days": 4
+  "fallback_days": 3
  },
  "best_ratio_window": {
   "arrival": "2026-12-06",
@@ -50,29 +51,103 @@
   ],
   "nights": 4,
   "entries": 4,
-  "entry_cost": 2600,
-  "gtd_played": 195000,
-  "avg_ratio": 73.5,
+  "entry_cost": 2300,
+  "gtd_played": 170000,
+  "avg_ratio": 69.3,
   "poker_rate_eligible_nights": 4,
   "has_overlap_flag": true,
-  "fallback_days": 4
+  "fallback_days": 3
  },
  "cheapest_window": {
-  "arrival": "2026-11-23",
-  "departure": "2026-11-27",
+  "arrival": "2026-11-29",
+  "departure": "2026-12-03",
   "days": [
-   "2026-11-23",
-   "2026-11-24",
-   "2026-11-25",
-   "2026-11-26"
+   "2026-11-29",
+   "2026-11-30",
+   "2026-12-01",
+   "2026-12-02"
   ],
   "nights": 4,
   "entries": 4,
-  "entry_cost": 1100,
-  "gtd_played": 41000,
-  "avg_ratio": 37.7,
-  "poker_rate_eligible_nights": 2,
-  "has_overlap_flag": true,
-  "fallback_days": 2
- }
+  "entry_cost": 800,
+  "gtd_played": 32000,
+  "avg_ratio": 40.0,
+  "poker_rate_eligible_nights": 0,
+  "has_overlap_flag": false,
+  "fallback_days": 0
+ },
+ "top_windows": [
+  {
+   "arrival": "2026-12-06",
+   "departure": "2026-12-10",
+   "days": [
+    "2026-12-06",
+    "2026-12-07",
+    "2026-12-08",
+    "2026-12-09"
+   ],
+   "nights": 4,
+   "entries": 4,
+   "entry_cost": 2300,
+   "gtd_played": 170000,
+   "avg_ratio": 69.3,
+   "poker_rate_eligible_nights": 4,
+   "has_overlap_flag": true,
+   "fallback_days": 3
+  },
+  {
+   "arrival": "2026-12-07",
+   "departure": "2026-12-11",
+   "days": [
+    "2026-12-07",
+    "2026-12-08",
+    "2026-12-09",
+    "2026-12-10"
+   ],
+   "nights": 4,
+   "entries": 4,
+   "entry_cost": 2000,
+   "gtd_played": 145000,
+   "avg_ratio": 65.1,
+   "poker_rate_eligible_nights": 4,
+   "has_overlap_flag": true,
+   "fallback_days": 2
+  },
+  {
+   "arrival": "2026-12-13",
+   "departure": "2026-12-17",
+   "days": [
+    "2026-12-13",
+    "2026-12-14",
+    "2026-12-15",
+    "2026-12-16"
+   ],
+   "nights": 4,
+   "entries": 4,
+   "entry_cost": 2300,
+   "gtd_played": 155000,
+   "avg_ratio": 62.9,
+   "poker_rate_eligible_nights": 4,
+   "has_overlap_flag": true,
+   "fallback_days": 2
+  },
+  {
+   "arrival": "2026-12-08",
+   "departure": "2026-12-12",
+   "days": [
+    "2026-12-08",
+    "2026-12-09",
+    "2026-12-10",
+    "2026-12-11"
+   ],
+   "nights": 4,
+   "entries": 4,
+   "entry_cost": 2000,
+   "gtd_played": 135000,
+   "avg_ratio": 61.0,
+   "poker_rate_eligible_nights": 4,
+   "has_overlap_flag": true,
+   "fallback_days": 1
+  }
+ ]
 }
