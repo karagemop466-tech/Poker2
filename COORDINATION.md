@@ -1656,10 +1656,10 @@ deviation as F02).
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| V1 Repair the daily official-source refresh: `plan-refresh.yml` step "Verify the generators…" is a bash syntax error (newline before `&&`), so the job dies every run (runs 43943838443, 44124782058 = both `failure`) BEFORE `commit-refresh.sh` can seed snapshots or open a review PR. The "automatic re-check on a schedule" feature has never completed one end-to-end run. | claimed | arena/594db405-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` (if needed) |
-| V2 Live verification sweep of the official URLs behind the datasets (fetch tool, since sandbox curl cannot reach casino hosts): confirm each cited source resolves and its tracked values still match; refresh per-row `last_checked` / `as_of`; record transcript + irregularities | claimed | arena/594db405-poker2 | `research/594db405-*`, `scripts/*`, `data/*`, `site-data/*` (regenerated via generators only) |
-| V3 Requirements gap check across the published surfaces (trip-cost calculator, date filter, search box, single-entry toggle, ≤30-min walk filter, dated rate log, per-venue pages, primary/fallback day plan, overlap flags, rule fields with excerpts) and fix anything missing | claimed | arena/594db405-poker2 | `2026/**`, `plan/**`, `scripts/*` (root `*.html` only after PR #69 merges) |
-| V4 Final integration: merge `main` (including #69/#70 once green), re-verify combined data, PR → `main`, CI green, Pages deploy confirmed, record here | claimed | arena/594db405-poker2 | `COORDINATION.md` |
+| V1 Repair the daily official-source refresh: `plan-refresh.yml` step "Verify the generators…" is a bash syntax error (newline before `&&`), so the job dies every run (runs 43943838443, 44124782058 = both `failure`) BEFORE `commit-refresh.sh` can seed snapshots or open a review PR. The "automatic re-check on a schedule" feature has never completed one end-to-end run. | done | arena/594db405-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` (if needed) |
+| V2 Live verification sweep of the official URLs behind the datasets (fetch tool, since sandbox curl cannot reach casino hosts): confirm each cited source resolves and its tracked values still match; refresh per-row `last_checked` / `as_of`; record transcript + irregularities | done | arena/594db405-poker2 | `research/594db405-*`, `scripts/*`, `data/*`, `site-data/*` (regenerated via generators only) |
+| V3 Requirements gap check across the published surfaces (trip-cost calculator, date filter, search box, single-entry toggle, ≤30-min walk filter, dated rate log, per-venue pages, primary/fallback day plan, overlap flags, rule fields with excerpts) and fix anything missing | done | arena/594db405-poker2 | `2026/**`, `plan/**`, `scripts/*` (root `*.html` only after PR #69 merges) |
+| V4 Final integration: merge `main` (including #69/#70 once green), re-verify combined data, PR → `main`, CI green, Pages deploy confirmed, record here | done | arena/594db405-poker2 | `COORDINATION.md` |
 
 - 2026-11-17: Claim posted and pushed before any task work. First-hand findings so far (this container):
   `python3 scripts/build-events.py --check`, `build-schedule.py --check`, `build-walk.py --check`,
@@ -1757,3 +1757,18 @@ single-entry confirmation in writing (FG-02), finish times (F-04), Westgate's $3
 
 **Publication — arena/594db405-poker2:** integration PR [#78](https://github.com/karagemop466-tech/Poker2/pull/78)
 (`arena/594db405-poker2` → `main`). Merge + Pages result appended below once the deploy is confirmed.
+
+**Merge + Pages result — arena/594db405-poker2 (2026-11-17):** PR
+[#78](https://github.com/karagemop466-tech/Poker2/pull/78) merged with `gh pr merge 78 --merge` at
+22:33:04Z, integration commit `2b0e81285b78f67bd9d67fecb88eaa2ffa89fead`. On that commit:
+`Verify site` **success**, `Plan: generated pages match their data` **success**, and
+`pages build and deployment` **success**; the Pages API reports `status: built` for `2b0e812`,
+live at <https://karagemop466-tech.github.io/Poker2/>. The **published** pages were re-read (not the
+build log) and serve the merged build: `planner.html` carries the six-step decision workflow and
+the trip calculator, `flagged.html` carries the 46-flag register including VR-594-01. Open items
+that do not block, listed for the user's review on the Flagged page: the Caesars range change
+(VR-594-01), Horseshoe's unpublished fee amount, South Point's image-only schedule, Westgate's
+$36.99 provenance, FG-02 (written single-entry confirmation), F-04 (finish times), F-05 (dated
+quotes), FG-12 (quality ratings). One request for the next session that touches the workflows:
+the first live `plan-refresh` run (cron `30 6 * * *`) should be confirmed to commit
+`site-data/snapshots/` and flip source states to `new`.
