@@ -119,6 +119,23 @@
     run4();
   }
 
+  // ---- single-room walking table (venue pages) --------------------------
+  var rw=$('#w30[data-walk-room]');
+  if(rw){
+    var rt=document.getElementById('wt-'+rw.getAttribute('data-walk-room'));
+    var rwc=document.getElementById('wc');
+    function runRoom(){
+      var rows=rt.tBodies[0].rows, n=0;
+      Array.prototype.forEach.call(rows,function(tr){
+        var m=parseFloat(tr.getAttribute('data-min'));
+        var ok=!rw.checked||(m<=30);
+        tr.classList.toggle('hidden',!ok); if(ok)n++;
+      });
+      rwc.textContent=n+' of '+rows.length+' hotels shown.';
+    }
+    rw.addEventListener('change',runRoom); runRoom();
+  }
+
   // ---- site-wide search across every table on every page ----------------
   function pagePrefix(){
     // venues/*.html sits one level down

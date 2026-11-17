@@ -94,6 +94,7 @@ tr.hidden{display:none}
 .banner{border:1px solid var(--warn);background:rgba(251,191,36,.08);border-radius:10px;
 padding:12px 15px;margin-bottom:16px;font-size:.9rem}
 .banner.info{border-color:var(--link);background:rgba(125,211,252,.07)}
+.chk-row{display:flex;gap:14px;align-items:center;margin:6px 0 10px;flex-wrap:wrap}
 .gsbar{border-bottom:1px solid var(--line);background:var(--panel);padding:10px 0}
 .gsbar .wrap2{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;gap:6px;
 grid-template-columns:auto 1fr auto}

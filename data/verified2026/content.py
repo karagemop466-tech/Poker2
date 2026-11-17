@@ -210,6 +210,15 @@ FLAGS = [
          source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"),
 ]
 
+# Look-up used by the per-room venue pages. Keys match ROOM_META in scripts/build2026.py.
+OTHER_VENUES_BY_ID = {
+    "wynn": next(v for v in OTHER_VENUES if "Wynn" in v["name"]),
+    "horseshoe": next(v for v in OTHER_VENUES if "Horseshoe" in v["name"]),
+    "caesars-palace": next(v for v in OTHER_VENUES if "Caesars Palace" in v["name"]),
+    "bellagio": next(v for v in OTHER_VENUES if "Bellagio" in v["name"]),
+    "mgm-grand": next(v for v in OTHER_VENUES if "MGM Grand" in v["name"]),
+}
+
 QUESTIONS = [
     dict(id="Q-01", q="Do you want only events whose sheet is silent on re-entry, or only events the poker room confirms in writing are one-entry-only?",
          why="No official sheet states a one-entry rule, so the first option is the only one the documents support today. The second requires an email or a posted rule from the room.",

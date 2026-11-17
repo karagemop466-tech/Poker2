@@ -325,6 +325,12 @@ SUBNAV = {
     "venues.html": [("venues/venetian.html", "The Venetian"), ("venues/other.html", "Other rooms")],
 }
 
+# Sub-navigation for pages that live in 2026/venues/. Authored relative to that directory.
+VENUE_SUBNAV = [("venetian.html", "The Venetian"), ("wynn.html", "Wynn / Encore"),
+                ("horseshoe.html", "Horseshoe"), ("caesars-palace.html", "Caesars Palace"),
+                ("bellagio.html", "Bellagio"), ("mgm-grand.html", "MGM Grand"),
+                ("other.html", "Other rooms")]
+
 # Human labels for the site-wide search results, keyed by page path.
 PAGE_LABEL = dict(NAV)
 PAGE_LABEL.update({
@@ -428,6 +434,7 @@ tr.hidden{display:none}
 .banner{border:1px solid var(--warn);background:rgba(251,191,36,.08);border-radius:10px;
 padding:12px 15px;margin-bottom:16px;font-size:.9rem}
 .banner.info{border-color:var(--link);background:rgba(125,211,252,.07)}
+.chk-row{display:flex;gap:14px;align-items:center;margin:6px 0 10px;flex-wrap:wrap}
 .gsbar{border-bottom:1px solid var(--line);background:var(--panel);padding:10px 0}
 .gsbar .wrap2{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;gap:6px;
 grid-template-columns:auto 1fr auto}
@@ -498,7 +505,14 @@ do not share a generator.</p>
 </body></html>
 """ % (title, "", "", "", extra_head, nav, sub, body, RETRIEVED)
     if depth_prefix(active):
+        # subnav links are already written relative to the venue directory; protect them from the
+        # root-relative prefixing pass by marking them before it runs.
+        if sub:
+            out = out.replace(sub, "@@SUBNAV@@")
         out = relink(out)
+        if sub:
+            out = out.replace("@@SUBNAV@@", sub)
+
     return out
 
 
@@ -1204,29 +1218,48 @@ that night, so the buy-ins you add above are what keep the $119 room rate alive.
 
 
 def p_venues(events):
+    cards = []
+    for key, meta in ROOM_META.items():
+        wj, rows = _walk_rows_for(meta["walk_key"])
+        if rows:
+            ok = sum(1 for r in rows if r["within_30_min"])
+            stat = "%d of %d hotels within 30 min" % (ok, len(rows))
+            nearest = rows[0]["hotel"] if rows else ""
+        else:
+            stat, nearest = "walking data not in this checkout", ""
+        if key == "venetian":
+            pub = ("64 events, 94 scheduled rows, all 37 structure sheets read. The only room that "
+                   "publishes a dated schedule <em>and</em> a per-event structure sheet.")
+        else:
+            v = contentmod.OTHER_VENUES_BY_ID[key]
+            pub = esc(v["verdict"])
+        cards.append(
+            "<div class='panel'><h2><a href='%s'>%s</a></h2>"
+            "<p class='note'><strong>Room:</strong> %s</p>"
+            "<p class='note'><strong>Hotels:</strong> %s%s</p>"
+            "<p>%s</p><p><a href='%s'>Open the %s page &rarr;</a></p></div>"
+            % (meta["page"], esc(meta["title"]), esc(meta["room"]),
+               esc(stat), (" &middot; nearest: " + esc(nearest)) if nearest else "",
+               pub, meta["page"], esc(meta["title"])))
+    cards.append(
+        "<div class='panel'><h2><a href='venues/other.html'>Resorts World &amp; Westgate</a></h2>"
+        "<p class='note'>Two further rooms were checked and publish no tournament data on the pages "
+        "read, so they have no page of their own beyond the other-rooms record.</p>"
+        "<p><a href='venues/other.html'>Open the other rooms page &rarr;</a></p></div>")
     return page("Venues", """
 <div class="hero"><h1>Venues</h1>
-<p class="lede">One page per poker room. The Venetian is the only Strip room that publishes a dated
-tournament schedule <em>and</em> a per-event official structure sheet, so it is the only room that can
-be ranked line by line. Everything the other rooms publish &mdash; and do not publish &mdash; is
-documented on the other-rooms page.</p></div>
-<div class="grid2">
-<div class="panel"><h2><a href="venues/venetian.html">The Venetian Resort</a></h2>
-<p><strong>DeepStack Extravaganza IV</strong> &mdash; November 16 to December 23, 2026.
-%(n)s events, %(rows)s scheduled rows, all 37 structure sheets read.</p>
-<p class="note">Poker room: The Palazzo, level 2, Grand Canal Shoppes. 50 tables across 14,000 sq ft,
-open 24 hours. Requires a Venetian Rewards card.</p>
-<p><a href="venues/venetian.html">Open the Venetian page &rarr;</a></p>
-</div>
-<div class="panel"><h2><a href="venues/other.html">Every other room</a></h2>
-<p>Wynn, Horseshoe, Caesars Palace, Bellagio, MGM Grand, Resorts World and Westgate &mdash; what each
-officially publishes, what it does not, and why none of them can be ranked today.</p>
-<p class="note">Every one of them either publishes no dated schedule, no structure sheet, or no
-tournament information at all.</p>
-<p><a href="venues/other.html">Open the other rooms page &rarr;</a></p>
-</div>
-</div>
-""" % dict(n=len(events), rows=len(sched.ROWS)), "venues.html")
+<p class="lede">One page per poker room, each listing that room's events and the hotels within walking
+distance of it. The Venetian is the only Strip room that publishes a dated tournament schedule
+<em>and</em> a per-event official structure sheet, so it is the only room that can be ranked line by
+line. Every other room gets the same page structure, with the gap documented rather than filled.</p></div>
+
+<div class="banner info"><strong>How to read a room page.</strong> The events table holds only rows
+transcribed from that room's own official document. Where the room publishes no dated event, the table
+is empty and the reason is quoted underneath with the page that was checked. The hotels table applies
+the 30-minute walking limit to routed estimates, with a Maps link on every row.</div>
+
+<div class="grid2">%s</div>
+""" % "".join(cards), "venues.html", subnav=SUBNAV["venues.html"])
 
 
 def p_venue_venetian(events, days):
@@ -1284,7 +1317,149 @@ that series has ended and DSE IV is live. Do not rely on that label &mdash; use 
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
            series=srclink(sched.SERIES_URL, "series overview")),
-                        "venues/venetian.html", subnav=SUBNAV["venues.html"])
+                        "venues/venetian.html", subnav=VENUE_SUBNAV)
+
+
+
+# --------------------------------------------------------------------------------------
+# one page per poker room
+# --------------------------------------------------------------------------------------
+
+# Room -> the official venue label used in data/site/walking.json, plus what the room is.
+ROOM_META = {
+    "venetian": dict(
+        walk_key="V-VEN",
+        title="The Venetian Resort",
+        room="The Venetian poker room",
+        desc=("The poker room is indoors on level 2 of the Grand Canal Shoppes, reached by escalator "
+              "from the Waterfall Atrium. Requires a Venetian Rewards card."),
+        page="venues/venetian.html",
+    ),
+    "wynn": dict(
+        walk_key="V-WYN",
+        title="Wynn / Encore",
+        room="Wynn poker room",
+        desc="Host room for the WPT World Championship. Its own poker-room page returned a not-found page on 2026-11-17.",
+        page="venues/wynn.html",
+    ),
+    "horseshoe": dict(
+        walk_key="V-HS",
+        title="Horseshoe Las Vegas",
+        room="Hall of Fame poker room",
+        desc="20 tables, six tournament times a day advertised; no buy-in, guarantee or entry rule published.",
+        page="venues/horseshoe.html",
+    ),
+    "caesars-palace": dict(
+        walk_key="V-CP",
+        title="Caesars Palace",
+        room="Caesars Palace poker room",
+        desc="Publishes a daily NLH flyer PDF; no per-event structure sheet could be read.",
+        page="venues/caesars-palace.html",
+    ),
+    "bellagio": dict(
+        walk_key="V-BEL",
+        title="Bellagio",
+        room="Bellagio poker room",
+        desc="Publishes a hotel-terms page with a resort fee and a 72-hour cancellation window; no dated tournament schedule read.",
+        page="venues/bellagio.html",
+    ),
+    "mgm-grand": dict(
+        walk_key="V-MGM",
+        title="MGM Grand",
+        room="MGM Grand poker room",
+        desc="Publishes a weekly tournament-schedule PDF and hotel terms; no per-event entry rule read.",
+        page="venues/mgm-grand.html",
+    ),
+}
+
+
+def _walk_rows_for(walk_key):
+    """Routed walking estimate from every hotel to one poker room, shortest first."""
+    path = os.path.join(ROOT, "data", "site", "walking.json")
+    if not os.path.exists(path):
+        return None, None
+    with open(path, encoding="utf-8") as f:
+        wj = json.load(f)
+    rows = [r for r in wj["rows"] if r["venue_id"] == walk_key]
+    rows.sort(key=lambda r: r["walk_min"])
+    return wj, rows
+
+
+def _walk_panel(walk_key, room):
+    wj, rows = _walk_rows_for(walk_key)
+    if wj is None:
+        return ("<div class='panel'><h2>Hotels within walking distance</h2><p class='note'>The walking "
+                "dataset is not present in this checkout, so no distance is shown.</p></div>")
+    trs = "".join(
+        "<tr data-min='%s'><td>%s</td><td class='num'>%.1f min</td><td>%s</td><td>%s</td></tr>"
+        % (r["walk_min"], esc(r["hotel"]), r["walk_min"],
+           '<span class="tag t-ok">within 30 min</span>' if r["within_30_min"]
+           else '<span class="tag t-bad">over 30 min</span>',
+           '<a class="src" href="%s" target="_blank" rel="noopener">confirm on Google Maps</a>'
+           % esc(r["gmaps_link"]))
+        for r in rows)
+    ok = sum(1 for r in rows if r["within_30_min"])
+    return ("""
+<div class="panel"><h2>Hotels within walking distance of %(room)s</h2>
+<p class="note">%(ok)d of %(n)d hotels are inside the 30-minute limit. These are routing estimates from
+OpenStreetMap data with the OSRM foot profile, computed %(asof)s &mdash; not a Google or Apple Maps
+measurement, and the destination is a poker room inside a casino, not a street corner. Every row carries
+a Maps link so you can confirm the number yourself. Flag <a href="flagged.html#F-08">F-08</a>.</p>
+<div class="chk-row"><label class="chk"><input type="checkbox" id="w30" data-walk-room="%(key)s">
+Within 30 minutes only</label><span class="note" id="wc"></span></div>
+<div class="tbl-scroll"><table id="wt-%(key)s"><thead><tr><th>Hotel</th>
+<th class="num">Walking estimate</th><th>30-minute rule</th><th>Verify</th>
+</tr></thead><tbody>%(rows)s</tbody></table></div></div>
+""" % dict(room=esc(room), ok=ok, n=len(rows), asof=esc(wj["as_of"]), key=walk_key,
+           rows=trs))
+
+
+def p_venue_room(key, events):
+    meta = ROOM_META[key]
+    own = contentmod.OTHER_VENUES_BY_ID.get(key)
+    # events and hotels for this room
+    if key == "venetian":
+        ev_html = ("<p>64 events across 38 playable days, all 37 structure sheets read. "
+                   "<a href='../tournaments.html'>Open the full event table</a> or "
+                   "<a href='../schedule.html'>the day plan</a>.</p>")
+        hotel_count = 21
+    else:
+        ev_html = ('<p class="blank-cell">No dated event row is published by this room that could be '
+                   'transcribed, so this table is intentionally empty. The reason is recorded below '
+                   'with the source that was checked.</p>')
+        hotel_count = None
+    whats = ""
+    if own:
+        finds = "".join(
+            '<div class="quote">%s<div class="note">%s, retrieved %s</div></div>'
+            % (esc(f["text"]), srclink(f["url"]), esc(f["retrieved"]))
+            for f in own["earlier_findings"])
+        whats = ("""
+<div class="panel"><h2>What this room publishes</h2>
+<p><strong>Poker room:</strong> %(room)s. %(desc)s</p>
+<p><strong>Checked %(ret)s:</strong> %(status)s</p>
+%(finds)s
+<p><strong>Verdict:</strong> %(verdict)s</p>
+<p class="note">Official page: %(url)s &middot; provenance: %(prov)s</p></div>
+""" % dict(room=esc(own["poker_room"]), desc=esc(meta["desc"]), ret=RETRIEVED,
+           status=esc(own["status_this_session"]), finds=finds,
+           verdict=esc(own["verdict"]), url=srclink(own["url"]),
+           prov=esc(own["provenance"])))
+    body = """
+<div class="hero"><h1>%(title)s &mdash; %(room)s</h1>
+<p class="lede">%(desc)s</p></div>
+
+<div class="panel"><h2>Events</h2>%(ev)s</div>
+%(whats)s
+%(walk)s
+
+<div class="panel"><h2>Getting there</h2>
+<p class="note">The distances above are to the poker room as a destination. Re-check the room's own
+page for entrances, hours and any access requirement before you travel.</p></div>
+""" % dict(title=esc(meta["title"]), room=esc(meta["room"]), desc=esc(meta["desc"]),
+           ev=ev_html, whats=whats, walk=_walk_panel(meta["walk_key"], meta["room"]))
+    return page(meta["title"], body, meta["page"], subnav=VENUE_SUBNAV)
+
 
 
 def p_venue_other():
@@ -1317,7 +1492,7 @@ page. Westgate publishes room hours. Wynn's poker page returned a not-found page
 <a href="flagged.html#F-10">F-10</a>.</div>
 
 %s
-""" % "".join(blocks), "venues/other.html", subnav=SUBNAV["venues.html"])
+""" % "".join(blocks), "venues/other.html", subnav=VENUE_SUBNAV)
 
 
 def p_summary(events, days):
@@ -1843,6 +2018,23 @@ JS = r"""
     run4();
   }
 
+  // ---- single-room walking table (venue pages) --------------------------
+  var rw=$('#w30[data-walk-room]');
+  if(rw){
+    var rt=document.getElementById('wt-'+rw.getAttribute('data-walk-room'));
+    var rwc=document.getElementById('wc');
+    function runRoom(){
+      var rows=rt.tBodies[0].rows, n=0;
+      Array.prototype.forEach.call(rows,function(tr){
+        var m=parseFloat(tr.getAttribute('data-min'));
+        var ok=!rw.checked||(m<=30);
+        tr.classList.toggle('hidden',!ok); if(ok)n++;
+      });
+      rwc.textContent=n+' of '+rows.length+' hotels shown.';
+    }
+    rw.addEventListener('change',runRoom); runRoom();
+  }
+
   // ---- site-wide search across every table on every page ----------------
   function pagePrefix(){
     // venues/*.html sits one level down
@@ -2030,6 +2222,11 @@ def main():
         "venues.html": p_venues(events),
         "venues/venetian.html": p_venue_venetian(events, days),
         "venues/other.html": p_venue_other(),
+        "venues/wynn.html": p_venue_room("wynn", events),
+        "venues/horseshoe.html": p_venue_room("horseshoe", events),
+        "venues/caesars-palace.html": p_venue_room("caesars-palace", events),
+        "venues/bellagio.html": p_venue_room("bellagio", events),
+        "venues/mgm-grand.html": p_venue_room("mgm-grand", events),
         "summary.html": p_summary(events, days),
         "questions.html": p_questions(),
         "suggestions.html": p_suggestions(),

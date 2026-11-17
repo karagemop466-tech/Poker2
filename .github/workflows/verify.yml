@@ -94,7 +94,7 @@ jobs:
       - name: Regenerating /2026/ leaves no diff
         run: |
           python3 scripts/build2026.py
-          if [ -n "$(git status --porcelain -- 2026 data/verified2026/dataset.json)" ]; then
+          if [ -n "$(git status --porcelain -- 2026 data/verified2026/dataset.json data/verified2026/search-index.json)" ]; then
             echo "::error::Committed /2026/ output differs from the verified data. Run scripts/build2026.py and commit."
             git status --porcelain
             git diff --stat

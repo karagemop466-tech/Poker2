@@ -2944,6 +2944,846 @@
   "x": "64 | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | $200 | 12-23 | Bounty / PKO"
  },
  {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Encore Las Vegas",
+  "x": "Encore Las Vegas | 0.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Wynn Las Vegas",
+  "x": "Wynn Las Vegas | 8.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Resorts World Las Vegas",
+  "x": "Resorts World Las Vegas | 10.1 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Palazzo",
+  "x": "The Palazzo | 16.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Venetian",
+  "x": "The Venetian | 18.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Harrah's Las Vegas",
+  "x": "Harrah's Las Vegas | 24.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Westgate Las Vegas",
+  "x": "Westgate Las Vegas | 24.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Flamingo Las Vegas",
+  "x": "Flamingo Las Vegas | 27.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The LINQ",
+  "x": "The LINQ | 28.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Cromwell",
+  "x": "The Cromwell | 33.8 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Caesars Palace",
+  "x": "Caesars Palace | 35.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Horseshoe Las Vegas",
+  "x": "Horseshoe Las Vegas | 36.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Paris Las Vegas",
+  "x": "Paris Las Vegas | 37.1 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Bellagio",
+  "x": "Bellagio | 41.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Planet Hollywood",
+  "x": "Planet Hollywood | 41.9 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "ARIA Resort & Casino",
+  "x": "ARIA Resort & Casino | 46.4 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Park MGM",
+  "x": "Park MGM | 49.8 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "MGM Grand",
+  "x": "MGM Grand | 53.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "New York-New York",
+  "x": "New York-New York | 55.0 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Mandalay Bay",
+  "x": "Mandalay Bay | 67.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown)",
+  "x": "Golden Nugget (downtown) | 68.0 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Horseshoe Las Vegas",
+  "x": "Horseshoe Las Vegas | 0.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Paris Las Vegas",
+  "x": "Paris Las Vegas | 8.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Flamingo Las Vegas",
+  "x": "Flamingo Las Vegas | 9.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Planet Hollywood",
+  "x": "Planet Hollywood | 10.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Cromwell",
+  "x": "The Cromwell | 12.7 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Harrah's Las Vegas",
+  "x": "Harrah's Las Vegas | 14.7 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The LINQ",
+  "x": "The LINQ | 16.9 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "ARIA Resort & Casino",
+  "x": "ARIA Resort & Casino | 18.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "MGM Grand",
+  "x": "MGM Grand | 18.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Venetian",
+  "x": "The Venetian | 20.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Caesars Palace",
+  "x": "Caesars Palace | 21.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Park MGM",
+  "x": "Park MGM | 21.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Palazzo",
+  "x": "The Palazzo | 23.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Bellagio",
+  "x": "Bellagio | 24.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "New York-New York",
+  "x": "New York-New York | 26.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Wynn Las Vegas",
+  "x": "Wynn Las Vegas | 30.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Encore Las Vegas",
+  "x": "Encore Las Vegas | 36.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Mandalay Bay",
+  "x": "Mandalay Bay | 38.7 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Resorts World Las Vegas",
+  "x": "Resorts World Las Vegas | 42.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Westgate Las Vegas",
+  "x": "Westgate Las Vegas | 55.7 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/horseshoe.html",
+  "pl": "venues/horseshoe",
+  "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown)",
+  "x": "Golden Nugget (downtown) | 100.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Caesars Palace",
+  "x": "Caesars Palace | 0.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Bellagio",
+  "x": "Bellagio | 11.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Flamingo Las Vegas",
+  "x": "Flamingo Las Vegas | 12.4 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Harrah's Las Vegas",
+  "x": "Harrah's Las Vegas | 14.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Cromwell",
+  "x": "The Cromwell | 19.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Venetian",
+  "x": "The Venetian | 19.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The LINQ",
+  "x": "The LINQ | 20.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Horseshoe Las Vegas",
+  "x": "Horseshoe Las Vegas | 21.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Paris Las Vegas",
+  "x": "Paris Las Vegas | 22.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Palazzo",
+  "x": "The Palazzo | 22.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "ARIA Resort & Casino",
+  "x": "ARIA Resort & Casino | 23.7 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Planet Hollywood",
+  "x": "Planet Hollywood | 26.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Wynn Las Vegas",
+  "x": "Wynn Las Vegas | 29.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "New York-New York",
+  "x": "New York-New York | 33.4 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Park MGM",
+  "x": "Park MGM | 34.4 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Encore Las Vegas",
+  "x": "Encore Las Vegas | 35.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Resorts World Las Vegas",
+  "x": "Resorts World Las Vegas | 37.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "MGM Grand",
+  "x": "MGM Grand | 38.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Mandalay Bay",
+  "x": "Mandalay Bay | 46.4 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Westgate Las Vegas",
+  "x": "Westgate Las Vegas | 55.9 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown)",
+  "x": "Golden Nugget (downtown) | 97.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Bellagio",
+  "x": "Bellagio | 0.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Caesars Palace",
+  "x": "Caesars Palace | 11.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "ARIA Resort & Casino",
+  "x": "ARIA Resort & Casino | 12.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Paris Las Vegas",
+  "x": "Paris Las Vegas | 20.4 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Flamingo Las Vegas",
+  "x": "Flamingo Las Vegas | 20.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Planet Hollywood",
+  "x": "Planet Hollywood | 22.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "New York-New York",
+  "x": "New York-New York | 22.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Harrah's Las Vegas",
+  "x": "Harrah's Las Vegas | 22.5 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Park MGM",
+  "x": "Park MGM | 23.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Horseshoe Las Vegas",
+  "x": "Horseshoe Las Vegas | 24.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Cromwell",
+  "x": "The Cromwell | 27.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Venetian",
+  "x": "The Venetian | 27.6 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "MGM Grand",
+  "x": "MGM Grand | 28.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The LINQ",
+  "x": "The LINQ | 28.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Palazzo",
+  "x": "The Palazzo | 30.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Mandalay Bay",
+  "x": "Mandalay Bay | 35.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Wynn Las Vegas",
+  "x": "Wynn Las Vegas | 35.8 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Resorts World Las Vegas",
+  "x": "Resorts World Las Vegas | 41.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Encore Las Vegas",
+  "x": "Encore Las Vegas | 41.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Westgate Las Vegas",
+  "x": "Westgate Las Vegas | 62.1 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown)",
+  "x": "Golden Nugget (downtown) | 101.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "MGM Grand",
+  "x": "MGM Grand | 0.0 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Park MGM",
+  "x": "Park MGM | 10.7 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "New York-New York",
+  "x": "New York-New York | 12.4 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Planet Hollywood",
+  "x": "Planet Hollywood | 14.7 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Horseshoe Las Vegas",
+  "x": "Horseshoe Las Vegas | 18.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Paris Las Vegas",
+  "x": "Paris Las Vegas | 20.1 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "ARIA Resort & Casino",
+  "x": "ARIA Resort & Casino | 22.3 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Mandalay Bay",
+  "x": "Mandalay Bay | 24.9 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Flamingo Las Vegas",
+  "x": "Flamingo Las Vegas | 26.4 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Bellagio",
+  "x": "Bellagio | 28.2 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Cromwell",
+  "x": "The Cromwell | 29.8 min | within 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The LINQ",
+  "x": "The LINQ | 31.6 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Harrah's Las Vegas",
+  "x": "Harrah's Las Vegas | 32.8 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Venetian",
+  "x": "The Venetian | 36.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Caesars Palace",
+  "x": "Caesars Palace | 38.3 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "The Palazzo",
+  "x": "The Palazzo | 40.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Wynn Las Vegas",
+  "x": "Wynn Las Vegas | 47.4 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Encore Las Vegas",
+  "x": "Encore Las Vegas | 53.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Resorts World Las Vegas",
+  "x": "Resorts World Las Vegas | 59.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Westgate Las Vegas",
+  "x": "Westgate Las Vegas | 66.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/mgm-grand.html",
+  "pl": "venues/mgm-grand",
+  "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown)",
+  "x": "Golden Nugget (downtown) | 117.2 min | over 30 min | confirm on Google Maps"
+ },
+ {
   "p": "summary.html",
   "pl": "Executive summary",
   "t": "Group Events What it means",
