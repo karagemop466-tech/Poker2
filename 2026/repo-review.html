@@ -44,13 +44,22 @@ Found irregularity <a href="flagged.html#X-01">X-01</a>.</li>
 <td>Other venues, flags, questions, suggestions.</td></tr>
 <tr><td class="mono">scripts/build2026.py</td>
 <td>The generator. Every page and JSON file on this site comes from it, and nothing else writes them.</td></tr>
-<tr><td class="mono">assets/site2026.css, assets/site2026.js</td>
+<tr><td class="mono">2026/assets/site2026.css, 2026/assets/site2026.js</td>
 <td>The stylesheet and the search / filter / calculator logic.</td></tr>
 </tbody></table></div></div>
 
+<div class="panel"><h2>The site root is a separate, live surface</h2>
+<p>The repository root serves an older multi-venue dashboard that another session is still
+maintaining and regenerating from its own dataset (<code>data/master.json</code>) with its own
+generator (<code>scripts/build_site.py</code>). It is <strong>not</strong> legacy: it is simply a
+different surface with a different generator. This site lives under <code>/2026/</code> so the two
+never overwrite each other, and every page here links back to the root. Nothing in
+<code>/2026/</code> is derived from the root dashboard, and nothing on the root was edited to make
+this site.</p></div>
+
 <div class="panel"><h2>Legacy surfaces, still in the repository</h2>
-<p>Four earlier sessions published overlapping dashboards. They are still served so no existing link
-breaks, but they are superseded by the pages you are reading now and they are not maintained.</p>
+<p>Four earlier sessions published overlapping dashboards inside their own directories. They are
+still served so no existing link breaks, but they are superseded and are not maintained.</p>
 <div class="tbl-scroll"><table><thead><tr><th>Path</th><th>Origin</th><th>Status</th></tr></thead><tbody>
 <tr><td class="mono">docs/</td><td>arena/acd81e67-poker2</td><td>Superseded. Frozen.</td></tr>
 <tr><td class="mono">verified/</td><td>earlier integration session</td><td>Superseded. Frozen.</td></tr>
