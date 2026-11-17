@@ -167,6 +167,7 @@ for e in events:
         SHEET_BASE = re.sub(r"structure_\d+\.pdf$", "", e["sheet_url"])
         break
 READ_SHEETS = {e["sheet"] for e in events if e["sheet_read"]}
+SHEETS_AS_OF = max(e["sheet_retrieved"] for e in events if e.get("sheet_retrieved"))
 ALL_SHEET_NUMS = sorted({e["sheet"] for e in events if e["sheet"]})
 
 CATEGORY_LABEL = {
@@ -545,13 +546,14 @@ def p_unverified():
 <h1>Unverified rows</h1>
 <p class="lede">Rows published on an official schedule whose structure sheet has not been read. Fee, house cut,
 starting stack, level length and the registration cutoff are blank, and so is whether additional buy-ins are allowed
-&mdash; a value is never copied across from a similar event. """ + str(len(UNVER)) + """ one-day Venetian rows and
-""" + str(len(OTHERS_MISC)) + """ other-venue rows are in this state.</p>
+&mdash; a value is never copied across from a similar event. Every official Venetian structure sheet
+(""" + str(STATS["sheets_read"]) + """ of """ + str(STATS["sheets_published"]) + """) was read in full on """ + esc(SHEETS_AS_OF) + """,
+so """ + str(len(UNVER)) + """ Venetian rows are in this state. """ + str(len(OTHERS_MISC)) + """ other-venue rows are.</p>
 """ + filters() + """
 """ + event_table(rows, "the sheet URL in the last column is what would close each row") + """
-<div class="note info">Reading the remaining """ + str(STATS["sheets_published"] - STATS["sheets_read"]) + """ sheets
-is suggestion <a href="suggestions.html">S-02</a>. The daily job already fetches every one of those URLs, so a change
-to a sheet is reported here before anyone relies on it.</div>
+<div class="note info">The other-venue rows still need their documents re-read (see <a href="flagged.html">Flagged for review</a>, FG-04).
+Suggestion <a href="suggestions.html">S-02</a> (read the Venetian sheets) is done; the daily job fetches every sheet URL, so a
+change to a sheet is reported before anyone relies on it.</div>
 </section>"""
     page("unverified.html", "Unverified rows", body)
 
@@ -1174,7 +1176,7 @@ def p_repo():
         ("Every resort fee / parking / incidentals / occupancy value has a source URL", "validate(): &ldquo;verified_official&rdquo; without a URL aborts"),
         ("No broken internal links", "validate(): walks every written page after generation"),
         ("Guarantee in the event name matches the guarantee on its structure sheet",
-         "scripts/build-events.py: 34 cross-checked rows, mismatch aborts"),
+         "scripts/build-events.py: every sheet-read row is checked against its schedule row (start time; fee + pool = buy-in); a mismatch aborts"),
         ("Event-to-sheet tagging matches each sheet's own &ldquo;Event Numbers&rdquo; line", "scripts/build-events.py"),
         ("Registration-close time parsed from the sheet matches the printed wall clock in the text",
          "scripts/build-events.py parses both the level count and the parenthesised time"),
@@ -1191,7 +1193,7 @@ def p_repo():
         ("FG-14", "<code>data/tournaments.json</code> attributed structure-sheet values (registration cutoff, stack, level length) to the schedule page, and a second session had already flagged those fields as unreproducible from that page. Both were half right: the values are real, the attribution was not. Fixed by per-field source links in the new dataset."),
         ("FG-15", "<code>data/venetian-dse4-official-check.json</code> (47 rows) and <code>data/verified/tournaments.json</code> (32 rows) each labelled rows &ldquo;single_entry&rdquo; on sheet silence alone, and the former counted per-flight rows as separate single-entry events. The consolidated dataset uses three states and groups flights by event."),
         ("FG-16", "Four front-ends (the repository root dashboard, <code>/docs/</code>, <code>/verified/</code>, <code>/pages/</code>) render four datasets with different labels for the same event. Nothing was deleted to fix that: the root dashboard belongs to <code>scripts/build_site.py</code> and its CI ownership note, and this <code>/plan/</code> surface is generated beside it from <code>site-data/*.json</code>. Consolidating to one surface is suggestion S-11."),
-        ("FG-19", "For the 34 rows whose sheet was read, the buy-in is fee-inclusive. For rows whose sheet was not read, whether the published number is fee-inclusive or fee-additive is unverified, so their cost-to-enter shows the published buy-in with a caveat instead of a computed total."),
+        ("FG-19", "For every Venetian row whose sheet was read (all of them as of 2026-11-17), the buy-in is fee-inclusive: fee + prize pool equals the published buy-in, which the build checks. Other-venue rows that have no read sheet keep the published buy-in with a caveat instead of a computed total."),
         ("Repo hygiene", "The root carries <code>style.css</code>, <code>styles.css</code>, <code>app.js</code> and <code>assets/</code> from several sessions with overlapping selectors. All of them stay in place because the root dashboard references them; this surface ships its own <code>plan/assets/site.css</code> and <code>plan/assets/site.js</code>, and the build fails if either is missing, so neither page set can restyle the other."),
     ]
     blist = ""

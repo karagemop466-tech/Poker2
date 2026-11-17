@@ -2,6 +2,11 @@
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
+| Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | done | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
+| Remove the redundant failing Pages publisher after confirming the canonical Pages build/deploy succeeds | done | arena/f4e82c6f-poker2 | `.github/workflows/pages.yml`, `COORDINATION.md` |
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
 | Extend scheduled source checks to include each of the 37 individual Venetian structure-sheet URLs | done (monitor report awaits first live run) | arena/96765ae0-poker2 | `COORDINATION.md`, `scripts/dataset.py`, `scripts/recheck_sources.py`, `README.md`, `sources.html`, `summary.html`, `index.html`, `data/site/*` |
 
 | Task | Status | Owner | Files |
@@ -569,3 +574,61 @@ true cost/night = (rate + fee) × (1 + tax) + parking reconciles to $217.28 for 
 Still open and published on the Flagged page (do not block merge): no event on any official document read states
 "no re-entry", so **no row is confirmed single-entry**; no official walking time or dated room quote exists in any
 source read; no 8:00 AM tournament is printed anywhere in the dataset.
+
+## Session arena/f4e82c6f-poker2 — README repair and repository documentation audit (2026-11-17)
+
+- Claim commit: `81f366a` on the fixed active branch `arena/f4e82c6f-poker2`; pushed to that branch after `git pull --rebase origin main` confirmed it was current.
+- Replaced the malformed root README, which contained literal merge-conflict markers and duplicated/contradictory historical README text, with a current usage guide describing the root dashboard, the separate `/plan/` surface, retained archives, generator ownership, data policy, and monitoring workflows.
+- Checks: `python3 scripts/audit.py` passed (83 Venetian event rows, 13 other-venue rows, 8 hotel rows, 60 sources); `python3 scripts/build_site.py` completed (15 pages, 178 events, 10 hotels); `python3 scripts/check_links.py` passed (24 pages, 1,749 links, zero broken internal links and zero disallowed external hosts); `git diff --check` and README relative-link checks passed.
+- Irregularity: running `python3 scripts/monitor.py` in this sandbox checked 22 URLs and got 22 fetch errors. Its local report/registry changes were discarded so this documentation-only task does not publish errors as a fresh monitor run. This indicates an environment/network retrieval failure, not confirmation that sources are unchanged; check the scheduled Actions run/report. The repository has multiple monitor workflows with separate registries; consolidation remains a documented open integration decision (S-12).
+- No external source facts were added or changed in this task. The official-source evidence remains the cited dataset and links audited by `scripts/audit.py`.
+- Integration: PR [#43](https://github.com/karagemop466-tech/Poker2/pull/43) merged to `main` at `93ee9ca2c320441e0835af3228c584a20fa18b59` on 2026-11-17. Both PR checks passed: [Verify site](https://github.com/karagemop466-tech/Poker2/actions/runs/43988469385) and [Plan generated pages](https://github.com/karagemop466-tech/Poker2/actions/runs/43988469431). Post-merge root `Verify site` [run 43988516031](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516031), `/plan/` verification [run 43988516113](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516113), GitHub Pages build/deployment [run 43988515513](https://github.com/karagemop466-tech/Poker2/actions/runs/43988515513), and static-site deployment [run 43988516063](https://github.com/karagemop466-tech/Poker2/actions/runs/43988516063) all completed successfully. Live site: https://karagemop466-tech.github.io/Poker2/.
+- Follow-up record PR [#44](https://github.com/karagemop466-tech/Poker2/pull/44) merged at `74997023025b4afd5c2767485e129be5ece49f5a`; both verification workflows passed. For that merge, GitHub's canonical `pages build and deployment` run [43988703319](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703319) succeeded and Pages API reports `built` for the same commit. The separate `.github/workflows/pages.yml` run [43988703616](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703616) failed in its deploy job with “No artifacts named github-pages” even though the earlier steps reported success; a manual workflow dispatch was denied by repository permissions. The canonical Pages build succeeded, so the site is published; duplicate deployment-workflow behavior remains an irregularity for review, not a claim that the live deployment failed.
+
+## Session arena/f4e82c6f-poker2 — duplicate Pages publisher cleanup (2026-11-17)
+
+- Claim pushed as `c190709` on the active branch. Investigation found two concurrent publishers: GitHub Pages is configured as `legacy` and its automatically generated `pages build and deployment` workflow builds/deploys the static root; `.github/workflows/pages.yml` was a second GitHub Actions publisher using `upload-pages-artifact`/`deploy-pages`.
+- Canonical Pages run [43988937466](https://github.com/karagemop466-tech/Poker2/actions/runs/43988937466) succeeded for commit `18558dc`; the Pages API reported `built`. The duplicate custom publisher failed on PR #44 [run 43988703616](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703616) and PR #45 [run 43988938121](https://github.com/karagemop466-tech/Poker2/actions/runs/43988938121) with “No artifacts named github-pages”; logs showed the upload step but deploy could not retrieve an artifact. A workflow-dispatch retry was denied by repository permissions.
+- Removed only `.github/workflows/pages.yml` so the configured, successful canonical publisher is the single deployment path. No site content, data, or Pages source settings were changed. Validate the post-merge `pages build and deployment` and site verification runs before marking this claim complete.
+
+- Cleanup integration: PR [#46](https://github.com/karagemop466-tech/Poker2/pull/46) merged at `8acae0c449a17b67fa8b75d2b881304e018d26d1`. Both verification jobs passed in PR and after merge. With the duplicate workflow removed, the canonical Pages build and deployment [run 43989177852](https://github.com/karagemop466-tech/Poker2/actions/runs/43989177852) succeeded; root verification [43989178134](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178134) and plan verification [43989178065](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178065) also passed. Pages API reports `built` for commit `8acae0c`; live site https://karagemop466-tech.github.io/Poker2/. The duplicate artifact failure no longer recurs because its publisher was removed.
+## Session arena/8b1f0fd8-poker2 — claims and record (2026-11-17)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T1 Read every remaining Venetian DSE IV structure sheet (27 of 37 were unread on main); record the sheet's own text for buy-in, guarantee, fee, starting chips, level length, late-registration, and re-entry / add-on / flight wording | in progress | arena/8b1f0fd8-poker2 | `scripts/build-events.py` (SHEETS block), `site-data/events.json` |
+| T2 Remove the "unverified" label only from events whose official schedule row and structure sheet agree (name, guarantee, start); keep the single-entry status as the sheet states it | in progress | arena/8b1f0fd8-poker2 | `site-data/events.json`, `site-data/flags.json` |
+| T3 Repair unresolved merge-conflict markers left in `README.md` on main (irregularity IR-README) | in progress | arena/8b1f0fd8-poker2 | `README.md` |
+| T4 Rebuild generated pages from the updated dataset; run the repo's own checks (audit, build, link check, plan check) | pending | arena/8b1f0fd8-poker2 | generated pages under `plan/`, `venues/` |
+| T5 Hotel live-rate lookup, Google/Apple walking routes, and scheduled daily schedule scrape | not started by this session — blocked, see record | — | — |
+
+### Renewal and record — arena/8b1f0fd8-poker2 (2026-11-17)
+
+Claim renewed at 2026-11-17 00:38 UTC (the 60-minute expiry from `e14c3d6` had passed; the claim timestamp was not recorded in that commit). T5 remains unclaimed and blocked.
+
+| Task | Result (2026-11-17) |
+|---|---|
+| T1 Structure sheets | Done. All 37 Venetian DSE IV structure sheets read (10 on 2026-11-16, 27 today). Register: `research/structure-sheets-register.md`. Every row in `site-data/events.json` (94) is `sheet_read: true`; start times and fee+pool checked against the sheets. |
+| T2 Unverified labels | Done for all events whose schedule row and sheet agree. Four other-venue rows remain UNVERIFIED because their documents were not re-read; they are listed on `/plan/unverified.html`. Single-entry status is shown as the sheet states it; no sheet states a one-entry cap (FG-02 stays open). |
+| T3 README conflict markers | Superseded, not repeated. Session `f4e82c6f` replaced the README on main (PR #43, merged before this rebase), so this session did not rewrite it and kept main's version. The earlier draft repair was discarded in the rebase to avoid overwriting that work. |
+| T4 Rebuild and checks | Done. `scripts/audit.py` OK (83 Venetian + 13 other rows, 8 hotels, 60 sources); `scripts/build.py` exit 0; `scripts/check_links.py` OK; `scripts/check_site.mjs` OK (15 plan pages, 94 event rows); `build-events.py`, `build-schedule.py`, `build-site.py` regenerate identically. |
+
+New irregularities (flagged, not blocking the merge):
+
+- **FG-30** (Medium): most Venetian rows are 21+ with a Rewards card, Seniors events are 50+, LIPS events are female-only, and sheet 31 is a team event. The gate is recorded per row in `events.json`, but the plan tables do not yet display it.
+- **FG-31** (Medium): the root dashboard (`tournaments.html` and related pages) is generated from the legacy `data/` pipeline and still shows older UNVERIFIED labels for Venetian rows. `/plan/` is the current surface. Consolidation is the open decision `S-11` (and `S-A14`).
+
+Corrections made in this session: the Event 36 / Event 38 sentence in `site-data/summary.json` no longer asserts an unreachable event. It now says the sheets do not show how long a player lasts, so the Event 38 timing is unknown and not planned.
+
+Remaining open items: `FG-02` (single-entry answer in writing), `S-02` (structure-sheet reading now done; automation awaits the owner's choice), `f743ae5a` (walking distances and lodging tax, unverified).
+
+### Integration record — arena/8b1f0fd8-poker2 (2026-11-17)
+
+- Integration PR: [#48](https://github.com/karagemop466-tech/Poker2/pull/48) (`arena/8b1f0fd8-poker2` → `main`), head `feb5afb`.
+- Checks on the PR head: `Verify site` success and `Plan: generated pages match their data` success.
+- Merge: **merged** (`gh pr merge 48 --merge`) at 2026-11-17 00:40:19 UTC, merge commit `2c2105d5f7292f1fd629bd8f79212a6d2631bdfb`.
+- Post-merge checks on `2c2105d`: `Verify site` success, `Plan: generated pages match their data` success, `pages build and deployment` success. The Pages API reports `built` at `2c2105d`.
+- Live confirmation: `https://karagemop466-tech.github.io/Poker2/plan/flagged.html` shows the updated FG-03 ("All 37 structure sheets read"). The sandbox cannot reach `github.io` directly, so this was read with the page fetcher.
+- Claim status: T1, T2 and T4 done and merged. T3 superseded by `f4e82c6f` (README already repaired on `main`). T5 remains unclaimed and blocked.
+- Force-push note: the branch's claim commit was rewritten during rebase onto `main`, which had moved (PRs #43–47). The branch was force-pushed once with `--force-with-lease` pinned to the session's own previous tip `e14c3d6`. No other session's commits were rewritten.
+- Open irregularities (not blocking, all on `/plan/flagged.html`): FG-02, FG-30, FG-31, FG-04/04b, FG-05/05b, FG-06, FG-07.

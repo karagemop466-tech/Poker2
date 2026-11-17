@@ -27,7 +27,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "site-data", "events.json")
-AS_OF = "2026-11-16"
+AS_OF = "2026-11-16"          # date the official schedule page was last read
+SHEET_AS_OF = "2026-11-17"    # date the official structure sheets were last read (all 37)
 SCHED_URL = ("https://www.venetianlasvegas.com/resort/casino/poker/"
              "deepstack-extravaganza-poker-tournament/dse-nov-2026.html")
 SHEET_URL = ("https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/"
@@ -177,10 +178,367 @@ SHEETS = {
         "fee_text": ("$40 of the $200 Buy-In is withheld for house fees (Rake - Staff). "
                      "The prize pool consists of $160 of every $200 Buy In."),
     },
-    # Event 17's structure document number was captured from the schedule page (the link is
-    # split across two page chunks: ".../dse_nov_20" + "26-structure_26.pdf"). The sheet
-    # itself has not been read, so only the document number is recorded here.
-    26: {"title": "$400 Pot Limit Omaha Bounty (1Day)", "events": ["17"], "not_read": True},
+    # ----------------------------------------------------------------------------------
+    # Sheets read in full on 2026-11-17 (arena/8b1f0fd8-poker2). Every value below was
+    # transcribed from the sheet text returned by the official PDF at SHEET_URL(n).
+    # Start time, buy-in (fee + pool) and guarantee are cross-checked in build() against
+    # the schedule row; a disagreement aborts the build.
+    # ----------------------------------------------------------------------------------
+    2: {
+        "title": "$400 No Limit Hold'em - Day A+B @ 11:10 AM with Day 2 @ 11:00 AM",
+        "events": ["07"], "start": "11:10", "chips": 40000, "level_min": 40,
+        "reg_close": "17:55", "reg_close_text": "Late Registration: 9 levels + Break (5:55 PM)",
+        "fee": 70, "pool": 330, "gtd": {"*": 75000}, "gtd_text": "Guarantee: $75,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$70 of the $400 Buy-In is withheld for house fees (Rake + Staff). "
+                     "The prize pool consists of $330 of every $400 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 11:00 AM combining "
+                                  "all remaining players from 1A and 1B [...] Any player who bags chips "
+                                  "for Day 2 may not play a subsequent flight."),
+    },
+    3: {
+        "title": "$400 No Limit Hold'em - Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
+        "events": ["19"], "start": "11:10", "chips": 40000, "level_min": 40,
+        "reg_close": "17:55", "reg_close_text": "Late Registration: 9 levels + Break (5:55 PM)",
+        "fee": 70, "pool": 330, "gtd": {"*": 75000}, "gtd_text": "Guarantee: $75,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$70 of the $400 Buy-In is withheld for house fees (Rake + Staff). "
+                     "The prize pool consists of $330 of every $400 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 11:00 AM combining "
+                                  "all remaining players from 1A, 1B, and 1C [...] Any player who bags "
+                                  "chips for Day 2 may not play a subsequent flight."),
+    },
+    4: {
+        "title": "$600 No Limit Hold'em - Day A+B+C @ 11:10 AM with Day 2 @ 11:00 AM",
+        "events": ["59"], "start": "11:10", "chips": 40000, "level_min": 40,
+        "reg_close": "17:55", "reg_close_text": "Late Registration: 9 levels + Break (5:55 PM)",
+        "fee": 95, "pool": 505, "gtd": {"*": 150000}, "gtd_text": "Guarantee: $150,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$95 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $505 of every $600 Buy In. On Day 1A only, players who register before "
+                     "the start of the event (11:10 a.m.) receive a $20 discount on house fees, for a "
+                     "total buy in of $580 instead of $600."),
+        "note": "Day 1A pre-start registration: $20 house-fee discount (total $580), per sheet rule 7.",
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 11:00 AM combining "
+                                  "all remaining players from 1A, 1B, and 1C [...] Any player who bags "
+                                  "chips for Day 2 may not play a subsequent flight."),
+    },
+    9: {
+        "title": "$300 No Limit Hold'em - Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
+        "events": ["01"], "start": "17:10", "chips": 30000, "level_min": 30,
+        "reg_close": "20:40", "reg_close_text": "Late Registration: 6 levels + Break (~ 8:40 PM)",
+        "fee": 60, "pool": 240, "gtd": {"*": 75000}, "gtd_text": "Guarantee: $75,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$60 of the $300 Buy-In is withheld for house fees (Rake + Staff). "
+                     "The prize pool consists of $240 of every $300 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 12:00 PM combining "
+                                  "all remaining players from 1A, 1B, 1C, 1D [...] Any player who bags "
+                                  "chips for Day 2 may not play a subsequent flight."),
+    },
+    12: {
+        "title": "$800 No Limit Hold'em - Day A+C+E @ 11:10 AM with Day 2 @ 12:00 PM",
+        "events": ["26"], "start": "11:10", "chips": 40000, "level_min": 40,
+        "reg_close": "15:40", "reg_close_text": "Late Registration: 6 levels + Break (~ 3:40 PM)",
+        "fee": 110, "pool": 690, "gtd": {"*": 500000}, "gtd_text": "Guarantee: $500,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$110 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $690 of every $800 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 12:00 PM combining "
+                                  "all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F [...] Any player "
+                                  "who bags chips for Day 2 may not play a subsequent flight."),
+    },
+    13: {
+        "title": "$800 No Limit Hold'em - Day B+D @ 5:10 PM with Day 2 @ 12:00 PM",
+        "events": ["26"], "start": "17:10", "chips": 40000, "level_min": 30,
+        "reg_close": "20:40", "reg_close_text": "Late Registration: 6 levels + Break (~ 8:40 PM)",
+        "fee": 110, "pool": 690, "gtd": {"*": 500000}, "gtd_text": "Guarantee: $500,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$110 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $690 of every $800 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 12:00 PM combining "
+                                  "all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F [...] Any player "
+                                  "who bags chips for Day 2 may not play a subsequent flight."),
+    },
+    14: {
+        "title": "$800 No Limit Hold'em - Day F (Turbo) @ 5:10 PM with Day 2 @ 12:00 PM",
+        "events": ["26"], "start": "17:10", "chips": 40000, "level_min": 20,
+        "reg_close": "19:25", "reg_close_text": "Late Registration: 6 levels + Break (~ 7:25 PM)",
+        "fee": 110, "pool": 690, "gtd": {"*": 500000}, "gtd_text": "Guarantee: $500,000",
+        "bounty": None, "pays": None,
+        "fee_text": ("$110 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $690 of every $800 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately "
+                                  "12.5% of the field remaining. Day 2 will resume at 12:00 PM combining "
+                                  "all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F [...] Any player "
+                                  "who bags chips for Day 2 may not play a subsequent flight."),
+    },
+    16: {
+        "title": "$800 No Limit Hold'em Bounty (1Day)",
+        "events": ["36"], "start": "11:10", "chips": 40000, "level_min": 30,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 10 levels + Break (4:55 PM)",
+        "fee": 100, "pool": 700, "gtd": {"*": 75000},
+        "gtd_text": "Guarantee: $75,000 (prize pool + total bounties)",
+        "bounty": 200,
+        "bounty_text": ("Players receive $200 Bounty for each player they eliminate from the tournament. "
+                        "Once we reach the money (posted payouts) - players receive a $500 Bounty for "
+                        "each player they eliminate from the tournament."),
+        "pays": 12.5,
+        "fee_text": ("$100 of the $800 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $700 of every $800 Buy In."),
+    },
+    17: {
+        "title": "$600 No Limit Hold'em Seniors (1Day) - must be 50+",
+        "events": ["24", "32"], "start": "10:10", "chips": 40000, "level_min": 30,
+        "reg_close": "15:55", "reg_close_text": "Late Registration: 10 levels + Break (~ 3:55 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 40000}, "gtd_text": "Guarantee: $40,000",
+        "bounty": None, "pays": 15, "pays_text": "This event pays 15% of the field",
+        "gate": "Must be 50+ years of age, with a Venetian Rewards card",
+        "gate_excerpt": ("Must be 50+ years of age and have a Venetian Rewards card to participate. Any "
+                         "player who buys into this event that is not 50+ years of age will not be "
+                         "entitled to any prize money or a refund of their buy in."),
+        "fee_text": ("$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $510 of every $600 Buy In."),
+    },
+    19: {
+        "title": "$100 NLH LIPS Ladies (1Day) - Milestone Satellite to Event #39",
+        "events": ["33", "37"], "start": "16:10", "chips": 20000, "level_min": 20,
+        "reg_close": "18:25", "reg_close_text": "Late Registration: 6 levels + Break (~6:25 PM)",
+        "fee": 20, "pool": 80, "gtd": {}, "gtd_text": "Guarantee: 2 Seats (direct entry to Event #39)",
+        "bounty": None, "pays": None,
+        "gate": "Female, 21+, with a Venetian Rewards card",
+        "gate_excerpt": ("Open to Female players who must 21+ years of age and have a Venetian Rewards "
+                         "card to participate."),
+        "fee_text": ("$20 of the $100 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $80 of every $100 Buy In."),
+        "satellite_text": ("Milestone: 200,000 chips = direct entry into Event #39; the remaining seats "
+                           "are awarded at the end of the satellite."),
+    },
+    20: {
+        "title": "$1,100 No Limit Hold'em Seniors - Day A+B @ 10:10 AM with Day 2 @ 10:00 AM",
+        "events": ["49"], "start": "10:10", "chips": 40000, "level_min": 40,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
+        "fee": 140, "pool": 960, "gtd": {"*": 300000}, "gtd_text": "Guarantee: $300,000",
+        "bounty": None, "pays": None,
+        "gate": "Must be 50+ years of age, with a Venetian Rewards card",
+        "gate_excerpt": ("Must be 50+ years of age and have a Venetian Rewards card to participate. Any "
+                         "player who buys into this event that is not 50+ years of age will not be "
+                         "entitled to any prize money or a refund of their buy in."),
+        "fee_text": ("$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $960 of every $1,100 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately 15% "
+                                  "of the field remaining. Day 2 will resume at 10:00 AM combining all "
+                                  "remaining players from 1A and 1B [...] Any player who bags chips for "
+                                  "Day 2 may not play a subsequent flight."),
+    },
+    21: {
+        "title": "$2,200 No Limit Hold'em - PokerAtlas Championship Title Event - Day 1A @ 10:10 AM",
+        "events": ["47"], "start": "10:10", "chips": 40000, "level_min": 40,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
+        "fee": 225, "pool": 1975, "gtd": {"*": 1000000}, "gtd_text": "Guarantee: $1,000,000",
+        "bounty": None, "pays": None,
+        "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$225 of the $2,200 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $1,975 of every $2,200 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately 12.5% "
+                                  "of the field remaining. Day 2 will resume at 1:00 PM combining all "
+                                  "remaining players from 1A and 1B [...] Any player who bags chips for "
+                                  "Day 2 may not play a subsequent flight. Day 3 will resume at 11:00 AM "
+                                  "for a streamed and distributed Final Table produced by PokerGO."),
+    },
+    22: {
+        "title": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+        "events": ["20"], "start": "12:10", "chips": 30000, "level_min": 30,
+        "reg_close": "16:40", "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 58, "pool": 242, "gtd": {"*": 10000}, "gtd_text": "Guarantee: $10,000",
+        "bounty": None, "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $242 of every $300 Buy In."),
+    },
+    23: {
+        "title": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+        "events": ["57"], "start": "12:10", "chips": 30000, "level_min": 30,
+        "reg_close": "16:40", "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 25000}, "gtd_text": "Guarantee: $25,000",
+        "bounty": None, "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $510 of every $600 Buy In."),
+    },
+    24: {
+        "title": "$260 No Limit Hold'em (1Day) - Milestone Satellite to Event #47",
+        "events": ["41", "44"], "start": "16:10", "chips": 20000, "level_min": 20,
+        "reg_close": "18:25", "reg_close_text": "Late Registration: 6 levels + Break (~6:25 PM)",
+        "fee": 40, "pool": 220, "gtd": {}, "gtd_text": "Guarantee: 2 Seats (direct entry to Event #47)",
+        "bounty": None, "pays": None, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$40 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $220 of every $260 Buy In."),
+        "satellite_text": ("Milestone: 200,000 chips = direct entry into Event #47; odd monies paid as one "
+                           "additional payout."),
+    },
+    25: {
+        "title": "$260 No Limit Hold'em Turbo (1Day) - Milestone Satellite to Event #47",
+        "events": ["45", "46", "48"],
+        "starts": {"45": "20:10", "46": "09:10", "48": "12:10"},
+        "chips": 20000, "level_min": 15,
+        "reg_close": None, "reg_close_text": "Late Registration: 6 levels (no clock time stated)",
+        "fee": 35, "pool": 225, "gtd": {}, "gtd_text": "Guarantee: 2 Seats (direct entry to Event #47)",
+        "bounty": None, "pays": None, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$35 of the $260 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $225 of every $260 Buy In."),
+        "satellite_text": ("Milestone: 200,000 chips = direct entry into Event #47; odd monies paid as one "
+                           "additional payout."),
+    },
+    26: {
+        "title": "$400 Pot Limit Omaha Bounty (1Day)",
+        "events": ["17"], "start": "12:10", "chips": 30000, "level_min": 30,
+        "reg_close": "16:40", "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 60, "pool": 340, "gtd": {"*": 15000},
+        "gtd_text": "Guarantee: $15,000 (prize pool + total bounties)",
+        "bounty": 100,
+        "bounty_text": ("Players receive a $100 Bounty for each player they eliminate from the tournament."),
+        "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$60 of the $400 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $340 of every $400 Buy In."),
+    },
+    27: {
+        "title": "$600 Pot Limit Omaha Bounty (1Day)",
+        "events": ["40"], "start": "12:10", "chips": 30000, "level_min": 30,
+        "reg_close": "16:40", "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 25000},
+        "gtd_text": "Guarantee: $25,000 (prize pool + total bounties)",
+        "bounty": 200,
+        "bounty_text": ("Players receive a $200 Bounty for each player they eliminate from the tournament."),
+        "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $510 of every $600 Buy In."),
+    },
+    28: {
+        "title": "$600 BIG O (1Day)",
+        "events": ["27"], "start": "12:10", "chips": 30000, "level_min": 30,
+        "reg_close": "16:40", "reg_close_text": "Late Registration: 8 levels + break (~ 4:40 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 25000}, "gtd_text": "Guarantee: $25,000",
+        "bounty": None, "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). Prize pool "
+                     "consists of $510 of every $600 Buy In."),
+    },
+    30: {
+        "title": "$200 No Limit Hold'em (1Day) - Progressive Knock-Out Bounty (PKO)",
+        "events": ["08"], "start": "17:10", "chips": 25000, "level_min": 30,
+        "reg_close": "21:40", "reg_close_text": "Late Registration: 8 levels + Break (9:40 PM)",
+        "fee": 40, "pool": 160, "gtd": {"*": 8000},
+        "gtd_text": "Guarantee: $8,000 (prize pool + total bounties)",
+        "bounty": 50,
+        "bounty_text": ("Players start the event as a $50 bounty. For each player they eliminate, they receive "
+                        "1/2 of the other player's bounty to keep as prize money, and the other 1/2 is added "
+                        "to their own bounty."),
+        "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $160 of every $200 Buy In."),
+    },
+    31: {
+        "title": "$600 No Limit Hold'em LIPS Poker Jingle Tag Team (1Day)",
+        "events": ["35"], "start": "10:10", "chips": 40000, "level_min": 30,
+        "reg_close": "14:40", "reg_close_text": "Late Registration: 8 levels + Break (~ 2:40 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 10000}, "gtd_text": "Guarantee: $10,000",
+        "bounty": None, "pays": 12.5,
+        "gate": "Teams: female/female or female/male; 21+, with a Venetian Rewards card",
+        "fee_text": ("$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 "
+                     "Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies "
+                     "International Poker Series (LIPS). Prize pool consists of $510 of every $600 Buy In."),
+    },
+    32: {
+        "title": "$800 No Limit Hold'em LIPS Ladies (2Day) - Women in Poker Main Event",
+        "events": ["39"], "start": "10:10", "chips": 40000, "level_min": 40,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
+        "fee": 110, "pool": 690, "gtd": {"*": 40000}, "gtd_text": "Guarantee: $40,000",
+        "bounty": None, "pays": None,
+        "gate": "Female, 21+, with a Venetian Rewards card",
+        "gate_excerpt": ("Must be a female 21+ years of age and have a Venetian Rewards card to participate."),
+        "fee_text": ("$90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In "
+                     "will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker "
+                     "Series (LIPS). Prize pool consists of $690 of every $800 Buy In."),
+        "note": ("Day 1 Dec 10 @ 10:10 AM, Day 2 Dec 11 @ 10:00 AM, final table ~7:00 PM streamed by PokerGO. "
+                 "Sheet lists one Day 1 (no starting flights)."),
+    },
+    33: {
+        "title": "$600 No Limit Hold'em LIPS (1Day) - Kings and Queens Bounty (open to all)",
+        "events": ["43"], "start": "11:10", "chips": 40000, "level_min": 30,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 10 levels + Break (4:55 PM)",
+        "fee": 90, "pool": 510, "gtd": {"*": 30000},
+        "gtd_text": "Guarantee: $30,000 (prize pool + total bounties)",
+        "bounty": 200,
+        "bounty_text": ("Players receive $200 Bounty for each player they eliminate from the tournament. "
+                        "The player who wins the event will keep their own bounty."),
+        "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$80 of the $600 Buy-In is withheld for house fees (Rake + Staff). $10 of the $600 Buy In "
+                     "will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker "
+                     "Series (LIPS). Prize pool consists of $510 of every $600 Buy In."),
+        "note": "Trophy to the last King (male) and last Queen (female) standing.",
+    },
+    34: {
+        "title": "$1,100 No Limit Hold'em (1Day) - Progressive Knock-Out Bounty (PKO)",
+        "events": ["52"], "start": "11:10", "chips": 40000, "level_min": 30,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 10 levels + Break (4:55 PM)",
+        "fee": 130, "pool": 970, "gtd": {"*": 75000},
+        "gtd_text": "Guarantee: $75,000 (prize pool + total bounties)",
+        "bounty": 200,
+        "bounty_text": ("Players start the event as a $200 bounty. For each player they eliminate, they receive "
+                        "1/2 of the other player's bounty to keep as prize money, and the other 1/2 is added "
+                        "to their own bounty."),
+        "pays": 12.5, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$130 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $970 of every $1,100 Buy In."),
+    },
+    35: {
+        "title": "$1,100 No Limit Hold'em - Day A+C+E @ 10:10 AM with Day 2 @ 11:00 AM",
+        "events": ["56"], "start": "10:10", "chips": 40000, "level_min": 40,
+        "reg_close": "16:55", "reg_close_text": "Late Registration: 9 levels + Break (~ 4:55 PM)",
+        "fee": 140, "pool": 960, "gtd": {"*": 500000}, "gtd_text": "Guarantee: $500,000",
+        "bounty": None, "pays": None,
+        "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $960 of every $1,100 Buy In."),
+        "note": ("Day 1A: players who register before the start (10:10 a.m.) receive a $40 house-fee "
+                 "discount (total $1,060 instead of $1,100); ends once the event has started and played one hand."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately 12.5% "
+                                  "of the field remaining. Day 2 will resume at 11:00 AM combining all "
+                                  "remaining players from 1A, 1B, 1C, 1D, and 1E [...] Any player who bags "
+                                  "chips for Day 2 may not play a subsequent flight."),
+    },
+    36: {
+        "title": "$1,100 No Limit Hold'em - Day B+D @ 6:10 PM with Day 2 @ 11:00 AM",
+        "events": ["56"], "start": "18:10", "chips": 40000, "level_min": 30,
+        "reg_close": "23:10", "reg_close_text": "Late Registration: 9 levels + Break (~ 11:10 PM)",
+        "fee": 140, "pool": 960, "gtd": {"*": 500000}, "gtd_text": "Guarantee: $500,000",
+        "bounty": None, "pays": None,
+        "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $960 of every $1,100 Buy In."),
+        "note": ("Day 1B: players who register before the start (6:10 PM) receive a $40 house-fee discount "
+                 "(total $1,060 instead of $1,100); ends once the event has started and played one hand."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately 12.5% "
+                                  "of the field remaining. Day 2 will resume at 11:00 AM combining all "
+                                  "remaining players from 1A, 1B, 1C, 1D, and 1E [...] Any player who bags "
+                                  "chips for Day 2 may not play a subsequent flight."),
+    },
+    37: {
+        "title": "$2,200 No Limit Hold'em - Day 1B @ 6:10 PM with Day 2 @ 1:00 PM, Day 3 @ 11:00 AM",
+        "events": ["47"], "start": "18:10", "chips": 40000, "level_min": 30,
+        "reg_close": "23:10", "reg_close_text": "Late Registration: 9 levels + Break (~ 11:10 PM)",
+        "fee": 225, "pool": 1975, "gtd": {"*": 1000000}, "gtd_text": "Guarantee: $1,000,000",
+        "bounty": None, "pays": None, "gate": "21+, with a Venetian Rewards card",
+        "fee_text": ("$225 of the $2,200 Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                     "consists of $1,975 of every $2,200 Buy In."),
+        "multi_flight_explicit": ("Each starting flight will play until we are down to approximately 12.5% "
+                                  "of the field remaining. Day 2 will resume at 1:00 PM combining all "
+                                  "remaining players from 1A and 1B [...] Any player who bags chips for "
+                                  "Day 2 may not play a subsequent flight. Day 3 at 11:00 AM for PokerGO."),
+    },
 }
 
 # --------------------------------------------------------------------------------------
@@ -242,7 +600,7 @@ ROWS = [
     ("2026-12-09", "11:10", "36", "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money", 16, "DAY"),
     ("2026-12-09", "16:10", "37", "$100 NLH LIPS Ladies Milestone Satellite (1Day) - awards direct entry to Event #39", 19, "SAT"),
     ("2026-12-09", "17:10", "38", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 15, "DAY"),
-    ("2026-12-10", "10:10", "39", "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event", 32, "FLIGHT"),
+    ("2026-12-10", "10:10", "39", "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker Main Event", 32, "DAY"),
     ("2026-12-10", "12:10", "40", "$600 Pot Limit Omaha Bounty $25K GTD (1Day)", 27, "DAY"),
     ("2026-12-10", "16:10", "41", "$260 NLH Milestone Satellite (1Day) - awards direct entry to Event #47", 24, "SAT"),
     ("2026-12-10", "17:10", "42", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 15, "DAY"),
@@ -325,6 +683,17 @@ def build():
         read = bool(sheet) and not sheet.get("not_read")
         buyin = parse_money_buysin(name)
         gtd_name = parse_gtd(name)
+        if read and kind in ("DAY", "PARTNER", "FLIGHT", "SAT", "TEAM"):
+            # Line-by-line cross-check: the sheet's own start time and fee + pool must agree with
+            # the schedule row before any sheet-derived value is published against it.
+            expected_start = sheet.get("starts", {}).get(num, sheet.get("start"))
+            if expected_start != start:
+                raise SystemExit(f"event {num} {date}: schedule start {start} disagrees with "
+                                 f"structure sheet {sheetno} (start {expected_start})")
+            if sheet.get("fee") is not None and sheet.get("pool") is not None:
+                if sheet["fee"] + sheet["pool"] != buyin:
+                    raise SystemExit(f"structure sheet {sheetno}: fee {sheet['fee']} + pool "
+                                     f"{sheet['pool']} != buy-in {buyin}")
         ev_key = num + ("D2" if kind == "RESTART" else "")
         gtd_sheet = None
         if read:
@@ -362,14 +731,20 @@ def build():
             "sheet_url": SHEET_URL.format(n=sheetno),
             "schedule_url": SCHED_URL,
             "last_checked": AS_OF,
+            "sheet_retrieved": SHEET_AS_OF if read else None,
             "kind": kind,
+            "note": sheet.get("note") if read else None,
+            "satellite_text": sheet.get("satellite_text") if read else None,
+            "eligibility": ({"value": sheet["gate"], "excerpt": sheet.get("gate_excerpt"),
+                             "source_url": SHEET_URL.format(n=sheetno), "retrieved": SHEET_AS_OF}
+                            if read and sheet.get("gate") else None),
         }
         # ---- structured rule fields, each with its own source excerpt + retrieval date ----
         def field(value, status, excerpt, url):
             return {"value": value, "status": status, "excerpt": excerpt,
-                    "source_url": url, "retrieved": AS_OF if read else None}
+                    "source_url": url, "retrieved": SHEET_AS_OF if read else None}
 
-        if read and kind in ("DAY", "PARTNER"):
+        if read and kind in ("DAY", "PARTNER", "SAT", "TEAM"):
             entry_status = "explicit_no" if "re_entry_explicit" in sheet else "silent"
             ev["rules"] = {
                 "single_entry": field(
@@ -386,7 +761,7 @@ def build():
                 "add_on": field(None, "not_stated_sheet_read", SILENT_ADDON, ev["sheet_url"]),
                 "fee": field(sheet["fee"], "explicit", sheet["fee_text"], ev["sheet_url"]),
                 "guarantee": field(gtd_sheet, "explicit", sheet["gtd_text"], ev["sheet_url"]),
-                "payout": field(sheet.get("pays"), "explicit", PAY125, ev["sheet_url"])
+                "payout": field(sheet.get("pays"), "explicit", sheet.get("pays_text", PAY125), ev["sheet_url"])
                 if sheet.get("pays") else field(None, "not_stated_sheet_read", None, ev["sheet_url"]),
                 "bounty": field(sheet.get("bounty"), "explicit", sheet.get("bounty_text"),
                                 ev["sheet_url"]) if sheet.get("bounty") else None,
@@ -410,7 +785,7 @@ def build():
                                      "payout", "bounty")}
 
         # ---- classification ----
-        if is_restart or kind == "RESTART":
+        if kind == "RESTART":
             ev["category"] = "day2_restart"
         elif kind == "FINALTABLE":
             ev["category"] = "final_table"
@@ -440,7 +815,7 @@ def build():
     for n, s in SHEETS.items():
         if s.get("not_read"):
             continue
-        tagged = {e["event_no"] for e in events if e["sheet"] == n and e["kind"] in ("DAY", "PARTNER", "FLIGHT")}
+        tagged = {e["event_no"] for e in events if e["sheet"] == n and e["kind"] in ("DAY", "PARTNER", "FLIGHT", "SAT", "TEAM")}
         listed = {(x[:-2] if x.endswith("D2") else x) for x in s["events"]}
         extra = tagged - listed
         if extra:
