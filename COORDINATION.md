@@ -3,6 +3,7 @@
 | Task | Status | Owner | Files |
 |---|---|---|---|
 | Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | done | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
+| Remove the redundant failing Pages publisher after confirming the canonical Pages build/deploy succeeds | in progress | arena/f4e82c6f-poker2 | `.github/workflows/pages.yml`, `COORDINATION.md` |
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
