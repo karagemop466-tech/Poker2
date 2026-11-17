@@ -113,9 +113,16 @@
       var t1 = document.getElementById("trip-true-nightly");
       var t2 = document.getElementById("trip-hotel-total");
       var t3 = document.getElementById("trip-grand");
-      if (t1) t1.textContent = "$" + trueNightly.toFixed(2);
-      if (t2) t2.textContent = "$" + hotelTotal.toFixed(2);
-      if (t3) t3.textContent = "$" + grand.toFixed(2);
+      // No room rate has been captured from an official source for any property,
+      // so a blank rate must not silently compute a hotel total of $0.
+      var noRate = !(nightly > 0);
+      if (t1) t1.textContent = noRate ? "— enter a dated room rate" : "$" + trueNightly.toFixed(2);
+      if (t2) t2.textContent = noRate ? "—" : "$" + hotelTotal.toFixed(2);
+      if (t3) t3.textContent = noRate
+        ? "entries only: $" + entryTotal.toFixed(2) + " (hotel total pending a dated quote)"
+        : "$" + grand.toFixed(2);
+      var warn = document.getElementById("trip-rate-warning");
+      if (warn) warn.style.display = noRate ? "" : "none";
     }
 
     tripForm.addEventListener("input", recalcTrip);

@@ -15,6 +15,7 @@ def load(p, default=None):
         return json.load(f)
 
 master = load("data/master.json")
+MASTER = master
 monitor = load("data/source_monitor.json", {"urls": []})
 AS_OF = master.get("as_of") or "2026-11-16"
 
@@ -108,6 +109,18 @@ def rule_badge(rules):
         return '<span class="badge b-bad">not single-entry</span>'
     return '<span class="badge b-warn">unverified</span>'
 
+def fmt_hm(t):
+    """24h 'HH:MM' -> 'h:MM AM/PM' for display; None stays None."""
+    if not t:
+        return None
+    m = re.match(r"^(\d{1,2}):(\d{2})$", str(t).strip())
+    if not m:
+        return str(t)
+    h, mi = int(m.group(1)), m.group(2)
+    suf = "AM" if h < 12 else "PM"
+    return "%d:%s %s" % ((h % 12) or 12, mi, suf)
+
+
 def changed_flag(url):
     """Mark rows whose monitored source changed since the stored hash."""
     for u in monitor.get("urls", []):
@@ -192,9 +205,16 @@ def hotel_table(hotels, table_id, show_calc=True):
         if h.get("tax_note"):
             tax_cell += f'<small class="note">{esc(h["tax_note"])}</small>'
         rl = h.get("rate_log") or []
+        shared = (MASTER.get("rate_log_shared") or {})
         if rl:
             latest = rl[-1]
             rate_cell = f'{money(latest["rate"])} <small class="note">{esc(latest["basis"])} · logged {esc(latest["date"])}</small>'
+        elif h.get("id") in shared.get("hotel_ids", []):
+            ent = shared["entries"][-1]
+            rate_cell = ('<span class="badge b-warn">not attributed</span> <small class="note">'
+                         'official page prints '
+                         + " / ".join(money(v) for v in ent["values"])
+                         + ' for either property — see the shared rate log</small>')
         else:
             rate_cell = '<span class="badge b-warn">no dated quote</span>'
         calc = ""
@@ -203,10 +223,20 @@ def hotel_table(hotels, table_id, show_calc=True):
 <input type="number" class="hc-rate" min="0" step="1" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 <div class="hc-out small note"></div></div>"""
         walk = h.get("walk", {})
-        walk_cell = (f'<span class="badge b-warn">unverified</span> '
-                     f'<a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">walk to Venetian ↗</a> · '
-                     f'<a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">walk to Wynn ↗</a>')
-        rows.append(f"""<tr data-cat="hotel" data-walk-ok="0">
+        wm = walk.get("venetian_min")
+        if wm is None:
+            walk_cell = '<span class="badge b-warn">not read</span>'
+            walk_ok = "0"
+        else:
+            ok = walk.get("within_30_to_venetian")
+            walk_cell = (f'<strong>{wm} min</strong> <small class="note">({esc(walk.get("venetian_distance",""))})</small> '
+                         + ('<span class="badge b-ok">≤30 min</span>' if ok
+                            else '<span class="badge b-bad">over 30 min</span>'))
+            walk_ok = "1" if ok else "0"
+        walk_cell += (f'<small class="note">to The Venetian Poker Room · '
+                      f'<a href="{esc(walk.get("maps_venetian",""))}" target="_blank" rel="noopener">route ↗</a>'
+                      f' · Wynn: not read · <a href="{esc(walk.get("maps_wynn",""))}" target="_blank" rel="noopener">route ↗</a></small>')
+        rows.append(f"""<tr data-cat="hotel" data-walk-ok="{walk_ok}">
 <td><strong>{esc(h['name'])}</strong><small class="note">{esc(h.get('area',''))}</small></td>
 <td>{esc(h.get('address',''))}</td>
 <td>{rate_cell}</td><td>{fee_cell}</td><td>{tax_cell}</td>
@@ -231,6 +261,56 @@ def rate_log_html(h):
     return f"<ul class='tight'>{items}</ul>"
 
 # =============================================================== pages
+def shared_rate_log_html():
+    sh = MASTER.get("rate_log_shared")
+    if not sh:
+        return ""
+    rows = "".join(
+        f"""<tr><td>{esc(e["date"])}</td><td>{ " / ".join(money(v) for v in e["values"]) }</td>
+<td>{esc(e.get("basis",""))}</td><td>{esc(e.get("occupancy",""))}</td>
+<td>{esc(e.get("resort_fee",""))}</td><td>{esc(e.get("conditions",""))}</td>
+<td class="src"><a href="{esc(e["source_url"])}" target="_blank" rel="noopener">official page</a></td></tr>"""
+        for e in sh["entries"])
+    return f"""<div class="panel"><h3>Rate published without a property mapping</h3>
+<p>{esc(sh["note"])}</p>
+<table class="data rate-log"><thead><tr><th>Logged</th><th>Published starting rates</th><th>Basis</th>
+<th>Occupancy / room</th><th>Resort fee</th><th>Conditions printed on the page</th><th>Source</th></tr></thead>
+<tbody>{rows}</tbody></table>
+<p class="note">Both figures are shown together because the document does not separate them. A dated checkout
+quote for the actual trip dates would replace this row with a per-night number, and it must capture the checkout
+total, nightly average, mandatory resort fee and tax, parking, cancellation deadline and the timestamp it was read.</p></div>"""
+
+
+def walking_check_html():
+    wc = MASTER.get("walking_check") or {}
+    if not wc or wc.get("error"):
+        return ""
+    rows = []
+    for h in MASTER["hotels"]:
+        w = h.get("walk") or {}
+        g, o = w.get("venetian_min"), w.get("osrm_venetian_min")
+        if g is None and o is None:
+            continue
+        agree = w.get("routers_agree_30min")
+        if agree:
+            verdict = ("<span class=\"badge b-ok\">both within 30 min</span>" if (o if o is not None else g) <= 30
+                       else "<span class=\"badge b-bad\">both over 30 min</span>")
+        elif agree is False:
+            verdict = "<span class=\"badge b-warn\">routers disagree</span>"
+        else:
+            verdict = "<span class=\"badge b-warn\">one router only</span>"
+        rows.append(f"""<tr><td>{esc(h["name"])}</td><td>{g if g is not None else "not read"}</td>
+<td>{("%.0f" % o) if o is not None else "not covered"}</td><td>{verdict}</td></tr>""")
+    dis = ", ".join(wc.get("disagreements") or []) or "none"
+    return f"""<div class="panel"><h3>Walking check to The Venetian Poker Room — two routers compared</h3>
+<p>{esc(wc.get("note",""))}</p>
+<table class="data"><thead><tr><th>Hotel</th><th>Google Maps (read {esc(wc.get("google_as_of",""))})</th>
+<th>OSRM foot profile (computed {esc(wc.get("osrm_as_of",""))})</th><th>30-minute verdict</th></tr></thead>
+<tbody>{"".join(rows)}</tbody></table>
+<p class="note">Disagreements on the 30-minute threshold: {esc(dis)}.
+Neither router is a casino document; both are routing estimates, so a tight call should be walked once in person.</p></div>"""
+
+
 def build():
     evs = master["events"]
     hotels = master["hotels"]
@@ -425,7 +505,7 @@ primary event and adds a conditional evening fallback instead of an impossible s
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
 <li><strong>Do not mix in spend-more events</strong> without budgeting re-entries/add-ons: Wynn WPT re-entry events, Wynn Friday $240 rebuy, Caesars Palace $50 add-on, Golden Nugget re-entries/add-ons.</li>
 <li><strong>Hotel cost is dominated by resort fees:</strong> $55/night + tax at Venetian/Palazzo/Wynn ($62.36 with the 13.38% county tax applied), $50+ at MGM. True cost/night needs a dated quote — none captured yet.</li>
-<li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
+<li><strong>Walking times are routed, not published.</strong> No casino prints one, so the figures come from Google Maps (read 2026-11-17) and are confirmed by an independent OSRM foot matrix: Wynn 12 min, Palazzo 4 min, Venetian 5 min, Caesars Palace 19 min, Horseshoe 24 min and Bellagio 28 min all clear the 30-minute limit to The Venetian Poker Room, while MGM Grand (42 min) and ARIA (37 min) do not. Wynn-side routes are unread.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
 </ul></div>
 <div class="panel"><h2>Findings, each with the official document behind it</h2>
@@ -465,7 +545,10 @@ Hotel: The Venetian / The Palazzo, on-site poker room.</p>
 {event_table(ven_evs, 'tbl-venue')}
 <h2>Hotels at this venue</h2>
 {hotel_table(ven_hotels, 'tbl-ven-hotels', show_calc=False)}
-<p class="note">Poker player rates ($119 Venetian / $209 Palazzo from-prices) require 6 hours live cash or a $300+ tournament buy-in per night — see the <a href="hotels.html">hotels page</a> rate logs.</p>"""
+<p class="note">The official poker-suite-rate page prints starting rates of $119 and $209 for a Luxury King
+Suite "in either The Venetian or The Palazzo" and does not say which property carries which figure, so neither
+number is attributed to a hotel here; the qualifying-play condition (a $300+ tournament buy-in or six hours of live
+cash per night stayed) applies either way — see the <a href="hotels.html">hotels page</a> rate logs.</p>"""
 
     body_wyn = f"""
 <h1>Wynn Las Vegas</h1>
@@ -584,33 +667,34 @@ a number. A price only enters the log together with its check-in, check-out, occ
 parking, cancellation deadline and the timestamp it was read, so quotes stay comparable like-for-like.</p>
 <p><a href="https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-27&children%5B%5D=0&departure_date=2026-12-02&view=calendar"
 target="_blank" rel="noopener">Example attempt: Venetian, 27 Nov – 2 Dec 2026, 2 adults (prices masked)</a></p>
-<p><strong>Walking times are also blank.</strong> No official property page publishes a walk time and no routing service
-was reachable, so the 30-minute rule is recorded as unapplied rather than assumed. Official street addresses for every
-hotel and poker room are in the table above so each pair can be checked directly.</p></div>
+<p><strong>Walking times:</strong> no casino page publishes a walk time, so the figures come from routing services
+instead, labelled as such. Google Maps walking directions were read on 2026-11-17 for eight hotels' trips to The Venetian
+Poker Room, and an independent OSRM foot-profile matrix (computed 2026-11-16 from geocoded official addresses) covers
+twenty-one hotels. The two agree on the 30-minute verdict everywhere both cover, which is why the filter below can be
+applied. Routes to the Wynn poker room have not been read and stay blank.</p></div>
 {toolbar('tbl-hotels', with_walk=True, cat_options=False)}
 {hotel_table(hotels, 'tbl-hotels', show_calc=True)}
+{walking_check_html()}
 <h2>Dated rate logs</h2>
+{shared_rate_log_html()}
 {''.join(f'<details><summary>{esc(h["name"])}</summary>{rate_log_html(h)}</details>' for h in hotels)}
 <div class="panel"><h2>What is still missing</h2>
 <ul class="tight">
 <li>Dated checkout quotes for exact trip dates (checkout total, nightly average, cancellation deadline, rate timestamp).</li>
-<li>Verified walking times per hotel–venue pair (30-minute limit). Use the maps links in each row to capture them.</li>
+<li>Walking times to The Venetian Poker Room are recorded for every hotel whose route was read, and the 30-minute call is confirmed by a second, independent router (see the hotels page). Wynn-side walking routes have not been read yet — the maps links stay in each row for that check.</li>
 <li>Official resort-fee amounts for Caesars properties (shown in the official booking flow at checkout; Diamond+ waives).</li>
 </ul>
 <p class="note">The trip calculator on the <a href="planner.html">Trip Planner</a> uses the same formula, per hotel, over your stay.</p></div>"""
 
     # ---------------- planner ----------------
-    def est_hours(e):
-        lm = str(e.get("level_min") or "")
-        fmt = e.get("format", "")
-        if fmt == "recurring":
-            return 5.0
-        if "40" in lm:
-            return 11.0
-        if "20" in lm:
-            return 5.5
-        return 10.0
-
+    # ---- day-by-day plan -------------------------------------------------
+    # A realistic "play all day" test is NOT "does the event's estimated finish
+    # collide with the next start". It is:
+    #   can I enter event B before its late registration closes, if I am knocked
+    #   out of event A?
+    # That only needs published facts: A's start time and B's printed registration
+    # close. No invented finish time is used, and a pair is only flagged when the
+    # published times make the sequence impossible for a player who enters both.
     def to_min(t):
         p = re.match(r"^(\d{1,2}):(\d{2})\s*(AM|PM)", str(t or ""), re.I)
         if not p:
@@ -622,40 +706,72 @@ hotel and poker room are in the table above so each pair can be checked directly
             h = 0
         return h * 60 + m
 
+    def entry_rank(e):
+        # which rows may be recommended as an entry at all
+        return e.get("category") in ("single", "ambiguous")
+
     plan_rows = []
     dated = [e for e in evs if re.match(r"^\d{4}-", e.get("date", ""))]
     for date in all_dates:
         day = [e for e in dated if e["date"] == date]
         day.sort(key=lambda x: (to_min(x.get("start")) is None, to_min(x.get("start")) or 0))
-        suitable = [e for e in day if e["category"] in ("single", "ambiguous")]
-        primary = suitable[0] if suitable else (day[0] if day else None)
-        fallback = None
-        if primary:
-            p_start = to_min(primary.get("start")) or 0
-            later = [e for e in suitable
-                     if (to_min(e.get("start")) or 0) > p_start
-                     and (to_min((e.get("late_reg") or "").split("~")[-1].strip().rstrip(")")) or 9999) > p_start]
-            fallback = later[-1] if later else None
-        overlaps = []
+        if not day:
+            continue
+        playable = [e for e in day if entry_rank(e)] or day
+        primary = playable[0]
+        p_start = to_min(primary.get("start"))
+        # fallback = the latest same-day event whose registration is still open
+        # after the primary has started (so it is reachable if you bust early)
+        fallback, pairs = None, []
+        for e in day:
+            if e is primary:
+                continue
+            s_b, close_b = to_min(e.get("start")), to_min(e.get("reg_close_end"))
+            if s_b is None:
+                continue
+            if p_start is not None and close_b is not None:
+                if close_b > p_start:
+                    pairs.append(e)
+            elif s_b > (p_start or 0):
+                pairs.append(e)
+        if pairs:
+            fallback = pairs[-1]
+        # Two published-fact tests. Neither invents a finish time.
+        #  (a) closed-registration: a later event whose registration had already
+        #      closed before the earlier event started can never be entered.
+        #  (b) same-time collision: two events at different properties starting
+        #      within the 30-minute walking limit cannot both be played.
+        clashes = []
         for i in range(len(day)):
             for j in range(i + 1, len(day)):
                 a, b = day[i], day[j]
                 sa, sb = to_min(a.get("start")), to_min(b.get("start"))
                 if sa is None or sb is None:
                     continue
-                ea = sa + est_hours(a) * 60
-                if sb < ea:
-                    overlaps.append((a, b))
-        ov_html = " ".join(f'<span class="badge b-bad">{esc(a.get("name","")[:28])} ↔ {esc(b.get("name","")[:28])}</span>'
-                           for a, b in overlaps)
+                cb = to_min(b.get("reg_close_end"))
+                if sb > sa and cb is not None and cb <= sa:
+                    clashes.append(("registration closed", a, b))
+                    continue
+                if (a.get("venue") != b.get("venue")) and abs(sb - sa) <= 30:
+                    clashes.append(("starts within 30 min at a different property", a, b))
+        ov_html = " ".join(
+            f'<span class="badge b-bad">{esc(a.get("name","")[:22])} ({esc(a.get("start"))}) vs '
+            f'{esc(b.get("name","")[:22])} ({esc(b.get("start"))}) — {esc(why)}</span>'
+            for why, a, b in clashes)
         def cell(e, cls):
             if not e:
-                return "<td>—</td>"
+                return '<td class="muted">—</td>'
+            close = fmt_hm(e.get("reg_close_end"))
             return (f'<td class="{cls}"><strong>{esc(e.get("start"))}</strong> {esc(e.get("name"))} '
                     f'({money(e.get("buy_in"))}) {cat_badge(e.get("category"))}'
-                    f'<small class="note">{esc(e.get("venue"))} · late reg {esc(e.get("late_reg") or "n/a")}</small></td>')
-        plan_rows.append(f"""<tr><td>{esc(date)}</td>{cell(primary,'primary')}{cell(fallback,'fallback')}
-<td>{ov_html or '<span class="badge b-good">none</span>'}</td></tr>""")
+                    f'<small class="note">{esc(e.get("venue"))} · registration closes '
+                    f'{esc(close) if close else "not printed on the sheet"}</small></td>')
+        if fallback is None:
+            fb_cell = '<td class="muted">No later event on this day whose registration stays open past the primary’s start.</td>'
+        else:
+            fb_cell = cell(fallback, "fallback")
+        plan_rows.append(f"""<tr><td>{esc(date)}</td>{cell(primary,'primary')}{fb_cell}
+<td>{ov_html or '<span class="badge b-good">no impossible sequence on the published times</span>'}</td></tr>""")
 
     trip_events = sorted([e for e in evs if e["category"] in ("single", "ambiguous") and e.get("buy_in")],
                          key=lambda x: (x.get("date", ""), x.get("start", "")))
@@ -682,24 +798,31 @@ where true hotel cost/night = (rate + resort fee) × (1 + tax) + parking. Enter 
     <label>Hotel preset (loads its verified fee/tax/parking)</label>
     <select id="trip-preset-hotel"><option value="">— custom —</option>{hotel_opts}</select>
     <label>Nights</label><input type="number" id="trip-nights" min="1" value="7">
-    <label>Room rate per night ($)</label><input type="number" id="trip-nightly" min="0" value="119">
+    <label>Room rate per night ($) — from a dated quote only</label>
+    <input type="number" id="trip-nightly" min="0" value="" placeholder="not captured from any official source">
     <label>Resort fee per night ($)</label><input type="number" id="trip-resort-fee" min="0" value="55">
     <label>Tax (%)</label><input type="number" id="trip-tax" min="0" step="0.01" value="13.38">
     <label>Parking per night ($)</label><input type="number" id="trip-parking" min="0" value="20">
+    <p class="note" id="trip-rate-warning">No dated room rate has been captured from an official source,
+    so the hotel side of this estimate is intentionally blank. The resort fee ($55 + tax) and the 13.38% Clark
+    County room tax are sourced; the room rate is not, and the calculator will not invent one.</p>
   </div>
 </div>
 <div class="result">
   True hotel cost per night: <span class="total" id="trip-true-nightly">—</span><br>
   Hotel total for stay: <span class="total" id="trip-hotel-total">—</span><br>
   <strong>Estimated trip total (entries + hotel): <span class="total" id="trip-grand">—</span></strong>
-  <p class="note">Formula: entries × buy-ins + nights × true hotel cost. Excludes flights, food, and cash-game bankroll. Default numbers are the verified Venetian poker from-rate and resort fee — replace the room rate with a dated quote before relying on the total.</p>
+  <p class="note">Formula: entries × buy-ins + nights × true hotel cost. Excludes flights, food, and cash-game bankroll. The resort fee and tax are the sourced figures; the room rate stays empty until a dated checkout quote is captured.</p>
 </div>
 </div>
 <h2 id="dayplan">Day-by-day plan — primary + conditional fallback</h2>
-<p class="note">Plausible durations are estimates (level length × typical levels + breaks), not published finish times.
-Fallback entries are playable only if you are eliminated from the primary event before the fallback’s late-registration closes.
-Rows with an overlap badge cannot be played in sequence as planned.</p>
-<table class="data day-plan"><thead><tr><th>Date</th><th>Primary event</th><th>Conditional fallback</th><th>Overlap flags (est. durations)</th></tr></thead>
+<p class="note">No casino publishes finish times, so this plan uses only two published facts: each event's start time
+and the clock time its structure sheet prints for the close of registration. Nothing here assumes how long you will last.
+The primary event is the earliest event that is actually enterable on that date; the fallback is a later event on the same
+date whose printed registration close falls after the primary's start, so it is still open if you are eliminated early.
+A row is flagged only when the documents make the pair impossible — either the fallback's registration had already closed
+before the primary began, or two events at different properties start within 30 minutes of each other.</p>
+<table class="data day-plan"><thead><tr><th>Date</th><th>Primary event</th><th>Conditional fallback</th><th>Playability against the published times</th></tr></thead>
 <tbody>{''.join(plan_rows)}</tbody></table>"""
 
     # ---------------- ranking ----------------
@@ -837,7 +960,7 @@ booking/registration decision needs. Suggestions for discovering the missing inf
 <tbody>{q_rows}</tbody></table>
 <div class="panel"><h2>Added by this session</h2><ul class="tight">
 <li><strong>Q-A:</strong> What is the dated checkout total (with tax and resort fee) for the exact trip dates at Venetian, Palazzo and Wynn? — Open. Use the official booking links on the <a href="hotels.html">hotels page</a>; log the quote with its timestamp in the rate log.</li>
-<li><strong>Q-B:</strong> What are the verified walking times between each hotel and each venue (30-minute limit)? — Open. Use the per-row Google Maps walking links and record the minutes.</li>
+<li><strong>Q-B:</strong> Walking routes to the Wynn poker room have not been read; only the Venetian-side trips are recorded (and double-checked). Use the per-row maps links to add the Wynn side.</li>
 <li><strong>Q-C:</strong> Do the Venetian DSE sheets’ “no re-entry clause” silence and the Valuetown “subsequent buy in’s” note mean unlimited re-entry is allowed after all? — Open. Only the poker room can settle it (flag IR-8234-01/02).</li>
 <li><strong>Q-D:</strong> Which Caesars Palace daily buy-in figure is current — $100 (official guide) or $160 at 2 PM/9 PM (official flyer)? — Open; two official sources disagree.</li>
 <li><strong>Q-E:</strong> What are the Horseshoe and MGM Grand daily buy-ins and guarantees? — Open; not published on their official pages (Horseshoe) or only on the weekly PDF (MGM).</li>
@@ -847,12 +970,15 @@ booking/registration decision needs. Suggestions for discovering the missing inf
     s_rows = "".join(
         f"""<tr><td>{esc(x.get('id',''))}</td><td><strong>{esc(x.get('title',''))}</strong><small class="note">{esc(x.get('category',''))}</small></td>
 <td>{'<br>'.join(esc(o) for o in x.get('options', []))}</td>
-<td>{esc(x.get('tradeoff',''))}</td><td><span class="badge b-info">{esc(x.get('status',''))}</span></td></tr>"""
+<td>{esc(x.get('tradeoff',''))}</td>
+<td><span class="badge b-info">{esc(x.get('status',''))}</span>
+{('<small class="note"><strong>Recommended:</strong> ' + esc(x["recommendation"]) + '</small>') if x.get('recommendation') else ''}
+{('<small class="note">' + esc(x["implemented_as"]) + '</small>') if x.get('implemented_as') else ''}</td></tr>"""
         for x in master["suggestions"])
     body_s = f"""
 <h1>Suggestions — review before implementing</h1>
-<p class="lead">{esc(master.get('suggestions_intro',''))} Each item lists options and the trade-off so you can choose a
-path. Nothing here has been implemented.</p>
+<p class="lead">{esc(master.get('suggestions_intro',''))} Each item lists options, the trade-off and — where the work has
+already been done here — exactly how it was done, so you can accept it or ask for a different option.</p>
 <table class="data"><thead><tr><th>#</th><th>Suggestion</th><th>Options</th><th>Trade-off</th><th>Status</th></tr></thead>
 <tbody>{s_rows}</tbody></table>
 <div class="panel"><h2>Added by this session</h2>

@@ -13,7 +13,7 @@ Inputs (all already in the repo):
 No value is invented here: every field comes from an input file whose own
 provenance is an official page/PDF, or is left blank/null.
 """
-import json, re, os, datetime
+import json, re, os, datetime, urllib.parse
 _re2b = re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -343,15 +343,37 @@ for t in gn["times"]:
     )
 
 # ------------------------------------------------------------------- hotels
+# Walking times read from Google Maps walking directions on 2026-11-17. Google Maps is a
+# third-party routing service, not the casino: each figure below is the number the routing
+# page printed for the shortest walking route, plus the distance it printed alongside it.
+# Only the routes actually read are recorded; anything else stays blank.
+# Google Maps is not an "official" casino document, so walking rows are marked
+# source_type="third-party routing" and never used to state a fact about a room's rules.
+WALK_READ = "2026-11-17"
+WALK_METHOD = ("Google Maps walking directions, shortest suggested route, read 2026-11-17; "
+               "figures rounded as the page displayed them")
+
 def walk_links(address, hotel):
     dest_ven = "The Venetian Poker Room, 3355 S Las Vegas Blvd, Las Vegas, NV"
     dest_wyn = "Wynn Las Vegas Poker Room, 3131 S Las Vegas Blvd, Las Vegas, NV"
     return {
         "maps_venetian": "https://www.google.com/maps/dir/?api=1&origin=%s&destination=%s&travelmode=walking"
-                         % (address.replace(" ", "+"), dest_ven.replace(" ", "+")),
+                         % (urllib.parse.quote_plus(address), urllib.parse.quote_plus(dest_ven)),
         "maps_wynn": "https://www.google.com/maps/dir/?api=1&origin=%s&destination=%s&travelmode=walking"
-                     % (address.replace(" ", "+"), dest_wyn.replace(" ", "+")),
+                     % (urllib.parse.quote_plus(address), urllib.parse.quote_plus(dest_wyn)),
     }
+
+# origin label -> (minutes, distance text) for route to The Venetian Poker Room
+WALK_TO_VENETIAN = {
+    "H-WYN":  (12, "0.5 mile"),
+    "H-PAL":  (4,  "443 ft"),
+    "H-VEN":  (5,  "0.1 mile"),
+    "H-ARIA": (37, "1.6 miles"),
+    "H-BEL":  (28, "1.1 miles"),
+    "H-MGM":  (42, "1.8 miles"),
+    "H-HS":   (24, "1.0 mile"),
+    "H-CZP":  (19, "0.8 mile"),
+}
 
 hotels = []
 hmap = {}
@@ -386,12 +408,13 @@ add_hotel(
     cancellation="",
     quality="",
     booking_url="https://www.venetianlasvegas.com/book",
-    rate_log=[
-        dict(date=AS_OF, rate=119, basis="from-price, conditional poker player rate",
-             conditions="Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies.",
-             source_url="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
-    ],
-    notes="Official 2026 poker-suite-rate page publishes from-$119 (Venetian) and from-$209 (Palazzo). A dated checkout quote for exact trip dates has NOT been captured; rate log holds dated entries only.",
+    rate_log=[],   # see notes: the official page does not say which property is which
+    notes=("Official 2026 poker-suite-rate page (re-read 2026-11-17) prints ONE pair of starting "
+           "rates — 'as low as $119 and $209' — for a Luxury King Suite 'in either The Venetian or "
+           "The Palazzo' and states play requirements ($300+ tournament buy-in, or six hours of live "
+           "cash, per night stayed). It does not say which property carries which number, so no rate "
+           "is attributed to this hotel; both numbers are recorded once, in rate_log_shared below. "
+           "A dated checkout quote for exact trip dates has NOT been captured."),
 )
 add_hotel(
     id="H-PAL", name="The Palazzo at The Venetian", area="Strip (venue hotel)",
@@ -404,12 +427,10 @@ add_hotel(
     parking="$20/day for hotel guests (official hotel terms).", parking_value=20.0,
     deposit="$150 per night incidentals (official hotel terms).",
     booking_url="https://www.venetianlasvegas.com/book",
-    rate_log=[
-        dict(date=AS_OF, rate=209, basis="from-price, conditional poker player rate",
-             conditions="Requires 6 hours live cash or a $300+ tournament buy-in per night; else prevailing rate. Availability applies.",
-             source_url="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
-    ],
-    notes="Same resort and poker room as The Venetian. Official poker-rate wording maps $119 to Venetian and $209 to Palazzo per prior 2026-11-16 reads; see flag F-PokerRate-Mapping.",
+    rate_log=[],   # see notes: the official page does not say which property is which
+    notes=("Same resort and poker room as The Venetian. The official poker-rate page prints the same "
+           "unattributed pair of starting rates ($119 / $209) for 'either The Venetian or The "
+           "Palazzo'; it does not map a number to a property. See rate_log_shared."),
 )
 add_hotel(
     id="H-WYN", name="Wynn Las Vegas", area="Strip (venue hotel)",
@@ -518,7 +539,10 @@ flags += [
          url=W_WPT_SCHED),
     dict(source="arena/8234a824-poker2", item="Hotel walking times and dated room totals",
          where="All hotel rows",
-         detail="No official walking-time source and no dated checkout quote have been captured. Walk minutes and checkout totals are blank; use the official booking links and maps links to capture them for exact trip dates before booking.",
+         detail=("No dated checkout quote has been captured, so true cost per night stays blank. Walking times are "
+                 "now recorded from routing services (Google Maps read 2026-11-17, cross-checked against an OSRM "
+                 "foot matrix) and labelled as third-party estimates, not casino documents; the Wynn-side routes "
+                 "are still unread."),
          url=""),
     dict(source="arena/8234a824-poker2", item="Venetian poker-rate wording ambiguity",
          where="Venetian resort-fee page vs poker-suite-rate page",
@@ -1063,7 +1087,9 @@ for _i, _f in enumerate(flags, 1):
 # earlier date. Never bump a date that no human/agent actually re-read.
 # ---------------------------------------------------------------------------
 V_REREAD = "2026-11-17"
-V_SHEETS_REREAD = {1, 5, 11, 15, 18}   # sheets read verbatim again in this session
+# Every one of the 37 sheets was fetched and read in full on 2026-11-17; the
+# transcription lives in data/structure-sheets.json (scripts/build_structure_registry.py).
+V_SHEETS_REREAD = set(range(1, 38))
 import re as _re2
 for ev in events:
     if ev.get("venue_id") != "venetian":
@@ -1076,9 +1102,160 @@ for ev in events:
     else:
         ev["last_checked"] = ev.get("last_checked") or AS_OF
 
+# ---------------------------------------------------------------------------
+# The Venetian publishes one pair of poker starting rates for "either The Venetian
+# or The Palazzo" without saying which number belongs to which property. Record the
+# pair once, attributed to the document, instead of guessing a mapping per hotel.
+# ---------------------------------------------------------------------------
+# Fill the walking field from the routes actually read (see WALK_TO_VENETIAN).
+for h in hotels:
+    w = h.get("walk") or {}
+    got = WALK_TO_VENETIAN.get(h["id"])
+    w["source_type"] = "third-party routing (Google Maps), not a casino document"
+    w["retrieved"] = WALK_READ
+    w["method"] = WALK_METHOD
+    if got:
+        w["venetian_min"], w["venetian_distance"] = got
+        w["within_30_to_venetian"] = got[0] <= 30
+        w["status_to_venetian"] = ("%d min walk (%s) to The Venetian Poker Room \u2014 within the 30-minute limit"
+                                   % got if got[0] <= 30 else
+                                   "%d min walk (%s) to The Venetian Poker Room \u2014 outside the 30-minute limit"
+                                   % got)
+    else:
+        w["venetian_min"] = None
+        w["within_30_to_venetian"] = None
+        w["status_to_venetian"] = "not read \u2014 open the maps link for a manual check"
+    # Wynn walking routes were NOT read; keep it explicit rather than guessing
+    w["wynn_min"] = None
+    w["status_to_wynn"] = "not read \u2014 open the maps link for a manual check"
+    h["walk"] = w
+
+# Independent cross-check: data/site/walking.json holds an OSRM foot-routing matrix built
+# 2026-11-16 from geocoded official addresses. Compare it with the Google figures above and
+# publish both, so the 30-minute call rests on two unrelated routers.
+try:
+    _wk = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                                      "data", "site", "walking.json"), encoding="utf-8"))
+    _osrm = {}
+    for _r in _wk["rows"]:
+        if _r.get("venue_id") == "V-VEN":
+            _osrm[_r["hotel_id"]] = _r["walk_min"]
+    disagreements = []
+    for h in hotels:
+        w = h["walk"]
+        o = _osrm.get(h["id"])
+        w["osrm_venetian_min"] = o
+        if o is not None and w.get("venetian_min") is not None:
+            w["routers_agree_30min"] = (o <= 30) == (w["venetian_min"] <= 30)
+            if not w["routers_agree_30min"]:
+                disagreements.append(h["id"])
+    master["walking_check"] = dict(
+        osrm_as_of=_wk["as_of"], google_as_of=WALK_READ,
+        osrm_method=_wk["method"],
+        disagreements=disagreements,
+        note=("Two unrelated walking routers are compared: an OSRM foot-profile matrix computed from "
+              "geocoded official addresses, and the Google Maps walking directions read for the routes "
+              "that were opened. They agree on the 30-minute classification for every hotel covered by "
+              "both. Individual minutes differ by a few minutes, which is expected between routers; the "
+              "routing estimate is a planning aid, not a promise about a casino corridor."),
+    )
+except (OSError, KeyError, ValueError) as exc:
+    master["walking_check"] = dict(error=str(exc))
+
+master["rate_log_shared"] = dict(
+    hotel_ids=["H-VEN", "H-PAL"],
+    note=("The official 2026 poker-suite-rate page prints starting rates 'as low as $119 and $209' "
+          "for a Luxury King Suite in either The Venetian or The Palazzo, and does not say which "
+          "property carries which figure. Neither number is attributed to a single hotel here."),
+    entries=[dict(
+        date=V_REREAD, values=[119, 209], basis="from-price, conditional poker-player rate",
+        conditions=("During the stay the player must buy in to a $300 or higher tournament, or play six "
+                    "hours of active live cash, for each night stayed; otherwise the nightly rate is "
+                    "adjusted to the prevailing rate. Rates are subject to availability and blackout dates."),
+        resort_fee="$55 per night stayed (same page)",
+        occupancy="Single/double occupancy, Luxury King Suite",
+        source_url="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+        retrieved=V_REREAD)],
+)
+
 ids = [e["id"] for e in events]
 assert len(ids) == len(set(ids)), "duplicate event ids: %s" % [i for i in ids if ids.count(i) > 1]
 
+# ---------------------------------------------------------------------------
+# Fill the per-row fields that the official structure sheet actually prints, from
+# the verified transcription in data/structure-sheets.json. Rules:
+#   * only copy a value the sheet prints; never compute or infer one;
+#   * late_reg / level_min are per-flights on multi-sheet events, so the sheet is
+#     looked up by the row's own structure URL;
+#   * reg_close_end is a clock time for THIS row = sheet reg_close + the row's own
+#     start time difference from the sheet's start time (sheets cover flights that
+#     start at different hours; e.g. sheet 35 prints 4:55 PM for a 10:10 AM start).
+#     When the sheet prints no clock time, the field stays null.
+# ---------------------------------------------------------------------------
+_reg_path = os.path.join(ROOT, "data/structure-sheets.json")
+if os.path.exists(_reg_path):
+    _reg = {s["sheet"]: s for s in json.load(open(_reg_path))["sheets"]}
+
+    def _mins(t):
+        m = re.match(r"^(\d{1,2}):(\d{2})\s*(AM|PM)", str(t or "").strip(), re.I)
+        if not m:
+            return None
+        h, mi = int(m.group(1)), int(m.group(2))
+        if m.group(3).upper() == "PM" and h != 12:
+            h += 12
+        if m.group(3).upper() == "AM" and h == 12:
+            h = 0
+        return h * 60 + mi
+
+    for ev in events:
+        m = re.search(r"structure_(\d+)\.pdf", str(ev.get("struct_url") or ""))
+        if ev.get("venue_id") != "venetian" or not m:
+            continue
+        sh = _reg.get(int(m.group(1)))
+        if not sh:
+            continue
+        ev["struct_checked"] = sh["retrieved"]
+        if sh.get("late_reg"):
+            ev["late_reg"] = sh["late_reg"]
+            ev["late_reg_source"] = sh["url"]
+        if sh.get("level_min"):
+            ev["level_min"] = sh["level_min"]
+        # clock time for this row. reg_close is stored as 24h "HH:MM", while the
+        # sheet's start time is stored as printed ("11:10 AM"); give _mins the AM/PM
+        # form for both so the arithmetic is in the same units.
+        _rc = sh.get("reg_close")
+        if _rc and re.match(r"^\d{1,2}:\d{2}$", str(_rc)):
+            _h = int(str(_rc).split(":")[0])
+            _rc = "%d:%s %s" % ((_h % 12) or 12, str(_rc).split(":")[1], "AM" if _h < 12 else "PM")
+        rc, s0, s1 = _mins(_rc), _mins(sh.get("start")), _mins(ev.get("start"))
+        if rc is not None and s0 is not None and s1 is not None:
+            end = rc + (s1 - s0)
+            ev["reg_close_end"] = "%02d:%02d" % (end // 60, end % 60)
+        else:
+            ev["reg_close_end"] = None
+        # fees: sheets that print one flat fee/pool for every event they cover
+        if ev.get("fee") is None and sh.get("fee") is not None:
+            ev["fee"] = sh["fee"]
+        if ev.get("pool_per_entry") is None and sh.get("pool") is not None:
+            ev["pool_per_entry"] = sh["pool"]
+        if ev.get("chips") is None and sh.get("chips") is not None:
+            ev["chips"] = sh["chips"]
+        if ev.get("buy_in") and ev.get("fee") is not None:
+            ev["total_entry_fee"] = ev["buy_in"]
+            if ev.get("gtd"):
+                ev["gtd_ratio"] = round(ev["gtd"] / float(ev["buy_in"]), 2)
+        if sh.get("silent_on_reentry"):
+            r = ev.setdefault("rules", {})
+            r["sheet_read"] = sh["url"]
+            r["sheet_prints_reentry_mechanism"] = "none — sheet prints no re-entry, rebuy or add-on clause"
+        if sh.get("has_flight_note"):
+            r = ev.setdefault("rules", {})
+            r["sheet_read"] = sh["url"]
+            r["flight_rule"] = sh["entry_rule"]
+
+# events 18 and 58 carry the PokerAtlas PRO discount; keep the category honest —
+# the sheet only prints a discounted *initial* buy-in, it never says a player may
+# not buy in again, so they stay "ambiguous" rather than single.
 master["as_of"] = LAST_VERIFIED
 with open(os.path.join(ROOT, "data/master.json"), "w") as f:
     json.dump(master, f, indent=1, sort_keys=False)

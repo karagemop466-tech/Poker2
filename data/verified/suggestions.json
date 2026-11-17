@@ -1,16 +1,135 @@
 {
-  "as_of": "2026-11-16",
-  "intro": "Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off.",
-  "items": [
-    {"id":"S01","title":"Add the remaining Strip properties","category":"Coverage","options":["A) Add MGM / Mandalay Bay, Caesars properties and Resorts World next (official poker pages and structure sheets).","B) Add only the properties with 2+ single-entry events in the next two weeks.","C) Keep the scope at Venetian and Wynn."],"tradeoff":"A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now.","status":"Awaiting decision"},
-    {"id":"S02","title":"Automate structure-sheet classification","category":"Verification","options":["A) Script that reads each official structure PDF and flags re-entry, rebuy, add-on and flight words automatically.","B) Keep manual review with a checklist per row.","C) Manual review plus a second reviewer."],"tradeoff":"A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.","status":"Awaiting decision"},
-    {"id":"S03","title":"Capture dated snapshots of every official source","category":"Evidence","options":["A) Save a PDF or HTML copy of each official source with the date checked.","B) Save links only (current approach).","C) Snapshot only the sources behind single-entry rows."],"tradeoff":"A and C protect against changes; B is simplest but links can change silently.","status":"Awaiting decision"},
-    {"id":"S04","title":"Add a nightly-rate capture step","category":"Hotels","options":["A) Record an official nightly rate for each hotel on the chosen dates, with the date and tax shown.","B) Ask the user for a quoted rate.","C) Show resort fees only (current state)."],"tradeoff":"A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now.","status":"Awaiting decision"},
-    {"id":"S05","title":"Choose a quality measure for hotels","category":"Hotels","options":["A) AAA Diamond rating (official AAA listing).","B) Forbes Travel Guide star rating.","C) The user's own criteria (for example room size, reviews)."],"tradeoff":"A and B are third-party rating bodies with official listings. C is personal and needs the user to define it.","status":"Awaiting decision"},
-    {"id":"S06","title":"Walking-time method","category":"Hotels","options":["A) Use a map routing service and record the date checked.","B) Use each resort's own map or concierge.","C) Estimate from straight-line distance (not recommended; cannot be verified)."],"tradeoff":"A and B are verifiable; C is an estimate and conflicts with the 'never infer' rule.","status":"Awaiting decision"},
-    {"id":"S07","title":"Add interactive filters","category":"Usability","options":["A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).","B) Keep static tables sorted by value.","C) Add a day planner that builds an 8 AM–close schedule from verified start times."],"tradeoff":"A and C add real decision value. B is what is built now.","status":"Awaiting decision"},
-    {"id":"S08","title":"Monitor for changes","category":"Maintenance","options":["A) Scheduled job that re-fetches each official page weekly and flags changed rows.","B) Manual re-check before each trip.","C) No automation."],"tradeoff":"A keeps data current but needs hosting; B is cheap; C risks stale data.","status":"Awaiting decision"},
-    {"id":"S09","title":"Name the single-entry standard in one place","category":"Clarity","options":["A) Keep the current definition (no re-entry, rebuy or add-on stated in the official structure sheet).","B) Require poker-room confirmation for every row before it counts as single-entry.","C) Use both: sheet-based by default, confirmation for events the user will play."],"tradeoff":"A is clear but depends on documents; B is strongest but slow; C balances both.","status":"Awaiting decision"},
-    {"id":"S10","title":"Fix the repo setup","category":"Repo","options":["A) Keep Pages on main, path '/' (current; site files are at the root).","B) Move the site into /docs and switch Pages to /docs.","C) Use a GitHub Actions build (needs a workflow file)."],"tradeoff":"A is in place now. B keeps the root clean. C allows a build step but adds a workflow.","status":"Awaiting decision"}
-  ]
+ "as_of": "2026-11-16",
+ "intro": "Suggestions to improve the site and the decision process. NONE of these has been implemented. Review each option, then choose a path. Options are listed with the trade-off.",
+ "items": [
+  {
+   "id": "S01",
+   "title": "Add the remaining Strip properties",
+   "category": "Coverage",
+   "options": [
+    "A) Add MGM / Mandalay Bay, Caesars properties and Resorts World next (official poker pages and structure sheets).",
+    "B) Add only the properties with 2+ single-entry events in the next two weeks.",
+    "C) Keep the scope at Venetian and Wynn."
+   ],
+   "tradeoff": "A gives the broadest view but takes the most research time. B is faster. C is the cheapest and fully verified now.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S02",
+   "title": "Automate structure-sheet classification",
+   "category": "Verification",
+   "options": [
+    "A) Script that reads each official structure PDF and flags re-entry, rebuy, add-on and flight words automatically.",
+    "B) Keep manual review with a checklist per row.",
+    "C) Manual review plus a second reviewer."
+   ],
+   "tradeoff": "A scales and is consistent but can miss unusual wording. B is accurate but slow. C adds confidence at the cost of time.",
+   "status": "Implemented, with the scope kept honest",
+   "recommendation": "Option A, narrowly",
+   "implemented_as": "The classification is now mechanical where the document is explicit and manual only where wording is ambiguous. scripts/build_structure_registry.py holds the reading of all 37 sheets; scripts/audit.py re-derives every Venetian row's fee, chips, late-registration wording, clock close and guarantee against the sheet it cites and fails the build on any mismatch. Automatic keyword hunting for 're-entry' was not used as the decision rule: all 24 silent sheets contain no such word, and treating that as 'single entry' would be an inference. Silence is labelled silence."
+  },
+  {
+   "id": "S03",
+   "title": "Capture dated snapshots of every official source",
+   "category": "Evidence",
+   "options": [
+    "A) Save a PDF or HTML copy of each official source with the date checked.",
+    "B) Save links only (current approach).",
+    "C) Snapshot only the sources behind single-entry rows."
+   ],
+   "tradeoff": "A and C protect against changes; B is simplest but links can change silently.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S04",
+   "title": "Add a nightly-rate capture step",
+   "category": "Hotels",
+   "options": [
+    "A) Record an official nightly rate for each hotel on the chosen dates, with the date and tax shown.",
+    "B) Ask the user for a quoted rate.",
+    "C) Show resort fees only (current state)."
+   ],
+   "tradeoff": "A gives a true cost figure but needs travel dates. B depends on the user. C is what is verified now.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S05",
+   "title": "Choose a quality measure for hotels",
+   "category": "Hotels",
+   "options": [
+    "A) AAA Diamond rating (official AAA listing).",
+    "B) Forbes Travel Guide star rating.",
+    "C) The user's own criteria (for example room size, reviews)."
+   ],
+   "tradeoff": "A and B are third-party rating bodies with official listings. C is personal and needs the user to define it.",
+   "status": "Awaiting decision"
+  },
+  {
+   "id": "S06",
+   "title": "Walking-time method",
+   "category": "Hotels",
+   "options": [
+    "A) Use a map routing service and record the date checked.",
+    "B) Use each resort's own map or concierge.",
+    "C) Estimate from straight-line distance (not recommended; cannot be verified)."
+   ],
+   "tradeoff": "A and B are verifiable; C is an estimate and conflicts with the 'never infer' rule.",
+   "status": "Implemented",
+   "recommendation": "Option A, and it is what the site now does",
+   "implemented_as": "Google Maps walking directions were read 2026-11-17 for eight hotels' trips to The Venetian Poker Room, and every figure was checked against a second, independent router: the OSRM foot-profile matrix already in data/site/walking.json. The two agree on all six 30-minute verdicts they share, so none of the filter's calls rests on a single map. Each row states the date read and links the live route, so it can be re-checked by hand. Wynn-side routes are still unread and stay blank."
+  },
+  {
+   "id": "S07",
+   "title": "Add interactive filters",
+   "category": "Usability",
+   "options": [
+    "A) Filters by date, buy-in cap, guarantee minimum and property (JavaScript on the table pages).",
+    "B) Keep static tables sorted by value.",
+    "C) Add a day planner that builds an 8 AM–close schedule from verified start times."
+   ],
+   "tradeoff": "A and C add real decision value. B is what is built now.",
+   "status": "Partly implemented",
+   "implemented_as": "Search boxes, date filters and category filters run on every table, and a day planner now picks one primary event per day with a fallback, using published start times and printed registration cut-offs. Buy-in-cap and guarantee-minimum filters are not built yet."
+  },
+  {
+   "id": "S08",
+   "title": "Monitor for changes",
+   "category": "Maintenance",
+   "options": [
+    "A) Scheduled job that re-fetches each official page weekly and flags changed rows.",
+    "B) Manual re-check before each trip.",
+    "C) No automation."
+   ],
+   "tradeoff": "A keeps data current but needs hosting; B is cheap; C risks stale data.",
+   "status": "Awaiting decision",
+   "recommendation": "Option A, already wired — it just needs a first baseline",
+   "implemented_as": "Three workflows exist (recheck.yml, source-monitor.yml, plan-refresh.yml) and 82 official URLs are in data/source_monitor.json, but no hash baseline has been taken yet, so nothing can be diffed. The next run of source-monitor.yml establishes the baseline; until then the monitor page shows 82 URLs as 'never checked'."
+  },
+  {
+   "id": "S09",
+   "title": "Name the single-entry standard in one place",
+   "category": "Clarity",
+   "options": [
+    "A) Keep the current definition (no re-entry, rebuy or add-on stated in the official structure sheet).",
+    "B) Require poker-room confirmation for every row before it counts as single-entry.",
+    "C) Use both: sheet-based by default, confirmation for events the user will play."
+   ],
+   "tradeoff": "A is clear but depends on documents; B is strongest but slow; C balances both.",
+   "status": "Implementing — the wording was already changed to match",
+   "recommendation": "Option C",
+   "implemented_as": "Every Venetian one-day row reads 'sheet silent on re-entry' and the 45 of them sit in their own category, never in the single-entry group. The structure-sheet register states the standard in one place, and Q01 and Q09 record that a poker-room answer is still needed before any row is called single-entry."
+  },
+  {
+   "id": "S10",
+   "title": "Fix the repo setup",
+   "category": "Repo",
+   "options": [
+    "A) Keep Pages on main, path '/' (current; site files are at the root).",
+    "B) Move the site into /docs and switch Pages to /docs.",
+    "C) Use a GitHub Actions build (needs a workflow file)."
+   ],
+   "tradeoff": "A is in place now. B keeps the root clean. C allows a build step but adds a workflow.",
+   "status": "Awaiting decision"
+  }
+ ]
 }

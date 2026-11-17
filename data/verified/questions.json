@@ -1,18 +1,140 @@
 {
-  "as_of": "2026-11-16",
-  "intro": "Questions that need answers before a decision. 'Open' means the data does not answer it. The 'How to find it' column lists where to look.",
-  "items": [
-    {"id":"Q01","question":"Which tournaments are single-entry, one-day events with no re-entry, rebuy or add-on?","status":"Partly answered","answer":"32 Venetian events are verified single-entry from official structure sheets. No Wynn daily event qualifies. Wynn WPT events are unverified or excluded.","needed":"Review the structure sheets for the 17 unverified Venetian rows and the unverified Wynn WPT rows.","how_to_find":"Open each official structure PDF linked in the row, or ask the poker room.","sources":["https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html","https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"]},
-    {"id":"Q02","question":"Can a player start play at 8:00 AM with verified single-entry events?","status":"Answered (no, for these two properties)","answer":"No. The earliest verified single-entry start at The Venetian is 11:10 AM. No event in this site starts at 8:00 AM.","needed":"Check whether any other Strip room runs an 8:00 AM or earlier event.","how_to_find":"Check each property's official poker schedule.","sources":["https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"]},
-    {"id":"Q03","question":"What is the true nightly cost of each hotel for the user's dates?","status":"Open","answer":"Resort fee verified: $55 plus tax per night at The Venetian and Wynn (official). Nightly room rates were NOT captured, so the true cost is blank.","needed":"Travel dates, room type, and an official nightly rate for each hotel, with tax.","how_to_find":"Get quotes from each hotel's official booking page for the exact dates.","sources":["https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html","https://www.visitwynn.com/tc/index.cfm?term_id=850250"]},
-    {"id":"Q04","question":"Is each hotel within a 30-minute walk of the tournament venue?","status":"Open","answer":"Walking times were NOT verified for any hotel.","needed":"Walking time from each hotel to each tournament venue, from a map or official source.","how_to_find":"Check a walking route on a map service and record the date checked, or ask the resort.","sources":[]},
-    {"id":"Q05","question":"What are the user's travel dates, party size and budget?","status":"Open","answer":"Not provided. Venetian single-entry rows run Nov 18 – Dec 23, 2026. Wynn WPT runs Nov 27 – Dec 21, 2026.","needed":"Dates, nights, budget per night and per entry, and maximum buy-in.","how_to_find":"The user supplies these; no external source can answer them.","sources":[]},
-    {"id":"Q06","question":"How is hotel quality measured?","status":"Open","answer":"No quality rating was verified. The brief asks for quality to be weighted above distance, so this field matters.","needed":"A chosen rating source (for example AAA Diamond or Forbes Travel Guide) or the user's own criteria.","how_to_find":"Pick a rating body, then record its official rating and the date checked for each hotel.","sources":[]},
-    {"id":"Q07","question":"Do Wynn daily events run during the WPT World Championship (Nov 27 – Dec 21)?","status":"Open","answer":"Not stated in the sources read.","needed":"A Wynn statement about the daily schedule during the WPT.","how_to_find":"Check the official Wynn poker page (wynnlasvegas.com/casino/poker) or contact the Wynn poker room.","sources":["https://www.wynnlasvegas.com/casino/poker"]},
-    {"id":"Q08","question":"Do the Venetian poker room's contact details and hours match the official site?","status":"Open","answer":"Not captured in this pass.","needed":"Venetian poker room contact details and hours from the official site.","how_to_find":"Read the official Venetian poker pages.","sources":["https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"]},
-    {"id":"Q09","question":"Does the poker room confirm single-entry status for each event the user plans to play?","status":"Open","answer":"Single-entry status here means the official structure sheet states no re-entry, rebuy or add-on. It is not a poker-room confirmation.","needed":"Poker-room confirmation for each planned event.","how_to_find":"Ask the poker room at the venue, or read the written rules at registration.","sources":["https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"]},
-    {"id":"Q10","question":"Which other Strip rooms should be included?","status":"Open","answer":"Only The Venetian and Wynn have been verified. MGM Grand's poker page could not be reached (see Flagged for Review).","needed":"A user decision on scope, then a new research pass.","how_to_find":"Each property's official poker page and structure sheets.","sources":["https://www.mgmgrand.com/en/casino/poker.html"]},
-    {"id":"Q11","question":"Does the user accept bounty and PKO formats?","status":"Open","answer":"Several verified single-entry events are bounty or PKO formats. Their guarantees include bounty money.","needed":"The user's preference on bounty formats.","how_to_find":"User decision.","sources":["https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"]},
-    {"id":"Q12","question":"Are the official structure sheets and schedules current?","status":"Open","answer":"Venetian pages are for the 2026 series. Wynn daily and WPT PDFs carry 2025 version stamps (see flags F04 and F05).","needed":"Re-check each official document before travel.","how_to_find":"Re-open the official pages and compare dates and buy-ins.","sources":["https://www.wynnlasvegas.com/casino/poker"]}
-  ]
+ "as_of": "2026-11-16",
+ "intro": "Questions that need answers before a decision. 'Open' means the data does not answer it. The 'How to find it' column lists where to look.",
+ "items": [
+  {
+   "id": "Q01",
+   "question": "Which tournaments are single-entry, one-day events with no re-entry, rebuy or add-on?",
+   "status": "Answered for The Venetian — the answer is 'none can be confirmed'",
+   "answer": "All 37 Venetian DeepStack Extravaganza IV structure sheets have been read in full (2026-11-17). Not one prints a clause limiting play to a single entry, and not one prints a re-entry, rebuy or add-on clause either: 13 print only the Day-2 bagging rule for multi-flight events, and 24 say nothing about entries. So 45 one-day Venetian rows are 'sheet silent on re-entry' — a category of their own, not a single-entry list. Two further rows (Events 18 and 58) are entry-limit ambiguous because their sheet prices a subsequent buy-in. Wynn's printed terms allow re-entry, so Wynn events sit in the spend-more list.",
+   "needed": "A written answer from The Venetian poker room on whether a one-day event may be re-entered. Until then no row can be called single-entry.",
+   "how_to_find": "Ask the poker room in writing (email or at the desk) and record the answer with its date, or find an official tournament-rules page that states an entry limit.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+   ]
+  },
+  {
+   "id": "Q02",
+   "question": "Can a player start play at 8:00 AM with verified single-entry events?",
+   "status": "Answered (no, for these two properties)",
+   "answer": "No. The earliest verified single-entry start at The Venetian is 11:10 AM. No event in this site starts at 8:00 AM.",
+   "needed": "Check whether any other Strip room runs an 8:00 AM or earlier event.",
+   "how_to_find": "Check each property's official poker schedule.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+   ]
+  },
+  {
+   "id": "Q03",
+   "question": "What is the true nightly cost of each hotel for the user's dates?",
+   "status": "Partly answered — fees and tax verified, room rate open",
+   "answer": "The mandatory resort fee is $55 plus tax per night at The Venetian, The Palazzo and Wynn, and the room tax is 13.38% for the Strip corridor (13.00% at South Point). What is missing is a room rate: the Venetian poker-rate page prints starting rates of $119 and $209 for a suite 'in either The Venetian or The Palazzo' without saying which property is which, and no dated checkout quote for the trip dates has been captured. True cost per night therefore stays blank rather than being estimated.",
+   "needed": "A dated checkout quote per hotel for the exact stay dates, with resort fee, tax line, parking, cancellation deadline and the time it was read.",
+   "how_to_find": "Use each hotel's official booking page for the exact dates and log the total, not the headline rate.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+    "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+    "https://www.wynnlasvegas.com/about-us/resort-information"
+   ]
+  },
+  {
+   "id": "Q04",
+   "question": "Is each hotel within a 30-minute walk of the tournament venue?",
+   "status": "Answered for the Venetian side, open for Wynn",
+   "answer": "No casino publishes a walk time, so routing services were used and labelled as third-party estimates. Google Maps walking directions (read 2026-11-17) put Wynn at 12 min, The Palazzo 4 min, The Venetian 5 min, Horseshoe 24 min and Caesars Palace 19 min from The Venetian Poker Room — all inside the 30-minute limit — while Bellagio is 28 min (inside, but barely), and ARIA 37 min and MGM Grand 42 min are outside it. An independent OSRM foot matrix computed from geocoded official addresses agrees with every one of those 30-minute verdicts. Trips to the Wynn poker room have not been read.",
+   "needed": "Walking routes to the Wynn poker room, and an in-person check of the Bellagio and Horseshoe timings.",
+   "how_to_find": "Open the prefilled maps link in each hotel row, read the walking time, and log it with the date.",
+   "sources": [
+    "https://www.google.com/maps/dir/?api=1&origin=Wynn+Las+Vegas&destination=The+Venetian+Poker+Room&travelmode=walking",
+    "https://www.venetianlasvegas.com/resort/casino/poker.html"
+   ]
+  },
+  {
+   "id": "Q05",
+   "question": "What are the user's travel dates, party size and budget?",
+   "status": "Open",
+   "answer": "Not provided. Venetian single-entry rows run Nov 18 – Dec 23, 2026. Wynn WPT runs Nov 27 – Dec 21, 2026.",
+   "needed": "Dates, nights, budget per night and per entry, and maximum buy-in.",
+   "how_to_find": "The user supplies these; no external source can answer them.",
+   "sources": []
+  },
+  {
+   "id": "Q06",
+   "question": "How is hotel quality measured?",
+   "status": "Open",
+   "answer": "No quality rating was verified. The brief asks for quality to be weighted above distance, so this field matters.",
+   "needed": "A chosen rating source (for example AAA Diamond or Forbes Travel Guide) or the user's own criteria.",
+   "how_to_find": "Pick a rating body, then record its official rating and the date checked for each hotel.",
+   "sources": []
+  },
+  {
+   "id": "Q07",
+   "question": "Do Wynn daily events run during the WPT World Championship (Nov 27 – Dec 21)?",
+   "status": "Open",
+   "answer": "Not stated in the sources read.",
+   "needed": "A Wynn statement about the daily schedule during the WPT.",
+   "how_to_find": "Check the official Wynn poker page (wynnlasvegas.com/casino/poker) or contact the Wynn poker room.",
+   "sources": [
+    "https://www.wynnlasvegas.com/casino/poker"
+   ]
+  },
+  {
+   "id": "Q08",
+   "question": "Do the Venetian poker room's contact details and hours match the official site?",
+   "status": "Open",
+   "answer": "Not captured in this pass.",
+   "needed": "Venetian poker room contact details and hours from the official site.",
+   "how_to_find": "Read the official Venetian poker pages.",
+   "sources": [
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
+   ]
+  },
+  {
+   "id": "Q09",
+   "question": "Does the poker room confirm single-entry status for each event the user plans to play?",
+   "status": "Open",
+   "answer": "Correct as stated, and now measured across the whole festival: 'sheet silent on re-entry' is what the document says, not what the room promises. The wording on every Venetian row was changed to that label so it can never be read as a single-entry confirmation.",
+   "needed": "A written poker-room answer for any event actually being planned.",
+   "how_to_find": "Ask the poker room at the venue, or read the written rules at registration.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+   ]
+  },
+  {
+   "id": "Q10",
+   "question": "Which other Strip rooms should be included?",
+   "status": "Open",
+   "answer": "Only The Venetian and Wynn have been verified. MGM Grand's poker page could not be reached (see Flagged for Review).",
+   "needed": "A user decision on scope, then a new research pass.",
+   "how_to_find": "Each property's official poker page and structure sheets.",
+   "sources": [
+    "https://www.mgmgrand.com/en/casino/poker.html"
+   ]
+  },
+  {
+   "id": "Q11",
+   "question": "Does the user accept bounty and PKO formats?",
+   "status": "Open",
+   "answer": "Several verified single-entry events are bounty or PKO formats. Their guarantees include bounty money.",
+   "needed": "The user's preference on bounty formats.",
+   "how_to_find": "User decision.",
+   "sources": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+   ]
+  },
+  {
+   "id": "Q12",
+   "question": "Are the official structure sheets and schedules current?",
+   "status": "Answered for The Venetian",
+   "answer": "All 37 Venetian sheets and the November schedule page were re-read on 2026-11-17 and every one of the 83 scheduled rows reconciles with its sheet (start time, house fee, chips, printed late-registration wording, guarantee). Wynn's daily and WPT PDFs still carry 2025 version stamps (flags F04, F05), so the Wynn rows remain the weaker half of the data.",
+   "needed": "Re-check each official document before travel.",
+   "how_to_find": "Re-open the official pages and compare dates and buy-ins.",
+   "sources": [
+    "https://www.wynnlasvegas.com/casino/poker"
+   ]
+  }
+ ]
 }
