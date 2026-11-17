@@ -1772,3 +1772,162 @@ $36.99 provenance, FG-02 (written single-entry confirmation), F-04 (finish times
 quotes), FG-12 (quality ratings). One request for the next session that touches the workflows:
 the first live `plan-refresh` run (cron `30 6 * * *`) should be confirmed to commit
 `site-data/snapshots/` and flip source states to `new`.
+
+---
+
+# Session arena/7cc9ee65-poker2 — claim (2026-11-17 22:10 UTC)
+
+Branch: `arena/7cc9ee65-poker2` (from `main` `b832ae2`). Role: **final integration session**.
+
+## Non-overlapping scope claimed
+
+Live sessions at claim time: `arena/555c41d4-poker2` (PR #69 — root `*.html` +
+`scripts/build_site.py`) and `arena/1655b450-poker2` (PR #70 —
+`research/venetian-dse4-live-2026-11-17.csv`, `scripts/recheck_schedule_live.py`).
+Neither file set is touched here.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| W1 Live line-by-line re-read of all 37 official Venetian DSE IV structure-sheet PDFs; compare every stored field (buy-in, fee, pool/entry, chips, level, late reg, guarantee, payout, bounty, re-entry / rebuy / add-on wording) against the live official text | in progress | arena/7cc9ee65-poker2 | `research/sheet-readings-7cc9ee65.csv`, `scripts/check_sheet_readings.py`, `data/sheets/part1-6.py` (only where a mismatch is found) |
+| W2 Live re-read of official hotel pages (resort fee, poker rate, terms) and the Clark County lodging-tax page; verify stored fee/tax/rate values | in progress | arena/7cc9ee65-poker2 | `research/hotel-readings-7cc9ee65.md`, `data/verified2026/hotels.py` (only where a mismatch is found) |
+| W3 Live re-read of the other-venue official pages; confirm what each room publishes | in progress | arena/7cc9ee65-poker2 | `research/venues-7cc9ee65.md`, `data/verified2026/content.py` (only where a mismatch is found) |
+| W4 Publish the verification result in the `/2026/` surface: per-row official re-check date, verified/unverified state, and any irregularity found | in progress | arena/7cc9ee65-poker2 | `scripts/build2026.py`, `data/verified2026/*`, `2026/**` |
+| W5 Final integration: merge `main`, checks green, PR → `main`, merge, Pages deploy confirmed, record here | in progress | arena/7cc9ee65-poker2 | `COORDINATION.md` |
+
+**Not touched by this session:** root `*.html`, `scripts/build_site.py` (owned by
+`arena/555c41d4-poker2` / PR #69); `scripts/recheck_schedule_live.py`,
+`research/venetian-dse4-live-2026-11-17.csv` (owned by `arena/1655b450-poker2` / PR #70).
+This session writes only its own `research/*7cc9ee65*` files.
+
+## Method note
+
+Egress from the sandbox shell to `venetianlasvegas.com` is blocked, but the agent's own
+page-fetch tool reaches the official host, so every re-read below is a live read of the
+official document, not a re-read of a cached copy. Each reading is transcribed to
+`research/sheet-readings-7cc9ee65.csv` and diffed against the shipped data by
+`scripts/check_sheet_readings.py` (exit 1 on any difference), so the result is reproducible
+by whoever reviews this.
+
+## Session arena/7cc9ee65-poker2 — completion record (2026-11-17)
+
+Final integration session. Branch `arena/7cc9ee65-poker2`.
+
+### What changed the site's content
+
+Two rooms that the site previously recorded as publishing nothing **do** publish official
+tournament documents. Both were read live on 2026-11-17 and are now published:
+
+* **Caesars Palace** — official daily flyer `clv-poker-daily-nlh-tournament-flyer-2026.pdf`,
+  reached from https://www.caesars.com/caesars-palace/casino . Four NLH events a day:
+  10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160; 20,000 chips, 20-minute levels, $1,000
+  guarantee each, $50 add-on for 15,000 chips at the first break, registration closes at the
+  start of level 7, minimum 6 players.
+* **Bellagio** — three official weekly structure sheets on
+  https://bellagio.mgmresorts.com/en/casino/poker.html : Friday $600 NLH, Saturday NLH,
+  Sunday $400 H.O.R.S.E., all 11:00 AM.
+
+Both are kept **out** of the single-entry ranking, because each sheet prints re-entry and a
+paid add-on (Bellagio: a "voluntary" gratuity that buys 15,000–20,000 extra chips). That is
+the separate section the brief asks for. Confirmed single-entry events remain **0**.
+
+### W1 — all 37 structure sheets re-read live
+
+Each official PDF was fetched from `venetianlasvegas.com` on 2026-11-17 and transcribed to
+`research/sheet-readings-7cc9ee65.csv`. `scripts/check_sheet_readings.py` diffs the
+transcription against the shipped data field by field:
+
+```
+sheet readings checked : 37 sheets, 481 field comparisons
+sheets with a single-entry / freezeout / no-re-entry clause printed: 0
+All 37 sheets match the shipped data field by field.       (exit 0)
+```
+
+It exits 1 on any difference, so the finding is reproducible, not asserted. Twelve
+`payout_pct` values in my first transcription were terser paraphrases of the sheet; the
+shipped wording was the more precise one in every case and was adopted. No factual
+disagreement was found in any numeric field.
+
+### W2 — hotel pages re-read live
+
+* https://www.venetianlasvegas.com/resort/resort-fee.html — "a daily Resort Fee of $55 plus
+  tax per night" with the five inclusions. Matches.
+* https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html — "start as low as
+  $119 and $209", code EPOKR25, 866.255.8936, six hours live cash **or** a $300+ tournament
+  buy-in per night, met before 2 a.m. on the last night, $55 resort fee, no combining with
+  promotional rates, rates only quoted 150 days ahead. Matches.
+* https://www.wynnlasvegas.com/about-us/resort-information — $55 plus tax, self-parking for
+  two vehicles included, one night's rate and tax charged at booking. Matches.
+
+### W3 — other rooms re-read live
+
+| Room | Result on 2026-11-17 |
+|---|---|
+| Caesars Palace | **Now publishes a daily flyer.** Four events/day, transcribed (above) |
+| Bellagio | **Now publishes three weekly sheets.** Transcribed (above) |
+| Horseshoe | Casino page live: 20 tables, "6 exciting tournament times daily", no buy-in or guarantee |
+| MGM Grand | Poker page now returns "Oops! We can't find that page" — X-06 |
+| Wynn | Poker page still returns "IT SEEMS THIS PAGE HAS CHECKED OUT" — X-07 |
+
+### Irregularities found in the official documents (all published on /2026/flagged.html)
+
+* **X-03** Bellagio's page says "Tournament play will resume on Saturday, July 26"; 26 July
+  2026 is a **Sunday**. Weekday and date disagree.
+* **X-04** Bellagio's Saturday sheet is headlined "$1100 BUY-IN" while its own rule 7 splits
+  "the $600 Buy-in". Two official figures; neither is published as the buy-in.
+* **X-05** The same sheet prints "Combined Final Day 2 (9/13/26)", a date already past on
+  2026-11-17, so the sheet may be stale.
+* **X-06** MGM Grand's poker page no longer resolves; the earlier $120-sheet reading is
+  demoted to historical provenance.
+* **X-07** Wynn's poker page is still a not-found page.
+* **X-08** The 2026-11-17T15:49Z monitor run reported 10 fetch errors — all Caesars/Bellagio/
+  MGM HTML pages. Three of them (Bellagio poker, Caesars Palace, Horseshoe) were then fetched
+  successfully by hand, so those errors are the job's request being refused, not dead pages.
+  The badge now reads "monitor could not fetch" rather than "fetch error", with that explained.
+* **F-11** Records why the ranked table stays Venetian-only now that two more rooms publish.
+
+### Verification run on the final tree
+
+```
+build2026.py          wrote 21 pages, 64 events, 38 days, 37 sheets
+build2026.py --check  OK: every page matches the verified data
+check2026.py          OK: 21 pages, 1115 links (574 external citations), no broken links, no non-official hosts
+audit.py              OK: every row reconciles with the official document it cites
+check_sheet_readings  37/37 sheets, 481 comparisons, 0 mismatches
+```
+
+### Files touched
+
+`research/sheet-readings-7cc9ee65.csv`, `scripts/check_sheet_readings.py`,
+`data/verified2026/other_rooms.py`, `data/verified2026/content.py`,
+`scripts/build2026.py`, `scripts/recheck2026.py`, `2026/**` (regenerated), `README.md`,
+`COORDINATION.md`.
+
+Not touched: root `*.html` and `scripts/build_site.py` (arena/555c41d4-poker2, PR #69), and
+`scripts/recheck_schedule_live.py` / `research/venetian-dse4-live-2026-11-17.csv`
+(arena/1655b450-poker2, PR #70).
+
+### Merge note added after the second rebase onto `main` (2026-11-17)
+
+`arena/7be88b38-poker2` (PR #75/#76) landed while this session's PR was open, and both
+sessions had touched `scripts/build2026.py`, `scripts/recheck2026.py` and
+`data/verified2026/content.py`. Resolutions, none of which discarded their work:
+
+* **Wynn.** They found the live page at `/casino/poker` (a $10,000 guaranteed event every
+  evening at 6 p.m., no daily buy-in printed). I had recorded the older URL
+  `/casino/poker-room` as a 404. Both are true, so X-07 was rewritten to say the 404 is a
+  dead citation rather than a dead room, and the venues banner carries their finding.
+* **Fetch-error badge.** They had already replaced the bare "fetch error" label with a
+  per-error-kind label. My X-08 note (these pages load in a browser, so a fetch error is a
+  monitoring gap, not evidence of change) was folded into their tooltip rather than
+  replacing their version.
+* **Caesars Palace.** They read Caesars' poker page: "four No-Limit Hold'em tournaments each
+  day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in ... $1,000
+  guaranteed". I read the property's daily flyer PDF the same day: the same four start times
+  and the same $1,000 guarantee, but priced $100 / $160 / $100 / $160. **Two official Caesars
+  documents disagree on the buy-in.** Their flag F-14 covers it; my table transcribes the
+  flyer and now links F-14 inline so the $160 is not presented as settled.
+* **Sources page.** They added a coverage panel (`cov`); I added the reconciled
+  monitored-vs-fetched sentence. Both kept.
+
+Generated files (`2026/**`, `data/verified2026/dataset.json`, `search-index.json`) were
+resolved by regenerating from the merged generators, never by hand-merging.

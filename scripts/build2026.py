@@ -27,6 +27,7 @@ import part1, part2, part3, part4, part5, part6          # noqa: E402  (register
 import schedule as sched                                  # noqa: E402
 import hotels as hotelsmod                                # noqa: E402
 import content as contentmod                              # noqa: E402
+import other_rooms as othermod                            # noqa: E402  (other Strip rooms)
 
 SHEETS = part1.SHEETS
 BASE = part1.BASE
@@ -722,12 +723,15 @@ def check_badge(*urls):
     errs = [h for h in hits if h.get("change") == "fetch error"]
     if errs:
         # Say which kind of failure it was: a property that refuses a datacenter runner is not a
-        # source that moved, and neither of them is a source that has been checked.
+        # source that moved, and neither of them is a source that has been checked. Several of
+        # these pages load normally in a browser, so a fetch error is a gap in the monitor, not
+        # evidence the document changed. Flag X-08.
         kinds = sorted({h.get("error_kind") for h in errs if h.get("error_kind")})
         lab = ("monitor could not read it: " + ", ".join(kinds)) if kinds else "fetch error"
         return ("<span class='tag t-warn' title='The scheduled re-check could not open this document, "
-                "so nothing about it is proven for this run. The value keeps its own last verified "
-                "date.'>%s</span>" % esc(lab))
+                "so nothing about it is proven for this run. That is a gap in the monitor, not "
+                "evidence the page changed - several of these pages load normally in a browser. See "
+                "flag X-08. The value keeps its own last verified date.'>%s</span>" % esc(lab))
     if all(h.get("change") == "first check" for h in hits):
         return "<span class='tag t-info'>baseline set</span>"
     return "<span class='tag t-ok'>unchanged</span>"
@@ -1556,14 +1560,18 @@ ROOM_META = {
         walk_key="V-CP",
         title="Caesars Palace",
         room="Caesars Palace poker room",
-        desc="Publishes a daily NLH flyer PDF; no per-event structure sheet could be read.",
+        desc=("Four daily NLH events at 10 AM, 2 PM, 6 PM and 9 PM, published as an official "
+              "daily flyer PDF. Re-entry and a $50 add-on are printed on it, so none of them is "
+              "single-entry. Read 2026-11-17."),
         page="venues/caesars-palace.html",
     ),
     "bellagio": dict(
         walk_key="V-BEL",
         title="Bellagio",
         room="Bellagio poker room",
-        desc="Publishes a hotel-terms page with a resort fee and a 72-hour cancellation window; no dated tournament schedule read.",
+        desc=("Three weekly events with official structure sheets: Friday $600 NLH, Saturday NLH "
+              "and Sunday $400 H.O.R.S.E., all at 11:00 AM. Each sheet prints re-entry and a "
+              "gratuity that buys extra chips. Read 2026-11-17."),
         page="venues/bellagio.html",
     ),
     "mgm-grand": dict(
@@ -1617,6 +1625,109 @@ Within 30 minutes only</label><span class="note" id="wc"></span></div>
            rows=trs))
 
 
+def other_room_schedule(key):
+    """Official schedule table for a non-Venetian room that publishes one.
+
+    Added 2026-11-17 by session arena/7cc9ee65-poker2: Caesars Palace and Bellagio both
+    publish official tournament documents, so their rows are rendered here instead of the
+    room page saying the room publishes nothing. Every row cites the room's own PDF and is
+    kept out of the single-entry ranking, because every one of these events is a re-entry or
+    add-on event on the face of its own sheet.
+    """
+    if key == "caesars-palace":
+        sched_data = othermod.CAESARS_SCHEDULE
+        head = ("<tr><th>Start</th><th class='num'>Buy-in</th><th class='num'>House fee</th>"
+                "<th class='num'>To prize pool</th><th>Add-on</th><th class='num'>Chips</th>"
+                "<th class='num'>Levels</th><th class='num'>Guarantee</th></tr>")
+        rows = "".join(
+            "<tr><td>%s</td><td class='num'>$%s</td><td class='num'>$%s</td>"
+            "<td class='num'>$%s</td><td>$%d add-on &middot; %s chips at the first break</td>"
+            "<td class='num'>%s</td><td class='num'>%d min</td><td class='num'>%s</td></tr>"
+            % (esc(r["start"]), format(r["buy_in"], ","), format(r["house_fee"], ","),
+               format(r["to_pool"], ","), r["add_on"], format(r["add_on_chips"], ","),
+               format(r["chips"], ","), r["level_min"],
+               "$" + format(r["guarantee"], ",") if r["guarantee"] else "&mdash;")
+            for r in sched_data["rows"])
+        doc_link = srclink(sched_data["source"], "official daily tournament flyer (PDF)")
+    elif key == "bellagio":
+        sched_data = othermod.BELLAGIO_SCHEDULE
+        head = ("<tr><th>Day</th><th>Start</th><th>Event</th><th class='num'>Buy-in</th>"
+                "<th class='num'>House fee</th><th>Gratuity buys chips</th>"
+                "<th class='num'>Starting chips</th><th class='num'>Levels</th>"
+                "<th class='num'>Guarantee</th><th>Structure sheet</th></tr>")
+        rows = ""
+        for r in sched_data["events"]:
+            buy = ("$" + format(r["buy_in"], ",")) if r["buy_in"] else (
+                "<span class='blank-cell'>conflict &mdash; see X-04</span>")
+            rows += (
+                "<tr><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td>"
+                "<td class='num'>$%s</td><td>$%d &rarr; +%s chips</td>"
+                "<td class='num'>%s without &middot; %s with</td><td class='num'>%d min</td>"
+                "<td class='num'>%s</td><td>%s</td></tr>"
+                % (esc(r["day"]), esc(r["start"]), esc(r["name"]), buy,
+                   format(r["house_fee"], ","), r["gratuity"],
+                   format(r["gratuity_chips"], ","),
+                   format(r["chips_without_gratuity"], ","),
+                   format(r["chips_with_gratuity"], ","), r["level_min"],
+                   ("$" + format(r["guarantee"], ",")) if r["guarantee"] else "&mdash;",
+                   srclink(r["source"], "PDF")))
+        doc_link = srclink(sched_data["room_page"], "official Bellagio poker page")
+    else:
+        return ""
+
+    quotes = "".join(
+        '<div class="quote"><strong>%s.</strong> %s</div>' % (esc(t), esc(q))
+        for t, q in (sched_data.get("quotes") or []))
+    if key == "bellagio":
+        quotes = "".join(
+            '<div class="panel"><h3>%s &mdash; %s</h3>%s<div class="note">%s</div>'
+            '<ul class="tight">%s</ul></div>'
+            % (esc(r["day"]), esc(r["name"]),
+               "".join('<div class="quote"><strong>%s.</strong> %s</div>' % (esc(t), esc(q))
+                       for t, q in r["quotes"]),
+               srclink(r["source"], "official structure sheet (PDF)"),
+               "".join("<li>%s</li>" % esc(g) for g in r["gaps"]))
+            for r in sched_data["events"])
+
+    gaps = "".join("<li>%s</li>" % esc(g) for g in sched_data.get("gaps") or [])
+    if gaps:
+        gaps = ("<div class='panel'><h3>What the official document does not print</h3>"
+                "<ul class='tight'>%s</ul></div>" % gaps)
+    notes = "".join("<li>%s</li>" % esc(n) for n in sched_data.get("notes") or [])
+    if notes:
+        notes = ("<ul class='tight'>%s</ul>" % notes)
+
+    irr = [i for i in othermod.IRREGULARITIES if i["room"] == sched_data["room"]]
+    irr_html = ""
+    if irr:
+        irr_html = ("<div class='panel'><h3>Irregularities in the official document</h3>"
+                    "<table><thead><tr><th class='num'>ID</th><th>What the document says</th>"
+                    "<th>Why it matters</th><th>Source</th></tr></thead><tbody>%s</tbody></table>"
+                    "</div>" % "".join(
+                        "<tr id='%s'><td class='num'>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
+                        % (esc(i["id"]), esc(i["id"]), esc(i["what"]), esc(i["why_it_matters"]),
+                           srclink(i["source"], "official page"))
+                        for i in irr))
+
+    return """
+<div class="panel"><h2>Official tournament schedule</h2>
+<p>Transcribed line by line from the room's own document, read %s. These rows are
+<strong>not</strong> in the single-entry ranking: the sheet for each one prints re-entry or a
+paid add-on, which is the class of event the brief asks to keep separate. The Venetian table
+stays the only ranked table, because it is the only room that publishes a dated schedule
+<em>and</em> a per-event structure sheet.</p>
+<p class="note">Source: %s &middot; cadence: %s</p>
+<div class="tbl-scroll"><table><thead>%s</thead><tbody>%s</tbody></table></div>
+<p><strong>Verdict.</strong> %s</p>
+%s
+</div>
+%s
+<div class="panel"><h3>What the official document says, in its own words</h3>%s</div>
+%s
+""" % (esc(sched_data["retrieved"]), doc_link, esc(sched_data["cadence"]), head, rows,
+       esc(sched_data["verdict"]), notes, gaps, quotes, irr_html)
+
+
 def p_venue_room(key, events):
     meta = ROOM_META[key]
     own = contentmod.OTHER_VENUES_BY_ID.get(key)
@@ -1631,6 +1742,10 @@ def p_venue_room(key, events):
                    'transcribed, so this table is intentionally empty. The reason is recorded below '
                    'with the source that was checked.</p>')
         hotel_count = None
+    if key in ("caesars-palace", "bellagio"):
+        # These two rooms do publish an official schedule document; render it instead of the
+        # empty-state paragraph. Read 2026-11-17, session arena/7cc9ee65-poker2.
+        ev_html = other_room_schedule(key)
     whats = ""
     if own:
         finds = "".join(
@@ -1692,20 +1807,27 @@ def p_venue_other():
                esc(v["verdict"]), esc(v["provenance"]), srclink(v["url"])))
     return page("Other rooms", """
 <div class="hero"><h1>Other Strip poker rooms</h1>
-<p class="lede">Seven other rooms in and around the Strip area were checked. None of them publishes
-enough to rank a single tournament. This page records exactly what each one does publish, so the gap is
-documented rather than filled.</p></div>
+<p class="lede">Seven other rooms in and around the Strip area were checked. Two of them &mdash;
+Caesars Palace and Bellagio &mdash; do publish official tournament documents, read live on
+%(ret)s, and their rows are on their own venue pages. None of the seven publishes a
+<em>single-entry</em> event, so none of them can enter the ranked table. This page records
+exactly what each one publishes, so the gap is documented rather than filled.</p></div>
 
-<div class="banner"><strong>Why the ranked tables are Venetian-only.</strong> This is a coverage limit,
-not a preference. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
-entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule.
-Horseshoe publishes six start times and nothing else. Resorts World's poker page redirects to a dining
-page. Westgate publishes room hours. Wynn's live page states a Friday rebuy and prints no daily buy-in.
-Flag
-<a href="flagged.html#F-10">F-10</a>.</div>
+<div class="banner"><strong>Why the ranked tables are Venetian-only.</strong> This is a finding, not
+a coverage limit. To rank an event on entry fee and prize pool you need a buy-in, a guarantee and an
+entry rule, each from the room itself. Only The Venetian publishes all three for a dated schedule
+<em>and</em> stays silent on re-entry. Caesars Palace publishes four daily events and Bellagio three
+weekly ones, but every sheet prints re-entry or a paid add-on, so they sit in the
+spending-more-money section instead. Horseshoe publishes six start times and nothing else.
+Resorts World's poker page redirects to a dining page. Westgate publishes room hours. Wynn's live
+page states a $10,000 guaranteed event every evening at 6 p.m. and prints no buy-in for any daily
+event. MGM Grand's poker page returned a not-found page on %(ret)s
+(<a href="flagged.html#X-06">X-06</a>); the URL this site used to cite for Wynn does too
+(<a href="flagged.html#X-07">X-07</a>). Flag
+<a href="flagged.html#F-10">F-10</a>, <a href="flagged.html#F-11">F-11</a>.</div>
 
-%s
-""" % "".join(blocks), "venues/other.html", subnav=VENUE_SUBNAV)
+%(blocks)s
+""" % dict(blocks="".join(blocks), ret=RETRIEVED), "venues/other.html", subnav=VENUE_SUBNAV)
 
 
 def p_summary(events, days):
@@ -1767,8 +1889,11 @@ schedule PDF, which prints registration-close times, chip counts and level lengt
 not. The two agree on every row.</li>
 <li><strong>The hotel numbers</strong> come from the official resort-fee page and the official poker
 suite-rate page, both read on %(ret)s.</li>
-<li><strong>Seven other poker rooms</strong> were checked. None publishes enough to rank even one
-event.</li>
+<li><strong>Seven other poker rooms</strong> were checked. Two of them &mdash; Caesars Palace and
+Bellagio &mdash; publish official schedules, read live on %(ret)s, but every event on those sheets
+prints re-entry or a paid add-on (<a href="flagged.html#X-03">X-03</a>&ndash;<a
+href="flagged.html#X-05">X-05</a>, <a href="flagged.html#F-11">F-11</a>). None publishes a
+single-entry event, which is why the ranked table is Venetian-only.</li>
 </ul></div>
 
 <div class="panel"><h2>What could not be verified</h2>
@@ -1966,6 +2091,27 @@ def _monitored_urls():
         return set()
 
 
+def monitored_sentence(registered, run_n):
+    """The 'N URLs are monitored' sentence, reconciled with the run printed beside it.
+
+    The register and the scheduled run can legitimately disagree: a URL added to the register
+    after the last run is watched but has no baseline yet. Quoting one number beside the other
+    without saying so made the page contradict itself (58 vs 61, then 63 vs 61). The sentence
+    now either quotes a single agreed number, or states both and the gap between them.
+    """
+    if not run_n or registered == run_n:
+        return ("%d URLs are monitored, including all 37 structure-sheet URLs." % registered)
+    gap = registered - run_n
+    if gap > 0:
+        return ("%d URLs are registered for monitoring, including all 37 structure-sheet URLs. "
+                "The latest run below fetched %d of them: %d were added to the register after "
+                "that run and will be baselined by the next one."
+                % (registered, run_n, gap))
+    return ("%d URLs are registered for monitoring, including all 37 structure-sheet URLs. The "
+            "latest run below fetched %d, which is %d more than this register lists."
+            % (registered, run_n, -gap))
+
+
 def p_sources(events):
     srcs = []
     srcs.append(dict(kind="Schedule", name="Venetian DSE IV schedule page",
@@ -2030,6 +2176,7 @@ def p_sources(events):
     # count beside a run that fetched more made the page contradict itself (58 vs 61 on the
     # 2026-11-17 run). The register rows above are the documents, one row per document used.
     monitored_n = len({u for u in _monitored_urls()} | set(urls))
+    run_n = 0
     if CHECKS_META is None:
         monitor = ('<p class="note">This checkout carries no completed re-check run yet, so every row '
                    'shows <em>not yet checked</em> rather than an assumed-clean status. The first '
@@ -2050,6 +2197,7 @@ def p_sources(events):
                 if r.get("hash"):
                     ever.add(r.get("key"))
         never_read = sum(1 for r in rows_ if not r.get("hash") and r.get("key") not in ever)
+        run_n = len(rows_)
         monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs: '
                    '<strong>%d changed</strong>, %d fetch errors, %d whose baseline hash was set by that '
                    'run, %d that no run has ever read successfully. A fetch error is a monitoring '
@@ -2110,10 +2258,10 @@ aggregator, no forum, no mapping service.</p></div>
 this page every morning at 06:00 UTC, hashes the normalised text, and appends the run to
 <code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
 the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
-you know which cited value may have moved. %(nurls)s URLs are monitored, including all 37
-structure-sheet URLs. A <em>fetch error</em> means the job could not read the document &mdash; often a
-bot wall (HTTP 403) or a 302 redirect on a property that restricts scripts &mdash; and it proves nothing
-either way; those rows keep their previous hash and their old read date.</p>
+you know which cited value may have moved. %(monitored_sentence)s A <em>fetch error</em> means the job
+could not read the document &mdash; often a bot wall (HTTP 403) or a 302 redirect on a property that
+restricts scripts &mdash; and it proves nothing either way; those rows keep their previous hash and
+their old read date.</p>
 %(monitor)s
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
@@ -2123,7 +2271,9 @@ into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}), nurls=monitored_n, monitor=monitor, cov=cov), "sources.html")
+""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}),
+           monitored_sentence=monitored_sentence(monitored_n, run_n), monitor=monitor,
+           cov=cov), "sources.html")
 
 
 def p_repo_review(events):

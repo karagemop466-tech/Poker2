@@ -37,6 +37,7 @@ import part1, part2, part3, part4, part5, part6          # noqa: E402
 import schedule as sched                                  # noqa: E402
 import hotels as hotelsmod                                # noqa: E402
 import content as contentmod                              # noqa: E402
+import other_rooms as othermod                            # noqa: E402
 
 OUT = os.path.join(ROOT, "data", "verified2026", "checks.json")
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -72,6 +73,9 @@ def sources():
         out["VEN_" + key] = ("%s official page" % v["name"], v["url"])
         for i, f in enumerate(v["earlier_findings"]):
             out["VEN_%s_%d" % (key, i + 1)] = ("%s official document" % v["name"], f["url"])
+    # Rooms whose official schedules are transcribed onto their venue pages (added 2026-11-17).
+    for key, label, url in othermod.MONITOR_URLS:
+        out["ROOM_" + key] = (label, url)
     # collapse duplicates so one URL is fetched once, keeping the first label
     seen, deduped = {}, {}
     for k in sorted(out):

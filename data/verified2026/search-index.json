@@ -3290,6 +3290,38 @@
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "10:00 AM",
+  "x": "10:00 AM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "2:00 PM",
+  "x": "2:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "6:00 PM",
+  "x": "6:00 PM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
+  "t": "Start Buy-in House fee To prize pool",
+  "a": "",
+  "h": "9:00 PM",
+  "x": "9:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+ },
+ {
+  "p": "venues/caesars-palace.html",
+  "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
   "h": "Caesars Palace",
@@ -3454,6 +3486,54 @@
   "a": "",
   "h": "Golden Nugget (downtown)",
   "x": "Golden Nugget (downtown) | 97.5 min | over 30 min | confirm on Google Maps"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Fridays",
+  "x": "Fridays | 11:00 AM | NLH $600 buy-in | $600 | $50 | $40 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Saturdays",
+  "x": "Saturdays | 11:00 AM | NLH (sheet headline: $1,100 buy-in) | conflict \u2014 see X-04 | $50 | $40 \u2192 +20,000 chips | 20,000 without \u00b7 40,000 with | 30 min | $50,000 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "Day Start Event Buy-in",
+  "a": "",
+  "h": "Sundays",
+  "x": "Sundays | 11:00 AM | $400 H.O.R.S.E. Tournament | $400 | $35 | $25 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-03",
+  "h": "X-03",
+  "x": "X-03 | The official poker page says \u201cTournament play will resume on Saturday, July 26\u201d, but 26 July 2026 is a Sunday. | The day-of-week on the page disagrees with the calendar, so the resume date cannot be taken as printed. The three weekly structure sheets are read as the operative schedule instead. | official page"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-04",
+  "h": "X-04",
+  "x": "X-04 | The Saturday sheet is headlined \u201cNLH $1100 BUY-IN\u201d while its own rule 7 splits \u201c[t]he $600 Buy-in\u201d. | The buy-in is the number the whole ranking rests on, and the official document gives two different ones. No figure is published; both are shown so the room can be asked which is current. | official page"
+ },
+ {
+  "p": "venues/bellagio.html",
+  "pl": "venues/bellagio",
+  "t": "ID What the document says Why it matters Source",
+  "a": "X-05",
+  "h": "X-05",
+  "x": "X-05 | The Saturday sheet prints \u201cCombined Final Day 2 (9/13/26)\u201d, a date that had already passed when the sheet was read on 2026-11-17. | A sheet naming a past final day may be a stale series document. Treat the Saturday event as unconfirmed until the room republishes it. | official page"
  },
  {
   "p": "venues/bellagio.html",
@@ -4259,6 +4339,62 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
+  "a": "X-03",
+  "h": "X-03",
+  "x": "X-03 | Official page defect | Bellagio's poker page gives a resume date whose weekday does not exist The official page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the weekday and the date on the page disagree. The three weekly structure sheets are treated as the operative schedule ins"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-04",
+  "h": "X-04",
+  "x": "X-04 | Official document defect | Bellagio's Saturday sheet prints two different buy-ins The sheet is headlined 'NLH $1100 BUY-IN' while its own rule 7 splits '[t]he $600 Buy-in' into $510 prize pool, $50 admin fees and $40 optional staff gratuity. Read 2026-11-17. No buy-in is published for that event: the two figures are shown side by side and left blank. | The Saturday event cannot be costed or"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-05",
+  "h": "X-05",
+  "x": "X-05 | Official document defect | Bellagio's Saturday sheet names a final-day date that has already passed The same sheet prints 'Combined Final Day 2 (9/13/26) will begin at 12pm at Bellagio'. That date was already past when the sheet was read on 2026-11-17, so the document may be a stale series sheet rather than the current weekly event. | Treat the Saturday event as unconfirmed until the room r"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-06",
+  "h": "X-06",
+  "x": "X-06 | Official page unavailable | MGM Grand's poker page no longer resolves https://mgmgrand.mgmresorts.com/en/casino/poker.html returned 'Oops! We can't find that page' when requested live on 2026-11-17. An earlier session had read a $120 daily structure sheet from this room, with a $11 gratuity that buys 10,000 extra chips. | The MGM Grand finding is published as historical provenance only. It "
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-07",
+  "h": "X-07",
+  "x": "X-07 | Official page unavailable | The Wynn URL this site used to cite returns a not-found page https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' when requested live on 2026-11-17, which is why the scheduled re-check logged HTTP 404 for this venue. The room's live page is https://www.wynnlasvegas.com/casino/poker, read the same day by another session: it "
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "X-08",
+  "h": "X-08",
+  "x": "X-08 | Monitoring gap | The scheduled re-check reports fetch errors for pages that do load in a browser The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then fetched successful"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-11",
+  "h": "F-11",
+  "x": "F-11 | Coverage | Two rooms publish schedules that are not in the ranked tables Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages i"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
   "a": "F-14",
   "h": "F-14",
   "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
@@ -4845,7 +4981,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-17 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed and priced, but it cannot be compared like-for-lik"
+  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-17 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. It can be listed and priced, but not compared like-for-like with the sheet-silent Venetian candidates, and the buy-in conflicts "
  },
  {
   "p": "sources.html",
@@ -4861,7 +4997,31 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | Excluded from the single-entry ranking: re-entry plus a paid extra-chip gratuity on the verified sheet."
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17 from the official daily flyer: 'All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17: '3. Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Caesars Palace \u2014 clv-poker-daily-nlh-tournament-flyer-2026.pd | www.caesars.com | 2026-11-17 | Read live 2026-11-17: '6. Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.' and '7. Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.'"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | Publishes three weekly events with official structure sheets. Excluded from the single-entry ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 extra starting chips. Rows are published on the Bellagio venue page."
  },
  {
   "p": "sources.html",
