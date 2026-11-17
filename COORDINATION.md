@@ -542,3 +542,23 @@ Publication record for PR #34 (2026-11-16):
 | T3 Repair unresolved merge-conflict markers left in `README.md` on main (irregularity IR-README) | in progress | arena/8b1f0fd8-poker2 | `README.md` |
 | T4 Rebuild generated pages from the updated dataset; run the repo's own checks (audit, build, link check, plan check) | pending | arena/8b1f0fd8-poker2 | generated pages under `plan/`, `venues/` |
 | T5 Hotel live-rate lookup, Google/Apple walking routes, and scheduled daily schedule scrape | not started by this session — blocked, see record | — | — |
+
+### Renewal and record — arena/8b1f0fd8-poker2 (2026-11-17)
+
+Claim renewed at 2026-11-17 00:38 UTC (the 60-minute expiry from `e14c3d6` had passed; the claim timestamp was not recorded in that commit). T5 remains unclaimed and blocked.
+
+| Task | Result (2026-11-17) |
+|---|---|
+| T1 Structure sheets | Done. All 37 Venetian DSE IV structure sheets read (10 on 2026-11-16, 27 today). Register: `research/structure-sheets-register.md`. Every row in `site-data/events.json` (94) is `sheet_read: true`; start times and fee+pool checked against the sheets. |
+| T2 Unverified labels | Done for all events whose schedule row and sheet agree. Four other-venue rows remain UNVERIFIED because their documents were not re-read; they are listed on `/plan/unverified.html`. Single-entry status is shown as the sheet states it; no sheet states a one-entry cap (FG-02 stays open). |
+| T3 README conflict markers | Superseded, not repeated. Session `f4e82c6f` replaced the README on main (PR #43, merged before this rebase), so this session did not rewrite it and kept main's version. The earlier draft repair was discarded in the rebase to avoid overwriting that work. |
+| T4 Rebuild and checks | Done. `scripts/audit.py` OK (83 Venetian + 13 other rows, 8 hotels, 60 sources); `scripts/build.py` exit 0; `scripts/check_links.py` OK; `scripts/check_site.mjs` OK (15 plan pages, 94 event rows); `build-events.py`, `build-schedule.py`, `build-site.py` regenerate identically. |
+
+New irregularities (flagged, not blocking the merge):
+
+- **FG-30** (Medium): most Venetian rows are 21+ with a Rewards card, Seniors events are 50+, LIPS events are female-only, and sheet 31 is a team event. The gate is recorded per row in `events.json`, but the plan tables do not yet display it.
+- **FG-31** (Medium): the root dashboard (`tournaments.html` and related pages) is generated from the legacy `data/` pipeline and still shows older UNVERIFIED labels for Venetian rows. `/plan/` is the current surface. Consolidation is the open decision `S-11` (and `S-A14`).
+
+Corrections made in this session: the Event 36 / Event 38 sentence in `site-data/summary.json` no longer asserts an unreachable event. It now says the sheets do not show how long a player lasts, so the Event 38 timing is unknown and not planned.
+
+Remaining open items: `FG-02` (single-entry answer in writing), `S-02` (structure-sheet reading now done; automation awaits the owner's choice), `f743ae5a` (walking distances and lodging tax, unverified).
