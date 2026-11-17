@@ -61,6 +61,9 @@ jobs:
       - name: Every /2026/ page reproduces exactly from the verified data
         run: python3 scripts/build2026.py --check
 
+      - name: A multi-event sheet never gives all its events one guarantee
+        run: python3 scripts/check_guarantees.py
+
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
 

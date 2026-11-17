@@ -12,8 +12,16 @@
   "pl": "Dashboard",
   "t": "# Event Entry Guarantee",
   "a": "",
+  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
+  "x": "2 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | $90 | 66.7\u00d7 | 12-06"
+ },
+ {
+  "p": "index.html",
+  "pl": "Dashboard",
+  "t": "# Event Entry Guarantee",
+  "a": "",
   "h": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO",
-  "x": "2 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-08"
+  "x": "3 | $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO | $600 | $40,000 | $90 | 66.7\u00d7 | 12-08"
  },
  {
   "p": "index.html",
@@ -21,15 +29,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "3 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
- },
- {
-  "p": "index.html",
-  "pl": "Dashboard",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "$600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "4 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 12-06"
+  "x": "4 | $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | $90 | 50.0\u00d7 | 11-27"
  },
  {
   "p": "index.html",
@@ -157,7 +157,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev3",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
+  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -165,7 +165,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev4",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
+  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -173,7 +173,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev5",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
+  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -181,7 +181,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev6",
   "h": "$200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM)",
-  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published | \u2014 | sheet 29 | 2026-11-17 | not yet checked"
+  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published sheet prints no guarantee | \u2014 | sheet 29 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -357,7 +357,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev28",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | not yet checked"
+  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 7 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -373,7 +373,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev30",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 50.0\u00d7 | sheet 11 | 2026-11-17 | not yet checked"
+  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 11 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -565,7 +565,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev54",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 50.0\u00d7 | sheet 11 | 2026-11-17 | not yet checked"
+  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 83.3\u00d7 | sheet 11 | 2026-11-17 | not yet checked"
  },
  {
   "p": "tournaments.html",
@@ -3844,8 +3844,16 @@
   "pl": "Executive summary",
   "t": "# Event Entry Guarantee",
   "a": "",
+  "h": "#28 $600 NO LIMIT HOLD'EM (1DAY)",
+  "x": "2 | #28 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | 66.7\u00d7 | 12-06"
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "# Event Entry Guarantee",
+  "a": "",
   "h": "#32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O",
-  "x": "2 | #32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O | $600 | $40,000 | 66.7\u00d7 | 12-08"
+  "x": "3 | #32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O | $600 | $40,000 | 66.7\u00d7 | 12-08"
  },
  {
   "p": "summary.html",
@@ -3853,15 +3861,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#14 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "3 | #14 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 11-27"
- },
- {
-  "p": "summary.html",
-  "pl": "Executive summary",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "#28 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "4 | #28 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-06"
+  "x": "4 | #14 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 11-27"
  },
  {
   "p": "summary.html",

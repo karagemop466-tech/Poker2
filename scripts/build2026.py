@@ -115,6 +115,69 @@ def tminutes(t):
     return h * 60 + int(m.group(2))
 
 
+def guarantee_for_event(sheet, ev_no):
+    """The guarantee that belongs to THIS event, from a sheet that may serve several.
+
+    Some official sheets print one guarantee per event number, e.g. sheet 11 reads
+    "$30,000 (#16), $40,000 (#30), $50,000 (#54) - prize pool + total bounties". Taking the first
+    dollar figure on that sheet would give every event $30,000. Returns (value, note) where note
+    explains anything the reader needs to know about the number, or (None, reason) when the sheet
+    does not print a dollar guarantee at all (e.g. satellites that guarantee seats).
+    """
+    if not sheet:
+        return None, "no structure sheet"
+    g = sheet.get("guarantee") or ""
+    if not g.strip():
+        return None, "sheet prints no guarantee"
+    # two phrasings appear on the official sheets:
+    #   "$30,000 (#16), $40,000 (#30), $50,000 (#54)"
+    #   "$30,000 for Event #14 and #63; $40,000 for Event #28"
+    per = re.findall(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?\s*\(\s*#\s*(\d+)\s*\)", g, re.I)
+    # an "A for Event #14 and #63; B for Event #28" style block: split on ";" first so a value
+    # carries across the "and #n" numbers inside its own clause.
+    for chunk in re.split(r"\s*;\s*", g):
+        money = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?", chunk, re.I)
+        if not money:
+            continue
+        for n in re.findall(r"#\s*(\d+)", chunk):
+            tup = (money.group(1), money.group(2) or "", n)
+            if not any(x[0] == tup[0] and x[2] == tup[2] for x in per):
+                per.append(tup)
+    note_parts = []
+    if per:
+        hit = [p for p in per if int(p[2]) == ev_no]
+        if not hit:
+            return None, "sheet lists guarantees only for other event numbers"
+        raw, unit, _ = hit[0]
+        n = float(raw.replace(",", ""))
+        u = (unit or "").upper()
+        if u.startswith("K"):
+            n *= 1_000
+        elif u.startswith("M"):
+            n *= 1_000_000
+        if re.search(r"bount", g, re.I):
+            note_parts.append("printed guarantee includes bounty money")
+        return int(n), "; ".join(note_parts)
+    # single-guarantee sheet
+    if "SEATS" in g.upper() or "SEAT" in g.upper() and not re.search(r"\$", g):
+        return None, "guarantee is seats, not dollars: " + g
+    m = re.search(r"\$([\d,]+(?:\.\d+)?)\s*(K|MILLION|MILL)?", g, re.I)
+    if not m:
+        return None, "no dollar guarantee printed"
+    n = float(m.group(1).replace(",", ""))
+    u = (m.group(2) or "").upper()
+    if u.startswith("K"):
+        n *= 1_000
+    elif u.startswith("M"):
+        n *= 1_000_000
+    if re.search(r"bount", g, re.I):
+        note_parts.append("printed guarantee includes bounty money")
+    if len(sheet.get("events", [])) > 1 and not per:
+        note_parts.append("sheet serves %d events and prints one guarantee for them"
+                          % len(sheet.get("events", [])))
+    return int(n), "; ".join(note_parts)
+
+
 def sheet_for_event(ev_no):
     for n, s in SHEETS.items():
         if ev_no in s.get("events", []):
@@ -187,15 +250,12 @@ def build_events():
             base = re.sub(r"\s+", " ", re.sub(r"\s+1[A-Z](?=\s|$)", " ", base)).strip() or base
             flights = sorted(flights)
         gtds = sorted({r[5] for r in entry_rows if r[5]})
-        # per-event guarantee: prefer the structure sheet, fall back to the schedule row
-        gtd = None
-        if sheet:
-            g = sheet.get("guarantee") or ""
-            m = re.search(r"\$([\d,]+)(K)?", g)
-            if m and "SEATS" not in g.upper():
-                gtd = int(m.group(1).replace(",", "")) * (1_000 if m.group(2) else 1)
+        # per-event guarantee: resolved against the event number the sheet prints
+        gtd, gtd_note = guarantee_for_event(sheet, ev_no)
         if gtd is None and len(gtds) == 1:
             gtd = gtd_value(gtds[0])
+            if gtd is not None:
+                gtd_note = "from the schedule row, not the structure sheet"
         buy_in = sheet.get("buy_in") if sheet else None
         events.append(dict(
             event_no=ev_no,
@@ -217,6 +277,7 @@ def build_events():
             pool_per_entry=sheet.get("pool_per_entry") if sheet else None,
             fee_quote=(sheet.get("fee_quote") if sheet else None),
             gtd=gtd,
+            gtd_note=(gtd_note or None),
             gtd_text=(sheet.get("guarantee") if sheet else (gtds[0] if len(gtds) == 1 else None)),
             ratio=round(gtd / buy_in, 1) if (gtd and buy_in) else None,
             bounty=(sheet.get("bounty") if sheet else None),
@@ -551,7 +612,12 @@ def gtd_cell(e):
                         + " <span class='note'>(%s)</span>" % esc(m.group(2).lower()))
             return money(t)
     if e.get("gtd"):
-        return "$" + format(e["gtd"], ",")
+        cell = "$" + format(e["gtd"], ",")
+        if e.get("gtd_note"):
+            cell += " <span class='note'>%s</span>" % esc(e["gtd_note"])
+        return cell
+    if e.get("gtd_note"):
+        return '<span class="blank">none published</span> <span class="note">%s</span>' % esc(e["gtd_note"])
     return '<span class="blank">none published</span>'
 
 
