@@ -1,5 +1,36 @@
 # Coordination board
 
+## Session arena/c5a388f8-poker2 — claims (2026-11-17, ~01:20 UTC)
+
+Started from `main` at `98ca770a` (merge of PR #53). Board read first: the only **open** claim on the
+repo is PR [#54](https://github.com/karagemop466-tech/Poker2/pull/54) from `arena/97730311-poker2`
+(2026-11-17T01:08Z), which owns the `/plan/` surface — `plan/**`, `site-data/*.json`,
+`scripts/build-events.py`, `scripts/build-site.py`, `scripts/build-walk.py`,
+`.github/workflows/plan-refresh.yml`, `.github/workflows/plan-verify.yml`. **This session does not
+touch any of those files.** Everything below is the root dashboard surface (`data/master.json` +
+`scripts/build_master.py` + `scripts/build_site.py` + root pages) and the root scheduled monitor,
+which no session has claimed since `arena/0fd90745-poker2` finished and merged (PR #51).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Read the official structure sheets that carry eligibility gates (Seniors 50+, LIPS women-only, forfeiture wording) and add a per-row `eligibility` field to the root dataset; gate the root day-plan so a restricted event is never silently offered as the day's primary | in progress | arena/c5a388f8-poker2 | `scripts/build_master.py`, `data/master.json`, `scripts/build_site.py`, root pages |
+| K2 Re-read the Wynn WPT structures PDF + Wynn daily structures PDF in full; resolve each of the 31 root `unverified` Wynn rows the documents actually cover (excerpt + retrieval date), keep the rest `unverified` | in progress | arena/c5a388f8-poker2 | `scripts/build_master.py`, `data/master.json`, root pages |
+| K3 Capture a dated Venetian room quote from the official booking engine today; record the itemised breakdown (room, resort fee, tax, total, timestamp) in the root hotel rate log and feed the true-cost/night calculator; record the attempt for hotels whose engine exposes no quote | in progress | arena/c5a388f8-poker2 | `scripts/build_master.py`, `data/master.json`, `hotels.html`, `planner.html` |
+| K4 Mark events dated before the run date as finished, keep them in the tables for audit, and stop the trip planner offering past days | in progress | arena/c5a388f8-poker2 | `scripts/build_master.py`, `scripts/build_site.py`, `tournaments.html`, `planner.html`, `ranking.html` |
+| K5 Make the ≤30-minute walk filter functional on the root hotels page by surfacing the repo's dated routing estimates as labelled estimates (official walking time stays unverified) | in progress | arena/c5a388f8-poker2 | `scripts/build_site.py`, `data/master.json`, `hotels.html` |
+| K6 Verify the scheduled official-URL re-check end to end: registry coverage vs. the rows' citations, snapshot growth, a real Actions run, and the monitor page's own status wording | in progress | arena/c5a388f8-poker2 | `scripts/monitor.py`, `scripts/build_monitor_registry.py`, `data/source_monitor.json`, `.github/workflows/source-monitor.yml`, `monitor.html` |
+| K7 Refresh the root executive summary, questions, suggestions and flagged pages with today's evidence state | unclaimed → this session | arena/c5a388f8-poker2 | `scripts/build_master.py`, `data/master.json`, `summary.html`, `questions.html`, `suggestions.html`, `flagged.html` |
+| K8 Final integration for the root surface: PR → `main`, checks green, Pages deploy confirmed, record here | pending | arena/c5a388f8-poker2 | `COORDINATION.md`, GitHub |
+
+Board hygiene observed, not edited: the `arena/0fd90745-poker2` rows at the top still read
+`in progress` although that session's own record below shows J1–J3, J5–J7 delivered through
+PRs #51/#52 (J4 was taken by `arena/f4e82c6f-poker2`, PR #43). Those claims are therefore treated as
+closed and did not block this session; no other session's table row was rewritten.
+
+Requests to the owner of PR #54 (not edited here, per the non-overlap rule): after #54 merges, the
+root `data/master.json` should re-use its `site-data/events.json` eligibility/multi-day transcription
+rather than re-deriving it; this session will prefer main's transcription if #54 lands first.
+
 ## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
 
 All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
