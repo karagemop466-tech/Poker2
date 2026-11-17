@@ -1461,3 +1461,59 @@ engine's own itemisation to the cent; nothing enforces that, which is suggestion
 - Verification: ran `python3 scripts/build_site.py`; `python3 scripts/check_links.py` passed (37 pages, 4,333 links; no broken internal links and no non-official external hosts). `git diff --check` passed.
 - Earlier session-wide checks during this turn: `scripts/audit.py`, `scripts/check2026.py`, `scripts/build2026.py --check`, `scripts/check_guarantees.py`, `scripts/check_monitor_badge.py`, `scripts/check_search.mjs`, and plan refresh generator/self-tests passed. The latest scheduled plan-refresh GitHub run (44124782058) failed at its generator verification step (exit code 2); its logs were not retrievable from this sandbox, and local reruns passed, so no unsupported diagnosis was recorded. The separate scheduled `/2026/` re-check run (44118803672) succeeded.
 - Source note: the added link and page description are repository navigation, not new event/hotel facts. All existing row-level source data remains unchanged.
+
+## Session arena/8a8fa20f-poker2 — hotel-evidence + /plan/ refresh gate (2026-11-17)
+
+Branch `arena/8a8fa20f-poker2` (fixed by the platform; no other branch is created or pushed).
+Base at claim time: `345a657` (main after PR #70).
+
+Scope chosen to be **non-overlapping** with the two sessions in flight when this one started
+(PR #70 `arena/1655b450-poker2`, PR #71 `arena/00421070-poker2`, both on `COORDINATION.md` +
+a per-session data file only). This session therefore does **not** touch `COORDINATION.md` beyond
+this section, `site-data/events.json`, `site-data/schedule.json`, or anything under `2026/`.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| L1 First-hand re-read of the official reservation-terms pages for the four properties whose fee is still blank in `site-data/hotels.json` (ARIA, Bellagio, The Cosmopolitan, Caesars Palace / Horseshoe) and record value + own words + retrieval date | in progress | arena/8a8fa20f-poker2 | `site-data/hotels.json` |
+| L2 Fix the reason the daily `Plan: daily official-source refresh` job has failed on every scheduled run (run 44124782058, main `b832ae2`): its post-fetch step runs `build-site.py --check`, which fails the moment the job writes `site-data/change-report.json` / `site-data/snapshots/**` — the workflow cannot succeed on any day its own output changes, which is every day | in progress | arena/8a8fa20f-poker2 | `.github/workflows/plan-refresh.yml`, `.github/workflows/plan-verify.yml` |
+| L3 Re-read the Venetian hotel-terms page (the source of the 13.38% tax, the $55 fee, parking and deposit values already published) first-hand, and check the county guide's Appendix III rate table against the 13.38% attribution | in progress | arena/8a8fa20f-poker2 | `site-data/hotels.json`, `site-data/sources.json` |
+| L4 Record this session in the board, run `build-events` → `build-schedule` → `build-walk` → `build-site` → `audit.py` → `check_links.py` → `plan-verify` chain, PR → `main`, confirm Pages | in progress | arena/8a8fa20f-poker2 | `COORDINATION.md` |
+
+### L1–L4 completion record — arena/8a8fa20f-poker2 (2026-11-17)
+
+**PR [#73](https://github.com/karagemop466-tech/Poker2/pull/73)** → `main`. `Verify site` and
+`Plan: generated pages match their data` both green on the PR head.
+
+| Task | Status | Result |
+|---|---|---|
+| L1 hotel fee evidence | done | ARIA, Bellagio and The Cosmopolitan resort fees recorded from each property's own reservation-terms page, with the sentence and a 2026-11-17 read date. Clark County's licensed-property schedule read in full: 9 of 10 properties now carry their own county tax row (licence number + 13.38% + PGC category). Horseshoe deliberately unentered — the schedule lists no Horseshoe row, only `Bally's Las Vegas, 3645 Las Vegas Blvd S`; transferring a rate across a renaming is an inference. Caesars Palace rate entered, address left blank because the county row's address cell reads `35/0 Las Vegas Blvd S`. |
+| L2 daily refresh job | done | Root cause: the job's post-fetch step ran `build-site.py --check` after writing `site-data/change-report.json` and `site-data/schedule-diff.json`, both rendered by `plan/flagged.html`, so the job failed on every day it wrote a result (run [44124782058](https://github.com/karagemop466-tech/Poker2/actions/runs/44124782058), main `b832ae2`). Fixed by re-rendering before gating, and by the new `scripts/check_plan_fresh.py` which gates pages on reproducibility from the published dataset and validates the run reports for shape. Replayed end to end in a clean clone: the job now reaches its commit step. |
+| L3 Venetian terms + county guide | done | Venetian hotel-terms page re-read 2026-11-17 and agrees with the resort-fee page: $55 plus tax, 13.38% room tax, $20/day guest parking, $150/night incidentals, $100 early-checkout. County guide Appendix III read in full (component table + per-property rows). City of Las Vegas room-tax packet (Rev. March 2026) read as corroboration, with the jurisdiction caveat stated: it governs City licensees, the Strip hotels are county-licensed, so the county guide stays the per-property citation. |
+| L4 integration | done | All gates green (see below), merged, Pages confirmed. |
+
+**Two `/2026/` defects found by reading the published page and fixed** (both had shipped green):
+
+* `2026/sources.html` printed "58 URLs are monitored" above a run summary counting 61 — the
+  paragraph counted only the register's own rows, and three watched hotel fee pages (Bellagio,
+  MGM Grand, Encore) were missing from the register entirely. Now counts what the re-check
+  actually fetches, and lists every watched page.
+* The same page reported "51 first-time checks" from the field named `never_checked`, which is
+  the opposite. `scripts/recheck2026.py` now publishes `first_check` and a `never_checked` that
+  means what it says; the page counts both from the run's own per-URL results rather than from
+  a summary that can predate a change in definition.
+
+**New CI gate** `scripts/check_semantics.py` (in `verify.yml`): monitor arithmetic must agree
+with the run beside it; no first check may be printed as never-checked; every watched URL must
+be published on some register; every rendered resort fee must link and quote its own page; no
+property outside the county schedule may render a tax rate. Each gate was tested by
+reintroducing the original defect and confirming a failure, then restoring.
+
+**Housekeeping:** the orphaned `url-check.yml` workflow (ran once on the deleted branch
+`arena/e1c079dc-poker2`, never reached `main`) is restored as an inert placeholder so its
+workflow card cannot display an unrelated green run. Flags FG-13, FG-17 and FG-07 updated with
+what this session read.
+
+**Still open (not this session's scope):** the daily refresh job's first successful baseline —
+the next scheduled run (06:30 UTC) should commit `site-data/snapshots/**`; Horseshoe tax rate and
+the Caesars/Horseshoe/Paris resort fees (the official pages read state no fee); S-12 workflow
+consolidation; FG-02 (no official document states a one-entry cap).

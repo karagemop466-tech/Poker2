@@ -70,6 +70,9 @@ jobs:
       - name: The source-recheck badge actually marks changed rows
         run: python3 scripts/check_monitor_badge.py
 
+      - name: Pages mean what they say (monitor arithmetic, fee provenance)
+        run: python3 scripts/check_semantics.py
+
       - name: The site-wide search filters the committed index
         run: node scripts/check_search.mjs
 
