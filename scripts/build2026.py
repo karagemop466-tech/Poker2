@@ -720,22 +720,18 @@ def check_badge(*urls):
         return "<span class='note'>document not in the monitor</span>"
     if any(h.get("change") == "CHANGED" for h in hits):
         return "<span class='tag t-bad' title='The official document changed after this value was transcribed'>source changed</span>"
-<<<<<<< HEAD
     errs = [h for h in hits if h.get("change") == "fetch error"]
     if errs:
         # Say which kind of failure it was: a property that refuses a datacenter runner is not a
-        # source that moved, and neither of them is a source that has been checked.
+        # source that moved, and neither of them is a source that has been checked. Several of
+        # these pages load normally in a browser, so a fetch error is a gap in the monitor, not
+        # evidence the document changed. Flag X-08.
         kinds = sorted({h.get("error_kind") for h in errs if h.get("error_kind")})
         lab = ("monitor could not read it: " + ", ".join(kinds)) if kinds else "fetch error"
         return ("<span class='tag t-warn' title='The scheduled re-check could not open this document, "
-                "so nothing about it is proven for this run. The value keeps its own last verified "
-                "date.'>%s</span>" % esc(lab))
-=======
-    if any(h.get("change") == "fetch error" for h in hits):
-        return ("<span class='tag t-warn' title='The scheduled job could not fetch this page. That is a "
-                "gap in the monitor, not evidence the page changed - several of these pages load "
-                "normally in a browser. See flag X-08.'>monitor could not fetch</span>")
->>>>>>> 55e1087 (COORDINATION: record verification and new venue data for arena/7cc9ee65-poker2)
+                "so nothing about it is proven for this run. That is a gap in the monitor, not "
+                "evidence the page changed - several of these pages load normally in a browser. See "
+                "flag X-08. The value keeps its own last verified date.'>%s</span>" % esc(lab))
     if all(h.get("change") == "first check" for h in hits):
         return "<span class='tag t-info'>baseline set</span>"
     return "<span class='tag t-ok'>unchanged</span>"
@@ -1697,6 +1693,9 @@ def other_room_schedule(key):
     if gaps:
         gaps = ("<div class='panel'><h3>What the official document does not print</h3>"
                 "<ul class='tight'>%s</ul></div>" % gaps)
+    notes = "".join("<li>%s</li>" % esc(n) for n in sched_data.get("notes") or [])
+    if notes:
+        notes = ("<ul class='tight'>%s</ul>" % notes)
 
     irr = [i for i in othermod.IRREGULARITIES if i["room"] == sched_data["room"]]
     irr_html = ""
@@ -1720,12 +1719,13 @@ stays the only ranked table, because it is the only room that publishes a dated 
 <p class="note">Source: %s &middot; cadence: %s</p>
 <div class="tbl-scroll"><table><thead>%s</thead><tbody>%s</tbody></table></div>
 <p><strong>Verdict.</strong> %s</p>
+%s
 </div>
 %s
 <div class="panel"><h3>What the official document says, in its own words</h3>%s</div>
 %s
 """ % (esc(sched_data["retrieved"]), doc_link, esc(sched_data["cadence"]), head, rows,
-       esc(sched_data["verdict"]), gaps, quotes, irr_html)
+       esc(sched_data["verdict"]), notes, gaps, quotes, irr_html)
 
 
 def p_venue_room(key, events):
@@ -2091,6 +2091,27 @@ def _monitored_urls():
         return set()
 
 
+def monitored_sentence(registered, run_n):
+    """The 'N URLs are monitored' sentence, reconciled with the run printed beside it.
+
+    The register and the scheduled run can legitimately disagree: a URL added to the register
+    after the last run is watched but has no baseline yet. Quoting one number beside the other
+    without saying so made the page contradict itself (58 vs 61, then 63 vs 61). The sentence
+    now either quotes a single agreed number, or states both and the gap between them.
+    """
+    if not run_n or registered == run_n:
+        return ("%d URLs are monitored, including all 37 structure-sheet URLs." % registered)
+    gap = registered - run_n
+    if gap > 0:
+        return ("%d URLs are registered for monitoring, including all 37 structure-sheet URLs. "
+                "The latest run below fetched %d of them: %d were added to the register after "
+                "that run and will be baselined by the next one."
+                % (registered, run_n, gap))
+    return ("%d URLs are registered for monitoring, including all 37 structure-sheet URLs. The "
+            "latest run below fetched %d, which is %d more than this register lists."
+            % (registered, run_n, -gap))
+
+
 def p_sources(events):
     srcs = []
     srcs.append(dict(kind="Schedule", name="Venetian DSE IV schedule page",
@@ -2155,6 +2176,7 @@ def p_sources(events):
     # count beside a run that fetched more made the page contradict itself (58 vs 61 on the
     # 2026-11-17 run). The register rows above are the documents, one row per document used.
     monitored_n = len({u for u in _monitored_urls()} | set(urls))
+    run_n = 0
     if CHECKS_META is None:
         monitor = ('<p class="note">This checkout carries no completed re-check run yet, so every row '
                    'shows <em>not yet checked</em> rather than an assumed-clean status. The first '
@@ -2175,6 +2197,7 @@ def p_sources(events):
                 if r.get("hash"):
                     ever.add(r.get("key"))
         never_read = sum(1 for r in rows_ if not r.get("hash") and r.get("key") not in ever)
+        run_n = len(rows_)
         monitor = ('<p class="note">Latest recorded run: <strong>%s</strong> &mdash; %d URLs: '
                    '<strong>%d changed</strong>, %d fetch errors, %d whose baseline hash was set by that '
                    'run, %d that no run has ever read successfully. A fetch error is a monitoring '
@@ -2235,10 +2258,10 @@ aggregator, no forum, no mapping service.</p></div>
 this page every morning at 06:00 UTC, hashes the normalised text, and appends the run to
 <code>data/verified2026/checks.json</code>. A changed hash is reported rather than guessed at &mdash;
 the Tournaments table then marks that row's <em>Source re-check</em> cell as <em>source changed</em> so
-you know which cited value may have moved. %(nurls)s URLs are monitored, including all 37
-structure-sheet URLs. A <em>fetch error</em> means the job could not read the document &mdash; often a
-bot wall (HTTP 403) or a 302 redirect on a property that restricts scripts &mdash; and it proves nothing
-either way; those rows keep their previous hash and their old read date.</p>
+you know which cited value may have moved. %(monitored_sentence)s A <em>fetch error</em> means the job
+could not read the document &mdash; often a bot wall (HTTP 403) or a 302 redirect on a property that
+restricts scripts &mdash; and it proves nothing either way; those rows keep their previous hash and
+their old read date.</p>
 %(monitor)s
 <p class="note">The monitor currently detects that a page changed, not which value changed. Turning it
 into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
@@ -2248,7 +2271,9 @@ into per-sentence tracking is <a href="suggestions.html#S-07">S-07</a>.</p>
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th>Kind</th><th>Document</th><th>URL</th><th class="num">Retrieved</th><th>What it is used for</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
-""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}), nurls=monitored_n, monitor=monitor, cov=cov), "sources.html")
+""" % dict(rows=rows, n=len(srcs), ndocs=len({x["url"] for x in srcs if x["url"]}),
+           monitored_sentence=monitored_sentence(monitored_n, run_n), monitor=monitor,
+           cov=cov), "sources.html")
 
 
 def p_repo_review(events):

@@ -61,10 +61,25 @@ src = os.path.join(P2026, "sources.html")
 if os.path.exists(src):
     t = norm(text(src))
     claim = re.search(r"(\d+) URLs are monitored", t)
+    reg = re.search(r"(\d+) URLs are registered for monitoring", t)
     runline = re.search(r"Latest recorded run:.*?(\d+) URLs:", t)
     if claim and runline and claim.group(1) != runline.group(1):
         problems.append("2026/sources.html: the page claims %s monitored URLs but the run beside "
                         "it reports %s" % (claim.group(1), runline.group(1)))
+    # A register count may legitimately exceed the run's count: a URL added to the register
+    # after the last run is watched but has no baseline yet. That is only honest when the page
+    # also prints the gap, so the gap becomes the thing this gate enforces.
+    if reg and runline and reg.group(1) != runline.group(1):
+        added = re.search(r"(\d+) were added to the register after that run", t)
+        gap = int(reg.group(1)) - int(runline.group(1))
+        if not added:
+            problems.append("2026/sources.html: the page registers %s monitored URLs beside a run "
+                            "of %s without stating how many were added since that run"
+                            % (reg.group(1), runline.group(1)))
+        elif int(added.group(1)) != gap:
+            problems.append("2026/sources.html: the page says %s URLs were added since the last "
+                            "run, but %s registered minus %s in the run leaves %s"
+                            % (added.group(1), reg.group(1), runline.group(1), gap))
     if runline:
         whole = int(runline.group(1))
         detail = re.search(r"Latest recorded run:.*?URLs:(.*?)\.\s*A fetch error", t)

@@ -1901,9 +1901,9 @@
    "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
-   "group": "candidate",
-   "group_label": "Best single-entry candidates",
-   "reason": "One-day event with a single starting day. The official structure sheet contains no re-entry, rebuy or add-on clause.",
+   "group": "multiflight",
+   "group_label": "Multi-flight (second flight = second buy-in)",
+   "reason": "The official structure sheet schedules Day 1 and Day 2 as separate days (Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM), so this is not a one-day event and cannot be played as a same-day single entry. Returning on Day 2 is a continuation of the same entry, not a second buy-in, but the trip does not get a free day back.",
    "dates": [
     "2026-12-10"
    ],
@@ -5433,7 +5433,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5528,7 +5528,7 @@
      "verdict": "conditional fallback",
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5588,7 +5588,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -5669,7 +5669,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
      "flight": "restart",
      "row_gtd": "",
@@ -5687,7 +5687,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "candidate",
+     "group": "multiflight",
      "label": "$800 NO LIMIT HOLD'EM LIPS FINAL TABLE STREAMED FINAL TABLE (POKERGO)",
      "flight": "restart",
      "row_gtd": "",
@@ -7614,9 +7614,9 @@
   {
    "id": "X-07",
    "area": "Official page unavailable",
-   "title": "Wynn's poker-room page still returns a not-found page",
-   "detail": "https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' when requested live on 2026-11-17, the same result an earlier session recorded. No dated schedule, buy-in or entry rule can be read for the WPT World Championship host room.",
-   "impact": "Any Wynn figure on this site is historical provenance, not a current citation.",
+   "title": "The Wynn URL this site used to cite returns a not-found page",
+   "detail": "https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' when requested live on 2026-11-17, which is why the scheduled re-check logged HTTP 404 for this venue. The room's live page is https://www.wynnlasvegas.com/casino/poker, read the same day by another session: it publishes three tournament documents and states a $10,000 guaranteed event every evening at 6 p.m., but prints no buy-in for any daily event.",
+   "impact": "The 404 is a dead citation, not a dead room. Use /casino/poker for Wynn; anything cited from /casino/poker-room is historical provenance.",
    "source": "https://www.wynnlasvegas.com/casino/poker-room"
   },
   {
@@ -7634,6 +7634,14 @@
    "detail": "Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages instead.",
    "impact": "The ranked table stays Venetian-only not because other rooms publish nothing, but because the rooms that do publish are not single-entry. That is a finding, not a coverage gap.",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
+  },
+  {
+   "id": "F-14",
+   "area": "Monitoring",
+   "title": "Ten of the 61 monitored official URLs could not be read on the last scheduled run",
+   "detail": "The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or cancellation citations.<ul><li><code>https://bellagio.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://www.caesars.com/caesars-palace/casino</code> &mdash; 403 (HTTP 403)</li><li><code>https://www.caesars.com/horseshoe-las-vegas/casino</code> &mdash; 403 (HTTP 403)</li><li><code>https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://bellagio.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://www.caesars.com/corporate/disclaimer</code> &mdash; 302 (HTTP 302)</li><li><code>https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip</code> &mdash; 302 (HTTP 302)</li><li><code>https://mgmgrand.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf</code> &mdash; 422 (HTTP 422)</li><li><code>https://www.wynnlasvegas.com/casino/poker-room</code> &mdash; 404 (HTTP 404)</li></ul>",
+   "impact": "A hotel fee or cancellation term sourced from one of these pages rests on the reading date shown on that hotel's row, not on the latest check. Re-open the link before you rely on the term.",
+   "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
   }
  ],
  "questions": [
@@ -7887,11 +7895,7 @@
   {
    "name": "Caesars Palace",
    "poker_room": "Caesars Palace Poker Room",
-<<<<<<< HEAD
-   "status_this_session": "Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That is the first time this site has an official buy-in, stack, guarantee and level length for a Caesars daily; it is still not a structure sheet, and the add-on is decisive.",
-=======
-   "status_this_session": "Re-read live on 2026-11-17 (session arena/7cc9ee65-poker2). The casino page now links an official daily tournament flyer PDF, which was read in full: four NLH events a day at 10 AM ($100), 2 PM ($160), 6 PM ($100) and 9 PM ($160), each with a $1,000 guarantee, 20,000 chips, 20-minute levels and an optional $50 add-on.",
->>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
+   "status_this_session": "Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That is the first time this site has an official buy-in, stack, guarantee and level length for a Caesars daily; it is still not a structure sheet, and the add-on is decisive. The property's own daily flyer PDF, read the same day (session arena/7cc9ee65-poker2), gives the same four start times and the same $1,000 guarantee but prices them $100 / $160 / $100 / $160 - see F-14.",
    "url": "https://www.caesars.com/caesars-palace/casino",
    "checked": "2026-11-17",
    "earlier_findings": [
@@ -7916,13 +7920,8 @@
      "retrieved": "2026-11-17"
     }
    ],
-<<<<<<< HEAD
-   "verdict": "Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed and priced, but it cannot be compared like-for-like with the sheet-silent Venetian candidates, and the buy-in still conflicts with the property's own daily flyer ($160 at 2 p.m. / 9 p.m., read 2026-11-16) - see F-14.",
-   "provenance": "read first-hand 2026-11-17 on the operator's own page; the flyer conflict is carried from 2026-11-16"
-=======
-   "verdict": "Publishes four dated daily events with buy-in, guarantee and entry rule. Excluded from the single-entry ranking: the official flyer prints a $50 add-on and expressly permits re-entry. Rows are published on the Caesars Palace venue page.",
-   "provenance": "read live on 2026-11-17 by arena/7cc9ee65-poker2; the resort-fee range remains an earlier session's reading"
->>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
+   "verdict": "Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. It can be listed and priced, but not compared like-for-like with the sheet-silent Venetian candidates, and the buy-in conflicts between Caesars' own page ($100 for all four) and its own daily flyer ($160 at 2 p.m. and 9 p.m.) - see F-14. The four rows are transcribed on the Caesars Palace venue page.",
+   "provenance": "read first-hand 2026-11-17 on the operator's own page and in its daily flyer PDF (session arena/7cc9ee65-poker2); the flyer conflict is carried from 2026-11-16"
   },
   {
    "name": "Bellagio",

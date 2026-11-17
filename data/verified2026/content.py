@@ -70,20 +70,16 @@ OTHER_VENUES = [
     dict(
         name="Caesars Palace",
         poker_room="Caesars Palace Poker Room",
-<<<<<<< HEAD
         status_this_session=("Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily "
                              "tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at "
                              "10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with "
                              "20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 "
                              "minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That "
                              "is the first time this site has an official buy-in, stack, guarantee and level length "
-                             "for a Caesars daily; it is still not a structure sheet, and the add-on is decisive."),
-=======
-        status_this_session=("Re-read live on 2026-11-17 (session arena/7cc9ee65-poker2). The casino page now "
-                             "links an official daily tournament flyer PDF, which was read in full: four NLH "
-                             "events a day at 10 AM ($100), 2 PM ($160), 6 PM ($100) and 9 PM ($160), each with "
-                             "a $1,000 guarantee, 20,000 chips, 20-minute levels and an optional $50 add-on."),
->>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
+                             "for a Caesars daily; it is still not a structure sheet, and the add-on is decisive. The "
+                             "property's own daily flyer PDF, read the same day (session arena/7cc9ee65-poker2), gives "
+                             "the same four start times and the same $1,000 guarantee but prices them $100 / $160 / "
+                             "$100 / $160 - see F-14."),
         url="https://www.caesars.com/caesars-palace/casino",
         checked="2026-11-17",
         earlier_findings=[
@@ -100,20 +96,13 @@ OTHER_VENUES = [
                  url="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
                  retrieved="2026-11-17"),
         ],
-<<<<<<< HEAD
         verdict=("Excluded from the single-entry table on the operator's own words: the published $50 add-on is a "
                  "second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a "
-                 "separate section. $100 buy-in against a $1,000 guarantee is printed, so the event can be listed "
-                 "and priced, but it cannot be compared like-for-like with the sheet-silent Venetian candidates, "
-                 "and the buy-in still conflicts with the property's own daily flyer ($160 at 2 p.m. / 9 p.m., "
-                 "read 2026-11-16) - see F-14."),
-        provenance="read first-hand 2026-11-17 on the operator's own page; the flyer conflict is carried from 2026-11-16",
-=======
-        verdict=("Publishes four dated daily events with buy-in, guarantee and entry rule. Excluded from the "
-                 "single-entry ranking: the official flyer prints a $50 add-on and expressly permits re-entry. "
-                 "Rows are published on the Caesars Palace venue page."),
-        provenance="read live on 2026-11-17 by arena/7cc9ee65-poker2; the resort-fee range remains an earlier session's reading",
->>>>>>> e7a49a1 (Verify all 37 structure sheets live; publish Caesars Palace and Bellagio official schedules)
+                 "separate section. It can be listed and priced, but not compared like-for-like with the sheet-silent "
+                 "Venetian candidates, and the buy-in conflicts between Caesars' own page ($100 for all four) and "
+                 "its own daily flyer ($160 at 2 p.m. and 9 p.m.) - see F-14. The four rows are transcribed on the "
+                 "Caesars Palace venue page."),
+        provenance="read first-hand 2026-11-17 on the operator's own page and in its daily flyer PDF (session arena/7cc9ee65-poker2); the flyer conflict is carried from 2026-11-16",
     ),
     dict(
         name="Bellagio",
@@ -385,11 +374,14 @@ FLAGS = [
                  "against a live official page, so it is not used as a current citation."),
          source="https://mgmgrand.mgmresorts.com/en/casino/poker.html"),
     dict(id="X-07", area="Official page unavailable",
-         title="Wynn's poker-room page still returns a not-found page",
+         title="The Wynn URL this site used to cite returns a not-found page",
          detail=("https://www.wynnlasvegas.com/casino/poker-room returned 'IT SEEMS THIS PAGE HAS CHECKED OUT' "
-                 "when requested live on 2026-11-17, the same result an earlier session recorded. No dated "
-                 "schedule, buy-in or entry rule can be read for the WPT World Championship host room."),
-         impact="Any Wynn figure on this site is historical provenance, not a current citation.",
+                 "when requested live on 2026-11-17, which is why the scheduled re-check logged HTTP 404 for "
+                 "this venue. The room's live page is https://www.wynnlasvegas.com/casino/poker, read the same "
+                 "day by another session: it publishes three tournament documents and states a $10,000 "
+                 "guaranteed event every evening at 6 p.m., but prints no buy-in for any daily event."),
+         impact=("The 404 is a dead citation, not a dead room. Use /casino/poker for Wynn; anything cited "
+                 "from /casino/poker-room is historical provenance."),
          source="https://www.wynnlasvegas.com/casino/poker-room"),
     dict(id="X-08", area="Monitoring gap",
          title="The scheduled re-check reports fetch errors for pages that do load in a browser",

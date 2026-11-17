@@ -69,6 +69,12 @@ CAESARS_SCHEDULE = dict(
     verdict=("Not single-entry. The official flyer prints a $50 add-on and expressly permits "
              "re-entry, so these events sit in the spending-more-money section, not the "
              "single-entry ranking."),
+    notes=[
+        ("Two official Caesars documents disagree on the buy-in. This table transcribes the daily "
+         "flyer PDF ($100 at 10 AM and 6 PM, $160 at 2 PM and 9 PM). Caesars' own poker page, read "
+         "the same day, says every one of the four events carries a $100 buy-in. The conflict is "
+         "flag F-14 and no figure is presented as settled."),
+    ],
 )
 
 BELLAGIO_SCHEDULE = dict(
