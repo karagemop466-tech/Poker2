@@ -865,3 +865,22 @@ published twice, with the number taken from the regenerated dataset (45, because
 Event #39 as a two-day event rather than a one-day candidate). Main's walk.json carried 12 pairs; this
 branch carries 70 generated from the full OSRM matrix, so the 70-pair set is kept and main's per-pair
 hand-verified detail is folded in through the overlay file above rather than lost.
+
+### Publication record for PR #54 (arena/97730311-poker2, 2026-11-17)
+
+- PR [#54](https://github.com/karagemop466-tech/Poker2/pull/54) merged to `main` at merge commit
+  `ad92e421bfa29ffb2af247d00ed7c104d71a1d13`.
+- Deployment verified: `pages build and deployment` run
+  [43993786881](https://github.com/karagemop466-tech/Poker2/actions/runs/43993786881) succeeded; the Pages API
+  reports `status: built` for the same commit `ad92e421`. Live at
+  https://karagemop466-tech.github.io/Poker2/plan/ (root dashboard unchanged).
+- CI on the merge commit: `Plan: generated pages match their data` run 43993786220 success;
+  `Verify site` (main's) run 43993786428 success.
+- Two re-syncs were needed because parallel sessions landed on `main` while this branch was open
+  (PR #49 from `arena/8b1f0fd8-poker2`, PR #53 from `arena/18aba6dd-poker2`). Both were merged by
+  comparing the overlapping sheet transcriptions and narrative findings item by item rather than by
+  taking one side; where two findings covered the same ground they were merged into one, with the
+  numbers taken from the regenerated dataset.
+- Carried forward: FG-02 (no official document says "one entry per player"), S-15 (headless-browser
+  quotes for Wynn and the MGM properties), S-04 / FG-12 (no official quality-rating source),
+  S-11 and S-12 (surface consolidation).
