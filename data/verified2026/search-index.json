@@ -3992,6 +3992,22 @@
   "x": "Q-12 | How much variance do you accept on the guarantee-to-buy-in ratio? | The ratio is descriptive, not a forecast. A $500K guarantee on an $800 buy-in is a floor set by the room; the actual pool depends on entries. | How the ranking column should be read. | open"
  },
  {
+  "p": "questions.html",
+  "pl": "Questions",
+  "t": "ID Question Why it matters What it blocks",
+  "a": "Q-13",
+  "h": "Q-13",
+  "x": "Q-13 | Will you travel with more than two adults in the room? | The Venetian, Palazzo, Bellagio and MGM Grand all surcharge a third adult, from $40 to $50 plus tax per night, which changes the cheapest-hotel answer. | The hotel half of the trip cost and the cost comparison between properties. | open"
+ },
+ {
+  "p": "questions.html",
+  "pl": "Questions",
+  "t": "ID Question Why it matters What it blocks",
+  "a": "Q-14",
+  "h": "Q-14",
+  "x": "Q-14 | Do you accept a booking with no published cancellation deadline? | The Venetian poker rate, which the whole plan leans on, publishes no cancellation deadline. Bellagio and MGM Grand publish 72 hours. Booking the Venetian means treating the deposit as committed. | Whether the Venetian poker rate can be used for a trip whose dates are not yet fixed. | open"
+ },
+ {
   "p": "suggestions.html",
   "pl": "Suggestions",
   "t": "ID Suggestion What it involves What it decides",
@@ -4072,6 +4088,22 @@
   "x": "S-10 | Consolidate the three scheduled monitor jobs into one | recheck.yml, source-monitor.yml, plan-refresh.yml and plan-verify.yml all re-check overlapping URLs on different cron schedules. | Whether you get one daily digest or three. | Small workflow edit | Low | \u2014"
  },
  {
+  "p": "suggestions.html",
+  "pl": "Suggestions",
+  "t": "ID Suggestion What it involves What it decides",
+  "a": "S-11",
+  "h": "S-11",
+  "x": "S-11 | Show a per-row source-change badge, and keep the monitor honest | Done on 2026-11-17. Every tournament row now carries a Source re-check cell (unchanged / source changed / fetch error / baseline set) generated from data/verified2026/checks.json, and scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. | Whether a row you are about to act on has moved under"
+ },
+ {
+  "p": "suggestions.html",
+  "pl": "Suggestions",
+  "t": "ID Suggestion What it involves What it decides",
+  "a": "S-12",
+  "h": "S-12",
+  "x": "S-12 | Turn the page-hash monitor into a per-sentence diff | The monitor hashes a whole page, so a change tells you the document moved, not which value moved. Tracking the sentence each row was transcribed from would tell you the buy-in changed. This is the remaining half of S-07. | Whether a changed source needs one row re-read or all of them. | About a day; the per-row excerpts already exist | M"
+ },
+ {
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
@@ -4125,7 +4157,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-06",
   "h": "F-06",
-  "x": "F-06 | Hotels | No cancellation deadline published on the pages read None of the official hotel pages read states a cancellation cutoff for a flexible rate. | The cancellation column stays blank. Confirm it before any non-refundable payment. | www.venetianlasvegas.com"
+  "x": "F-06 | Hotels | Cancellation deadlines are partial: two properties publish 72 hours, the rest do not Partly resolved on 2026-11-17 by reading each property's own terms page first-hand. Bellagio and MGM Grand both publish a 72-hour window: the first night's deposit is fully refundable if Room Reservations is told at least 72 hours before arrival, and a late cancellation or no-show forfeits it. Caes"
  },
  {
   "p": "flagged.html",
@@ -4133,7 +4165,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-07",
   "h": "F-07",
-  "x": "F-07 | Taxes | Room tax rate is sourced to the county, not re-read this session 13.38% comes from Clark County's own 'General Information Guide for Transient Lodging Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 by an earlier session and was not re-read today. | Used as the calculator default. Re-check on the county page before you book. | www.clarkco"
+  "x": "F-07 | Taxes | Room tax: the hotel's own terms are re-read, the county levy is not 13.38% comes from Clark County's own 'General Information Guide for Transient Lodging Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 by an earlier session and was not re-read today. | Used as the calculator default. Re-check on the county page before you book. | www.clar"
  },
  {
   "p": "flagged.html",
@@ -4158,6 +4190,30 @@
   "a": "F-10",
   "h": "F-10",
   "x": "F-10 | Other venues | Only The Venetian publishes a dated schedule plus a per-event structure sheet Every other Strip room checked either publishes no tournament schedule, no structure sheet, or both. Horseshoe publishes six daily start times with no buy-ins; Resorts World's poker page redirects to a dining page; Westgate publishes room hours only; MGM's weekly grid carries no year; Bellagio's Sat"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-11",
+  "h": "F-11",
+  "x": "F-11 | Hotels | A per-night rate is not the bill: occupancy and early-departure charges The properties charge more than the nightly rate and resort fee in two ways a rate comparison misses. The Venetian and Palazzo add $50 per night for each additional guest 13 or older above double occupancy, and $100 plus tax for checking out before the scheduled departure date. Bellagio adds $50 plus tax per oc"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-12",
+  "h": "F-12",
+  "x": "F-12 | Hotels | Caesars Palace and Horseshoe do not publish a resort fee on the page read Both properties' official pages were read on 2026-11-17: the resort-hotel page, the casino page and the hotel page. None prints a resort-fee amount; only a 48-hour cancellation headline and 'valet and self-parking available' appear. Figures of $54.95 and $49.95 are widely repeated by aggregator sites and are "
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-13",
+  "h": "F-13",
+  "x": "F-13 | Monitoring | The scheduled re-check had never run, and this sandbox cannot reach the venue sites GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline hash existed for any official URL. Two consequences were visible in the site text: it pointed at data/site/checks.json, which the scheduled job does not write (it writes data/verified2026/checks.json), and nothin"
  },
  {
   "p": "flagged.html",

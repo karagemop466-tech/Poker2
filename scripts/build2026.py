@@ -588,6 +588,9 @@ def row_changed(*urls):
 def srclink(url, label=None):
     if not url:
         return '<span class="blank">no source</span>'
+    # a repository-relative citation (no scheme) is shown as code, never as a link
+    if not url.startswith(("http://", "https://")):
+        return '<code>%s</code>' % esc(url)
     host = re.sub(r"^https?://", "", url).split("/")[0]
     ok = host in OFFICIAL_HOSTS
     lab = label or (host + ("&#8203;" if len(host) > 24 else ""))
