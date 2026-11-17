@@ -510,3 +510,48 @@ Publication record for PR #34 (2026-11-16):
   excerpt duplicated the single-entry excerpt verbatim when both came from the same sentence.
 - Follow-ups recorded for the next session: `S-11` (choose one surface to keep), `S-12` (merge the three scheduled
   monitor jobs), `S-02` (27 structure sheets unread), `FG-02` (get the single-entry answer in writing).
+
+---
+
+## Session arena/a6eb923e-poker2 — verification pass, `/audit/` surface, 2026-11-17
+
+**Base:** `02cffeb48c20c0280c31c2faf840c823b2214fb0` (main, after PR #42). Branch: `arena/a6eb923e-poker2` (fixed for the session).
+**Lettered IDs** are used for every row this session publishes (`EV-*`, `HT-*`, `WK-*`, `FD-*`, `IQ-*`, `SG-*`) so nothing
+collides with the numeric IDs already used by `data/master.json` and the `/plan/` surface.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| T-A1 Re-transcribe the official Venetian DSE IV schedule page and diff all three existing datasets against it | done | arena/a6eb923e-poker2 | `verify/official-venetian-dse4-2026-11-17.tsv`, `verify/verify_events.py` |
+| T-A2 Re-read official structure sheets; fill fee / chips / level duration / late-registration / pays-% that were blank | in progress | arena/a6eb923e-poker2 | `data/audit/*.json`, `verify/notes/*.md` |
+| T-A3 Walking-time matrix (33/55/66 hotel pairs) from a published routing source | in progress | arena/a6eb923e-poker2 | `data/audit/walking.json` |
+| T-A4 Dated official hotel rate log (checkout totals) | in progress — engine is JS-only on every official site; see FD-* | arena/a6eb923e-poker2 | `data/audit/rates.json` |
+| T-A5 `/audit/` surface: dashboard, events, hotels, schedule, cost calculator, rate log, venue pages, questions, suggestions, flagged, sources | in progress | arena/a6eb923e-poker2 | `audit/**`, `scripts/audit_build.py` |
+| T-A6 Scheduled official-source re-check that records a per-URL status for this surface's sources | in progress | arena/a6eb923e-poker2 | `.github/workflows/audit-recheck.yml`, `scripts/audit_recheck.py` |
+| T-A7 Integration: PR to main, merge, Pages deploy verify | not started | arena/a6eb923e-poker2 | `COORDINATION.md` |
+
+**Coexistence — no other session's file is edited.** This session does **not** run, modify or regenerate
+`scripts/build.py`, `scripts/build_site.py`, `scripts/build_master.py`, `data/master.json`, `data/site/*`,
+`site-data/*`, `plan/**`, `verify/` (the legacy `verified/` tree), `docs/**` or `pages/**`.
+The root dashboard, `/plan/` and the frozen trees keep publishing exactly as they do today.
+`README.md` is left to the open PR #43. This session owns only `audit/**`, `data/audit/**`,
+`scripts/audit_build.py`, `scripts/audit_recheck.py`, `scripts/audit_verify.py`,
+`.github/workflows/audit-recheck.yml`, `verify/official-venetian-dse4-2026-11-17.tsv`,
+`verify/verify_events.py`, `verify/notes/**` and this section.
+
+**Irregularities found so far (all published on `/audit/flagged.html`):**
+1. `README.md` contains literal unresolved merge-conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) — PR #43 fixes it; not touched here.
+2. Four scheduled workflows (`recheck.yml`, `source-monitor.yml`, `plan-refresh.yml`, `url-check.yml`) have **never**
+   produced a scheduled run; in this sandbox `gh workflow run` returns HTTP 403 ("Resource not accessible by integration"),
+   so no session can dispatch or prove them. The root dashboard's `data/site/checks.json` and `data/source_monitor.json`
+   are still placeholders with `last_run: null` / `sha256: null` for all 60 URLs. "Automatic re-check" was a claim, not an observation.
+3. `data/master.json` leaves 66/83 Venetian `level_min` and 62/83 `late_reg` blank although both values are printed on
+   every structure sheet (e.g. `structure_5.pdf`: "Level Duration: 30 minutes", "Late Registration: 10 levels + Break (~ 4:55 PM)").
+   `pays_pct` is null on all rows although every sheet read says "This event pays 12.5% of the field".
+4. `data/master.json` `walk_min` is null for all 10 hotels; the root `/walking.html` and `/hotels.html` walk fields are blank.
+   A published routing source does return walking times, so this gap is now closed in `data/audit/walking.json` (not in the root files).
+5. `data/master.json` `gtd_ratio` for `E1C-WY-02` and `E1C-WY-05` is `83.3` where the recomputed value is `83.33`.
+6. The $15,000 guarantee on Venetian events 29/31/34/38/42/50/51/53/55 **includes total bounties** (structure_15.pdf item 10),
+   so the guarantee is not purely prize money; the ratio for those rows is not like-for-like with a non-bounty event.
+7. Root pages `walking.html`, `single-entry.html`, `sources.html`, `schedule.html`, `wpt-terms.html`, `rate-log.html`,
+   `trip.html`, `venues.html` ship 57–164 table rows with no search box and no date filter.
+
