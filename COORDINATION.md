@@ -3,7 +3,7 @@
 | Task | Status | Owner | Files |
 |---|---|---|---|
 | Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | done | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
-| Remove the redundant failing Pages publisher after confirming the canonical Pages build/deploy succeeds | in progress | arena/f4e82c6f-poker2 | `.github/workflows/pages.yml`, `COORDINATION.md` |
+| Remove the redundant failing Pages publisher after confirming the canonical Pages build/deploy succeeds | done | arena/f4e82c6f-poker2 | `.github/workflows/pages.yml`, `COORDINATION.md` |
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
@@ -531,3 +531,5 @@ Publication record for PR #34 (2026-11-16):
 - Claim pushed as `c190709` on the active branch. Investigation found two concurrent publishers: GitHub Pages is configured as `legacy` and its automatically generated `pages build and deployment` workflow builds/deploys the static root; `.github/workflows/pages.yml` was a second GitHub Actions publisher using `upload-pages-artifact`/`deploy-pages`.
 - Canonical Pages run [43988937466](https://github.com/karagemop466-tech/Poker2/actions/runs/43988937466) succeeded for commit `18558dc`; the Pages API reported `built`. The duplicate custom publisher failed on PR #44 [run 43988703616](https://github.com/karagemop466-tech/Poker2/actions/runs/43988703616) and PR #45 [run 43988938121](https://github.com/karagemop466-tech/Poker2/actions/runs/43988938121) with “No artifacts named github-pages”; logs showed the upload step but deploy could not retrieve an artifact. A workflow-dispatch retry was denied by repository permissions.
 - Removed only `.github/workflows/pages.yml` so the configured, successful canonical publisher is the single deployment path. No site content, data, or Pages source settings were changed. Validate the post-merge `pages build and deployment` and site verification runs before marking this claim complete.
+
+- Cleanup integration: PR [#46](https://github.com/karagemop466-tech/Poker2/pull/46) merged at `8acae0c449a17b67fa8b75d2b881304e018d26d1`. Both verification jobs passed in PR and after merge. With the duplicate workflow removed, the canonical Pages build and deployment [run 43989177852](https://github.com/karagemop466-tech/Poker2/actions/runs/43989177852) succeeded; root verification [43989178134](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178134) and plan verification [43989178065](https://github.com/karagemop466-tech/Poker2/actions/runs/43989178065) also passed. Pages API reports `built` for commit `8acae0c`; live site https://karagemop466-tech.github.io/Poker2/. The duplicate artifact failure no longer recurs because its publisher was removed.
