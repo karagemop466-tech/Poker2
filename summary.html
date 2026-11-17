@@ -10,13 +10,18 @@
 <body>
 <header class="site">
   <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
-  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-17 · unconfirmed values stay blank and flagged</div>
 </header>
 <nav class="site"><a href="index.html">Dashboard</a>
 <a href="summary.html" class="active">Executive Summary</a>
 <a href="tournaments.html">Tournaments</a>
 <a href="venue-venetian.html">Venetian</a>
 <a href="venue-wynn.html">Wynn</a>
+<a href="venue-horseshoe.html">Horseshoe</a>
+<a href="venue-caesars.html">Caesars Palace</a>
+<a href="venue-mgm.html">MGM Grand</a>
+<a href="venue-bellagio.html">Bellagio</a>
+<a href="venue-goldennugget.html">Golden Nugget</a>
 <a href="venue-others.html">Other Venues</a>
 <a href="hotels.html">Hotels</a>
 <a href="planner.html">Trip Planner</a>
@@ -32,16 +37,47 @@
 <a href="rate-log.html">Rate Log</a>
 <a href="trip.html">Trip Plan</a>
 <a href="archive.html">Archive</a></nav>
+<div class="globalsearch">
+  <input type="search" id="site-search" placeholder="Search every table on this page (venue, event, date, rules, hotel)…" aria-label="Site-wide table search">
+  <span class="count" id="site-search-status"></span>
+</div>
 <main>
 
 <h1>Executive summary</h1>
-<p class="lead">Updated 2026-11-16 after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
+<p class="lead">Updated 2026-11-17 after this session’s structure-sheet verification pass. Scope, numbers and caveats below.</p>
 <div class="panel"><h2>Scope</h2><p>Covered: The Venetian (DeepStack Extravaganza IV, official schedule rows Nov 16 – Dec 23, 2026) and Wynn Las Vegas (daily tournaments and WPT World Championship, Nov 27 – Dec 21, 2026). Not covered: other Strip rooms. Every value is from an official source or is marked UNVERIFIED.</p>
 <p>The current verified picture: <strong>45 one-day events whose structure sheet is silent on re-entry</strong> (The Venetian DSE IV) — none of them has a published no-re-entry rule,
 2 entry-ambiguous events, 35 spend-more events across Wynn, Caesars Palace, MGM Grand and Golden Nugget,
 plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy-ins are not all published.</p></div>
-<div class="panel"><h2>Headline numbers (recorded 2026-11-16)</h2><ul class="tight"><li><strong>Structure sheet silent on re-entry (The Venetian)</strong>: 45 — One-day events Nov 18 - Dec 23, 2026 whose official structure sheet was read in full and prints no re-entry, rebuy or add-on clause. Silence is NOT a published freezeout rule: no Venetian sheet states &quot;no re-entry&quot;, so these are sheet-silent, not confirmed single-entry.</li><li><strong>Excluded rows</strong>: Venetian 15 · Wynn 17 — Re-entry, rebuy, add-on, multi-flight and satellite events. Shown in a separate section.</li><li><strong>Unverified rows (structure not reviewed)</strong>: Venetian 17 · Wynn WPT 49 — Official schedule values only; re-entry status unknown.</li><li><strong>Structure sheet silent on re-entry at Wynn</strong>: 0 — Every Wynn structure sheet read prints an explicit re-entry clause, so none is even sheet-silent.</li><li><strong>Earliest verified single-entry start</strong>: 11:10 AM — No verified single-entry event starts at 8:00 AM.</li><li><strong>Resort fee at The Venetian and Wynn</strong>: $55 + tax per night — Official terms at both resorts.</li></ul>
-<p class="note">Numbers above were recorded by the earlier verified pass; the counts on this page reflect the merged master dataset after the 2026-11-16 structure-sheet session. Where they differ, the newer verification supersedes.</p></div>
+<div class="panel"><h2>Headline numbers (computed from the dataset on 2026-11-17)</h2>
+<p class="note">Every number below is computed from <code>data/master.json</code> at build time, so it cannot drift
+away from the tables. Counts from the earlier recorded pass are kept in <a href="archive.html">the archive</a>.</p>
+<table class="data"><thead><tr><th>Measure</th><th>Value</th><th>How it is counted</th></tr></thead><tbody>
+<tr><td>Sheet silent on re-entry (The Venetian)</td><td><strong>45</strong></td>
+ <td>official structure sheet read in full; prints no re-entry, rebuy or add-on clause. Silence is not a published freezeout rule.</td></tr>
+<tr><td>Entry limit ambiguous</td><td><strong>2</strong></td>
+ <td>sheet wording implies further buy-ins (Valuetown events 18 and 58).</td></tr>
+<tr><td>Spend-more events (re-entry / rebuy / add-on published)</td><td><strong>35</strong></td>
+ <td>official document states extra buy-ins are available; excluded from the single-entry group.</td></tr>
+<tr><td>Multi-flight events</td><td><strong>36</strong></td>
+ <td>event runs more than one starting flight; one row per flight.</td></tr>
+<tr><td>Satellites</td><td><strong>7</strong></td>
+ <td>award an entry to another event rather than a cash prize.</td></tr>
+<tr><td>Unverified rows</td><td><strong>40</strong></td>
+ <td>buy-in/date/time confirmed on an official schedule, but no official rule document is published.</td></tr>
+<tr><td>Events dated on or after today</td><td><strong>130</strong></td>
+ <td>rows with a calendar date that has not passed.</td></tr>
+<tr><td>Earliest start of any verified event</td><td><strong>9:00 AM</strong></td>
+ <td>earliest printed start time at or after 05:00, all venues. After-midnight 2:00 AM rows are continuations of the previous night and are excluded.</td></tr>
+<tr><td>Earliest start of a sheet-silent (single-entry candidate) event</td><td><strong>10:10 AM</strong></td>
+ <td>earliest printed start among the 45 rows above.</td></tr>
+<tr><td>Verified 08:00 AM tournament</td><td><strong>none found</strong></td>
+ <td>no official schedule read in this dataset prints an 8:00 AM event.</td></tr>
+</tbody></table>
+<p class="note"><strong>What this means for an “8 AM to close” day:</strong> the earliest verified start is
+9:00 AM. A day that begins at 8:00 AM cannot begin with a tournament; it begins with registration,
+breakfast, or a daily satellite. The <a href="planner.html">trip planner</a> therefore builds each day around the
+primary event and adds a conditional evening fallback instead of an impossible sequence.</p></div>
 <div class="panel"><h2>What matters for a decision</h2>
 <ul class="tight">
 <li><strong>Best verified value patterns:</strong> Venetian one-day events (sheet silent on re-entry) with a published guarantee — e.g. $300 for $10K GTD (33×) and $400 for $15K GTD (37.5×), house fee $58/$65, pool $242/$335 per entry. See <a href="ranking.html">ranking</a>.</li>
@@ -50,9 +86,14 @@ plus recurring daily slates at Caesars Palace, Horseshoe and MGM Grand whose buy
 <li><strong>Walking times are unverified.</strong> Every hotel row carries official-address maps links; capture walk minutes manually (30-minute limit) before choosing a hotel.</li>
 <li><strong>Re-confirm everything before nonrefundable payment</strong> — schedules and fees change; the source monitor tracks official pages daily.</li>
 </ul></div>
+<div class="panel"><h2>Findings, each with the official document behind it</h2>
+<p class="note">These are the recorded findings from the verification passes. Findings marked
+<span class="badge b-bad">superseded</span> were contradicted when the official source was re-read on
+2026-11-17; the corrected statement appears beneath them rather than replacing them silently.</p>
+<div class="qitem"><h3>Best single-entry value at The Venetian</h3><p>Ranked by official guarantee ÷ buy-in (computed): Event 36, $800 Bounty, $75K guarantee, Wed Dec 9 at 11:10 AM (93.75×); Event 54, $600 Bounty, $50K, Wed Dec 16 at 11:10 AM (83.33×); Event 52, $1,100 PKO, $75K, Tue Dec 15 at 11:10 AM (68.18×). Bounty guarantees include bounty money.</p><p class="note"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf" target="_blank" rel="noopener">official source</a> <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf" target="_blank" rel="noopener">official source</a> <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf" target="_blank" rel="noopener">official source</a></p></div><div class="qitem"><h3>Venetian house fee</h3><p>Official structure sheets state the house fee for each buy-in (for example $58 of $300, $90 of $600, $100 of $800, $130 of $1,100). The prize pool share is therefore about 80–88% of the buy-in for the verified single-entry events.</p><p class="note"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf" target="_blank" rel="noopener">official source</a> <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf" target="_blank" rel="noopener">official source</a> <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf" target="_blank" rel="noopener">official source</a></p></div><div class="qitem"><h3>Wynn daily events are not single-entry</h3><p>The official daily structure sheets allow re-entry on the Mon–Thu, Sat–Sun and nightly events, and rebuys and an add-on on the Friday event. These are excluded, even though the official poster does not mention re-entry.</p><p class="note"><a href="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf" target="_blank" rel="noopener">official source</a> <a href="https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf" target="_blank" rel="noopener">official source</a></p></div><div class="qitem flag"><h3>Wynn WPT events are unverified <span class="badge b-bad">superseded</span></h3><p class="note"><s>Only the general terms of the WPT structures PDF have been read. The remaining sections are not reviewed, so the WPT rows are either UNVERIFIED or excluded by event name (multi-flight or satellite).</s></p><p>Updated 2026-11-17: the official Wynn WPT structures PDF was read in full this session. 11 rows now carry the published fee split, starting stack, level length and registration clause (all of them permit re-entry). The remaining WPT rows stay unverified because the PDF does not document them - that gap is real, not an omission.</p><p class="note"><a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf" target="_blank" rel="noopener">official source</a> <a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf" target="_blank" rel="noopener">official source</a></p></div><div class="qitem flag"><h3>No 8:00 AM start can be confirmed <span class="badge b-bad">superseded</span></h3><p class="note"><s>The earliest verified sheet-silent (single-entry candidate) event starts at 10:10 AM: the $200 NLH RaceDay Stack on Nov 19, 20 and 21 and the $600 Seniors on Dec 2 (structure sheet 18 and 17, both read). The earliest start anywhere in the dataset is 9:00 AM — the Horseshoe daily No-Limit Hold&#x27;em — but that room publishes no buy-in, guarantee or entry rule, so it is an unverified row, not a candidate. No official schedule read for this dataset prints an 8:00 AM tournament, so an 8:00 AM start cannot be planned from verified events.</s></p><p>Corrected 2026-11-17: the earliest sheet-silent (single-entry candidate) event starts at <strong>10:10 AM</strong> (the $200 RaceDay Stack on Nov 19, 20, 21 and the $600 Seniors on Dec 2 - structure sheets 18 and 17, both read in full). The earliest start anywhere in the dataset is <strong>9:00 AM</strong>, the Horseshoe daily, but that room publishes no buy-in, guarantee or entry rule. No official schedule read here prints an 8:00 AM tournament.</p><p class="note"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">official source</a> <a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf" target="_blank" rel="noopener">official source</a></p></div><div class="qitem flag"><h3>Days with two or more verified single-entry events <span class="badge b-bad">superseded</span></h3><p class="note"><s>14 of the 31 dated days in the dataset have two or more sheet-silent (single-entry candidate) events. The common shape is a 10:10 AM or 11:10 AM event plus a 5:10 PM event. A two-event day is therefore possible on those 14 days, but the gap between them is NOT verified: no official structure sheet states an expected finish time, so overlap is flagged as unknown rather than assumed to fit.</s></p><p>Corrected 2026-11-17: <strong>14 of the 31 dated days</strong> carry two or more sheet-silent events (typically 10:10/11:10 AM plus 5:10 PM). Whether the gap is playable is still unverified - no official structure sheet prints an expected finish time.</p><p class="note"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html" target="_blank" rel="noopener">official source</a></p></div><div class="qitem"><h3>Hotel resort fees are verified; room rates are not</h3><p>Both resorts charge a resort fee of $55 plus tax per night. Applying the 13.38% county room tax from The Venetian&#x27;s terms gives about $62.36, a computed figure with an assumption to confirm. No official nightly rate was captured, so no true nightly cost is shown.</p><p class="note"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official source</a> <a href="https://www.visitwynn.com/tc/index.cfm?term_id=850250" target="_blank" rel="noopener">official source</a></p></div><div class="qitem"><h3>Walking distance is unverified</h3><p>No walking time between any hotel and any poker room has been verified from an official source, so the 30-minute walking limit cannot be confirmed for any row.</p><p class="note"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html" target="_blank" rel="noopener">official source</a></p></div></div>
 </main>
 <footer class="site">
-  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  Built from official venue pages and structure sheets only · data as of 2026-11-17 ·
   <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
   <a href="COORDINATION.md">COORDINATION.md</a> ·
   Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>

@@ -516,6 +516,65 @@ Publication record for PR #34 (2026-11-16):
 - Follow-ups recorded for the next session: `S-11` (choose one surface to keep), `S-12` (merge the three scheduled
   monitor jobs), `S-02` (27 structure sheets unread), `FG-02` (get the single-entry answer in writing).
 
+## Session arena/5dcf101f-poker2 — verification sweep + integration (2026-11-17)
+
+Base: `02cffeb` (main). Branch: `arena/5dcf101f-poker2` (fixed by the session protocol; the task spec's
+`session-<id>/<task>` naming is not available to this session — same deviation recorded as F02 by earlier sessions).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Read official Venetian DSE IV schedule end-to-end; reconcile every row the site publishes | done | arena/5dcf101f-poker2 | `data/master.json`, `COORDINATION.md` |
+| V2 Read the structure sheets behind the published rows; remove `unverified` only where an official document settles the row | done | arena/5dcf101f-poker2 | `scripts/build_master.py`, `data/master.json` |
+| V3 Duplicate-row audit (same venue + date + event published twice) | done — 12 duplicate rows removed | arena/5dcf101f-poker2 | `scripts/audit.py`, `scripts/build_master.py`, `data/master.json` |
+| V4 Hotel true-cost integrity: every row's tax rate traces to a source that states it | done — South Point corrected | arena/5dcf101f-poker2 | `data/master.json`, `hotels.html` |
+| V5 One page per venue for every venue in the dataset | done — 7 venue pages | arena/5dcf101f-poker2 | `scripts/build_site.py`, `venue-*.html` |
+| V6 Per-row `last_checked` on every table | done | arena/5dcf101f-poker2 | `scripts/build_site.py`, `scripts/build_f0816fab.py` |
+| V7 Site-wide search across all tables | done | `assets/dashboard.js`, `scripts/build_site.py` |
+| V8 Build/link/audit verification, PR to main, Pages deploy confirmation, record | in progress | arena/5dcf101f-poker2 | `COORDINATION.md`, `README.md` |
+
+Scope: this session works only on the files above. Legacy surfaces (`plan/`, `site-data/`, `docs/`, `verified/`, `pages/`)
+are read as inputs and left untouched. New canonical data continues to flow through `data/master.json`.
+
+### Verification record — arena/5dcf101f-poker2 (2026-11-17)
+
+Read first-hand through a live fetch of the official hosts (sandbox `curl` cannot reach them; the page/PDF
+reader can). Every item below was checked against the document named, not against an earlier session's note.
+
+| Document read | What it settled |
+|---|---|
+| Venetian DSE IV event page, all 4 chunks (`dse-nov-2026.html`) | Full schedule Nov 16 – Dec 23. Reconciled all 83 Venetian rows: dates, start times, event numbers, buy-ins, guarantees and structure-sheet ownership all match. **Correction to an earlier board note:** the 9:10 AM (event 46) and 12:10 PM (event 48) satellites on Dec 12 are two *different* events, not a duplicate. |
+| Structure sheets 1, 5, 11, 15, 16, 18 (read verbatim) | Confirmed fee splits ($40/$200, $58/$300, $90/$600 with per-event guarantees for 16/30/54, $50/$300, $100/$800 with $75K for event 36, $35/$200 RaceDay), chip counts, late-registration closes and level lengths. None prints a re-entry, rebuy or add-on clause — so "sheet silent" is the correct label, and none is promoted to confirmed single-entry. |
+| Wynn WPT structures PDF, all 8 chunks | 13 event term sets transcribed verbatim. Applied to the 11 rows they actually document; the other WPT rows stay `unverified` because the PDF does not cover them. |
+| Wynn WPT schedule PDF | Reconciles the Wynn rows' dates, times, buy-ins and guarantees. |
+| Clark County transient lodging guide (Appendix III + licensed-property schedule) | 13.38% for ARIA, Bellagio, Caesars Palace, MGM Grand, Venetian/Palazzo, Wynn/Encore, Westgate. **South Point is 13.00%**, not 13.38% — corrected. |
+
+Defects found and fixed (all published before this session, none introduced by it):
+
+1. **South Point tax rate was wrong.** The site applied 13.38% (Primary Gaming Corridor) to a property the county
+   schedule lists at 13.00%. Every South Point cost calculation was overstated.
+2. **Twelve duplicate Wynn rows.** Two sessions added the same events under slightly different names
+   ("HORSE $800" vs "HORSE $800 (no guarantee)", "NIH" vs "NLH"), inflating the table and double-counting guarantees.
+3. **The audit did not cover the dataset the site renders.** `scripts/audit.py` validated `data/site/events.json`,
+   while the pages are built from `data/master.json` — which is why (1) and (2) reached the live site. The audit now
+   checks the canonical file, including a duplicate guard on the same key the generator uses.
+4. **A wrong factual claim in the summary.** "The earliest verified single-entry start is 11:10 AM" ignored the
+   five 10:10 AM sheet-silent events. Corrected to 10:10 AM, with the 9:00 AM Horseshoe row explicitly marked
+   unverified (that room publishes no buy-in, guarantee or entry rule).
+5. **Headline numbers were typed by hand** and had drifted from the data. They are now computed at build time.
+6. **Findings were stored but never rendered.** The executive summary now shows all eight with their sources, and
+   any statement contradicted by this pass is shown struck through under a `superseded` badge rather than deleted.
+7. **21 of 41 flags had no source link** and none had an ID. All now carry a stable `VR-nnn` ID and a link to the
+   official document; one obsolete flag (sheets not read) is resolved with an explicit update note.
+
+Verified, not assumed: `scripts/audit.py` OK; `scripts/build_site.py` 21 pages / 166 events / 10 hotels, every row
+cited; `scripts/check_links.py` 37 pages, 2,918 hrefs, 0 broken internal links, 0 non-official external hosts;
+the site-wide search and trip-cost calculator exercised under a DOM stub (search filters across multiple tables;
+true cost/night = (rate + fee) × (1 + tax) + parking reconciles to $217.28 for the Venetian poker rate).
+
+Still open and published on the Flagged page (do not block merge): no event on any official document read states
+"no re-entry", so **no row is confirmed single-entry**; no official walking time or dated room quote exists in any
+source read; no 8:00 AM tournament is printed anywhere in the dataset.
+
 ## Session arena/f4e82c6f-poker2 — README repair and repository documentation audit (2026-11-17)
 
 - Claim commit: `81f366a` on the fixed active branch `arena/f4e82c6f-poker2`; pushed to that branch after `git pull --rebase origin main` confirmed it was current.

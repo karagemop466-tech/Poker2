@@ -10,13 +10,18 @@
 <body>
 <header class="site">
   <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
-  <div class="tagline">Every row links to an official source · data as of 2026-11-16 · unconfirmed values stay blank and flagged</div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-17 · unconfirmed values stay blank and flagged</div>
 </header>
 <nav class="site"><a href="index.html">Dashboard</a>
 <a href="summary.html">Executive Summary</a>
 <a href="tournaments.html">Tournaments</a>
 <a href="venue-venetian.html">Venetian</a>
 <a href="venue-wynn.html">Wynn</a>
+<a href="venue-horseshoe.html">Horseshoe</a>
+<a href="venue-caesars.html">Caesars Palace</a>
+<a href="venue-mgm.html">MGM Grand</a>
+<a href="venue-bellagio.html">Bellagio</a>
+<a href="venue-goldennugget.html">Golden Nugget</a>
 <a href="venue-others.html" class="active">Other Venues</a>
 <a href="hotels.html">Hotels</a>
 <a href="planner.html">Trip Planner</a>
@@ -32,10 +37,14 @@
 <a href="rate-log.html">Rate Log</a>
 <a href="trip.html">Trip Plan</a>
 <a href="archive.html">Archive</a></nav>
+<div class="globalsearch">
+  <input type="search" id="site-search" placeholder="Search every table on this page (venue, event, date, rules, hotel)…" aria-label="Site-wide table search">
+  <span class="count" id="site-search-status"></span>
+</div>
 <main>
 
 <h1>Other venues</h1>
-<p class="lead">Recurring daily schedules verified from official pages on 2026-11-16. Rows without published buy-ins stay blank.</p>
+<p class="lead">Recurring daily schedules verified from official pages on 2026-11-17. Rows without published buy-ins stay blank.</p>
 <h2>Caesars Palace</h2>
 <p class="excerpt">Official guide: four NLH events daily (10 AM, 2 PM, 6 PM, 9 PM), $100 buy-in, 20,000 chips, $1,000 GTD, 20-minute blinds, $50 add-on for 15,000 chips at the first break.</p>
 <h2>Horseshoe Las Vegas (Hall of Fame Poker Room)</h2>
@@ -171,7 +180,7 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3730+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://aria.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://aria.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://aria.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Bellagio</strong><small class="note">Strip</small></td>
@@ -180,7 +189,7 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3600+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://bellagio.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://bellagio.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://bellagio.mgmresorts.com" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>MGM Grand</strong><small class="note">Strip (venue hotel)</small></td>
@@ -189,7 +198,7 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3799+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://mgmgrand.mgmresorts.com/en/hotel.html" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html" rel="noopener" target="_blank">schedule</a> · <a href="https://mgmgrand.mgmresorts.com/en/hotel.html" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Horseshoe Las Vegas</strong><small class="note">Strip (venue hotel)</small></td>
@@ -198,7 +207,7 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3645+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=BLV" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://www.caesars.com/horseshoe-las-vegas/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=BLV" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Caesars Palace</strong><small class="note">Strip (venue hotel)</small></td>
@@ -207,7 +216,7 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=The+Venetian+Poker+Room,+3355+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;origin=3570+S.+Las+Vegas+Blvd,+Las+Vegas,+NV+89109&amp;destination=Wynn+Las+Vegas+Poker+Room,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV&amp;travelmode=walking" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=CP" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://www.caesars.com/caesars-palace/hotel" rel="noopener" target="_blank">schedule</a> · <a href="https://www.caesars.com/book/?propcode=CP" rel="noopener" target="_blank">structure</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>Westgate Las Vegas Resort &amp; Casino</strong><small class="note">Off-Strip (Paradise Rd)</small></td>
@@ -216,20 +225,20 @@
 <td>—</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"><a href="https://www.westgateresorts.com/terms-and-conditions/" rel="noopener" target="_blank">schedule</a> <small class="note">checked 2026-11-16</small></td>
+<td class="src"><a href="https://www.westgateresorts.com/terms-and-conditions/" rel="noopener" target="_blank">schedule</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
 <tr data-cat="hotel" data-walk-ok="0">
 <td><strong>South Point Hotel, Casino &amp; Spa</strong><small class="note">South of the Strip (about 8 miles)</small></td>
 <td>9777 S. Las Vegas Blvd, Las Vegas, NV 89183</td>
-<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.38%<small class="note">Clark County transient lodging tax, per the county licensing guide.</small></td>
+<td><span class="badge b-warn">no dated quote</span></td><td><span class="badge b-warn">blank</span></td><td>13.00%<small class="note">Clark County transient lodging tax 13.00% — the county licensing guide lists “South Point Hotel and Casino, 9777 Las Vegas Blvd S” at 13.00% (Resort Hotel, Stadium District outside Primary Gaming Corridor), not the 13.38% PGC rate.</small></td>
 <td>Self-parking is free (stated on the poker page)</td>
 <td></td>
 <td><span class="badge b-warn">unverified</span> <a href="" target="_blank" rel="noopener">walk to Venetian ↗</a> · <a href="" target="_blank" rel="noopener">walk to Wynn ↗</a></td>
-<td class="src"> <small class="note">checked 2026-11-16</small></td>
+<td class="src"> <small class="note">checked 2026-11-17</small></td>
 </tr></tbody></table>
 </main>
 <footer class="site">
-  Built from official venue pages and structure sheets only · data as of 2026-11-16 ·
+  Built from official venue pages and structure sheets only · data as of 2026-11-17 ·
   <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
   <a href="COORDINATION.md">COORDINATION.md</a> ·
   Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
