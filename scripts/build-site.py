@@ -172,6 +172,7 @@ ALL_SHEET_NUMS = sorted({e["sheet"] for e in events if e["sheet"]})
 
 CATEGORY_LABEL = {
     "single_entry_candidate": ("single-entry candidate", "ok"),
+    "single_entry_2day": ("single-entry candidate, 2-day", "ok"),
     "spend_advantage": ("spend-advantage", "bad"),
     "multi_flight": ("multi-flight", "bad"),
     "satellite": ("satellite", "warn"),
@@ -755,10 +756,18 @@ def p_hotels():
         attrs = [("data-key", p["id"]), ("data-walk", mins if mins else ""), ("data-venue", p["venue"]),
                  ("data-cat", "walk"), ("data-flag", "no" if kind == "ok" else "yes"),
                  ("data-search", (prop + " " + str(p.get("destination_label"))).lower())]
+        routed_note = ""
+        if p.get("minutes_kind") == "routed_osrm_osm":
+            routed_note = ('<div class="sm">OSM/OSRM foot-routing estimate, routed '
+                           + esc(str(p.get("routed_on") or ""))
+                           + ((", " + str(p["distance_verified"]) + " m") if p.get("distance_verified") else "")
+                           + " - not an official measurement</div>")
+        elif p.get("minutes_kind") == "same_property_indoor":
+            routed_note = '<div class="sm">Same building/resort: official indoor route applies</div>'
         wrows += (tag_open("tr", attrs) + "<td>" + esc(prop) + "</td><td>"
                   + esc(venue_names.get(p["venue"], p["venue"])) + "</td><td>"
                   + esc(p.get("destination_label") or "") + '</td><td class="num">'
-                  + ((str(mins) + " min") if mins else "&mdash;") + "</td><td>" + badge(label, kind)
+                  + ((str(mins) + " min") if mins else "&mdash;") + routed_note + "</td><td>" + badge(label, kind)
                   + '</td><td class="sm">' + route + "</td><td class=\"nowrap\">" + maps + "</td></tr>")
     tax = HOT["tax"]
     body = """
@@ -1172,7 +1181,10 @@ def p_flagged():
 <h1>Flagged for review</h1>
 <p class="lede">""" + esc(FLAGS["intro"]) + """</p>
 <div class="note bad"><b>The four that change decisions.</b> FG-01 (no 8 AM start exists in the verified schedule),
-FG-02 (no sheet publishes a one-entry cap) and FG-05 (dated quotes exist for The Venetian only).
+FG-02 (no sheet publishes a one-entry cap) and FG-05 (dated quotes exist for The Venetian only; the
+other nine hotels have none). FG-11 (walking minutes) is now answered with routed estimates for 45 of 70
+pairs - OSM Nominatim geocodes and OSRM foot routing on 2026-11-16, 30 pairs inside 30 minutes, each row
+carrying Google/Apple Maps links to confirm - still not an official measured minute value.
 Everything else is either a source contradiction to watch or a dataset-hygiene note.</div>
 """ + items + """
 """ + diff_html + """

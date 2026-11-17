@@ -73,6 +73,11 @@
    "detail": "Duplicate dashboards retired (FG-16); COORDINATION.md is the single shared board."
   },
   {
+   "id": "S-06",
+   "title": "Add a routing source for walking durations - DONE 2026-11-17",
+   "detail": "Completed without an API key: official addresses geocoded via OpenStreetMap Nominatim and foot-routed with the OSRM foot profile on the public FOSSGIS server (routing.openstreetmap.de/routed-foot). All 12 hotel-to-venue pairs on the plan surface carry routed minutes (10 reused from the dated 2026-11-16 measurement dataset, 2 measured fresh), each with Google/Apple Maps confirmation links. Routed minutes are estimates, not official measurements - the Hotels page labels them as such. Park MGM (34.0 min) and ARIA (30.6 min) fail the 30-minute rule; the other pairs pass."
+  },
+  {
    "id": "S-02",
    "category": "data",
    "title": "Read all 37 Venetian structure sheets",
@@ -127,15 +132,6 @@
    "what": "Either accept a named third-party rating system as an allowed source class, or drop quality from the model and rank on cost plus fee certainty only.",
    "why": "The brief ranks quality above distance, but official pages publish no comparable tier; without a rule here the quality column stays empty (FG-12).",
    "effort": "one decision",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S-06",
-   "title": "Add a routing API for walking durations",
-   "category": "automation",
-   "what": "Google Directions or Apple Maps link + a small API key in repository secrets; the daily job then records minutes per pair with a timestamp.",
-   "why": "The 30-minute filter is no longer empty - 45 of 70 pairs carry a routed duration and the filter returns 30 of them (S-13). What an API adds is freshness: the durations currently come from one OSRM run on 2026-11-16 and are not re-checked.",
-   "effort": "needs a key from you",
    "status": "awaiting your choice"
   },
   {

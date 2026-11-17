@@ -23,6 +23,10 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROUTED = os.path.join(ROOT, "data", "site", "walking.json")
+# Hand-verified per-pair detail (routed-via service, routed-on date, routed distance,
+# official interior-route wording) captured by earlier sessions. This script cannot
+# regenerate it, so it is committed separately and merged over the routed matrix.
+OVERLAY = os.path.join(ROOT, "data", "site", "walk-overlay.json")
 HOTELS = os.path.join(ROOT, "site-data", "hotels.json")
 VENUES = os.path.join(ROOT, "site-data", "venues.json")
 OUT = os.path.join(ROOT, "site-data", "walk.json")
@@ -97,6 +101,21 @@ def main():
             if p.get("hotel_address_official"):
                 official.setdefault(("addr", p["hotel_id"]), p["hotel_address_official"])
 
+    # overlay: per-pair hand-verified detail, and the longer of two official route wordings
+    over = {}
+    if os.path.exists(OVERLAY):
+        for p in json.load(open(OVERLAY, encoding="utf8")).get("pairs", []):
+            over[(p["hotel_id"], p["venue"])] = p
+
+    def official_route(hid, vid, prev):
+        """Prefer the longest official route wording available across overlay and prior output."""
+        best_text, best_src = (prev.get("route_official") if prev else None), \
+                              (prev.get("route_source") if prev else None)
+        o = over.get((hid, vid))
+        if o and o.get("route_official") and len(o["route_official"]) > len(best_text or ""):
+            best_text, best_src = o["route_official"], o.get("route_source")
+        return best_text, best_src
+
     pairs = []
     n = 0
     for h in hotels:
@@ -119,6 +138,13 @@ def main():
                 status = "same_property_no_duration"
             else:
                 status = "no_verified_duration"
+            ov = over.get((hid, vid))
+            route_text, route_src = official_route(hid, vid, prev)
+            minutes_kind = None
+            if mins is not None:
+                minutes_kind = ((ov or {}).get("minutes_kind") or
+                                ("same_property_indoor" if str(status).startswith("connected")
+                                 else "routed_osrm_osm"))
             p = {
                 "id": "W-%d" % n,
                 "hotel_id": hid,
@@ -127,14 +153,17 @@ def main():
                 "venue_label": label,
                 "destination_label": dest,
                 "minutes_verified": None if mins is None else round(float(mins), 1),
-                "minutes_kind": ("routed_estimate" if mins is not None else None),
-                "distance_verified": None,
+                "minutes_kind": minutes_kind,
+                "distance_verified": (ov or {}).get("distance_verified"),
+                "routed_on": (ov or {}).get("routed_on") or ("2026-11-16" if row else None),
+                "routed_via": (ov or {}).get("routed_via") or ("OSRM foot profile, routing.openstreetmap.de/routed-foot"
+                                                               if row else None),
                 "within_30_min": (round(float(mins), 1) <= LIMIT_MIN) if mins is not None else None,
                 "hotel_address_official": (prev.get("hotel_address_official") if prev else None)
                                           or (row["hotel_address"] if row else None),
                 "venue_address_official": (row["venue_address"] if row else None),
-                "route_official": prev.get("route_official") if prev else None,
-                "route_source": prev.get("route_source") if prev else None,
+                "route_official": route_text,
+                "route_source": route_src,
                 "route_retrieved": (prev.get("route_retrieved") if prev else None) or ROUTE_TEXT_DATE,
                 "status": status,
                 "google_maps": (row["gmaps_link"] if row and row.get("gmaps_link")
