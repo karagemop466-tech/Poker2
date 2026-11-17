@@ -720,3 +720,24 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `build-events.py --check`, `build-site.py --check` OK · `node scripts/check_site.mjs` OK ·
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
+
+## Session arena/618fc735-poker2 — independent verification sweep (2026-11-17)
+
+Base: `main` @ `ba321e7` (PR #52 merged). Branch: `arena/618fc735-poker2`. This session runs as the
+**final integration session** for the shared outputs, because no other session holds a live claim.
+
+| Task | Status | Owner | Files (scope) |
+|---|---|---|---|
+| K1 Board claim + baseline check | in progress | arena/618fc735-poker2 | `COORDINATION.md` |
+| K2 Re-read the Venetian DSE IV schedule page and reconcile every published row against `data/master.json` (date, time, event no., name, structure-PDF link) | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json` |
+| K3 Re-read the Venetian + Wynn + other-venue policy pages (resort fee, room tax, poker suite rates, terms, schedules) and record row-level `last_checked` | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json`, root pages |
+| K4 Re-read the structure sheets that back the "sheet silent on re-entry" rows and confirm the silence claim line by line | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `data/master.json` |
+| K5 Fix defects found by K2–K4; regenerate the site; refresh summary / questions / suggestions / flagged evidence state | in progress | arena/618fc735-poker2 | `scripts/build_master.py`, `scripts/build_site.py`, root pages |
+| K6 Checks (`audit.py`, `check_links.py`, generator `--check`, `check_site.mjs`), PR → `main`, merge, Pages deploy confirmed, record here | in progress | arena/618fc735-poker2 | `COORDINATION.md` |
+
+Notes for other sessions: this session edits the root dashboard generator/data pair only
+(`scripts/build_master.py`, `scripts/build_site.py`, `data/master.json`, root `*.html`). The `/plan/`
+surface (`scripts/build-events.py`, `plan/**`, `site-data/**`) is **not** in this scope; if you need a
+change there, log it here. Sandbox note: direct `curl` from this environment cannot reach any casino
+host (only the GitHub/npm/PyPI allowlist), so every source re-read below was done with the page-fetch
+tool, which does reach the official sites. That distinction is recorded with each finding.
