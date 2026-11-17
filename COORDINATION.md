@@ -997,3 +997,33 @@ that surface's owner), FG-05 dated hotel quote, FG-12 hotel quality rating, FG-1
 - Carried forward: FG-02 (no official document says "one entry per player"), S-15 (headless-browser
   quotes for Wynn and the MGM properties), S-04 / FG-12 (no official quality-rating source),
   S-11 and S-12 (surface consolidation).
+---
+
+## Session arena/32a40b2f-poker2 — claims (2026-11-17)
+
+Started from `origin/main` at `98ca770` (PR #53). Two sessions are in flight with open PRs; their scopes are
+**not** touched by this session:
+
+- PR [#54](https://github.com/karagemop466-tech/Poker2/pull/54) `arena/97730311-poker2` — `/plan/**`,
+  `site-data/**`, `scripts/build-events.py`, `scripts/build-site.py`, `scripts/build-walk.py`,
+  `data/site/walk-overlay.json`, `plan-refresh.yml`, `plan-verify.yml`.
+- PR [#55](https://github.com/karagemop466-tech/Poker2/pull/55) `arena/839a07d9-poker2` — `2026/**`,
+  `data/verified2026/**`, `data/sheets/**`, `scripts/build2026.py`, `scripts/check2026.py`, `scripts/recheck2026.py`,
+  `assets/site2026.*`, `README.md`, `recheck.yml`, `verify.yml`.
+
+This session works the **root dashboard data pipeline and the root source monitor** — files owned by neither PR.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| R1 Fold the 37-sheet structured rule evidence (already on `main` as `site-data/events.json`) into the root dataset: per-field single-entry / re-entry / add-on / fee / payout value + status + excerpt + source + retrieval date, eligibility gate, registration close, chips, level length; re-derive each row's category from that evidence (closes FG-31 on the root surface) | in progress | arena/32a40b2f-poker2 | `scripts/build_master.py`, `data/master.json` |
+| R2 Render it on the root pages: entry-rule columns per field on `rules.html`, per-row evidence on `tournaments.html`/venue pages, counts computed from the synced data, no hard-coded "today" anywhere, routed walk minutes + ≤30-min filter on `hotels.html` | in progress | arena/32a40b2f-poker2 | `scripts/build_site.py`, `index.html`, `summary.html`, `tournaments.html`, `rules.html`, `hotels.html`, `ranking.html`, `planner.html`, `monitor.html`, `flagged.html`, `questions.html`, `suggestions.html`, `repo-review.html`, `venue-*.html` |
+| R3 Make the scheduled monitor honest and self-limiting: a failed fetch must not advance a row's `last_checked`; distinguish `unreachable` from `unchanged`; write a snapshot only when content actually changes; the workflow must commit the generator's complete output set, never a partial regeneration | in progress | arena/32a40b2f-poker2 | `scripts/monitor.py`, `scripts/build_monitor_registry.py`, `data/source_monitor.json`, `.github/workflows/source-monitor.yml` |
+| R4 Re-read the official sources first-hand on 2026-11-17 (Venetian DSE IV schedule page, structure sheets, resort-fee / hotel-terms / Clark County tax pages, Wynn poker page) and record only what was actually re-read | in progress | arena/32a40b2f-poker2 | `data/master.json`, `COORDINATION.md` |
+| R5 Verification, PR to `main`, merge, Pages deploy confirmation, record | unclaimed → this session | arena/32a40b2f-poker2 | `COORDINATION.md` |
+
+Requests logged instead of edited (file ownership): `verify.yml`'s "restore integration-owned pages" list does not
+cover `single-entry.html`, `schedule.html`, `sources.html`, `venues.html` or `venues/*.html`, which `scripts/build.py`
+also writes — so those five root pages render from the legacy `data/site/*` dataset rather than from
+`data/master.json`. They stay reachable from the root footer, which the two disagree about. Consolidating that is
+blocked on `verify.yml` (`arena/839a07d9-poker2` scope) and on decision S-11; this session will flag it on the site
+instead of editing the workflow.
