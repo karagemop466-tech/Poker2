@@ -76,6 +76,11 @@
    "id": "S-02",
    "title": "Read the remaining 27 structure sheets - DONE 2026-11-17",
    "detail": "Completed by arena/18aba6dd-poker2: all 27 remaining official sheets (2, 3, 4, 9, 12, 13, 14, 16, 17, 19-28, 30-37) were read in full on 2026-11-17 and transcribed with verbatim excerpts. Result: 45 single-entry candidate rows, 0 unverified Venetian rows, and new findings - LIPS events withhold an extra flat fee ($10 of $600 for events 35/43, $20 of $800 for event 39), the $600 Seniors sheets pay 15% of the field, event 39 is one starting day + Day 2 (not multi-flight), and events 56/59 publish early-registration rake discounts ($40/$20 off the first entry before start). The written single-entry confirmation from the room (Q-03) remains outstanding."
+  },
+  {
+   "id": "S-06",
+   "title": "Add a routing source for walking durations - DONE 2026-11-17",
+   "detail": "Completed without an API key: official addresses geocoded via OpenStreetMap Nominatim and foot-routed with the OSRM foot profile on the public FOSSGIS server (routing.openstreetmap.de/routed-foot). All 12 hotel-to-venue pairs now carry routed minutes (10 reused from the 2026-11-16 measurement dataset, 2 measured fresh), each with Google/Apple Maps confirmation links. Routed minutes are estimates, not official measurements - the Hotels page labels them as such. Park MGM (34 min) and ARIA (30.6 min) fail the 30-minute rule; the other pairs pass."
   }
  ],
  "awaiting_your_choice": [
@@ -113,15 +118,6 @@
    "what": "Paste the booking engine's itemisation for your dates into the rate log (or approve a serverless fetch of the published rate feed).",
    "why": "This is the single missing number in true-cost-per-night; everything else in the formula is already verified (FG-05).",
    "effort": "two minutes in the booking flow",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S-06",
-   "title": "Add a routing API for walking durations",
-   "category": "automation",
-   "what": "Google Directions or Apple Maps link + a small API key in repository secrets; the daily job then records minutes per pair with a timestamp.",
-   "why": "Makes the 30-minute filter real instead of empty, and re-checks it when a venue changes (FG-11).",
-   "effort": "needs a key from you",
    "status": "awaiting your choice"
   },
   {

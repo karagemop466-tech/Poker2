@@ -96,9 +96,9 @@
    "id": "Q-10",
    "step": 4,
    "question": "Is the walk actually under 30 minutes - and does it stay outdoors?",
-   "status": "open",
+   "status": "answered",
    "what_we_have": "Two official route facts: the poker room is inside the Palazzo (in-resort directions published, no minutes) and Bellagio/Cosmopolitan/Vdara share an interior bridge. The Venetian complex is the tournament anchor for every row in the ranked table.",
-   "what_is_missing": "A minute value for every hotel-to-room pair, including the crossing at Las Vegas Blvd and Tropicana, plus whether the route is covered (a real factor in August, not in December).",
+   "what_is_missing": "Minutes are now filled with routing estimates (OSM Nominatim geocodes + OSRM foot profile; 10 pairs 2026-11-16, the Cosmopolitan and Bellagio-to-Cosmopolitan pairs 2026-11-17). What remains: your own confirmation of any pair you will actually walk - every row carries a prefilled Google and Apple Maps walking link - and whether the route is covered (a real factor in August, not in December).",
    "how_to_find": "Use the Google/Apple Maps links on the Walking page for each pair, or approve S-06 so the daily job records durations from a routing API.",
    "blocks": "the 30-minute filter, which today correctly returns 'unknown' for every pair (FG-11)"
   },
