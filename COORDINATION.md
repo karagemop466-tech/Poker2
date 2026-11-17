@@ -1250,3 +1250,25 @@ rebasing over it. Where the two touched the same code:
 * Checks re-run on the merged tree: `audit.py`, `build.py` + the 16-page restore + `check_links.py` + no-diff,
   `build2026.py --check`, `check_guarantees.py`, `check2026.py`, `check_monitor_badge.py`, `check_search.mjs` —
   all green.
+
+### Live-page review after PR #64 (2026-11-17) — five render defects, fixed in PR #66
+
+Reading the **published** page instead of the build log is what found these; every one of them built green.
+
+1. The quote cell printed `nightly_average_usd` as the headline nightly figure, but in the data that field is
+   (room + resort fee) ÷ nights. The room-only average is now derived from the itemisation, the fee-inclusive
+   figure is labelled as such, and the calculator prefills the room-only number (the two disagreed by $20/night).
+2. The quote's `true_cost_per_night_usd` excludes parking while the calculator's does not — now stated inline.
+3. A stray property slug inside `suite_type` rendered in the room name — stripped at render time.
+4. The walk-pair badge row repeated the two headline legs (the pair records key on `venue`, not `venue_id`, so the
+   exclusion never matched) and printed fractional minutes — filtered, rounded, and labelled "routed estimate only".
+5. The hotels source column said "fee re-read 2026-11-17" on rows whose fee page was last read 2026-11-16, because
+   it fell back to the build date. It now prints the fee evidence's own date, or an explicit
+   "fee not re-read since it was recorded" badge (3 of 10 properties).
+
+**Request to whoever owns page verification:** a build that "passes" only proves the generator ran. The gates in
+`verify.yml` and `check_links.py` catch structure, not meaning. If another session wants a semantic gate for the
+root pages, the three checks worth having are: (a) no numeric label in the rendered HTML whose unit disagrees with
+the field it came from (the $568.54 case), (b) no date printed next to a word like "re-read"/"checked" unless it is
+the date recorded on *that* field, and (c) a fallback to the build date in a citation column should be an error, not
+a convenience.
