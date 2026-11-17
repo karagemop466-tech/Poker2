@@ -776,6 +776,44 @@ Verified locally before the PR: `scripts/audit.py` OK · `scripts/check_links.py
 `check_sources.mjs --selftest` (34 tracked patterns, 66 monitored URLs) OK ·
 `scrape-schedule.mjs --selftest` OK · CI simulation (`build.py` + the ownership restore) leaves a clean tree.
 
+## Session arena/ec9cc26c-poker2 — verification sweep + final integration (2026-11-17)
+
+Base: `ba321e7` (main, PR #52 merged). Branch: `arena/ec9cc26c-poker2` (fixed by the session
+protocol; the task spec's `session-<id>/<task>` naming is not available — same deviation recorded
+as F02 by earlier sessions).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Claim board; disposition of stale open PRs #1/#24/#28 | done — closed 2026-11-17 as superseded, branches retained | arena/ec9cc26c-poker2 | `COORDINATION.md`, GitHub only |
+| K2 Fresh line-by-line verification pass (2026-11-17): re-read the official pages behind the published rows, compare field-by-field with `data/master.json`, refresh per-row `last_checked`, fix any defect found | done | arena/ec9cc26c-poker2 | `scripts/build_master.py`, `data/master.json`, `research/ec9cc26c-*-2026-11-17.md` |
+| K3 Read-through of the live site (root dashboard + `/2026/` + `/plan/`) for rendering/defect review; fix defects found | done — one defect fixed: 5 raw source-registry keys rendered as labels on monitor/sources | arena/ec9cc26c-poker2 | `scripts/build_monitor_registry.py`, `scripts/build_master.py`, root pages via generators |
+| K4 Run every repo check on the combined tree (audit, build, link check, plan checks, CI simulation) | done — all 8 verify.yml gates + all 4 plan-verify gates pass on the merged tree | arena/ec9cc26c-poker2 | — |
+| K5 Final integration: PR → `main`, CI green, Pages deploy confirmed, record here | in progress | arena/ec9cc26c-poker2 | `COORDINATION.md` |
+
+### What K2 actually verified (first-hand, 2026-11-17, via the page-fetch tool — sandbox `curl` cannot reach casino hosts)
+
+| Document read in full | Reconciliation |
+|---|---|
+| Venetian DSE IV schedule page (4 chunks) | 94 printed rows transcribed to `research/ec9cc26c-venetian-schedule-official-2026-11-17.md`; the 83 published rows (94 minus 11 Day-2/final-table rows) match on date, start, event number, name, guarantee and structure-PDF URL — **zero mismatches**; buy-ins re-parsed from names match `buy_in` on every row |
+| Wynn WPT World Championship schedule PDF (2 chunks) | 136 printed rows transcribed to `research/ec9cc26c-wynn-wpt-schedule-official-2026-11-17.md`; the 49 dated Wynn rows match on date, start, buy-in and guarantee — **zero mismatches**; the 4 recurring dailies cite a different PDF (not re-read today) and correctly keep `last_checked 2026-11-16`; the MGM Saturday row likewise keeps 2026-11-16 (weekly PDF not re-read) |
+| Caesars poker guide | Caesars Palace 4 dailies (10a/2p/6p/9p, $100, $1,000 GTD, $50 add-on) and Horseshoe 6 times (9a/11a/2p/5p/8p/11p) confirmed against the 10 published rows |
+| MGM Grand poker page | daily 11:00am / 7:00pm / 11:00pm confirmed against the 3 published rows |
+| Golden Nugget daily page | 10AM/5PM/2AM, 15,000 chips, 15-minute levels, unlimited re-entry to level 5 + two $20 add-ons confirmed against the 3 published rows |
+| Venetian resort-fee page + hotel terms | $55 plus tax/night, Clark County Room Tax 13.38%, $20/day registered-guest parking confirmed |
+| Wynn resort-information page | $55 plus tax daily resort fee confirmed |
+| Clark County transient-lodging guide (Appendix III + licensed-property schedule) | 13.38% confirmed for ARIA, Bellagio, Caesars Palace, MGM Grand, Venetian/Palazzo, Wynn/Encore, Westgate; **South Point 13.00%** confirmed; addresses corroborated (ARIA 3730, Bellagio 3600, MGM 3799, Wynn 3131, South Point 9777, Westgate 3000 Paradise) |
+
+Transcripts: `research/ec9cc26c-venetian-schedule-official-2026-11-17.md`, `research/ec9cc26c-wynn-wpt-schedule-official-2026-11-17.md` (row counts are counted, not estimated: 94 and 136).
+
+Merge log (required by the protocol): main advanced `ba321e7` → `2c65dfc` (PRs #53–#63) while this session worked. `git merge origin/main` produced three conflicts, all resolved without discarding anyone's work:
+- `COORDINATION.md` — union: this session's claim section kept, then main's appended session sections.
+- `scripts/build_master.py` — both additive blocks kept (this session's K2 last-checked sweep, then main's walking/rate-log blocks).
+- `index.html` — generated file: conflict resolved then regenerated from the merged generators.
+After the merge the full check suite was re-run on the combined tree (K4 above).
+
+Scope: files listed above. Legacy surfaces (`plan/`, `site-data/`, `docs/`, `verified/`, `pages/`)
+are read as inputs. Open decisions S-11 (one surface) and S-12 (merge monitor jobs) stay suggestions
+for user review — not implemented here.
 ## Session arena/618fc735-poker2 — independent verification sweep (2026-11-17)
 
 Base: `main` @ `ba321e7` (PR #52 merged). Branch: `arena/618fc735-poker2`. This session runs as the

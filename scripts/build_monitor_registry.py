@@ -110,9 +110,16 @@ def main():
         keep = prev.get(url) or {}
         sid = keep.get("id") or ("%s-%s" % (slugify(urlparse(url).netloc.replace("www.", "")),
                                             slugify(url)[-40:]))
+        # arena/ec9cc26c-poker2 (2026-11-17): a previously registered label that is a raw
+        # data-key slug (e.g. caesars_poker_page) is upgraded to the human label from the
+        # source register; every other curated label is preserved as-is.
+        kept_label = keep.get("label")
+        human = label_for(url, master, hotel_names)
+        if kept_label and re.fullmatch(r"[a-z0-9_]+", kept_label) and human and human != kept_label:
+            kept_label = None
         urls.append({
             "id": sid,
-            "label": keep.get("label") or label_for(url, master, hotel_names),
+            "label": kept_label or human,
             "url": url,
             "cited_by": kind,
             "sha256": keep.get("sha256"),
