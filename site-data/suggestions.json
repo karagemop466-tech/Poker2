@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "intro": "Improvements are separated into what this pass already implemented and what is waiting for your decision. Nothing marked 'awaiting your choice' has been built, so the site's behaviour matches what is on screen.",
  "implemented_this_pass": [
   {
@@ -71,6 +71,11 @@
    "id": "S-A14",
    "title": "One coordination board, one canonical site",
    "detail": "Duplicate dashboards retired (FG-16); COORDINATION.md is the single shared board."
+  },
+  {
+   "id": "S-02",
+   "title": "Read the remaining 27 structure sheets - DONE 2026-11-17",
+   "detail": "Completed by arena/18aba6dd-poker2: all 27 remaining official sheets (2, 3, 4, 9, 12, 13, 14, 16, 17, 19-28, 30-37) were read in full on 2026-11-17 and transcribed with verbatim excerpts. Result: 45 single-entry candidate rows, 0 unverified Venetian rows, and new findings - LIPS events withhold an extra flat fee ($10 of $600 for events 35/43, $20 of $800 for event 39), the $600 Seniors sheets pay 15% of the field, event 39 is one starting day + Day 2 (not multi-flight), and events 56/59 publish early-registration rake discounts ($40/$20 off the first entry before start). The written single-entry confirmation from the room (Q-03) remains outstanding."
   }
  ],
  "awaiting_your_choice": [
@@ -81,15 +86,6 @@
    "what": "Choose arrival/departure inside Nov 16 - Dec 23, 2026.",
    "why": "It unblocks the checkout-total capture (Q-08), the 30-minute walk test on the actual route in that weather, and the room-rate comparison; today every date-dependent field is blank by design.",
    "effort": "one decision",
-   "status": "awaiting your choice"
-  },
-  {
-   "id": "S-02",
-   "title": "Read the remaining 27 structure sheets",
-   "category": "data",
-   "what": "Extend the refresh job to extract the rule block from each sheet and promote rows automatically when a sheet states an entry limit.",
-   "why": "Turns 11 unverified one-day rows into either qualifying or excluded rows, and makes 'confirmed' mean something for events 08, 17, 20, 24, 27, 32, 36, 40, 43, 52, 57.",
-   "effort": "one workflow change, no API key",
    "status": "awaiting your choice"
   },
   {
