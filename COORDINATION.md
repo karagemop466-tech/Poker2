@@ -1,5 +1,25 @@
 # Coordination board
 
+## Session arena/0fd90745-poker2 — final integration claims (2026-11-17)
+
+All earlier sessions are merged (main = `02cffeb`, PR #42). This session claims the shared outputs
+as the final integration session and works the open items S-02/FG-03 (27 unread structure sheets),
+S-05/FG-05, S-11 (one surface), S-12 (three monitor jobs), plus two defects found on `main`:
+`README.md` carries unresolved merge-conflict markers, and the root change-monitor registry covers
+22 of the ~63 official URLs cited by rows.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| J1 Read the remaining 27 Venetian DSE IV structure sheets; resolve the `not_read` rows (S-02 / FG-03) | in progress | arena/0fd90745-poker2 | `scripts/build-events.py`, `site-data/events.json`, `plan/**` |
+| J2 Re-verify the Venetian schedule page + hotel fee/tax/rate pages as of 2026-11-17; refresh `as_of` and per-row `last_checked`; mark finished vs upcoming events | in progress | arena/0fd90745-poker2 | `scripts/build_master.py`, `data/master.json`, `scripts/build-site.py`, `scripts/build-schedule.py`, `plan/**` |
+| J3 Extend scheduled re-check to every official URL cited by a row (root monitor registry) | in progress | arena/0fd90745-poker2 | `scripts/monitor.py`, `scripts/build_monitor_registry.py`, `data/source_monitor.json`, `scripts/build_site.py` |
+| J4 Fix `README.md` unresolved conflict markers; document the one-surface decision (S-11) | in progress | arena/0fd90745-poker2 | `README.md` |
+| J5 Update executive summary, questions, suggestions and flagged pages with the new evidence state | unclaimed → this session | arena/0fd90745-poker2 | `site-data/{questions,suggestions,flags,summary}.json`, `scripts/build-site.py`, `scripts/build_master.py` |
+| J6 Disposition of the stale open PR #28 (superseded session) | unclaimed → this session | arena/0fd90745-poker2 | GitHub only |
+| J7 Final integration: PR → `main`, CI green, Pages deploy confirmed, record here | in progress | arena/0fd90745-poker2 | `COORDINATION.md` |
+
+## Earlier board rows (kept for audit)
+
 | Task | Status | Owner | Files |
 |---|---|---|---|
 | Repair repository README merge-conflict residue; audit docs against the actual generated site and build workflows | done | arena/f4e82c6f-poker2 | `README.md`, `COORDINATION.md` |
