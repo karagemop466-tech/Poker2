@@ -133,7 +133,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev1",
   "h": "$300 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels ",
-  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-17 | 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 9 | 2026-11-17 | baseline set"
+  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-17 | 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 9 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -141,7 +141,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev2",
   "h": "$300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "2 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-18 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | baseline set"
+  "x": "2 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-18 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -149,7 +149,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev3",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | baseline set"
+  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -157,7 +157,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev4",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | baseline set"
+  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -165,7 +165,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev5",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | baseline set"
+  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -173,7 +173,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev6",
   "h": "$200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM)",
-  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published sheet prints no guarantee | \u2014 | sheet 29 | 2026-11-17 | baseline set"
+  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published sheet prints no guarantee | \u2014 | sheet 29 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -181,7 +181,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev7",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "7 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 | 2026-11-17 | baseline set"
+  "x": "7 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -189,7 +189,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev8",
   "h": "$200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "8 | Bounty / PKO | $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 30 | 2026-11-17 | baseline set"
+  "x": "8 | Bounty / PKO | $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 30 | 2026-11-17 | source changed"
  },
  {
   "p": "tournaments.html",
@@ -197,7 +197,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev9",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "9 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-24 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "9 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-24 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -205,7 +205,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev10",
   "h": "$400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "10 | Best single-entry candidates | $400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-25 | 11:10 AM | $400 | $65 | $335 | $15,000 | 37.5\u00d7 | sheet 6 | 2026-11-17 | baseline set"
+  "x": "10 | Best single-entry candidates | $400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-25 | 11:10 AM | $400 | $65 | $335 | $15,000 | 37.5\u00d7 | sheet 6 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -213,7 +213,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev11",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "11 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-25 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "11 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-25 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -221,7 +221,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev12",
   "h": "$300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "12 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-26 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | baseline set"
+  "x": "12 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-26 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -229,7 +229,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev13",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "13 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-26 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "13 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-26 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -237,7 +237,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev14",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "14 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-27 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | baseline set"
+  "x": "14 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-27 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -245,7 +245,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev15",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "15 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-27 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "15 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-27 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -253,7 +253,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev16",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg:",
-  "x": "16 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-11-28 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 11 | 2026-11-17 | baseline set"
+  "x": "16 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-11-28 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 11 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -261,7 +261,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev17",
   "h": "$400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "17 | Bounty / PKO | $400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-28 | 12:10 PM | $400 | $60 | $340 | $15,000 (prize pool + total bounties) | 37.5\u00d7 | sheet 26 | 2026-11-17 | baseline set"
+  "x": "17 | Bounty / PKO | $400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-28 | 12:10 PM | $400 | $60 | $340 | $15,000 (prize pool + total bounties) | 37.5\u00d7 | sheet 26 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -269,7 +269,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev18",
   "h": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 leve",
-  "x": "18 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-28 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | baseline set"
+  "x": "18 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-28 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -277,7 +277,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev19",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "19 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 | 2026-11-17 | baseline set"
+  "x": "19 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -285,7 +285,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev20",
   "h": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 ",
-  "x": "20 | Best single-entry candidates | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-29 | 12:10 PM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 22 | 2026-11-17 | baseline set"
+  "x": "20 | Best single-entry candidates | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-29 | 12:10 PM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 22 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -293,7 +293,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev21",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "21 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-29 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "21 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-29 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -301,7 +301,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev22",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "22 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-30 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "22 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-30 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -309,7 +309,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev23",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "23 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-01 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "23 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-01 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -325,7 +325,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev25",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "25 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-02 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "25 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-02 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -333,7 +333,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev26",
   "h": "$800 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels ",
-  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-04 2026-12-05 | 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 | 2026-11-17 | baseline set"
+  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-04 2026-12-05 | 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -341,7 +341,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev27",
   "h": "$600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "27 | Best single-entry candidates | $600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-03 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 28 | 2026-11-17 | baseline set"
+  "x": "27 | Best single-entry candidates | $600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-03 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 28 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -349,7 +349,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev28",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 7 | 2026-11-17 | baseline set"
+  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 7 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -357,7 +357,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev29",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "29 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-06 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "29 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-06 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -365,7 +365,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev30",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 11 | 2026-11-17 | baseline set"
+  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 11 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -373,7 +373,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev31",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "31 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-07 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "31 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-07 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -397,7 +397,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev34",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "34 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-08 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "34 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-08 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -405,7 +405,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev35",
   "h": "$600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg:",
-  "x": "35 | Team events | $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg: 8 levels + Break (~2:40 PM) | 2026-12-09 | 10:10 AM | $600 | $80 | $510 | $10,000 | 16.7\u00d7 | sheet 31 | 2026-11-17 | baseline set"
+  "x": "35 | Team events | $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg: 8 levels + Break (~2:40 PM) | 2026-12-09 | 10:10 AM | $600 | $80 | $510 | $10,000 | 16.7\u00d7 | sheet 31 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -413,7 +413,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev36",
   "h": "$800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "36 | Bounty / PKO | $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-09 | 11:10 AM | $800 | $100 | $700 | $75,000 (prize pool + total bounties) | 93.8\u00d7 | sheet 16 | 2026-11-17 | baseline set"
+  "x": "36 | Bounty / PKO | $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-09 | 11:10 AM | $800 | $100 | $700 | $75,000 (prize pool + total bounties) | 93.8\u00d7 | sheet 16 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -429,7 +429,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev38",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "38 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-09 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "38 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-09 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -445,7 +445,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev40",
   "h": "$600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "40 | Bounty / PKO | $600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-10 | 12:10 PM | $600 | $90 | $510 | $25,000 (prize pool + total bounties) | 41.7\u00d7 | sheet 27 | 2026-11-17 | baseline set"
+  "x": "40 | Bounty / PKO | $600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-10 | 12:10 PM | $600 | $90 | $510 | $25,000 (prize pool + total bounties) | 41.7\u00d7 | sheet 27 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -453,7 +453,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev41",
   "h": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additiona",
-  "x": "41 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-10 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | baseline set"
+  "x": "41 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-10 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -461,7 +461,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev42",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "42 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-10 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "42 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-10 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -469,7 +469,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev43",
   "h": "$600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels ",
-  "x": "43 | Bounty / PKO | $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-11 | 11:10 AM | $600 | $80 | $510 | $30,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 33 | 2026-11-17 | baseline set"
+  "x": "43 | Bounty / PKO | $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-11 | 11:10 AM | $600 | $80 | $510 | $30,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 33 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -477,7 +477,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev44",
   "h": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additiona",
-  "x": "44 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-11 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | baseline set"
+  "x": "44 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-11 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -485,7 +485,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev45",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "45 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-11 | 8:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | baseline set"
+  "x": "45 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-11 | 8:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -493,7 +493,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev46",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "46 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 9:10 AM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | baseline set"
+  "x": "46 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 9:10 AM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -501,7 +501,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev47",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed f",
-  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 | 2026-11-17 | baseline set"
+  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -509,7 +509,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev48",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "48 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 12:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | baseline set"
+  "x": "48 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 12:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -525,7 +525,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev50",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "50 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-13 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "50 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-13 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -533,7 +533,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev51",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "51 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-14 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "51 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-14 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -541,7 +541,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev52",
   "h": "$1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 ",
-  "x": "52 | Bounty / PKO | $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-15 | 11:10 AM | $1,100 | $130 | $970 | $75,000 (prize pool + total bounties) | 68.2\u00d7 | sheet 34 | 2026-11-17 | baseline set"
+  "x": "52 | Bounty / PKO | $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-15 | 11:10 AM | $1,100 | $130 | $970 | $75,000 (prize pool + total bounties) | 68.2\u00d7 | sheet 34 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -549,7 +549,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev53",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "53 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-15 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "53 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-15 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -557,7 +557,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev54",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 83.3\u00d7 | sheet 11 | 2026-11-17 | baseline set"
+  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 83.3\u00d7 | sheet 11 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -565,7 +565,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev55",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "55 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-16 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | baseline set"
+  "x": "55 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-16 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -573,7 +573,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev56",
   "h": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM each flight plays to ~12.5% remaining; Day 2 combi",
-  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 | 2026-11-17 | baseline set"
+  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -581,7 +581,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev57",
   "h": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 ",
-  "x": "57 | Best single-entry candidates | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-17 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 23 | 2026-11-17 | baseline set"
+  "x": "57 | Best single-entry candidates | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-17 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 23 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -589,7 +589,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev58",
   "h": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 leve",
-  "x": "58 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-19 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | baseline set"
+  "x": "58 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-19 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -597,7 +597,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev59",
   "h": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM each flight plays to ~12.5% remaining; Day 2 combine",
-  "x": "59 | Multi-flight | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 | 2026-11-17 | baseline set"
+  "x": "59 | Multi-flight | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -605,7 +605,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev60",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "60 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-20 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "60 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-20 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -613,7 +613,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev61",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "61 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-21 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "61 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-21 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -621,7 +621,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev62",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "62 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-22 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "62 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-22 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -629,7 +629,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev63",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "63 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-23 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | baseline set"
+  "x": "63 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-23 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -637,7 +637,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev64",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "64 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | baseline set"
+  "x": "64 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
  },
  {
   "p": "entry-rules.html",
@@ -4397,7 +4397,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-14",
   "h": "F-14",
-  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-17T15:49:57Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
  },
  {
   "p": "sources.html",
@@ -4405,23 +4405,7 @@
   "t": "Document HTTP Failure kind What that means",
   "a": "",
   "h": "bellagio.mgmresorts.com",
-  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 403 | blocked | the property's bot protection refused the runner; the page is live for a person, so this value has to be re-read by hand"
+  "x": "bellagio.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
  },
  {
   "p": "sources.html",
@@ -4429,7 +4413,7 @@
   "t": "Document HTTP Failure kind What that means",
   "a": "",
   "h": "mgmgrand.mgmresorts.com",
-  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+  "x": "mgmgrand.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
  },
  {
   "p": "sources.html",
@@ -4437,23 +4421,7 @@
   "t": "Document HTTP Failure kind What that means",
   "a": "",
   "h": "bellagio.mgmresorts.com",
-  "x": "bellagio.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.caesars.com",
-  "x": "www.caesars.com | 302 | redirect-loop | the host keeps redirecting without serving content (a cookie or region wall). Not evidence that the page moved"
+  "x": "bellagio.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
  },
  {
   "p": "sources.html",
@@ -4461,7 +4429,7 @@
   "t": "Document HTTP Failure kind What that means",
   "a": "",
   "h": "mgmgrand.mgmresorts.com",
-  "x": "mgmgrand.mgmresorts.com | no response | unreachable | the fetch failed; nothing about the document is proven"
+  "x": "mgmgrand.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
  },
  {
   "p": "sources.html",
@@ -4469,15 +4437,7 @@
   "t": "Document HTTP Failure kind What that means",
   "a": "",
   "h": "assets.contentstack.io",
-  "x": "assets.contentstack.io | 422 | unreachable | the fetch failed; nothing about the document is proven"
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Document HTTP Failure kind What that means",
-  "a": "",
-  "h": "www.wynnlasvegas.com",
-  "x": "www.wynnlasvegas.com | 404 | not found | the official URL no longer serves a document - the citation itself needs correcting"
+  "x": "assets.contentstack.io | 422 | unreachable | the request failed; nothing about the document is proven"
  },
  {
   "p": "sources.html",
