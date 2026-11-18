@@ -1,0 +1,19 @@
+{
+ "id": "SRC-V-OVERVIEW",
+ "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+ "label": "Venetian DeepStack Poker Series overview",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html;charset=utf-8",
+ "bytes": 247940,
+ "hash": "05a9704857b1ab65a1493036ad764cb0e344adec8f44ecc84c99e902e24fb990",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "stale_current_series_label": null
+ },
+ "value_diffs": [],
+ "excerpt_hint": "DeepStack Poker Series Tournaments | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Chec",
+ "note": ""
+}

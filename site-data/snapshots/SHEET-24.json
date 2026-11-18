@@ -1,0 +1,17 @@
+{
+ "id": "SHEET-24",
+ "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+ "label": "Structure sheet 24 (events 41 and others)",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "application/pdf",
+ "bytes": 384791,
+ "hash": "c74efdc12f12c8cc085e17cad163012c55516c1f28d46fdf66f6a56d90f1fb47",
+ "state": "new",
+ "binary": true,
+ "values": {},
+ "value_diffs": [],
+ "excerpt_hint": "(binary: hash-only check)",
+ "note": "sheet values are transcribed in scripts/build-events.py"
+}

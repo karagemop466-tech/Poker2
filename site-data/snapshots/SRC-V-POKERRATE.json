@@ -1,0 +1,23 @@
+{
+ "id": "SRC-V-POKERRATE",
+ "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+ "label": "Venetian 2026 poker suite rates (the only official rate statement found)",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html;charset=utf-8",
+ "bytes": 232206,
+ "hash": "bdbdbc461e366aa5b2c33a2bba63931222db1f09ccd9dbd268675081407488d7",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "starting_rates": "119|209",
+  "horizon_days": "150",
+  "qualify_cash_hours": "play six hours of active live cash gameplay",
+  "qualify_tournament": "300",
+  "fee_line": "55"
+ },
+ "value_diffs": [],
+ "excerpt_hint": "2026 Poker Room Rates & Play Requirements | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loadi",
+ "note": ""
+}
