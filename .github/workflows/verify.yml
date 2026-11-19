@@ -76,6 +76,9 @@ jobs:
       - name: The site-wide search filters the committed index
         run: node scripts/check_search.mjs
 
+      - name: Trip estimates require a complete lodging quote
+        run: node scripts/check_trip.mjs
+
       # Semantic gate. Every defect this catches was in a build that passed every other check in
       # this file: a citation link labelled "schedule" over a structure-sheet PDF, a ratio printed
       # for a row whose house fee is blank, and a link to a workflow file that does not exist.

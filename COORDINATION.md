@@ -1934,4 +1934,6 @@ resolved by regenerating from the merged generators, never by hand-merging.
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| Correct misleading trip totals and add regression coverage | in progress | arena/62f3de7b-poker2 | `assets/site2026.js`, `scripts/build2026.py` (trip only), `2026/trip.html`, `scripts/check_trip.mjs`, `.github/workflows/verify.yml` |
+| Correct misleading trip totals and add regression coverage | done | arena/62f3de7b-poker2 | `2026/assets/site2026.js`, `scripts/build2026.py` (trip only), `2026/trip.html`, `scripts/check_trip.mjs`, `.github/workflows/verify.yml` |
+
+2026-11-19: Re-read [official Venetian poker suite terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html). The $119 figure is a conditional starting rate, not a dated quote; removed it as a calculator default. No exact-stay checkout quote was verified. The existing transcription check passed (37 sheets, 481 comparisons; zero explicit single-entry clauses); this was not a fresh read of all PDFs. Trip regression and local citation checks passed.
