@@ -12940,6 +12940,13 @@
  ],
  "questions": [
   {
+   "id": "Q-00",
+   "q": "How many tournaments can actually be entered in one day?",
+   "why": "The Day plan now computes a maximum per day from published start times and late-registration closes only. It cannot know when you will bust out, and no sheet prints how many levels an event runs, so no finish time is known.",
+   "blocks": "Turning 'maximum entries' into a booking. Every multi-entry day on the site is a conditional plan, not a reserve-two-seats plan.",
+   "answer": "Partially answered, descriptively: e.g. 12 December 2026 publishes four entry rows from 9:10 AM to 6:10 PM, but two of them are the same event (a later flight is a second buy-in). See Day plan -> Maximum entries per day."
+  },
+  {
    "id": "Q-01",
    "q": "What entry rule qualifies an event?",
    "why": "Only a written whole-event cap of one entry, with no paid rebuy or add-on, satisfies this trip's policy.",
@@ -13039,6 +13046,15 @@
   }
  ],
  "suggestions": [
+  {
+   "id": "S-00",
+   "title": "Ask each room for the number of levels an event runs",
+   "what": "Every structure sheet publishes the level LENGTH (30/40 minutes) but not the number of levels. One number per event would let the site compute a maximum duration (levels x length) and turn today's conditional 'reachable' pairs into a real finish-time bound.",
+   "decides": "Whether a later event can be planned at all, instead of only 'enter it if you are out in time'. It is the missing input behind the Day plan's maximum-entries table.",
+   "cost": "One question to the poker room per sheet",
+   "effort": "Low",
+   "blocks": "Q-00"
+  },
   {
    "id": "S-01",
    "title": "Get the entry rule in writing from the Venetian poker room",
