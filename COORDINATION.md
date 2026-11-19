@@ -2570,3 +2570,63 @@ Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flye
 - [PR #102](https://github.com/karagemop466-tech/Poker2/pull/102) (main repair + F-07 correction) merged with `gh pr merge 102 --merge` at 2026-11-19T11:05:36Z, merge commit `d5d22ea3069e626e551bfd49b2f32c8da74f8a33`. Checks on head `e0be8ca`: `Verify site` SUCCESS, `Plan: generated pages match their data` SUCCESS.
 - Pages: `pages/builds/latest` for `d5d22ea` → `built`, error null. Live root page renders without the stray marker; the cache-busted `/2026/flagged.html` lists N-04.
 - After this merge, `main` is green (Verify site, Plan check, Pages deployment). Session `arena/2c7e846d-poker2` has no further open work and no open claims.
+
+## Session arena/799d66c1-poker2 — final integration & independent verification (2026-19)
+
+**Role:** final integration session. Read `COORDINATION.md` and checked open PRs before starting.
+Rebased the session branch onto the latest `main`. While the branch was open, the remaining work was
+completed and merged by other sessions: PR #102 (F-07 tax-flag correction + COORDINATION record,
+merged `d5d22ea`), PR #103 (`8ec92de`), PR #104 (`f0afe1b`), and the two **"Repair main"** commits
+`7edf1b7` / `e0be8ca` that regenerated the root surface from its generators and removed a stray
+`<<<<<<< HEAD` conflict marker from `index.html` / `COORDINATION.md`.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Rebase onto repaired main; confirm root surface reproduces from generators (no drift) | done | arena/799d66c1-poker2 | `COORDINATION.md` |
+| V2 Run the full local verification suite across root and `/2026/` surfaces | done | arena/799d66c1-poker2 | `COORDINATION.md` |
+| V3 Independent first-hand re-verification of five official sources against stored data | done | arena/799d66c1-poker2 | `research/799d66c1-integration-verification-2026-11-19.md` |
+| V4 Incorporate the last open completion-record PR (#99, doc-only) and close it | done | arena/799d66c1-poker2 | `COORDINATION.md` |
+| V5 Final integration: PR → main, CI green, Pages deploy confirmed, record here | in progress | arena/799d66c1-poker2 | `COORDINATION.md` |
+
+**Root-surface drift finding (resolved on main, re-confirmed here).** After PRs #100/#101 the
+committed root pages did not reproduce from `build_master.py`/`build_site.py`. The "Repair main"
+commits regenerated the root surface from the generators and removed the stray conflict marker. This
+session re-ran `build_master.py` + `build_site.py` and confirmed **no drift** — the repair is complete
+and no further change was required. No data value was hand-edited by this session.
+
+**Independent verification (first-hand, 2026-11-19).** Five official sources re-read and compared to
+the stored dataset; **no discrepancies found**. Details and links:
+`research/799d66c1-integration-verification-2026-11-19.md`.
+
+- Venetian DSE IV schedule (Nov 16–Dec 23, 2026; 94 rows) — matches; `recheck_schedule_live.py` 94/94.
+- Venetian resort fee $55 plus tax/night — matches.
+- Venetian structure sheet 7 (Events 14/28/63): $600 buy-in, $90 fee, $510 to pool, 40,000 chips,
+  30-min levels, late reg 10 levels + Break, guarantees $30k/$40k, Venetian Rewards card condition;
+  sheet is **silent on re-entry/rebuy/add-on** (no single-entry rule) — event stays unconfirmed.
+- Wynn poker page (WPT Nov 27–Dec 21; Signature Series Jan 11–24 2027; daily suspended during
+  series; $40k GTD Friday rebuy; $10k GTD evening) — matches.
+- Clark County transient lodging tax 13.38% (PGC resort hotels, Appendix III) — matches; the
+  current-table re-check caveat (F-07) is retained, not resolved.
+
+**Full local suite (all exit 0):** root — `audit.py`, `build.py`, `test_monitor.py`,
+`build_master.py`, `build_site.py` (drift clean), `check_root_surface.py`, `check_links.py`,
+`check_plan_fresh.py --strict`. `/2026/` — `build2026.py --check`, `recheck_schedule_live.py`
+(94/94), `check_sheet_readings.py` (37 sheets / 481 fields), `check_guarantees.py`, `check2026.py`
+(24 pages, 1631 links, no broken links, no non-official hosts), `check_decisions2026.mjs`,
+`test_recheck2026.py`, `check_monitor_badge.py`, `check_refresh2026.py`, `check_semantics.py`,
+`check_decisions.mjs`, `check_search.mjs`, `check_trip.mjs`, `check_labels.py` + self-test.
+
+**PR #99 disposition.** PR #99 (completion record for `arena/a9f5847f-poker2`, doc-only, 2 lines in
+`COORDINATION.md`) could not be merged cleanly: it was based on an older `main` and conflicted in the
+append-only board. Its content (the V4 Pages/deploy record) is incorporated into this integration
+branch; the PR was closed with the content retained, nothing discarded.
+
+**Still blocked / not claimed (unchanged; published on the Flagged page, non-blocking):** no
+confirmed single-entry/freezeout event (0 of 37 sheets state a one-entry rule); no verified finish
+times; no itemized exact-stay checkout totals (booking engine loads a shell without a price); walking
+times are route estimates, not measured door-to-seat; no live hotel quote feed or complete Strip-wide
+scraping. These do not block the merge.
+
+### arena/799d66c1-poker2 — publication record
+
+(Completed and recorded here after the integration PR is merged and Pages is confirmed.)
