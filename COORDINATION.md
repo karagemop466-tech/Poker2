@@ -2473,3 +2473,20 @@ Checked the board and open PRs first: `gh pr list --state open` returned no open
 | E3 Regenerate `/2026/`, rerun the full local suite, PR → `main`, merge, confirm Pages build, record here | in progress | arena/2c7e846d-poker2 | regenerated `2026/**`, `COORDINATION.md` |
 
 Not claimed: Google/Apple walking verification (no maps access from this sandbox), live hotel quotes, Strip-wide scraping, and any change to ranking logic or to unverified values. Values that are not printed on an official source remain blank.
+
+---
+
+## Session arena/d4f8a6ed-poker2 — independent acceptance audit (2026-11-19)
+
+Read the board before starting. The session branch initially pointed at `7ab0759`; the first required
+`git pull --rebase origin main` advanced it through merged PR #95 (`559621f`). PR #95 had already
+completed the same read-only site-acceptance scope, so this session adopts that result rather than
+repeating its source audit or editing shared data. The branch also incorporates PR #96's 2026-11-19
+official-source re-read. It stays on the Arena-fixed branch `arena/d4f8a6ed-poker2`.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| A1 Adopt the already-merged acceptance/source audit; independently rerun the non-network local verification suite on the rebased main tree and record any new failure | in progress | arena/d4f8a6ed-poker2 | `COORDINATION.md` |
+
+This append-only board update conflicted during rebase with the already-merged PR #96 and PR #98
+coordination entries. Their full records are retained; no other session's work has been discarded.
