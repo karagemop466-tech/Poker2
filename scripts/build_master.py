@@ -2227,5 +2227,7 @@ for _e in _m2e7["events"]:
         _e["last_checked"] = "2026-11-19"
         if _e.get("schedule_checked"):
             _e["schedule_checked"] = "2026-11-19"
-_json2e7.dump(_m2e7, open(_p2e7, "w"), indent=1)
+with open(_p2e7, "w", encoding="utf-8") as _f2e7:
+    _json2e7.dump(_m2e7, _f2e7, indent=1, ensure_ascii=False)
+    _f2e7.write("\n")
 print("2e732aa2 overlay applied: as_of=2026-11-19, Venetian schedule rows re-dated")
