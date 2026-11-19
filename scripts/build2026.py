@@ -1381,7 +1381,7 @@ def p_trip(events):
 <div class="hero"><h1>Trip cost estimator</h1>
 <p class="lede">Estimated cost of a trip = entries &times; buy-ins + nights &times; true hotel cost
 per night. Both halves use only figures printed on official documents: entry fees from the structure
-sheets, and hotel cost from the resort fee, tax and rate you enter below.</p></div>
+sheets, and hotel cost from a dated checkout quote if available.</p></div>
 
 <div class="panel"><h2>Entries</h2>
 <p class="note">Pick the events you plan to enter. Each entry is one buy-in at the official total entry
@@ -1399,13 +1399,12 @@ add the event twice.</p>
 
 <div class="panel"><h2>Hotel</h2>
 <div class="calc">
-<label>Nightly room rate ($)<input type="number" id="t-rate" value="119" min="0" step="1"></label>
-<label>Resort fee / night ($)<input type="number" id="t-fee" value="55" min="0" step="1"></label>
-<label>Room tax (%%)<input type="number" id="t-tax" value="%s" min="0" step="0.01"></label>
-<label>Parking / night ($)<input type="number" id="t-park" value="0" min="0" step="1"></label>
-<label>Nights<input type="number" id="t-nights" value="5" min="0" step="1"></label>
+<label>Hotel checkout total for the stay ($)<input type="number" id="t-checkout" min="0" step="0.01"></label>
+<label>Nights<input type="number" id="t-nights" min="0" step="1"></label>
 </div>
-<p class="note">Resort fee is taxable, so tax applies to rate + fee. Parking is not taxable.</p>
+<p class="note">Use the final checkout total for the same dates and occupancy, including mandatory fees
+and taxes. Include applicable parking once. Leave the quote blank if unavailable, or enter zero nights
+for an entries-only trip. <a href="hotels.html">Hotel sources and rate log</a>.</p>
 </div>
 
 <div class="panel"><h2>Total</h2>
@@ -1416,10 +1415,9 @@ add the event twice.</p>
 <div class="out"><div class="k">Estimated trip cost</div><div class="v" id="tot-all">$0</div></div>
 </div>
 <p class="note">Excludes flights, food, cash-game bankroll and anything else the official pages do not
-price. A $300+ tournament entry also satisfies the Venetian poker-rate qualifying-play condition for
-that night, so the buy-ins you add above are what keep the $119 room rate alive.</p>
+price. The <a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html">official Venetian poker rate</a> starts at $119, subject to availability and qualifying play per night. Selecting an entry here does not establish eligibility or a room quote.</p>
 </div>
-""" % (opts, TAX * 100), "trip.html")
+""" % opts, "trip.html")
 
 
 def p_venues(events):
@@ -2537,21 +2535,25 @@ JS = r"""
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
     var pick=$('#pick'), body=$('#cart').tBodies[0];
-    var R={r:$('#t-rate'),f:$('#t-fee'),t:$('#t-tax'),p:$('#t-park'),n:$('#t-nights')};
+    var checkout=$('#t-checkout'), nights=$('#t-nights');
+    function setCost(selector, amount){
+      $(selector).textContent=amount===null?'Not available':amount.toLocaleString('en-US',{style:'currency',currency:'USD'});
+    }
     function recalc(){
       var buyin=0,pool=0;
       $$('#cart tbody tr').forEach(function(tr){
         buyin+=parseFloat(tr.getAttribute('data-buyin'))||0;
         pool+=parseFloat(tr.getAttribute('data-pool'))||0;
       });
-      var r=+R.r.value||0, f=+R.f.value||0, tx=(+R.t.value||0)/100, pk=+R.p.value||0, n=+R.n.value||0;
-      var night=(r+f)*(1+tx)+pk, hotel=night*n;
-      $('#sum-buyin').textContent=fmt(buyin);
-      $('#sum-pool').textContent=fmt(pool);
-      $('#tot-buyin').textContent=fmt(buyin);
-      $('#tot-night').textContent=fmt(night);
-      $('#tot-hotel').textContent=fmt(hotel);
-      $('#tot-all').textContent=fmt(buyin+hotel);
+      var n=nights.valueAsNumber, quote=checkout.valueAsNumber;
+      var valid=Number.isInteger(n)&&n>0&&Number.isFinite(quote)&&quote>=0&&checkout.validity.valid;
+      var hotel=n===0?0:valid?quote:null;
+      setCost('#sum-buyin',buyin);
+      setCost('#sum-pool',pool);
+      setCost('#tot-buyin',buyin);
+      setCost('#tot-night',valid?quote/n:null);
+      setCost('#tot-hotel',hotel);
+      setCost('#tot-all',hotel===null?null:buyin+hotel);
     }
     $('#add').addEventListener('click',function(){
       var o=pick.options[pick.selectedIndex]; if(!o||!o.value) return;
@@ -2565,7 +2567,7 @@ JS = r"""
       tr.querySelector('.del').addEventListener('click',function(){tr.remove();recalc()});
       body.appendChild(tr); recalc();
     });
-    Object.keys(R).forEach(function(k){R[k].addEventListener('input',recalc)});
+    [checkout,nights].forEach(function(input){input.addEventListener('input',recalc)});
     recalc();
   }
 })();

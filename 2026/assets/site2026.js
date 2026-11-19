@@ -181,21 +181,25 @@
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
     var pick=$('#pick'), body=$('#cart').tBodies[0];
-    var R={r:$('#t-rate'),f:$('#t-fee'),t:$('#t-tax'),p:$('#t-park'),n:$('#t-nights')};
+    var checkout=$('#t-checkout'), nights=$('#t-nights');
+    function setCost(selector, amount){
+      $(selector).textContent=amount===null?'Not available':amount.toLocaleString('en-US',{style:'currency',currency:'USD'});
+    }
     function recalc(){
       var buyin=0,pool=0;
       $$('#cart tbody tr').forEach(function(tr){
         buyin+=parseFloat(tr.getAttribute('data-buyin'))||0;
         pool+=parseFloat(tr.getAttribute('data-pool'))||0;
       });
-      var r=+R.r.value||0, f=+R.f.value||0, tx=(+R.t.value||0)/100, pk=+R.p.value||0, n=+R.n.value||0;
-      var night=(r+f)*(1+tx)+pk, hotel=night*n;
-      $('#sum-buyin').textContent=fmt(buyin);
-      $('#sum-pool').textContent=fmt(pool);
-      $('#tot-buyin').textContent=fmt(buyin);
-      $('#tot-night').textContent=fmt(night);
-      $('#tot-hotel').textContent=fmt(hotel);
-      $('#tot-all').textContent=fmt(buyin+hotel);
+      var n=nights.valueAsNumber, quote=checkout.valueAsNumber;
+      var valid=Number.isInteger(n)&&n>0&&Number.isFinite(quote)&&quote>=0&&checkout.validity.valid;
+      var hotel=n===0?0:valid?quote:null;
+      setCost('#sum-buyin',buyin);
+      setCost('#sum-pool',pool);
+      setCost('#tot-buyin',buyin);
+      setCost('#tot-night',valid?quote/n:null);
+      setCost('#tot-hotel',hotel);
+      setCost('#tot-all',hotel===null?null:buyin+hotel);
     }
     $('#add').addEventListener('click',function(){
       var o=pick.options[pick.selectedIndex]; if(!o||!o.value) return;
@@ -209,7 +213,7 @@
       tr.querySelector('.del').addEventListener('click',function(){tr.remove();recalc()});
       body.appendChild(tr); recalc();
     });
-    Object.keys(R).forEach(function(k){R[k].addEventListener('input',recalc)});
+    [checkout,nights].forEach(function(input){input.addEventListener('input',recalc)});
     recalc();
   }
 })();
