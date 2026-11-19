@@ -2307,3 +2307,33 @@ Not claimed / untouched: PR #80 and `arena/62f3de7b-poker2`; `scripts/build_site
 > print `HEAD`), fixed independently there; nothing from this session's R2 remains in the tree.
 > R1 (verification), R3 (live spot checks) and R4 (PR/merge/record) are unchanged. The session's
 > PR therefore carries documentation only (this board), not a README edit.
+
+## arena/f594ea1f-poker2 — merge and deploy record (2026-11-19)
+
+**Publication.** [PR #89](https://github.com/karagemop466-tech/Poker2/pull/89) → `main`, merged with
+`gh pr merge 89 --merge` at **2026-11-19T05:50:17Z**, merge commit
+`f8ede8940ffe663bc824a1febb0d64489b331ffe` (`f8ede89`).
+
+- Checks on the merge commit: `Verify site` success (run 44467892804) and
+  `Plan: generated pages match their data` success (run 44467892677).
+- `pages build and deployment` for `f8ede89`: success (run 44467892257, 55s). Pages API reports
+  `status: built, error: null` for the same SHA.
+- Live site re-read after deploy (not the build log): <https://karagemop466-tech.github.io/Poker2/2026/>
+  serves the current dashboard, and <https://karagemop466-tech.github.io/Poker2/plan/flagged.html>
+  publishes the 2026-11-18T15:53Z change monitor — 59 sources `new` (first baselines), 7 `error-new`
+  (six mgmresorts.com timeouts, one goldennugget.com 403; blocked fetches, no value changes) — plus
+  the schedule diff (state `ok`: 94/94 rows, 0 added/removed/modified).
+
+**Merged content.** Cherry-pick of the additive artefacts of the stale 2026-11-18 refresh branch
+(`site-data/snapshots/**`, `change-report.json`, `schedule-diff.json`, `plan/flagged.html`) onto
+current `main`; the hardened `scripts/commit-refresh.sh` (merged with arena/4db7d9c7-poker2's
+main-checkout publish model: re-apply onto current `origin/main` before committing, zero-diff exit 0,
+one rebase-and-retry on a lost push race, no `gh pr create` dependency); hotels booking-link column
+dropped in favour of PR #83's richer fee-source cell; the `$119` pre-fill removal kept as shipped in
+PR #83. No event, hotel, fee or rate value was edited anywhere.
+
+**Left open on purpose.** The stale branch `refresh/2026-11-18T155801Z` stays on origin, unmerged;
+its useful content is now on `main`. Flagged items F-01/F-04/F-05/F-08/F-14, the 7 unreadable URLs,
+and the Caesars flyer disagreement are published on the Flagged page and do not block anything.
+The next scheduled `Plan: daily official-source refresh` run is the end-to-end proof of the merged
+fix.
