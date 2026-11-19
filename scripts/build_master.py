@@ -274,21 +274,45 @@ for row in verified["unverified"] + verified["excluded"]:
             notes=row.get("reason", ""),
         )
 
-# ------------------------------------------------------- recurring venue feeds
 cz = updates["caesars_recurring"]
+# --- Caesars Palace daily NLH: per-time values transcribed from the official daily flyer PDF
+# (see the CZP_FLYER block below). Read live again 2026-11-19 by session arena/755cb7af-poker2;
+# transcript: research/755cb7af-live-verification-2026-11-19.md section 1. The poker guide page
+# still says "$100 for all four" (re-confirmed same day, section 2), so the conflict stays flagged.
+CZP_FLYER = dict(
+    retrieved="2026-11-19",
+    late_reg="Registration closes at the start of level seven (official flyer)",
+    excerpt="Official Caesars Palace 2026 daily NLH flyer (read live 2026-11-19): four events daily at 10 AM ($100), 2 PM ($160), 6 PM ($100), 9 PM ($160); 20,000 starting chips; 20-minute levels; $1,000 guarantee each; $50 optional add-on for 15,000 chips at the first break ($45 prize pool / $5 fee); registration closes at the start of level seven; eliminated players may re-enter by paying the entry fee within the first break; $100 buy-in splits $70 pool / $30 fee, $160 buy-in splits $115 pool / $45 fee; minimum 6 players, 21+. Official Caesars poker guide (read 2026-11-17; re-confirmed live 2026-11-19): four No-Limit Hold'em tournaments daily at 10 a.m., 2 p.m., 6 p.m. and 9 p.m.; 'Every event carries a $100 buy-in'; 20,000 chips; $1,000 guaranteed prize pool; 20-minute levels; $50 add-on at the first break for 15,000 chips.",
+    single_entry="no - official flyer confirms paid re-entry within the first break and a paid $50 add-on",
+    re_entry="confirmed by official flyer: eliminated players may re-enter by paying the entry fee within the first break of play",
+    add_on="$50 add-on for 15,000 chips at the first break ($45 to prize pool / $5 fee per flyer)",
+    secondary=dict(url="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip", claim="every daily event carries a $100 buy-in - conflicts with the flyer at 2 PM and 9 PM"),
+    notes="Official flyer read live 2026-11-19 sets per-time buy-ins ($100/$160/$100/$160 at 10 AM/2 PM/6 PM/9 PM), $50 first-break add-on, re-entry within the first break, and registration close at start of level seven. The official Caesars poker guide says every daily event carries a $100 buy-in - two official Caesars documents disagree on the 2 PM and 9 PM buy-in; rows show the flyer's per-time values and the conflict stays flagged (VR-028). Not single-entry: flyer confirms paid re-entry and a paid add-on.",
+    # time -> (buy-in, fee, pool) exactly as the flyer prints them
+    by_time={
+        "10:00 AM": dict(buy_in=100, fee=30, pool_per_entry=70),
+        "2:00 PM": dict(buy_in=160, fee=45, pool_per_entry=115),
+        "6:00 PM": dict(buy_in=100, fee=30, pool_per_entry=70),
+        "9:00 PM": dict(buy_in=160, fee=45, pool_per_entry=115),
+    },
+)
 for t in cz["caesars_palace"]["times"]:
+    _c = CZP_FLYER["by_time"][t]
+    _bi = _c["buy_in"]
     add_event(
         id="CZP-" + t.replace(" ", "").replace(":", ""), venue_id="caesars", venue="Caesars Palace",
-        name="Daily NLH $100 buy-in, $1,000 GTD", game="NLH",
-        date="Recurring (daily)", start=t, buy_in=100, fee=None, pool_per_entry=None, gtd=1000,
+        name="Daily NLH $" + str(_bi) + " buy-in, $1,000 GTD", game="NLH",
+        date="Recurring (daily)", start=t, buy_in=_bi, fee=_c["fee"], pool_per_entry=_c["pool_per_entry"], gtd=1000,
         format="recurring", category="spend-more", tags=["recurring", "add-on"],
-        chips=20000, level_min=20, late_reg="",
-        rules=dict(single_entry="no \u2014 paid add-on confirmed", re_entry="not stated on the official guide",
-                   add_on="$50 add-on for 15,000 chips at the first break",
-                   excerpt=cz["caesars_palace"]["excerpt"], retrieved=AS_OF),
-        last_checked=AS_OF, source_url=C_GUIDE, struct_url=C_FLYER,
-        notes="Official guide: four daily events at 10 AM, 2 PM, 6 PM, 9 PM. Official daily flyer (read 2026-11-16 by session arena/acd81e67-poker2) lists $160 buy-ins at 2 PM and 9 PM \u2014 discrepancy flagged, values not reconciled.",
+        chips=20000, level_min=20, late_reg=CZP_FLYER["late_reg"],
+        rules=dict(single_entry=CZP_FLYER["single_entry"], re_entry=CZP_FLYER["re_entry"],
+                   add_on=CZP_FLYER["add_on"], excerpt=CZP_FLYER["excerpt"],
+                   retrieved=CZP_FLYER["retrieved"], source_url=C_FLYER,
+                   secondary_source=dict(url=CZP_FLYER["secondary"]["url"], claim=CZP_FLYER["secondary"]["claim"])),
+        last_checked=CZP_FLYER["retrieved"], source_url=C_FLYER, struct_url=C_FLYER,
+        notes=CZP_FLYER["notes"],
     )
+
 for t in cz["horseshoe"]["times"]:
     add_event(
         id="HS-" + t.replace(" ", "").replace(":", ""), venue_id="horseshoe", venue="Horseshoe Las Vegas",
@@ -535,8 +559,8 @@ for ir in updates["irregularities_found_this_session"]:
 flags += [
     dict(source="arena/8234a824-poker2", item="Caesars Palace daily buy-ins \u2014 official sources disagree",
          where="Caesars Palace daily NLH rows",
-         detail="The official Caesars guide says every daily event carries a $100 buy-in; the official daily flyer (read 2026-11-16 by arena/acd81e67-poker2) lists $160 at 2 PM and 9 PM. Not reconciled; rows show the guide value and this flag.",
-         url=C_GUIDE),
+         detail="Official Caesars Palace daily NLH flyer read live 2026-11-19 lists $160 buy-ins at 2 PM and 9 PM ($100 at 10 AM and 6 PM), a $50 first-break add-on, re-entry within the first break, and registration close at the start of level seven. The official Caesars poker guide page says every daily event carries a $100 buy-in. Two official Caesars documents disagree on the 2 PM and 9 PM buy-in; the rows now carry the flyer's per-time values and the conflict remains flagged rather than reconciled by guesswork. Not single-entry: the flyer confirms paid re-entry and a paid add-on.",
+         url=C_FLYER),
     dict(source="arena/8234a824-poker2", item="Wynn \u2018NIH\u2019 event naming",
          where="Wynn WPT rows: \u2018Ladies NIH Championship\u2019, \u2018NIH Turbo\u2019, \u2018NIH $500 Bounty Turbo\u2019",
          detail="The official WPT schedule text uses \u2018NIH\u2019 where \u2018NLH\u2019 is presumably intended. Kept as printed; not corrected.",
@@ -1092,6 +1116,11 @@ for _i, _f in enumerate(flags, 1):
             _f["id"] = "VR-%03d" % _i
         if not _f.get("url") and _f.get("sources"):
             _f["url"] = _f["sources"][0]
+# The Caesars conflict flag was re-read against both official documents on
+# 2026-11-19 (arena/755cb7af-poker2); record that date on the flag itself.
+for _f in flags:
+    if isinstance(_f, dict) and str(_f.get("item", "")).startswith("Caesars Palace daily buy-ins"):
+        _f["retrieved"] = "2026-11-19"
 
 # ---------------------------------------------------------------------------
 # "Last checked" must be the date THIS row's own official document was read, not a
@@ -2090,8 +2119,8 @@ for _hid, _rec in (sweep.get("confirmed_reads") or {}).items():
 # the sheet only prints a discounted *initial* buy-in, it never says a player may
 # not buy in again, so they stay "ambiguous" rather than single.
 master["as_of"] = LAST_VERIFIED
-with open(os.path.join(ROOT, "data/master.json"), "w") as f:
-    json.dump(master, f, indent=1, sort_keys=False)
+with open(os.path.join(ROOT, "data/master.json"), "w", encoding="utf-8") as f:
+    json.dump(master, f, indent=1, sort_keys=False, ensure_ascii=False)
 print("data/master.json written: %d events, %d hotels, %d flags"
       % (len(events), len(hotels), len(flags)))
 from collections import Counter
@@ -2116,7 +2145,7 @@ for _e in _m027["events"]:
     if (_e.get("struct_url") or "").endswith("dse_nov_2026-structure_30.pdf"):
         _e["last_checked"] = "2026-11-19"
         _e["sheet_retrieved"] = "2026-11-19"
-_json027.dump(_m027, open(_p027, "w"), indent=1)
+_json027.dump(_m027, open(_p027, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 print("027412f0 overlay applied: as_of=2026-11-19, structure-30 rows re-dated")
 
 # ===========================================================================
@@ -2162,5 +2191,8 @@ for _e in _ma9["events"]:
     elif _e.get("id") in ("MGM-1100AM", "MGM-700PM", "MGM-1100PM",
                           "GN-1000AM", "GN-500PM", "GN-200AM"):
         _e["last_checked"] = "2026-11-19"
-_jsona9.dump(_ma9, open(_pa9, "w"), indent=1)
+_pa9w = open(_pa9, "w", encoding="utf-8")
+_jsona9.dump(_ma9, _pa9w, indent=1, ensure_ascii=False)
+_pa9w.write("\n")   # the committed file ends with a newline; keep byte-for-byte reproducibility
+_pa9w.close()
 print("a9f5847f overlay applied: Venetian schedule + sheet-7 + MGM/GN rows re-dated to 2026-11-19")
