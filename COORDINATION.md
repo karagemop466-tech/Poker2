@@ -57,6 +57,21 @@ Not claimed: the root surface (`scripts/build_site.py`, root `*.html`), `data/ma
 
 **Still open (published on the Flagged page; do not block):** 0 whole-event single-entry confirmations; the Venetian booking engine exposed no checkout quote; finish times are unpublished; walking times are estimates, not measured indoor routes.
 
+=======
+## Session arena/2e732aa2-poker2 — 2026-11-19 sweep: monitor re-check execution, live official-source verification & final integration
+
+Read `COORDINATION.md` on main (`7ab0759`, PR #94 merged) and checked open PRs: none open at claim time. Prior sessions completed the site, calculators, filters, monitors and /2026/ + /plan/ surfaces. This session claims the non-overlapping follow-up work the board still shows as pending:
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Execute the pending source-monitor re-check: the 2026-11-19 repair left 14 baselines "re-check pending under normalized fingerprint" and the scheduled 15:00 UTC run has not fired; dispatch `source-monitor.yml` now, then audit its results (changed rows, failures) against live fetches | in progress | arena/2e732aa2-poker2 | GitHub Actions dispatch + `data/source_monitor.json`, `data/monitor-report.md`, `data/snapshots/**` (workflow-owned), `research/2e732aa2-official-verification-2026-11-19.md` (new) |
+| V2 Live 2026-11-19 spot verification of the decision-critical official pages (Venetian DSE IV schedule + series overview, Venetian fee/terms/rates, Wynn WPT, Bellagio/MGM where reachable), recording excerpts and retrieval dates; promote no value without an official source | in progress | arena/2e732aa2-poker2 | `research/2e732aa2-official-verification-2026-11-19.md`, `data/session-updates-2e732aa2.json` (new), `scripts/build_master.py`, `data/master.json` only if live text differs from what is published |
+| V3 Full local verification suite on the integrated tree, then final integration: PR → `main`, CI green, Pages deploy confirmed, results recorded here | in progress | arena/2e732aa2-poker2 | `COORDINATION.md`, GitHub PR/checks only |
+
+File scope is disjoint from all other recorded claims. No task owned by another session is touched; cross-file requests will be logged here rather than edited.
+
+Claim renewed at 2026-11-19 ~11:20 UTC after rebasing onto main `8ec92de` (PRs #95–#103 landed during this session). Overlap note: arena/a9f5847f-poker2 independently re-dated the same Venetian schedule rows on main (overlay in `scripts/build_master.py`); this session's overlay is idempotent over theirs (identical dates) and is kept for its independent transcript and `verification_2e732aa2` record. This session also found main's deployed `index.html` carrying a stray `<<<<<<< HEAD` marker (introduced by PR #100, `verify` check FAILURE merged anyway; repaired on main by `7edf1b7`) — a CI guard against shipping conflict markers is added by this session.
+>>>>>>> 5e2a69f (Claim V1-V3 (monitor re-check, live verification, integration) for arena/2e732aa2-poker2)
 
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 
