@@ -1,5 +1,80 @@
 # Coordination board
 
+## Session arena/449be056-poker2 — completion record (2026-11-19)
+
+All four claimed tasks are done. [PR #109](https://github.com/karagemop466-tech/Poker2/pull/109)
+("2026-11-19 official-source verification sweep + parking citation/render fixes") was merged to
+`main` with `gh pr merge 109 --merge` at **2026-11-19T11:26:36Z**, merge commit `f1e3d3b233…`.
+Both PR `verify` checks passed (runs 44514402568 / 44514402614 on head `137e4d5`, re-run green on
+the final pushed tip). The REST token hit its API rate limit right after the merge, so deployment
+was confirmed the honest way — by fetching the **live site**: the published
+[/2026/hotels.html](https://karagemop466-tech.github.io/Poker2/2026/hotels.html) serves the merged
+parking cell (official-page links to the terms page and player-parking page, the dated note, and
+"Parking read 2026-11-19"), which only exists on the merged commit. **Pages deployment confirmed.**
+
+**V1 (repo review + suite).** Every check in the README build/test list was run on a clean tree and
+again after every rebase (the tree was rebased onto main eleven times as parallel sessions merged
+PRs #95–#120 during this session): `build2026.py --check`, `check2026.py` (25 pages, 1,763 links,
+1,048 external citations, no broken links / non-official hosts), labels + selftest, semantics,
+guarantees, monitor badge, 37-sheet/481-field sheet readings, refresh, recheck tests, root monitor
+tests, search, trip, decisions (both), site, plan-fresh strict, audit, links, root surface,
+conflict-marker guard. All green at the final tip. Feature checklist confirmed on `/2026/`: search,
+date filters, confirmed-freezeout toggle, fee cap, per-venue pages, hotel fee/tax/parking table,
+trip calculator, dated rate log, walking matrix with ≤30-min filter, day plan primary/fallback
+gates, executive summary, questions, suggestions, Flagged for Review, repo review, sources,
+latest review.
+
+**V2 (live verification sweep)** — full detail with links in
+`research/449be056-verification-2026-11-19.md` (merged). First-hand reads dated 2026-11-19:
+Venetian DSE IV schedule (all 4 chunks; **94/94 rows match**, zero mismatches), structure sheets
+[12](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf)
+and [7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf)
+(all stored fields match; both still silent on re-entry — **F-01 stands, nothing promoted**),
+Wynn poker page + all four daily structures (N-02 rebuy-accounting conflict still verbatim),
+Golden Nugget dailies (unlimited re-entry, two $20 add-ons, buy-in unstated → stored blank correct),
+Caesars daily flyer (**VR-028/F-14 guide-vs-flyer disagreement still live**: flyer prints $160 at
+2 PM/9 PM), Venetian resort fee/terms/poker rates (13.38% tax, $55+tax, parking rates, $119/$209
+EPOKR25; FG-06 "plus tax" omission still present), MGM Grand $50 / Bellagio $55 / Aria $55 /
+Cosmopolitan $55 / Park MGM $50 / Wynn & Encore $55 — all match stored values. Monitor
+cross-check: 2026-11-18 `CHANGED` sources HFEE_ENCORE and HPARK_PALAZZO re-read live, **values
+unchanged**; VSERIES already documented (X-02 resolved); VSTRUCT30 previously re-read (artifact).
+
+**V3 (`Plan: daily official-source refresh` red X).** The failing runs 44340744461/44124782058 ran
+the pre-#89 workflow (their failed step name no longer exists in the file). Current `main`'s
+`scripts/commit-refresh.sh` was exercised locally in a scratch clone in both the no-change path
+(clean exit 0, "No report changes to publish") and the has-report path (commits the dated reports;
+the fixture push was rolled back and the scratch clone deleted). `gh workflow run plan-refresh.yml`
+is denied to the integration token (HTTP 403), so the end-to-end scheduled proof remains the next
+cron run at 14:30Z 2026-11-19 — left pending on purpose rather than claimed.
+
+**V4 (defects proven and fixed).** Two fixes merged in PR #109:
+- **D-01 citation precision** — Venetian/Palazzo parking *rates* were cited to the poker-room page,
+  which prints no rates (re-read today); concurrent session arena/326322e9-poker2 published the
+  same repair as flag P-01 with a second printing page (`player-parking.html`), which this session
+  independently verified first-hand before adopting. PR #109 kept their two-source citation, added
+  the per-field `parking_checked: 2026-11-19` on both rows and a dated rate-log row documenting the
+  correction. Values themselves were already correct everywhere.
+- **D-02 display** — the hotels table now renders the parking note and "Parking read <date>"
+  alongside P-01's source links, completing the per-row last-checked requirement for that cell.
+
+**Irregularities logged for review (non-blocking, also on the site's Flagged page).**
+1. **Coordination-board churn.** This session's claim section and completed work were dropped from
+   `main` three times by concurrent conflict resolutions (PRs #96–#120 waves): the claim vanished
+   with PR #95's successors, and the D-02 rendering + research file were dropped twice (PRs #115
+   and #118 resolved shared files toward their own branch versions without carrying this session's
+   commits). Each occurrence was repaired by rebasing onto the newest tip and re-applying this
+   session's work on top of theirs — nothing of any other session's was discarded. Sessions
+   resolving shared files (`scripts/build2026.py`, generated pages, this board) should diff against
+   the *incoming* branch's versions, not just their own, per the keep-both rule.
+2. **Root-surface drift on main (now fixed elsewhere).** `Verify site` failed on merge commit
+   `fdf216d` (PR #106) because PR #107's `verification_2e732aa2` overlay re-dumped
+   `data/master.json` without `ensure_ascii=False`. PRs #108/#113 ("canonical-format pass so a
+   verification overlay cannot re-escape master.json") fixed it; this session reproduced the defect
+   locally and confirmed the fix produces zero drift on the final tree.
+3. F-01 (no written single-entry rule anywhere), N-02, VR-026, VR-028/F-14, FG-06, the
+   property-level Caesars/Horseshoe fee blanks, missing comparable checkout quotes, and
+   estimate-only walking data all remain open by design — none is resolved by this session.
+
 ## Session arena/449be056-poker2 — claim (2026-11-19)
 
 Branch `arena/449be056-poker2`, branched from `main` @ `7ab0759` (merge of PR #94). Read the board
@@ -9,10 +84,10 @@ the prior sessions; branch name is platform-fixed — recorded once more as flag
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| V1 Line-by-line repo review on a clean tree: run the full local verification suite (root, `/2026/`, `/plan/` builders and checks), confirm every user-requested feature exists on the published surfaces, and inspect the three scheduled monitor workflows' latest runs | in progress | arena/449be056-poker2 | none (read-only) |
-| V2 Fresh dated live verification sweep of the load-bearing official sources (Venetian DSE IV schedule + structure sheets, Venetian fees/terms/poker rates, Wynn poker + daily structures, Caesars flyer, MGM/Bellagio/Aria/Cosmopolitan/Golden Nugget terms, Clark County room tax), recorded with retrieval date + links | in progress | arena/449be056-poker2 | `research/449be056-verification-2026-11-19.md` (new) |
-| V3 Confirm the red `Plan: daily official-source refresh` failure (runs 44340744461/44124782058) is fixed on current `main` and, if the integration token allows, dispatch the workflow for end-to-end proof | in progress | arena/449be056-poker2 | none (read-only) or `.github/workflows/**` only if a live defect is proven |
-| V4 Fix only defects proven by V1–V3 (each fix regenerates from its generator; no hand-edited outputs); PR → `main`, merge, Pages deploy confirmed, record here | in progress | arena/449be056-poker2 | defect-dependent (logged per fix), `COORDINATION.md` |
+| V1 Line-by-line repo review on a clean tree: run the full local verification suite (root, `/2026/`, `/plan/` builders and checks), confirm every user-requested feature exists on the published surfaces, and inspect the three scheduled monitor workflows' latest runs | done | arena/449be056-poker2 | none (read-only) |
+| V2 Fresh dated live verification sweep of the load-bearing official sources (Venetian DSE IV schedule + structure sheets, Venetian fees/terms/poker rates, Wynn poker + daily structures, Caesars flyer, MGM/Bellagio/Aria/Cosmopolitan/Golden Nugget terms, Clark County room tax), recorded with retrieval date + links | done | arena/449be056-poker2 | `research/449be056-verification-2026-11-19.md` (new) |
+| V3 Confirm the red `Plan: daily official-source refresh` failure (runs 44340744461/44124782058) is fixed on current `main` and, if the integration token allows, dispatch the workflow for end-to-end proof | done | arena/449be056-poker2 | none (read-only) or `.github/workflows/**` only if a live defect is proven |
+| V4 Fix only defects proven by V1–V3 (each fix regenerates from its generator; no hand-edited outputs); PR → `main`, merge, Pages deploy confirmed, record here | done | arena/449be056-poker2 | defect-dependent (logged per fix), `COORDINATION.md` |
 
 Scope guard: no edits to `data/verified2026/**` transcriptions, `data/sheets/**`, `site-data/**`
 hand inputs, or other sessions' claimed files unless a first-hand official read shows a concrete
