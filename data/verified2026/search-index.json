@@ -1146,6 +1146,310 @@
  {
   "p": "schedule.html",
   "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 16 Nov",
+  "x": "Mon 16 Nov | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 17 Nov",
+  "x": "Tue 17 Nov | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 18 Nov",
+  "x": "Wed 18 Nov | 1 | 11:10 AM (4:55 PM) | 11:10 AM (closes 4:55 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Thu 19 Nov",
+  "x": "Thu 19 Nov | 1 | 10:10 AM (12:25 PM) | 10:10 AM (closes 12:25 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Fri 20 Nov",
+  "x": "Fri 20 Nov | 1 | 10:10 AM (12:25 PM) | 10:10 AM (closes 12:25 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sat 21 Nov",
+  "x": "Sat 21 Nov | 1 | 10:10 AM (12:25 PM) | 10:10 AM (closes 12:25 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sun 22 Nov",
+  "x": "Sun 22 Nov | 1 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 23 Nov",
+  "x": "Mon 23 Nov | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 24 Nov",
+  "x": "Tue 24 Nov | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 25 Nov",
+  "x": "Wed 25 Nov | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Thu 26 Nov",
+  "x": "Thu 26 Nov | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Fri 27 Nov",
+  "x": "Fri 27 Nov | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sat 28 Nov",
+  "x": "Sat 28 Nov | 3 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sun 29 Nov",
+  "x": "Sun 29 Nov | 3 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 30 Nov",
+  "x": "Mon 30 Nov | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 01 Dec",
+  "x": "Tue 01 Dec | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 02 Dec",
+  "x": "Wed 02 Dec | 2 | 10:10 AM (3:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Thu 03 Dec",
+  "x": "Thu 03 Dec | 3 | 11:10 AM (3:40 PM) | 12:10 PM (closes 4:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Fri 04 Dec",
+  "x": "Fri 04 Dec | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sat 05 Dec",
+  "x": "Sat 05 Dec | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sun 06 Dec",
+  "x": "Sun 06 Dec | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 07 Dec",
+  "x": "Mon 07 Dec | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 08 Dec",
+  "x": "Tue 08 Dec | 3 | 10:10 AM (3:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 09 Dec",
+  "x": "Wed 09 Dec | 4 | 10:10 AM (2:40 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Thu 10 Dec",
+  "x": "Thu 10 Dec | 4 | 10:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Fri 11 Dec",
+  "x": "Fri 11 Dec | 3 | 11:10 AM (4:55 PM) | 8:10 PM (closes 9:55 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sat 12 Dec",
+  "x": "Sat 12 Dec | 4 | 9:10 AM (10:55 AM) | 12:10 PM (closes 1:55 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sun 13 Dec",
+  "x": "Sun 13 Dec | 2 | 10:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 14 Dec",
+  "x": "Mon 14 Dec | 2 | 10:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 15 Dec",
+  "x": "Tue 15 Dec | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 16 Dec",
+  "x": "Wed 16 Dec | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Thu 17 Dec",
+  "x": "Thu 17 Dec | 3 | 10:10 AM (4:55 PM) | 12:10 PM (closes 4:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Fri 18 Dec",
+  "x": "Fri 18 Dec | 2 | 10:10 AM (4:55 PM) | 10:10 AM (closes 4:55 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sat 19 Dec",
+  "x": "Sat 19 Dec | 2 | 10:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Sun 20 Dec",
+  "x": "Sun 20 Dec | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Mon 21 Dec",
+  "x": "Mon 21 Dec | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Tue 22 Dec",
+  "x": "Tue 22 Dec | 2 | 11:10 AM (5:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
+  "t": "Date Most entries Earliest start Latest entry that stays open",
+  "a": "",
+  "h": "Wed 23 Dec",
+  "x": "Wed 23 Dec | 2 | 11:10 AM (4:55 PM) | 5:10 PM (closes 9:40 PM) | \u2014"
+ },
+ {
+  "p": "schedule.html",
+  "pl": "Day plan",
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1A",

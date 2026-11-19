@@ -93,6 +93,12 @@ jobs:
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
 
+      # The Day plan publishes a "maximum entries per day" ceiling built only from published start
+      # times and late-registration closes. This gate fails if an impossible pair (same start, or a
+      # later registration that closes before the earlier event begins) is ever shown as a plan.
+      - name: Day plan never presents an impossible entry sequence
+        run: python3 scripts/check_maxentries.py
+
       - name: Decision filters and hotel quote regression tests
         run: |
           npm install --no-save --package-lock=false jsdom@26.1.0

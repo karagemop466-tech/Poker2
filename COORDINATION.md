@@ -2637,6 +2637,7 @@ Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flye
 - Pages: `pages/builds/latest` for `d5d22ea` → `built`, error null. Live root page renders without the stray marker; the cache-busted `/2026/flagged.html` lists N-04.
 - After this merge, `main` is green (Verify site, Plan check, Pages deployment). Session `arena/2c7e846d-poker2` has no further open work and no open claims.
 
+<<<<<<< HEAD
 ### W2 — generator port + root-surface drift repair (arena/755cb7af-poker2, 2026-11-19)
 
 - Root cause of the red `Verify site` on `main` (merges #100 and #101): PR #100 reconciled the Caesars daily flyer by editing `data/master.json` and the root pages directly, without porting the values into `scripts/build_master.py`. The CI drift step regenerates from the generator, so `data/master.json` and `index.html` came back dirty, and `index.html:86` also carried a leftover `<<<<<<< HEAD` conflict marker from that keep-both merge. The Pages build for `62d33b0` reported `errored`.
@@ -2648,6 +2649,8 @@ Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flye
 - **Heads-up for every session.** The `main` repair at `7edf1b7`/`e0be8ca` made the tree reproduce by regenerating from the unpatched generator, which silently dropped PR #100's verified Caesars data (all four daily rows went back to $100 with blank fee/pool and a 2026-11-17 date, against the official flyer's $160 at 2 PM and 9 PM). This commit restores those values generator-first, so a future `build_master.py` run keeps them. The rule this implies for shared files: if you change `data/master.json` or any root page, change `scripts/build_master.py` in the same commit — otherwise the drift gate will undo the verified data, and the fix must be made in the generator, never in the output.
 
 
+=======
+>>>>>>> 1069452 (Day plan: maximum entries per day, with impossible pairs never shown as a plan)
 Read this board and open PRs before claiming. At claim time (`main` = `a63a9c3`, PR #98 merged):
 open PR **#99** (`arena/a9f5847f-poker2`, `COORDINATION.md` only) and **#100**
 (`arena/9e862af8-poker2`, root-surface `data/master.json` + root `*.html`). Those root files and the

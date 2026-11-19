@@ -466,6 +466,8 @@ def build_days(events):
                 start=r[3], start_m=tminutes(r[3]), reg_close=r[4],
                 reg_close_m=tminutes(r[4]) if r[4] else None,
                 buy_in=ev["buy_in"], gtd=ev["gtd"], sheet_url=ev["sheet_url"],
+                # structure facts used by day_sequence(): the sheet's own level count and length
+                level=ev.get("level"), level_minutes=ev.get("level"),
                 eligibility=ev.get("eligibility"),
                 single_entry_confirmed=ev["single_entry_confirmed"],
                 schedule_sheet_url=SHEETS[r[9]]["url"],
@@ -1207,6 +1209,53 @@ transcribed on %(ret)s (nine candidate sheets re-read %(reread)s). Not one conta
     return page("Entry rules", body, "entry-rules.html")
 
 
+def day_sequence(entries):
+    """The largest set of same-day entries whose published registration windows do not contradict
+    each other, plus every pair that is impossible rather than merely conditional.
+
+    The repository stores each sheet's level LENGTH in minutes (30, 40, 20/15) but no sheet prints
+    how many levels the event runs, so a finish time cannot be computed and is never invented here.
+    The only hard timing facts are the published start and the published late-registration close.
+
+    Impossible  (must not be presented as a plan):
+      * two entries with the same published start time;
+      * a later event whose registration closes at or before the earlier event's start - you cannot
+        register for it even by busting out immediately.
+    Conditional (possible only if the player is eliminated in time):
+      * everything else. "Enter as many as possible" therefore means "enter the next one only if you
+        are out of the previous one before its close", which is a decision made on the day, not a
+        booking.
+    """
+    slots = []
+    for e in entries:
+        if e.get("start_m") is None:
+            continue
+        slots.append(dict(event_no=e["event_no"], label=e["label"], start=e["start_m"],
+                          start_text=e["start"], close=e.get("reg_close_m"),
+                          close_text=e.get("reg_close") or "", group=e.get("group"),
+                          buy_in=e.get("buy_in")))
+    slots.sort(key=lambda s: (s["start"], s["close"] or 10 ** 6))
+    chain, impossible = [], []
+    for s in slots:
+        if not chain:
+            chain.append(s)
+            continue
+        last = chain[-1]
+        if s["event_no"] in {c["event_no"] for c in chain}:
+            # a later flight of the same event is a second buy-in, not a second tournament - and a
+            # player who bagged chips may not play a later flight at all
+            continue
+        if s["start"] == last["start"]:
+            impossible.append((last, s, "identical published start time"))
+        elif s["close"] is None:
+            impossible.append((last, s, "no published registration close"))
+        elif s["close"] <= last["start"]:
+            impossible.append((last, s, "its registration closes before the earlier event even starts"))
+        else:
+            chain.append(s)
+    return chain, impossible
+
+
 def p_schedule(days, events):
     blocks = []
     for d in days:
@@ -1242,6 +1291,16 @@ def p_schedule(days, events):
                    esc(it["reg_close"] or "not published"),
                    ("$" + format(it["buy_in"], ",")) if it["buy_in"] else "not published",
                    esc(fb["note"])))
+        # the day's planning ceiling, computed once here so the day card and the summary table agree
+        chain, impossible = day_sequence(d["entries"])
+        if len(d["entries"]) > 1:
+            lines.append(
+                "<p class='note maxline' data-max='%d'><strong>Maximum entries today: %d</strong> of %d "
+                "published entr%s. Counts re-entry/rebuy/satellite/team rows too. Reachable only if you "
+                "are out of the previous event before the next registration closes%s</p>"
+                % (len(chain), len(chain), len(d["entries"]), "y" if len(d["entries"]) == 1 else "ies",
+                   ("" if not impossible else "; %d pair(s) here are impossible, not merely tight"
+                    % len(impossible))))
         if d.get("restricted_alternatives"):
             ra = "".join(
                 "<p class='note'>#%d %s &mdash; starts %s, entry %s. <span class='tag t-warn'>not the "
@@ -1298,8 +1357,49 @@ windows. A continuation takes priority if you advance.</div>
 </div>
 <p class="note" id="c"></p>
 </div>
+%(maxes)s
 %(blocks)s
-""" % dict(opts=opts, blocks="".join(blocks)), "schedule.html")
+""" % dict(opts=opts, blocks="".join(blocks), maxes=maxes_html(days)), "schedule.html")
+
+
+def maxes_html(days):
+    """Per-day 'maximum entries' table: the planner's answer to 'play all day, enter as many as
+    possible', built only from published start times and late-registration closes."""
+    rows = []
+    for d in days:
+        chain, impossible = day_sequence(d["entries"])
+        if not d["entries"]:
+            continue
+        when = dt.date.fromisoformat(d["date"]).strftime("%a %d %b")
+        first = chain[0] if chain else None
+        last = chain[-1] if chain else None
+        rows.append(
+            "<tr data-dates='%s' data-max='%d'><td>%s</td><td class='num'>%d</td>"
+            "<td>%s</td><td>%s</td><td>%s</td></tr>"
+            % (d["date"], len(chain), esc(when), len(d["entries"]),
+               ("%s (%s)" % (esc(first["start_text"]), esc(first["close_text"] or "no close published")))
+               if first else "&mdash;",
+               ("%s (closes %s)" % (esc(last["start_text"]), esc(last["close_text"] or "not published")))
+               if last else "&mdash;",
+               ("%d pair(s)" % len(impossible)) if impossible else "&mdash;"))
+    total = sum(len(e["dates"]) for e in [])  # placeholder kept intentionally trivial
+    return ("""
+<div class="panel" id="max-entries"><h2>Maximum entries per day &mdash; planning ceiling, not a promise</h2>
+<p class="note">This answers "how many tournaments could I enter on this date", using only the two
+timing facts every structure sheet and schedule row publish: the <strong>start time</strong> and the
+<strong>late-registration close</strong>. No sheet prints how many levels an event runs, and no room
+publishes a finish time, so no end time is estimated here. An entry is counted as reachable only when
+its registration is still open after the previous event has <em>started</em>; whether you are actually
+free is decided on the day. Two entries with the same start time, or a later event that closes before
+the earlier one begins, are marked impossible and never shown as a sequence.</p>
+<p class="note"><strong>Entries are not all equal.</strong> Re-entry, rebuy, add-on, satellite and team
+rows are counted as entries but are not single-entry tournaments &mdash; see the group column on
+<a href="tournaments.html">Tournaments</a>. A "2" here can mean one tournament plus one satellite.</p>
+<div class="tbl-scroll"><table><thead><tr><th>Date</th><th class="num">Most entries</th>
+<th>Earliest start</th><th>Latest entry that stays open</th><th>Impossible pairs</th>
+</tr></thead><tbody>%s</tbody></table></div>
+<p class="note">The same answer for a chosen date is repeated on each day card below.</p></div>
+""" % "".join(rows))
 
 
 def all_quotes():
