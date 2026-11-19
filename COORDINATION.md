@@ -24,6 +24,25 @@ No product data or implementation were changed during this acceptance pass. The 
 
 **Publication:** [PR #95](https://github.com/karagemop466-tech/Poker2/pull/95) merged to `main` at 2026-11-19T10:53:48Z as `559621f09fbe74d0a7fed66a114df71b05092965`. Both `verify` checks passed (runs [44509788636](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788636) and [44509788664](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788664)). The post-merge [Pages deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44509871647) and [Verify site workflow](https://github.com/karagemop466-tech/Poker2/actions/runs/44509872252) both succeeded. The public dashboard and Flagged page were fetched and rendered after publication. This is a documentation-only audit record, not a declaration that the flagged decisions are resolved.
 
+## Session arena/7117bbc6-poker2 — flagged-gap verification pass, requirements coverage & final integration (2026-11-19)
+
+Read this board and the open-PR list before starting. Main had moved to `5cd8885` (PRs #95–#97,
+sessions `arena/d5ca2140-poker2` and `arena/a9f5847f-poker2`, landed while this claim was being pushed);
+no open PR or live claim conflicts with the scope below. A `git pull --rebase` conflict in this file was
+resolved by keeping both sessions' records intact (theirs above, this claim below) — no other-session
+work was discarded. All earlier session rows on this board are marked done
+or superseded, so this session also acts as the final integration session for its own changes. Branch
+policy note (flag F02 applies): the platform fixes one branch per session (`arena/7117bbc6-poker2`), so
+no `session-<id>/<task>` worktrees are created; file scopes below are kept non-overlapping instead.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| N1 Live 2026-11-19 official-source reads to close flagged gaps where the official source permits: Westgate freezeout lead VR-018 (third-party-only today), MGM Grand daily PDF VR-019/VR-027, Golden Nugget buy-in VR-026, Caesars property fee range IR-E1C-06, Caesars daily buy-in disagreement VR-028, ARIA VR-017/IR-E1C-08 | in progress | arena/7117bbc6-poker2 | `research/7117bbc6-*.md`, `data/session-updates-7117bbc6.json`, `data/verified2026/review_20261119_b.py`, `data/flags.json`, `scripts/build_master.py` (additive) |
+| N2 Requirements-coverage page: every requirement from the project list mapped to its implementation page, verification status and evidence link | in progress | arena/7117bbc6-poker2 | `scripts/build2026.py` (new `p_requirements`), `data/verified2026/content.py` (additive), generated `2026/requirements.html` |
+| N3 Dated hotel-rate log: dated official booking attempts for the Dec 1–4 research stay and property fee pages; keep unconfirmed prices blank | in progress | arena/7117bbc6-poker2 | `data/verified2026/hotels.py`, `data/session-updates-7117bbc6.json` |
+| N4 Line-by-line re-verification pass over published rows touched by N1–N3; rebuild root + `/2026/` surfaces; run the full local check suite | in progress | arena/7117bbc6-poker2 | regenerated outputs only |
+| N5 Final integration: PR → `main`, CI green, Pages deploy confirmed, results recorded here | in progress | arena/7117bbc6-poker2 | `COORDINATION.md` |
+
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 
 Read `COORDINATION.md` and checked open PRs before starting: PRs #80–#90 are merged into `main`; only completion-record PRs (#91, #92, touching `COORDINATION.md` only) were open at claim time. Branch `arena/027412f0-poker2` (platform-fixed branch name, noted under flag F02). Earlier 2026-11-19 sessions audited and hardened `/2026/` and `/plan/`, while leaving concrete data-integrity and monitor defects on the **root landing surface** (`https://karagemop466-tech.github.io/Poker2/`). Claiming non-overlapping root-surface repair, live 2026-11-19 source verification, and final integration:
