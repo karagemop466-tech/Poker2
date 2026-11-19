@@ -2536,6 +2536,21 @@ rewrite.
 
 Scope rule: nothing owned by an in-flight session is touched (none are active). Legacy surfaces (`docs/`, `verified/`, `pages/`, `archive/`) are read-only inputs. `S-11` and `S-12` remain open user decisions and are not decided here.
 
+---
+
+# Session arena/755cb7af-poker2 — root-surface drift repair + live re-verification & final integration (2026-11-19)
+
+Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894` (PR #101 merged). Open PRs #102 (`arena/2c7e846d-poker2`, `/2026/` F-07 tax note) and #99 (`arena/a9f5847f-poker2`, board only) remain open with passing checks; this session does not touch their files (`data/verified2026/*`, `2026/*`) except the shared board (append-only, keep-both). Found `main` broken: `Verify site` fails on `62d33b0` and `cf17894` at "Root surface reproduces from master.json" and Pages errored on `62d33b0`. Root cause: PR #100 hand-edited `data/master.json` (Caesars flyer reconciliation to $100/$160/$100/$160 with fees) and regenerated root pages, but did not update the generator `scripts/build_master.py` (still hardcodes $100 for all four, fee=None), so the next CI regeneration drifts; the merge also left `<<<<<<< HEAD` markers in `index.html` and `COORDINATION.md`. This session ports the verified reconciliation into the generator and regenerates, so the committed output reproduces byte-for-byte.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| W1 Live re-read of the official sources behind the drift (Caesars flyer PDF + guide page, Venetian DSE IV schedule, Wynn poker page, Venetian resort-fee page); record confirm/contradict per URL with retrieval date 2026-11-19; no value written unless the fetched text states it | in progress | arena/755cb7af-poker2 | `research/755cb7af-live-verification-2026-11-19.md` |
+| W2 Port the verified Caesars flyer reconciliation into `scripts/build_master.py` (per-time buy-in/fee/pool), regenerate `data/master.json` + root pages via `build_master.py` + `build_site.py`, remove merge-conflict markers, verify the CI drift check passes locally | in progress | arena/755cb7af-poker2 | `scripts/build_master.py`, `data/master.json`, root `*.html` (generated) |
+| W3 Run the full local verification suite (audit, build, drift, links, /2026/ checks, semantics, labels, search/trip/decisions) and confirm the site builds with no broken links | pending | arena/755cb7af-poker2 | none (read-only unless a defect is found) |
+| W4 Final integration: PR → `main`, merge without waiting, confirm GitHub Pages `built` via API, record PR link + merge result here | pending | arena/755cb7af-poker2 | `COORDINATION.md`, PR on GitHub |
+
+Not claimed / untouched: `/2026/` surface (`scripts/build2026.py`, `data/verified2026/*`, `2026/**`) owned by open PR #102; `S-11`/`S-12` consolidation decisions; live hotel checkout quotes, Strip-wide scraping, and walking measurements (no sandbox route to those hosts; flagged, not guessed). Values not printed on an official source remain blank.
+
 
 ## arena/2c7e846d-poker2 — completion record (2026-11-19)
 
