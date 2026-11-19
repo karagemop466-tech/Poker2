@@ -1931,3 +1931,7 @@ sessions had touched `scripts/build2026.py`, `scripts/recheck2026.py` and
 
 Generated files (`2026/**`, `data/verified2026/dataset.json`, `search-index.json`) were
 resolved by regenerating from the merged generators, never by hand-merging.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Correct misleading trip totals and add regression coverage | in progress | arena/62f3de7b-poker2 | `assets/site2026.js`, `scripts/build2026.py` (trip only), `2026/trip.html`, `scripts/check_trip.mjs`, `.github/workflows/verify.yml` |
