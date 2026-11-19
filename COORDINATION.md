@@ -1951,9 +1951,22 @@ sessions had touched `scripts/build2026.py`, `scripts/recheck2026.py` and
 Generated files (`2026/**`, `data/verified2026/dataset.json`, `search-index.json`) were
 resolved by regenerating from the merged generators, never by hand-merging.
 
-| Task | Status | Owner | Files |
-|---|---|---|---|
 | Correct misleading trip totals and add regression coverage | done | arena/62f3de7b-poker2 | `2026/assets/site2026.js`, `scripts/build2026.py` (trip only), `2026/trip.html`, `scripts/check_trip.mjs`, `.github/workflows/verify.yml` |
 
 2026-11-19: Re-read [official Venetian poker suite terms](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html). The $119 figure is a conditional starting rate, not a dated quote; removed it as a calculator default. No exact-stay checkout quote was verified. The existing transcription check passed (37 sheets, 481 comparisons; zero explicit single-entry clauses); this was not a fresh read of all PDFs. Trip regression and local citation checks passed.
 Integration PR: [#80](https://github.com/karagemop466-tech/Poker2/pull/80). Merge and Pages deployment results are tracked on that PR and in GitHub Pages build history.
+
+---
+
+# Session arena/4db7d9c7-poker2 — claim (2026-11-19 UTC)
+
+Branch `arena/4db7d9c7-poker2` (from `main` `76b25aa`). Scope is deliberately narrow and does not overlap the open PR #80 (`arena/62f3de7b-poker2`, “Do not present promotional rates as trip costs”, created 2026-11-19), which owns `.github/workflows/verify.yml`, `2026/assets/site2026.js`, `2026/trip.html`, `scripts/build2026.py`, `scripts/check_trip.mjs` and `COORDINATION.md`. Those files are read-only here; this session appends to `COORDINATION.md` only.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| K1 Fix the red scheduled workflow “Plan: daily official-source refresh” (run 44340744461, failed at step “Commit snapshots, or open a review PR when a source moved”). Suspected root cause: on `schedule` runs `actions/checkout` leaves a detached HEAD, `git rev-parse --abbrev-ref HEAD` prints `HEAD`, and the snapshot commit is pushed to `HEAD:HEAD` instead of `main`. Fix the refspec, harden the rebase-retry path, keep the open-a-review-PR-on-change behaviour | in progress | arena/4db7d9c7-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` |
+| K2 Live 2026-11-19 re-read of the always-on official sources (Venetian resort fee, suite rates, hotel terms, DSE IV schedule page, Caesars daily flyer, Bellagio weekly sheets, Wynn poker page). Record results; flag discrepancies; never rewrite a value silently | in progress | arena/4db7d9c7-poker2 | `research/arena-4db7d9c7-official-recheck-2026-11-19.md` |
+| K3 Verify the site end-to-end on this branch (generator `--check`s, link audits, search check) and confirm nothing regresses | in progress | arena/4db7d9c7-poker2 | — (read-only) |
+| K4 Final integration for this branch: PR → `main`, merge, Pages deploy confirmed, record PR link and merge result here | in progress | arena/4db7d9c7-poker2 | `COORDINATION.md` |
+
+Not claimed / not touched: anything under open PR #80; `2026/**` and `plan/**` (regenerated only if K2 finds a changed value — it will be flagged on the Flagged page, not silently rewritten); shared generators owned by other sessions.
