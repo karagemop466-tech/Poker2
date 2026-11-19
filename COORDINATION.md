@@ -2485,7 +2485,7 @@ from its 2026-11-18 run despite the November 19 source reads already recorded in
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| I1 Re-read the four URLs with `review_required` against the current official source; compare affected values with the published transcription and record dated evidence, leaving silent entry-policy fields unverified | in progress | arena/8e602cb3-poker2 | `research/8e602cb3-official-review-2026-11-19.md`, `data/verified2026/reviewed-hashes.json` |
+| I1 Re-read the four URLs with `review_required` against the current official source; compare affected values with the published transcription and record dated evidence, leaving silent entry-policy fields unverified | in progress | arena/8e602cb3-poker2 | `research/8e602cb3-official-monitor-review-2026-11-19.md`, `data/verified2026/reviewed-hashes.json` |
 | I2 Acknowledge only the exact hashes reviewed; prove that a later hash change reopens the warning; rebuild `/2026/` without changing verified event/hotel values | in progress | arena/8e602cb3-poker2 | `data/verified2026/reviewed-hashes.json`, `scripts/test_recheck2026.py`, `data/verified2026/dataset.json`, `data/verified2026/search-index.json`, `2026/**` |
 | I3 Run the full local verification suite, PR → `main`, merge, confirm GitHub Pages deployment and record the result | in progress | arena/8e602cb3-poker2 | `COORDINATION.md` |
 
@@ -2502,5 +2502,20 @@ their owners, so this session adopts their published re-read evidence and makes 
 edits. PR #100 (`arena/9e862af8-poker2`) is now the active root-data final-verification PR, and PR #99
 is its source session's completion record. To keep scopes separate, this session will not edit root
 `data/master.json`, root pages or `scripts/build_master.py`; it is limited to `/2026/` pending-monitor
-acknowledgements, the related regression test, and this review record. Any `/2026/` generated outputs
-will be rebuilt only after the active integration PRs settle and the branch is rebased on current main.
+acknowledgements, the related regression test, and this review record. The active PR #100 is root-data
+only, so it does not overlap `/2026/`; generated outputs on this branch are built from the current rebased
+`main` and will be rebased again before any subsequent push if main advances.
+
+### Scope refinement — 2026-11-19T11:20Z
+
+During the official-source review, the hotel table's Venetian parking-rate paragraph was found to cite
+the poker-room page, which only carries the room location/hours and a summary of the three-hour player
+benefit. The linked official Self-Parking Info page contains the actual daily rates and the supervisor
+confirmation condition. No other claim owns the `/2026/` hotel generator or source data; PR #100 only
+changes the root dashboard. This session expands its scoped files narrowly to correct those parking
+source links and per-field check dates, keep the reviewed Wynn resort/cancellation dates current, and
+render a `change reviewed` state distinctly from an automated `unchanged` result. Added files within
+scope: `data/verified2026/hotels.py`, `scripts/build2026.py`, `scripts/recheck2026.py`,
+`scripts/check_monitor_badge.py`, the exact-hash review test/registry, and generated `/2026/**` outputs.
+The Self-Parking Info URL was read 2026-11-19 and is newly registered but not in the 2026-11-18 run;
+its monitor status must remain partial until a scheduled fetch establishes a baseline.
