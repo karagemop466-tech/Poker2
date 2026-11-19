@@ -26,7 +26,7 @@ OFFICIAL_HOSTS = (
     "venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com", "visitwynn.com",
     "caesars.com", "mgmresorts.com", "contentstack.io", "goldennugget.com",
     "clarkcountynv.gov", "westgateresorts.com", "southpointcasino.com",
-    "aria.com", "bellagio.com", "cosmopolitanlasvegas.com",
+    "aria.com", "bellagio.com", "cosmopolitanlasvegas.com", "treasureisland.com", "mgmgrand.com",
 )
 
 SHEET_URL = ("https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/"
@@ -82,6 +82,19 @@ def collect(master):
         for entry in (h.get("rate_log") or []):
             if isinstance(entry, dict):
                 add(entry.get("url") or entry.get("source_url"), "dated rate observation")
+    # Structured rule fields, parking, tax, flags, and question records can carry
+    # their own citations too. Walk all structured strings so these cannot be lost
+    # when the schema gains another citation field. Non-official hosts are skipped.
+    def walk(value):
+        if isinstance(value, dict):
+            for item in value.values():
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+        elif isinstance(value, str) and value.startswith("https://") and " " not in value:
+            add(value, "nested source citation")
+    walk(master)
     # The 37 Venetian structure sheets are individually cited by rows; make sure a sheet
     # that loses its row is still monitored, because its hash is the change signal.
     for n in range(1, 38):
@@ -157,6 +170,8 @@ def main():
     }
     if old.get("last_run"):
         out["last_run"] = old["last_run"]
+    if old.get("last_run_summary"):
+        out["last_run_summary"] = old["last_run_summary"]
     with open(MON, "w", encoding="utf8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
         f.write("\n")

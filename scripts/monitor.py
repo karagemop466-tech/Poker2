@@ -29,6 +29,9 @@ statement about the sandbox, not about the sources).
 Runs in GitHub Actions (.github/workflows/source-monitor.yml).
 """
 import json, os, re, sys, hashlib, datetime, http.cookiejar, urllib.request, urllib.error
+from urllib.parse import urlsplit
+
+from source_monitoring import load_reviews, review_state
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MON = os.path.join(ROOT, "data", "source_monitor.json")
@@ -94,7 +97,50 @@ def norm_text(raw: bytes) -> str:
 
 
 def slug(u):
-    return re.sub(r"[^a-z0-9]+", "-", u.lower()).strip("-")[:80]
+    # Many structure-sheet URLs share their first 80 characters. A hash suffix
+    # prevents their snapshots (and booking URLs differing only by dates) colliding.
+    prefix = re.sub(r"[^a-z0-9]+", "-", u.lower()).strip("-")[:64]
+    return prefix + "-" + hashlib.sha256(u.encode("utf-8")).hexdigest()[:12]
+
+
+def content_digest(url, raw):
+    """Hash PDFs as raw bytes, HTML using the existing normalised-text method."""
+    if urlsplit(url).path.lower().endswith(".pdf") or raw.startswith(b"%PDF-"):
+        return hashlib.sha256(raw).hexdigest(), "raw-pdf-sha256"
+    return hashlib.sha256(norm_text(raw).encode("utf-8")).hexdigest(), "normalised-text-sha256"
+
+
+def update_success(rec, raw, code, today, reviews):
+    """Update one record; preserve unresolved changes across later checks."""
+    url = rec["url"]
+    digest, method = content_digest(url, raw)
+    old, old_method = rec.get("sha256"), rec.get("hash_method")
+    # The old monitor decoded PDF bytes with replacement characters before hashing.
+    # Compare using its legacy method once, then establish a raw-byte baseline.
+    # Matching the lossy hash is NOT a fresh human review or proof of byte identity.
+    legacy_pdf = method == "raw-pdf-sha256" and old and not old_method
+    compared = hashlib.sha256(norm_text(raw).encode("utf-8")).hexdigest() if legacy_pdf else digest
+    changed = bool(old and compared != old)
+    pending, since = review_state(rec, changed, today, url, digest, method, reviews)
+    rec.update(last_attempt=today, last_checked=today, http_status=code,
+               consecutive_failures=0, sha256=digest, hash_method=method,
+               review_pending=pending)
+    if since:
+        rec["pending_since"] = since
+    else:
+        rec.pop("pending_since", None)
+    if not old:
+        rec["status"] = "new"
+    elif changed:
+        rec.update(status="changed", previous_sha256=old, changed_on=today)
+    elif legacy_pdf:
+        rec["status"] = "new binary baseline"
+    else:
+        rec["status"] = "unchanged"
+    if legacy_pdf:
+        rec["baseline_note"] = ("Migrated from the earlier lossy decoded-PDF hash to raw PDF bytes; "
+                                "a matching legacy hash is not a verification of the document.")
+    return digest, method, changed
 
 
 _OPENER = None
@@ -150,13 +196,18 @@ def main(dry=False):
             by_url[url] = rec
 
     changed, failed, first_baseline = [], [], []
+    reviews = load_reviews()
     for rec in mon["urls"]:
         url = rec["url"]
         try:
             raw, code = fetch(url)
         except Exception as ex:
-            # Nothing is proven by a failed fetch: keep the old hash, keep the old
-            # verification date, and say which failure it was.
+            # Nothing is proven by a failed fetch: keep the old hash, verification
+            # date and any unresolved review; record the latest attempt separately.
+            pending, since = review_state(rec, False, today, url, None, None, reviews)
+            rec["review_pending"] = pending
+            if since:
+                rec["pending_since"] = since
             rec["last_attempt"] = today
             rec["consecutive_failures"] = int(rec.get("consecutive_failures") or 0) + 1
             kind = "unreachable"
@@ -173,44 +224,34 @@ def main(dry=False):
             failed.append((rec["label"], kind, rec["consecutive_failures"]))
             continue
 
-        text = norm_text(raw)
-        digest = hashlib.sha256(text.encode()).hexdigest()
         had_baseline = rec.get("sha256") is not None
-        rec["last_attempt"] = today
-        rec["last_checked"] = today          # a successful fetch is the only thing that earns a date
-        rec["http_status"] = code
-        rec["consecutive_failures"] = 0
-        # snapshot only when the bytes differ from what is already on disk
-        rel_latest = os.path.join("data", "snapshots", "latest", slug(url) + ".html")
+        digest, method, moved = update_success(rec, raw, code, today, reviews)
+        if not had_baseline:
+            first_baseline.append(rec["label"])
+        elif moved:
+            changed.append(rec["label"])
+        # Do not store binary PDFs as lossy text. The snapshot records their raw
+        # hash and source URL; the official PDF itself remains the authoritative copy.
+        is_pdf = method == "raw-pdf-sha256"
+        text = ("Binary PDF; raw SHA-256: %s\nSource: %s\n" % (digest, url)
+                if is_pdf else norm_text(raw))
+        ext = ".txt" if is_pdf else ".html"
+        rel_latest = os.path.join("data", "snapshots", "latest", slug(url) + ext)
         prev_path = rec.get("snapshot")
         differs = True
         if prev_path and os.path.exists(os.path.join(ROOT, prev_path)):
             try:
                 with open(os.path.join(ROOT, prev_path), encoding="utf-8") as f:
-                    differs = f.read() != text
-            except Exception:
+                    differs = f.read() != text or prev_path != rel_latest
+            except (OSError, UnicodeError):
                 differs = True
-        if differs and not had_baseline:
-            differs = True
         if differs and not dry:
-            write_snapshot(os.path.join("data", "snapshots", today, slug(url) + ".html"), text)
+            write_snapshot(os.path.join("data", "snapshots", today, slug(url) + ext), text)
             write_snapshot(rel_latest, text)
             rec["snapshot"] = rel_latest
             rec["snapshot_date"] = today
-        if not had_baseline:
-            rec["status"] = "new"
-            rec["sha256"] = digest
-            first_baseline.append(rec["label"])
-        elif digest != rec.get("sha256"):
-            rec["status"] = "changed"
-            rec["previous_sha256"] = rec.get("sha256")
-            rec["sha256"] = digest
-            rec["changed_on"] = today
-            changed.append(rec["label"])
-        else:
-            rec["status"] = "unchanged"
 
-    if len(failed) == len(mon["urls"]) and mon["urls"]:
+    if len(failed) == len(mon["urls"]) and mon["urls"] and "--allow-no-network" not in sys.argv:
         # Nothing was reachable. That describes the network this command ran on, not the official
         # documents, and writing it would stamp "unreachable" over every row's marker and report a
         # coverage of zero from a repository that has no way of knowing. Same rule as
@@ -223,6 +264,7 @@ def main(dry=False):
     mon["last_run"] = today
     mon["last_run_summary"] = {
         "urls": len(mon["urls"]), "changed": len(changed), "unreachable": len(failed),
+        "review_pending": sum(1 for u in mon["urls"] if u.get("review_pending")),
         "baselines_established": len(first_baseline),
         "note": ("A run that establishes a baseline proves the page is reachable, not that the "
                  "site's transcription of it is right. Rows keep their own verification date; the "
@@ -250,8 +292,12 @@ def main(dry=False):
                   "correctly — that is what a manual re-read does.",
                   ""] + ["- %s" % c for c in first_baseline]
     if changed:
-        lines += ["", "## CHANGED sources — rows citing these are marked 'source changed — re-check' on the site:",
-                  ""] + ["- %s" % c for c in changed]
+        lines += ["", "## CHANGED sources in this run", ""] + ["- %s" % c for c in changed]
+    pending = [r for r in mon["urls"] if r.get("review_pending")]
+    if pending:
+        lines += ["", "## Unresolved changes — rows remain flagged until an exact-hash review", ""]
+        lines += ["- %s — %s (since %s)" % (r["label"], r["url"], r.get("pending_since") or "unknown")
+                  for r in pending]
     if failed:
         lines += ["", "## Unreachable (no date advanced, no status cleared)", ""]
         lines += ["- %s — %s (after %d consecutive failed attempts)" % f for f in failed]

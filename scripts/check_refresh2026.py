@@ -28,12 +28,14 @@ else:
     raise AssertionError('HTML served instead of a PDF must not be treated as a valid PDF baseline')
 
 first = dict(checked='2026-11-17', results=[dict(url=url, key='before', change='first check', hash='a')])
-changed = dict(checked='2026-11-18', results=[dict(url=url, key='after', change='CHANGED', hash='b')])
+changed = dict(checked='2026-11-18', results=[dict(url=url, key='after', change='CHANGED', hash='b', hash_method='method')])
 error = dict(checked='2026-11-19', results=[dict(url=url, key='after', change='fetch error', hash=None)])
 assert monitor.prior_successes([error, changed, first])[url]['hash'] == 'b'
 assert monitor.review_state([error, changed, first]) == {url: '2026-11-18'}
-assert monitor.review_state([error, changed, first], {url: 'b'}) == {}
-assert monitor.review_state([error, changed, first], {url: 'a'}) == {url: '2026-11-18'}
+proof = dict(url=url, hash='b', hash_method='method', reviewed_at='2026-11-19', reviewer='test', note='read exact version')
+assert monitor.review_state([error, changed, first], [proof]) == {}
+assert monitor.review_state([error, changed, first], [dict(proof, hash='a')]) == {url: '2026-11-18'}
+assert monitor.review_state([error, changed, first], {url: 'b'}) == {url: '2026-11-18'}
 quiet = dict(checked='2026-11-19', results=[dict(url=url, key='after', change='unchanged', hash='b', review_since='2026-11-18')])
 assert monitor.review_state([quiet]) == {url: '2026-11-18'}
 

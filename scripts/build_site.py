@@ -5,6 +5,7 @@ Run:  python3 scripts/build_site.py
 Fails if any event/hotel row lacks an official https source link.
 """
 import json, os, re, html, datetime
+from source_monitoring import legacy_pending
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def load(p, default=None):
@@ -241,11 +242,11 @@ def struct_cell(e):
         return '<span class="badge b-warn">not published</span>'
     return "<small class=\"note\">" + " · ".join(bits) + "</small>"
 
-def changed_flag(url):
-    """Mark rows whose monitored source changed since the stored hash."""
+def changed_flag(*urls):
+    """Mark every cited source with an unresolved change, even after a later error."""
     for u in monitor.get("urls", []):
-        if u.get("url") == url and u.get("status") == "changed":
-            return ' <span class="badge b-bad">source changed — re-check</span>'
+        if u.get("url") in urls and legacy_pending(u):
+            return ' <span class="badge b-bad">source changed — review pending</span>'
     return ""
 
 _LABELS = (
@@ -325,7 +326,7 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
 <td><strong>{esc(e.get('name'))}</strong>{tags}{gate}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
 <td>{cat_badge(e.get('category'))} {rule_badge(e, e)}{rule_detail(e)}</td>
-{extra}<td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
+{extra}<td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'), e.get('struct_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
 {cb}</tr>""")
     head = ("<th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th>"
             "<th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th>"
@@ -1548,15 +1549,16 @@ rows across all venues have no rule document published anywhere.</p>
                                          if u.get("last_attempt") else ""))
         rows_m.append(f"""<tr><td>{esc(u.get('label',''))}</td>
 <td class="src"><a href="{esc(u.get('url',''))}" target="_blank" rel="noopener">{esc(u.get('url',''))[:70]}…</a></td>
-<td>{lc_cell}</td><td><span class="badge {_st_cls(st)}">{esc(st)}</span></td>
+<td>{lc_cell}</td><td><span class="badge {_st_cls(st)}">{esc(st)}</span>{changed_flag(u.get('url'))}</td>
 <td>{affected.get(u.get('url',''), 0)}</td></tr>""")
     _run = monitor.get("last_run_summary") or {}
     _last_run = monitor.get("last_run")
     state_cell = (
-        "<strong>Current state:</strong> %d URLs registered · %d changed · %d unchanged · %d baselines still to "
-        "establish · %d unreachable on the last run. Last run: %s."
+        "<strong>Current state:</strong> %d URLs registered · %d changed on last fetch · %d review pending · "
+        "%d unchanged on last fetch · %d baselines still to establish · %d unreachable on the last run. Last run: %s."
         % (len(monitor.get('urls', [])),
            sum(1 for u in monitor.get('urls', []) if str(u.get('status', '')).startswith('changed')),
+           sum(1 for u in monitor.get('urls', []) if legacy_pending(u)),
            sum(1 for u in monitor.get('urls', []) if str(u.get('status', '')).startswith('unchanged')),
            sum(1 for u in monitor.get('urls', []) if not u.get('sha256')),
            int(_run.get('unreachable') or 0),
@@ -1584,10 +1586,11 @@ to a hand-kept list.</p>
 <p class="note"><strong>What each status claims:</strong> <span class="badge b-good">unchanged</span> the page bytes
 match the stored hash — the source moved nothing, but a matching hash does not re-verify a value this site transcribed
 from that page. <span class="badge b-warn">new</span> first successful fetch; this run only sets the baseline.
-<span class="badge b-bad">changed</span> the bytes differ, and every row citing the URL is badged
-<span class="badge b-bad">source changed — re-check</span>. <span class="badge b-bad">unreachable</span> the fetch
-failed (blocked, timed out, or no route from the runner): the previous status and the row's verification date are left
-alone, because a failed fetch proves nothing about the page.</p>
+<span class="badge b-bad">changed</span> the content differs from the last successful check. The
+<span class="badge b-bad">source changed — review pending</span> badge persists through later unchanged or failed
+checks until an exact-hash review is documented in <code>data/source_reviews.json</code>.
+<span class="badge b-bad">unreachable</span> means the latest fetch failed; it does not clear a pending change or
+advance the value's verification date.</p>
 <table class="data"><thead><tr><th>Source</th><th>URL</th><th>Last successful check</th><th>Status</th><th>Rows citing it</th></tr></thead>
 <tbody>{''.join(rows_m)}</tbody></table>"""
 

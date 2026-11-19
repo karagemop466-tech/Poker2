@@ -99,6 +99,23 @@ function diffValues(prev, next) {
   return diffs;
 }
 
+function addReviewState(prev, rec, reviews = []) {
+  // An unchanged fetch is not a human review, nor can a failed fetch clear one.
+  const changedNow = ["changed", "drifted", "pattern-missing"].includes(rec.state);
+  const wasPending = !!(prev && (prev.review_pending ??
+    ["changed", "drifted", "pattern-missing"].includes(prev.state)));
+  const reviewed = !String(rec.state).startsWith("error") && rec.hash && reviews.some((r) =>
+    r.url === rec.url && r.hash === rec.hash && r.hash_method === "raw-sha256" &&
+    r.reviewed_at && r.reviewer && r.note);
+  rec.review_pending = !!((wasPending || changedNow) && !reviewed);
+  if (rec.review_pending) {
+    rec.pending_since = (prev && prev.pending_since) || rec.checked;
+    rec.pending_value_diffs = [ ...((prev && prev.pending_value_diffs) || []),
+      ...(rec.value_diffs || []) ].slice(-20);
+  }
+  return rec;
+}
+
 export function _test_only() {
   // Offline test of what the monitor actually does: it runs the *production* patterns from
   // site-data/sources.json against text containing the sentences they are meant to match.
@@ -150,6 +167,19 @@ export function _test_only() {
     && diffs[1][0] === "gone" && diffs[1][2] === "(not found)",
     "the moved value and the vanished clause are both reported: " + JSON.stringify(diffs));
   assert(diffValues(null, { a: 1 }).length === 0, "no baseline means no diff (state stays 'new')");
+  const changed = addReviewState(null, { url: "https://example.com/a", hash: "b", checked: "day1",
+    state: "changed", value_diffs: [["fee", "50", "55"]] });
+  const repeated = addReviewState(changed, { url: changed.url, hash: "b", checked: "day2", state: "ok" });
+  const failed = addReviewState(repeated, { url: changed.url, hash: "b", checked: "day3", state: "error" });
+  assert(changed.review_pending && repeated.review_pending && failed.review_pending &&
+    failed.pending_since === "day1" && failed.pending_value_diffs.length === 1,
+    "an unchanged or failed fetch must retain the original review and value diff");
+  const review = { url: changed.url, hash: "b", hash_method: "raw-sha256", reviewed_at: "day4",
+    reviewer: "reviewer", note: "read the official page" };
+  assert(!addReviewState(failed, { url: changed.url, hash: "b", checked: "day4", state: "ok" }, [review]).review_pending,
+    "an exact-hash documented review clears the warning");
+  assert(addReviewState(failed, { url: changed.url, hash: "c", checked: "day5", state: "changed" }, [review]).review_pending,
+    "a review of a different hash cannot clear the warning");
 
   const list = targets();
   const sheets = list.filter((t) => String(t.id).startsWith("SHEET-"));
@@ -166,6 +196,8 @@ async function main() {
   fs.mkdirSync(SNAP, { recursive: true });
   const list = targets();
   const report = [];
+  let reviews = [];
+  try { reviews = readJson(path.join(ROOT, "data", "source_reviews.json")).reviews || []; } catch {}
   console.log("checking " + list.length + " official sources at " + now);
 
   for (const t of list) {
@@ -182,7 +214,7 @@ async function main() {
       const values = isBinary ? {} : extractValues(text, t.extract);
       const valueDiffs = isBinary ? [] : diffValues(prev, values);
       let state = "ok";
-      if (!prev) state = "new";
+      if (!prev || !prev.hash) state = "new";
       else if (prev.hash !== hash) state = valueDiffs.length ? "changed" : "drifted";
       if (text) {
         for (const { key } of t.extract) {
@@ -191,7 +223,7 @@ async function main() {
       }
       rec = {
         id: t.id, url: t.url, label: t.label, publisher: t.publisher, checked: now,
-        http_status: status, content_type: type, bytes: buf.length, hash,
+        http_status: status, content_type: type, bytes: buf.length, hash, last_success_checked: now,
         state, binary: isBinary, values, value_diffs: valueDiffs,
         excerpt_hint: text ? text.slice(0, 400) : "(binary: hash-only check)",
         note: t.note,
@@ -199,14 +231,18 @@ async function main() {
     } catch (err) {
       rec = {
         id: t.id, url: t.url, label: t.label, publisher: t.publisher, checked: now,
-        state: prev ? "error" : "error-new", error: String(err && err.message || err),
+        state: prev && prev.hash ? "error" : "error-new", error: String(err && err.message || err),
         hash: prev ? prev.hash : null, values: prev ? prev.values : {}, value_diffs: [],
-        note: "fetch failed; the previous snapshot is kept so the site still shows the last verified value",
+        last_success_checked: prev ? (prev.last_success_checked || (!String(prev.state).startsWith("error") ? prev.checked : null)) : null,
+        note: "fetch failed; the last successful hash and any unresolved change are retained",
       };
     }
+    addReviewState(prev, rec, reviews);
     fs.writeFileSync(file, JSON.stringify(rec, null, 1) + "\n");
     report.push({
       id: rec.id, url: rec.url, label: rec.label, state: rec.state, checked: rec.checked,
+      last_success_checked: rec.last_success_checked || null, review_pending: rec.review_pending,
+      pending_since: rec.pending_since || null, pending_value_diffs: rec.pending_value_diffs || [],
       hash: rec.hash || null, value_diffs: rec.value_diffs || [], error: rec.error || null,
       binary: !!rec.binary, bytes: rec.bytes || null,
     });
@@ -217,14 +253,15 @@ async function main() {
 
   const counts = {};
   for (const r of report) counts[r.state] = (counts[r.state] || 0) + 1;
-  const actionNeeded = report.filter((r) => ["changed", "error", "error-new", "pattern-missing"].includes(r.state));
+  const actionNeeded = report.filter((r) => r.review_pending ||
+    ["changed", "drifted", "error", "error-new", "pattern-missing"].includes(r.state));
   const out = {
     last_run: now, generator: "scripts/check_sources.mjs", sources_checked: report.length,
     counts, needs_attention: actionNeeded.length,
     meaning: {
       ok: "content hash unchanged since the previous run",
       new: "first snapshot taken; nothing to compare yet",
-      drifted: "the official page changed but none of the values this site depends on changed",
+      drifted: "the page hash changed without a tracked-value diff; review is still required", 
       changed: "a value this site depends on changed - re-run scripts/build-events.py and review the row",
       "pattern-missing": "a tracked pattern no longer matches: the page was redesigned or the clause was removed",
       error: "the official URL could not be read; the last verified value stays on the site with its old date",

@@ -1153,16 +1153,27 @@ domain, or that has no last-checked date.</div>
 
 
 def p_flagged():
+    diag_path = os.path.join(DATA, "refresh-diagnostics.json")
+    diag = load("refresh-diagnostics.json") if os.path.exists(diag_path) else {}
+    diag_html = ""
+    if diag.get("state") == "needs review":
+        diag_html = ('<div class="note bad"><strong>Generator reproducibility needs review.</strong> '
+                     'The clean-checkout or post-fetch generator check failed on ' + esc(diag.get("checked"))
+                     + '. This is not evidence that an official value changed.'
+                     + '<details><summary>Diagnostic output</summary><pre>'
+                     + esc(diag.get("output") or "no output recorded") + '</pre></details></div>')
     chg = CHANGES.get("sources") or []
     if chg:
         chg_rows = ""
         for c in chg:
-            diffs = c.get("value_diffs") or []
-            txt = "; ".join("{}: {} &rarr; {}".format(d[0], d[1], d[2]) for d in diffs) if diffs else esc(c.get("detail") or "no tracked value change")
+            diffs = c.get("value_diffs") or c.get("pending_value_diffs") or []
+            txt = ("; ".join("{}: {} &rarr; {}".format(esc(d[0]), esc(d[1]), esc(d[2])) for d in diffs)
+                   if diffs else esc(c.get("error") or c.get("detail") or "no tracked value change"))
             state = c.get("state")
             kind = {"ok": "ok", "changed": "bad", "missing": "warn"}.get(state, "warn")
+            review = (" " + badge("source changed — review pending", "bad")) if c.get("review_pending") else ""
             chg_rows += ('<tr><td class="nowrap">' + esc(c.get("checked") or "&mdash;") + "</td><td>"
-                         + srclink(c.get("url")) + "</td><td>" + badge(state, kind) + '</td><td class="sm">'
+                         + srclink(c.get("url")) + "</td><td>" + badge(state, kind) + review + '</td><td class="sm">'
                          + txt + "</td></tr>")
         chg_table = ('<div class="tablewrap compact"><table><thead><tr><th>Checked</th><th>Source</th><th>State</th>'
                      "<th>What changed</th></tr></thead><tbody>" + chg_rows + "</tbody></table></div>")
@@ -1220,7 +1231,7 @@ other nine hotels have none). FG-11 (walking minutes) is now answered with route
 pairs - OSM Nominatim geocodes and OSRM foot routing on 2026-11-16, 30 pairs inside 30 minutes, each row
 carrying Google/Apple Maps links to confirm - still not an official measured minute value.
 Everything else is either a source contradiction to watch or a dataset-hygiene note.</div>
-""" + items + """
+""" + diag_html + items + """
 """ + diff_html + """
 <h2>Change monitor &middot; last run """ + esc(CHANGES.get("last_run") or "not yet run") + """</h2>
 """ + chg_table + """
@@ -1352,7 +1363,8 @@ def write_data_js(write=True):
     payload = {
         "as_of": AS_OF, "tax": HOT["tax"], "events": events, "schedule": SCH, "hotels": HOT,
         "rates": RATES, "walk": WALK, "venues": VEN, "flags": FLAGS,
-        "changes": [c for c in (CHANGES.get("sources") or []) if c.get("state") in ("changed", "missing")],
+        "changes": [c for c in (CHANGES.get("sources") or [])
+                    if c.get("review_pending") or c.get("state") in ("changed", "drifted", "pattern-missing", "missing")],
         "search": [],
     }
     search = []

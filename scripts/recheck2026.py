@@ -33,6 +33,8 @@ from urllib.parse import urljoin, urlsplit
 from html.parser import HTMLParser
 import html
 
+from source_monitoring import has_review, load_reviews
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "data", "sheets"))
 sys.path.insert(0, os.path.join(ROOT, "data", "verified2026"))
@@ -231,7 +233,13 @@ def prior_observations(history):
 
 
 def source_state(history, persisted=None, reviewed=None):
-    """Build durable per-URL state, including both older report schemas."""
+    """Build durable per-URL state from all report schemas, failing closed on reviews.
+
+    The compact persisted map survives history truncation; history preserves warnings
+    during migration. Neither a hash-only legacy acknowledgement nor an unexplained
+    ``review_required: false`` clears evidence of a change. Only a documented exact
+    URL/hash/method review of the latest successful version does that.
+    """
     state = {}
     for run in reversed(history):
         for row in run.get("results", []):
@@ -239,14 +247,24 @@ def source_state(history, persisted=None, reviewed=None):
                 continue
             item = state.setdefault(url, {})
             if row.get("hash"):
-                item.update(last_hash=row["hash"], hash_method=row.get("hash_method"), last_success=run.get("checked"))
-            since = row.get("review_since") or row.get("last_changed")
-            if since or row.get("review_required") or row.get("change") == "CHANGED":
-                item.update(review_required=True, changed_at=since or run.get("checked"))
-    for url, item in (persisted or {}).items():
-        state.setdefault(url, {}).update(item)
+                item.update(last_hash=row["hash"], hash_method=row.get("hash_method"),
+                            last_success=run.get("checked"))
+            since = row.get("review_since") or row.get("pending_since") or row.get("last_changed")
+            if (row.get("review_required") or row.get("review_pending") or
+                    row.get("change") == "CHANGED" or since):
+                item["review_required"] = True
+                item.setdefault("changed_at", since or run.get("checked"))
+    for url, saved in (persisted or {}).items():
+        item = state.setdefault(url, {})
+        pending = bool(item.get("review_required") or saved.get("review_required") or saved.get("review_pending"))
+        changed_at = item.get("changed_at") or saved.get("changed_at") or saved.get("pending_since")
+        item.update(saved)
+        item["review_required"] = pending
+        if changed_at:
+            item["changed_at"] = changed_at
+    reviews = reviewed if isinstance(reviewed, list) else []
     for url, item in state.items():
-        if url in (reviewed or {}) and reviewed[url] == item.get("last_hash"):
+        if has_review(reviews, url, item.get("last_hash"), item.get("hash_method")):
             item["review_required"] = False
     return state
 
@@ -257,11 +275,8 @@ def review_state(history, reviewed=None, persisted=None):
 
 
 def reviewed_hashes():
-    path = os.path.join(os.path.dirname(OUT), "reviewed-hashes.json")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+    """Return documented exact-hash reviews; old hash-only files are not evidence."""
+    return load_reviews()
 
 
 _LOCAL = threading.local()
@@ -375,14 +390,24 @@ def main():
         if row.get("hash"):
             item.update(last_hash=row["hash"], hash_method=row["hash_method"], last_success=now)
         if row["change"] == "CHANGED":
-            item.update(review_required=True, changed_at=now)
-        if reviewed.get(url) and reviewed[url] == item.get("last_hash"):
+            if not item.get("review_required"):
+                item["changed_at"] = now
+            item["review_required"] = True
+        if row.get("hash") and has_review(reviewed, url, row["hash"], row["hash_method"]):
             item["review_required"] = False
-        row.update(last_success=item.get("last_success"), review_required=bool(item.get("review_required")))
-        if row["review_required"]:
+            item.pop("changed_at", None)
+        pending = bool(item.get("review_required"))
+        # Keep both schemas for existing consumers. A failed fetch retains the last
+        # successful comparison baseline but never itself clears a warning.
+        row.update(last_success=item.get("last_success"), last_success_hash=item.get("last_hash"),
+                   last_success_checked=item.get("last_success"), review_required=pending,
+                   review_pending=pending)
+        if pending:
             row["review_since"] = item.get("changed_at")
+            row["pending_since"] = item.get("changed_at")
         results.append(row)
-        print("%-10s %-12s %s" % (row.get("status"), row["change"], row["key"]))
+        print("%-10s %-12s %s%s" % (row.get("status"), row["change"], row["key"],
+                                     " [review pending]" if pending else ""))
 
     kinds = {}
     for r in results:
@@ -408,6 +433,7 @@ def main():
         last_run=now,
         source_state=state,
         pending_review=sum(bool(item.get("review_required")) for item in state.values()),
+        review_pending=sum(bool(item.get("review_required")) for item in state.values()),
         monitored=len(results),
         changed_this_run=len(changed),
         # "first check" is the opposite of "never checked": it means the baseline hash was
@@ -425,10 +451,9 @@ def main():
         coverage="%d of %d URLs could be read by this run" % (sum(1 for r in results if r.get("hash")),
                                                               len(results)),
         note=("HTML is hashed from normalised visible text and PDF links; PDFs are hashed as raw response bytes. "
-              "A CHANGED row means the official document moved, so every value transcribed from it "
-              "must be re-read before it is relied on. A fetch error is a monitoring failure, not a "
-              "verdict: the value it covers keeps its own last human-verified date. "
-              "This job reports; it never rewrites a value."),
+              "A change remains pending through unchanged or failed checks until an exact URL/hash/method "
+              "review is documented in data/source_reviews.json. A fetch error is not a verdict; the "
+              "last successful hash is retained for comparison. This job reports; it never rewrites a value."),
         runs=history,
     )
     with open(OUT, "w", encoding="utf-8") as f:

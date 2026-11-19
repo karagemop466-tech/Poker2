@@ -13,9 +13,16 @@ class MonitorTests(unittest.TestCase):
                    dict(results=[dict(url='u', hash='b', change='CHANGED')])]
         self.assertTrue(m.source_state(history)['u']['review_required'])
     def test_durable_state_and_explicit_review(self):
-        h = [dict(results=[dict(url='u', hash='b', change='CHANGED')])]
-        self.assertFalse(m.source_state(h, {'u': {'review_required': False}})['u']['review_required'])
+        h = [dict(results=[dict(url='u', hash='b', hash_method='raw PDF bytes', change='CHANGED')])]
+        # An unexplained persisted false or hash-only legacy record cannot erase a change.
+        self.assertTrue(m.source_state(h, {'u': {'review_required': False}})['u']['review_required'])
+        self.assertTrue(m.source_state(h, reviewed={'u': 'b'})['u']['review_required'])
+        proof = dict(url='u', hash='b', hash_method='raw PDF bytes',
+                     reviewed_at='2026-11-19', reviewer='test', note='read the exact document')
+        self.assertFalse(m.source_state(h, reviewed=[proof])['u']['review_required'])
+        self.assertTrue(m.source_state(h, reviewed=[dict(proof, hash_method='wrong')])['u']['review_required'])
         self.assertEqual(m.source_state([], {'u': {'last_hash': 'a'}})['u']['last_hash'], 'a')
+        self.assertTrue(m.source_state([], {'u': {'review_required': True}})['u']['review_required'])
     def test_prior_monitor_metadata_is_preserved(self):
         history = [dict(checked='now', results=[dict(url='u', hash='b', change='unchanged', last_changed='earlier')])]
         self.assertTrue(m.source_state(history)['u']['review_required'])

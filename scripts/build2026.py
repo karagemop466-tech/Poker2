@@ -754,14 +754,15 @@ def check_badge(*urls):
     if CHECKS_META is None:
         return "<span class='note' title='The scheduled re-check has not run against this checkout yet'>not yet checked</span>"
     hits = [CHECKS[u] for u in urls if u in CHECKS]
+    pending = row_changed(*urls)
+    errs = [h for h in hits if h.get("change") == "fetch error"]
+    if pending:
+        suffix = " (latest fetch failed)" if errs else ""
+        return ("<span class='tag t-bad' title='A source changed and remains flagged until "
+                "an exact-hash review is recorded; an unchanged or failed fetch does not clear it'>"
+                "source changed &mdash; review pending%s</span>" % suffix)
     if not hits:
         return "<span class='note'>document not in the monitor</span>"
-    changed = [PENDING[u] for u in urls if u in PENDING]
-    differences = [h["schedule_diff"] for h in hits if (h.get("schedule_diff") or {}).get("state") == "rows differ"]
-    if changed or differences:
-        suffix = " since " + max(changed)[:10] if changed else ""
-        return "<span class='tag t-bad' title='Change awaits verification against the official source%s'>source changed</span>" % esc(suffix)
-    errs = [h for h in hits if h.get("change") == "fetch error"]
     if errs:
         # Say which kind of failure it was: a property that refuses a datacenter runner is not a
         # source that moved, and neither of them is a source that has been checked. Several of
@@ -783,7 +784,7 @@ def check_badge(*urls):
 
 
 def row_changed(*urls):
-    """True when any source behind a row still needs review."""
+    """Include durable hash warnings and independently detected schedule-row changes."""
     return any(u in PENDING or (CHECKS.get(u, {}).get("schedule_diff") or {}).get("state") == "rows differ"
                for u in urls)
 

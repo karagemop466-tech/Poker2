@@ -222,7 +222,7 @@
       var hit = list.some(function (u) { return changed[u]; });
       if (hit) {
         var cell = q('.change-cell', r);
-        if (cell) cell.innerHTML = '<span class="badge b-bad">source changed</span>';
+        if (cell) cell.insertAdjacentHTML('beforeend', ' <span class="badge b-bad">source changed — review pending</span>');
       }
     });
   }

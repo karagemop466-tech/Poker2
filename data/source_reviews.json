@@ -1,0 +1,4 @@
+{
+  "description": "Manual reviews of exact monitored hashes; an unchanged fetch is not a review. Entries must include url, hash, hash_method, reviewed_at, reviewer, and a note describing the document and fields rechecked. Never add an entry without reading the official document.",
+  "reviews": []
+}

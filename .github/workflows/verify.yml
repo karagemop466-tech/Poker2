@@ -85,6 +85,9 @@ jobs:
           python3 scripts/check_monitor_badge.py
           python3 scripts/check_refresh2026.py
 
+      - name: Unreviewed source changes survive unchanged checks and fetch errors
+        run: python3 scripts/test_source_monitoring.py
+
       - name: Pages mean what they say (monitor arithmetic, fee provenance)
         run: python3 scripts/check_semantics.py
 
