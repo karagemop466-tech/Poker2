@@ -6,11 +6,19 @@
 
   function text(tr){return (tr.getAttribute('data-search')||'')+' '+tr.textContent.toLowerCase();}
 
+  function vegasDate(){
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+    var date={}; parts.forEach(function(part){date[part.type]=part.value;});
+    return date.year+'-'+date.month+'-'+date.day;
+  }
+
   // ---- tournaments table -------------------------------------------------
   var t=$('#t');
   if(t){
     var q=$('#q'), df=$('#datef'), mbi=$('#maxbi'), sef=$('#sef'), ng=$('#nogtd'), cnt=$('#count');
-    var pills=$$('#t-pills .pill, .pill[data-g]');
+    var pills=$$('.pill[data-g]'), until=$('#date-to'), past=$('#include-past');
+    var today=vegasDate();
+    if(/^#ev\d+$/.test(location.hash)) past.checked=true;  // Index links can cite historical rows.
     var activeGroups={};
     function run(){
       var s=(q.value||'').toLowerCase().trim();
@@ -19,24 +27,26 @@
       rows.forEach(function(tr){
         var ok=true;
         if(s && text(tr).indexOf(s)===-1) ok=false;
-        if(ok && d && (tr.getAttribute('data-dates')||'').split(' ').indexOf(d)===-1) ok=false;
+        function matches(date){return (!d||date>=d)&&(!until.value||date<=until.value)&&(past.checked||date>=today);}
+        if(!(tr.getAttribute('data-dates')||'').split(' ').some(matches)) ok=false;
+        tr.querySelectorAll('.slot').forEach(function(slot){slot.hidden=!matches(slot.getAttribute('data-slot-date'));});
         if(ok && mb!==null){var b=parseInt(tr.getAttribute('data-buyin')||'0',10); if(!b||b>mb) ok=false;}
-        if(ok && sef.checked && tr.getAttribute('data-group')!=='candidate') ok=false;
+        if(ok && sef.checked && tr.getAttribute('data-confirmed')!=='1') ok=false;
         if(ok && ng.checked && !(parseInt(tr.getAttribute('data-gtd')||'0',10)>0)) ok=false;
         if(ok && Object.keys(activeGroups).length && !activeGroups[tr.getAttribute('data-group')]) ok=false;
         tr.classList.toggle('hidden',!ok);
         if(ok) shown++;
       });
-      cnt.textContent=shown+' of '+rows.length+' events shown.';
+      cnt.textContent=shown+' of '+rows.length+' events shown.'+(sef.checked&&!shown?' No events meet the confirmed freezeout filter.':'');
     }
-    [q,df,mbi,sef,ng].forEach(function(el){ el.addEventListener('input',run); el.addEventListener('change',run); });
+    [q,df,until,past,mbi,sef,ng].forEach(function(el){ el.addEventListener('input',run); el.addEventListener('change',run); });
     pills.forEach(function(p){p.addEventListener('click',function(){
       var g=p.getAttribute('data-g');
       if(activeGroups[g]) delete activeGroups[g]; else activeGroups[g]=1;
       p.classList.toggle('on'); run();
     });});
     $('#reset').addEventListener('click',function(){
-      q.value=''; df.value=''; mbi.value=''; sef.checked=false; ng.checked=false;
+      q.value=''; df.value=''; until.value=''; past.checked=false; mbi.value=''; sef.checked=false; ng.checked=false;
       activeGroups={}; pills.forEach(function(p){p.classList.remove('on')}); run();
     });
     $$('#t th').forEach(function(th,i){
@@ -65,7 +75,7 @@
       panels.forEach(function(p){
         var ok=true;
         if(d && p.getAttribute('data-date')!==d) ok=false;
-        if(ok && ov.checked && !p.querySelector('.t-bad')) ok=false;
+        if(ok && ov.checked && p.getAttribute('data-multiple')!=='1') ok=false;
         p.style.display=ok?'':'none';
         if(ok) shown++;
       });
@@ -76,7 +86,7 @@
 
   // ---- walking page ------------------------------------------------------
   if($('#v')){
-    var v=$('#v'), w30=$('#w30'), w15=$('#w15'), wc=$('#wc');
+    var v=$('#v'), w30=$('#w30'), w15=$('#w15'), wc=$('#wc'), maps=$('#maps-evidence');
     var prs=$$('.panel[data-venue]'), all=$$('.panel[data-venue] tbody tr');
     function run3(){
       var vv=v.value, shown=0, shownp=0;
@@ -90,16 +100,25 @@
         var ok=(!vv||tr.closest('.panel').getAttribute('data-venue')===vv);
         if(ok && w30.checked && !(m<=30)) ok=false;
         if(ok && w15.checked && !(m<=15)) ok=false;
+        if(ok && maps.checked && tr.getAttribute('data-maps')!=='1') ok=false;
         tr.classList.toggle('hidden',!ok);
         if(ok) shown++;
       });
       wc.textContent=shown+' of '+all.length+' hotel\u2013room pairs shown ('+shownp+' rooms).';
     }
-    [v,w30,w15].forEach(function(el){el.addEventListener('change',run3)});
+    [v,w30,w15,maps].forEach(function(el){el.addEventListener('change',run3)});
     run3();
   }
 
-  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+  function fmt(n){return n==null?'\u2014':n.toLocaleString('en-US',{style:'currency',currency:'USD'});}
+  function hotelCost(H){
+    function read(el){return el.value!==''&&el.validity.valid ? Number(el.value) : null;}
+    var r=read(H.r), f=read(H.f), t=read(H.t), p=read(H.p), n=read(H.n);
+    var sub=r!=null&&f!=null?r+f:null;
+    var tax=sub!=null&&t!=null?sub*t/100:null;
+    var night=tax!=null&&p!=null?sub+tax+p:null;
+    return {sub:sub,tax:tax,night:night,total:n===0?0:night!=null&&n!=null?night*n:null};
+  }
 
   // ---- hotels calculator -------------------------------------------------
   if($('#h-rate')){
@@ -107,13 +126,10 @@
     var o={s:$('#o-sub'),x:$('#o-tax'),nn:$('#o-night'),tt:$('#o-total')};
     var note=$('#h-note');
     function run4(){
-      var r=+H.r.value||0, f=+H.f.value||0, tx=(+H.t.value||0)/100, pk=+H.p.value||0, n=+H.n.value||1;
-      var sub=r+f, tax=sub*tx, night=sub+tax+pk, tot=night*n;
-      o.s.textContent=fmt(sub); o.x.textContent=fmt(tax);
-      o.nn.textContent=fmt(night); o.tt.textContent=fmt(tot);
-      note.textContent='Tax is applied to room rate + resort fee because the official Venetian page says '
-        +'the resort fee is "$55 plus tax". Parking is not taxable. '
-        +'The nightly rate you enter is not verified by this site \u2014 enter the quote you are given.';
+      var est=hotelCost(H);
+      o.s.textContent=fmt(est.sub); o.x.textContent=fmt(est.tax);
+      o.nn.textContent=fmt(est.night); o.tt.textContent=fmt(est.total);
+      note.textContent=est.total==null?'No total until all inputs, including the nightly room rate, are known.':'Illustrative estimate only, not a checkout quote.';
     }
     Object.keys(H).forEach(function(k){H[k].addEventListener('input',run4)});
     run4();
@@ -203,7 +219,9 @@
     }
     $('#add').addEventListener('click',function(){
       var o=pick.options[pick.selectedIndex]; if(!o||!o.value) return;
+      if(body.querySelector('[data-event="'+o.value+'"]')) return;
       var tr=document.createElement('tr');
+      tr.setAttribute('data-event',o.value);
       tr.setAttribute('data-buyin',o.getAttribute('data-buyin'));
       tr.setAttribute('data-pool',o.getAttribute('data-pool')||'0');
       tr.innerHTML='<td class="num">'+o.value+'</td><td>'+o.textContent+'</td>'

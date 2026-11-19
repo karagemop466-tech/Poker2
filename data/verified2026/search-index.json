@@ -133,7 +133,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev1",
   "h": "$300 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels ",
-  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-17 | 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 9 | 2026-11-17 | unchanged"
+  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-16 2026-11-17 2026-11-17 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 10 \u00b7 sheet 9 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -141,7 +141,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev2",
   "h": "$300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "2 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-18 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | unchanged"
+  "x": "2 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-18 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -149,7 +149,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev3",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
+  "x": "3 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-19 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -157,7 +157,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev4",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
+  "x": "4 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-20 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -165,7 +165,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev5",
   "h": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM)",
-  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 | 2026-11-17 | unchanged"
+  "x": "5 | Best single-entry candidates | $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE 12.5% of the field; late reg: 6 levels + Break (~12:25 PM) | 2026-11-21 | 10:10 AM | $200 | $35 | $165 | none published sheet prints no guarantee | \u2014 | sheet 18 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -173,7 +173,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev6",
   "h": "$200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM)",
-  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published sheet prints no guarantee | \u2014 | sheet 29 | 2026-11-17 | unchanged"
+  "x": "6 | Best single-entry candidates | $200 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 8 levels + Break (~3:40 PM) | 2026-11-22 | 11:10 AM | $200 | $40 | $160 | none published sheet prints no guarantee | \u2014 | sheet 29 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -181,7 +181,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev7",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "7 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 | 2026-11-17 | unchanged"
+  "x": "7 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -189,7 +189,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev8",
   "h": "$200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "8 | Bounty / PKO | $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 30 | 2026-11-17 | source changed"
+  "x": "8 | Bounty / PKO | $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 30 DSE IV schedule | 2026-11-17 | source changed \u00b7 re-read"
  },
  {
   "p": "tournaments.html",
@@ -197,7 +197,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev9",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "9 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-24 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "9 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-24 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -205,7 +205,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev10",
   "h": "$400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "10 | Best single-entry candidates | $400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-25 | 11:10 AM | $400 | $65 | $335 | $15,000 | 37.5\u00d7 | sheet 6 | 2026-11-17 | unchanged"
+  "x": "10 | Best single-entry candidates | $400 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-25 | 11:10 AM | $400 | $65 | $335 | $15,000 | 37.5\u00d7 | sheet 6 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -213,7 +213,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev11",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "11 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-25 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "11 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-25 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -221,7 +221,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev12",
   "h": "$300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "12 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-26 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 | 2026-11-17 | unchanged"
+  "x": "12 | Best single-entry candidates | $300 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-26 | 11:10 AM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 5 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -229,7 +229,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev13",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "13 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-26 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "13 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-26 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -237,7 +237,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev14",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "14 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-27 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | unchanged"
+  "x": "14 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-11-27 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -245,7 +245,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev15",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "15 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-27 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "15 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-27 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -253,7 +253,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev16",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg:",
-  "x": "16 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-11-28 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 11 | 2026-11-17 | unchanged"
+  "x": "16 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE R 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-11-28 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 11 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -261,7 +261,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev17",
   "h": "$400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "17 | Bounty / PKO | $400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-28 | 12:10 PM | $400 | $60 | $340 | $15,000 (prize pool + total bounties) | 37.5\u00d7 | sheet 26 | 2026-11-17 | unchanged"
+  "x": "17 | Bounty / PKO | $400 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-28 | 12:10 PM | $400 | $60 | $340 | $15,000 (prize pool + total bounties) | 37.5\u00d7 | sheet 26 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -269,7 +269,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev18",
   "h": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 leve",
-  "x": "18 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-28 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | unchanged"
+  "x": "18 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-28 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -277,7 +277,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev19",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "19 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 | 2026-11-17 | unchanged"
+  "x": "19 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -285,7 +285,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev20",
   "h": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 ",
-  "x": "20 | Best single-entry candidates | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-29 | 12:10 PM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 22 | 2026-11-17 | unchanged"
+  "x": "20 | Best single-entry candidates | $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-11-29 | 12:10 PM | $300 | $58 | $242 | $10,000 | 33.3\u00d7 | sheet 22 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -293,7 +293,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev21",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "21 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-29 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "21 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-29 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -301,7 +301,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev22",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "22 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-30 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "22 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-11-30 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -309,7 +309,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev23",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "23 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-01 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "23 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-01 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -325,7 +325,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev25",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "25 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-02 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "25 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-02 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -333,7 +333,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev26",
   "h": "$800 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels ",
-  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-04 2026-12-05 | 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 | 2026-11-17 | unchanged"
+  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-03 2026-12-04 2026-12-04 2026-12-05 2026-12-05 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 \u00b7 sheet 13 \u00b7 sheet 14 DSE IV schedule | 2026-11-"
  },
  {
   "p": "tournaments.html",
@@ -341,7 +341,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev27",
   "h": "$600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "27 | Best single-entry candidates | $600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-03 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 28 | 2026-11-17 | unchanged"
+  "x": "27 | Best single-entry candidates | $600 BIG O (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-03 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 28 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -349,7 +349,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev28",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 7 | 2026-11-17 | unchanged"
+  "x": "28 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-06 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 7 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -357,7 +357,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev29",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "29 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-06 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "29 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-06 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -365,7 +365,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev30",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 11 | 2026-11-17 | unchanged"
+  "x": "30 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-07 | 11:10 AM | $600 | $90 | $510 | $40,000 | 66.7\u00d7 | sheet 11 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -373,7 +373,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev31",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "31 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-07 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "31 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-07 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -397,7 +397,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev34",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "34 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-08 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "34 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-08 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -405,7 +405,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev35",
   "h": "$600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg:",
-  "x": "35 | Team events | $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg: 8 levels + Break (~2:40 PM) | 2026-12-09 | 10:10 AM | $600 | $80 | $510 | $10,000 | 16.7\u00d7 | sheet 31 | 2026-11-17 | unchanged"
+  "x": "35 | Team events | $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MA 12.5% of the field; late reg: 8 levels + Break (~2:40 PM) | 2026-12-09 | 10:10 AM | $600 | $80 | $510 | $10,000 | \u2014 | sheet 31 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -413,7 +413,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev36",
   "h": "$800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "36 | Bounty / PKO | $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-09 | 11:10 AM | $800 | $100 | $700 | $75,000 (prize pool + total bounties) | 93.8\u00d7 | sheet 16 | 2026-11-17 | unchanged"
+  "x": "36 | Bounty / PKO | $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-09 | 11:10 AM | $800 | $100 | $700 | $75,000 (prize pool + total bounties) | 93.8\u00d7 | sheet 16 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -429,7 +429,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev38",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "38 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-09 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "38 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-09 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -445,7 +445,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev40",
   "h": "$600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM)",
-  "x": "40 | Bounty / PKO | $600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-10 | 12:10 PM | $600 | $90 | $510 | $25,000 (prize pool + total bounties) | 41.7\u00d7 | sheet 27 | 2026-11-17 | unchanged"
+  "x": "40 | Bounty / PKO | $600 POT LIMIT OMAHA BOUNTY (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-10 | 12:10 PM | $600 | $90 | $510 | $25,000 (prize pool + total bounties) | 41.7\u00d7 | sheet 27 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -453,7 +453,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev41",
   "h": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additiona",
-  "x": "41 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-10 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | unchanged"
+  "x": "41 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-10 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -461,7 +461,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev42",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "42 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-10 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "42 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-10 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -469,7 +469,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev43",
   "h": "$600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels ",
-  "x": "43 | Bounty / PKO | $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-11 | 11:10 AM | $600 | $80 | $510 | $30,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 33 | 2026-11-17 | unchanged"
+  "x": "43 | Bounty / PKO | $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-11 | 11:10 AM | $600 | $80 | $510 | $30,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 33 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -477,7 +477,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev44",
   "h": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additiona",
-  "x": "44 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-11 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 | 2026-11-17 | unchanged"
+  "x": "44 | Satellites | $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels + Break (~6:25 PM) | 2026-12-11 | 4:10 PM | $260 | $40 | $220 | 2 SEATS | \u2014 | sheet 24 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -485,7 +485,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev45",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "45 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-11 | 8:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
+  "x": "45 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-11 | 8:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -493,7 +493,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev46",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "46 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 9:10 AM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
+  "x": "46 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 9:10 AM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -501,7 +501,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev47",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed f",
-  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 | 2026-11-17 | unchanged"
+  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 \u00b7 sheet 37 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -509,7 +509,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev48",
   "h": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one add",
-  "x": "48 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 12:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 | 2026-11-17 | unchanged"
+  "x": "48 | Satellites | $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 seats into Event #47; odd monies as one additional payout; late reg: 6 levels | 2026-12-12 | 12:10 PM | $260 | $35 | $225 | 2 SEATS | \u2014 | sheet 25 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -517,7 +517,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev49",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE each flight plays to ~15% remaining; Day 2 combi",
-  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM | $1,100 | $140 | $"
+  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM 10:10 AM | $1,100 |"
  },
  {
   "p": "tournaments.html",
@@ -525,7 +525,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev50",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "50 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-13 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "50 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-13 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -533,7 +533,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev51",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "51 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-14 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "51 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-14 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -541,7 +541,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev52",
   "h": "$1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 ",
-  "x": "52 | Bounty / PKO | $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-15 | 11:10 AM | $1,100 | $130 | $970 | $75,000 (prize pool + total bounties) | 68.2\u00d7 | sheet 34 | 2026-11-17 | unchanged"
+  "x": "52 | Bounty / PKO | $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-15 | 11:10 AM | $1,100 | $130 | $970 | $75,000 (prize pool + total bounties) | 68.2\u00d7 | sheet 34 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -549,7 +549,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev53",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "53 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-15 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "53 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-15 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -557,7 +557,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev54",
   "h": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 l",
-  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 83.3\u00d7 | sheet 11 | 2026-11-17 | unchanged"
+  "x": "54 | Bounty / PKO | $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY 12.5% of the field; late reg: 10 levels + Break (4:55 PM) | 2026-12-16 | 11:10 AM | $600 | $90 | $510 | $50,000 | 83.3\u00d7 | sheet 11 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -565,7 +565,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev55",
   "h": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "55 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-16 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 | 2026-11-17 | unchanged"
+  "x": "55 | Bounty / PKO | $300 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-16 | 5:10 PM | $300 | $50 | $250 | $15,000 (prize pool + total bounties) | 50.0\u00d7 | sheet 15 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -573,7 +573,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev56",
   "h": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM each flight plays to ~12.5% remaining; Day 2 combi",
-  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 | 2026-11-17 | unchanged"
+  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-17 2026-12-18 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM 10:10 AM 6:10 PM 10:10 AM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 \u00b7 sheet 36 DSE IV s"
  },
  {
   "p": "tournaments.html",
@@ -581,7 +581,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev57",
   "h": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 ",
-  "x": "57 | Best single-entry candidates | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-17 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 23 | 2026-11-17 | unchanged"
+  "x": "57 | Best single-entry candidates | $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) 12.5% of the field; plays 8-handed; late reg: 8 levels + break (~4:40 PM) | 2026-12-17 | 12:10 PM | $600 | $90 | $510 | $25,000 | 41.7\u00d7 | sheet 23 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -589,7 +589,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev58",
   "h": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 leve",
-  "x": "58 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-19 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 | 2026-11-17 | unchanged"
+  "x": "58 | Spend-to-advantage | $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-19 | 5:10 PM | $200 | $40 | $160 | $20,000 (prize pool + total bounties) | 100.0\u00d7 | sheet 8 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -597,7 +597,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev59",
   "h": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM each flight plays to ~12.5% remaining; Day 2 combine",
-  "x": "59 | Multi-flight | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 | 2026-11-17 | unchanged"
+  "x": "59 | Multi-flight | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM 11:10 AM 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -605,7 +605,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev60",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "60 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-20 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "60 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-20 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -613,7 +613,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev61",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "61 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-21 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "61 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-21 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -621,7 +621,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev62",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "62 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-22 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "62 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-22 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -629,7 +629,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev63",
   "h": "$600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM)",
-  "x": "63 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-23 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 | 2026-11-17 | unchanged"
+  "x": "63 | Best single-entry candidates | $600 NO LIMIT HOLD'EM (1DAY) 12.5% of the field; late reg: 10 levels + Break (~4:55 PM) | 2026-12-23 | 11:10 AM | $600 | $90 | $510 | $30,000 | 50.0\u00d7 | sheet 7 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -637,7 +637,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev64",
   "h": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM)",
-  "x": "64 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 | 2026-11-17 | unchanged"
+  "x": "64 | Bounty / PKO | $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 12.5% of the field; late reg: 8 levels + Break (9:40 PM) | 2026-12-23 | 5:10 PM | $200 | $40 | $160 | $8,000 (prize pool + total bounties) | 40.0\u00d7 | sheet 1 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "entry-rules.html",
@@ -1154,10 +1154,18 @@
  {
   "p": "hotels.html",
   "pl": "Hotels &amp; true cost",
+  "t": "Property Checkout total Nightly average Mandatory resort fee",
+  "a": "",
+  "h": "2026-11-19 Unverified: booking shell returned; no checkout quote exposed. Open dates at hotel",
+  "x": " |  |  |  |  |  |  | 2026-11-19 Unverified: booking shell returned; no checkout quote exposed. Open dates at hotel"
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "The Venetian Resort 3355 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "The Venetian Resort 3355 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 $55 per night, plus tax. Includes Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader. | from $119 | 13.38% www.venetianlasvegas.com | Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapph"
+  "x": "The Venetian Resort 3355 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 $55 per night, plus tax. Includes Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader. | none published | 13.38% www.venetianlasvegas.com | Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards "
  },
  {
   "p": "hotels.html",
@@ -1165,7 +1173,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | from $209 | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian. | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to the poker rate www.venetianlasvegas.com | not published | www"
+  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | none published | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian. Parking source | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to the poker rate www.venetianlasvegas.com \u00b7"
  },
  {
   "p": "hotels.html",
@@ -1173,7 +1181,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whether that d"
+  "x": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. Parking source | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state"
  },
  {
   "p": "hotels.html",
@@ -1181,7 +1189,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whet"
+  "x": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. Parking source | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does"
  },
  {
   "p": "hotels.html",
@@ -1205,7 +1213,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Caesars Palace 3570 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Caesars Palace 3570 S Las Vegas Blvd, Las Vegas, NV 89109 | not published | none published | not published | not published | The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read. headline claim only; conditions not published www.caesars.com | not published | www.caesars.com"
+  "x": "Caesars Palace 3570 S Las Vegas Blvd, Las Vegas, NV 89109 | not published | none published | not published | not published | The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read. headline claim only; conditions not published www.caesars.com \u00b7 2026-11-17 | not published | Fee source \u00b7 "
  },
  {
   "p": "hotels.html",
@@ -1213,39 +1221,63 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Horseshoe Las Vegas 3645 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Horseshoe Las Vegas 3645 S Las Vegas Blvd, Las Vegas, NV 89109 | not published | none published | not published | not published | The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read. headline claim only; conditions not published www.caesars.com | not published | www.caesars.com"
+  "x": "Horseshoe Las Vegas 3645 S Las Vegas Blvd, Las Vegas, NV 89109 | not published | none published | not published | not published | The hotel page advertises 'FREE 48-Hour Cancellation*' with an asterisk and does not print the condition. No deposit or forfeiture terms are published on the page read. headline claim only; conditions not published www.caesars.com \u00b7 2026-11-17 | not published | Fee sour"
  },
  {
   "p": "hotels.html",
   "pl": "Hotels &amp; true cost",
-  "t": "Hotel Extra occupant above double occupancy Early check-out",
+  "t": "Hotel Extra occupant above double occupancy Early check-out Source / last checked",
   "a": "",
   "h": "The Venetian Resort",
-  "x": "The Venetian Resort | $50 per night for each additional guest 13 or older above double occupancy (Prestige: $50 for 5-20, $75 for 21+). | $100 plus tax"
+  "x": "The Venetian Resort | $50 per night for each additional guest 13 or older above double occupancy (Prestige: $50 for 5-20, $75 for 21+). | $100 plus tax | Hotel terms \u00b7 2026-11-19"
  },
  {
   "p": "hotels.html",
   "pl": "Hotels &amp; true cost",
-  "t": "Hotel Extra occupant above double occupancy Early check-out",
+  "t": "Hotel Extra occupant above double occupancy Early check-out Source / last checked",
   "a": "",
   "h": "The Palazzo",
-  "x": "The Palazzo | $50 per night for each additional guest 13 or older above double occupancy. | $100 plus tax"
+  "x": "The Palazzo | $50 per night for each additional guest 13 or older above double occupancy. | $100 plus tax | Hotel terms \u00b7 2026-11-19"
  },
  {
   "p": "hotels.html",
   "pl": "Hotels &amp; true cost",
-  "t": "Hotel Extra occupant above double occupancy Early check-out",
+  "t": "Hotel Extra occupant above double occupancy Early check-out Source / last checked",
   "a": "",
   "h": "Bellagio",
-  "x": "Bellagio | $50 plus tax per occupant per night above 2 occupants. | not published"
+  "x": "Bellagio | $50 plus tax per occupant per night above 2 occupants. | not published | Hotel terms \u00b7 2026-11-17"
  },
  {
   "p": "hotels.html",
   "pl": "Hotels &amp; true cost",
-  "t": "Hotel Extra occupant above double occupancy Early check-out",
+  "t": "Hotel Extra occupant above double occupancy Early check-out Source / last checked",
   "a": "",
   "h": "MGM Grand",
-  "x": "MGM Grand | $40 plus tax per occupant per night above 2 occupants. | not published"
+  "x": "MGM Grand | $40 plus tax per occupant per night above 2 occupants. | not published | Hotel terms \u00b7 2026-11-17"
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
+  "t": "Date read Property Field Value",
+  "a": "",
+  "h": "venetian / palazzo",
+  "x": "2026-11-19 | venetian / palazzo | published poker offer | from $119 and $209; tower assignment not stated | www.venetianlasvegas.com | Live reread; conditional starting prices, not a booking quote."
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
+  "t": "Date read Property Field Value",
+  "a": "",
+  "h": "venetian / palazzo",
+  "x": "2026-11-19 | venetian / palazzo | resort fee | $55 plus applicable tax per night | www.venetianlasvegas.com | Live reread; confirmed policy, not exact-stay checkout."
+ },
+ {
+  "p": "hotels.html",
+  "pl": "Hotels &amp; true cost",
+  "t": "Date read Property Field Value",
+  "a": "",
+  "h": "venetian / palazzo",
+  "x": "2026-11-19 | venetian / palazzo | room tax | 13.38% | www.venetianlasvegas.com | Live reread of the general hotel terms; no itemized checkout exposed."
  },
  {
   "p": "hotels.html",
@@ -1277,7 +1309,7 @@
   "t": "Date read Property Field Value",
   "a": "",
   "h": "venetian",
-  "x": "2026-11-17 | venetian | poker_rate | from $119 (Venetian) / $209 (Palazzo), code EPOKR25 | www.venetianlasvegas.com | read this session"
+  "x": "2026-11-17 | venetian | poker_rate | from $119 / $209, code EPOKR25; property attribution not stated | www.venetianlasvegas.com | read this session"
  },
  {
   "p": "hotels.html",
@@ -1434,1010 +1466,1010 @@
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.6 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.4 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.3 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.3 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.6 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.2 min | over 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.8 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.3 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 62.1 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 62.1 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 101.5 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 101.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.3 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.2 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.2 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.0 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.7 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.8 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.5 min | within 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.4 min | over 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 34.4 min | over 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 34.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.3 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | over 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 46.4 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 46.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 55.9 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 55.9 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 97.5 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 97.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.3 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 9.3 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 9.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.0 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.7 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.9 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.9 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.6 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.2 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.5 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 38.7 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 38.7 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 42.2 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 42.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 55.7 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 55.7 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 100.3 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 100.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.7 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.1 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.1 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.3 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 24.9 min | within 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 24.9 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.4 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.8 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 31.6 min | over 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 31.6 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 32.8 min | over 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 32.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.5 min | over 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | over 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 40.5 min | over 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 40.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 47.4 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 47.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 59.2 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 59.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 66.5 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 66.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 117.2 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 117.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 5.0 min | estimated \u226430 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 6.0 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 4.0 min | estimated \u226430 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.7 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 9.5 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 9.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.2 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 13.0 min | within 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.0 min | estimated \u226430 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 17.0 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 17.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.8 min | within 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.5 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.0 min | estimated \u226430 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.3 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.9 min | within 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.9 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.2 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.6 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.0 min | estimated \u226430 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.6 min | over 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.6 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 34.0 min | over 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 34.0 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.5 min | over 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 42.0 min | estimated >30 min | Google Maps route estimate \u00b7 2026-11-17 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 39.2 min | over 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 39.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 39.4 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 39.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 51.8 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 51.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 82.9 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 82.9 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions Official poker room address / indoor directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.8 min | within 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.1 min | within 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.1 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.8 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.8 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.5 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 2901 Paradise Rd, Las Vegas, NV 89109 | 24.6 min | within 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 24.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.0 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.8 min | over 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | over 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.1 min | over 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.1 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | over 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.9 min | over 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.9 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 46.4 min | over 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 46.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 49.8 min | over 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 49.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | over 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 55.0 min | over 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 55.0 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 67.5 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 67.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "walking.html",
   "pl": "Walking times",
-  "t": "Hotel Address Walking estimate 30-minute rule",
+  "t": "Hotel / origin address Walking estimate 30-minute rule Route / last checked",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 129 E. Fremont St, Las Vegas, NV 89101 | 68.0 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 68.0 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/venetian.html",
@@ -2954,338 +2986,354 @@
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
-  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "t": "Series Dates Entry rule finding Source / last checked",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "WPT World Championship",
+  "x": "WPT World Championship | Nov 27\u2013Dec 21, 2026 | The opening $600 NLH ($400,000 guarantee) allows \u201cUnlimited re-entry for each starting flight\u201d until level 9. Do not treat it as a freezeout. | WPT rulebook \u00b7 2026-11-19"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "Series Dates Entry rule finding Source / last checked",
+  "a": "",
+  "h": "Wynn Signature Series",
+  "x": "Wynn Signature Series | Jan 11\u201324, 2027 | The schedule is published. The event structures link says \u201cCOMING SOON\u201d; entry limits, rebuys and add-ons are unverified. No events promoted. | January schedule PDF \u00b7 2026-11-19"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 8.8 min | within 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 10.1 min | within 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 16.8 min | within 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.1 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 18.8 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 24.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 24.6 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 27.0 min | within 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 24.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 28.3 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 33.8 min | over 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 36.3 min | over 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 37.1 min | over 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 41.5 min | over 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.1 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 41.9 min | over 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 46.4 min | over 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.9 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 49.8 min | over 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 46.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 53.2 min | over 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 49.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 55.0 min | over 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 67.5 min | over 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 55.0 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/wynn.html",
   "pl": "venues/wynn",
   "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 68.0 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 67.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
+ },
+ {
+  "p": "venues/wynn.html",
+  "pl": "venues/wynn",
+  "t": "wt-V-WYN  Hotel Walking estimate 30-minute rule Verify",
+  "a": "",
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 68.0 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 8.3 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 8.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 9.3 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 9.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 10.0 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 12.7 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 14.7 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 16.9 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 16.9 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 20.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 21.2 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 21.6 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 23.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 24.8 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 26.2 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 30.5 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 36.3 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 38.7 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 38.7 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 42.2 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 42.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 55.7 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 55.7 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/horseshoe.html",
   "pl": "venues/horseshoe",
   "t": "wt-V-HS  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 100.3 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 100.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
@@ -3324,168 +3372,168 @@
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 11.6 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 12.4 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 14.3 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 19.2 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 19.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 19.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 20.2 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 21.2 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 21.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 22.0 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.0 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 22.5 min | within 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 23.7 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 26.8 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 29.5 min | within 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 33.4 min | over 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 33.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 34.4 min | over 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 34.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 37.3 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 37.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 38.3 min | over 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 46.4 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 46.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 55.9 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 55.9 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/caesars-palace.html",
   "pl": "venues/caesars-palace",
   "t": "wt-V-CP  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 97.5 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 97.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
@@ -3540,336 +3588,336 @@
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 11.6 min | within 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 11.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 12.6 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 20.4 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 20.5 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 22.2 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 22.2 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 22.5 min | within 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.5 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 23.3 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 23.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 24.8 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 24.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 27.3 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 27.6 min | within 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 27.6 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 28.2 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 28.3 min | within 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 30.2 min | over 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 30.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 35.3 min | over 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 35.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 35.8 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 35.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 41.3 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 41.5 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 41.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 62.1 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 62.1 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/bellagio.html",
   "pl": "venues/bellagio",
   "t": "wt-V-BEL  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 101.5 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 101.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "MGM Grand",
-  "x": "MGM Grand | 0.0 min | within 30 min | confirm on Google Maps"
+  "h": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "MGM Grand 3799 S. Las Vegas Blvd, Las Vegas, NV 89109 |  | unverified | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Park MGM",
-  "x": "Park MGM | 10.7 min | within 30 min | confirm on Google Maps"
+  "h": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Park MGM 3770 S. Las Vegas Blvd, Las Vegas, NV 89109 | 10.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "New York-New York",
-  "x": "New York-New York | 12.4 min | within 30 min | confirm on Google Maps"
+  "h": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "New York-New York 3790 S. Las Vegas Blvd, Las Vegas, NV 89109 | 12.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Planet Hollywood",
-  "x": "Planet Hollywood | 14.7 min | within 30 min | confirm on Google Maps"
+  "h": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Planet Hollywood 3667 S. Las Vegas Blvd, Las Vegas, NV 89109 | 14.7 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Horseshoe Las Vegas",
-  "x": "Horseshoe Las Vegas | 18.2 min | within 30 min | confirm on Google Maps"
+  "h": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Horseshoe Las Vegas 3645 S. Las Vegas Blvd, Las Vegas, NV 89109 | 18.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Paris Las Vegas",
-  "x": "Paris Las Vegas | 20.1 min | within 30 min | confirm on Google Maps"
+  "h": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Paris Las Vegas 3655 S. Las Vegas Blvd, Las Vegas, NV 89109 | 20.1 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "ARIA Resort & Casino",
-  "x": "ARIA Resort & Casino | 22.3 min | within 30 min | confirm on Google Maps"
+  "h": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "ARIA Resort & Casino 3730 S. Las Vegas Blvd, Las Vegas, NV 89109 | 22.3 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Mandalay Bay",
-  "x": "Mandalay Bay | 24.9 min | within 30 min | confirm on Google Maps"
+  "h": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119",
+  "x": "Mandalay Bay 3950 S. Las Vegas Blvd, Las Vegas, NV 89119 | 24.9 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Flamingo Las Vegas",
-  "x": "Flamingo Las Vegas | 26.4 min | within 30 min | confirm on Google Maps"
+  "h": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Flamingo Las Vegas 3555 S. Las Vegas Blvd, Las Vegas, NV 89109 | 26.4 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Bellagio",
-  "x": "Bellagio | 28.2 min | within 30 min | confirm on Google Maps"
+  "h": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Bellagio 3600 S. Las Vegas Blvd, Las Vegas, NV 89109 | 28.2 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Cromwell",
-  "x": "The Cromwell | 29.8 min | within 30 min | confirm on Google Maps"
+  "h": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Cromwell 3595 S. Las Vegas Blvd, Las Vegas, NV 89109 | 29.8 min | estimated \u226430 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The LINQ",
-  "x": "The LINQ | 31.6 min | over 30 min | confirm on Google Maps"
+  "h": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The LINQ 3535 S. Las Vegas Blvd, Las Vegas, NV 89109 | 31.6 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Harrah's Las Vegas",
-  "x": "Harrah's Las Vegas | 32.8 min | over 30 min | confirm on Google Maps"
+  "h": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Harrah's Las Vegas 3475 S. Las Vegas Blvd, Las Vegas, NV 89109 | 32.8 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Venetian",
-  "x": "The Venetian | 36.5 min | over 30 min | confirm on Google Maps"
+  "h": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Venetian 3355 S. Las Vegas Blvd, Las Vegas, NV 89109 | 36.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Caesars Palace",
-  "x": "Caesars Palace | 38.3 min | over 30 min | confirm on Google Maps"
+  "h": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Caesars Palace 3570 S. Las Vegas Blvd, Las Vegas, NV 89109 | 38.3 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "The Palazzo",
-  "x": "The Palazzo | 40.5 min | over 30 min | confirm on Google Maps"
+  "h": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "The Palazzo 3325 S. Las Vegas Blvd, Las Vegas, NV 89109 | 40.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Wynn Las Vegas",
-  "x": "Wynn Las Vegas | 47.4 min | over 30 min | confirm on Google Maps"
+  "h": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Wynn Las Vegas 3131 S. Las Vegas Blvd, Las Vegas, NV 89109 | 47.4 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Encore Las Vegas",
-  "x": "Encore Las Vegas | 53.2 min | over 30 min | confirm on Google Maps"
+  "h": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Encore Las Vegas 3121 S. Las Vegas Blvd, Las Vegas, NV 89109 | 53.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Resorts World Las Vegas",
-  "x": "Resorts World Las Vegas | 59.2 min | over 30 min | confirm on Google Maps"
+  "h": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109",
+  "x": "Resorts World Las Vegas 3000 S. Las Vegas Blvd, Las Vegas, NV 89109 | 59.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Westgate Las Vegas",
-  "x": "Westgate Las Vegas | 66.5 min | over 30 min | confirm on Google Maps"
+  "h": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109",
+  "x": "Westgate Las Vegas 2901 Paradise Rd, Las Vegas, NV 89109 | 66.5 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "venues/mgm-grand.html",
   "pl": "venues/mgm-grand",
   "t": "wt-V-MGM  Hotel Walking estimate 30-minute rule Verify",
   "a": "",
-  "h": "Golden Nugget (downtown)",
-  "x": "Golden Nugget (downtown) | 117.2 min | over 30 min | confirm on Google Maps"
+  "h": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101",
+  "x": "Golden Nugget (downtown) 129 E. Fremont St, Las Vegas, NV 89101 | 117.2 min | estimated >30 min | OSRM estimate \u00b7 2026-11-16 Google Maps walking directions"
  },
  {
   "p": "summary.html",
@@ -3924,24 +3972,8 @@
   "pl": "Executive summary",
   "t": "# Event Entry Guarantee",
   "a": "",
-  "h": "#24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O",
-  "x": "1 | #24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O | $600 | $40,000 | 66.7\u00d7 | 12-02"
- },
- {
-  "p": "summary.html",
-  "pl": "Executive summary",
-  "t": "# Event Entry Guarantee",
-  "a": "",
   "h": "#28 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "2 | #28 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | 66.7\u00d7 | 12-06"
- },
- {
-  "p": "summary.html",
-  "pl": "Executive summary",
-  "t": "# Event Entry Guarantee",
-  "a": "",
-  "h": "#32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O",
-  "x": "3 | #32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS O | $600 | $40,000 | 66.7\u00d7 | 12-08"
+  "x": "1 | #28 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $40,000 | 66.7\u00d7 | 12-06"
  },
  {
   "p": "summary.html",
@@ -3949,7 +3981,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#14 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "4 | #14 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 11-27"
+  "x": "2 | #14 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 11-27"
  },
  {
   "p": "summary.html",
@@ -3957,7 +3989,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#63 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "5 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
+  "x": "3 | #63 $600 NO LIMIT HOLD'EM (1DAY) | $600 | $30,000 | 50.0\u00d7 | 12-23"
  },
  {
   "p": "summary.html",
@@ -3965,7 +3997,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#27 $600 BIG O (1DAY)",
-  "x": "6 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
+  "x": "4 | #27 $600 BIG O (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-03"
  },
  {
   "p": "summary.html",
@@ -3973,7 +4005,7 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "7 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
+  "x": "5 | #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | $600 | $25,000 | 41.7\u00d7 | 12-17"
  },
  {
   "p": "summary.html",
@@ -3981,7 +4013,23 @@
   "t": "# Event Entry Guarantee",
   "a": "",
   "h": "#10 $400 NO LIMIT HOLD'EM (1DAY)",
-  "x": "8 | #10 $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | 37.5\u00d7 | 11-25"
+  "x": "6 | #10 $400 NO LIMIT HOLD'EM (1DAY) | $400 | $15,000 | 37.5\u00d7 | 11-25"
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "#2 $300 NO LIMIT HOLD'EM (1DAY)",
+  "x": "7 | #2 $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | 33.3\u00d7 | 11-18"
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "# Event Entry Guarantee",
+  "a": "",
+  "h": "#12 $300 NO LIMIT HOLD'EM (1DAY)",
+  "x": "8 | #12 $300 NO LIMIT HOLD'EM (1DAY) | $300 | $10,000 | 33.3\u00d7 | 11-26"
  },
  {
   "p": "questions.html",
@@ -4029,7 +4077,7 @@
   "t": "ID Question Why it matters What it blocks",
   "a": "Q-06",
   "h": "Q-06",
-  "x": "Q-06 | Do you have, or will you open, a Venetian Rewards card? | Every structure sheet requires one to participate, and the poker suite rate is tracked through it. | Both entering any Venetian event and holding the $119 poker rate. | open"
+  "x": "Q-06 | Do you have, or will you open, a Venetian Rewards card? | Every structure sheet requires one to participate, and the poker suite rate is tracked through it. | Both entering any Venetian event and qualifying for the conditional poker offer. | open"
  },
  {
   "p": "questions.html",
@@ -4400,6 +4448,22 @@
   "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
  },
  {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-QUOTE",
+  "h": "F-QUOTE",
+  "x": "F-QUOTE | Hotels | Exact-date lookup returned a loading shell on 2026-11-19. | Checkout fields and quote timestamp are blank; no hotel can be ranked on this stay. | Exact-date booking"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "F-WYNN",
+  "h": "F-WYNN",
+  "x": "F-WYNN | Wynn | January 2027 structures were a placeholder on 2026-11-19. | Schedule is published; no event promoted without written entry rules. | January structures"
+ },
+ {
   "p": "sources.html",
   "pl": "Sources",
   "t": "Document HTTP Failure kind What that means",
@@ -4438,6 +4502,38 @@
   "a": "",
   "h": "assets.contentstack.io",
   "x": "assets.contentstack.io | 422 | unreachable | the request failed; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Follow-up",
+  "x": "Follow-up | WPT rulebook | cdn.wynnresorts.com | 2026-11-19 | Dated decision follow-up; see venue or checkout log."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Follow-up",
+  "x": "Follow-up | Wynn January schedule | cdn.wynnresorts.com | 2026-11-19 | Dated decision follow-up; see venue or checkout log."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Follow-up",
+  "x": "Follow-up | Wynn January structures placeholder | cdn.wynnresorts.com | 2026-11-19 | Dated decision follow-up; see venue or checkout log."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Follow-up",
+  "x": "Follow-up | Exact-date Venetian / Palazzo booking lookup | www.venetianlasvegas.com | 2026-11-19 | Dated decision follow-up; see venue or checkout log."
  },
  {
   "p": "sources.html",
@@ -4821,6 +4917,38 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | The Venetian Resort booking source | www.venetianlasvegas.com |  | The booking this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Venetian Resort room tax source | www.venetianlasvegas.com |  | The room tax this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Venetian Resort cancellation source | www.venetianlasvegas.com |  | The cancellation this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Venetian Resort poker offer source | www.venetianlasvegas.com |  | The poker offer this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | The Palazzo resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Palazzo."
  },
  {
@@ -4830,6 +4958,38 @@
   "a": "",
   "h": "Hotel",
   "x": "Hotel | The Palazzo parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo booking source | www.venetianlasvegas.com |  | The booking this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo room tax source | www.venetianlasvegas.com |  | The room tax this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo cancellation source | www.venetianlasvegas.com |  | The cancellation this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo poker offer source | www.venetianlasvegas.com |  | The poker offer this site publishes for The Palazzo."
  },
  {
   "p": "sources.html",
@@ -4853,6 +5013,22 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | Wynn Las Vegas booking source | www.wynnlasvegas.com |  | The booking this site publishes for Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Wynn Las Vegas cancellation source | www.wynnlasvegas.com |  | The cancellation this site publishes for Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | Encore at Wynn Las Vegas resort fee source | www.wynnlasvegas.com |  | The resort fee this site publishes for Encore at Wynn Las Vegas."
  },
  {
@@ -4869,7 +5045,39 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | Encore at Wynn Las Vegas booking source | www.wynnlasvegas.com |  | The booking this site publishes for Encore at Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Encore at Wynn Las Vegas cancellation source | www.wynnlasvegas.com |  | The cancellation this site publishes for Encore at Wynn Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | Bellagio resort fee source | bellagio.mgmresorts.com |  | The resort fee this site publishes for Bellagio."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Bellagio booking source | bellagio.mgmresorts.com |  | The booking this site publishes for Bellagio."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Bellagio cancellation source | bellagio.mgmresorts.com |  | The cancellation this site publishes for Bellagio."
  },
  {
   "p": "sources.html",
@@ -4885,6 +5093,22 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | MGM Grand booking source | mgmgrand.mgmresorts.com |  | The booking this site publishes for MGM Grand."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | MGM Grand cancellation source | mgmgrand.mgmresorts.com |  | The cancellation this site publishes for MGM Grand."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | Caesars Palace resort fee source | www.caesars.com |  | The resort fee this site publishes for Caesars Palace."
  },
  {
@@ -4893,7 +5117,39 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | Caesars Palace booking source | www.caesars.com |  | The booking this site publishes for Caesars Palace."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Caesars Palace cancellation source | www.caesars.com |  | The cancellation this site publishes for Caesars Palace."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | Horseshoe Las Vegas resort fee source | www.caesars.com |  | The resort fee this site publishes for Horseshoe Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Horseshoe Las Vegas booking source | www.caesars.com |  | The booking this site publishes for Horseshoe Las Vegas."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | Horseshoe Las Vegas cancellation source | www.caesars.com |  | The cancellation this site publishes for Horseshoe Las Vegas."
  },
  {
   "p": "sources.html",

@@ -37,6 +37,7 @@ import part1, part2, part3, part4, part5, part6          # noqa: E402
 import schedule as sched                                  # noqa: E402
 import hotels as hotelsmod                                # noqa: E402
 import content as contentmod                              # noqa: E402
+import decision as decisions
 import other_rooms as othermod                            # noqa: E402
 
 OUT = os.path.join(ROOT, "data", "verified2026", "checks.json")
@@ -76,6 +77,12 @@ def sources():
     # Rooms whose official schedules are transcribed onto their venue pages (added 2026-11-17).
     for key, label, url in othermod.MONITOR_URLS:
         out["ROOM_" + key] = (label, url)
+    for i, (label, url) in enumerate(decisions.WATCH, 1):
+        out["FOLLOWUP_%02d" % i] = (label, url)
+    for h in hotelsmod.HOTELS:
+        for field in ("book", "tax_src", "cancel_src", "poker_rate_src"):
+            if h.get(field):
+                out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " · " + field, h[field])
     # collapse duplicates so one URL is fetched once, keeping the first label
     seen, deduped = {}, {}
     for k in sorted(out):
@@ -159,6 +166,20 @@ def fetch(url):
         return r.getcode(), r.read(), r.geturl()
 
 
+def prior_observations(history):
+    """Keep the latest readable baseline by URL across errors and registry-key renames."""
+    baselines, changes = {}, {}
+    for run in history:
+        for row in run.get("results", []):
+            url = row["url"]
+            if row.get("hash"):
+                baselines.setdefault(url, row["hash"])
+            changed = row.get("last_changed") or (run.get("checked") if row.get("change") == "CHANGED" else None)
+            if changed:
+                changes.setdefault(url, changed)
+    return baselines, changes
+
+
 def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     history = []
@@ -167,10 +188,7 @@ def main():
             history = json.load(open(OUT, encoding="utf-8")).get("runs", [])
         except Exception:
             history = []
-    previous = {}
-    if history:
-        for row in history[0].get("results", []):
-            previous[row["key"]] = row.get("hash")
+    previous, changes = prior_observations(history)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     results = []
@@ -184,11 +202,12 @@ def main():
             if final and final.rstrip("/") != url.rstrip("/"):
                 # kept, because a citation that resolves somewhere else is a citation to fix
                 row["resolved_to"] = final
-            old = previous.get(key)
+            old = previous.get(url)
             if old is None:
                 row["change"] = "first check"
             elif old != row["hash"]:
                 row["change"] = "CHANGED"
+                changes[url] = now
             else:
                 row["change"] = "unchanged"
         except urllib.error.HTTPError as e:
@@ -199,6 +218,8 @@ def main():
             kind = error_kind(None, str(e))
             row.update(status=None, hash=None, change="fetch error", error=str(e)[:180],
                        error_kind=kind, reason=MEANING[kind])
+        if url in changes:
+            row["last_changed"] = changes[url]
         results.append(row)
         print("%-10s %-12s %s" % (row.get("status"), row["change"], key))
 

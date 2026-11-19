@@ -7,7 +7,7 @@ name: "Plan: daily official-source refresh"
 
 on:
   schedule:
-    - cron: "30 6 * * *"   # daily, 06:30 UTC
+    - cron: "30 14 * * *"   # daily, 06:30–07:30 Las Vegas
   workflow_dispatch: {}     # run it by hand the morning you pay for anything
 
 permissions:
