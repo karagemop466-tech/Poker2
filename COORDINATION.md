@@ -2473,3 +2473,23 @@ Checked the board and open PRs first: `gh pr list --state open` returned no open
 | E3 Regenerate `/2026/`, rerun the full local suite, PR → `main`, merge, confirm Pages build, record here | in progress | arena/2c7e846d-poker2 | regenerated `2026/**`, `COORDINATION.md` |
 
 Not claimed: Google/Apple walking verification (no maps access from this sandbox), live hotel quotes, Strip-wide scraping, and any change to ranking logic or to unverified values. Values that are not printed on an official source remain blank.
+
+---
+
+# Session arena/8e602cb3-poker2 — final integration: resolve reviewed source-change badges (2026-11-19 UTC)
+
+Read the board on the branch base (`main` @ `7ab0759`, PR #94 merged); `gh pr list --state open`
+was empty. All prior claims at the head of the board were complete. This is the final integration
+session; no parallel task is currently claimed. The `/2026/` monitor had four pending changed hashes
+from its 2026-11-18 run despite the November 19 source reads already recorded in prior session notes.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| I1 Re-read the four URLs with `review_required` against the current official source; compare affected values with the published transcription and record dated evidence, leaving silent entry-policy fields unverified | in progress | arena/8e602cb3-poker2 | `research/8e602cb3-official-review-2026-11-19.md`, `data/verified2026/reviewed-hashes.json` |
+| I2 Acknowledge only the exact hashes reviewed; prove that a later hash change reopens the warning; rebuild `/2026/` without changing verified event/hotel values | in progress | arena/8e602cb3-poker2 | `data/verified2026/reviewed-hashes.json`, `scripts/test_recheck2026.py`, `data/verified2026/dataset.json`, `data/verified2026/search-index.json`, `2026/**` |
+| I3 Run the full local verification suite, PR → `main`, merge, confirm GitHub Pages deployment and record the result | in progress | arena/8e602cb3-poker2 | `COORDINATION.md` |
+
+Claim commit pushed on this platform-assigned branch before implementation; no other branch will be
+created or used. Shared event tables, navigation and schedules are not being reclassified. A source
+hash can only be acknowledged after the official source is re-read; next scheduled fetches must reopen
+a row if its content changes again.
