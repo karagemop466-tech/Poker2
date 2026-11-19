@@ -1190,16 +1190,18 @@ def p_flagged():
     diff_path = os.path.join(DATA, "schedule-diff.json")
     if os.path.exists(diff_path):
         sd = load("schedule-diff.json")
-        items = ""
+        changes = ""
         for kind in ("added", "removed", "modified", "renamed"):
             for x in sd.get(kind, [])[:25]:
                 detail = x.get("changes") or x.get("value_deltas") or x.get("note") or ""
-                items += ('<tr><td>' + esc(kind) + '</td><td class="nowrap">' + esc(x.get("date") or "&mdash;")
+                changes += ('<tr><td>' + esc(kind) + '</td><td class="nowrap">' + esc(x.get("date") or "&mdash;")
                           + " " + esc(x.get("start") or "") + "</td><td>" + esc(x.get("name") or x.get("now") or "")
                           + (' <span class="sm">was: ' + esc(x.get("was")) + "</span>" if x.get("was") else "")
                           + '</td><td class="sm">' + esc(json.dumps(detail)) + "</td></tr>")
-        if not items:
-            items = '<tr><td colspan="4" class="muted">No differences: the live schedule page matches the dataset row for row.</td></tr>'
+        if not changes:
+            message = ("No differences found in the tracked schedule fields." if sd.get("state") == "ok"
+                       else "No comparison completed: " + (sd.get("note") or "check the official schedule"))
+            changes = '<tr><td colspan="4" class="muted">' + esc(message) + '</td></tr>'
         _live = sd.get("checked") or "not run recorded in the repository yet"
         diff_html = ('<h2>Live schedule scrape &middot; last run ' + esc(_live) + "</h2>"
                      + badge(str(sd.get("state", "?")), "ok" if sd.get("state") == "ok" else "bad")
@@ -1207,7 +1209,7 @@ def p_flagged():
                      '<code>scripts/scrape-schedule.mjs</code> on its own schedule. The scrape never edits the dataset: '
                      'a difference here means read the cited structure sheet and re-run the generators.</caption>'
                      "<thead><tr><th>Kind</th><th>Slot</th><th>Event</th><th>Difference</th></tr></thead><tbody>"
-                     + items + "</tbody></table></div>")
+                     + changes + "</tbody></table></div>")
     body = """
 <section>
 <h1>Flagged for review</h1>

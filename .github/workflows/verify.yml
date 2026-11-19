@@ -61,6 +61,11 @@ jobs:
       - name: Every /2026/ page reproduces exactly from the verified data
         run: python3 scripts/build2026.py --check
 
+      - name: Reconcile archived row-by-row official evidence
+        run: |
+          python3 scripts/recheck_schedule_live.py
+          python3 scripts/check_sheet_readings.py
+
       - name: A multi-event sheet never gives all its events one guarantee
         run: python3 scripts/check_guarantees.py
 
@@ -72,6 +77,9 @@ jobs:
 
       - name: Pages mean what they say (monitor arithmetic, fee provenance)
         run: python3 scripts/check_semantics.py
+
+      - name: Decision filters and hotel estimate do not promote missing evidence
+        run: node scripts/check_decisions.mjs
 
       - name: The site-wide search filters the committed index
         run: node scripts/check_search.mjs

@@ -13,7 +13,7 @@ not overwrite each other; every page links back to the root dashboard.
 
 ## The headline finding
 
-> No Strip poker room publishes a single-entry rule.
+> No event in the reviewed dataset is confirmed to meet the strict single-entry policy.
 
 All **37** official Venetian DeepStack Extravaganza IV structure sheets were read individually. Not
 one contains a one-entry-only, freezeout or no-re-entry clause. That is not a gap in the reading —
@@ -31,7 +31,7 @@ expressly price a second buy-in, run multiple flights, pay bounties, or award se
 | All 37 official structure sheets | Read one by one. Buy-in split, late-registration close, stack, level length, payout share, bounty mechanic, and the re-entry / rebuy / add-on finding for each |
 | Entry-rule classification | 15 best candidates (13 open to any player, 2 restricted to 50+) · 30 bounty/PKO · 9 multi-day/multi-flight · 7 satellites · 1 team · 2 that price a second buy-in |
 | Resort fees | Venetian/Palazzo $55, Wynn/Encore $55, Bellagio $55, MGM Grand $50 — each with its official page |
-| Poker suite rate | From $119 (Venetian) / $209 (Palazzo), code `EPOKR25`, phone only, with the qualifying-play condition |
+| Poker suite rate | Shared offer lists starting prices of $119 and $209 without assigning them to towers; phone code `EPOKR25`, subject to availability and qualifying play |
 | Room tax | 13.38%, from Clark County's own transient lodging guide |
 | Seven other poker rooms | Checked. **Two do publish official schedules** — Caesars Palace (four daily NLH events) and Bellagio (three weekly events), both read live on 2026-11-17 and published on their venue pages. Every one of those events prints re-entry or a paid add-on, so none is single-entry |
 
@@ -44,11 +44,10 @@ expressly price a second buy-in, run multiple flights, pay bounties, or award se
 | Any dated hotel quote | Official booking engines render rates with JavaScript. **F-05** |
 | Any cancellation deadline | Not published on the pages read. **F-06** |
 | Any official quality rating | No hotel publishes a star or diamond rating for standard rooms |
-| Any measured walk time | The matrix is an OpenStreetMap routing estimate, labelled as such, with a Google Maps link on every row. **F-08** |
+| Any measured walk time | The walking page differentiates dated Google Maps route readings from OSRM estimates. Neither verifies the indoor portion. **F-08** |
 | Ten monitored URLs | The 2026-11-17 scheduled run read 51 of 61. The other ten returned 403/404/302/422 or timed out, so they are reported as *not read*, never as unchanged. **F-14** |
 
-Every one of these is on the **Flagged for review** page with the source to check. Nothing on the
-site is inferred, estimated or filled in from memory.
+Every one of these is on the **Flagged for review** page with the source to check. Scenario inputs and routing estimates are labelled separately from official evidence.
 
 ## Irregularities found in the official documents
 
@@ -89,6 +88,10 @@ room commits to, not a predicted pool. Bounty and PKO events are ranked separate
 published guarantee includes bounty money. Multi-flight events are separate because a second flight
 is a second buy-in. Satellites pay in seats, not cash.
 
+## November 19 decision update
+
+The November 25–28 stay is a comparison scenario only. The [official booking engine](https://www.venetianlasvegas.com/book?adults%5B%5D=2&arrival_date=2026-11-25&children%5B%5D=0&departure_date=2026-11-28&view=calendar) exposed no checkout quote. The three Venetian research leads (#10, #12, #14) still do not state a maximum-entry rule. The [Wynn venue page](2026/venues/wynn.html) separates the WPT opener (explicit re-entry) from the January Signature Series (schedule published, structures pending). Neither is ranked as a freezeout.
+
 ## Build and check
 
 ```bash
@@ -123,7 +126,7 @@ citation points at a non-official host.
 
 ## Monitoring
 
-`.github/workflows/recheck.yml` runs daily at 06:00 UTC (23:00 Las Vegas): it re-fetches all **61** official URLs the
+`.github/workflows/recheck.yml` runs daily at 14:15 UTC (06:15–07:15 Las Vegas): it re-fetches the registered official URLs the
 site cites, hashes the normalised text (or the raw PDF bytes), appends the run to
 `data/verified2026/checks.json`, rebuilds the site and commits. A `CHANGED` row means the official
 document moved, so every value transcribed from it must be re-read. The job reports; it never

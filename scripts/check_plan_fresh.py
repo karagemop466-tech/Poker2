@@ -95,7 +95,7 @@ def check_reports() -> list[str]:
             return problems + ["site-data/schedule-diff.json is not valid JSON: %s" % exc]
         if not d.get("checked"):
             problems.append("schedule-diff.json: no checked timestamp")
-        if d.get("state") not in (None, "ok", "changed", "parse_failed"):
+        if d.get("state") not in (None, "ok", "changed", "parse_failed", "fetch_failed"):
             problems.append("schedule-diff.json: unknown state %r" % d.get("state"))
     return problems
 

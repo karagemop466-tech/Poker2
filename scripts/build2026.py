@@ -304,7 +304,8 @@ def build_events():
             first_date=min(r[0] for r in (entry_rows or rows)),
             single_entry_confirmed=False,  # No reviewed DSE IV rule expressly meets the policy.
             sheet_urls=sorted({SHEETS[r[9]]["url"] for r in rows if r[9] in SHEETS}),
-            sheet_retrieved=sheet.get("retrieved", RETRIEVED) if sheet else None,
+            sheet_retrieved=(decisions.READ if sheet and sheet["sheet"] in decisions.VENETIAN_SHEETS_REREAD
+                             else sheet.get("retrieved", RETRIEVED) if sheet else None),
             schedule_url=sched.SCHEDULE_URL,
             entry_slots=[(r[0], r[3]) for r in sorted(entry_rows, key=lambda r: (r[0], tminutes(r[3]) or 0))],
             reg_close=entry_rows[0][4] if entry_rows and entry_rows[0][4] else "",
@@ -1299,8 +1300,8 @@ can see what was true when. A cell the property does not publish stays empty and
 <div class="banner info"><strong>The finding that changes the maths.</strong> The official Venetian
 poker suite-rate page says you must &ldquo;play six hours of active live cash gameplay <em>or</em> buy
 in to a $300 or higher tournament for each night stayed&rdquo; to keep the rate, and that the
-requirement must be met before 2&nbsp;a.m. on the last night. The published $119 and $209 are conditional starting prices; the source does not identify a
-price by tower or promise either price for these dates. Do not add an event to qualify for an
+requirement must be met before 2&nbsp;a.m. on the last night. The published $119 and $209 are conditional starting prices; the source does not explicitly assign a
+price to each tower or promise either price for these dates. Do not add an event to qualify for an
 unconfirmed discount. Nights that fail the play requirement are re-rated.
 Source: %(srcrates)s</div>
 
@@ -2193,7 +2194,7 @@ def p_sources(events):
     for n in sorted(SHEETS):
         s = SHEETS[n]
         srcs.append(dict(kind="Structure sheet", name="Sheet %d \u2014 %s" % (n, s["title"]),
-                         url=s["url"], date=s.get("retrieved", RETRIEVED),
+                         url=s["url"], date=decisions.READ if n in decisions.VENETIAN_SHEETS_REREAD else s.get("retrieved", RETRIEVED),
                          use="Events %s. Buy-in split, late registration, stack, level length, payout share, "
                              "and the re-entry / add-on / rebuy finding."
                              % ", ".join("#%d" % e for e in s["events"])))
