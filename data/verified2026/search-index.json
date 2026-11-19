@@ -1845,7 +1845,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | none published | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian. | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to the poker rate www.venetianlasvegas.com | not published "
+  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | none published | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian. Parking fee, official page \u00b7 Verified independently here | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to"
  },
  {
   "p": "hotels.html",
@@ -1853,7 +1853,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whether that d"
+  "x": "Wynn Las Vegas 3131 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. Parking fee, official page | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page do"
  },
  {
   "p": "hotels.html",
@@ -1861,7 +1861,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; the page does not state whet"
+  "x": "Encore at Wynn Las Vegas 3121 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 | none published | not published | Complimentary self-parking for up to two vehicles, included in the resort fee. Parking fee, official page | No cancellation deadline is printed on the resort-information page. A valid credit card is required to confirm a reservation and one night's room rate and tax is charged at booking; t"
  },
  {
   "p": "hotels.html",
@@ -5123,6 +5123,30 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
+  "a": "P-01",
+  "h": "P-01",
+  "x": "P-01 | Source citation | The Venetian parking row cited a poker page that does not print the parking fees Re-read 2026-11-19: the poker room page (https://www.venetianlasvegas.com/resort/casino/poker.html) describes the room, its location, hours, promotions and the poker suite rate. It does not print any parking price. The published parking row was nonetheless attributed to it. The fees it quotes "
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "N-05",
+  "h": "N-05",
+  "x": "N-05 | Official page defect | The Bellagio poker page still advertises tournament play as resuming on 26 July Re-read 2026-11-19: the official Bellagio poker page still prints 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' That date has long passed, so the notice is stale rather than a livestream of the current schedule."
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
+  "a": "N-06",
+  "h": "N-06",
+  "x": "N-06 | Seed limits | Official schedules seen this session stop at 23 December 2026; no 8 a.m. eligible start exists in them All four HTML chunks of the Venetian DSE IV page were re-read 2026-11-19: the series runs November 16 to December 23, 2026. Read on the same day, the Wynn poker page lists the WPT World Championship (November 27 to December 21) and the Wynn Signature Series (January 11 to 24,"
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
   "a": "F-01",
   "h": "F-01",
   "x": "F-01 | Entry rules | No Venetian structure sheet states a single-entry or freezeout rule All 37 official structure sheets were read on 2026-11-17. Not one contains the words 'single entry', 'one entry', 'freezeout' or 'no re-entry'. Every one-day sheet is simply silent on re-entry, rebuy and add-on. Silence is not a prohibition, so no event is marked 'single-entry confirmed'. | The confirmed-only "
@@ -6262,6 +6286,14 @@
   "a": "",
   "h": "Monitor",
   "x": "Monitor | Caesars Palace and Horseshoe do not publish a resort fee on the page read | www.caesars.com |  | Scheduled source. A successful automated fetch is not a human verification date."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Monitor",
+  "x": "Monitor | The Venetian parking row cited a poker page that does not print the parking fees | www.venetianlasvegas.com |  | Scheduled source. A successful automated fetch is not a human verification date."
  },
  {
   "p": "sources.html",

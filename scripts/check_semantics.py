@@ -165,10 +165,37 @@ if hot and os.path.exists(hotels):
                 problems.append("plan/hotels.html: %s has no county row but its tax cell applies a rate"
                                 % h["id"])
 
+# --------------------- 6: a rendered parking fee must cite a page that prints it
+# Found 2026-11-19 (flag P-01): the Venetian and Palazzo parking rows were attributed to
+# https://www.venetianlasvegas.com/resort/casino/poker.html, which was re-read in full and prints no
+# parking price at all; the fee is printed on the hotel terms and the poker-room parking page. A
+# citation that opens on a page without the number it is cited for is unverifiable for the reader, so
+# the pages known not to print a parking fee may not be used as a parking source here.
+PARKING_BLIND_PAGES = {
+    "https://www.venetianlasvegas.com/resort/casino/poker.html",   # room description only
+}
+_hotels_py = os.path.join(ROOT, "data", "verified2026", "hotels.py")
+if os.path.exists(_hotels_py):
+    import importlib.util
+    _spec = importlib.util.spec_from_file_location("_hotels_gate", _hotels_py)
+    _mod = importlib.util.module_from_spec(_spec)
+    _st = _spec.loader.exec_module(_mod) if hasattr(_spec.loader, "exec_module") else None
+    for h in getattr(_mod, "HOTELS", []):
+        if not h.get("parking"):
+            continue
+        src = h.get("parking_src") or ""
+        if not src:
+            problems.append("hotels.py: %s renders a parking value with no parking source" % h["id"])
+        if src in PARKING_BLIND_PAGES:
+            problems.append("hotels.py: %s cites a page that prints no parking fee (%s)" % (h["id"], src))
+        if src and src not in raw(os.path.join(P2026, "hotels.html")):
+            problems.append("hotels.py: %s parking source is not rendered on 2026/hotels.html" % h["id"])
+
 if problems:
     print("SEMANTIC GATE FAILED")
     for p in problems:
         print("  - " + p)
     sys.exit(1)
 print("semantic gates ok: monitor arithmetic agrees, no first-check printed as never-checked, "
-      "every watched URL is published, every rendered fee carries its own source")
+      "every watched URL is published, every rendered fee carries its own source, "
+      "every rendered parking fee cites a page that prints it")

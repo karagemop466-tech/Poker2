@@ -172,6 +172,49 @@ OTHER_VENUES = [
 ]
 
 FLAGS = [
+    dict(id="P-01", area="Source citation",
+         title="The Venetian parking row cited a poker page that does not print the parking fees",
+         detail=("Re-read 2026-11-19: the poker room page "
+                 "(https://www.venetianlasvegas.com/resort/casino/poker.html) describes the room, its "
+                 "location, hours, promotions and the poker suite rate. It does not print any parking "
+                 "price. The published parking row was nonetheless attributed to it. The fees it quotes "
+                 "($20/day registered guests; $20 Mon-Thu and $25 Fri-Sun for non-guests; $40/day valet) "
+                 "and the 'three hours of play' self-parking benefit are printed verbatim on two other "
+                 "official Venetian pages, both re-read 2026-11-19: the hotel terms and conditions "
+                 "(Parking Fees section) and the poker-room self-parking page. The row is re-cited to "
+                 "those two pages; the values themselves did not change."),
+         impact=("No value on the site changed. What changed is that the citation now points at the page "
+                 "that actually prints the number, so a reader who opens it sees the fee instead of a "
+                 "page that never mentions it. A regression gate fails the build if the poker page is "
+                 "used as the parking source again."),
+         source="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html"),
+    dict(id="N-05", area="Official page defect",
+         title="The Bellagio poker page still advertises tournament play as resuming on 26 July",
+         detail=("Re-read 2026-11-19: the official Bellagio poker page still prints 'Tournament play will "
+                 "resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot "
+                 "Tournament at 2 PM PT.' That date has long passed, so the notice is stale rather than a "
+                 "livestream of the current schedule. The same page still links the three weekly "
+                 "structure PDFs the site transcribes, and those PDFs were re-read 2026-11-19 and are "
+                 "unchanged (see the verification record). The Saturday sheet also still prints a "
+                 "Combined Final Day 2 of 9/13/26, already recorded as X-05."),
+         impact=("The Bellagio rows stay published because their own structure PDFs were re-read and "
+                 "match, but the room page itself cannot be used to prove the events are currently being "
+                 "run. Confirmed by the room before travelling. The rows remain outside the single-entry "
+                 "ranking."),
+         source="https://bellagio.mgmresorts.com/en/casino/poker.html"),
+    dict(id="N-06", area="Seed limits",
+         title="Official schedules seen this session stop at 23 December 2026; no 8 a.m. eligible start exists in them",
+         detail=("All four HTML chunks of the Venetian DSE IV page were re-read 2026-11-19: the series runs "
+                 "November 16 to December 23, 2026. Read on the same day, the Wynn poker page lists the WPT "
+                 "World Championship (November 27 to December 21) and the Wynn Signature Series (January 11 "
+                 "to 24, 2027), and warns that daily tournaments are suspended during series. No official "
+                 "page read this session publishes a date-specific tournament in January 2027 or later, "
+                 "and the earliest start printed anywhere in the Venetian series is 9:10 AM (event 46, "
+                 "December 12) - every main-schedule event starts at 10:10 AM or later."),
+         impact=("A trip after 23 December 2026, or one that wants an 8 a.m. start, has no verified "
+                 "schedule on this site yet. The dates remain a research window (Dec 1-4 2026) and the "
+                 "day plan stays empty rather than inventing an 8 a.m. event."),
+         source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"),
     dict(id="F-01", area="Entry rules",
          title="No Venetian structure sheet states a single-entry or freezeout rule",
          detail=("All 37 official structure sheets were read on 2026-11-17. Not one contains the words "

@@ -1332,7 +1332,13 @@ def p_hotels():
                pr,
                '<span class="blank">not published</span>' if h.get("tax_pct") is None
                else ("%.2f%%" % h["tax_pct"] + ("<div class='note'>%s</div>" % srclink(h["tax_src"]) if h.get("tax_src") else "")),
-               (esc(h["parking"]) if h["parking"] else '<span class="blank">not published</span>'),
+               ((esc(h["parking"]) if h["parking"] else '<span class="blank">not published</span>')
+                # The parking value must show the page that prints it. Venetian/Palazzo were re-cited
+                # 2026-11-19 (flag P-01): their old source, the poker room page, prints no parking fee.
+                + (("<div class='note'>%s</div>" % (srclink(h["parking_src"], "Parking fee, official page")
+                       + ((" · " + srclink(h["parking_src_2"], "Verified independently here"))
+                          if h.get("parking_src_2") else "")))
+                   if h.get("parking_src") else "")),
                canc,
                ('<span class="blank">not published</span>' if not h["dated_total"] else esc(h["dated_total"])),
                srclink(h["resort_fee_src"], "Official fee source") + " · " + srclink(h["book"], "Official booking")
