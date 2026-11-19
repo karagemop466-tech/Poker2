@@ -2473,3 +2473,34 @@ Checked the board and open PRs first: `gh pr list --state open` returned no open
 | E3 Regenerate `/2026/`, rerun the full local suite, PR → `main`, merge, confirm Pages build, record here | in progress | arena/2c7e846d-poker2 | regenerated `2026/**`, `COORDINATION.md` |
 
 Not claimed: Google/Apple walking verification (no maps access from this sandbox), live hotel quotes, Strip-wide scraping, and any change to ranking logic or to unverified values. Values that are not printed on an official source remain blank.
+
+---
+
+---
+
+# Session arena/9e862af8-poker2 — final verification & integration (2026-11-19)
+
+Branched from `main` at `7ab07592e2b861d6000cabea00407eacca656549` (merge of PR #94).
+Working tree clean; no open PRs at claim time. All prior board tasks are `done`; no other
+session holds an active claim, so this session operates as a verification + integration
+session: re-fetch the official sources behind the published rows today, confirm or flag,
+run the full local verification suite, then PR → `main`, merge, confirm GitHub Pages
+deployment, and record here.
+
+Sandbox limits (stated up front): bash egress to the casino/county hosts is TLS-blocked, so
+all official fetches use the agent page-fetch tool; `gh workflow run` returns HTTP 403, so
+CI cannot be dispatched from here — checks are run locally and the scheduled Actions runs
+remain the end-to-end proof. No value is written unless a fetched official page states it;
+unchanged values get a refreshed `last_checked`; changed values get a flag, never a silent
+rewrite.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live 2026-11-19 official-source re-verification sweep of every source cited by published event/hotel rows: Venetian DSE IV schedule page + all 37 structure sheets, resort-fee page, suite-rates page; Wynn poker page + WPT terms/schedules; Caesars daily flyer + poker guide + casino page; Bellagio pages/PDFs; MGM pages; ARIA terms; Golden Nugget daily page; Westgate; South Point; Clark County lodging-tax guide | done | arena/9e862af8-poker2 | `data/master.json`, `data/source_monitor.json`, `data/monitor-report.md`, `data/flags.json`, `research/9e862af8-live-verification-2026-11-19.md` |
+| V2 Full local verification suite (verify.yml gates): audit.py, build scripts --check, check_links.py, check2026.py, check_sheet_readings.py, check_semantics.py, check_labels.py (+ selftest), check_plan_fresh.py --strict, check_monitor_badge.py, check_search.mjs, check_trip.mjs, check_decisions.mjs, recheck_schedule_live.py, build2026.py --check + check2026.py | done | arena/9e862af8-poker2 | `scripts/*.py`, `scripts/*.mjs`, root + `2026/` + `plan/` generated pages (regenerated only if a defect is found) |
+<<<<<<< HEAD
+| V3 Integration: PR this branch → `main`, merge without waiting, confirm GitHub Pages deployment via API, record PR link and merge result here | done | arena/9e862af8-poker2 | `COORDINATION.md`, PR #100 on GitHub |
+
+Scope rule: nothing owned by an in-flight session is touched (none are active). Legacy surfaces (`docs/`, `verified/`, `pages/`, `archive/`) are read-only inputs. `S-11` and `S-12` remain open user decisions and are not decided here.
+
+
