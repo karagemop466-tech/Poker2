@@ -1970,3 +1970,18 @@ Branch `arena/4db7d9c7-poker2` (from `main` `76b25aa`). Scope is deliberately na
 | K4 Final integration for this branch: PR → `main`, merge, Pages deploy confirmed, record PR link and merge result here | in progress | arena/4db7d9c7-poker2 | `COORDINATION.md` |
 
 Not claimed / not touched: anything under open PR #80; `2026/**` and `plan/**` (regenerated only if K2 finds a changed value — it will be flagged on the Flagged page, not silently rewritten); shared generators owned by other sessions.
+## Session arena/a29d9f35-poker2 — final integration claim (2026-11-19 UTC)
+
+No open PRs at claim time; earlier scopes are completed or older than 60 minutes with no current commits. This session takes over the current published `/2026/` integration scope. Platform-fixed branch is `arena/a29d9f35-poker2`; no other branch will be created or pushed. The shared board is already on main; this claim is pushed on the assigned branch immediately (main changes only by PR).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| A1 Audit current site, workflows, and evidence; fresh official retrieval attempts; publish exact limitations | in progress | arena/a29d9f35-poker2 | `research/*a29d9f35*`, `data/verified2026/*`, `README.md` |
+| A2 Repair decision-making, freshness, monitor and source coverage defects; preserve blanks and strict freezeout policy | in progress | arena/a29d9f35-poker2 | `scripts/*2026*`, `assets/*`, `.github/workflows/*`, `2026/**` |
+| A3 Build, tests, link checks, PR, merge, Pages deployment and completion record | in progress | arena/a29d9f35-poker2 | `COORDINATION.md`, integration outputs above |
+
+All shared outputs are owned by this final integration session. No booking, payment, or invented trip dates/occupancy/budget will be made. Access errors will not be recorded as successful source verification.
+
+2026-11-19 integration sync: PR #80 landed during the monitor fix. Rebase conflict was append-only in this board; retained both sessions in full. Their trip-calculator implementation and test are preserved. Shared generator scope is now released for integration.
+
+Integration sync: PR #83 landed; only coordination append conflicted. Both records retained; their workflow fix and research file are preserved unchanged.
