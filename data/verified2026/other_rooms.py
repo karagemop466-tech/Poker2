@@ -166,9 +166,10 @@ BELLAGIO_SCHEDULE = dict(
             gaps=["No guarantee is printed on this sheet.", "No end time is printed."],
         ),
     ],
-    verdict=("Not single-entry. Each sheet prints re-entry through level 8 and prices a "
-             "\u201cvoluntary\u201d staff gratuity that buys 15,000 extra starting chips, so more "
-             "money buys more chips. These events sit in the spending-more-money section."),
+    verdict=("Friday and Sunday expressly allow re-entry through level 8 and a paid gratuity "
+             "for 15,000 extra chips. The Saturday sheet offers $40 for 20,000 extra chips, "
+             "but does not state that re-entry rule and has a stale date and conflicting prices. "
+             "These events are separate from the strict single-entry comparison."),
 )
 
 # Irregularities found on the official documents read on 2026-11-17.
@@ -176,11 +177,10 @@ IRREGULARITIES = [
     dict(
         id="X-03",
         room="Bellagio",
-        what=("The official poker page says \u201cTournament play will resume on Saturday, July "
-              "26\u201d, but 26 July 2026 is a Sunday."),
-        why_it_matters=("The day-of-week on the page disagrees with the calendar, so the resume "
-                        "date cannot be taken as printed. The three weekly structure sheets are "
-                        "read as the operative schedule instead."),
+        what=("The poker page says \u201cTournament play will resume on Saturday, July 26\u201d "
+              "without a year. July 26, 2026 is a Sunday, but the source does not specify 2026."),
+        why_it_matters=("The year and current schedule cannot be established from the notice; "
+                        "ask the room whether the linked weekly structure sheets are current."),
         source="https://bellagio.mgmresorts.com/en/casino/poker.html",
         retrieved=RETRIEVED,
     ),
@@ -222,9 +222,9 @@ IRREGULARITIES = [
         room="Wynn / Encore",
         what=("The official poker-room page https://www.wynnlasvegas.com/casino/poker-room "
               "returns \u201cIT SEEMS THIS PAGE HAS CHECKED OUT\u201d (a not-found page)."),
-        why_it_matters=("No dated schedule, buy-in or entry rule can be read for the WPT World "
-                        "Championship host room. Any Wynn figure on this site is historical "
-                        "provenance, not a current citation."),
+        why_it_matters=("The former URL is stale, not evidence that the room or its schedules "
+                        "are absent. Wynn's current /casino/poker page links the WPT schedule "
+                        "and structure sheets; verify the latest version before booking."),
         source="https://www.wynnlasvegas.com/casino/poker-room",
         retrieved=RETRIEVED,
     ),

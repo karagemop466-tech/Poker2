@@ -38,7 +38,7 @@ filters.sef.checked = true;
 filters.sef.input();
 assert.deepEqual(rows.map(r => r.hidden), [true, false], 'strict filter needs confirmation, not the candidate group');
 
-const hotel = Object.fromEntries(Object.entries({'h-rate':'','h-fee':'55','h-tax':'13.38','h-park':'20','h-nights':'3',
+const hotel = Object.fromEntries(Object.entries({'h-rate':'','h-fee':'55','h-tax':'13.38','h-fee-tax':'13.38','h-park':'20','h-nights':'3',
   'h-hotel':'','h-book':'','h-night':'','h-total':''}).map(([id,value]) => [id,node(value)]));
 for (const el of Object.values(hotel)) el.valueAsNumber = el.value === '' ? NaN : Number(el.value);
 load(hotel);

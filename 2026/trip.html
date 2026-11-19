@@ -39,8 +39,8 @@ registration, or schedule fit. It does not count potential winnings or a conditi
 
 <div class="panel" data-estimator="t"><h2>Estimate lodging cost</h2>
 <p class="note">This is not a quote. Provide the average base room rate <em>before</em> resort fee and tax.
-The model applies tax to room rate + resort fee, then adds parking at the all-in amount. This is a
-scenario, not confirmation of how every property itemizes tax. No dated price is prefilled.</p>
+Enter the room tax and resort-fee tax separately, using the applicable checkout or documented terms;
+the model adds the all-in parking amount once. No dated price or fee-tax rate is prefilled.</p>
 
 <label>Final checkout total for the stay ($)<input type="number" id="t-checkout" min="0" step="0.01"></label>
 <p class="note">Use the exact-stay checkout total (include mandatory fees, tax and applicable parking once).
@@ -50,12 +50,14 @@ Enter zero nights for entries only.</p>
 <label>Hotel<select id="t-hotel"><option data-fee="" data-tax="" data-book="">Choose a hotel</option><option value="venetian" data-fee="55" data-tax="13.38" data-book="https://www.venetianlasvegas.com/book">The Venetian Resort</option><option value="palazzo" data-fee="55" data-tax="13.38" data-book="https://www.venetianlasvegas.com/book">The Palazzo</option><option value="wynn" data-fee="55" data-tax="" data-book="https://www.wynnlasvegas.com/">Wynn Las Vegas</option><option value="encore" data-fee="55" data-tax="" data-book="https://www.wynnlasvegas.com/">Encore at Wynn Las Vegas</option><option value="bellagio" data-fee="55" data-tax="" data-book="https://bellagio.mgmresorts.com/en.html">Bellagio</option><option value="mgm-grand" data-fee="50" data-tax="" data-book="https://mgmgrand.mgmresorts.com/en.html">MGM Grand</option><option value="caesars-palace" data-fee="" data-tax="" data-book="https://www.caesars.com/caesars-palace">Caesars Palace</option><option value="horseshoe" data-fee="" data-tax="" data-book="https://www.caesars.com/horseshoe-las-vegas">Horseshoe Las Vegas</option></select></label>
 <label>Nightly base rate ($)<input type="number" id="t-rate" min="0" step="0.01"></label>
 <label>Resort fee / night ($)<input type="number" id="t-fee" min="0" step="0.01"></label>
-<label>Room tax (%)<input type="number" id="t-tax" min="0" step="0.01" placeholder="13.38 if applicable"></label>
-<label>All-in parking / night ($)<input type="number" id="t-park" value="0" min="0" step="0.01"></label>
+<label>Room tax (%)<input type="number" id="t-tax" min="0" step="0.01" placeholder="Verify the applicable rate"></label>
+<label>Resort-fee tax (%)<input type="number" id="t-fee-tax" min="0" step="0.01" placeholder="Verify separately"></label>
+<label>All-in parking / night ($)<input type="number" id="t-park" min="0" step="0.01"></label>
 <label>Nights<input type="number" id="t-nights" value="3" min="0" step="1"></label>
 </div>
-<p class="note">Trip scenario defaults to no car ($0 parking). Choosing a property preloads only known
-fee/tax values. Enter 0 explicitly when a charge is confirmed absent. <a id="t-book" href="hotels.html#checkout-log">Official booking links and lookup log</a>.</p>
+<p class="note">Enter parking cost, or 0 for no car. Choosing a property preloads only known
+fee and room-tax values; the resort-fee tax and parking remain blank. Enter 0 explicitly when a charge
+is confirmed absent. <a id="t-book" href="hotels.html#checkout-log">Official booking links and lookup log</a>.</p>
 <div class="calc" aria-live="polite">
 <div class="out"><div class="k">Estimated nightly cost</div><div class="v" id="tot-night">&mdash;</div></div>
 <div class="out"><div class="k">Estimated stay total</div><div class="v" id="tot-hotel">&mdash;</div></div>

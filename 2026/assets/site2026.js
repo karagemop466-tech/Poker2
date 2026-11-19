@@ -123,11 +123,11 @@
 
   function setupLodging(p, onTotal){
     var hotel=$('#'+p+'-hotel'), book=$('#'+p+'-book'), checkout=$('#'+p+'-checkout');
-    var fields=['rate','fee','tax','park','nights'].map(function(key){return $('#'+p+'-'+key);});
+    var fields=['rate','fee','tax','fee-tax','park','nights'].map(function(key){return $('#'+p+'-'+key);});
     function update(){
       var v=fields.map(number);
-      var nightly=v.slice(0,4).includes(null) ? null : Math.round(((v[0]+v[1])*(1+v[2]/100)+v[3])*100)/100;
-      var n=v[4], total=nightly===null || n===null ? null : nightly*n;
+      var nightly=v.slice(0,5).includes(null) ? null : Math.round((v[0]*(1+v[2]/100)+v[1]*(1+v[3]/100)+v[4])*100)/100;
+      var n=v[5], total=nightly===null || n===null ? null : nightly*n;
       if(checkout && (checkout.value!=='' || checkout.validity.badInput)){
         total=number(checkout);
         nightly=n>0 && total!==null ? total/n : null;
@@ -141,7 +141,7 @@
     hotel.addEventListener('change',function(){
       var opt=hotel.options[hotel.selectedIndex];
       fields[0].value=''; fields[1].value=opt.dataset.fee; fields[2].value=opt.dataset.tax;
-      fields[3].value=p==='t'?'0':'';
+      fields[3].value=''; fields[4].value='';
       if(checkout)checkout.value='';
       book.href=opt.dataset.book || 'hotels.html#checkout-log';
       book.textContent=opt.dataset.book ? 'Official booking for '+opt.textContent : 'Official booking links and lookup log';

@@ -214,6 +214,7 @@ def classify(ev_no, rows, sheet):
        satellite   - prize is a seat
        team        - tag team
        multiflight - more than one starting flight
+       multiday    - one starting day, later continuation; entry limit unknown
        spend       - the sheet prices a subsequent buy-in
     """
     flights = [r for r in rows if "flight" in (r[10] or "")]
@@ -223,32 +224,30 @@ def classify(ev_no, rows, sheet):
         return "spend", ("The official structure sheet prices a second buy-in, so more than one buy-in "
                          "per player is contemplated.")
     if len(flights) > 1 or (sheet and sheet.get("multi_flight")):
-        return "multiflight", ("The event runs %d starting flights. Entering more than one flight is a second "
-                               "buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing "
-                               "a later flight." % max(len(flights), 2))
+        return "multiflight", ("The event has %d starting flights. A player who bags chips for Day 2 may "
+                               "not play a later flight. A second flight would cost another buy-in; "
+                               "the quoted rule alone does not establish the whole-event entry limit."
+                               % max(len(flights), 2))
     if any("SATELLITE" in f for f in flags):
         return "satellite", "The prize is direct entry into another event, not prize money."
     if any("TAG TEAM" in f for f in flags):
         return "team", "Two players share one entry and must alternate every level."
     if sheet and sheet.get("bounty"):
-        return "bounty", ("Bounty format. The published guarantee includes bounty money, so the cash prize pool "
-                          "is smaller than the headline number.")
-    # A multi-day event is not a same-day single entry. `$800 ... (2DAY) ... MAIN EVENT` reaches this
-    # line because the sheet prices no second buy-in and prints no bounty, and an earlier version
-    # returned "candidate" here with the reason "One-day event" - a factual claim contradicted by the
-    # event's own name. multi_flight is the group that already means "second day = second buy-in", so
-    # a two-day event belongs there and its reason says why.
+        return "bounty", ("Bounty format. The printed guarantee includes bounty money; it is not "
+                          "a guarantee of that amount in the non-bounty prize pool.")
+    # A later continuation is not a second starting flight or a second buy-in.
+    # Keep the two-day event outside the one-day candidate group without claiming
+    # its entry limit has been established.
     sheet_start = str((sheet or {}).get("start") or "")
     name = " ".join((r[8] or "") for r in rows).upper()
     two_day = ("Day 2" in sheet_start or "Day 3" in sheet_start
                or any("Day 2" in f for f in flags)
                or any(t in name for t in ("(2DAY)", "(3DAY)", "2 DAY", "3 DAY")))
     if two_day:
-        return "multiflight", ("The official structure sheet schedules Day 1 and Day 2 as separate days"
-                               + (" (%s)" % sheet_start if sheet_start else "")
-                               + ", so this is not a one-day event and cannot be played as a same-day "
-                                 "single entry. Returning on Day 2 is a continuation of the same entry, "
-                                 "not a second buy-in, but the trip does not get a free day back.")
+        return "multiday", ("The official structure sheet schedules Day 1 and Day 2 as separate days"
+                            + (" (%s)" % sheet_start if sheet_start else "")
+                            + ". Day 2 is a continuation, not a new starting flight or buy-in. "
+                              "The whole-event entry limit is unconfirmed; a survivor must reserve Day 2.")
     return "candidate", ("One-day event with a single starting day. The official structure sheet contains no "
                          "re-entry, rebuy or add-on clause.")
 
@@ -272,7 +271,8 @@ GROUP_LABEL = {
     "bounty": "Bounty / PKO (separate group)",
     "satellite": "Satellites (prize is a seat)",
     "team": "Team events",
-    "multiflight": "Multi-flight (second flight = second buy-in)",
+    "multiflight": "Multiple starting flights (separate buy-ins)",
+    "multiday": "Multi-day continuation (not a second flight)",
     "spend": "Spend-to-advantage (sheet prices a second buy-in)",
 }
 
@@ -577,7 +577,7 @@ border:1px solid transparent;white-space:nowrap}
 .t-bounty{background:rgba(251,191,36,.14);color:#fcd34d;border-color:rgba(251,191,36,.35)}
 .t-satellite{background:rgba(125,211,252,.14);color:#7dd3fc;border-color:rgba(125,211,252,.35)}
 .t-team{background:rgba(196,181,253,.14);color:#c4b5fd;border-color:rgba(196,181,253,.35)}
-.t-multiflight{background:rgba(251,113,133,.14);color:#fda4af;border-color:rgba(251,113,133,.35)}
+.t-multiflight,.t-multiday{background:rgba(251,113,133,.14);color:#fda4af;border-color:rgba(251,113,133,.35)}
 .t-spend{background:rgba(251,113,133,.22);color:#fecdd3;border-color:rgba(251,113,133,.5)}
 .t-ok{background:rgba(74,222,128,.14);color:#86efac;border-color:rgba(74,222,128,.35)}
 .t-warn{background:rgba(251,191,36,.14);color:#fcd34d;border-color:rgba(251,191,36,.35)}
@@ -1057,9 +1057,9 @@ changed and is awaiting review), <em>fetch error</em>, or
 <div class="banner"><strong>How to read the ranking.</strong> Guarantee &divide; entry fee is shown
 only where both numbers are printed on the official documents, and it is a descriptive ratio, not a
 forecast: a guarantee is a floor the room commits to, not a predicted pool. Bounty and PKO events are
-in their own group because their published guarantee includes bounty money, so the cash prize pool is
-smaller than the headline figure. Multi-flight events are separate because entering a second flight is
-a second buy-in. Satellites pay in seats, not cash.</div>
+in their own group because the published guarantee includes bounty money and does not guarantee that
+same amount in the non-bounty pool. Multiple starting flights are separate because a second flight would
+require another buy-in. A later-day continuation is not a second flight. Satellites pay in seats, not cash.</div>
 """ % dict(n=len(events), opts=opts, rows="".join(rowshtml), pills=pills), "tournaments.html")
 
 
@@ -1095,20 +1095,26 @@ what a sheet probably means. Where a sheet says nothing, that is recorded as sil
 silence is not a prohibition.</p></div>
 
 <div class="banner"><strong>The one thing to understand.</strong> All 37 official structure sheets were
-read on %(ret)s. Not one contains a one-entry-only rule. Where a restriction is absent, it stays unverified even when the fee, starting stack and schedule are confirmed. Flag <a href="flagged.html#F-01">F-01</a>.</div>
+read on %(ret)s. Not one contains a one-entry-only rule. Some sheets do not mention re-entry,
+rebuy or add-on; that silence does <strong>not</strong> establish that these actions are prohibited
+or that the sheet lists every available rule. Ask the room for written confirmation.
+Flag <a href="flagged.html#F-01">F-01</a>.</div>
 """ % dict(ret=RETRIEVED)
 
     body += block("Group A \u2014 best single-entry candidates", "candidate",
                   "Events with one starting day, no bounty, no satellite seat, no team format, and "
                   "no re-entry, rebuy or add-on clause printed anywhere on the official structure sheet.")
     body += block("Group B \u2014 bounty and progressive knock-out", "bounty",
-                  "These are not confirmed freezeouts; their published guarantee includes bounty money, so "
-                  "the cash prize pool is smaller than the headline number. Ranked separately on purpose.")
-    body += block("Group C \u2014 multi-flight events", "multiflight",
-                  "More than one starting flight. Entering a second flight costs a second buy-in. Every one of "
-                  "these sheets carries the same sentence: any player who bags chips for Day 2 may not play a "
-                  "subsequent flight. That blocks a player who has advanced \u2014 it does not block a player "
-                  "who busted in flight A from buying into flight B.")
+                  "The published guarantee includes bounty money, so it is not a like-for-like "
+                  "guarantee for the non-bounty pool. Entry and add-on rules remain as quoted per sheet.")
+    body += block("Group C \u2014 multiple starting flights", "multiflight",
+                  "A later starting flight would require another buy-in. The cited sheets bar a player "
+                  "who has bagged chips from playing a later flight; that condition alone does not "
+                  "confirm what a player who busts may do or set a whole-event entry limit.")
+    body += block("Group G \u2014 multi-day continuation", "multiday",
+                  "One starting day and a later continuation are not multiple starting flights. "
+                  "The continuation occupies a later day but does not require a second entry; "
+                  "the whole-event entry limit remains unconfirmed.")
     body += block("Group D \u2014 satellites", "satellite",
                   "The prize is direct entry into another event, not prize money. Not comparable to a cash event.")
     body += block("Group E \u2014 team events", "team",
@@ -1261,25 +1267,26 @@ Enter zero nights for entries only.</p>""" if prefix == "t" else ""
     return """
 <div class="panel" data-estimator="{p}"><h2>Estimate lodging cost</h2>
 <p class="note">This is not a quote. Provide the average base room rate <em>before</em> resort fee and tax.
-The model applies tax to room rate + resort fee, then adds parking at the all-in amount. This is a
-scenario, not confirmation of how every property itemizes tax. No dated price is prefilled.</p>
+Enter the room tax and resort-fee tax separately, using the applicable checkout or documented terms;
+the model adds the all-in parking amount once. No dated price or fee-tax rate is prefilled.</p>
 {checkout}
 <div class="calc">
 <label>Hotel<select id="{p}-hotel"><option data-fee="" data-tax="" data-book="">Choose a hotel</option>{opts}</select></label>
 <label>Nightly base rate ($)<input type="number" id="{p}-rate" min="0" step="0.01"></label>
 <label>Resort fee / night ($)<input type="number" id="{p}-fee" min="0" step="0.01"></label>
-<label>Room tax (%)<input type="number" id="{p}-tax" min="0" step="0.01" placeholder="13.38 if applicable"></label>
-<label>All-in parking / night ($)<input type="number" id="{p}-park" value="{parking}" min="0" step="0.01"></label>
+<label>Room tax (%)<input type="number" id="{p}-tax" min="0" step="0.01" placeholder="Verify the applicable rate"></label>
+<label>Resort-fee tax (%)<input type="number" id="{p}-fee-tax" min="0" step="0.01" placeholder="Verify separately"></label>
+<label>All-in parking / night ($)<input type="number" id="{p}-park" min="0" step="0.01"></label>
 <label>Nights<input type="number" id="{p}-nights" value="3" min="0" step="1"></label>
 </div>
-<p class="note">{parking_note} Choosing a property preloads only known
-fee/tax values. Enter 0 explicitly when a charge is confirmed absent. <a id="{p}-book" href="hotels.html#checkout-log">Official booking links and lookup log</a>.</p>
+<p class="note">Enter parking cost, or 0 for no car. Choosing a property preloads only known
+fee and room-tax values; the resort-fee tax and parking remain blank. Enter 0 explicitly when a charge
+is confirmed absent. <a id="{p}-book" href="hotels.html#checkout-log">Official booking links and lookup log</a>.</p>
 <div class="calc" aria-live="polite">
 <div class="out"><div class="k">Estimated nightly cost</div><div class="v" id="{night_id}">&mdash;</div></div>
 <div class="out"><div class="k">Estimated stay total</div><div class="v" id="{total_id}">&mdash;</div></div>
 </div></div>
-""".format(p=prefix, opts=hotel_options, checkout=checkout, parking="0" if prefix == "t" else "",
-           parking_note="Trip scenario defaults to no car ($0 parking)." if prefix == "t" else "Enter parking cost, or 0 for no car.",
+""".format(p=prefix, opts=hotel_options, checkout=checkout,
            night_id="tot-night" if prefix == "t" else "h-night",
            total_id="tot-hotel" if prefix == "t" else "h-total")
 
@@ -1542,13 +1549,17 @@ def p_venues(events):
     for key, meta in ROOM_META.items():
         wj, rows = _walk_rows_for(meta["walk_key"])
         if rows:
-            ok = sum(1 for r in rows if r["within_30_min"])
-            stat = "%d of %d hotels within 30 min" % (ok, len(rows))
-            nearest = rows[0]["hotel"] if rows else ""
+            google = google_routes()
+            measured = [(route_evidence(r, google, wj["as_of"])[0], r["hotel"]) for r in rows]
+            estimates = [(m, h) for m, h in measured if m is not None]
+            ok = sum(1 for m, _ in estimates if m <= 30)
+            stat = "%d of %d hotels estimated within 30 min; indoor times unverified" % (ok, len(rows))
+            nearest = min(estimates)[1] if estimates else ""
         else:
             stat, nearest = "walking data not in this checkout", ""
         if key == "venetian":
-            pub = "64 events, 94 scheduled rows, all 37 structure sheets read. No written freezeout confirmed."
+            pub = ("64 events, 94 scheduled rows, all 37 DSE IV structure sheets read; "
+                   "no written freezeout confirmed. Other rooms publish tournament documents too.")
         else:
             v = contentmod.OTHER_VENUES_BY_ID.get(key) or next(v for v in contentmod.OTHER_VENUES if v["name"] == meta["title"])
             pub = esc(v["verdict"])
@@ -1563,8 +1574,9 @@ def p_venues(events):
 
     return page("Venues", """
 <div class="hero"><h1>Venues</h1>
-<p class="lede">One page per poker room, each listing that room's events and the hotels within walking
-distance of it when evidence is available. The Venetian series is the only full event-by-event audit in this dashboard. Other official schedules appear in the <a href="sources.html#room-feed">morning schedule watch</a> and venue evidence sections.</p></div>
+<p class="lede">Room pages collect official schedules and dated walking estimates. The Venetian DSE IV
+series is the full event-by-event audit in this dashboard; other official schedules appear in the
+<a href="sources.html#room-feed">morning schedule watch</a>. A routed estimate is not a verified indoor walking time.</p></div>
 
 <div class="banner info"><strong>How to read a room page.</strong> The events table holds only rows
 transcribed from that room's own official document. Where the room publishes no dated event, the table
@@ -1587,8 +1599,8 @@ def p_venue_venetian(events, days):
     return page("The Venetian", """
 <div class="hero"><h1>The Venetian Resort &mdash; DeepStack Extravaganza IV</h1>
 <p class="lede">November 16 &ndash; December 23, 2026. More than $3.6 million in guaranteed prize pools
-across %(n)s events. This is the only Strip room whose official documents support a line-by-line
-comparison.</p></div>
+across %(n)s events, according to the series overview. This site's detailed transcription focuses on
+DSE IV; other rooms also publish official tournament documents.</p></div>
 
 <div class="grid2">
 <div class="panel"><h2>The room</h2>
@@ -1597,7 +1609,8 @@ comparison.</p></div>
 <dt>Hours</dt><dd>Open 24 hours, seven days</dd>
 <dt>Size</dt><dd>50 tables across 14,000 sq ft &mdash; the largest room on the Strip</dd>
 <dt>Entry requirement</dt><dd>Must be 21+ and hold a Venetian Rewards card</dd>
-<dt>Parking</dt><dd>Registered guests $20/day. Non-registered guests who play 3+ hours get free self-parking</dd>
+<dt>Parking</dt><dd>Registered guests $20/day; event rates may differ. Non-registered guests who
+play 3+ hours may qualify for complimentary self-parking. %(parking)s</dd>
 <dt>Phone</dt><dd>702.414.7657</dd>
 <dt>Email</dt><dd>lv_cas_poker@venetianlasvegas.com</dd>
 </dl>
@@ -1627,6 +1640,7 @@ comparison.</p></div>
 %(series)s</div>
 """ % dict(n=len(events), rows=rows, ret=RETRIEVED,
            room=srclink(sched.POKER_ROOM_URL),
+           parking=srclink("https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html", "Parking terms"),
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
            series=srclink(sched.SERIES_URL, "series overview")),
@@ -1677,9 +1691,9 @@ ROOM_META = {
         walk_key="V-BEL",
         title="Bellagio",
         room="Bellagio poker room",
-        desc=("Three weekly events with official structure sheets: Friday $600 NLH, Saturday NLH "
-              "and Sunday $400 H.O.R.S.E., all at 11:00 AM. Each sheet prints re-entry and a "
-              "gratuity that buys extra chips. Read 2026-11-17."),
+        desc=("Three weekly-sheet links: Friday $600 NLH, Saturday NLH and Sunday $400 H.O.R.S.E. "
+              "Friday and Sunday allow re-entry; all three offer paid extra chips. Saturday's "
+              "sheet is inconsistent and may be stale. Re-read 2026-11-19."),
         page="venues/bellagio.html",
     ),
     "mgm-grand": dict(
@@ -1813,12 +1827,11 @@ def other_room_schedule(key):
                         for i in irr))
 
     return """
-<div class="panel"><h2>Official tournament schedule</h2>
-<p>Transcribed line by line from the room's own document, read %s. These rows are
-<strong>not</strong> in the single-entry ranking: the sheet for each one prints re-entry or a
-paid add-on, which is the class of event the brief asks to keep separate. The Venetian table
-stays the only ranked table, because it is the only room that publishes a dated schedule
-<em>and</em> a per-event structure sheet.</p>
+<div class="panel"><h2>Official tournament documents</h2>
+<p>Transcribed from the room's own documents, originally read %s. These rows are
+<strong>not</strong> in the single-entry ranking: they print re-entry or an optional paid
+extra-chip purchase. Bellagio's Saturday sheet is also potentially stale and has conflicting
+prices. The Venetian-only research ranking is a scope choice, not proof of complete coverage.</p>
 <p class="note">Source: %s &middot; cadence: %s</p>
 <div class="tbl-scroll"><table><thead>%s</thead><tbody>%s</tbody></table></div>
 <p><strong>Verdict.</strong> %s</p>
@@ -1958,9 +1971,9 @@ def p_summary(events, days):
                    for k, why in [
                        ("candidate", "Not confirmed: one-day, one starting day, no "
                                      "re-entry, rebuy or add-on clause on the official sheet."),
-                       ("bounty", "Bounty or PKO. The guarantee includes bounty "
-                                  "money so the cash pool is smaller."),
-                       ("multiflight", "Multi-flight or multi-day. Buying into another flight differs from a continuation."),
+                       ("bounty", "Bounty or PKO; the guarantee includes bounty money."),
+                       ("multiflight", "Multiple starting flights; a second flight would be a second buy-in."),
+                       ("multiday", "One start and a later continuation; not a second flight."),
                        ("satellite", "Prize is a seat in another event, not cash."),
                        ("spend", "The official sheet prices a subsequent buy-in."),
                        ("team", "Two players share one entry."),
@@ -1995,13 +2008,16 @@ schedule PDF, which prints registration-close times, chip counts and level lengt
 not. The two agree on every row.</li>
 <li><strong>The hotel numbers</strong> come from the official resort-fee page and the official poker
 suite-rate page, both re-read on Nov 19.</li>
-<li><strong>Other room schedules:</strong> official Wynn, Caesars Palace and Bellagio documents are linked from the <a href="sources.html#room-feed">morning watch</a>. The Wynn WPT opener allows re-entry, and the audited Caesars and Bellagio slates allow re-entry or paid add-ons.</li>
+<li><strong>Other room schedules:</strong> official Wynn, Caesars Palace and Bellagio documents are linked from
+<a href="sources.html#room-feed">the morning watch</a>. The Wynn opener and Caesars flyer allow re-entry;
+the Bellagio Friday and Sunday sheets allow re-entry and paid extra chips, while Saturday's sheet offers
+paid extra chips but is inconsistent and may be stale. See <a href="flagged.html#C-01">C-01</a>.</li>
 </ul></div>
 
 <div class="panel"><h2>What could not be verified</h2>
 <ul class="tight">
-<li><strong>Any single-entry guarantee.</strong> Not one official document says an event is one entry
-only. The strongest available statement is the absence of a re-entry clause. <a href="flagged.html#F-01">F-01</a></li>
+<li><strong>A whole-event single-entry confirmation.</strong> None of the reviewed events has all required
+written limits. A silent re-entry clause is not a prohibition. <a href="flagged.html#F-01">F-01</a></li>
 <li><strong>Any finish time.</strong> No event has a published end time, so no two events can be
 promised as a sequence. <a href="flagged.html#F-04">F-04</a></li>
 <li><strong>A comparable checkout quote.</strong> Partial or dynamically loaded rates are not a stay total.
@@ -2076,12 +2092,11 @@ condition &mdash; official.</li>
 <div class="panel"><h2>Information we do not have</h2>
 <ul class="tight">
 <li>Whether any audited candidate enforces a written whole-event one-entry limit.</li>
-<li>Finish times, or any basis for deriving one. No field sizes are published in advance.</li>
+<li>Verified finish times for the reviewed events.</li>
 <li>A comparable itemized checkout total for the same stay, occupancy and booking conditions.</li>
 <li>A cancellation deadline tied to a future bookable quote.</li>
-<li>An official quality rating for any property.</li>
-<li>A measured walking time. The matrix is modelled, not measured.</li>
-<li>Complete written rules for every event listed in the <a href="sources.html#room-feed">official schedule watch</a>.</li>
+<li>A quality floor chosen by the traveller and a verified walking time.</li>
+<li>Complete written rules for every event listed in the <a href="sources.html#room-feed">official schedule watch</a>, and for the wider Strip area.</li>
 </ul>
 <p class="note">Each of these is logged with the attempt that produced it on
 <a href="flagged.html">Flagged for review</a>, and each has a suggestion for how to close it on
@@ -2209,8 +2224,10 @@ def p_flagged(events):
 found in an official document. Nothing here blocks the site &mdash; it is the list of things you should
 look at yourself, with the link to do it.</p></div>
 
-<div class="banner"><strong>Latest issues to check:</strong> <a href="#X-09">Venetian NYE price and dates</a>,
-<a href="#X-10">Wynn WPT date labels</a>, and <a href="sources.html#room-feed">scheduled-source status</a>.</div>
+<div class="banner"><strong>Sources to check before booking:</strong> <a href="#X-01">DSE IV PDF date-column defects</a>,
+<a href="#X-09">Venetian NYE price and dates</a>, <a href="#X-10">Wynn WPT date labels</a>, and
+<a href="sources.html#room-feed">scheduled-source status</a>. The old overview-label issue <a href="#X-02">X-02</a>
+was historical and no longer appeared in the November 19 read.</div>
 
 <div class="panel"><div class="tbl-scroll"><table><thead><tr>
 <th class="num">ID</th><th>Area</th><th>Issue</th><th>Why it matters</th><th>Source to check</th>
@@ -2221,8 +2238,12 @@ look at yourself, with the link to do it.</p></div>
 <li><strong>Single-entry confirmation</strong> &mdash; 0 of %(n)s audited events. No audited sheet states one.
 <a href="#F-01">F-01</a></li>
 <li><strong>Finish times</strong> &mdash; 0 of %(n)s events. <a href="#F-04">F-04</a></li>
-<li><strong>Comparable checkout quotes</strong> &mdash; 0 of %(nh)s hotels. <a href="#F-05">F-05</a></li>
-<li><strong>Cancellation deadlines</strong> &mdash; 0 of %(nh)s hotels. <a href="#F-06">F-06</a></li>
+<li><strong>Comparable dated hotel quotes for the example stay</strong> &mdash; 0 of %(nh)s hotels.
+An earlier root-surface transcription includes historical Venetian quotes for different dates; those
+are not a quote for this stay. <a href="#F-05">F-05</a></li>
+<li><strong>Offer-specific cancellation deadlines</strong> &mdash; none confirmed for the example stay.
+Bellagio and MGM Grand publish conditional general 72-hour terms; Caesars advertises a conditional
+48-hour headline. <a href="#F-06">F-06</a></li>
 <li><strong>Official quality ratings</strong> &mdash; 0 of %(nh)s hotels.</li>
 <li><strong>Measured walk times</strong> &mdash; 0 pairs. All are routing estimates.
 <a href="#F-08">F-08</a></li>
@@ -2318,7 +2339,8 @@ def p_sources(events):
                              "and the re-entry / add-on / rebuy finding."
                              % ", ".join("#%d" % e for e in s["events"])))
     srcs.append(dict(kind="Series", name="DeepStack Poker Series overview", url=sched.SERIES_URL,
-                     date="2026-11-19", use="Series dates and the NYE / Showdown series that follow. See X-09."))
+                     date=decisions.READ, use="Series dates and the NYE / Showdown series that follow. "
+                                             "See X-09; earlier label discrepancy X-02 was historical."))
     srcs.append(dict(kind="Venue", name="Venetian poker room", url=sched.POKER_ROOM_URL, date=RETRIEVED,
                      use="Room location, hours, table count, indoor walking routes, parking, contact details."))
     srcs.append(dict(kind="Hotel", name="Venetian resort fee", url="https://www.venetianlasvegas.com/resort/resort-fee.html",
@@ -2682,11 +2704,11 @@ JS = r"""
 
   function setupLodging(p, onTotal){
     var hotel=$('#'+p+'-hotel'), book=$('#'+p+'-book'), checkout=$('#'+p+'-checkout');
-    var fields=['rate','fee','tax','park','nights'].map(function(key){return $('#'+p+'-'+key);});
+    var fields=['rate','fee','tax','fee-tax','park','nights'].map(function(key){return $('#'+p+'-'+key);});
     function update(){
       var v=fields.map(number);
-      var nightly=v.slice(0,4).includes(null) ? null : Math.round(((v[0]+v[1])*(1+v[2]/100)+v[3])*100)/100;
-      var n=v[4], total=nightly===null || n===null ? null : nightly*n;
+      var nightly=v.slice(0,5).includes(null) ? null : Math.round((v[0]*(1+v[2]/100)+v[1]*(1+v[3]/100)+v[4])*100)/100;
+      var n=v[5], total=nightly===null || n===null ? null : nightly*n;
       if(checkout && (checkout.value!=='' || checkout.validity.badInput)){
         total=number(checkout);
         nightly=n>0 && total!==null ? total/n : null;
@@ -2700,7 +2722,7 @@ JS = r"""
     hotel.addEventListener('change',function(){
       var opt=hotel.options[hotel.selectedIndex];
       fields[0].value=''; fields[1].value=opt.dataset.fee; fields[2].value=opt.dataset.tax;
-      fields[3].value=p==='t'?'0':'';
+      fields[3].value=''; fields[4].value='';
       if(checkout)checkout.value='';
       book.href=opt.dataset.book || 'hotels.html#checkout-log';
       book.textContent=opt.dataset.book ? 'Official booking for '+opt.textContent : 'Official booking links and lookup log';

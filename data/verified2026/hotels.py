@@ -32,8 +32,8 @@ HOTELS = [
         poker_rate_src="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
         poker_rate_checked="2026-11-19",
         parking="Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
-        parking_src="https://www.venetianlasvegas.com/resort/casino/poker.html",
-        parking_note="The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
+        parking_src="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+        parking_note="Poker play of three hours or more may qualify for free self-parking with supervisor confirmation. The poker-room page specifically mentions non-hotel guests. Event parking rates may differ; confirm terms.",
         cancel=("No cancellation deadline is printed for the poker suite rate. The general hotel terms "
                 "say a deposit (first night or entire stay, depending on the offer) is billed at "
                 "confirmation, that prepaid offers are non-cancellable and non-refundable unless the "
@@ -61,8 +61,8 @@ HOTELS = [
         poker_rate_note="See shared poker offer; the official wording does not assign either price to a property.",
         poker_rate_src="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
         poker_rate_checked="2026-11-19",
-        parking="Same resort parking terms as The Venetian.",
-        parking_src="https://www.venetianlasvegas.com/resort/casino/poker.html",
+        parking="Same resort parking terms as The Venetian; event rates may differ.",
+        parking_src="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
         parking_note=None,
         cancel=("Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed."),
         cancel_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",

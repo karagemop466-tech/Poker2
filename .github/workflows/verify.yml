@@ -69,6 +69,9 @@ jobs:
       - name: A multi-event sheet never gives all its events one guarantee
         run: python3 scripts/check_guarantees.py
 
+      - name: Factual classifications and review flags remain distinct
+        run: python3 scripts/check_evidence_integrity.py
+
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
 

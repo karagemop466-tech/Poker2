@@ -29,9 +29,9 @@
    ],
    "official_name": "$300 NO LIMIT HOLD'EM 1A",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 4 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 4 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-11-16",
     "2026-11-17"
@@ -620,9 +620,9 @@
    ],
    "official_name": "$400 NO LIMIT HOLD'EM 1A",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 2 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 2 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-11-23",
     "2026-11-24"
@@ -723,7 +723,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-23"
    ],
@@ -817,7 +817,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-24"
    ],
@@ -1003,7 +1003,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-25"
    ],
@@ -1189,7 +1189,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-26"
    ],
@@ -1377,7 +1377,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-27"
    ],
@@ -1471,7 +1471,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-28"
    ],
@@ -1566,7 +1566,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-28"
    ],
@@ -1759,9 +1759,9 @@
    ],
    "official_name": "$400 NO LIMIT HOLD'EM 1A",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 3 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 3 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-11-29",
     "2026-11-30",
@@ -1963,7 +1963,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-29"
    ],
@@ -2057,7 +2057,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-11-30"
    ],
@@ -2151,7 +2151,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-01"
    ],
@@ -2339,7 +2339,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-02"
    ],
@@ -2438,9 +2438,9 @@
    ],
    "official_name": "$800 NO LIMIT HOLD'EM 1A",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 6 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 6 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-12-03",
     "2026-12-04",
@@ -2754,7 +2754,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-06"
    ],
@@ -2848,7 +2848,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-07"
    ],
@@ -2943,7 +2943,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-07"
    ],
@@ -3226,7 +3226,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-08"
    ],
@@ -3416,7 +3416,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-09"
    ],
@@ -3605,7 +3605,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-09"
    ],
@@ -3696,10 +3696,10 @@
    "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-   "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group": "multiday",
+   "group_label": "Multi-day continuation (not a second flight)",
    "single_entry_confirmed": false,
-   "reason": "The official structure sheet schedules Day 1 and Day 2 as separate days (Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM), so this is not a one-day event and cannot be played as a same-day single entry. Returning on Day 2 is a continuation of the same entry, not a second buy-in, but the trip does not get a free day back.",
+   "reason": "The official structure sheet schedules Day 1 and Day 2 as separate days (Day 1 Dec 10 @ 10:10 AM; Day 2 Dec 11 @ 10:00 AM). Day 2 is a continuation, not a new starting flight or buy-in. The whole-event entry limit is unconfirmed; a survivor must reserve Day 2.",
    "dates": [
     "2026-12-10"
    ],
@@ -3796,7 +3796,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-10"
    ],
@@ -3986,7 +3986,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-10"
    ],
@@ -4080,7 +4080,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-11"
    ],
@@ -4463,9 +4463,9 @@
    ],
    "official_name": "$2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 2 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 2 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-12-12"
    ],
@@ -4666,9 +4666,9 @@
    ],
    "official_name": "$1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 2 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 2 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-12-13",
     "2026-12-14"
@@ -4770,7 +4770,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-13"
    ],
@@ -4864,7 +4864,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-14"
    ],
@@ -4958,7 +4958,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-15"
    ],
@@ -5052,7 +5052,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-15"
    ],
@@ -5146,7 +5146,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-16"
    ],
@@ -5241,7 +5241,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-16"
    ],
@@ -5339,9 +5339,9 @@
    ],
    "official_name": "$1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 5 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 5 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-12-17",
     "2026-12-18",
@@ -5653,9 +5653,9 @@
    ],
    "official_name": "$600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
    "group": "multiflight",
-   "group_label": "Multi-flight (second flight = second buy-in)",
+   "group_label": "Multiple starting flights (separate buy-ins)",
    "single_entry_confirmed": false,
-   "reason": "The event runs 3 starting flights. Entering more than one flight is a second buy-in; the sheet only bars a player who has bagged chips for Day 2 from playing a later flight.",
+   "reason": "The event has 3 starting flights. A player who bags chips for Day 2 may not play a later flight. A second flight would cost another buy-in; the quoted rule alone does not establish the whole-event entry limit.",
    "dates": [
     "2026-12-20",
     "2026-12-21",
@@ -5763,7 +5763,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-20"
    ],
@@ -5857,7 +5857,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-21"
    ],
@@ -5951,7 +5951,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-22"
    ],
@@ -6139,7 +6139,7 @@
    "group": "bounty",
    "group_label": "Bounty / PKO (separate group)",
    "single_entry_confirmed": false,
-   "reason": "Bounty format. The published guarantee includes bounty money, so the cash prize pool is smaller than the headline number.",
+   "reason": "Bounty format. The printed guarantee includes bounty money; it is not a guarantee of that amount in the non-bounty prize pool.",
    "dates": [
     "2026-12-23"
    ],
@@ -9088,7 +9088,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "multiflight",
+     "group": "multiday",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -9173,7 +9173,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "multiflight",
+     "group": "multiday",
      "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "flight": "date_from_html",
      "row_gtd": "$40,000",
@@ -9196,7 +9196,7 @@
      "first": {
       "event_no": 39,
       "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-      "group": "multiflight",
+      "group": "multiday",
       "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
       "flight": "date_from_html",
       "row_gtd": "$40,000",
@@ -9240,7 +9240,7 @@
      "first": {
       "event_no": 39,
       "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-      "group": "multiflight",
+      "group": "multiday",
       "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
       "flight": "date_from_html",
       "row_gtd": "$40,000",
@@ -9284,7 +9284,7 @@
      "first": {
       "event_no": 39,
       "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-      "group": "multiflight",
+      "group": "multiday",
       "label": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
       "flight": "date_from_html",
       "row_gtd": "$40,000",
@@ -9528,7 +9528,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "multiflight",
+     "group": "multiday",
      "label": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
      "flight": "restart",
      "row_gtd": "",
@@ -9546,7 +9546,7 @@
     {
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-     "group": "multiflight",
+     "group": "multiday",
      "label": "$800 NO LIMIT HOLD'EM LIPS FINAL TABLE STREAMED FINAL TABLE (POKERGO)",
      "flight": "restart",
      "row_gtd": "",
@@ -11389,8 +11389,8 @@
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "poker_rate_checked": "2026-11-19",
    "parking": "Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
-   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "parking_note": "The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
+   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+   "parking_note": "Poker play of three hours or more may qualify for free self-parking with supervisor confirmation. The poker-room page specifically mentions non-hotel guests. Event parking rates may differ; confirm terms.",
    "cancel": "No cancellation deadline is printed for the poker suite rate. The general hotel terms say a deposit (first night or entire stay, depending on the offer) is billed at confirmation, that prepaid offers are non-cancellable and non-refundable unless the offer says otherwise, and that check-out before the scheduled departure date costs an additional $100 plus tax.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "cancel_checked": "2026-11-19",
@@ -11416,8 +11416,8 @@
    "poker_rate_note": "See shared poker offer; the official wording does not assign either price to a property.",
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "poker_rate_checked": "2026-11-19",
-   "parking": "Same resort parking terms as The Venetian.",
-   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "parking": "Same resort parking terms as The Venetian; event rates may differ.",
+   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
    "parking_note": null,
    "cancel": "Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
@@ -11711,7 +11711,7 @@
   [
    "Bellagio",
    "venues/bellagio.html",
-   "Weekly sheets; paid add-on and re-entry",
+   "Weekly sheets; paid chips; Saturday date and price need review",
    "https://bellagio.mgmresorts.com/en/casino/poker.html",
    null
   ],
@@ -12025,7 +12025,7 @@
    "id": "F-03",
    "area": "Prize pools",
    "title": "Bounty guarantees include bounty money, so they are not like-for-like",
-   "detail": "Bounty and PKO sheets state the guarantee 'consists of the actual prize pool plus the total amount of bounties that are awarded'. A $8,000 bounty guarantee is therefore a smaller cash prize pool than a $8,000 non-bounty guarantee.",
+   "detail": "Bounty and PKO sheets state that the guarantee 'consists of the actual prize pool plus the total amount of bounties that are awarded'. An $8,000 bounty guarantee does not guarantee $8,000 in the non-bounty pool; the eventual pool is not known in advance.",
    "impact": "Bounty events are shown in a separate group and are never mixed into the like-for-like ranking.",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
   },
@@ -12041,8 +12041,8 @@
    "id": "F-05",
    "area": "Hotels",
    "title": "No like-for-like checkout totals were confirmed",
-   "detail": "A Venetian Dec 1\u20134 lookup for one adult loaded an official booking shell without a price. Wynn showed partial Nov 18\u201319 rates for a different stay, which cannot be compared. Neither supplied a verified itemized total or rate timestamp for the research stay.",
-   "impact": "Do not rank hotels by the partial rates or assume availability. See the exact-stay hotel log.",
+   "detail": "A Venetian December 1\u20134 lookup for one adult loaded an official booking shell without a price. A November 25\u201328 lookup for two adults also produced no itemized total. Earlier root Venetian quote transcriptions and a partial Wynn rate use different dates and cannot be compared with either example stay.",
+   "impact": "Do not rank hotels without comparable, timestamped checkout totals and offer-specific terms.",
    "source": "https://www.venetianlasvegas.com/book?adults%5B%5D=1&arrival_date=2026-12-01&children%5B%5D=0&departure_date=2026-12-04&view=calendar"
   },
   {
@@ -12050,39 +12050,39 @@
    "area": "Hotels",
    "title": "Cancellation deadlines are partial: two properties publish 72 hours, the rest do not",
    "detail": "Partly resolved on 2026-11-17 by reading each property's own terms page first-hand. Bellagio and MGM Grand both publish a 72-hour window: the first night's deposit is fully refundable if Room Reservations is told at least 72 hours before arrival, and a late cancellation or no-show forfeits it. Caesars Palace and Horseshoe advertise 'FREE 48-Hour Cancellation*' with an asterisk whose condition is not printed on the page read. The Venetian and Palazzo publish no poker-rate deadline, but do publish that prepaid offers are non-cancellable and non-refundable unless the offer says otherwise, and that checking out early costs $100 plus tax. Wynn publishes deposit terms only (one night charged at booking) and no refund window.",
-   "impact": "For a Bellagio or MGM Grand stay you can plan a refundable hold until 72 hours out. For the Venetian poker rate, which is the rate this plan depends on, the deadline is still not established, so treat the deposit as committed.",
+   "impact": "These are general terms, not proof that a particular offer is refundable. Check the exact rate's deadline and deposit before booking; the Venetian poker-rate deadline is not established here.",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
   },
   {
    "id": "F-07",
    "area": "Taxes",
-   "title": "Room tax: the hotel's own terms are re-read, the county levy is not",
-   "detail": "13.38% comes from Clark County's own 'General Information Guide for Transient Lodging Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 by an earlier session and was not re-read today.",
-   "impact": "Used as the calculator default. Re-check on the county page before you book.",
+   "title": "Room-tax treatment must be verified at checkout",
+   "detail": "The Venetian's hotel terms read on 2026-11-19 state a 13.38% room tax. A previous audit cited a Clark County guide and noted its old internal date (F-15). Other hotels' individual tax rates and the treatment of each fee are not assumed from that figure.",
+   "impact": "The Venetian-only scenario uses 13.38% as an illustrative input, not a verified checkout tax bill.",
    "source": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
   },
   {
    "id": "F-08",
    "area": "Walking",
-   "title": "Walking times are route estimates, not measured door-to-seat durations",
-   "detail": "The walk matrix was computed from OpenStreetMap data with the OSRM foot profile (routing.openstreetmap.de/routed-foot) on 2026-11-16. Eight hotel-to-Venetian routes were also checked in Google Maps on 2026-11-19; neither source measures an actual walk.",
-   "impact": "Use the Maps-checked filter for a shortlist and leave a buffer for indoor elevators, crowds and venue access.",
+   "title": "Walking times are estimates, not measured door-to-seat durations",
+   "detail": "The walk matrix uses OSRM/OpenStreetMap estimates dated 2026-11-16. Eight Venetian routes were also checked in Google Maps on 2026-11-19; prior readings have their own dates. Neither verifies the indoor duration, and a directions link alone is not a verified walk time.",
+   "impact": "Use the filters for a preliminary shortlist, then check the route and allow a buffer.",
    "source": "https://www.openstreetmap.org/"
   },
   {
    "id": "F-09",
    "area": "Other venues",
    "title": "The Wynn poker citation on this site pointed at a page that no longer exists",
-   "detail": "https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures PDF lines still come from the 2026-11-16 reading and stay labelled as such. Update November 19: the linked daily structures have now been read in full and do publish buy-ins and entry rules for all four daily formats.",
+   "detail": "https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17, and the current room link points at it. What that page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures PDF lines still come from the 2026-11-16 reading and stay labelled as such. Update November 19: the linked daily structures have now been read in full and do publish buy-ins and entry rules for all four daily formats.",
    "impact": "All four daily formats permit extra spending and are excluded. Exact-date availability during series remains unverified.",
    "source": "https://www.wynnlasvegas.com/casino/poker"
   },
   {
    "id": "F-10",
    "area": "Other venues",
-   "title": "Entry rules and date coverage vary by poker room",
-   "detail": "The complete row-by-row audit covers DSE IV only. The morning watch links the other official documents available, including Wynn, Caesars Palace and Bellagio. Missing or contradictory terms are not evidence of a freezeout.",
-   "impact": "No events outside the audited rules are promoted into the recommendation.",
+   "title": "The comparison does not cover every tournament or every room",
+   "detail": "Wynn publishes a dated WPT festival schedule and event structures; Caesars and Bellagio publish daily or weekly documents. Horseshoe publishes six daily start times without buy-ins on the pages checked; MGM's historical weekly grid carries no year; Bellagio's Saturday sheet contradicts itself. Other rooms' pages have gaps or could not be read.",
+   "impact": "The Venetian DSE IV research table is a defined subset, not a complete citywide ranking.",
    "source": "https://www.caesars.com/horseshoe-las-vegas/casino"
   },
   {
@@ -12090,7 +12090,7 @@
    "area": "Hotels",
    "title": "A per-night rate is not the bill: occupancy and early-departure charges",
    "detail": "The properties charge more than the nightly rate and resort fee in two ways a rate comparison misses. The Venetian and Palazzo add $50 per night for each additional guest 13 or older above double occupancy, and $100 plus tax for checking out before the scheduled departure date. Bellagio adds $50 plus tax per occupant per night above two. MGM Grand adds $40 plus tax per occupant per night above two. Caesars Palace and Horseshoe do not publish an occupancy charge on the page read.",
-   "impact": "As a pair, the published rates and the calculator are right. With a third adult in the room the nightly cost rises by $50 (Venetian) or $40 (MGM Grand) plus tax, which can exceed the difference between two hotels.",
+   "impact": "Include any applicable extra-occupant and early-departure charges in the exact-stay checkout comparison; property terms do not establish a current room quote.",
    "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
   },
   {
@@ -12098,15 +12098,15 @@
    "area": "Hotels",
    "title": "Caesars Palace and Horseshoe do not publish a resort fee on the page read",
    "detail": "Both properties' official pages were read on 2026-11-17: the resort-hotel page, the casino page and the hotel page. None prints a resort-fee amount; only a 48-hour cancellation headline and 'valet and self-parking available' appear. Figures of $54.95 and $49.95 are widely repeated by aggregator sites and are deliberately not used here.",
-   "impact": "Those two properties cannot be costed on this site, so they cannot win a cost comparison. They stay in the walking tables because distance is published.",
+   "impact": "Those properties cannot be ranked by cost without a matching checkout quote. Walking estimates are shown separately and do not establish the final walking time.",
    "source": "https://www.caesars.com/horseshoe-las-vegas/hotel"
   },
   {
    "id": "F-13",
    "area": "Monitoring",
-   "title": "The scheduled re-check had never run, and this sandbox cannot reach the venue sites",
-   "detail": "GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline hash existed for any official URL. Two consequences were visible in the site text: it pointed at data/site/checks.json, which the scheduled job does not write (it writes data/verified2026/checks.json), and nothing read that file to mark rows. Both are fixed - every tournament row now carries a Source re-check cell driven by the real file, and scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. This sandbox has no outbound access to the venue hosts (curl returns SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline can only be set by the 06:00 UTC job running on main.",
-   "impact": "Until that job runs, every row reads 'not yet checked'. That is the honest state and is deliberately not rendered as 'unchanged'.",
+   "title": "Historical monitor gap; baselines now exist but changes still need review",
+   "detail": "An earlier build pointed at the wrong checks file and did not mark tournament rows. The scheduled workflow has since run; current coverage and failures are shown on Sources. Rows now read data/verified2026/checks.json. An unchanged hash does not constitute a human review, and an unread page does not prove the source is unchanged.",
+   "impact": "Use the latest dated run and resolve each pending change against the official source before relying on a value; a successful hash check alone does not verify transcription.",
    "source": ".github/workflows/recheck.yml (repository file, not an external citation)"
   },
   {
@@ -12128,17 +12128,17 @@
   {
    "id": "F-16",
    "area": "Monitoring",
-   "title": "Ten of the cited documents could not be read by the scheduled monitor",
+   "title": "Historical run: ten documents were unreadable on November 17",
    "detail": "The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not (Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn poker-room URL 404s). Recheck2026.py now classifies each failure and the Sources page lists them, because 'could not read' and 'read, unchanged' are different statements - and the monitor refuses to record a run in which nothing at all was readable, so a sandbox with no outbound access cannot overwrite real coverage with zeroes.",
    "impact": "Those rows carry no fresh machine assurance; their values keep their own last human-verified date. Read the linked page by hand before a non-refundable payment.",
    "source": ".github/workflows/recheck.yml and data/verified2026/checks.json (repository files, not external citations)"
   },
   {
    "id": "X-02",
-   "area": "Official page (resolved)",
-   "title": "The Venetian overview now labels DeepStack IV as current",
-   "detail": "A Nov 19 re-read confirmed that the Nov 17 stale WPT Fall Festival label was corrected.",
-   "impact": "Use the dated schedule for each specific event.",
+   "area": "Historical source discrepancy",
+   "title": "The series overview's old label has since been updated",
+   "detail": "On 2026-11-17 the overview was reported as calling the ended WPT Fall Festival the current series. Re-read on 2026-11-19, it calls DeepStack Extravaganza IV (November 16\u2013December 23, 2026) the current series. The earlier observation is historical.",
+   "impact": "Use the dated event page and re-check the overview before booking; the old label is not a current defect.",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"
   },
   {
@@ -12159,10 +12159,10 @@
   },
   {
    "id": "X-03",
-   "area": "Official page defect",
-   "title": "Bellagio's poker page gives a resume date whose weekday does not exist",
-   "detail": "The official page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the weekday and the date on the page disagree. The three weekly structure sheets are treated as the operative schedule instead.",
-   "impact": "Do not plan around that resume date; confirm the day with the room.",
+   "area": "Official page ambiguity",
+   "title": "Bellagio's resume notice names no year",
+   "detail": "Re-read 2026-11-19, the official page says tournament play will resume on 'Saturday, July 26' but does not give a year. July 26, 2026 was a Sunday; the source does not establish that it meant 2026. Its weekly-sheet links also need current confirmation.",
+   "impact": "Do not infer a current resumption date or treat the linked sheets as a confirmed current schedule; ask the room.",
    "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
   },
   {
@@ -12200,24 +12200,24 @@
   {
    "id": "X-08",
    "area": "Monitoring gap",
-   "title": "The scheduled re-check reports fetch errors for pages that do load in a browser",
-   "detail": "The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then fetched successfully by hand on 2026-11-17 and are quoted elsewhere on this site, so those pages are live and the error is the job's request being refused, not a missing page.",
-   "impact": "A 'monitor could not fetch' badge is a gap in monitoring, not a change to the source. Do not read it as the page having moved, and re-check those pages by hand before paying.",
+   "title": "Some historic monitor failures differed from manual fetches",
+   "detail": "The 2026-11-17T15:49Z run recorded ten fetch errors, including blocked or timed-out HTML pages, a PDF error and the old Wynn URL's 404. Three affected pages\u2014the Bellagio poker page and the Caesars Palace and Horseshoe casino pages\u2014were also read manually on November 17. That historical manual read is not proof they are reachable now.",
+   "impact": "A monitor fetch error is a gap, not proof of a content change or of current availability. See the latest run and re-check the source before paying.",
    "source": "data/verified2026/checks.json (committed by .github/workflows/recheck.yml)"
   },
   {
    "id": "C-01",
    "area": "Coverage",
    "title": "Other rooms publish schedules outside the ranked table",
-   "detail": "Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages instead. Wynn daily structures were read November 19 and are also in a separate excluded table.",
+   "detail": "Caesars publishes four daily NLH starts with re-entry and an optional add-on; the Bellagio Friday and Sunday sheets also expressly allow re-entry and paid extra chips. The linked Saturday sheet offers paid extra chips but is inconsistent and may be stale. Wynn also publishes dated series schedules and structures. Wynn daily structures were read November 19 and are also in a separate excluded table.",
    "impact": "Reviewed extra-spend events are excluded. Neither these exclusions nor incomplete coverage prove that no freezeout exists elsewhere.",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
   },
   {
-   "id": "F-14",
+   "id": "F-MONITOR",
    "area": "Monitoring",
-   "title": "Ten of the 61 monitored official URLs could not be read on the last scheduled run",
-   "detail": "The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or cancellation citations.<ul><li><code>https://bellagio.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://bellagio.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf</code> &mdash; 422 (HTTP 422)</li></ul>",
+   "title": "Some official sources could not be fetched on the latest scheduled run",
+   "detail": "The scheduled re-check ran on 2026-11-18T15:29:01Z: 5 of 63 sources were unreadable. A failed fetch is not evidence that a source is unchanged. See the dated Sources page for each URL and failure; earlier human-reading dates remain in force.",
    "impact": "A hotel fee or cancellation term sourced from one of these pages rests on the reading date shown on that hotel's row, not on the latest check. Re-open the link before you rely on the term.",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
   },
@@ -12700,10 +12700,15 @@
   {
    "name": "Caesars Palace",
    "poker_room": "Caesars Palace Poker Room",
-   "status_this_session": "Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That is the first time this site has an official buy-in, stack, guarantee and level length for a Caesars daily; it is still not a structure sheet, and the add-on is decisive. The property's own daily flyer PDF, read the same day (session arena/7cc9ee65-poker2), gives the same four start times and the same $1,000 guarantee but prices them $100 / $160 / $100 / $160 - see F-14.",
-   "url": "https://www.caesars.com/caesars-palace/casino",
-   "checked": "2026-11-17",
+   "status_this_session": "Read on Caesars' own editorial poker-tournaments page, rechecked 2026-11-19. It describes a daily tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes ... and a $50 add-on at the first break gives you an extra 15,000 chips'. That is the first time this site has an official buy-in, stack, guarantee and level length for a Caesars daily; it is still not a structure sheet, and the add-on is decisive. The property's own daily flyer PDF, read the same day (session arena/7cc9ee65-poker2), gives the same four start times and the same $1,000 guarantee but prices them $100 / $160 / $100 / $160 - see F-14.",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "checked": "2026-11-19",
    "earlier_findings": [
+    {
+     "text": "The Caesars Palace casino page links directly to the official daily tournament flyer; it does not reproduce the editorial article's all-$100 statement.",
+     "url": "https://www.caesars.com/caesars-palace/casino",
+     "retrieved": "2026-11-19"
+    },
     {
      "text": "Caesars' corporate disclaimer publishes only a resort-fee range: 'a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.' No single property value is published.",
      "url": "https://www.caesars.com/corporate/disclaimer",
@@ -12745,8 +12750,8 @@
      "retrieved": "2026-11-16"
     }
    ],
-   "verdict": "Publishes three weekly events with official structure sheets. Excluded from the single-entry ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 extra starting chips. Rows are published on the Bellagio venue page.",
-   "provenance": "re-read live on 2026-11-17 by arena/7cc9ee65-poker2; the Saturday sheet still contradicts itself (X-04)"
+   "verdict": "The Friday and Sunday sheets expressly allow re-entry through level 8 and offer paid gratuities for extra chips. The linked Saturday sheet offers $40 for 20,000 extra chips, but does not state that re-entry rule; it is also stale and internally inconsistent. All are kept out of the strict single-entry ranking.",
+   "provenance": "Friday, Saturday and Sunday sheets re-read on 2026-11-19; Saturday is inconsistent and may be stale (X-04 / X-05)"
   },
   {
    "name": "MGM Grand",

@@ -77,6 +77,13 @@ correct the Bellagio Saturday re-entry claim and the superseded Venetian overvie
 and verify the same-stay hotel calculator defaults. Preserve their merged implementation
 and tests in this rebase; apply further corrections only after the scope is released.
 
+**Handoff update, 2026-11-19 05:51 UTC:** PR #84 has merged, and its owner marked both
+substantive and integration tasks done in follow-up commit `8797aa0` (board-only), releasing
+that scope. The conflict resolution preserves #84's stricter itinerary and quote/route gates;
+this session adds the requested continuation, Bellagio and calculator corrections. PR #89
+also merged at 05:50 UTC; its `site-data/**` artifacts and refresh publisher must be included
+in the next rebase before any further `/plan/` integration. The other open PR #87 is board-only.
+
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
 | Task | Status | Owner | Files |

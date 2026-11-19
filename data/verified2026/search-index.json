@@ -125,7 +125,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev1",
   "h": "$300 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels ",
-  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-16 2026-11-17 2026-11-17 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 10 sheet 9 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "1 | Multiple starting flights | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-16 2026-11-17 2026-11-17 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 10 sheet 9 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -173,7 +173,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev7",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "7 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "7 | Multiple starting flights | $400 NO LIMIT HOLD'EM flights A,B each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-23 2026-11-24 | 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 2 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -269,7 +269,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev19",
   "h": "$400 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Brea",
-  "x": "19 | Multi-flight | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "19 | Multiple starting flights | $400 NO LIMIT HOLD'EM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-11-29 2026-11-30 2026-12-01 | 11:10 AM 11:10 AM 11:10 AM | $400 | $70 | $330 | $75,000 | 187.5\u00d7 | sheet 3 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -325,7 +325,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev26",
   "h": "$800 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels ",
-  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-03 2026-12-04 2026-12-04 2026-12-05 2026-12-05 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 sheet 13 sheet 14 DSE IV schedule | 2026-11-17 |"
+  "x": "26 | Multiple starting flights | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-03 2026-12-04 2026-12-04 2026-12-05 2026-12-05 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 sheet 13 sheet 14 DSE IV schedule |"
  },
  {
   "p": "tournaments.html",
@@ -429,7 +429,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev39",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-s",
-  "x": "39 | Multi-flight | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 | $40,000 "
+  "x": "39 | Multi-day continuation | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT Day 1 to ~12.5%; Day 2 to 7 players for a PokerGO-streamed final table (~7:00 PM); late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be a female 21+ years of age and have a Venetian Rewards card to participate. | 2026-12-10 | 10:10 AM | $800 | $90 | $690 "
  },
  {
   "p": "tournaments.html",
@@ -493,7 +493,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev47",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed f",
-  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 sheet 37 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "47 | Multiple starting flights | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 sheet 37 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -509,7 +509,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev49",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE each flight plays to ~15% remaining; Day 2 combi",
-  "x": "49 | Multi-flight | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM 10:10 AM | $1,100 |"
+  "x": "49 | Multiple starting flights | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE flights A,B each flight plays to ~15% remaining; Day 2 combines 1A+1B, all in the money; late reg: 9 levels + Break (~4:55 PM); 21+ with a Venetian Rewards card (property rule) -- Must be 50+ years of age and have a Venetian Rewards card to participate. | 2026-12-13 2026-12-14 | 10:10 AM 10:10 "
  },
  {
   "p": "tournaments.html",
@@ -565,7 +565,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev56",
   "h": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM each flight plays to ~12.5% remaining; Day 2 combi",
-  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-17 2026-12-18 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM 10:10 AM 6:10 PM 10:10 AM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 sheet 36 DSE IV sch"
+  "x": "56 | Multiple starting flights | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-17 2026-12-18 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM 10:10 AM 6:10 PM 10:10 AM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 sheet "
  },
  {
   "p": "tournaments.html",
@@ -589,7 +589,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev59",
   "h": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM each flight plays to ~12.5% remaining; Day 2 combine",
-  "x": "59 | Multi-flight | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM 11:10 AM 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "59 | Multiple starting flights | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM flights A,B,C each flight plays to ~12.5% remaining; Day 2 combines, all in the money; late reg: 9 levels + Break (5:55 PM) | 2026-12-20 2026-12-21 2026-12-22 | 11:10 AM 11:10 AM 11:10 AM | $600 | $95 | $505 | $150,000 | 250.0\u00d7 | sheet 4 DSE IV schedule | 2026-11-17 | unchanged"
  },
  {
   "p": "tournaments.html",
@@ -1036,14 +1036,6 @@
   "pl": "Entry rules",
   "t": "# Event Entry Whole-event single entry",
   "a": "",
-  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | Unverified | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32 | 2026-11-17"
- },
- {
-  "p": "entry-rules.html",
-  "pl": "Entry rules",
-  "t": "# Event Entry Whole-event single entry",
-  "a": "",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO",
   "x": "49 | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO | $1,100 | Unverified | silent on re-entry between flights | silent | silent | $140 of the $1,100 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $960 of every $1,100 Buy In. | sheet 20 | 2026-11-17"
  },
@@ -1062,6 +1054,14 @@
   "a": "",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT",
   "x": "47 | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT | $2,200 | Unverified | silent on re-entry between flights | silent | silent | $225 of the $2,200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $1,975 of every $2,200 Buy In. | sheet 21 | 2026-11-17"
+ },
+ {
+  "p": "entry-rules.html",
+  "pl": "Entry rules",
+  "t": "# Event Entry Whole-event single entry",
+  "a": "",
+  "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA",
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MA | $800 | Unverified | silent | silent | silent | $90 of the $800 Buy-In is withheld for house fees (Rake + Staff). $20 of the $800 Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). Prize pool consists of $690 of every $800 Buy In. | sheet 32 | 2026-11-17"
  },
  {
   "p": "entry-rules.html",
@@ -1149,7 +1149,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1A",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1157,7 +1157,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1B",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1165,7 +1165,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1C",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1173,7 +1173,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1D",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1221,7 +1221,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#7 $400 NO LIMIT HOLD'EM 1A",
-  "x": "#7 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#7 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1237,7 +1237,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#7 $400 NO LIMIT HOLD'EM 1B",
-  "x": "#7 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#7 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1325,7 +1325,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1A",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1349,7 +1349,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1B",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1365,7 +1365,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1C",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1397,7 +1397,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1A",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1413,7 +1413,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1B",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1421,7 +1421,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1C",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1429,7 +1429,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1D",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1437,7 +1437,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1E",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1E | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1E | 11:10 AM | 3:40 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1445,7 +1445,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO)",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO) | 5:10 PM | 7:25 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO) | 5:10 PM | 7:25 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1541,7 +1541,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-  "x": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | 10:10 AM | 4:55 PM | Multi-day continuation (not a second flight) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1605,7 +1605,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT",
-  "x": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1621,7 +1621,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT",
-  "x": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT | 6:10 PM | 11:10 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1629,7 +1629,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1645,7 +1645,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1693,7 +1693,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1709,7 +1709,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM | 6:10 PM | 11:10 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1717,7 +1717,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1C",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1C | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1C | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1725,7 +1725,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1D",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1D | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1D | 6:10 PM | 11:10 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1733,7 +1733,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1E",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1E | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1E | 10:10 AM | 4:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1749,7 +1749,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1765,7 +1765,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1B",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1781,7 +1781,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1C",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multiple starting flights (separate buy-ins) | official structure"
  },
  {
   "p": "schedule.html",
@@ -1845,7 +1845,7 @@
   "t": "Hotel Resort fee / night Fee Room tax",
   "a": "",
   "h": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | none published | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian. | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to the poker rate www.venetianlasvegas.com | not published "
+  "x": "The Palazzo 3325 S Las Vegas Blvd, Las Vegas, NV 89109 | $55 Same resort-fee page as The Venetian: $55 per night, plus tax. | none published | 13.38% www.venetianlasvegas.com | Same resort parking terms as The Venetian; event rates may differ. | Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed. general hotel terms; not specific to the poker rate www.venetianlasve"
  },
  {
   "p": "hotels.html",
@@ -3221,7 +3221,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM",
-  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | 11-16 , 11-17 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | 11-16 , 11-17 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3269,7 +3269,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$400 NO LIMIT HOLD'EM",
-  "x": "7 | $400 NO LIMIT HOLD'EM | $400 | 11-23 , 11-24 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "7 | $400 NO LIMIT HOLD'EM | $400 | 11-23 , 11-24 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3365,7 +3365,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$400 NO LIMIT HOLD'EM",
-  "x": "19 | $400 NO LIMIT HOLD'EM | $400 | 11-29 , 11-30 , 12-01 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "19 | $400 NO LIMIT HOLD'EM | $400 | 11-29 , 11-30 , 12-01 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3421,7 +3421,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$800 NO LIMIT HOLD'EM",
-  "x": "26 | $800 NO LIMIT HOLD'EM | $800 | 12-03 , 12-04 , 12-05 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "26 | $800 NO LIMIT HOLD'EM | $800 | 12-03 , 12-04 , 12-05 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3525,7 +3525,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "39 | $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | $800 | 12-10 | Multi-day continuation | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3589,7 +3589,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT",
-  "x": "47 | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT | $2,200 | 12-12 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "47 | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT | $2,200 | 12-12 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3605,7 +3605,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPAT",
-  "x": "49 | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPAT | $1,100 | 12-13 , 12-14 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "49 | $1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPAT | $1,100 | 12-13 , 12-14 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3661,7 +3661,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
-  "x": "56 | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | $1,100 | 12-17 , 12-18 , 12-19 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "56 | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | $1,100 | 12-17 , 12-18 , 12-19 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -3685,7 +3685,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
-  "x": "59 | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | $600 | 12-20 , 12-21 , 12-22 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "59 | $600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | $600 | 12-20 , 12-21 , 12-22 | Multiple starting flights | Official structure sheet \u00b7 2026-11-17"
  },
  {
   "p": "venues/venetian.html",
@@ -4341,7 +4341,7 @@
   "t": "ID What the document says Why it matters Source",
   "a": "X-03",
   "h": "X-03",
-  "x": "X-03 | The official poker page says \u201cTournament play will resume on Saturday, July 26\u201d, but 26 July 2026 is a Sunday. | The day-of-week on the page disagrees with the calendar, so the resume date cannot be taken as printed. The three weekly structure sheets are read as the operative schedule instead. | official page"
+  "x": "X-03 | The poker page says \u201cTournament play will resume on Saturday, July 26\u201d without a year. July 26, 2026 is a Sunday, but the source does not specify 2026. | The year and current schedule cannot be established from the notice; ask the room whether the linked weekly structure sheets are current. | official page"
  },
  {
   "p": "venues/bellagio.html",
@@ -4708,16 +4708,24 @@
   "pl": "Executive summary",
   "t": "Group Events What it means",
   "a": "",
-  "h": "Bounty or PKO. The guarantee includes bounty money so the cash pool is smaller.",
-  "x": "Bounty / PKO | 30 | Bounty or PKO. The guarantee includes bounty money so the cash pool is smaller."
+  "h": "Bounty or PKO; the guarantee includes bounty money.",
+  "x": "Bounty / PKO | 30 | Bounty or PKO; the guarantee includes bounty money."
  },
  {
   "p": "summary.html",
   "pl": "Executive summary",
   "t": "Group Events What it means",
   "a": "",
-  "h": "Multi-flight or multi-day. Buying into another flight differs from a continuation.",
-  "x": "Multi-flight | 9 | Multi-flight or multi-day. Buying into another flight differs from a continuation."
+  "h": "Multiple starting flights; a second flight would be a second buy-in.",
+  "x": "Multiple starting flights | 8 | Multiple starting flights; a second flight would be a second buy-in."
+ },
+ {
+  "p": "summary.html",
+  "pl": "Executive summary",
+  "t": "Group Events What it means",
+  "a": "",
+  "h": "One start and a later continuation; not a second flight.",
+  "x": "Multi-day continuation | 1 | One start and a later continuation; not a second flight."
  },
  {
   "p": "summary.html",
@@ -5149,7 +5157,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-03",
   "h": "F-03",
-  "x": "F-03 | Prize pools | Bounty guarantees include bounty money, so they are not like-for-like Bounty and PKO sheets state the guarantee 'consists of the actual prize pool plus the total amount of bounties that are awarded'. A $8,000 bounty guarantee is therefore a smaller cash prize pool than a $8,000 non-bounty guarantee. | Bounty events are shown in a separate group and are never mixed into the lik"
+  "x": "F-03 | Prize pools | Bounty guarantees include bounty money, so they are not like-for-like Bounty and PKO sheets state that the guarantee 'consists of the actual prize pool plus the total amount of bounties that are awarded'. An $8,000 bounty guarantee does not guarantee $8,000 in the non-bounty pool; the eventual pool is not known in advance. | Bounty events are shown in a separate group and are "
  },
  {
   "p": "flagged.html",
@@ -5165,7 +5173,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-05",
   "h": "F-05",
-  "x": "F-05 | Hotels | No like-for-like checkout totals were confirmed A Venetian Dec 1\u20134 lookup for one adult loaded an official booking shell without a price. Wynn showed partial Nov 18\u201319 rates for a different stay, which cannot be compared. Neither supplied a verified itemized total or rate timestamp for the research stay. | Do not rank hotels by the partial rates or assume availability. See the exac"
+  "x": "F-05 | Hotels | No like-for-like checkout totals were confirmed A Venetian December 1\u20134 lookup for one adult loaded an official booking shell without a price. A November 25\u201328 lookup for two adults also produced no itemized total. Earlier root Venetian quote transcriptions and a partial Wynn rate use different dates and cannot be compared with either example stay. | Do not rank hotels without comp"
  },
  {
   "p": "flagged.html",
@@ -5181,7 +5189,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-07",
   "h": "F-07",
-  "x": "F-07 | Taxes | Room tax: the hotel's own terms are re-read, the county levy is not 13.38% comes from Clark County's own 'General Information Guide for Transient Lodging Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 by an earlier session and was not re-read today. | Used as the calculator default. Re-check on the county page before you book. | www.clar"
+  "x": "F-07 | Taxes | Room-tax treatment must be verified at checkout The Venetian's hotel terms read on 2026-11-19 state a 13.38% room tax. A previous audit cited a Clark County guide and noted its old internal date (F-15). Other hotels' individual tax rates and the treatment of each fee are not assumed from that figure. | The Venetian-only scenario uses 13.38% as an illustrative input, not a verified c"
  },
  {
   "p": "flagged.html",
@@ -5189,7 +5197,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-08",
   "h": "F-08",
-  "x": "F-08 | Walking | Walking times are route estimates, not measured door-to-seat durations The walk matrix was computed from OpenStreetMap data with the OSRM foot profile (routing.openstreetmap.de/routed-foot) on 2026-11-16. Eight hotel-to-Venetian routes were also checked in Google Maps on 2026-11-19; neither source measures an actual walk. | Use the Maps-checked filter for a shortlist and leave a b"
+  "x": "F-08 | Walking | Walking times are estimates, not measured door-to-seat durations The walk matrix uses OSRM/OpenStreetMap estimates dated 2026-11-16. Eight Venetian routes were also checked in Google Maps on 2026-11-19; prior readings have their own dates. Neither verifies the indoor duration, and a directions link alone is not a verified walk time. | Use the filters for a preliminary shortlist, t"
  },
  {
   "p": "flagged.html",
@@ -5205,7 +5213,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-10",
   "h": "F-10",
-  "x": "F-10 | Other venues | Entry rules and date coverage vary by poker room The complete row-by-row audit covers DSE IV only. The morning watch links the other official documents available, including Wynn, Caesars Palace and Bellagio. Missing or contradictory terms are not evidence of a freezeout. | No events outside the audited rules are promoted into the recommendation. | www.caesars.com"
+  "x": "F-10 | Other venues | The comparison does not cover every tournament or every room Wynn publishes a dated WPT festival schedule and event structures; Caesars and Bellagio publish daily or weekly documents. Horseshoe publishes six daily start times without buy-ins on the pages checked; MGM's historical weekly grid carries no year; Bellagio's Saturday sheet contradicts itself. Other rooms' pages hav"
  },
  {
   "p": "flagged.html",
@@ -5229,7 +5237,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-13",
   "h": "F-13",
-  "x": "F-13 | Monitoring | The scheduled re-check had never run, and this sandbox cannot reach the venue sites GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline hash existed for any official URL. Two consequences were visible in the site text: it pointed at data/site/checks.json, which the scheduled job does not write (it writes data/verified2026/checks.json), and nothin"
+  "x": "F-13 | Monitoring | Historical monitor gap; baselines now exist but changes still need review An earlier build pointed at the wrong checks file and did not mark tournament rows. The scheduled workflow has since run; current coverage and failures are shown on Sources. Rows now read data/verified2026/checks.json. An unchanged hash does not constitute a human review, and an unread page does not prove"
  },
  {
   "p": "flagged.html",
@@ -5253,7 +5261,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-16",
   "h": "F-16",
-  "x": "F-16 | Monitoring | Ten of the cited documents could not be read by the scheduled monitor The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not (Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn poker-room URL 404s). Recheck2026.py "
+  "x": "F-16 | Monitoring | Historical run: ten documents were unreadable on November 17 The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not (Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn poker-room URL 404s). Recheck2026.py now class"
  },
  {
   "p": "flagged.html",
@@ -5261,7 +5269,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "X-02",
   "h": "X-02",
-  "x": "X-02 | Official page (resolved) | The Venetian overview now labels DeepStack IV as current A Nov 19 re-read confirmed that the Nov 17 stale WPT Fall Festival label was corrected. | Use the dated schedule for each specific event. | www.venetianlasvegas.com"
+  "x": "X-02 | Historical source discrepancy | The series overview's old label has since been updated On 2026-11-17 the overview was reported as calling the ended WPT Fall Festival the current series. Re-read on 2026-11-19, it calls DeepStack Extravaganza IV (November 16\u2013December 23, 2026) the current series. The earlier observation is historical. | Use the dated event page and re-check the overview befor"
  },
  {
   "p": "flagged.html",
@@ -5285,7 +5293,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "X-03",
   "h": "X-03",
-  "x": "X-03 | Official page defect | Bellagio's poker page gives a resume date whose weekday does not exist The official page says 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the weekday and the date on the page disagree. The three weekly structure sheets are treated as the operative schedule ins"
+  "x": "X-03 | Official page ambiguity | Bellagio's resume notice names no year Re-read 2026-11-19, the official page says tournament play will resume on 'Saturday, July 26' but does not give a year. July 26, 2026 was a Sunday; the source does not establish that it meant 2026. Its weekly-sheet links also need current confirmation. | Do not infer a current resumption date or treat the linked sheets as a co"
  },
  {
   "p": "flagged.html",
@@ -5325,7 +5333,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "X-08",
   "h": "X-08",
-  "x": "X-08 | Monitoring gap | The scheduled re-check reports fetch errors for pages that do load in a browser The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then fetched successful"
+  "x": "X-08 | Monitoring gap | Some historic monitor failures differed from manual fetches The 2026-11-17T15:49Z run recorded ten fetch errors, including blocked or timed-out HTML pages, a PDF error and the old Wynn URL's 404. Three affected pages\u2014the Bellagio poker page and the Caesars Palace and Horseshoe casino pages\u2014were also read manually on November 17. That historical manual read is not proof they"
  },
  {
   "p": "flagged.html",
@@ -5333,15 +5341,15 @@
   "t": "ID Area Issue Why it matters",
   "a": "C-01",
   "h": "C-01",
-  "x": "C-01 | Coverage | Other rooms publish schedules outside the ranked table Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages instead."
+  "x": "C-01 | Coverage | Other rooms publish schedules outside the ranked table Caesars publishes four daily NLH starts with re-entry and an optional add-on; the Bellagio Friday and Sunday sheets also expressly allow re-entry and paid extra chips. The linked Saturday sheet offers paid extra chips but is inconsistent and may be stale. Wynn also publishes dated series schedules and structures. Wynn daily s"
  },
  {
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
-  "a": "F-14",
-  "h": "F-14",
-  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+  "a": "F-MONITOR",
+  "h": "F-MONITOR",
+  "x": "F-MONITOR | Monitoring | Some official sources could not be fetched on the latest scheduled run The scheduled re-check ran on 2026-11-18T15:29:01Z: 5 of 63 sources were unreadable. A failed fetch is not evidence that a source is unchanged. See the dated Sources page for each URL and failure; earlier human-reading dates remain in force. | A hotel fee or cancellation term sourced from one of these p"
  },
  {
   "p": "flagged.html",
@@ -5469,7 +5477,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Bellagio",
-  "x": "Bellagio | Weekly sheets; paid add-on and re-entry | Official page |  |  | monitor could not read it: timeout"
+  "x": "Bellagio | Weekly sheets; paid chips; Saturday date and price need review | Official page |  |  | monitor could not read it: timeout"
  },
  {
   "p": "sources.html",
@@ -5893,7 +5901,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Series",
-  "x": "Series | DeepStack Poker Series overview | www.venetianlasvegas.com | 2026-11-19 | Series dates and the NYE / Showdown series that follow. See X-09."
+  "x": "Series | DeepStack Poker Series overview | www.venetianlasvegas.com | 2026-11-19 | Series dates and the NYE / Showdown series that follow. See X-09; earlier label discrepancy X-02 was historical."
  },
  {
   "p": "sources.html",
@@ -6085,7 +6093,15 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-17 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. It can be listed and priced, but not compared like-for-like with the sheet-silent Venetian candidates, and the buy-in conflicts "
+  "x": "Other venue | Caesars Palace | www.caesars.com | 2026-11-19 | Excluded from the single-entry table on the operator's own words: the published $50 add-on is a second purchase of chips, which is exactly the money-buys-an-advantage case the brief puts in a separate section. It can be listed and priced, but not compared like-for-like with the sheet-silent Venetian candidates, and the buy-in conflicts "
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Other venue",
+  "x": "Other venue | Caesars Palace \u2014 casino | www.caesars.com | 2026-11-19 | The Caesars Palace casino page links directly to the official daily tournament flyer; it does not reproduce the editorial article's all-$100 statement."
  },
  {
   "p": "sources.html",
@@ -6125,7 +6141,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Other venue",
-  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | Publishes three weekly events with official structure sheets. Excluded from the single-entry ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 extra starting chips. Rows are published on the Bellagio venue page."
+  "x": "Other venue | Bellagio | bellagio.mgmresorts.com | 2026-11-16 | The Friday and Sunday sheets expressly allow re-entry through level 8 and offer paid gratuities for extra chips. The linked Saturday sheet offers $40 for 20,000 extra chips, but does not state that re-entry rule; it is also stale and internally inconsistent. All are kept out of the strict single-entry ranking."
  },
  {
   "p": "sources.html",

@@ -70,7 +70,7 @@ OTHER_VENUES = [
     dict(
         name="Caesars Palace",
         poker_room="Caesars Palace Poker Room",
-        status_this_session=("Read first-hand on 2026-11-17 on Caesars' own poker page. It does publish a daily "
+        status_this_session=("Read on Caesars' own editorial poker-tournaments page, rechecked 2026-11-19. It describes a daily "
                              "tournament slate for Caesars Palace: 'four No-Limit Hold'em tournaments each day at "
                              "10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with "
                              "20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 "
@@ -80,9 +80,12 @@ OTHER_VENUES = [
                              "property's own daily flyer PDF, read the same day (session arena/7cc9ee65-poker2), gives "
                              "the same four start times and the same $1,000 guarantee but prices them $100 / $160 / "
                              "$100 / $160 - see F-14."),
-        url="https://www.caesars.com/caesars-palace/casino",
-        checked="2026-11-17",
+        url="https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+        checked="2026-11-19",
         earlier_findings=[
+            dict(text="The Caesars Palace casino page links directly to the official daily tournament flyer; it does not reproduce the editorial article's all-$100 statement.",
+                 url="https://www.caesars.com/caesars-palace/casino",
+                 retrieved="2026-11-19"),
             dict(text="Caesars' corporate disclaimer publishes only a resort-fee range: 'a daily resort fee between $45-$50 plus applicable tax. Resort fees are waived for Diamond and Seven Stars.' No single property value is published.",
                  url="https://www.caesars.com/corporate/disclaimer",
                  retrieved="2026-11-16"),
@@ -119,10 +122,11 @@ OTHER_VENUES = [
                  url="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
                  retrieved="2026-11-16"),
         ],
-        verdict=("Publishes three weekly events with official structure sheets. Excluded from the single-entry "
-                 "ranking: every sheet prints re-entry through level 8 and a gratuity that buys 15,000-20,000 "
-                 "extra starting chips. Rows are published on the Bellagio venue page."),
-        provenance="re-read live on 2026-11-17 by arena/7cc9ee65-poker2; the Saturday sheet still contradicts itself (X-04)",
+        verdict=("The Friday and Sunday sheets expressly allow re-entry through level 8 and offer paid "
+                 "gratuities for extra chips. The linked Saturday sheet offers $40 for 20,000 extra chips, "
+                 "but does not state that re-entry rule; it is also stale and internally inconsistent. "
+                 "All are kept out of the strict single-entry ranking."),
+        provenance="Friday, Saturday and Sunday sheets re-read on 2026-11-19; Saturday is inconsistent and may be stale (X-04 / X-05)",
     ),
     dict(
         name="MGM Grand",
@@ -195,9 +199,9 @@ FLAGS = [
          source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"),
     dict(id="F-03", area="Prize pools",
          title="Bounty guarantees include bounty money, so they are not like-for-like",
-         detail=("Bounty and PKO sheets state the guarantee 'consists of the actual prize pool plus the total "
-                 "amount of bounties that are awarded'. A $8,000 bounty guarantee is therefore a smaller cash "
-                 "prize pool than a $8,000 non-bounty guarantee."),
+         detail=("Bounty and PKO sheets state that the guarantee 'consists of the actual prize pool plus "
+                 "the total amount of bounties that are awarded'. An $8,000 bounty guarantee does not "
+                 "guarantee $8,000 in the non-bounty pool; the eventual pool is not known in advance."),
          impact="Bounty events are shown in a separate group and are never mixed into the like-for-like ranking.",
          source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"),
     dict(id="F-04", area="Schedule",
@@ -209,10 +213,11 @@ FLAGS = [
          source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"),
     dict(id="F-05", area="Hotels",
          title="No like-for-like checkout totals were confirmed",
-         detail=("A Venetian Dec 1–4 lookup for one adult loaded an official booking shell without a price. "
-                 "Wynn showed partial Nov 18–19 rates for a different stay, which cannot be compared. "
-                 "Neither supplied a verified itemized total or rate timestamp for the research stay."),
-         impact="Do not rank hotels by the partial rates or assume availability. See the exact-stay hotel log.",
+         detail=("A Venetian December 1–4 lookup for one adult loaded an official booking shell without a price. "
+                 "A November 25–28 lookup for two adults also produced no itemized total. Earlier root "
+                 "Venetian quote transcriptions and a partial Wynn rate use different dates and cannot be "
+                 "compared with either example stay."),
+         impact="Do not rank hotels without comparable, timestamped checkout totals and offer-specific terms.",
          source="https://www.venetianlasvegas.com/book?adults%5B%5D=1&arrival_date=2026-12-01&children%5B%5D=0&departure_date=2026-12-04&view=calendar"),
     dict(id="F-06", area="Hotels",
          title="Cancellation deadlines are partial: two properties publish 72 hours, the rest do not",
@@ -225,29 +230,31 @@ FLAGS = [
                  "that prepaid offers are non-cancellable and non-refundable unless the offer says "
                  "otherwise, and that checking out early costs $100 plus tax. Wynn publishes deposit "
                  "terms only (one night charged at booking) and no refund window."),
-         impact=("For a Bellagio or MGM Grand stay you can plan a refundable hold until 72 hours out. "
-                 "For the Venetian poker rate, which is the rate this plan depends on, the deadline is "
-                 "still not established, so treat the deposit as committed."),
+         impact=("These are general terms, not proof that a particular offer is refundable. Check the "
+                 "exact rate's deadline and deposit before booking; the Venetian poker-rate deadline "
+                 "is not established here."),
          source="https://bellagio.mgmresorts.com/en/terms-and-conditions.html"),
     dict(id="F-07", area="Taxes",
-         title="Room tax: the hotel's own terms are re-read, the county levy is not",
-         detail=("13.38% comes from Clark County's own 'General Information Guide for Transient Lodging "
-                 "Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 "
-                 "by an earlier session and was not re-read today."),
-         impact="Used as the calculator default. Re-check on the county page before you book.",
+         title="Room-tax treatment must be verified at checkout",
+         detail=("The Venetian's hotel terms read on 2026-11-19 state a 13.38% room tax. A previous "
+                 "audit cited a Clark County guide and noted its old internal date (F-15). Other hotels' "
+                 "individual tax rates and the treatment of each fee are not assumed from that figure."),
+         impact="The Venetian-only scenario uses 13.38% as an illustrative input, not a verified checkout tax bill.",
          source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"),
     dict(id="F-08", area="Walking",
-         title="Walking times are route estimates, not measured door-to-seat durations",
-         detail=("The walk matrix was computed from OpenStreetMap data with the OSRM foot profile "
-                 "(routing.openstreetmap.de/routed-foot) on 2026-11-16. Eight hotel-to-Venetian routes were also checked in Google Maps on 2026-11-19; neither source measures an actual walk."),
-         impact="Use the Maps-checked filter for a shortlist and leave a buffer for indoor elevators, crowds and venue access.",
+         title="Walking times are estimates, not measured door-to-seat durations",
+         detail=("The walk matrix uses OSRM/OpenStreetMap estimates dated 2026-11-16. Eight "
+                 "Venetian routes were also checked in Google Maps on 2026-11-19; prior readings "
+                 "have their own dates. Neither verifies the indoor duration, and a directions link "
+                 "alone is not a verified walk time."),
+         impact="Use the filters for a preliminary shortlist, then check the route and allow a buffer.",
          source="https://www.openstreetmap.org/"),
     dict(id="F-09", area="Other venues",
          title="The Wynn poker citation on this site pointed at a page that no longer exists",
          detail=("https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED "
                  "OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on "
                  "2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there "
-                 "first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that "
+                 "first-hand on 2026-11-17, and the current room link points at it. What that "
                  "page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for "
                  "the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures "
                  "PDF lines still come from the 2026-11-16 reading and stay labelled as such."),
@@ -255,11 +262,12 @@ FLAGS = [
                  "group - the page was reachable, the missing values are genuinely unpublished, not unfetched."),
          source="https://www.wynnlasvegas.com/casino/poker"),
     dict(id="F-10", area="Other venues",
-         title="Entry rules and date coverage vary by poker room",
-         detail=("The complete row-by-row audit covers DSE IV only. The morning watch links the other official "
-                 "documents available, including Wynn, Caesars Palace and Bellagio. Missing or contradictory "
-                 "terms are not evidence of a freezeout."),
-         impact="No events outside the audited rules are promoted into the recommendation.",
+         title="The comparison does not cover every tournament or every room",
+         detail=("Wynn publishes a dated WPT festival schedule and event structures; Caesars and Bellagio "
+                 "publish daily or weekly documents. Horseshoe publishes six daily start times without "
+                 "buy-ins on the pages checked; MGM's historical weekly grid carries no year; Bellagio's "
+                 "Saturday sheet contradicts itself. Other rooms' pages have gaps or could not be read."),
+         impact="The Venetian DSE IV research table is a defined subset, not a complete citywide ranking.",
          source="https://www.caesars.com/horseshoe-las-vegas/casino"),
     dict(id="F-11", area="Hotels",
          title="A per-night rate is not the bill: occupancy and early-departure charges",
@@ -269,9 +277,8 @@ FLAGS = [
                  "the scheduled departure date. Bellagio adds $50 plus tax per occupant per night above "
                  "two. MGM Grand adds $40 plus tax per occupant per night above two. Caesars Palace and "
                  "Horseshoe do not publish an occupancy charge on the page read."),
-         impact=("As a pair, the published rates and the calculator are right. With a third adult in "
-                 "the room the nightly cost rises by $50 (Venetian) or $40 (MGM Grand) plus tax, which "
-                 "can exceed the difference between two hotels."),
+         impact=("Include any applicable extra-occupant and early-departure charges in the exact-stay "
+                 "checkout comparison; property terms do not establish a current room quote."),
          source="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"),
     dict(id="F-12", area="Hotels",
          title="Caesars Palace and Horseshoe do not publish a resort fee on the page read",
@@ -280,22 +287,17 @@ FLAGS = [
                  "cancellation headline and 'valet and self-parking available' appear. Figures of "
                  "$54.95 and $49.95 are widely repeated by aggregator sites and are deliberately not "
                  "used here."),
-         impact=("Those two properties cannot be costed on this site, so they cannot win a cost "
-                 "comparison. They stay in the walking tables because distance is published."),
+         impact=("Those properties cannot be ranked by cost without a matching checkout quote. "
+                 "Walking estimates are shown separately and do not establish the final walking time."),
          source="https://www.caesars.com/horseshoe-las-vegas/hotel"),
     dict(id="F-13", area="Monitoring",
-         title="The scheduled re-check had never run, and this sandbox cannot reach the venue sites",
-         detail=("GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline "
-                 "hash existed for any official URL. Two consequences were visible in the site text: it "
-                 "pointed at data/site/checks.json, which the scheduled job does not write (it writes "
-                 "data/verified2026/checks.json), and nothing read that file to mark rows. Both are fixed "
-                 "- every tournament row now carries a Source re-check cell driven by the real file, and "
-                 "scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. "
-                 "This sandbox has no outbound access to the venue hosts (curl returns "
-                 "SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline "
-                 "can only be set by the 06:00 UTC job running on main."),
-         impact=("Until that job runs, every row reads 'not yet checked'. That is the honest state and "
-                 "is deliberately not rendered as 'unchanged'."),
+         title="Historical monitor gap; baselines now exist but changes still need review",
+         detail=("An earlier build pointed at the wrong checks file and did not mark tournament rows. "
+                 "The scheduled workflow has since run; current coverage and failures are shown on Sources. "
+                 "Rows now read data/verified2026/checks.json. An unchanged hash does not constitute "
+                 "a human review, and an unread page does not prove the source is unchanged."),
+         impact=("Use the latest dated run and resolve each pending change against the official source "
+                 "before relying on a value; a successful hash check alone does not verify transcription."),
          source=".github/workflows/recheck.yml (repository file, not an external citation)"),
     dict(id="F-14", area="Other venues",
          title="Two official Caesars documents print different daily buy-ins for the same room",
@@ -319,7 +321,7 @@ FLAGS = [
                  "true-cost figure as final."),
          source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"),
     dict(id="F-16", area="Monitoring",
-         title="Ten of the cited documents could not be read by the scheduled monitor",
+         title="Historical run: ten documents were unreadable on November 17",
          detail=("The 2026-11-17 run of .github/workflows/recheck.yml fetched 61 URLs: 51 answered, 10 did not "
                  "(Caesars and Horseshoe pages returned 403 or redirect loops behind bot protection, the MGM "
                  "Resorts and Bellagio terms pages timed out, one MGM asset returned 422, and the old Wynn "
@@ -330,10 +332,12 @@ FLAGS = [
          impact=("Those rows carry no fresh machine assurance; their values keep their own last human-verified "
                  "date. Read the linked page by hand before a non-refundable payment."),
          source=".github/workflows/recheck.yml and data/verified2026/checks.json (repository files, not external citations)"),
-    dict(id="X-02", area="Official page (resolved)",
-         title="The Venetian overview now labels DeepStack IV as current",
-         detail="A Nov 19 re-read confirmed that the Nov 17 stale WPT Fall Festival label was corrected.",
-         impact="Use the dated schedule for each specific event.",
+    dict(id="X-02", area="Historical source discrepancy",
+         title="The series overview's old label has since been updated",
+         detail=("On 2026-11-17 the overview was reported as calling the ended WPT Fall Festival the "
+                 "current series. Re-read on 2026-11-19, it calls DeepStack Extravaganza IV "
+                 "(November 16–December 23, 2026) the current series. The earlier observation is historical."),
+         impact="Use the dated event page and re-check the overview before booking; the old label is not a current defect.",
          source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"),
     dict(id="X-09", area="Venetian NYE schedule",
          title="Official NYE sources disagree on Ante Up entry price; some dates print 2025",
@@ -349,13 +353,12 @@ FLAGS = [
                  "The Wednesday rows could be a PDF extraction issue. Their date is not resolved by inference."),
          impact="Open the source PDF and confirm the date against the applicable official structure sheet before planning.",
          source="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"),
-    dict(id="X-03", area="Official page defect",
-         title="Bellagio's poker page gives a resume date whose weekday does not exist",
-         detail=("The official page says 'Tournament play will resume on Saturday, July 26, beginning with the "
-                 "$300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' 26 July 2026 is a Sunday, so the "
-                 "weekday and the date on the page disagree. The three weekly structure sheets are treated as "
-                 "the operative schedule instead."),
-         impact="Do not plan around that resume date; confirm the day with the room.",
+    dict(id="X-03", area="Official page ambiguity",
+         title="Bellagio's resume notice names no year",
+         detail=("Re-read 2026-11-19, the official page says tournament play will resume on 'Saturday, "
+                 "July 26' but does not give a year. July 26, 2026 was a Sunday; the source does not "
+                 "establish that it meant 2026. Its weekly-sheet links also need current confirmation."),
+         impact="Do not infer a current resumption date or treat the linked sheets as a confirmed current schedule; ask the room.",
          source="https://bellagio.mgmresorts.com/en/casino/poker.html"),
     dict(id="X-04", area="Official document defect",
          title="Bellagio's Saturday sheet prints two different buy-ins",
@@ -390,23 +393,22 @@ FLAGS = [
                  "from /casino/poker-room is historical provenance."),
          source="https://www.wynnlasvegas.com/casino/poker-room"),
     dict(id="X-08", area="Monitoring gap",
-         title="The scheduled re-check reports fetch errors for pages that do load in a browser",
-         detail=("The 2026-11-17T15:49Z run of recheck.yml fetched 61 official URLs: 51 set a baseline and 10 "
-                 "returned a fetch error. The ten are all Caesars, Bellagio and MGM Grand HTML pages. Three of "
-                 "them - the Bellagio poker page and the Caesars Palace and Horseshoe casino pages - were then "
-                 "fetched successfully by hand on 2026-11-17 and are quoted elsewhere on this site, so those "
-                 "pages are live and the error is the job's request being refused, not a missing page."),
-         impact=("A 'monitor could not fetch' badge is a gap in monitoring, not a change to the source. Do not "
-                 "read it as the page having moved, and re-check those pages by hand before paying."),
+         title="Some historic monitor failures differed from manual fetches",
+         detail=("The 2026-11-17T15:49Z run recorded ten fetch errors, including blocked or timed-out "
+                 "HTML pages, a PDF error and the old Wynn URL's 404. Three affected pages—the Bellagio "
+                 "poker page and the Caesars Palace and Horseshoe casino pages—were also read manually "
+                 "on November 17. That historical manual read is not proof they are reachable now."),
+         impact=("A monitor fetch error is a gap, not proof of a content change or of current availability. "
+                 "See the latest run and re-check the source before paying."),
          source="data/verified2026/checks.json (committed by .github/workflows/recheck.yml)"),
     dict(id="C-01", area="Coverage",
-         title="Two rooms publish schedules that are not in the ranked tables",
-         detail=("Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish "
-                 "official schedule documents, read live on 2026-11-17. Every one of those events is a "
-                 "re-entry or add-on event on the face of its own sheet, so none of them can enter the "
-                 "single-entry ranking; they are published on their venue pages instead."),
-         impact=("The ranked table stays Venetian-only not because other rooms publish nothing, but because "
-                 "the rooms that do publish are not single-entry. That is a finding, not a coverage gap."),
+         title="Other rooms' official tournament documents are separate from the Venetian research ranking",
+         detail=("Caesars publishes four daily NLH starts with re-entry and an optional add-on; the "
+                 "Bellagio Friday and Sunday sheets also expressly allow re-entry and paid extra chips. "
+                 "The linked Saturday sheet offers paid extra chips but is inconsistent and may be stale. "
+                 "Wynn also publishes dated series schedules and structures."),
+         impact=("The Venetian-only comparison is a coverage boundary, not proof that other rooms "
+                 "publish no qualifying event. Reconfirm all schedules and rules with the rooms."),
          source="https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
 ]
 
@@ -543,25 +545,20 @@ def _unread_flags():
     import json, os
     here = os.path.dirname(os.path.abspath(__file__))
     try:
-        d = json.load(open(os.path.join(here, "checks.json"), encoding="utf8"))
+        with open(os.path.join(here, "checks.json"), encoding="utf8") as f:
+            d = json.load(f)
     except (OSError, ValueError):
         return []
     run = (d.get("runs") or [{}])[0]
-    bad = [r for r in run.get("results", []) if r.get("status") != 200]
+    bad = [r for r in run.get("results", []) if r.get("change") == "fetch error"]
     if not bad:
         return []
-    rows = "".join(
-        "<li><code>%s</code> &mdash; %s (%s)</li>"
-        % (r.get("url"), r.get("status") if r.get("status") else "no response",
-           (r.get("error") or "no error text recorded").split(":")[0][:60])
-        for r in bad)
-    return [dict(id="F-14", area="Monitoring",
-                 title="Ten of the 61 monitored official URLs could not be read on the last scheduled run",
-                 detail=("The scheduled re-check ran on %s and read 51 of 61 URLs successfully. The ten "
-                         "below returned an HTTP error, a redirect or a timeout, so the site can say only "
-                         "that they were not read - not that they are unchanged. None of the ten is cited "
-                         "by a tournament row; six are hotel fee or cancellation citations.<ul>%s</ul>"
-                         % (run.get("checked") or "the last run", rows)),
+    return [dict(id="F-MONITOR", area="Monitoring",
+                 title="Some official sources could not be fetched on the latest scheduled run",
+                 detail=("The scheduled re-check ran on %s: %d of %d sources were unreadable. "
+                         "A failed fetch is not evidence that a source is unchanged. See the dated "
+                         "Sources page for each URL and failure; earlier human-reading dates remain in force."
+                         % (run.get("checked") or "the last run", len(bad), len(run.get("results", [])))), 
                  impact=("A hotel fee or cancellation term sourced from one of these pages rests on the "
                          "reading date shown on that hotel's row, not on the latest check. Re-open the "
                          "link before you rely on the term."),
@@ -599,7 +596,7 @@ SCHEDULE_FEED = [
     ("Caesars Palace", "venues/caesars-palace.html", "Daily flyer; paid add-on and re-entry",
      "https://www.caesars.com/caesars-palace/casino",
      "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
-    ("Bellagio", "venues/bellagio.html", "Weekly sheets; paid add-on and re-entry",
+    ("Bellagio", "venues/bellagio.html", "Weekly sheets; paid chips; Saturday date and price need review",
      "https://bellagio.mgmresorts.com/en/casino/poker.html", None),
     ("Horseshoe", "venues/horseshoe.html", "Official editorial start times only; no dated schedule",
      "https://www.caesars.com/horseshoe-las-vegas/casino",

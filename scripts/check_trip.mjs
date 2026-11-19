@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 
 const nodes = Object.fromEntries(['pick','cart','add','entry-count','research-entries','t-hotel','t-book',
-  't-checkout','t-nights','t-rate','t-fee','t-tax','t-park','tot-buyin','tot-night','tot-hotel','tot-all'].map(id => [id, {
+  't-checkout','t-nights','t-rate','t-fee','t-tax','t-fee-tax','t-park','tot-buyin','tot-night','tot-hotel','tot-all'].map(id => [id, {
   value: '', valueAsNumber: NaN, validity: {valid: true}, addEventListener(type, fn) { this[type] = fn; },
 }]));
 nodes.pick.options = [];
@@ -39,8 +39,13 @@ set('t-tax', 13.38);
 set('t-park', 10);
 assert.equal(total(), '$800.51', 'do not double-count fees in checkout mode');
 set('t-checkout', '');
+assert.equal(total(), 'Not available', 'unknown fee-tax rate is not assumed to equal room tax');
+set('t-fee-tax', 13.38);
 assert.equal(nodes['tot-night'].textContent, '$185.74');
 assert.equal(total(), '$857.22');
+set('t-park', '');
+assert.equal(total(), 'Not available', 'unknown parking is not free');
+set('t-park', 10);
 set('t-fee', '');
 assert.equal(total(), 'Not available', 'missing resort fee is not a zero fee');
 console.log('Checkout-first, scenario arithmetic, missing inputs and entries-only pass.');

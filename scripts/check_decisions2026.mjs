@@ -41,13 +41,16 @@ function open(page) {
   assert.equal($('h-total').textContent,'Not available');
   set('h-hotel','venetian');
   set('h-rate','100'); set('h-nights','2');
-  assert.equal($('h-total').textContent,'Not available','unknown parking is not free');
+  assert.equal($('h-total').textContent,'Not available','unknown parking and fee-tax are not free');
   set('h-park','0');
+  assert.equal($('h-total').textContent,'Not available','fee-tax rate must be supplied separately');
+  set('h-fee-tax','13.38');
   assert.equal($('h-night').textContent,'$175.74');
   assert.equal($('h-total').textContent,'$351.48');
   set('h-nights','1.5'); assert.equal($('h-total').textContent,'Not available');
   set('h-nights','2'); set('h-hotel','caesars-palace');
   assert.equal($('h-fee').value,''); assert.equal($('h-tax').value,'');
+  assert.equal($('h-fee-tax').value,''); assert.equal($('h-park').value,'');
   assert.equal($('h-total').textContent,'Not available','switch must clear unverified rates');
   set('h-hotel','venetian'); assert.equal($('h-fee').value,'55');
   set('h-rate','-1'); assert.equal($('h-total').textContent,'Not available');
