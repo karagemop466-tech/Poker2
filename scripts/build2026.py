@@ -1373,14 +1373,25 @@ def maxes_html(days):
         when = dt.date.fromisoformat(d["date"]).strftime("%a %d %b")
         first = chain[0] if chain else None
         last = chain[-1] if chain else None
+        open_late = None
+        if first:
+            for s in sorted(d["entries"], key=lambda x: (x.get("start_m") or 0)):
+                if (s.get("start_m") is not None and s.get("reg_close_m") is not None
+                        and s["reg_close_m"] > first["start"]):
+                    open_late = dict(start_text=s["start"], close_text=s.get("reg_close") or "")
+        if open_late is None and last:
+            open_late = last
         rows.append(
             "<tr data-dates='%s' data-max='%d'><td>%s</td><td class='num'>%d</td>"
             "<td>%s</td><td>%s</td><td>%s</td></tr>"
             % (d["date"], len(chain), esc(when), len(d["entries"]),
                ("%s (%s)" % (esc(first["start_text"]), esc(first["close_text"] or "no close published")))
                if first else "&mdash;",
-               ("%s (closes %s)" % (esc(last["start_text"]), esc(last["close_text"] or "not published")))
-               if last else "&mdash;",
+               # the latest entry whose registration is still open after the day's earliest start -
+               # not simply the last row in the chain (on 16 Nov the chain is one entry because the
+               # 5:10 PM row is the same event, yet its 8:40 PM close is genuinely still open).
+               ("%s (closes %s)" % (esc(open_late["start_text"]), esc(open_late["close_text"] or "not published")))
+               if open_late else "&mdash;",
                ("%d pair(s)" % len(impossible)) if impossible else "&mdash;"))
     total = sum(len(e["dates"]) for e in [])  # placeholder kept intentionally trivial
     return ("""
