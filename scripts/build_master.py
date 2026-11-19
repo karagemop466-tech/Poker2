@@ -2164,3 +2164,36 @@ for _e in _ma9["events"]:
         _e["last_checked"] = "2026-11-19"
 _jsona9.dump(_ma9, open(_pa9, "w"), indent=1)
 print("a9f5847f overlay applied: Venetian schedule + sheet-7 + MGM/GN rows re-dated to 2026-11-19")
+# VERIFICATION SWEEP — arena/2e732aa2-poker2 (2026-11-19, applied above at write)
+# Live re-reads recorded in research/2e732aa2-official-verification-2026-11-19.md;
+# the 94-row verbatim transcription of the schedule page lives in
+# research/2e732aa2-live-dse-nov-2026-rows-2026-11-19.json and was diffed
+# programmatically: 94/94 rows match /plan/ (site-data/events.json) and 83/83
+# non-restart rows match this dataset on date, start, event number and structure
+# sheet, with zero value changes. NOTE: this block patches data/master.json on
+# disk directly after the write above (idempotent on rebuild).
+# ===========================================================================
+import json as _json2e7, os as _os2e7
+_p2e7 = _os2e7.path.join(ROOT, "data", "master.json")
+_m2e7 = _json2e7.load(open(_p2e7))
+_m2e7["verification_2e732aa2"] = {
+    "retrieved": "2026-11-19", "session": "arena/2e732aa2-poker2",
+    "transcript": "research/2e732aa2-official-verification-2026-11-19.md",
+    "venetian_schedule_reread": "DSE IV schedule page fetched in full (4/4 chunks) and all 94 printed rows transcribed; zero missing/extra/mismatched values vs the published rows; Day-2 Restart / Final Table rows remain excluded by design.",
+    "venetian_fee_reread": "Resort-fee page still prints '$55 plus tax per night, payable upon check-in' with the same inclusions.",
+    "venetian_rates_reread": "Poker suite-rate page still prints 'start as low as $119 and $209', Luxury King Suite single/double occupancy, $55 resort fee per night stayed, six hours cash or $300+ tournament buy-in per night stayed before 2 a.m.; still does not attribute either amount to a specific tower.",
+    "wynn_page_reread": "Poker page confirms WPT World Championship November 27-December 21, Super Gold Million $400 buy-in / $3,000,000 guarantee (new for 2026), Signature Series January 11-24 2027, and that daily tournaments are suspended during series. Wynn row-level source PDFs were NOT re-read, so no Wynn row date advanced.",
+    "monitor_note": "Scheduled source-monitor run (15:00 UTC) had not fired at sweep time; gh workflow dispatch is not permitted to the integration token and the sandbox has no casino-domain egress, so the 14 're-check pending' baselines are left for the scheduled run exactly as monitor.py requires.",
+}
+_m2e7["as_of"] = "2026-11-19"
+for _e in _m2e7["events"]:
+    if (_e.get("sheet_url") or "").find("dse_nov_2026") >= 0 or \
+       (_e.get("struct_url") or "").find("dse_nov_2026") >= 0 or \
+       (_e.get("source_url") or "").find("dse-nov-2026") >= 0:
+        # Schedule page re-read end to end today; structure sheets were not, so
+        # struct_checked / sheet_retrieved stay at their own re-read dates.
+        _e["last_checked"] = "2026-11-19"
+        if _e.get("schedule_checked"):
+            _e["schedule_checked"] = "2026-11-19"
+_json2e7.dump(_m2e7, open(_p2e7, "w"), indent=1)
+print("2e732aa2 overlay applied: as_of=2026-11-19, Venetian schedule rows re-dated")
