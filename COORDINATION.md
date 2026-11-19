@@ -18,8 +18,63 @@ root surface's search box on every table page. Claiming exactly that scope:
 | P2 Requirements traceability page: every requirement in the standing brief as one row with status, the page that implements it, the official source, and what is still missing. No requirement is marked met unless it was checked this session | done | arena/326322e9-poker2 | `2026/requirements.html`, `data/verified2026/content.py`, `scripts/build2026.py` |
 | P3 Reproduce and fix the citation irregularity found in P1 (Venetian parking row cited a page that does not print the fee), add the two new official flags, and add a regression gate so the wrong citation cannot come back | done | arena/326322e9-poker2 | `data/verified2026/hotels.py`, `data/verified2026/content.py`, `scripts/check_semantics.py` |
 | P4 Root-surface search gap: six table pages under the site root render no site-wide search box. Report only — the root generator is another session's file scope, so this is logged as a request rather than edited | done (logged, not edited) | arena/326322e9-poker2 | `COORDINATION.md` |
-| P5 Integration: run the full local suite across all three surfaces, open a PR to `main`, merge it, confirm the Pages deployment, and record the PR link and result here | in progress | arena/326322e9-poker2 | `COORDINATION.md`, `README.md` |
+| P5 Integration: run the full local suite across all three surfaces, open a PR to `main`, merge it, confirm the Pages deployment, and record the PR link and result here | done | arena/326322e9-poker2 | `COORDINATION.md`, `README.md` |
 | P6 (found during P1, not claimed at the start): the committed root `index.html` shipped a literal `<<<<<<< HEAD` merge-conflict marker to the live GitHub Pages landing page. Fixed by regenerating from `scripts/build_site.py`; `scripts/check_root_surface.py` now fails on any conflict marker in any published root or `/2026/` page. Only the generated `index.html` in my own working tree changed — the generator and dataset were not touched | done | arena/326322e9-poker2 | `index.html`, `scripts/check_root_surface.py` |
+
+### Completion (arena/326322e9-poker2, 2026-11-19)
+
+**Publication:** [PR #106](https://github.com/karagemop466-tech/Poker2/pull/106) merged to `main` at
+2026-11-19T11:11:12Z as `fdf216dbc4d74f30d24f35d2a66be3418f3dabab`. All three PR checks passed (`verify`
+twice, plus the `live` job that actually re-fetches the official sources). The Pages deployment run
+[44513250190](https://github.com/karagemop466-tech/Poker2/actions/runs/44513250190) succeeded and the
+Pages API reported `built`. The live pages were then fetched and read back:
+`https://karagemop466-tech.github.io/Poker2/2026/requirements.html` renders the full 26-row table, and the
+root landing page no longer contains the conflict marker. The deployed `2026/requirements.html` blob
+(`7d20734d`) is byte-identical to the committed one.
+
+**What shipped**
+
+- `2026/requirements.html` — 26 requirements from the standing brief, each with status (16 met, 9
+  partial, 1 blocked), the page that answers it, what was checked against an official document on
+  2026-11-19, what is still missing and a source. Data is in `data/verified2026/content.py`. The blocked
+  item is the 8 a.m. all-day start: the earliest start in the Venetian series is 09:10 on 2026-12-12.
+- `research/326322e9-official-verification-2026-11-19.md` — the line-by-line re-read record with links.
+- **P-01 fixed**: the Venetian/Palazzo parking rows cited the poker room page, which was re-read in full
+  and prints no parking fee. Re-cited to the hotel terms (Parking Fees) and the poker-room self-parking
+  page, both re-read 2026-11-19; values unchanged. `scripts/check_semantics.py` now fails the build if a
+  rendered parking value cites a page known not to print one (verified with a negative test), and the
+  confirmation page is watched by `recheck2026.sources()`.
+- **N-05** published: the Bellagio poker page still says tournament play "will resume on Saturday,
+  July 26". **N-06** published: the schedules read stop at 2026-12-23.
+- **P6 fixed (found during P1)**: the committed root `index.html` shipped a literal `<<<<<<< HEAD` line
+  and the live Pages landing page rendered it. Regenerated from `scripts/build_site.py` (no generator
+  change needed) and added a conflict-marker gate to `scripts/check_root_surface.py` covering every root
+  and `/2026/` page.
+
+**P4 — request for the root-surface owner (not edited by this session).** Six table pages under the site
+root render no site-wide search box while the other root pages do: `rate-log.html`, `schedule.html`,
+`single-entry.html`, `sources.html`, `walking.html`, `wpt-terms.html`. They are written by
+`scripts/build-site.py` and `scripts/build_f0816fab.py`, which are outside this session's file scope, so
+the fix belongs to whoever owns those generators: emit the shared header search input (id `site-search`)
+and the per-table `data-search` attribute from their page template. Published as suggestion S-13 and
+requirement R-14's remaining gap.
+
+**Verification performed this session, all green:** `build2026.py --check`, `check2026.py` (25 pages,
+1,713 links, 1,002 external citations), `check_sheet_readings.py` (37 sheets / 481 field comparisons),
+`test_recheck2026.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_guarantees.py`,
+`check_labels.py`, `check_refresh2026.py`, `audit.py`, `check_links.py`, `check_root_surface.py`,
+`check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_decisions.mjs`, `check_site.mjs`.
+
+**Rebase note (nothing discarded).** `main` moved four times during this session (#100, #102, #103, #105,
+#107, #108). Every conflict was in generated output — `index.html`, `2026/flagged.html`,
+`2026/sources.html`, `2026/assets/search-index.js` — and each was resolved by re-running the owning
+generator rather than hand-merging, so no other session's committed values were overwritten by hand. One
+`--force-with-lease` push was needed because the branch had been rebased locally after its first push;
+the previous remote state was this session's own commit only.
+
+**Not claimed:** no event was promoted to single-entry confirmed, no checkout quote was invented, no
+walk time was upgraded from estimate to measurement, and no 8 a.m. start was fabricated to fill the
+blocked requirement.
 
 **Claimed file scope:** `2026/requirements.html`, `2026/**` (rebuild output of `scripts/build2026.py`),
 `data/verified2026/{content,hotels}.py`, `scripts/build2026.py` (requirements page + nav only),
