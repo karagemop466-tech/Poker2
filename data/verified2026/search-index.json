@@ -4912,6 +4912,214 @@
   "x": "Is the walk \u226430 minutes? | Seven of eight dated Google routes to the Venetian poker room are estimated at 30 minutes or less. Indoor walking was not timed. | Verify the route to the actual poker-room entrance using the official destination , including pedestrian bridges and indoor access; retain route timestamp."
  },
  {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-01",
+  "h": "R-01",
+  "x": "R-01 | Schedule data | Find live upcoming poker tournaments near the Las Vegas Strip, focused on the Strip area. | PARTIAL | tournaments.html (64 event numbers, 94 scheduled rows) and the per-room pages | Every row was re-read against the official Venetian DSE IV schedule on 2026-11-19 (all four HTML chunks, 94 rows: dates, start times, event numbers, names, guarantees and structure-sheet links al"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-02",
+  "h": "R-02",
+  "x": "R-02 | Eligibility | Focus on single-entry tournaments only: no double buy-in and no add-ons. | PARTIAL | tournaments.html (strict confirmed-only filter, rules-silent group), entry-rules.html | All 37 official structure sheets were read. Zero of the 64 audited event numbers print a whole-event one-entry / no-re-entry / no-rebuy / no-add-on clause, so the confirmed-only filter correctly returns zer"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-03",
+  "h": "R-03",
+  "x": "R-03 | Eligibility | Keep tournaments where money buys an advantage in a separate section. | MET | entry-rules.html (extra-spend group), venues/wynn.html (daily formats), tournaments.html group filter | Events whose sheet prints re-entry, a rebuy, an add-on, a gratuity that buys chips, or a priced subsequent buy-in are grouped out of the single-entry table with the quoted clause. Wynn's four daily"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-04",
+  "h": "R-04",
+  "x": "R-04 | Ranking | Rank tournaments on cost to enter and prize pool, only after confirming total entry fee and guarantee. | PARTIAL | index.html top table, tournaments.html (Entry fee, House fee, To prize pool, Guarantee, GTD\u00f7entry) | Guarantee \u00f7 total entry fee is displayed as a descriptive ratio and labelled as not a forecast. Bounty and flight events are labelled separately, because their guarant"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-05",
+  "h": "R-05",
+  "x": "R-05 | Hotel | Find the best hotels within 30 minutes' walk of the tournaments; cost and quality matter more than distance. | PARTIAL | hotels.html, walking.html, venues/*.html (hotel table per room) | Eight hotels are compared on published resort fee, tax, parking and cancellation terms, each cell citing the official page that prints it. Address-based Google Maps walking estimates to the Venetian"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-06",
+  "h": "R-06",
+  "x": "R-06 | Hotel | Calculate the true cost per night: rate + mandatory resort fee + tax, with resort fees and parking included. | PARTIAL | hotels.html (Estimate lodging cost), trip.html (Trip totals), hotels.html#checkout-log | The calculator applies (room + mandatory resort fee) \u00d7 (1 + applicable tax rate) + tax-inclusive parking, and 13.38% is only preloaded for the two properties whose official te"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-07",
+  "h": "R-07",
+  "x": "R-07 | Hotel | Capture checkout total, nightly average, mandatory resort fee and tax, parking, cancellation deadline and rate timestamp; compare like-for-like. | PARTIAL | hotels.html#checkout-log (each column is a separate field, plus retrieved date and audit note) | The log schema carries every one of those fields per attempt, and one immutable observation is written per lookup (2026-11-19: two "
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-08",
+  "h": "R-08",
+  "x": "R-08 | Hotel | Keep rates as a dated log, not a single value. | MET | hotels.html (Dated rate log), every rate cell carries its own retrieval date | Each hotel row carries a per-field read date, and the rate log keeps one dated entry per lookup instead of overwriting a single number. The poker suite rate is recorded as a conditional starting price, never as a quote. | nothing outstanding | officia"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-09",
+  "h": "R-09",
+  "x": "R-09 | Schedule | Use start time, late-registration cutoff and plausible duration to flag overlapping entries; one primary event per day plus a conditional fallback. | PARTIAL | schedule.html (day plan, overlap verdicts), tournaments.html (Starts) | Start times and late-registration cut-offs are published on every structure sheet and are used to decide whether two events can be played in sequence."
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-10",
+  "h": "R-10",
+  "x": "R-10 | Schedule | Build a schedule where the player can play all day starting at 8 a.m. | BLOCKED | schedule.html, questions.html Q-04, flagged.html N-06 | Checked 2026-11-19: the earliest start printed anywhere in the Venetian series is 9:10 AM (event 46, Saturday 2026-12-12, a $260 turbo milestone satellite). Every main-schedule event starts at 10:10 AM or later. The Wynn page states daily tourn"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-11",
+  "h": "R-11",
+  "x": "R-11 | Trip cost | Add an estimated trip cost calculator: entries \u00d7 buy-ins + nights \u00d7 true hotel cost. | MET | trip.html, and the same estimator embedded on hotels.html | The calculator totals selected entry fees and adds the lodging total, computes the nightly average as checkout total \u00f7 nights, and refuses to print a combined total while lodging is unknown. Selecting events does not imply they "
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-12",
+  "h": "R-12",
+  "x": "R-12 | Data model | Store single-entry, re-entry, add-on and fee values separately for each event, each with its source excerpt and retrieval date. | MET | entry-rules.html (per-field readings with quoted clause, sheet link and read date), tournaments.html | Each event carries its own entry-fee split (house fee and prize-pool contribution separately), buy-in, late-registration cutoff, chip count a"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-13",
+  "h": "R-13",
+  "x": "R-13 | Venues | One page per venue (Venetian, Wynn, others), each with its events and hotels. | MET | venues.html plus nine room pages (Venetian, Wynn, Horseshoe, Caesars Palace, Bellagio, MGM Grand, Resorts World, Westgate, other rooms) | Each room page carries that room's events (or the documented reason it has no verified dated row), its official address walking table with a 30-minute filter, a"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-14",
+  "h": "R-14",
+  "x": "R-14 | Navigation | Add a search box across all tables. | MET | every page (one site-wide index over every rendered table row) | One committed index covers every rendered table row on all 24 pages of this surface and is searched from a box in the header of each page; a no-match result reports zero rather than going blank. | The repository root is a separate surface with its own generator. Its rate"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-15",
+  "h": "R-15",
+  "x": "R-15 | Schedule data | Add a date filter that shows only events on the chosen days. | MET | tournaments.html (single date, inclusive range, today/upcoming in America/Los_Angeles) | Date filtering is applied to the entry date of each event, and a restart is not counted as a new entry. The upcoming filter compares against 2026-11-19 in Las Vegas local time, not the viewer's time zone. | nothing outs"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-16",
+  "h": "R-16",
+  "x": "R-16 | Eligibility | Add a 'single-entry / freezeout confirmed' toggle filter on the tournaments table. | MET | tournaments.html | The toggle exists and is separate from the 'rules silent' group filter; it is honest about returning zero rows, because zero events are confirmed. | nothing outstanding | official source"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-17",
+  "h": "R-17",
+  "x": "R-17 | Schedule | Flag any two events that cannot be played in sequence (schedule overlap check). | PARTIAL | schedule.html (every pair on every day, with a verdict) | Every pair of distinct events on a day is compared using published start times and late-registration cut-offs; a same-event second flight is identified as such. | Without published finish times, a pair can only be cleared as 'no pub"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-18",
+  "h": "R-18",
+  "x": "R-18 | Walking | Add official-address walking times for each hotel\u2013venue pair with the 30-minute limit applied. | PARTIAL | walking.html (all pairs, filter, Maps link per row), venues/*.html | Every hotel \u00d7 room pair has a row with the official street address as the origin, the walking estimate, the 30-minute verdict and a prefilled Google Maps walking link so the reader can confirm it. Address-ba"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-19",
+  "h": "R-19",
+  "x": "R-19 | Monitoring | Re-check each official URL on a schedule and flag rows whose source changed. | MET | sources.html, flagged.html (source-changed badges), the row 'Source re-check' column | A scheduled job re-fetches every official URL the site cites, hashes the content and records a dated observation. A changed document is flagged against the rows that depend on it and stays flagged until a per"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-20",
+  "h": "R-20",
+  "x": "R-20 | Monitoring | Add a 'last checked' date to each row. | MET | every table (a date per row, from that row's own source reading) | Each row prints the date its own official document was read, not the build date. A rebuild never refreshes a retrieval date. | nothing outstanding | official source"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-21",
+  "h": "R-21",
+  "x": "R-21 | Process | Use one shared COORDINATION.md on main before parallel sessions start. | MET | COORDINATION.md in the repository root | The board is on main, lists each task with status, owning session and file scope, and is updated by claim and by completion. This session claimed its scope before editing anything and logged a request for the file it does not own. | nothing outstanding | this sit"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-22",
+  "h": "R-22",
+  "x": "R-22 | Process | Review the repo line by line against official sources and flag irregularities. | MET | repo-review.html, flagged.html, research/326322e9-official-verification-2026-11-19.md | This session re-read the primary sources the site depends on and recorded the result row by row. Two new irregularities were found and published: P-01 (a parking fee cited to a page that does not print it) an"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-23",
+  "h": "R-23",
+  "x": "R-23 | Process | Publish a site with a clean landing page and subpages by category, tables and analysis included. | MET | the /2026/ surface: 25 generated pages behind one dashboard | Each page is generated from the verified data by one generator, every internal link is checked and every external citation is restricted to an official host. | nothing outstanding | this page"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-24",
+  "h": "R-24",
+  "x": "R-24 | Process | Write an executive summary and a dedicated suggestions section to review before any change. | MET | summary.html, latest-review.html, suggestions.html | The summary states the conclusion and what blocks it. Suggestions are listed unaplied, each with what it involves, what it decides, its cost and effort, and which question it unblocks. | nothing outstanding | this page"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-25",
+  "h": "R-25",
+  "x": "R-25 | Process | Provide a clear list of the questions, known and missing information, and answers needed before a decision. | MET | questions.html (Q-01 to Q-04 answered, Q-05 to Q-14 open), flagged.html (blank-cell inventory) | Each question states why it matters, what decision it blocks, and whether it is answered, open, or needs a person (for example age 50+ eligibility for the Seniors events)"
+ },
+ {
+  "p": "requirements.html",
+  "pl": "Requirements",
+  "t": "ID Area Requirement, in the brief's words Status",
+  "a": "R-26",
+  "h": "R-26",
+  "x": "R-26 | Process | Improve decision-making with suggestions, and reveal missing information rather than inferring it. | MET | suggestions.html, flagged.html, latest-review.html | Every blank cell is explained with the page that would have to publish it, so the next step is a known action (call the room, run a quote, walk the route) rather than a guess. | nothing outstanding | this site"
+ },
+ {
   "p": "questions.html",
   "pl": "Questions",
   "t": "ID Question Why it matters What it blocks",
@@ -5997,6 +6205,14 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Hotel",
+  "x": "Hotel | The Venetian Resort parking (confirmation) source | www.venetianlasvegas.com |  | The parking (confirmation) this site publishes for The Venetian Resort."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
   "x": "Hotel | The Palazzo resort fee source | www.venetianlasvegas.com |  | The resort fee this site publishes for The Palazzo."
  },
  {
@@ -6006,6 +6222,14 @@
   "a": "",
   "h": "Hotel",
   "x": "Hotel | The Palazzo parking source | www.venetianlasvegas.com |  | The parking this site publishes for The Palazzo."
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Kind Document URL Retrieved",
+  "a": "",
+  "h": "Hotel",
+  "x": "Hotel | The Palazzo parking (confirmation) source | www.venetianlasvegas.com |  | The parking (confirmation) this site publishes for The Palazzo."
  },
  {
   "p": "sources.html",
@@ -6286,14 +6510,6 @@
   "a": "",
   "h": "Monitor",
   "x": "Monitor | Caesars Palace and Horseshoe do not publish a resort fee on the page read | www.caesars.com |  | Scheduled source. A successful automated fetch is not a human verification date."
- },
- {
-  "p": "sources.html",
-  "pl": "Sources",
-  "t": "Kind Document URL Retrieved",
-  "a": "",
-  "h": "Monitor",
-  "x": "Monitor | The Venetian parking row cited a poker page that does not print the parking fees | www.venetianlasvegas.com |  | Scheduled source. A successful automated fetch is not a human verification date."
  },
  {
   "p": "sources.html",

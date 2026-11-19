@@ -171,6 +171,293 @@ OTHER_VENUES = [
     ),
 ]
 
+# --------------------------------------------------------------------------------------
+# Requirements traceability (session arena/326322e9-poker2, 2026-11-19)
+# --------------------------------------------------------------------------------------
+# One row per discrete requirement in the standing brief, in the order the brief states it.
+# `status` is only ever MET when this session checked the implementation AND the underlying
+# evidence on 2026-11-19. PARTIAL means the page exists but the official evidence behind it is
+# still missing; BLOCKED means no official source publishes what would be needed; NOT DONE is a
+# real gap. Nothing here is upgraded by a build: the page is generated from this table.
+#
+# Fields: id, area, requirement (the brief's own words, trimmed), status, where (the page),
+# evidence (what was actually checked), gap (what is still missing), source (official URL).
+
+REQ_READ = "2026-11-19"
+
+REQUIREMENTS = [
+    dict(id="R-01", area="Schedule data",
+         requirement="Find live upcoming poker tournaments near the Las Vegas Strip, focused on the Strip area.",
+         status="PARTIAL",
+         where="tournaments.html (64 event numbers, 94 scheduled rows) and the per-room pages",
+         evidence=("Every row was re-read against the official Venetian DSE IV schedule on "
+                   "2026-11-19 (all four HTML chunks, 94 rows: dates, start times, event numbers, "
+                   "names, guarantees and structure-sheet links all match). Wynn, Caesars, Bellagio, "
+                   "Horseshoe, MGM Grand, Resorts World, Westgate and Golden Nugget are covered on "
+                   "their own pages, each with what that room does and does not publish."),
+         gap=("Only one room publishes a full dated schedule for the trip window (Venetian). The "
+              "other rooms are covered at the level of what they publish, not as a complete "
+              "Strip-wide event feed."),
+         source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"),
+    dict(id="R-02", area="Eligibility",
+         requirement="Focus on single-entry tournaments only: no double buy-in and no add-ons.",
+         status="PARTIAL",
+         where="tournaments.html (strict confirmed-only filter, rules-silent group), entry-rules.html",
+         evidence=("All 37 official structure sheets were read. Zero of the 64 audited event numbers "
+                   "print a whole-event one-entry / no-re-entry / no-rebuy / no-add-on clause, so the "
+                   "confirmed-only filter correctly returns zero rows. Entry-rule fields are stored "
+                   "separately per event with the quoted excerpt and retrieval date."),
+         gap=("No event can be promoted to 'single-entry confirmed' until a room states it in "
+              "writing. Sheet silence is not treated as a freezeout (flag F-01)."),
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"),
+    dict(id="R-03", area="Eligibility",
+         requirement="Keep tournaments where money buys an advantage in a separate section.",
+         status="MET",
+         where="entry-rules.html (extra-spend group), venues/wynn.html (daily formats), tournaments.html group filter",
+         evidence=("Events whose sheet prints re-entry, a rebuy, an add-on, a gratuity that buys "
+                   "chips, or a priced subsequent buy-in are grouped out of the single-entry table "
+                   "with the quoted clause. Wynn's four daily formats and Bellagio's weekly "
+                   "structures were re-read on 2026-11-19 and all remain in that separate group."),
+         gap="",
+         source="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"),
+    dict(id="R-04", area="Ranking",
+         requirement="Rank tournaments on cost to enter and prize pool, only after confirming total entry fee and guarantee.",
+         status="PARTIAL",
+         where="index.html top table, tournaments.html (Entry fee, House fee, To prize pool, Guarantee, GTD÷entry)",
+         evidence=("Guarantee ÷ total entry fee is displayed as a descriptive ratio and labelled as "
+                   "not a forecast. Bounty and flight events are labelled separately, because their "
+                   "guarantee includes bounty money and is not like-for-like."),
+         gap=("No ranking is presented as a recommendation, because no event has confirmed "
+              "single-entry eligibility. Blank fees stay blank, so a ratio is only shown where both "
+              "numbers are published."),
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"),
+    dict(id="R-05", area="Hotel",
+         requirement="Find the best hotels within 30 minutes' walk of the tournaments; cost and quality matter more than distance.",
+         status="PARTIAL",
+         where="hotels.html, walking.html, venues/*.html (hotel table per room)",
+         evidence=("Eight hotels are compared on published resort fee, tax, parking and cancellation "
+                   "terms, each cell citing the official page that prints it. Address-based Google "
+                   "Maps walking estimates to the Venetian poker room were recorded: seven of eight "
+                   "are under 30 minutes (MGM Grand 42 min is over)."),
+         gap=("No official star or diamond quality rating is published by any of these properties, so "
+              "the quality half of this requirement has no verified source and stays blank (Q-03, "
+              "S-06). Walking times are estimates and do not include the indoor route."),
+         source="https://www.venetianlasvegas.com/resort/resort-fee.html"),
+    dict(id="R-06", area="Hotel",
+         requirement="Calculate the true cost per night: rate + mandatory resort fee + tax, with resort fees and parking included.",
+         status="PARTIAL",
+         where="hotels.html (Estimate lodging cost), trip.html (Trip totals), hotels.html#checkout-log",
+         evidence=("The calculator applies (room + mandatory resort fee) × (1 + applicable tax rate) + "
+                   "tax-inclusive parking, and 13.38% is only preloaded for the two properties whose "
+                   "official terms print it. Parking is now cited to the pages that print the fee "
+                   "(flag P-01, fixed 2026-11-19)."),
+         gap=("No dated room rate exists for any hotel: the booking engine returned only a loading "
+              "shell for the research dates, so every 'true cost' input is blank rather than assumed. "
+              "13.38% is a Venetian/Palazzo figure, not a Strip-wide one."),
+         source="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"),
+    dict(id="R-07", area="Hotel",
+         requirement="Capture checkout total, nightly average, mandatory resort fee and tax, parking, cancellation deadline and rate timestamp; compare like-for-like.",
+         status="PARTIAL",
+         where="hotels.html#checkout-log (each column is a separate field, plus retrieved date and audit note)",
+         evidence=("The log schema carries every one of those fields per attempt, and one immutable "
+                   "observation is written per lookup (2026-11-19: two Venetian/Palazzo attempts, one "
+                   "historical Wynn attempt). Incomparable stays are kept separate rather than merged."),
+         gap=("Zero comparable itemised checkout totals exist for the research window. The booking "
+              "engines do not expose a total without an interactive session."),
+         source="https://www.venetianlasvegas.com/book"),
+    dict(id="R-08", area="Hotel",
+         requirement="Keep rates as a dated log, not a single value.",
+         status="MET",
+         where="hotels.html (Dated rate log), every rate cell carries its own retrieval date",
+         evidence=("Each hotel row carries a per-field read date, and the rate log keeps one dated "
+                   "entry per lookup instead of overwriting a single number. The poker suite rate is "
+                   "recorded as a conditional starting price, never as a quote."),
+         gap="",
+         source="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
+    dict(id="R-09", area="Schedule",
+         requirement="Use start time, late-registration cutoff and plausible duration to flag overlapping entries; one primary event per day plus a conditional fallback.",
+         status="PARTIAL",
+         where="schedule.html (day plan, overlap verdicts), tournaments.html (Starts)",
+         evidence=("Start times and late-registration cut-offs are published on every structure sheet "
+                   "and are used to decide whether two events can be played in sequence. An event "
+                   "that is merely a second flight of the same tournament is labelled as such and is "
+                   "not offered as a second entry."),
+         gap=("No official sheet publishes a finish time, so no sequence is certified as playable. The "
+              "day plan therefore shows one primary per day and no fallback, rather than an "
+              "impossible sequence (flag F-04)."),
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"),
+    dict(id="R-10", area="Schedule",
+         requirement="Build a schedule where the player can play all day starting at 8 a.m.",
+         status="BLOCKED",
+         where="schedule.html, questions.html Q-04, flagged.html N-06",
+         evidence=("Checked 2026-11-19: the earliest start printed anywhere in the Venetian series is "
+                   "9:10 AM (event 46, Saturday 2026-12-12, a $260 turbo milestone satellite). Every "
+                   "main-schedule event starts at 10:10 AM or later. The Wynn page states daily "
+                   "tournaments are suspended during its series, and the WPT Championship it lists "
+                   "runs 2026-11-27 to 2026-12-21."),
+         gap=("No official page read publishes an eligible 8 a.m. start. An 8 a.m.-to-evening day "
+              "cannot be built from verified events (flag N-06)."),
+         source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"),
+    dict(id="R-11", area="Trip cost",
+         requirement="Add an estimated trip cost calculator: entries × buy-ins + nights × true hotel cost.",
+         status="MET",
+         where="trip.html, and the same estimator embedded on hotels.html",
+         evidence=("The calculator totals selected entry fees and adds the lodging total, computes the "
+                   "nightly average as checkout total ÷ nights, and refuses to print a combined total "
+                   "while lodging is unknown. Selecting events does not imply they meet the entry "
+                   "policy; the page says so."),
+         gap="",
+         source="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"),
+    dict(id="R-12", area="Data model",
+         requirement="Store single-entry, re-entry, add-on and fee values separately for each event, each with its source excerpt and retrieval date.",
+         status="MET",
+         where="entry-rules.html (per-field readings with quoted clause, sheet link and read date), tournaments.html",
+         evidence=("Each event carries its own entry-fee split (house fee and prize-pool contribution "
+                   "separately), buy-in, late-registration cutoff, chip count and level length, each "
+                   "with the quoted sentence from its own sheet and the date that sheet was read."),
+         gap="",
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"),
+    dict(id="R-13", area="Venues",
+         requirement="One page per venue (Venetian, Wynn, others), each with its events and hotels.",
+         status="MET",
+         where="venues.html plus nine room pages (Venetian, Wynn, Horseshoe, Caesars Palace, Bellagio, MGM Grand, Resorts World, Westgate, other rooms)",
+         evidence=("Each room page carries that room's events (or the documented reason it has no "
+                   "verified dated row), its official address walking table with a 30-minute filter, "
+                   "and its hotel/cost links. Rooms that publish no tournament schedule say so "
+                   "instead of showing an empty table."),
+         gap="",
+         source="https://www.venetianlasvegas.com/resort/casino/poker.html"),
+    dict(id="R-14", area="Navigation",
+         requirement="Add a search box across all tables.",
+         status="MET",
+         where="every page (one site-wide index over every rendered table row)",
+         evidence=("One committed index covers every rendered table row on all 24 pages of this "
+                   "surface and is searched from a box in the header of each page; a no-match result "
+                   "reports zero rather than going blank."),
+         gap=("The repository root is a separate surface with its own generator. Its rate-log, "
+              "schedule, single-entry, sources, walking and WPT-terms pages render tables with no "
+              "search box. Reported to the owning session on the coordination board, not edited here."),
+         source="index.html"),
+    dict(id="R-15", area="Schedule data",
+         requirement="Add a date filter that shows only events on the chosen days.",
+         status="MET",
+         where="tournaments.html (single date, inclusive range, today/upcoming in America/Los_Angeles)",
+         evidence=("Date filtering is applied to the entry date of each event, and a restart is not "
+                   "counted as a new entry. The upcoming filter compares against 2026-11-19 in Las "
+                   "Vegas local time, not the viewer's time zone."),
+         gap="",
+         source="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"),
+    dict(id="R-16", area="Eligibility",
+         requirement="Add a 'single-entry / freezeout confirmed' toggle filter on the tournaments table.",
+         status="MET",
+         where="tournaments.html",
+         evidence=("The toggle exists and is separate from the 'rules silent' group filter; it is "
+                   "honest about returning zero rows, because zero events are confirmed."),
+         gap="",
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"),
+    dict(id="R-17", area="Schedule",
+         requirement="Flag any two events that cannot be played in sequence (schedule overlap check).",
+         status="PARTIAL",
+         where="schedule.html (every pair on every day, with a verdict)",
+         evidence=("Every pair of distinct events on a day is compared using published start times and "
+                   "late-registration cut-offs; a same-event second flight is identified as such."),
+         gap=("Without published finish times, a pair can only be cleared as 'no published overlap', "
+              "never as definitely playable (flag F-04)."),
+         source="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-schedule.pdf"),
+    dict(id="R-18", area="Walking",
+         requirement="Add official-address walking times for each hotel–venue pair with the 30-minute limit applied.",
+         status="PARTIAL",
+         where="walking.html (all pairs, filter, Maps link per row), venues/*.html",
+         evidence=("Every hotel × room pair has a row with the official street address as the origin, "
+                   "the walking estimate, the 30-minute verdict and a prefilled Google Maps walking "
+                   "link so the reader can confirm it. Address-based Google estimates to the Venetian "
+                   "poker room were recorded on 2026-11-19 for all eight hotels."),
+         gap=("The durations are routing estimates (OSRM from OpenStreetMap), not measurements, and "
+              "none times the indoor route to the poker room on level 2. A 'verified ≤30 minutes' "
+              "claim is not made (flag F-08)."),
+         source="https://www.google.com/maps/dir/?api=1&origin=3355+S.+Las+Vegas+Blvd%2C+Las+Vegas%2C+NV+89109&destination=The+Venetian+poker+room&travelmode=walking"),
+    dict(id="R-19", area="Monitoring",
+         requirement="Re-check each official URL on a schedule and flag rows whose source changed.",
+         status="MET",
+         where="sources.html, flagged.html (source-changed badges), the row 'Source re-check' column",
+         evidence=("A scheduled job re-fetches every official URL the site cites, hashes the content "
+                   "and records a dated observation. A changed document is flagged against the rows "
+                   "that depend on it and stays flagged until a person records a review. Earlier "
+                   "runs that fetched a bot-challenge page as if it were a PDF were repaired, and "
+                   "empty or non-PDF responses are now rejected."),
+         gap="",
+         source="sources.html"),
+    dict(id="R-20", area="Monitoring",
+         requirement="Add a 'last checked' date to each row.",
+         status="MET",
+         where="every table (a date per row, from that row's own source reading)",
+         evidence=("Each row prints the date its own official document was read, not the build date. "
+                   "A rebuild never refreshes a retrieval date."),
+         gap="",
+         source="https://www.venetianlasvegas.com/resort/resort-fee.html"),
+    dict(id="R-21", area="Process",
+         requirement="Use one shared COORDINATION.md on main before parallel sessions start.",
+         status="MET",
+         where="COORDINATION.md in the repository root",
+         evidence=("The board is on main, lists each task with status, owning session and file scope, "
+                   "and is updated by claim and by completion. This session claimed its scope before "
+                   "editing anything and logged a request for the file it does not own."),
+         gap="",
+         source="../COORDINATION.md"),
+    dict(id="R-22", area="Process",
+         requirement="Review the repo line by line against official sources and flag irregularities.",
+         status="MET",
+         where="repo-review.html, flagged.html, research/326322e9-official-verification-2026-11-19.md",
+         evidence=("This session re-read the primary sources the site depends on and recorded the "
+                   "result row by row. Two new irregularities were found and published: P-01 (a "
+                   "parking fee cited to a page that does not print it) and N-05 (a stale 'resume "
+                   "26 July' notice on the Bellagio page). A third, N-06, records the schedule horizon."),
+         gap="",
+         source="../research/326322e9-official-verification-2026-11-19.md"),
+    dict(id="R-23", area="Process",
+         requirement="Publish a site with a clean landing page and subpages by category, tables and analysis included.",
+         status="MET",
+         where="the /2026/ surface: 25 generated pages behind one dashboard",
+         evidence=("Each page is generated from the verified data by one generator, every internal "
+                   "link is checked and every external citation is restricted to an official host."),
+         gap="",
+         source="index.html"),
+    dict(id="R-24", area="Process",
+         requirement="Write an executive summary and a dedicated suggestions section to review before any change.",
+         status="MET",
+         where="summary.html, latest-review.html, suggestions.html",
+         evidence=("The summary states the conclusion and what blocks it. Suggestions are listed "
+                   "unaplied, each with what it involves, what it decides, its cost and effort, and "
+                   "which question it unblocks."),
+         gap="",
+         source="summary.html"),
+    dict(id="R-25", area="Process",
+         requirement="Provide a clear list of the questions, known and missing information, and answers needed before a decision.",
+         status="MET",
+         where="questions.html (Q-01 to Q-04 answered, Q-05 to Q-14 open), flagged.html (blank-cell inventory)",
+         evidence=("Each question states why it matters, what decision it blocks, and whether it is "
+                   "answered, open, or needs a person (for example age 50+ eligibility for the "
+                   "Seniors events). The flagged page lists every category of blank in one place."),
+         gap="",
+         source="questions.html"),
+    dict(id="R-26", area="Process",
+         requirement="Improve decision-making with suggestions, and reveal missing information rather than inferring it.",
+         status="MET",
+         where="suggestions.html, flagged.html, latest-review.html",
+         evidence=("Every blank cell is explained with the page that would have to publish it, so the "
+                   "next step is a known action (call the room, run a quote, walk the route) rather "
+                   "than a guess."),
+         gap="",
+         source="flagged.html"),
+]
+
+REQ_STATUS_NOTE = {
+    "MET": "The page exists and this session checked the evidence behind it on 2026-11-19.",
+    "PARTIAL": "The page exists, but official evidence for part of the requirement is still missing.",
+    "BLOCKED": "No official source read publishes what this requirement needs. Right now that is "
+               "the 8 a.m. all-day start.",
+}
+
 FLAGS = [
     dict(id="P-01", area="Source citation",
          title="The Venetian parking row cited a poker page that does not print the parking fees",

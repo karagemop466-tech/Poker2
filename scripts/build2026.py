@@ -524,6 +524,7 @@ NAV = [
     ("venues.html", "Venues"),
     ("summary.html", "Executive summary"),
     ("latest-review.html", "Latest evidence"),
+    ("requirements.html", "Requirements"),
     ("questions.html", "Questions"),
     ("suggestions.html", "Suggestions"),
     ("flagged.html", "Flagged for review"),
@@ -2082,6 +2083,77 @@ See <a href="suggestions.html#S-01">S-01</a> and <a href="questions.html#Q-01">Q
                         "summary.html")
 
 
+REQ_TAG = {"MET": "t-ok", "PARTIAL": "t-warn", "BLOCKED": "t-bad"}
+
+
+def p_requirements():
+    """Requirement-by-requirement traceability.
+
+    Added 2026-11-19 (session arena/326322e9-poker2) because the standing brief is a list of
+    requirements, and there was no single page a reader could check them against. Each row names the
+    requirement in the brief's own words, the page that answers it, what was actually verified, and
+    what is still missing. A requirement is only ever MET when the implementation and its official
+    evidence were both checked; a build never upgrades a row on its own.
+    """
+    reqs = contentmod.REQUIREMENTS
+    counts = {k: sum(1 for r in reqs if r["status"] == k) for k in ("MET", "PARTIAL", "BLOCKED")}
+    rows = "".join(
+        "<tr id='{id}' data-status='{st}'><td class='num'>{id}</td><td>{area}</td>"
+        "<td><strong>{req}</strong></td>"
+        "<td><span class='tag {cls}'>{st}</span></td>"
+        "<td>{where}</td><td>{ev}</td><td>{gap}</td><td>{src}</td></tr>".format(
+            id=esc(r["id"]), st=esc(r["status"]), cls=REQ_TAG.get(r["status"], "t-info"),
+            area=esc(r["area"]), req=esc(r["requirement"]), where=esc(r["where"]),
+            ev=esc(r["evidence"]),
+            gap=(esc(r["gap"]) if r["gap"] else "<span class='note'>nothing outstanding</span>"),
+            # A requirement whose authority is this site or the repository itself links to the
+            # page that answers it (relative), not to an external citation host.
+            src=(srclink(r["source"], "official source") if r["source"].startswith("http")
+                 else "<a class='src' href='%s'>%s</a>" % (esc(r["source"]),
+                     "this page" if r["source"].startswith(("index", "summary")) else "this site")))
+        for r in reqs)
+    notes = "".join("<li><span class='tag %s'>%s</span> %s</li>"
+                    % (REQ_TAG[k], k, esc(v)) for k, v in sorted(contentmod.REQ_STATUS_NOTE.items()))
+    body = """
+<div class="hero"><h1>Every requirement, and where it stands</h1>
+<p class="lede">The brief behind this project is a list of specific requirements. This page takes each
+one in turn and shows the page that answers it, what was actually checked against an official document
+on %(read)s, and what is still missing. Nothing here is marked met on the strength of a page existing.</p></div>
+
+<div class="banner"><strong>%(met)d met, %(part)d partial, %(blk)d blocked, out of %(n)d requirements.</strong>
+A requirement is <em>partial</em> when the page works but the official evidence behind part of it has
+not been published, and <em>blocked</em> when no official source read publishes what it needs. The one
+blocked item is the 8 a.m. all-day start, because the earliest published start in the series is 9:10 AM.
+Nothing on this page is a booking recommendation; see <a href="latest-review.html">latest evidence</a>.</div>
+
+<div class="panel"><h2>How to read the status</h2><ul class="tight">%(notes)s</ul>
+<p class="note">Checked against the official pages on %(read)s. Full record, with the URL re-read for
+each claim: <a href="repo-review.html">repo review</a> and the
+<a href="flagged.html">Flagged for review</a> page for the irregularities found.</p></div>
+
+<div class="panel"><div class="tbl-scroll"><table><thead><tr>
+<th class="num">ID</th><th>Area</th><th>Requirement, in the brief's words</th><th>Status</th>
+<th>Where it is answered</th><th>What was verified</th><th>Still missing</th><th>Official source</th>
+</tr></thead><tbody>%(rows)s</tbody></table></div></div>
+
+<div class="panel"><h2>The requirements that are not met, in one place</h2>
+<ul class="tight">
+<li><strong>The 8 a.m. start (R-10).</strong> Earliest published start in the whole series is 9:10 AM on
+2026-12-12; main-schedule events start at 10:10 AM or later. See <a href="flagged.html#N-06">N-06</a>.</li>
+<li><strong>Confirmed single-entry events (R-02).</strong> Zero of 64 audited events has a written
+whole-event one-entry clause. See <a href="flagged.html#F-01">F-01</a>.</li>
+<li><strong>True cost per night (R-05, R-06, R-07).</strong> No dated room rate or itemised checkout
+total could be captured; the booking engines return a loading shell. Blanks are unverified, not zero.</li>
+<li><strong>Certified walk times (R-18).</strong> The matrix is a routing estimate; none of it times the
+indoor route to a poker room.</li>
+<li><strong>Playable sequences (R-09, R-17).</strong> No official sheet publishes a finish time, so no
+two-event sequence is certified as playable.</li>
+</ul></div>
+""" % dict(rows=rows, notes=notes, met=counts["MET"], part=counts["PARTIAL"], blk=counts["BLOCKED"],
+           n=len(reqs), read=decisions.READ)
+    return page("Requirements", body, "requirements.html")
+
+
 def p_questions():
     rows = "".join(
         "<tr id='%s'><td class='num'>%s</td><td><strong>%s</strong></td><td>%s</td>"
@@ -2375,7 +2447,9 @@ def p_sources(events):
     # "58 URLs are monitored" while the run summary on the same page said 61: the three
     # hotel fee pages below were watched but never listed, so a reader could not open them.
     for h in hotelsmod.HOTELS:
-        for field, url in (("resort fee", h.get("resort_fee_src")), ("parking", h.get("parking_src"))):
+        for field, url in (("resort fee", h.get("resort_fee_src")), ("parking", h.get("parking_src")),
+                           # the second, independent page a parking value is confirmed against (P-01)
+                           ("parking (confirmation)", h.get("parking_src_2"))):
             if url:
                 srcs.append(dict(kind="Hotel", name="%s %s source" % (h["name"], field),
                                  url=url, date=str(h.get("retrieved") or ""),
@@ -2963,6 +3037,7 @@ def main():
         "venues/westgate.html": p_venue_room("westgate", events),
         "summary.html": p_summary(events, days),
         "latest-review.html": p_latest_review(),
+        "requirements.html": p_requirements(),
         "questions.html": p_questions(),
         "suggestions.html": p_suggestions(),
         "flagged.html": p_flagged(events),

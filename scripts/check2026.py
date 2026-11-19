@@ -19,7 +19,7 @@ PAGES = [
     "walking.html", "trip.html", "venues.html", "venues/venetian.html", "venues/other.html",
     "venues/wynn.html", "venues/horseshoe.html", "venues/caesars-palace.html",
     "venues/bellagio.html", "venues/mgm-grand.html", "venues/resorts-world.html", "venues/westgate.html",
-    "summary.html", "questions.html", "suggestions.html", "flagged.html", "sources.html",
+    "summary.html", "requirements.html", "questions.html", "suggestions.html", "flagged.html", "sources.html",
     "repo-review.html", "latest-review.html",
 ]
 
