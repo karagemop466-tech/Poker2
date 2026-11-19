@@ -1,18 +1,1450 @@
 {
- "last_run": "2026-11-18T15:29:01Z",
- "monitored": 63,
- "changed_this_run": 4,
- "first_check": 9,
+ "last_run": "2026-11-19T22:35:47Z",
+ "source_state": {
+  "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf": {
+   "last_hash": "c10f7016a5a853d3",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://bellagio.mgmresorts.com/en/terms-and-conditions.html": {},
+  "https://www.caesars.com/caesars-palace/casino": {
+   "last_hash": "608ae1d914b3d85a",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.wynnlasvegas.com/about-us/resort-information": {
+   "last_hash": "f72a33f1d4b7e22f",
+   "hash_method": "normalised HTML text",
+   "last_success": "2026-11-18T15:29:01Z",
+   "review_required": true,
+   "changed_at": "2026-11-18T15:29:01Z"
+  },
+  "https://www.caesars.com/horseshoe-las-vegas/casino": {
+   "last_hash": "ccd9789f99f97e84",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html": {},
+  "https://www.venetianlasvegas.com/resort/resort-fee.html": {
+   "last_hash": "6257cdc5e2fe7443",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker.html": {
+   "last_hash": "d76156d07e2575a3",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z",
+   "review_required": true,
+   "changed_at": "2026-11-18T15:29:01Z"
+  },
+  "https://bellagio.mgmresorts.com/en/casino/poker.html": {},
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf": {
+   "last_hash": "70a3ceb4b3d2128d",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf": {
+   "last_hash": "e1fdbc3fef7fa038",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.caesars.com/corporate/disclaimer": {
+   "last_hash": "c6c5a2da7c3bfa9c",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip": {
+   "last_hash": "9cb98f87d2743da8",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://mgmgrand.mgmresorts.com/en/casino/poker.html": {},
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf": {},
+  "https://www.rwlasvegas.com/gaming/poker-room/": {
+   "last_hash": "9b245db234b9ffb2",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/": {
+   "last_hash": "9559a15a87b57b62",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.wynnlasvegas.com/casino/poker-room": {},
+  "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
+   "last_hash": "40522ad679c5d7a2",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
+   "last_hash": "38f1feb0eca2cf84",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
+   "last_hash": "8aae74cc4a6c2850",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf": {
+   "last_hash": "e9799cea0b250bd3",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html": {
+   "last_hash": "dba30d228e17c188",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z",
+   "review_required": true,
+   "changed_at": "2026-11-18T15:29:01Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf": {
+   "last_hash": "3ac99fb0c5e94ffa",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf": {
+   "last_hash": "8cee0c84b4a8971a",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf": {
+   "last_hash": "f9721bcaa36df2e8",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf": {
+   "last_hash": "8cd8c57d75648a9a",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf": {
+   "last_hash": "5687b59d82ceb0f8",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf": {
+   "last_hash": "21f943c336b29d78",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf": {
+   "last_hash": "a5ccc0fdaf609bda",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf": {
+   "last_hash": "01ce2d797601e06c",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf": {
+   "last_hash": "1e25900a50b3db8b",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf": {
+   "last_hash": "32fccc9ec29fa00c",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf": {
+   "last_hash": "bc4d5f6f320ada80",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf": {
+   "last_hash": "7d5e0a03a5e4b90c",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf": {
+   "last_hash": "7a1ffb8af0e30bcf",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf": {
+   "last_hash": "5deef7a181262027",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf": {
+   "last_hash": "8fb8ea386697f858",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf": {
+   "last_hash": "3d8841a1f08af069",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf": {
+   "last_hash": "8acf20fe50bfa3bb",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf": {
+   "last_hash": "fd96adb2397bebe7",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf": {
+   "last_hash": "45615e6091b56ba9",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf": {
+   "last_hash": "157f6b19a5673cf4",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf": {
+   "last_hash": "e82ec36e43339b7e",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf": {
+   "last_hash": "ceae493e3c1f69ca",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf": {
+   "last_hash": "b4be72a2fb76b04d",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf": {
+   "last_hash": "c74efdc12f12c8cc",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf": {
+   "last_hash": "e45e2c857e213900",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf": {
+   "last_hash": "5af709a896267db4",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf": {
+   "last_hash": "2845d1b470b0645c",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf": {
+   "last_hash": "25e72b4e0878f0d4",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf": {
+   "last_hash": "7ad7bf5effe2fba2",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf": {
+   "last_hash": "a769510ec44c9086",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z",
+   "review_required": true,
+   "changed_at": "2026-11-18T15:29:01Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf": {
+   "last_hash": "9223f61d108c40e2",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf": {
+   "last_hash": "3187c282dab371da",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf": {
+   "last_hash": "735f978d1acd82fe",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf": {
+   "last_hash": "a9e276f250632ef4",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf": {
+   "last_hash": "9773f4da5c3099ed",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf": {
+   "last_hash": "6d56c06996af1b37",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf": {
+   "last_hash": "7ddf2e7e85c00833",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
+   "last_hash": "d2028bbc11121983",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf": {
+   "last_hash": "5789e88e243d2655",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf": {
+   "last_hash": "4ed421291e69642b",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.wynnlasvegas.com/casino/poker": {
+   "last_hash": "f6ff1687b7f4ae6d",
+   "hash_method": "normalised HTML text",
+   "last_success": "2026-11-18T15:29:01Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html": {
+   "last_hash": "8c6504a4cb4eb14d",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf": {
+   "last_hash": "3a53656c446beb22",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dss-jan-2027.html": {
+   "last_hash": "6d839bbd841aebb6",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf": {
+   "last_hash": "f7dc8281b1b508b5",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf": {
+   "last_hash": "51a19da4b135d928",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
+   "last_hash": "9291f60e5263033d",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/book?adults%5B%5D=1&arrival_date=2026-12-01&children%5B%5D=0&departure_date=2026-12-04&view=calendar": {
+   "last_hash": "22d5cf44364d4983",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.caesars.com/horseshoe-las-vegas/hotel": {
+   "last_hash": "8ff2784f03b84899",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf": {
+   "last_hash": "95c63a1317edfc86",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html": {
+   "last_hash": "294d16bd7fc42ad6",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf": {
+   "last_hash": "45de5257a0bb3064",
+   "hash_method": "raw PDF bytes",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.venetianlasvegas.com/book?adults[]=2&arrival_date=2026-11-25&children[]=0&departure_date=2026-11-28&view=calendar": {
+   "last_hash": "22d5cf44364d4983",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://bellagio.mgmresorts.com/en.html": {},
+  "https://www.caesars.com/caesars-palace": {
+   "last_hash": "c6c5a2da7c3bfa9c",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.caesars.com/caesars-palace/hotel": {
+   "last_hash": "c6c5a2da7c3bfa9c",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://www.wynnlasvegas.com/": {},
+  "https://www.caesars.com/horseshoe-las-vegas": {
+   "last_hash": "c6c5a2da7c3bfa9c",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://mgmgrand.mgmresorts.com/en.html": {},
+  "https://www.venetianlasvegas.com/book": {
+   "last_hash": "22d5cf44364d4983",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  },
+  "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658": {
+   "last_hash": "1951a0034d6d5aa1",
+   "hash_method": "normalised HTML text and PDF links",
+   "last_success": "2026-11-19T22:35:47Z"
+  }
+ },
+ "pending_review": 4,
+ "monitored": 84,
+ "changed_this_run": 0,
+ "first_check": 29,
  "never_checked": 0,
- "errors": 5,
- "readable": 58,
+ "errors": 11,
+ "readable": 73,
  "by_error_kind": {
-  "timeout": 4,
+  "timeout": 6,
+  "unreadable document": 3,
+  "not found": 1,
   "unreachable": 1
  },
- "coverage": "58 of 63 URLs could be read by this run",
- "note": "HTML is hashed from normalised visible text; PDFs are hashed as raw response bytes. A CHANGED row means the official document moved, so every value transcribed from it must be re-read before it is relied on. A fetch error is a monitoring failure, not a verdict: the value it covers keeps its own last human-verified date. This job reports; it never rewrites a value.",
+ "coverage": "73 of 84 URLs could be read by this run",
+ "note": "HTML is hashed from normalised visible text and PDF links; PDFs are hashed as raw response bytes. A CHANGED row means the official document moved, so every value transcribed from it must be re-read before it is relied on. A fetch error is a monitoring failure, not a verdict: the value it covers keeps its own last human-verified date. This job reports; it never rewrites a value.",
  "runs": [
+  {
+   "checked": "2026-11-19T22:35:47Z",
+   "results": [
+    {
+     "key": "CCTAX",
+     "label": "Clark County transient lodging tax guide",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+     "status": 200,
+     "hash": "c10f7016a5a853d3",
+     "hash_method": "raw PDF bytes",
+     "bytes": 441123,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Bellagio_page",
+     "label": "Bellagio official page",
+     "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "FEED_Caesars Palace_page",
+     "label": "Caesars Palace official page",
+     "url": "https://www.caesars.com/caesars-palace/casino",
+     "status": 200,
+     "hash": "608ae1d914b3d85a",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 99256,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Caesars Palace_schedule",
+     "label": "Caesars Palace official schedule",
+     "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+     "status": 200,
+     "hash": "4ed421291e69642b",
+     "hash_method": "raw PDF bytes",
+     "bytes": 244164,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Horseshoe_page",
+     "label": "Horseshoe official page",
+     "url": "https://www.caesars.com/horseshoe-las-vegas/casino",
+     "status": 200,
+     "hash": "ccd9789f99f97e84",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 92473,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Horseshoe_schedule",
+     "label": "Horseshoe official schedule",
+     "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "status": 200,
+     "hash": "9cb98f87d2743da8",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 590452,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_MGM Grand_page",
+     "label": "MGM Grand official page",
+     "url": "https://mgmgrand.mgmresorts.com/en/casino/poker.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "FEED_Resorts World_page",
+     "label": "Resorts World official page",
+     "url": "https://www.rwlasvegas.com/gaming/poker-room/",
+     "status": 200,
+     "hash": "9b245db234b9ffb2",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 116135,
+     "resolved_to": "https://www.rwlasvegas.com/gaming/poker-room/poker-room-dining/",
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Venetian \u00b7 Ante Up Championship_page",
+     "label": "Venetian \u00b7 Ante Up Championship official page",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+     "status": 200,
+     "hash": "8c6504a4cb4eb14d",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 248168,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Venetian \u00b7 Ante Up Championship_schedule",
+     "label": "Venetian \u00b7 Ante Up Championship official schedule",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf",
+     "status": 200,
+     "hash": "3a53656c446beb22",
+     "hash_method": "raw PDF bytes",
+     "bytes": 387531,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Venetian \u00b7 DeepStack IV_page",
+     "label": "Venetian \u00b7 DeepStack IV official page",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+     "status": 200,
+     "hash": "dba30d228e17c188",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 248111,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": true,
+     "review_since": "2026-11-18T15:29:01Z"
+    },
+    {
+     "key": "FEED_Venetian \u00b7 DeepStack IV_schedule",
+     "label": "Venetian \u00b7 DeepStack IV official schedule",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+     "status": 200,
+     "hash": "38f1feb0eca2cf84",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 269919,
+     "schedule_diff": {
+      "state": "rows match",
+      "count": 94,
+      "added": [],
+      "removed": []
+     },
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Venetian \u00b7 January Showdown_schedule",
+     "label": "Venetian \u00b7 January Showdown official schedule",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dss-jan-2027.html",
+     "status": 200,
+     "hash": "6d839bbd841aebb6",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 266011,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Westgate_page",
+     "label": "Westgate official page",
+     "url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/",
+     "status": 200,
+     "hash": "9559a15a87b57b62",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 204383,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Wynn \u00b7 Daily tournaments_page",
+     "label": "Wynn \u00b7 Daily tournaments official page",
+     "url": "https://www.wynnlasvegas.com/casino/poker",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "unreadable document: empty, challenge or soft-404 response",
+     "error_kind": "unreadable document",
+     "reason": "the response is not the expected document; no baseline is updated",
+     "last_success": "2026-11-18T15:29:01Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Wynn \u00b7 Daily tournaments_schedule",
+     "label": "Wynn \u00b7 Daily tournaments official schedule",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+     "status": 200,
+     "hash": "f7dc8281b1b508b5",
+     "hash_method": "raw PDF bytes",
+     "bytes": 2861483,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Wynn \u00b7 Signature Series_schedule",
+     "label": "Wynn \u00b7 Signature Series official schedule",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
+     "status": 200,
+     "hash": "51a19da4b135d928",
+     "hash_method": "raw PDF bytes",
+     "bytes": 1180224,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FEED_Wynn \u00b7 WPT World Championship_schedule",
+     "label": "Wynn \u00b7 WPT World Championship official schedule",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+     "status": 200,
+     "hash": "9291f60e5263033d",
+     "hash_method": "raw PDF bytes",
+     "bytes": 23785821,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-01",
+     "label": "No Venetian structure sheet states a single-entry or freezeout rule",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+     "status": 200,
+     "hash": "a5ccc0fdaf609bda",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381642,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-02",
+     "label": "Two events price a second buy-in on the official sheet",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+     "status": 200,
+     "hash": "01ce2d797601e06c",
+     "hash_method": "raw PDF bytes",
+     "bytes": 375065,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-03",
+     "label": "Bounty guarantees include bounty money, so they are not like-for-like",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+     "status": 200,
+     "hash": "3ac99fb0c5e94ffa",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381816,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-04",
+     "label": "No official finish time is published for any event",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+     "status": 200,
+     "hash": "e9799cea0b250bd3",
+     "hash_method": "raw PDF bytes",
+     "bytes": 1421031,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-05",
+     "label": "No like-for-like checkout totals were confirmed",
+     "url": "https://www.venetianlasvegas.com/book?adults%5B%5D=1&arrival_date=2026-12-01&children%5B%5D=0&departure_date=2026-12-04&view=calendar",
+     "status": 200,
+     "hash": "22d5cf44364d4983",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 142779,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-06",
+     "label": "Cancellation deadlines are partial: two properties publish 72 hours, the rest do not",
+     "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-11",
+     "label": "A per-night rate is not the bill: occupancy and early-departure charges",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+     "status": 200,
+     "hash": "d2028bbc11121983",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 233110,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_F-12",
+     "label": "Caesars Palace and Horseshoe do not publish a resort fee on the page read",
+     "url": "https://www.caesars.com/horseshoe-las-vegas/hotel",
+     "status": 200,
+     "hash": "8ff2784f03b84899",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 105553,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_N-01",
+     "label": "No re-entry does not mean no extra spending",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "status": 200,
+     "hash": "95c63a1317edfc86",
+     "hash_method": "raw PDF bytes",
+     "bytes": 313776,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_N-03",
+     "label": "Exact-stay hotel comparison is not possible yet",
+     "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+     "status": 200,
+     "hash": "6257cdc5e2fe7443",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 227571,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_P-01",
+     "label": "The Venetian parking row cited a poker page that does not print the parking fees",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+     "status": 200,
+     "hash": "294d16bd7fc42ad6",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 226120,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_X-04",
+     "label": "Bellagio's Saturday sheet prints two different buy-ins",
+     "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+     "status": 200,
+     "hash": "e1fdbc3fef7fa038",
+     "hash_method": "raw PDF bytes",
+     "bytes": 1677400,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FLAG_X-07",
+     "label": "The Wynn URL this site used to cite returns a not-found page",
+     "url": "https://www.wynnlasvegas.com/casino/poker-room",
+     "status": 404,
+     "hash": null,
+     "change": "fetch error",
+     "error": "HTTP 404",
+     "error_kind": "not found",
+     "reason": "the official URL no longer serves a document - the citation itself needs correcting",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "FOLLOWUP_01",
+     "label": "WPT rulebook",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+     "status": 200,
+     "hash": "40522ad679c5d7a2",
+     "hash_method": "raw PDF bytes",
+     "bytes": 2637121,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FOLLOWUP_03",
+     "label": "Wynn January structures placeholder",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+     "status": 200,
+     "hash": "45de5257a0bb3064",
+     "hash_method": "raw PDF bytes",
+     "bytes": 169399,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "FOLLOWUP_04",
+     "label": "Exact-date Venetian / Palazzo booking lookup",
+     "url": "https://www.venetianlasvegas.com/book?adults[]=2&arrival_date=2026-11-25&children[]=0&departure_date=2026-11-28&view=calendar",
+     "status": 200,
+     "hash": "22d5cf44364d4983",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 142779,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "HFEE_ENCORE",
+     "label": "Encore at Wynn Las Vegas resort fee source",
+     "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "unreadable document: empty, challenge or soft-404 response",
+     "error_kind": "unreadable document",
+     "reason": "the response is not the expected document; no baseline is updated",
+     "last_success": "2026-11-18T15:29:01Z",
+     "review_required": true,
+     "review_since": "2026-11-18T15:29:01Z"
+    },
+    {
+     "key": "HFEE_MGMGRAND",
+     "label": "MGM Grand resort fee source",
+     "url": "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_bellagio_book",
+     "label": "Bellagio \u00b7 book",
+     "url": "https://bellagio.mgmresorts.com/en.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_caesars-palace_book",
+     "label": "Caesars Palace \u00b7 book",
+     "url": "https://www.caesars.com/caesars-palace",
+     "status": 200,
+     "hash": "c6c5a2da7c3bfa9c",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 5871,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_caesars-palace_cancel_src",
+     "label": "Caesars Palace \u00b7 cancel_src",
+     "url": "https://www.caesars.com/caesars-palace/hotel",
+     "status": 200,
+     "hash": "c6c5a2da7c3bfa9c",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 5871,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_encore_book",
+     "label": "Encore at Wynn Las Vegas \u00b7 book",
+     "url": "https://www.wynnlasvegas.com/",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "unreadable document: empty, challenge or soft-404 response",
+     "error_kind": "unreadable document",
+     "reason": "the response is not the expected document; no baseline is updated",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_horseshoe_book",
+     "label": "Horseshoe Las Vegas \u00b7 book",
+     "url": "https://www.caesars.com/horseshoe-las-vegas",
+     "status": 200,
+     "hash": "c6c5a2da7c3bfa9c",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 5871,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_mgm-grand_book",
+     "label": "MGM Grand \u00b7 book",
+     "url": "https://mgmgrand.mgmresorts.com/en.html",
+     "status": null,
+     "hash": null,
+     "change": "fetch error",
+     "error": "The read operation timed out",
+     "error_kind": "timeout",
+     "reason": "the request timed out; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_palazzo_book",
+     "label": "The Palazzo \u00b7 book",
+     "url": "https://www.venetianlasvegas.com/book",
+     "status": 200,
+     "hash": "22d5cf44364d4983",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 142779,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "HOTEL_palazzo_poker_rate_src",
+     "label": "The Palazzo \u00b7 poker_rate_src",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+     "status": 200,
+     "hash": "8aae74cc4a6c2850",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 232212,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "QUOTE_1",
+     "label": "Wynn Las Vegas dated booking lookup",
+     "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658",
+     "status": 200,
+     "hash": "1951a0034d6d5aa1",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 95861,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "RATE_LOG_13",
+     "label": "Rate-log source",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+     "status": 200,
+     "hash": "d76156d07e2575a3",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 255857,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": true,
+     "review_since": "2026-11-18T15:29:01Z"
+    },
+    {
+     "key": "ROOM_BFRI",
+     "label": "Bellagio Friday $600 NLH structure sheet",
+     "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+     "status": 200,
+     "hash": "5789e88e243d2655",
+     "hash_method": "raw PDF bytes",
+     "bytes": 1676621,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "ROOM_BSUN",
+     "label": "Bellagio Sunday $400 H.O.R.S.E. structure sheet",
+     "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+     "status": 200,
+     "hash": "70a3ceb4b3d2128d",
+     "hash_method": "raw PDF bytes",
+     "bytes": 1675883,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VEN_CAESARSPALAC_1",
+     "label": "Caesars Palace official document",
+     "url": "https://www.caesars.com/corporate/disclaimer",
+     "status": 200,
+     "hash": "c6c5a2da7c3bfa9c",
+     "hash_method": "normalised HTML text and PDF links",
+     "bytes": 5871,
+     "change": "first check",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VEN_MGMGRAND_1",
+     "label": "MGM Grand official document",
+     "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf",
+     "status": 422,
+     "hash": null,
+     "change": "fetch error",
+     "error": "HTTP 422",
+     "error_kind": "unreachable",
+     "reason": "the request failed; nothing about the document is proven",
+     "last_success": null,
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT02",
+     "label": "Venetian DSE IV structure sheet 2",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+     "status": 200,
+     "hash": "8cee0c84b4a8971a",
+     "hash_method": "raw PDF bytes",
+     "bytes": 385984,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT03",
+     "label": "Venetian DSE IV structure sheet 3",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+     "status": 200,
+     "hash": "f9721bcaa36df2e8",
+     "hash_method": "raw PDF bytes",
+     "bytes": 385967,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT04",
+     "label": "Venetian DSE IV structure sheet 4",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+     "status": 200,
+     "hash": "8cd8c57d75648a9a",
+     "hash_method": "raw PDF bytes",
+     "bytes": 386299,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT05",
+     "label": "Venetian DSE IV structure sheet 5",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+     "status": 200,
+     "hash": "5687b59d82ceb0f8",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381560,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT06",
+     "label": "Venetian DSE IV structure sheet 6",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+     "status": 200,
+     "hash": "21f943c336b29d78",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381424,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT09",
+     "label": "Venetian DSE IV structure sheet 9",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "status": 200,
+     "hash": "1e25900a50b3db8b",
+     "hash_method": "raw PDF bytes",
+     "bytes": 389806,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT10",
+     "label": "Venetian DSE IV structure sheet 10",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+     "status": 200,
+     "hash": "32fccc9ec29fa00c",
+     "hash_method": "raw PDF bytes",
+     "bytes": 390783,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT11",
+     "label": "Venetian DSE IV structure sheet 11",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+     "status": 200,
+     "hash": "bc4d5f6f320ada80",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381850,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT12",
+     "label": "Venetian DSE IV structure sheet 12",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "status": 200,
+     "hash": "7d5e0a03a5e4b90c",
+     "hash_method": "raw PDF bytes",
+     "bytes": 390826,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT13",
+     "label": "Venetian DSE IV structure sheet 13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+     "status": 200,
+     "hash": "7a1ffb8af0e30bcf",
+     "hash_method": "raw PDF bytes",
+     "bytes": 389850,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT14",
+     "label": "Venetian DSE IV structure sheet 14",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+     "status": 200,
+     "hash": "5deef7a181262027",
+     "hash_method": "raw PDF bytes",
+     "bytes": 389783,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT15",
+     "label": "Venetian DSE IV structure sheet 15",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+     "status": 200,
+     "hash": "8fb8ea386697f858",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381826,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT16",
+     "label": "Venetian DSE IV structure sheet 16",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+     "status": 200,
+     "hash": "3d8841a1f08af069",
+     "hash_method": "raw PDF bytes",
+     "bytes": 381831,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT17",
+     "label": "Venetian DSE IV structure sheet 17",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+     "status": 200,
+     "hash": "8acf20fe50bfa3bb",
+     "hash_method": "raw PDF bytes",
+     "bytes": 382458,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT18",
+     "label": "Venetian DSE IV structure sheet 18",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+     "status": 200,
+     "hash": "fd96adb2397bebe7",
+     "hash_method": "raw PDF bytes",
+     "bytes": 380525,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT19",
+     "label": "Venetian DSE IV structure sheet 19",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+     "status": 200,
+     "hash": "45615e6091b56ba9",
+     "hash_method": "raw PDF bytes",
+     "bytes": 384214,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT20",
+     "label": "Venetian DSE IV structure sheet 20",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+     "status": 200,
+     "hash": "157f6b19a5673cf4",
+     "hash_method": "raw PDF bytes",
+     "bytes": 387390,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT21",
+     "label": "Venetian DSE IV structure sheet 21",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "status": 200,
+     "hash": "e82ec36e43339b7e",
+     "hash_method": "raw PDF bytes",
+     "bytes": 390889,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT22",
+     "label": "Venetian DSE IV structure sheet 22",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+     "status": 200,
+     "hash": "ceae493e3c1f69ca",
+     "hash_method": "raw PDF bytes",
+     "bytes": 373598,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT23",
+     "label": "Venetian DSE IV structure sheet 23",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+     "status": 200,
+     "hash": "b4be72a2fb76b04d",
+     "hash_method": "raw PDF bytes",
+     "bytes": 373071,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT24",
+     "label": "Venetian DSE IV structure sheet 24",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+     "status": 200,
+     "hash": "c74efdc12f12c8cc",
+     "hash_method": "raw PDF bytes",
+     "bytes": 384791,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT25",
+     "label": "Venetian DSE IV structure sheet 25",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+     "status": 200,
+     "hash": "e45e2c857e213900",
+     "hash_method": "raw PDF bytes",
+     "bytes": 386830,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT26",
+     "label": "Venetian DSE IV structure sheet 26",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+     "status": 200,
+     "hash": "5af709a896267db4",
+     "hash_method": "raw PDF bytes",
+     "bytes": 383325,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT27",
+     "label": "Venetian DSE IV structure sheet 27",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+     "status": 200,
+     "hash": "2845d1b470b0645c",
+     "hash_method": "raw PDF bytes",
+     "bytes": 383527,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT28",
+     "label": "Venetian DSE IV structure sheet 28",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+     "status": 200,
+     "hash": "25e72b4e0878f0d4",
+     "hash_method": "raw PDF bytes",
+     "bytes": 380876,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT29",
+     "label": "Venetian DSE IV structure sheet 29",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+     "status": 200,
+     "hash": "7ad7bf5effe2fba2",
+     "hash_method": "raw PDF bytes",
+     "bytes": 380636,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT30",
+     "label": "Venetian DSE IV structure sheet 30",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+     "status": 200,
+     "hash": "a769510ec44c9086",
+     "hash_method": "raw PDF bytes",
+     "bytes": 334831,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": true,
+     "review_since": "2026-11-18T15:29:01Z"
+    },
+    {
+     "key": "VSTRUCT31",
+     "label": "Venetian DSE IV structure sheet 31",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+     "status": 200,
+     "hash": "9223f61d108c40e2",
+     "hash_method": "raw PDF bytes",
+     "bytes": 384061,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT32",
+     "label": "Venetian DSE IV structure sheet 32",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+     "status": 200,
+     "hash": "3187c282dab371da",
+     "hash_method": "raw PDF bytes",
+     "bytes": 387438,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT33",
+     "label": "Venetian DSE IV structure sheet 33",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+     "status": 200,
+     "hash": "735f978d1acd82fe",
+     "hash_method": "raw PDF bytes",
+     "bytes": 382733,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT34",
+     "label": "Venetian DSE IV structure sheet 34",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+     "status": 200,
+     "hash": "a9e276f250632ef4",
+     "hash_method": "raw PDF bytes",
+     "bytes": 384420,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT35",
+     "label": "Venetian DSE IV structure sheet 35",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "status": 200,
+     "hash": "9773f4da5c3099ed",
+     "hash_method": "raw PDF bytes",
+     "bytes": 391273,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT36",
+     "label": "Venetian DSE IV structure sheet 36",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+     "status": 200,
+     "hash": "6d56c06996af1b37",
+     "hash_method": "raw PDF bytes",
+     "bytes": 390364,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    },
+    {
+     "key": "VSTRUCT37",
+     "label": "Venetian DSE IV structure sheet 37",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+     "status": 200,
+     "hash": "7ddf2e7e85c00833",
+     "hash_method": "raw PDF bytes",
+     "bytes": 389850,
+     "change": "unchanged",
+     "last_success": "2026-11-19T22:35:47Z",
+     "review_required": false
+    }
+   ]
+  },
   {
    "checked": "2026-11-18T15:29:01Z",
    "results": [

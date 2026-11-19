@@ -6109,7 +6109,7 @@
   "t": "ID Area Issue Why it matters",
   "a": "F-14",
   "h": "F-14",
-  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
+  "x": "F-14 | Monitoring | Ten of the 61 monitored official URLs could not be read on the last scheduled run The scheduled re-check ran on 2026-11-19T22:35:47Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or "
  },
  {
   "p": "flagged.html",
@@ -6189,7 +6189,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Venetian \u00b7 DeepStack IV",
-  "x": "Venetian \u00b7 DeepStack IV | Nov 16\u2013Dec 23, 2026 \u00b7 audited structure sheets | Official page | Published schedule / rules | 2026-11-18T15:29:01Z | source changed"
+  "x": "Venetian \u00b7 DeepStack IV | Nov 16\u2013Dec 23, 2026 \u00b7 audited structure sheets | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | source changed"
  },
  {
   "p": "sources.html",
@@ -6197,7 +6197,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Venetian \u00b7 NYE",
-  "x": "Venetian \u00b7 NYE | Dec 24, 2026\u2013Jan 10, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules |  | source changed"
+  "x": "Venetian \u00b7 NYE | Dec 24, 2026\u2013Jan 10, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | source changed"
  },
  {
   "p": "sources.html",
@@ -6205,7 +6205,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Venetian \u00b7 January Showdown",
-  "x": "Venetian \u00b7 January Showdown | Jan 11\u2013Feb 14, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules |  | source changed"
+  "x": "Venetian \u00b7 January Showdown | Jan 11\u2013Feb 14, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | source changed"
  },
  {
   "p": "sources.html",
@@ -6213,7 +6213,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Wynn \u00b7 WPT World Championship",
-  "x": "Wynn \u00b7 WPT World Championship | Nov 27\u2013Dec 21, 2026 \u00b7 see date discrepancy and entry-rule coverage | Official page | Published schedule / rules |  | partial monitor coverage"
+  "x": "Wynn \u00b7 WPT World Championship | Nov 27\u2013Dec 21, 2026 \u00b7 see date discrepancy and entry-rule coverage | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | monitor could not read it: unreadable document"
  },
  {
   "p": "sources.html",
@@ -6221,7 +6221,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Wynn \u00b7 Daily tournaments",
-  "x": "Wynn \u00b7 Daily tournaments | Daily during non-event timeframes; not guaranteed on any trip date | Official page | Published schedule / rules |  | partial monitor coverage"
+  "x": "Wynn \u00b7 Daily tournaments | Daily during non-event timeframes; not guaranteed on any trip date | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | monitor could not read it: unreadable document"
  },
  {
   "p": "sources.html",
@@ -6229,7 +6229,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Venetian \u00b7 Ante Up Championship",
-  "x": "Venetian \u00b7 Ante Up Championship | NYE entry price discrepancy; not ranked | Official page | Published schedule / rules |  | document not in the monitor"
+  "x": "Venetian \u00b7 Ante Up Championship | NYE entry price discrepancy; not ranked | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | baseline set"
  },
  {
   "p": "sources.html",
@@ -6237,7 +6237,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Wynn \u00b7 Signature Series",
-  "x": "Wynn \u00b7 Signature Series | Jan 11\u201324, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules |  | partial monitor coverage"
+  "x": "Wynn \u00b7 Signature Series | Jan 11\u201324, 2027 \u00b7 rules not yet audited | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | monitor could not read it: unreadable document"
  },
  {
   "p": "sources.html",
@@ -6245,7 +6245,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Caesars Palace",
-  "x": "Caesars Palace | Daily flyer; paid add-on and re-entry | Official page | Published schedule / rules | 2026-11-18T15:29:01Z | baseline set"
+  "x": "Caesars Palace | Daily flyer; paid add-on and re-entry | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | unchanged"
  },
  {
   "p": "sources.html",
@@ -6261,7 +6261,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Horseshoe",
-  "x": "Horseshoe | Official editorial start times only; no dated schedule | Official page | Published schedule / rules | 2026-11-18T15:29:01Z | baseline set"
+  "x": "Horseshoe | Official editorial start times only; no dated schedule | Official page | Published schedule / rules | 2026-11-19T22:35:47Z | baseline set"
  },
  {
   "p": "sources.html",
@@ -6277,7 +6277,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Resorts World",
-  "x": "Resorts World | No current schedule confirmed | Official page |  | 2026-11-18T15:29:01Z | unchanged"
+  "x": "Resorts World | No current schedule confirmed | Official page |  | 2026-11-19T22:35:47Z | baseline set"
  },
  {
   "p": "sources.html",
@@ -6285,7 +6285,7 @@
   "t": "Venue / slate Evidence scope Operator Schedule",
   "a": "",
   "h": "Westgate",
-  "x": "Westgate | No current schedule confirmed | Official page |  | 2026-11-18T15:29:01Z | unchanged"
+  "x": "Westgate | No current schedule confirmed | Official page |  | 2026-11-19T22:35:47Z | baseline set"
  },
  {
   "p": "sources.html",
@@ -6308,8 +6308,56 @@
   "pl": "Sources",
   "t": "Document HTTP Failure kind What that means",
   "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | no response | unreadable document | the response is not the expected document; no baseline is updated"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
   "h": "bellagio.mgmresorts.com",
   "x": "bellagio.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | 404 | not found | the official URL no longer serves a document - the citation itself needs correcting"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | no response | unreadable document | the response is not the expected document; no baseline is updated"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "mgmgrand.mgmresorts.com",
+  "x": "mgmgrand.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "bellagio.mgmresorts.com",
+  "x": "bellagio.mgmresorts.com | no response | timeout | the request timed out; nothing about the document is proven"
+ },
+ {
+  "p": "sources.html",
+  "pl": "Sources",
+  "t": "Document HTTP Failure kind What that means",
+  "a": "",
+  "h": "www.wynnlasvegas.com",
+  "x": "www.wynnlasvegas.com | no response | unreadable document | the response is not the expected document; no baseline is updated"
  },
  {
   "p": "sources.html",
