@@ -24,6 +24,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Fail fast on unresolved merge-conflict markers in any published file. This
+      # defect class shipped live once (PR #100 committed a stray `<<<<<<< HEAD` into
+      # index.html and was merged while its verify check was red), so it gets its own gate.
+      - name: No unresolved merge-conflict markers in published files
+        run: python3 scripts/check_conflict_markers.py
+
       # ---------------- root surface (owned by the earlier sessions) ----------------
       - name: Audit every row against the official document it cites
         run: python3 scripts/audit.py

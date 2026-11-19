@@ -17644,5 +17644,15 @@
   "mgm_gn": "MGM Grand daily times and Golden Nugget daily rules re-read; match stored rows.",
   "caesars_bellagio": "Pages re-read; schedule PDFs not re-read, so those rows keep earlier dates.",
   "conclusion": "Zero values changed; confirmed single-entry count remains 0."
+ },
+ "verification_2e732aa2": {
+  "retrieved": "2026-11-19",
+  "session": "arena/2e732aa2-poker2",
+  "transcript": "research/2e732aa2-official-verification-2026-11-19.md",
+  "venetian_schedule_reread": "DSE IV schedule page fetched in full (4/4 chunks) and all 94 printed rows transcribed; zero missing/extra/mismatched values vs the published rows; Day-2 Restart / Final Table rows remain excluded by design.",
+  "venetian_fee_reread": "Resort-fee page still prints '$55 plus tax per night, payable upon check-in' with the same inclusions.",
+  "venetian_rates_reread": "Poker suite-rate page still prints 'start as low as $119 and $209', Luxury King Suite single/double occupancy, $55 resort fee per night stayed, six hours cash or $300+ tournament buy-in per night stayed before 2 a.m.; still does not attribute either amount to a specific tower.",
+  "wynn_page_reread": "Poker page confirms WPT World Championship November 27-December 21, Super Gold Million $400 buy-in / $3,000,000 guarantee (new for 2026), Signature Series January 11-24 2027, and that daily tournaments are suspended during series. Wynn row-level source PDFs were NOT re-read, so no Wynn row date advanced.",
+  "monitor_note": "Scheduled source-monitor run (15:00 UTC) had not fired at sweep time; gh workflow dispatch is not permitted to the integration token and the sandbox has no casino-domain egress, so the 14 're-check pending' baselines are left for the scheduled run exactly as monitor.py requires."
  }
 }
