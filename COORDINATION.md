@@ -2241,3 +2241,66 @@ git diff --check                          OK
    moved mid-run, re-apply onto current `main` once and retry; a conflict fails safe with the
    report downloadable in Actions). Which trigger fires next (06:30 or 14:30 UTC) depends on the
    workflow file as merged in PR #83/#86.
+
+---
+
+---
+
+---
+
+---
+
+# Session arena/d0bd6790-poker2 — claim (2026-11-19)
+
+Branch `arena/d0bd6790-poker2`, branched from `main` @ `76b25aa` ("Source monitor: re-check
+official URLs 2026-11-18"). Role: fix the failing scheduled daily-refresh job, line-by-line
+review of the current tree, live spot verification, then PR → `main`, merge, Pages deploy
+confirmation, and record here.
+
+Context found at claim time:
+
+- `gh pr list --state open` shows exactly one open PR: **#80** `arena/62f3de7b-poker2`
+  "Do not present promotional rates as trip costs" (another active session; its files are
+  out of scope here).
+- Scheduled workflow run **44340744461** ("Plan: daily official-source refresh",
+  2026-11-18) failed at step **"Commit snapshots, or open a review PR when a source moved"**
+  (exit 1) *after* the check and render steps passed.
+- The run did push branch **`refresh/2026-11-18T155801Z`** (commit `f645103`), which proves
+  the failure happened at (or after) `gh pr create` — not at push time. The branch was cut
+  from `14e4033` (pre-`76b25aa`), so it is now stale and would revert newer snapshot pages if
+  merged; it must not be merged as-is. It contains only snapshots + `change-report.json` +
+  `schedule-diff.json` + re-rendered `plan/**`: **nothing was edited into the datasets**.
+- The run's report shows **needs_attention = 7, every one of them `error-new`** (6 × timeout
+  on mgmresorts.com/aria/bellagio/cosmopolitan/park-mgm/mgm terms pages and parking page,
+  1 × HTTP 403 on goldennugget.com). No tracked value changed; there was never anything to
+  review — the job could simply not read those URLs from the Actions runner.
+- `gh api repos/karagemop466-tech/Poker2/actions/permissions/workflow` → 403 "Resource not
+  accessible by integration" from this session's token, so the repo's Actions PR-creation
+  setting cannot be inspected or changed from here. The fix must not depend on it.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| R1 Run the full local verification suite on a clean tree (build/check scripts, link audit, sheet-readings diff, freshness gate) and record the results | in progress | arena/d0bd6790-poker2 | none (read-only) |
+| R2 Fix `plan-refresh.yml`'s final step so an unreadable source (`error`/`error-new`) is reported, never a hard failure; `changed`/`drifted`/`pattern-missing`/generator-mismatch still take the review path; `gh pr create` becomes best-effort with a compare-URL fallback written to the step summary | in progress | arena/d0bd6790-poker2 | `scripts/commit-refresh.sh`, `.github/workflows/plan-refresh.yml` (comment only) |
+| R3 Live spot verification of key official sources via the agent fetch tool (Venetian schedule, one structure sheet, resort fee, suite rates, Wynn poker, Caesars flyer, and the 7 URLs that failed in run 44340744461) | in progress | arena/d0bd6790-poker2 | none (read-only) |
+| R4 PR → `main`, merge (no waiting for approval), Pages deploy confirmed, record here | in progress | arena/d0bd6790-poker2 | `COORDINATION.md` |
+
+Not claimed / untouched: PR #80 and `arena/62f3de7b-poker2`; `scripts/build_site.py` and root
+`*.html` (still PR #69 lineage, now merged — only re-rendered by generators, never hand-edited);
+`S-11` surface consolidation and `S-12` monitor-job merge (user decisions); anything marked
+`needs review` stays non-blocking.
+
+> **Superseded before work began (added after rebase):** while this session was running,
+> PRs #80 (`arena/62f3de7b-poker2`), #81 and #82 (`arena/0c4869c8-poker2`) merged into main.
+> #81 re-implemented the daily refresh around published **run artifacts** + direct report
+> publication (no `gh pr create`, no review branches), which supersedes this session's R2 as
+> written. R2 is therefore adopted-as-merged instead of re-implemented: this session will not
+> revert to the review-branch design. R1/R3/R4 stand; the README now describes #81's design.
+
+> **And then #83 (`arena/4db7d9c7-poker2`, merged after the second rebase):** it diagnosed
+> the standing run as a detached-HEAD publish bug, pinned `ref: main` and rewrote the
+> publish guard to read `GITHUB_REF_NAME`. That is the same latent defect found by R2's
+> local fixture testing here (a detached checkout makes `git rev-parse --abbrev-ref HEAD`
+> print `HEAD`), fixed independently there; nothing from this session's R2 remains in the tree.
+> R1 (verification), R3 (live spot checks) and R4 (PR/merge/record) are unchanged.
+ (arena/d0bd6790-poker2: claim R1-R4 (plan-refresh fix + verification))
