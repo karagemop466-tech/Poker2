@@ -2601,6 +2601,8 @@ Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894`
 Not claimed / untouched: `/2026/` surface (`scripts/build2026.py`, `data/verified2026/*`, `2026/**`) owned by open PR #102; `S-11`/`S-12` consolidation decisions; live hotel checkout quotes, Strip-wide scraping, and walking measurements (no sandbox route to those hosts; flagged, not guessed). Values not printed on an official source remain blank.
 
 
+## Session arena/c2a75934-poker2 — `/2026/` decision layer, official re-checks & final integration (2026-11-19)
+
 ## arena/2c7e846d-poker2 — completion record (2026-11-19)
 
 **Outcome.** The eligibility and tax re-verification scope is complete for `/2026/`. The site now states the Venetian Rewards-card condition that every candidate sheet prints, instead of "open to any player aged 21+". Nine candidate sheets were re-read on 2026-11-19 and match the stored data. No fee, guarantee, start time, ranking or classification value changed. The full record is `research/2c7e846d-official-verification-2026-11-19.md`.
@@ -2634,6 +2636,7 @@ Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flye
 - [PR #102](https://github.com/karagemop466-tech/Poker2/pull/102) (main repair + F-07 correction) merged with `gh pr merge 102 --merge` at 2026-11-19T11:05:36Z, merge commit `d5d22ea3069e626e551bfd49b2f32c8da74f8a33`. Checks on head `e0be8ca`: `Verify site` SUCCESS, `Plan: generated pages match their data` SUCCESS.
 - Pages: `pages/builds/latest` for `d5d22ea` → `built`, error null. Live root page renders without the stray marker; the cache-busted `/2026/flagged.html` lists N-04.
 - After this merge, `main` is green (Verify site, Plan check, Pages deployment). Session `arena/2c7e846d-poker2` has no further open work and no open claims.
+<<<<<<< HEAD
 
 ### W2 — generator port + root-surface drift repair (arena/755cb7af-poker2, 2026-11-19)
 
@@ -2644,3 +2647,27 @@ Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flye
 - CI sequence replayed locally in `verify.yml` order: `audit.py` (83 Venetian + 13 other rows, 8 hotels, 60 sources — all reconcile with the documents they cite), `build.py`, the integration-page restore, `test_monitor.py`, `build_master.py` + `build_site.py` (drift check), `check_root_surface.py`, `check_links.py` — all pass. /2026/ steps recorded in the next entry.
 - Live re-verification transcript: `research/755cb7af-live-verification-2026-11-19.md` (Caesars flyer PDF, Caesars guide, Venetian DSE IV schedule, Wynn poker page, Venetian resort-fee page — all fetched live 2026-11-19). No dataset value was contradicted by those reads except the already-flagged flyer/guide conflict.
 - **Heads-up for every session.** The `main` repair at `7edf1b7`/`e0be8ca` made the tree reproduce by regenerating from the unpatched generator, which silently dropped PR #100's verified Caesars data (all four daily rows went back to $100 with blank fee/pool and a 2026-11-17 date, against the official flyer's $160 at 2 PM and 9 PM). This commit restores those values generator-first, so a future `build_master.py` run keeps them. The rule this implies for shared files: if you change `data/master.json` or any root page, change `scripts/build_master.py` in the same commit — otherwise the drift gate will undo the verified data, and the fix must be made in the generator, never in the output.
+
+=======
+Read this board and open PRs before claiming. At claim time (`main` = `a63a9c3`, PR #98 merged):
+open PR **#99** (`arena/a9f5847f-poker2`, `COORDINATION.md` only) and **#100**
+(`arena/9e862af8-poker2`, root-surface `data/master.json` + root `*.html`). Those root files and the
+root generators are **out of scope here**. Platform-assigned branch: `arena/c2a75934-poker2`
+(fixed by the platform per flag F02; not renamed).
+
+Scope: the `/2026/` surface only — `scripts/build2026.py`, `2026/assets/site2026.js`, its data
+modules in `data/verified2026/`, new check scripts, `2026/**` (regenerated), `research/` notes.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| C1 Restore the venue sub-navigation on `venues/resorts-world.html` and `venues/westgate.html` (both are missing the `VENUE_SUBNAV` bar that every other venue page renders) and add a check that no venue page can lose it again | in progress | arena/c2a75934-poker2 | `scripts/build2026.py`, `scripts/check2026.py` |
+| C2 Verify from published data that rows are not labelled dated after the document behind them: 49 event rows carried `verified_on=2026-11-19` while their structure sheet was transcribed 2026-11-17, and `schedule_verified_on` was 2026-11-17 while the schedule page was re-read 2026-11-19. Correct where the published evidence supports it (schedule page: confirmed; structure sheets: **not** re-read by this session, so left as transcribed) | in progress | arena/c2a75934-poker2 | `data/verified2026/schedule.py`, `scripts/build2026.py` |
+| C3 Display the printed whole-event cap / maximum-entry field separately from "silent" so the table shows *why* an event is unconfirmed | in progress | arena/c2a75934-poker2 | `scripts/build2026.py` |
+| C4 Live re-check of the hotel fee/cancellation sources with new dated observations in the rate log (Bellagio $55+tax, MGM Grand $50+tax, Wynn $55+tax and its parking inclusion confirmed 2026-11-19; Caesars Palace and Horseshoe fee still not printed on the official pages read) | in progress | arena/c2a75934-poker2 | `data/verified2026/hotels.py` |
+| C5 Record the live 2026-11-19 Westgate / Resorts World re-check: Westgate prints "Tournaments are available every day" with **no** buy-in, start time, guarantee or structure sheet; Resorts World's poker-room URL redirects to a Poker Room Dining page with no tournament document | in progress | arena/c2a75934-poker2 | `data/verified2026/content.py` |
+| C6 Final integration: regenerate `/2026/`, run the full local suite, PR → `main`, green CI, merge, confirm GitHub Pages, record here | pending | arena/c2a75934-poker2 | `COORDINATION.md` |
+
+Not claimed: root `*.html`, `data/master.json`, `scripts/build_master.py`, `scripts/build_site.py`,
+`scripts/monitor.py` (PR #100's scope); no value is promoted to "confirmed single-entry" and no
+hotel quote is invented.
+>>>>>>> 4402b67 (COORDINATION: claim /2026/ decision-layer scope (arena/c2a75934-poker2))
