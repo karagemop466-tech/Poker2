@@ -5323,6 +5323,22 @@
   "p": "suggestions.html",
   "pl": "Suggestions",
   "t": "ID Suggestion What it involves What it decides",
+  "a": "S-13",
+  "h": "S-13",
+  "x": "S-13 | Give the six tabular root pages the same site-wide search box | Under the site root, rate-log.html, schedule.html, single-entry.html, sources.html, walking.html and wpt-terms.html each render at least one table with no search input, while every other root page has one. Its generator, scripts/build_site.py, is a different session's file scope, so this session logged the gap instead of editin"
+ },
+ {
+  "p": "suggestions.html",
+  "pl": "Suggestions",
+  "t": "ID Suggestion What it involves What it decides",
+  "a": "S-14",
+  "h": "S-14",
+  "x": "S-14 | Make the search box reachable without a table on the page | The /2026/ search index is site-wide, so a no-match-free search from any page works, but a reader who has never opened the tournament table does not know that. An empty result that names the page where the match was found, and a two-line note on the dashboard, would remove that ambiguity. | Whether the search feature is discoverabl"
+ },
+ {
+  "p": "suggestions.html",
+  "pl": "Suggestions",
+  "t": "ID Suggestion What it involves What it decides",
   "a": "S-12",
   "h": "S-12",
   "x": "S-12 | Turn the page-hash monitor into a per-sentence diff | The monitor hashes a whole page, so a change tells you the document moved, not which value moved. Tracking the sentence each row was transcribed from would tell you the buy-in changed. This is the remaining half of S-07. | Whether a changed source needs one row re-read or all of them. | About a day; the per-row excerpts already exist | M"

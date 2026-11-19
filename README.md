@@ -2,6 +2,7 @@
 
 **Current dashboard:** https://karagemop466-tech.github.io/Poker2/2026/
 **Latest evidence / decision readiness:** https://karagemop466-tech.github.io/Poker2/2026/latest-review.html
+**Every requirement and where it stands:** https://karagemop466-tech.github.io/Poker2/2026/requirements.html
 
 A static, source-linked research dashboard for tournaments and nearby hotels. It is not a booking
 service. The root and older `/plan/`, `/verified/`, and `/pages/` surfaces remain available for audit;
@@ -35,6 +36,29 @@ or verified tournament finish time has been established.
 The new Wynn Friday flag N-02 records conflicting rebuy accounting inside the official sheet. The
 initial $240 split reconciles; the stated $190 rebuy pool contribution conflicts with deductions of
 $10 + $5 from a $200 rebuy. The site does not resolve that conflict by guessing.
+
+## Requirements traceability (added 2026-11-19)
+
+`/2026/requirements.html` carries all 26 discrete requirements from the standing brief as rows: the
+requirement in the brief's own words, the page that answers it, what was actually checked against an
+official document on 2026-11-19, what is still missing, and a source link. Current count: **16 met,
+9 partial, 1 blocked**. The blocked one is the 8 a.m. all-day start (R-10) — the earliest published
+start anywhere in the Venetian series is 9:10 AM on 2026-12-12, and every main-schedule event starts at
+10:10 AM or later. The table lives in `data/verified2026/content.py`, so the page cannot drift from the
+claim, and the build refuses to render a row without a status.
+
+Irregularities found while producing it are on the Flagged page and in
+`research/326322e9-official-verification-2026-11-19.md`:
+
+- **P-01 (fixed):** the Venetian and Palazzo parking rows cited the poker room page, which was re-read
+  in full and prints no parking price. They now cite the hotel terms (Parking Fees) and the poker-room
+  self-parking page, both re-read 2026-11-19, and a semantic gate fails the build if a rendered parking
+  value cites a page known not to print one.
+- **N-05:** the Bellagio poker page still advertises tournament play resuming on "Saturday, July 26".
+- **N-06:** the official schedules read stop at 2026-12-23, so no post-Christmas event is verified.
+- **Merge-conflict marker:** the committed root `index.html` shipped a literal `<<<<<<< HEAD` line to the
+  live Pages landing page. Fixed by regenerating from `scripts/build_site.py`, and
+  `scripts/check_root_surface.py` now fails on any conflict marker in any published page.
 
 ## Dashboard features
 

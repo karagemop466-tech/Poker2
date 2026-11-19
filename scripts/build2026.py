@@ -2207,7 +2207,10 @@ def p_suggestions():
         % (esc(s["id"]), esc(s["id"]), esc(s["title"]),
            esc(s.get("what") or s.get("why") or ""),
            esc(s["decides"]), esc(s["cost"]), esc(s["effort"]),
+           # A suggestion can unblock a question (Q-), a flag (F-/N-/X-) or, since 2026-11-19, a
+           # requirement (R-), so the link target follows the ID prefix instead of assuming flags.
            (('<a href="%s#%s">%s</a>' % ("questions.html" if s["blocks"].startswith("Q")
+                                         else "requirements.html" if s["blocks"].startswith("R")
                                          else "flagged.html", s["blocks"], s["blocks"]))
             if s["blocks"] else "&mdash;"))
         for s in contentmod.SUGGESTIONS)

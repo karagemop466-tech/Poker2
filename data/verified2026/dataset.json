@@ -12687,6 +12687,24 @@
    "blocks": "F-13"
   },
   {
+   "id": "S-13",
+   "title": "Give the six tabular root pages the same site-wide search box",
+   "what": "Under the site root, rate-log.html, schedule.html, single-entry.html, sources.html, walking.html and wpt-terms.html each render at least one table with no search input, while every other root page has one. Its generator, scripts/build_site.py, is a different session's file scope, so this session logged the gap instead of editing it. The fix is to emit the shared header search box from that generator's page() template and add the same data-search attribute the existing tables use.",
+   "decides": "Whether the 'search across all tables' requirement (R-14) is met on the root surface, not just on /2026/.",
+   "cost": "Small: one template change plus a per-page assertion",
+   "effort": "Low",
+   "blocks": "R-14"
+  },
+  {
+   "id": "S-14",
+   "title": "Make the search box reachable without a table on the page",
+   "what": "The /2026/ search index is site-wide, so a no-match-free search from any page works, but a reader who has never opened the tournament table does not know that. An empty result that names the page where the match was found, and a two-line note on the dashboard, would remove that ambiguity.",
+   "decides": "Whether the search feature is discoverable, which is separate from whether it works.",
+   "cost": "Small",
+   "effort": "Low",
+   "blocks": "R-14"
+  },
+  {
    "id": "S-12",
    "title": "Turn the page-hash monitor into a per-sentence diff",
    "what": "The monitor hashes a whole page, so a change tells you the document moved, not which value moved. Tracking the sentence each row was transcribed from would tell you the buy-in changed. This is the remaining half of S-07.",
