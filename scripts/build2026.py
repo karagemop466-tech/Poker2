@@ -312,6 +312,36 @@ def rule_evidence(sheet):
     return evidence
 
 
+def flight_letter(row):
+    """The flight letter in an official row title such as \"... 1A\", else None."""
+    fm = re.search(r"\b1([A-Z])\b", row[8])
+    return fm.group(1) if fm else None
+
+
+def per_flight(entry_rows, value_of):
+    """One value for the event when every flight agrees; otherwise each distinct value with the
+    flights that print it. A multi-flight event can have different late-registration closes and
+    level lengths per flight (e.g. Event 1: flights A and C close at ~3:40 PM on 40-minute levels,
+    flights B and D at ~8:40 PM on 30-minute levels). Each value comes from the structure sheet the
+    official schedule links for that row, never from a single representative sheet."""
+    groups = {}
+    for r in entry_rows:
+        v = value_of(r)
+        if v in (None, ""):
+            continue
+        groups.setdefault(v, []).append(flight_letter(r))
+    if not groups:
+        return None
+    if len(groups) == 1:
+        return next(iter(groups))
+    parts = []
+    for v, letters in groups.items():
+        named = sorted({x for x in letters if x})
+        tag = ("flight%s %s" % ("s" if len(named) > 1 else "", ", ".join(named))) if named else "some entries"
+        parts.append("%s: %s" % (tag, v))
+    return "; ".join(parts)
+
+
 def build_events():
     by_event = {}
     for r in sched.ROWS:
@@ -360,9 +390,9 @@ def build_events():
             sheet_urls=sorted({SHEETS[r[9]]["url"] for r in rows}),
             schedule_url=sched.SCHEDULE_URL,
             first_date=entry_rows[0][0] if entry_rows else rows[0][0],
-            reg_close=entry_rows[0][4] if entry_rows and entry_rows[0][4] else "",
+            reg_close=(per_flight(entry_rows, lambda r: r[4]) or ""),
             chips=entry_rows[0][6] if entry_rows else None,
-            level=entry_rows[0][7] if entry_rows else "",
+            level=(per_flight(entry_rows, lambda r: r[7]) or ""),
             buy_in=buy_in,
             fee=sheet.get("fee") if sheet else None,
             pool_per_entry=sheet.get("pool_per_entry") if sheet else None,
@@ -380,7 +410,8 @@ def build_events():
             rebuy=(sheet.get("rebuy") if sheet else "not read"),
             flight_rule=(sheet.get("flight_rule") if sheet else None),
             eligibility=(sheet.get("eligibility") if sheet else None),
-            late_reg=(sheet.get("late_reg") if sheet else None),
+            late_reg=(per_flight(entry_rows, lambda r: (SHEETS.get(r[9]) or {}).get("late_reg"))
+                      or (sheet.get("late_reg") if sheet else None)),
             payout_pct=(sheet.get("payout_pct") if sheet else None),
             verified_on=sheet_retrieved(sheet) if sheet else None,
             last_checked=sheet_retrieved(sheet) if sheet else None,
@@ -1082,7 +1113,7 @@ def p_rules(events):
         return ("<div class='panel'><h2>%s <span class='tag t-%s'>%d</span></h2><p class='note'>%s</p>"
                 "<div class='tbl-scroll'><table><thead><tr><th class='num'>#</th><th>Event</th>"
                 "<th class='num'>Entry</th><th>Whole-event single entry</th><th>Re-entry clause</th><th>Add-on clause</th>"
-                "<th>Rebuy clause</th><th>Official fee wording</th><th>Sheet</th><th>Verified on</th></tr></thead>"
+                "<th>Rebuy clause</th><th>Official fee wording</th><th>Sheet</th><th>Last checked</th></tr></thead>"
                 "<tbody>%s</tbody></table></div></div>"
                 % (esc(title), group, len(items), esc(blurb), "".join(rows)))
 
@@ -1180,9 +1211,10 @@ def p_schedule(days, events):
                          "<span class='small'>A Day 2 / Day 3 restart costs nothing extra but occupies the "
                          "day. If you bagged chips, this is where you must be.</span></p></div>" % rs)
         entries = "".join(
-            "<tr><td>#%d %s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
+            "<tr><td>#%d %s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
             % (x["event_no"], esc(entry_title(x)), esc(x["start"]), esc(x["reg_close"]),
-               esc(GROUP_LABEL[x["group"]]), srclink(x["schedule_sheet_url"], "official structure"))
+               esc(GROUP_LABEL[x["group"]]), srclink(x["schedule_sheet_url"], "official structure"),
+               esc(decisions.READ))
             for x in d["entries"])
         pair_rows = "".join(
             "<li>#%d %s → #%d %s: <strong>%s</strong>. %s</li>"
@@ -1193,7 +1225,7 @@ def p_schedule(days, events):
             "<div class='panel' data-date='%s' data-overlap='%d'><h2>%s</h2>%s"
             "<div class='grid2'>%s</div><details><summary>Published starts and overlap review (research only)</summary>"
             "<div class='tbl-scroll'><table><thead><tr><th>Event</th><th>Start</th><th>Late registration</th>"
-            "<th>Format</th><th>Source</th></tr></thead><tbody>%s</tbody></table></div><ul>%s</ul></details></div>"
+            "<th>Format</th><th>Source</th><th>Last checked</th></tr></thead><tbody>%s</tbody></table></div><ul>%s</ul></details></div>"
             % (d["date"], d["overlap"], esc(head), srclink(sched.SCHEDULE_PDF, "official schedule"),
                "".join(lines), entries, pair_rows))
 
@@ -1740,15 +1772,16 @@ def other_room_schedule(key):
         sched_data = othermod.CAESARS_SCHEDULE
         head = ("<tr><th>Start</th><th class='num'>Buy-in</th><th class='num'>House fee</th>"
                 "<th class='num'>To prize pool</th><th>Add-on</th><th class='num'>Chips</th>"
-                "<th class='num'>Levels</th><th class='num'>Guarantee</th></tr>")
+                "<th class='num'>Levels</th><th class='num'>Guarantee</th><th>Last checked</th></tr>")
         rows = "".join(
             "<tr><td>%s</td><td class='num'>$%s</td><td class='num'>$%s</td>"
             "<td class='num'>$%s</td><td>$%d add-on &middot; %s chips at the first break</td>"
-            "<td class='num'>%s</td><td class='num'>%d min</td><td class='num'>%s</td></tr>"
+            "<td class='num'>%s</td><td class='num'>%d min</td><td class='num'>%s</td><td>%s</td></tr>"
             % (esc(r["start"]), format(r["buy_in"], ","), format(r["house_fee"], ","),
                format(r["to_pool"], ","), r["add_on"], format(r["add_on_chips"], ","),
                format(r["chips"], ","), r["level_min"],
-               "$" + format(r["guarantee"], ",") if r["guarantee"] else "&mdash;")
+               "$" + format(r["guarantee"], ",") if r["guarantee"] else "&mdash;",
+               esc(sched_data["retrieved"]))
             for r in sched_data["rows"])
         doc_link = srclink(sched_data["source"], "official daily tournament flyer (PDF)")
     elif key == "bellagio":
@@ -1756,7 +1789,7 @@ def other_room_schedule(key):
         head = ("<tr><th>Day</th><th>Start</th><th>Event</th><th class='num'>Buy-in</th>"
                 "<th class='num'>House fee</th><th>Gratuity buys chips</th>"
                 "<th class='num'>Starting chips</th><th class='num'>Levels</th>"
-                "<th class='num'>Guarantee</th><th>Structure sheet</th></tr>")
+                "<th class='num'>Guarantee</th><th>Structure sheet</th><th>Last checked</th></tr>")
         rows = ""
         for r in sched_data["events"]:
             buy = ("$" + format(r["buy_in"], ",")) if r["buy_in"] else (
@@ -1765,14 +1798,14 @@ def other_room_schedule(key):
                 "<tr><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td>"
                 "<td class='num'>$%s</td><td>$%d &rarr; +%s chips</td>"
                 "<td class='num'>%s without &middot; %s with</td><td class='num'>%d min</td>"
-                "<td class='num'>%s</td><td>%s</td></tr>"
+                "<td class='num'>%s</td><td>%s</td><td>%s</td></tr>"
                 % (esc(r["day"]), esc(r["start"]), esc(r["name"]), buy,
                    format(r["house_fee"], ","), r["gratuity"],
                    format(r["gratuity_chips"], ","),
                    format(r["chips_without_gratuity"], ","),
                    format(r["chips_with_gratuity"], ","), r["level_min"],
                    ("$" + format(r["guarantee"], ",")) if r["guarantee"] else "&mdash;",
-                   srclink(r["source"], "PDF")))
+                   srclink(r["source"], "PDF"), esc(sched_data["retrieved"])))
         doc_link = srclink(sched_data["room_page"], "official Bellagio poker page")
     else:
         return ""

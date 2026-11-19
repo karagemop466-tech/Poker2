@@ -71,9 +71,9 @@
    ],
    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "first_date": "2026-11-16",
-   "reg_close": "3:40 PM",
+   "reg_close": "flights A, C: 3:40 PM; flights B, D: 8:40 PM",
    "chips": 30000,
-   "level": "40",
+   "level": "flights A, C: 40; flights B, D: 30",
    "buy_in": 300,
    "fee": 60,
    "pool_per_entry": 240,
@@ -89,41 +89,41 @@
    "rebuy": "silent",
    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight.",
    "eligibility": null,
-   "late_reg": "6 levels + Break (~8:40 PM)",
+   "late_reg": "flights A, C: 6 levels + Break (~3:40 PM); flights B, D: 6 levels + Break (~8:40 PM)",
    "payout_pct": "each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": "Any player who bags chips for Day 2 may not play a subsequent flight.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 60,
      "excerpt": "$60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 9,
@@ -2492,9 +2492,9 @@
    ],
    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "first_date": "2026-12-03",
-   "reg_close": "3:40 PM",
+   "reg_close": "flights A, C, E: 3:40 PM; flights B, D: 8:40 PM; flight F: 7:25 PM",
    "chips": 40000,
-   "level": "40",
+   "level": "flights A, C, E: 40; flights B, D: 30; flight F: 20",
    "buy_in": 800,
    "fee": 110,
    "pool_per_entry": 690,
@@ -2510,7 +2510,7 @@
    "rebuy": "silent",
    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight.",
    "eligibility": null,
-   "late_reg": "6 levels + Break (~3:40 PM)",
+   "late_reg": "flights A, C, E: 6 levels + Break (~3:40 PM); flights B, D: 6 levels + Break (~8:40 PM); flight F: 6 levels + Break (~7:25 PM)",
    "payout_pct": "each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money",
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
@@ -4495,9 +4495,9 @@
    ],
    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "first_date": "2026-12-12",
-   "reg_close": "4:55 PM",
+   "reg_close": "flight A: 4:55 PM; flight B: 11:10 PM",
    "chips": 40000,
-   "level": "40",
+   "level": "flight A: 40; flight B: 30",
    "buy_in": 2200,
    "fee": 225,
    "pool_per_entry": 1975,
@@ -4513,7 +4513,7 @@
    "rebuy": "silent",
    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight.",
    "eligibility": null,
-   "late_reg": "9 levels + Break (~4:55 PM)",
+   "late_reg": "flight A: 9 levels + Break (~4:55 PM); flight B: 9 levels + Break (~11:10 PM)",
    "payout_pct": "Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table",
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
@@ -5387,9 +5387,9 @@
    ],
    "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "first_date": "2026-12-17",
-   "reg_close": "4:55 PM",
+   "reg_close": "flights A, C, E: 4:55 PM; flights B, D: 11:10 PM",
    "chips": 40000,
-   "level": "40",
+   "level": "flights A, C, E: 40; flights B, D: 30",
    "buy_in": 1100,
    "fee": 140,
    "pool_per_entry": 960,
@@ -5405,7 +5405,7 @@
    "rebuy": "silent",
    "flight_rule": "Any player who bags chips for Day 2 may not play a subsequent flight.",
    "eligibility": null,
-   "late_reg": "9 levels + Break (~4:55 PM)",
+   "late_reg": "flights A, C, E: 9 levels + Break (~4:55 PM); flights B, D: 9 levels + Break (~11:10 PM)",
    "payout_pct": "each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money",
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
@@ -12220,6 +12220,14 @@
    "detail": "The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or cancellation citations.<ul><li><code>https://bellagio.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://bellagio.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf</code> &mdash; 422 (HTTP 422)</li></ul>",
    "impact": "A hotel fee or cancellation term sourced from one of these pages rests on the reading date shown on that hotel's row, not on the latest check. Re-open the link before you rely on the term.",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+  },
+  {
+   "id": "M-01",
+   "area": "Multi-flight late registration and level length",
+   "title": "Event-level fields showed one flight only",
+   "detail": "Events 1, 26, 47 and 56 print different late-registration closes and level lengths by flight. Event 1 flights A and C close about 3:40 PM on 40-minute levels (structure sheet 10); flights B and D close about 8:40 PM on 30-minute levels (sheet 9). The event row had shown only the B/D close (~8:40 PM). Re-read 2026-11-19 from each flight's official sheet; the event row now lists values per flight. Event 26 flight F (sheet 14) closes about 7:25 PM on 20-minute levels. Event 47 flight B (sheet 37) closes about 11:10 PM. Event 56 flights B and D (sheet 36) close about 11:10 PM.",
+   "impact": "Check the close time and level length on the sheet of the flight you would enter. A registration window is not a finish time.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
   },
   {
    "id": "N-01",

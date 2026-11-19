@@ -23,6 +23,40 @@
 No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
 
 **Publication:** [PR #95](https://github.com/karagemop466-tech/Poker2/pull/95) merged to `main` at 2026-11-19T10:53:48Z as `559621f09fbe74d0a7fed66a114df71b05092965`. Both `verify` checks passed (runs [44509788636](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788636) and [44509788664](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788664)). The post-merge [Pages deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44509871647) and [Verify site workflow](https://github.com/karagemop466-tech/Poker2/actions/runs/44509872252) both succeeded. The public dashboard and Flagged page were fetched and rendered after publication. This is a documentation-only audit record, not a declaration that the flagged decisions are resolved.
+## Session arena/06afd936-poker2 — claim (2026-11-19 UTC)
+
+Branch `arena/06afd936-poker2` (platform-fixed; the `session-<id>/<task>` naming in the protocol is superseded by the session branch rule). Branched from `main` @ `7ab0759` (PR #94). `gh pr list --state open` returned no open PRs at claim time, and every prior claim on this board is marked done. Baseline: the full `/2026/` verification suite was run on the unmodified tree and passed (build `--check`, `check2026`, schedule live reconciliation 94/94, 37-sheet readings, guarantees, monitor, decisions, search, trip, labels, links, root surface, monitor tests, audit).
+
+Scope claimed (non-overlapping; no other session holds a claim):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live official-source re-read via the agent page-fetch tool, dated 2026-11-19: Venetian DSE IV schedule (HTML), a 1-day candidate structure sheet, a flight-based sheet, Venetian resort fee, Venetian poker suite-rate page, Wynn poker page; compare each against the stored dataset and log matches and differences. Read-only: no value is edited by this task | done | arena/06afd936-poker2 | `research/06afd936-live-verification-2026-11-19.md` (new), `data/verified2026/decision.py` (sheet re-read set only) |
+| V2 Close row-level "last checked" gaps on `/2026/` tables that carry dated data but no per-row check date (generator change in `scripts/build2026.py` only; values are taken from the existing dataset, never inferred) | done | arena/06afd936-poker2 | `scripts/build2026.py`, `data/verified2026/review_20261119.py` (flag M-01 only), regenerated `2026/**` |
+| V3 Integration: pull/rebase `main`, run the full suite, open PR → `main`, merge with no approval wait, confirm Pages build, record here | in progress | arena/06afd936-poker2 | `COORDINATION.md` (PR and merge record below) |
+
+Not claimed: the root surface (`scripts/build_site.py`, root `*.html`), `data/master.json`, `data/sheets/**`, `data/verified2026/**` values (no new source readings are written into the dataset in this session), the `/plan/` tree, workflows, and the S-11/S-12 consolidation decisions (user decisions, not implemented).
+
+### Completion record — arena/06afd936-poker2 (2026-11-19)
+
+**V1 — live official re-read (read-only, dated 2026-11-19).** Sources and what each showed are in [`research/06afd936-live-verification-2026-11-19.md`](research/06afd936-live-verification-2026-11-19.md). Summary:
+
+- [Venetian DeepStack IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), all four chunks: all 94 rows (83 entries and 11 restarts) matched the dataset on date, start, event number, title, buy-in, guarantee and sheet link. No row-level value differed.
+- Structure sheets read in full: [7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf), [9](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf), [10](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf), [14](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf). None states a single-entry, no-re-entry or no-add-on rule. Fees, guarantees, chips, levels and close times match the dataset.
+- [Resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) ($55 plus tax), [suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) ($119 / $209 starting, qualifying-play condition) and [hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) (Clark County room tax 13.38%, parking, $100 early check-out) all match the stored values.
+- Not re-read this session: other structure sheets, Wynn, Caesars, Bellagio, the other rooms, and the booking engine. Their earlier dates are unchanged.
+
+**V2 — row-level "last checked" and the multi-flight irregularity.**
+
+- **Irregularity M-01 (found, corrected, published on `/2026/flagged.html`).** Events 1, 26, 47 and 56 showed one flight's late-registration close and level length for every flight. Event 1 flights A and C close about 3:40 PM on 40-minute levels (sheet 10); flights B and D close about 8:40 PM on 30-minute levels (sheet 9). The event row said "~8:40 PM" for all. The generator now takes each flight's values from the sheet its own official schedule row links, and lists the values per flight when they differ. Only those four events changed.
+- Day-plan schedule rows, Caesars Palace and Bellagio schedule tables now carry a per-row **Last checked** column. Entry-rules "Verified on" is renamed "Last checked". Sheets 9, 10 and 14 join the shared re-read set (dated 2026-11-19).
+
+**Overlap with `arena/2c7e846d-poker2` (resolved at integration, nothing discarded).** That session merged PR #98 (`f05b857`) while this one was running. It re-read sheets 5, 6, 7, 17, 18, 22, 23, 28 and 29, added the Venetian Rewards-card condition and flag N-04, and regenerated the same `/2026/` files. The rebase conflicted in `COORDINATION.md` (both sections kept), `data/verified2026/decision.py` (the two re-read sets were merged into one set), and generated `2026/**` and search-index files (regenerated from the merged sources). `build2026.py` and every check were re-run on the merged tree, with all results passing. Their claim and PR remain as merged.
+
+**Checks run on the merged tree.** `build2026.py` (and `--check`), `check2026.py` (24 pages, 1,631 links), `check_labels.py`, `check_sheet_readings.py` (37 sheets, 481 fields), `check_guarantees.py`, `recheck_schedule_live.py` (94/94), `check_semantics.py`, `check_search.mjs`, `check_trip.mjs`, `check_decisions.mjs`, `check_monitor_badge.py`, `check_refresh2026.py`, `test_recheck2026.py`, `check_links.py`, plus the root checks `audit.py`, `test_monitor.py`, `check_root_surface.py` and the `build_master`/`build_site` drift check. All passed with no drift. `build.py` was also run; its root outputs are restored by the verify workflow, so none were committed.
+
+**Still open (published on the Flagged page; do not block):** 0 whole-event single-entry confirmations; the Venetian booking engine exposed no checkout quote; finish times are unpublished; walking times are estimates, not measured indoor routes.
+
 
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 

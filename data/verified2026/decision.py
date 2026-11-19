@@ -1,6 +1,6 @@
 """New official reads and explicitly hypothetical comparison inputs (2026-11-19)."""
 READ = '2026-11-19'
-VENETIAN_SHEETS_REREAD = {5, 6, 7, 17, 18, 22, 23, 28, 29}
+VENETIAN_SHEETS_REREAD = {5, 6, 7, 9, 10, 14, 17, 18, 22, 23, 28, 29}  # 9/10/14 read in full 2026-11-19 (arena/06afd936-poker2); 5/6/7 and 17/18/22/23/28/29 per arena/2c7e846d-poker2
 
 WYNN = 'https://www.wynnlasvegas.com/casino/poker'
 WYNN_WPT = 'https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf'

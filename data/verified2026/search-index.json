@@ -124,8 +124,8 @@
   "pl": "Tournaments",
   "t": "t  # Group Event Dates",
   "a": "ev1",
-  "h": "$300 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels ",
-  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-16 2026-11-17 2026-11-17 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 10 sheet 9 DSE IV schedule | 2026-11-17 | unchanged"
+  "h": "$300 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: flights A",
+  "x": "1 | Multi-flight | $300 NO LIMIT HOLD'EM flights A,B,C,D each flight plays to ~12.5% remaining; Day 2 combines 1A-1D, all in the money; late reg: flights A, C: 6 levels + Break (~3:40 PM); flights B, D: 6 levels + Break (~8:40 PM) | 2026-11-16 2026-11-16 2026-11-17 2026-11-17 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $300 | $60 | $240 | $75,000 | 250.0\u00d7 | sheet 10 sheet 9 DSE IV schedule | 2026-11-19 "
  },
  {
   "p": "tournaments.html",
@@ -324,8 +324,8 @@
   "pl": "Tournaments",
   "t": "t  # Group Event Dates",
   "a": "ev26",
-  "h": "$800 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels ",
-  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: 6 levels + Break (~3:40 PM) | 2026-12-03 2026-12-03 2026-12-04 2026-12-04 2026-12-05 2026-12-05 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM 11:10 AM 5:10 PM | $800 | $110 | $690 | $500,000 | 625.0\u00d7 | sheet 12 sheet 13 sheet 14 DSE IV schedule | 2026-11-17 |"
+  "h": "$800 NO LIMIT HOLD'EM each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: flights A",
+  "x": "26 | Multi-flight | $800 NO LIMIT HOLD'EM flights A,B,C,D,E,F each flight plays to ~12.5% remaining; Day 2 combines 1A-1F, all in the money; late reg: flights A, C, E: 6 levels + Break (~3:40 PM); flights B, D: 6 levels + Break (~8:40 PM); flight F: 6 levels + Break (~7:25 PM) | 2026-12-03 2026-12-03 2026-12-04 2026-12-04 2026-12-05 2026-12-05 | 11:10 AM 5:10 PM 11:10 AM 5:10 PM 11:10 AM 5:10 PM |"
  },
  {
   "p": "tournaments.html",
@@ -493,7 +493,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev47",
   "h": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed f",
-  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: 9 levels + Break (~4:55 PM) | 2026-12-12 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 sheet 37 DSE IV schedule | 2026-11-17 | unchanged"
+  "x": "47 | Multi-flight | $2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT flights A,B Day 2 plays down to 7 players; Day 3 is a PokerGO-streamed final table; late reg: flight A: 9 levels + Break (~4:55 PM); flight B: 9 levels + Break (~11:10 PM) | 2026-12-12 2026-12-12 | 10:10 AM 6:10 PM | $2,200 | $225 | $1,975 | $1,000,000 | 454.5\u00d7 | sheet 21 sheet 37 DSE IV schedule | 2026-11-17 | unchang"
  },
  {
   "p": "tournaments.html",
@@ -565,7 +565,7 @@
   "t": "t  # Group Event Dates",
   "a": "ev56",
   "h": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM each flight plays to ~12.5% remaining; Day 2 combi",
-  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: 9 levels + Break (~4:55 PM) | 2026-12-17 2026-12-17 2026-12-18 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM 10:10 AM 6:10 PM 10:10 AM | $1,100 | $140 | $960 | $500,000 | 454.5\u00d7 | sheet 35 sheet 36 DSE IV sch"
+  "x": "56 | Multi-flight | $1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM flights A,B,C,D,E each flight plays to ~12.5% remaining; Day 2 combines 1A-1E, all in the money; late reg: flights A, C, E: 9 levels + Break (~4:55 PM); flights B, D: 9 levels + Break (~11:10 PM) | 2026-12-17 2026-12-17 2026-12-18 2026-12-18 2026-12-19 | 10:10 AM 6:10 PM 10:10 AM 6:10 PM 10:10 AM | $1,100 | $"
  },
  {
   "p": "tournaments.html",
@@ -997,7 +997,7 @@
   "t": "# Event Entry Whole-event single entry",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM",
-  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | Unverified | silent on re-entry between flights | silent | silent | $60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In. | sheet 9 | 2026-11-17"
+  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | Unverified | silent on re-entry between flights | silent | silent | $60 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $240 of every $300 Buy In. | sheet 9 | 2026-11-19"
  },
  {
   "p": "entry-rules.html",
@@ -1149,7 +1149,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1A",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1157,7 +1157,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1B",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1165,7 +1165,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1C",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1173,7 +1173,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#1 $300 NO LIMIT HOLD'EM 1D",
-  "x": "#1 $300 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#1 $300 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1181,7 +1181,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#2 $300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#2 $300 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#2 $300 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1189,7 +1189,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#3 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
-  "x": "#3 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure"
+  "x": "#3 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1197,7 +1197,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#4 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
-  "x": "#4 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure"
+  "x": "#4 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1205,7 +1205,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#5 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
-  "x": "#5 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure"
+  "x": "#5 $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE | 10:10 AM | 12:25 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1213,7 +1213,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#6 $200 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#6 $200 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 3:40 PM | Best single-entry candidates | official structure"
+  "x": "#6 $200 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 3:40 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1221,7 +1221,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#7 $400 NO LIMIT HOLD'EM 1A",
-  "x": "#7 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#7 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1229,7 +1229,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#8 $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
-  "x": "#8 $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#8 $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1237,7 +1237,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#7 $400 NO LIMIT HOLD'EM 1B",
-  "x": "#7 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#7 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1245,7 +1245,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#9 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#9 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#9 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1253,7 +1253,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#10 $400 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#10 $400 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#10 $400 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1261,7 +1261,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#11 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#11 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#11 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1269,7 +1269,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#12 $300 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#12 $300 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#12 $300 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1277,7 +1277,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1285,7 +1285,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#14 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#14 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#14 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1293,7 +1293,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#15 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#15 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#15 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1301,7 +1301,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#16 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS",
-  "x": "#16 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#16 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1309,7 +1309,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#17 $400 POT LIMIT OMAHA BOUNTY (1DAY)",
-  "x": "#17 $400 POT LIMIT OMAHA BOUNTY (1DAY) | 12:10 PM | 4:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#17 $400 POT LIMIT OMAHA BOUNTY (1DAY) | 12:10 PM | 4:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1317,7 +1317,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#18 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
-  "x": "#18 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | 5:10 PM | 9:40 PM | Spend-to-advantage (sheet prices a second buy-in) | official structure"
+  "x": "#18 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | 5:10 PM | 9:40 PM | Spend-to-advantage (sheet prices a second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1325,7 +1325,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1A",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1A | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1333,7 +1333,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#20 $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "#20 $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure"
+  "x": "#20 $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1341,7 +1341,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#21 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#21 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#21 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1349,7 +1349,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1B",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1357,7 +1357,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1365,7 +1365,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#19 $400 NO LIMIT HOLD'EM 1C",
-  "x": "#19 $400 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#19 $400 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1373,7 +1373,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#23 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#23 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#23 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1381,7 +1381,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 3:55 PM | Best single-entry candidates | official structure"
+  "x": "#24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 3:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1389,7 +1389,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#25 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#25 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#25 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1397,7 +1397,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1A",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1A | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1405,7 +1405,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#27 $600 BIG O (1DAY)",
-  "x": "#27 $600 BIG O (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure"
+  "x": "#27 $600 BIG O (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1413,7 +1413,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1B",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1B | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1421,7 +1421,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1C",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1C | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1429,7 +1429,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1D",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1D | 5:10 PM | 8:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1437,7 +1437,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1E",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1E | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1E | 11:10 AM | 3:40 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1445,7 +1445,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO)",
-  "x": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO) | 5:10 PM | 7:25 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#26 $800 NO LIMIT HOLD'EM 1F (TURBO) | 5:10 PM | 7:25 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1453,7 +1453,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#28 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#28 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#28 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1461,7 +1461,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#29 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#29 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#29 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1469,7 +1469,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#30 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
-  "x": "#30 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#30 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1477,7 +1477,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#31 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#31 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#31 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1485,7 +1485,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 3:55 PM | Best single-entry candidates | official structure"
+  "x": "#32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 3:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1493,7 +1493,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#33 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
-  "x": "#33 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure"
+  "x": "#33 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1501,7 +1501,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#34 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#34 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#34 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1509,7 +1509,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#35 $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE",
-  "x": "#35 $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE | 10:10 AM | 2:40 PM | Team events | official structure"
+  "x": "#35 $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE | 10:10 AM | 2:40 PM | Team events | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1517,7 +1517,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
-  "x": "#36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1525,7 +1525,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#37 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
-  "x": "#37 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure"
+  "x": "#37 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1533,7 +1533,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#38 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#38 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#38 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1541,7 +1541,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
-  "x": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1549,7 +1549,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#40 $600 POT LIMIT OMAHA BOUNTY (1DAY)",
-  "x": "#40 $600 POT LIMIT OMAHA BOUNTY (1DAY) | 12:10 PM | 4:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#40 $600 POT LIMIT OMAHA BOUNTY (1DAY) | 12:10 PM | 4:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1557,7 +1557,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#41 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-  "x": "#41 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure"
+  "x": "#41 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1565,7 +1565,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#42 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#42 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#42 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1573,7 +1573,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#43 $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS",
-  "x": "#43 $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#43 $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1581,7 +1581,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#44 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-  "x": "#44 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure"
+  "x": "#44 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 4:10 PM | 6:25 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1589,7 +1589,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#45 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-  "x": "#45 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 8:10 PM | 9:55 PM | Satellites (prize is a seat) | official structure"
+  "x": "#45 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 8:10 PM | 9:55 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1597,7 +1597,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#46 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-  "x": "#46 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 9:10 AM | 10:55 AM | Satellites (prize is a seat) | official structure"
+  "x": "#46 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 9:10 AM | 10:55 AM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1605,7 +1605,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT",
-  "x": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1613,7 +1613,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#48 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
-  "x": "#48 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 12:10 PM | 1:55 PM | Satellites (prize is a seat) | official structure"
+  "x": "#48 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47 | 12:10 PM | 1:55 PM | Satellites (prize is a seat) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1621,7 +1621,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT",
-  "x": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1629,7 +1629,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1637,7 +1637,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#50 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#50 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#50 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1645,7 +1645,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
-  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1653,7 +1653,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#51 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#51 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#51 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1661,7 +1661,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#52 $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
-  "x": "#52 $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#52 $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1669,7 +1669,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#53 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#53 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#53 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1677,7 +1677,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#54 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
-  "x": "#54 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#54 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY | 11:10 AM | 4:55 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1685,7 +1685,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#55 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#55 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#55 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1693,7 +1693,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1701,7 +1701,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
-  "x": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure"
+  "x": "#57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) | 12:10 PM | 4:40 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1709,7 +1709,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1717,7 +1717,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1C",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1C | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1C | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1725,7 +1725,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1D",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1D | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1D | 6:10 PM | 11:10 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1733,7 +1733,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#56 $1,100 NO LIMIT HOLD'EM 1E",
-  "x": "#56 $1,100 NO LIMIT HOLD'EM 1E | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#56 $1,100 NO LIMIT HOLD'EM 1E | 10:10 AM | 4:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1741,7 +1741,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#58 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
-  "x": "#58 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | 5:10 PM | 9:40 PM | Spend-to-advantage (sheet prices a second buy-in) | official structure"
+  "x": "#58 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | 5:10 PM | 9:40 PM | Spend-to-advantage (sheet prices a second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1749,7 +1749,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1757,7 +1757,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#60 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#60 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#60 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1765,7 +1765,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1B",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1B | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1773,7 +1773,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#61 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#61 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#61 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1781,7 +1781,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#59 $600 NO LIMIT HOLD'EM 1C",
-  "x": "#59 $600 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure"
+  "x": "#59 $600 NO LIMIT HOLD'EM 1C | 11:10 AM | 5:55 PM | Multi-flight (second flight = second buy-in) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1789,7 +1789,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#62 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#62 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#62 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1797,7 +1797,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#63 $600 NO LIMIT HOLD'EM (1DAY)",
-  "x": "#63 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure"
+  "x": "#63 $600 NO LIMIT HOLD'EM (1DAY) | 11:10 AM | 4:55 PM | Best single-entry candidates | official structure | 2026-11-19"
  },
  {
   "p": "schedule.html",
@@ -1805,7 +1805,7 @@
   "t": "Event Start Late registration Format",
   "a": "",
   "h": "#64 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
-  "x": "#64 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure"
+  "x": "#64 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) | 5:10 PM | 9:40 PM | Bounty / PKO (separate group) | official structure | 2026-11-19"
  },
  {
   "p": "hotels.html",
@@ -3221,7 +3221,7 @@
   "t": "# Event Entry Dates",
   "a": "",
   "h": "$300 NO LIMIT HOLD'EM",
-  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | 11-16 , 11-17 | Multi-flight | Official structure sheet \u00b7 2026-11-17"
+  "x": "1 | $300 NO LIMIT HOLD'EM | $300 | 11-16 , 11-17 | Multi-flight | Official structure sheet \u00b7 2026-11-19"
  },
  {
   "p": "venues/venetian.html",
@@ -4117,7 +4117,7 @@
   "t": "Start Buy-in House fee To prize pool",
   "a": "",
   "h": "10:00 AM",
-  "x": "10:00 AM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+  "x": "10:00 AM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000 | 2026-11-17"
  },
  {
   "p": "venues/caesars-palace.html",
@@ -4125,7 +4125,7 @@
   "t": "Start Buy-in House fee To prize pool",
   "a": "",
   "h": "2:00 PM",
-  "x": "2:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+  "x": "2:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000 | 2026-11-17"
  },
  {
   "p": "venues/caesars-palace.html",
@@ -4133,7 +4133,7 @@
   "t": "Start Buy-in House fee To prize pool",
   "a": "",
   "h": "6:00 PM",
-  "x": "6:00 PM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+  "x": "6:00 PM | $100 | $30 | $70 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000 | 2026-11-17"
  },
  {
   "p": "venues/caesars-palace.html",
@@ -4141,7 +4141,7 @@
   "t": "Start Buy-in House fee To prize pool",
   "a": "",
   "h": "9:00 PM",
-  "x": "9:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000"
+  "x": "9:00 PM | $160 | $45 | $115 | $50 add-on \u00b7 15,000 chips at the first break | 20,000 | 20 min | $1,000 | 2026-11-17"
  },
  {
   "p": "venues/caesars-palace.html",
@@ -4317,7 +4317,7 @@
   "t": "Day Start Event Buy-in",
   "a": "",
   "h": "Fridays",
-  "x": "Fridays | 11:00 AM | NLH $600 buy-in | $600 | $50 | $40 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+  "x": "Fridays | 11:00 AM | NLH $600 buy-in | $600 | $50 | $40 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF | 2026-11-17"
  },
  {
   "p": "venues/bellagio.html",
@@ -4325,7 +4325,7 @@
   "t": "Day Start Event Buy-in",
   "a": "",
   "h": "Saturdays",
-  "x": "Saturdays | 11:00 AM | NLH (sheet headline: $1,100 buy-in) | conflict \u2014 see X-04 | $50 | $40 \u2192 +20,000 chips | 20,000 without \u00b7 40,000 with | 30 min | $50,000 | PDF"
+  "x": "Saturdays | 11:00 AM | NLH (sheet headline: $1,100 buy-in) | conflict \u2014 see X-04 | $50 | $40 \u2192 +20,000 chips | 20,000 without \u00b7 40,000 with | 30 min | $50,000 | PDF | 2026-11-17"
  },
  {
   "p": "venues/bellagio.html",
@@ -4333,7 +4333,7 @@
   "t": "Day Start Event Buy-in",
   "a": "",
   "h": "Sundays",
-  "x": "Sundays | 11:00 AM | $400 H.O.R.S.E. Tournament | $400 | $35 | $25 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF"
+  "x": "Sundays | 11:00 AM | $400 H.O.R.S.E. Tournament | $400 | $35 | $25 \u2192 +15,000 chips | 15,000 without \u00b7 30,000 with | 30 min | \u2014 | PDF | 2026-11-17"
  },
  {
   "p": "venues/bellagio.html",
@@ -5347,6 +5347,14 @@
   "p": "flagged.html",
   "pl": "Flagged for review",
   "t": "ID Area Issue Why it matters",
+  "a": "M-01",
+  "h": "M-01",
+  "x": "M-01 | Multi-flight late registration and level length | Event-level fields showed one flight only Events 1, 26, 47 and 56 print different late-registration closes and level lengths by flight. Event 1 flights A and C close about 3:40 PM on 40-minute levels (structure sheet 10); flights B and D close about 8:40 PM on 30-minute levels (sheet 9). The event row had shown only the B/D close (~8:40 PM)."
+ },
+ {
+  "p": "flagged.html",
+  "pl": "Flagged for review",
+  "t": "ID Area Issue Why it matters",
   "a": "N-01",
   "h": "N-01",
   "x": "N-01 | Wynn daily rules | No re-entry does not mean no extra spending The Friday sheet prohibits re-entry but permits unlimited $200 rebuys and a $100 add-on. All four daily formats fail the strict policy; none is placed in the freezeout ranking. | Keep in the extra-spend section. Daily availability during a series remains unverified. | cdn.wynnresorts.com"
@@ -5669,7 +5677,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Structure sheet",
-  "x": "Structure sheet | Sheet 9 \u2014 $300 No Limit Hold'em - Day B+D @ 5:10 PM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-17 | Events #1. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
+  "x": "Structure sheet | Sheet 9 \u2014 $300 No Limit Hold'em - Day B+D @ 5:10 PM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-19 | Events #1. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
  },
  {
   "p": "sources.html",
@@ -5677,7 +5685,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Structure sheet",
-  "x": "Structure sheet | Sheet 10 \u2014 $300 No Limit Hold'em - Day A+C @ 11:10 AM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-17 | Events #1. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
+  "x": "Structure sheet | Sheet 10 \u2014 $300 No Limit Hold'em - Day A+C @ 11:10 AM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-19 | Events #1. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
  },
  {
   "p": "sources.html",
@@ -5709,7 +5717,7 @@
   "t": "Kind Document URL Retrieved",
   "a": "",
   "h": "Structure sheet",
-  "x": "Structure sheet | Sheet 14 \u2014 $800 No Limit Hold'em - Day F (Turbo) @ 5:10 PM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-17 | Events #26. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
+  "x": "Structure sheet | Sheet 14 \u2014 $800 No Limit Hold'em - Day F (Turbo) @ 5:10 PM (Day 2 12:00 PM) | www.venetianlasvegas.com | 2026-11-19 | Events #26. Buy-in split, late registration, stack, level length, payout share, and the re-entry / add-on / rebuy finding."
  },
  {
   "p": "sources.html",
