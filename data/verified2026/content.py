@@ -7,7 +7,11 @@ ROOM_TAX = dict(
     text="13.38% transient lodging tax",
     source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
     corroboration=("The official Venetian hotel terms state 'Clark County Room Tax of 13.38%' "
-                   "(https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html)."),
+                   "(https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html). "
+                   "Clark County Department of Business License letter dated 2016-11-15 (adopted rate; "
+                   "Primary Gaming Corridor = 13.38%, effective 2017): "
+                   "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:7436500e-cac4-420a-b23a-02d3fec69900/original/as/room-tax-increase-transient-lodging-letter-111616.pdf "
+                   "(re-read 2026-11-19; a 2016 notice, so the current county rate has not been re-checked against a live county table)."),
     retrieved="2026-11-17",
     note=("Re-read first-hand on 2026-11-17 from the county guide's own licence register, which lists "
           "'Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino, 3325 Las Vegas Blvd S - Licensed - "

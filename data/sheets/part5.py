@@ -10,6 +10,7 @@ def s(n, **kw):
 
 s(29,
   title="$200 No Limit Hold'em (1Day)",
+  eligibility="Must be 21+ years of age and have a Venetian Rewards card to participate.",
   events=[6],
   buy_in=200, fee=40, pool_per_entry=160,
   start="11:10 AM", chips=30000, level_min=30,

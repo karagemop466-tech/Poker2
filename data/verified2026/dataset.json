@@ -183,7 +183,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -275,42 +275,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "payout_pct": "12.5% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 35,
      "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 18,
@@ -371,42 +371,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "payout_pct": "12.5% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 35,
      "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 18,
@@ -467,42 +467,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "6 levels + Break (~12:25 PM)",
    "payout_pct": "12.5% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 35,
      "excerpt": "$35 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $165 of every $200 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 18,
@@ -563,42 +563,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "8 levels + Break (~3:40 PM)",
    "payout_pct": "12.5% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 40,
      "excerpt": "$40 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $160 of every $200 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 29,
@@ -949,7 +949,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -1135,7 +1135,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -1321,7 +1321,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -1906,42 +1906,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "8 levels + break (~4:40 PM)",
    "payout_pct": "12.5% of the field; plays 8-handed",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 58,
      "excerpt": "$58 of the $300 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $242 of every $300 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 22,
@@ -2286,39 +2286,39 @@
    "eligibility": "Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in.",
    "late_reg": "10 levels + Break (~3:55 PM)",
    "payout_pct": "15% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 90,
      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 17,
@@ -2604,42 +2604,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "8 levels + break (~4:40 PM)",
    "payout_pct": "12.5% of the field; plays 8-handed",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 90,
      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). Prize pool consists of $510 of every $600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 28,
@@ -2698,7 +2698,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -3078,39 +3078,39 @@
    "eligibility": "Must be 50+ years of age and have a Venetian Rewards card to participate. Any player who buys into this event that is not 50+ years of age will not be entitled to any prize money or a refund of their buy in.",
    "late_reg": "10 levels + Break (~3:55 PM)",
    "payout_pct": "15% of the field",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 90,
      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 17,
@@ -5499,42 +5499,42 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "8 levels + break (~4:40 PM)",
    "payout_pct": "12.5% of the field; plays 8-handed",
-   "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "verified_on": "2026-11-19",
+   "last_checked": "2026-11-19",
    "schedule_verified_on": "2026-11-17",
    "rule_evidence": {
     "single_entry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "reentry": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "rebuy": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "addon": {
      "value": null,
      "excerpt": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     },
     "fee": {
      "value": 90,
      "excerpt": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "retrieved": "2026-11-17"
+     "retrieved": "2026-11-19"
     }
    },
    "sheet_no": 23,
@@ -6083,7 +6083,7 @@
    "addon": "silent",
    "rebuy": "silent",
    "flight_rule": null,
-   "eligibility": null,
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "late_reg": "10 levels + Break (~4:55 PM)",
    "payout_pct": "12.5% of the field",
    "verified_on": "2026-11-19",
@@ -6439,7 +6439,7 @@
      "buy_in": 300,
      "gtd": 10000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
      "date": "2026-11-18",
@@ -6490,7 +6490,7 @@
      "buy_in": 200,
      "gtd": null,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
      "date": "2026-11-19",
@@ -6522,7 +6522,7 @@
      "buy_in": 200,
      "gtd": null,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
      "date": "2026-11-20",
@@ -6554,7 +6554,7 @@
      "buy_in": 200,
      "gtd": null,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
      "date": "2026-11-21",
@@ -6586,7 +6586,7 @@
      "buy_in": 200,
      "gtd": null,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
      "date": "2026-11-22",
@@ -6812,7 +6812,7 @@
      "buy_in": 400,
      "gtd": 15000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
      "date": "2026-11-25",
@@ -6878,7 +6878,7 @@
       "buy_in": 400,
       "gtd": 15000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
       "date": "2026-11-25",
@@ -6928,7 +6928,7 @@
      "buy_in": 300,
      "gtd": 10000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
      "date": "2026-11-26",
@@ -6975,7 +6975,7 @@
       "buy_in": 300,
       "gtd": 10000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
       "date": "2026-11-26",
@@ -7025,7 +7025,7 @@
      "buy_in": 600,
      "gtd": 30000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
      "date": "2026-11-27",
@@ -7072,7 +7072,7 @@
       "buy_in": 600,
       "gtd": 30000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
       "date": "2026-11-27",
@@ -7347,7 +7347,7 @@
      "buy_in": 300,
      "gtd": 10000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
      "date": "2026-11-29",
@@ -7414,7 +7414,7 @@
       "buy_in": 300,
       "gtd": 10000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
       "date": "2026-11-29",
@@ -7482,7 +7482,7 @@
       "buy_in": 300,
       "gtd": 10000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
       "date": "2026-11-29",
@@ -7883,7 +7883,7 @@
      "buy_in": 600,
      "gtd": 25000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
      "date": "2026-12-03",
@@ -7950,7 +7950,7 @@
       "buy_in": 600,
       "gtd": 25000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
       "date": "2026-12-03",
@@ -8018,7 +8018,7 @@
       "buy_in": 600,
       "gtd": 25000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
       "date": "2026-12-03",
@@ -8262,7 +8262,7 @@
      "buy_in": 600,
      "gtd": 40000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
      "date": "2026-12-06",
@@ -8328,7 +8328,7 @@
       "buy_in": 600,
       "gtd": 40000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
       "date": "2026-12-06",
@@ -10583,7 +10583,7 @@
      "buy_in": 600,
      "gtd": 25000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
      "date": "2026-12-17",
@@ -10650,7 +10650,7 @@
       "buy_in": 600,
       "gtd": 25000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
       "date": "2026-12-17",
@@ -10718,7 +10718,7 @@
       "buy_in": 600,
       "gtd": 25000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
       "date": "2026-12-17",
@@ -11272,7 +11272,7 @@
      "buy_in": 600,
      "gtd": 30000,
      "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-     "eligibility": null,
+     "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
      "single_entry_confirmed": false,
      "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
      "date": "2026-12-23",
@@ -11338,7 +11338,7 @@
       "buy_in": 600,
       "gtd": 30000,
       "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
-      "eligibility": null,
+      "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
       "single_entry_confirmed": false,
       "schedule_sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
       "date": "2026-12-23",
@@ -12244,6 +12244,14 @@
    "detail": "The Dec 1\u20134 research screen provides comparable stay criteria, not booking preferences. No valid checkout total or cancellation deadline was captured. Google route estimates are dated, but do not time the indoor portion. Do not substitute a booking widget\u2019s default dates or a promotional rate for a trip quote.",
    "impact": "No hotel winner or bookable single-entry itinerary is claimed. Keep totals blank and retain official booking links.",
    "source": "https://www.venetianlasvegas.com/resort/resort-fee.html"
+  },
+  {
+   "id": "N-04",
+   "area": "Eligibility",
+   "title": "Venetian Rewards-card condition is printed on the candidate sheets; its cost and terms are not",
+   "detail": "Re-read 2026-11-19: sheets 5, 6, 7, 18, 22, 23, 28 and 29 (13 open candidate events) print \"Must be 21+ years of age and have a Venetian Rewards card to participate.\" Sheet 17 (events 24 and 32) prints the same card condition with a 50+ age limit. Earlier pages said \"open to any player aged 21+\" and omitted the card. The official Venetian Rewards page is a sign-in form and does not state whether membership is free or what it requires. The card cost is therefore left blank.",
+   "impact": "Ask the Venetian Poker Room whether the card is required at registration, how it is obtained, and whether it costs anything, before paying. No eligibility beyond what the sheet prints is claimed.",
+   "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
   }
  ],
  "wynn_daily": [
@@ -12923,6 +12931,7 @@
   },
   {
    "title": "$300 No Limit Hold'em (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     2,
     12
@@ -12950,6 +12959,7 @@
   },
   {
    "title": "$400 No Limit Hold'em (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     10
    ],
@@ -12976,6 +12986,7 @@
   },
   {
    "title": "$600 No Limit Hold'em (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     14,
     28,
@@ -13311,6 +13322,7 @@
   },
   {
    "title": "$200 No Limit Hold'em RaceDay Stack (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     3,
     4,
@@ -13435,6 +13447,7 @@
   },
   {
    "title": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     20
    ],
@@ -13464,6 +13477,7 @@
   },
   {
    "title": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     57
    ],
@@ -13612,6 +13626,7 @@
   },
   {
    "title": "$600 BIG O (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     27
    ],
@@ -13640,6 +13655,7 @@
   },
   {
    "title": "$200 No Limit Hold'em (1Day)",
+   "eligibility": "Must be 21+ years of age and have a Venetian Rewards card to participate.",
    "events": [
     6
    ],

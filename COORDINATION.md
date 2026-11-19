@@ -2461,3 +2461,15 @@ Read `COORDINATION.md` and checked open PRs before starting: no open PRs at clai
 - V3 done: `scripts/build_master.py` (new a9f5847f post-write overlay) + `scripts/build2026.py` rebuilt; `build2026.py --check`, `check2026.py` (24 pages, 1629 links, no broken links, no non-official hosts), `check_semantics.py`, `check_guarantees.py`, `check_labels.py`, `check_monitor_badge.py`, `check_sheet_readings.py`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs` all pass. Zero values changed; confirmed single-entry count remains 0. Dates advanced only where the row's own official document was re-read today (Venetian schedule rows, V-14/V-28/V-63 via sheet 7, MGM daily rows, Golden Nugget rows). Wynn WPT PDF, Caesars flyer PDF and Bellagio weekly PDFs were not re-read, so those rows keep earlier dates.
 - Irregularities (non-blocking, recorded in the transcript): Bellagio poker page still carries a stale "Tournament play will resume on Saturday, July 26" note; `https://www.caesars.com/casino/poker` redirects to the Caesars homepage (stored source URLs already correct).
 - V4: PR opened below; CI + Pages deployment recorded here after merge.
+
+## Session arena/2c7e846d-poker2 — claim (2026-11-19)
+
+Checked the board and open PRs first: `gh pr list --state open` returned no open PRs; no other session holds an active claim (latest completed records: PR #93 merged, Pages built at `7ab0759`). This session takes the final-integrator role for a narrow `/2026/` correctness pass. Platform-fixed branch: `arena/2c7e846d-poker2`.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| E1 Re-read the 9 official Venetian structure sheets behind the 15 research candidates (5, 6, 7, 17, 18, 22, 23, 28, 29) and record printed eligibility. Landing copy says "open to any player aged 21+" and omits the printed Venetian Rewards-card condition. | in progress | arena/2c7e846d-poker2 | `data/sheets/part1.py`, `part3.py`, `part4.py`, `part5.py`, `data/verified2026/decision.py`, `scripts/build2026.py` (landing/tournament copy only) |
+| E2 Re-confirm 13.38% Primary Gaming Corridor room tax against an official Clark County document; record the age of that source | in progress | arena/2c7e846d-poker2 | `data/verified2026/content.py` (note only), research file |
+| E3 Regenerate `/2026/`, rerun the full local suite, PR → `main`, merge, confirm Pages build, record here | in progress | arena/2c7e846d-poker2 | regenerated `2026/**`, `COORDINATION.md` |
+
+Not claimed: Google/Apple walking verification (no maps access from this sandbox), live hotel quotes, Strip-wide scraping, and any change to ranking logic or to unverified values. Values that are not printed on an official source remain blank.

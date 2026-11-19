@@ -58,3 +58,16 @@ FLAGS = [
          detail='The Dec 1–4 research screen provides comparable stay criteria, not booking preferences. No valid checkout total or cancellation deadline was captured. Google route estimates are dated, but do not time the indoor portion. Do not substitute a booking widget’s default dates or a promotional rate for a trip quote.',
          impact='No hotel winner or bookable single-entry itinerary is claimed. Keep totals blank and retain official booking links.', source=FEE),
 ]
+
+# arena/2c7e846d-poker2 (2026-11-19): printed eligibility condition on the candidate sheets.
+FLAGS.append(dict(
+    id='N-04', area='Eligibility',
+    title='Venetian Rewards-card condition is printed on the candidate sheets; its cost and terms are not',
+    detail=('Re-read 2026-11-19: sheets 5, 6, 7, 18, 22, 23, 28 and 29 (13 open candidate events) print '
+            '"Must be 21+ years of age and have a Venetian Rewards card to participate." Sheet 17 (events 24 and 32) '
+            'prints the same card condition with a 50+ age limit. Earlier pages said "open to any player aged 21+" '
+            'and omitted the card. The official Venetian Rewards page is a sign-in form and does not state whether '
+            'membership is free or what it requires. The card cost is therefore left blank.'),
+    impact='Ask the Venetian Poker Room whether the card is required at registration, how it is obtained, and whether it costs anything, before paying. No eligibility beyond what the sheet prints is claimed.',
+    source='https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf',
+))
