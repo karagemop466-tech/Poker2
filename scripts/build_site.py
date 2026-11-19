@@ -326,7 +326,7 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
 <td>{esc(e.get('date'))}</td><td>{esc(e.get('start'))}</td><td>{esc(e.get('venue'))}</td>
 <td><strong>{esc(e.get('name'))}</strong>{tags}{gate}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
-<td>{cat_badge(e.get('category'))} {rule_badge(e, e)}{rule_detail(e)}</td>
+<td>{cat_badge(e.get('category'))} {rule_badge(e.get('rules') or {}, e)}{rule_detail(e)}</td>
 {extra}<td class="src">{src_links(e.get('source_url'), e.get('struct_url'))}{changed_flag(e.get('source_url'))} <small class="note">checked {esc(e.get('last_checked'))}</small></td>
 {cb}</tr>""")
     head = ("<th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th>"
