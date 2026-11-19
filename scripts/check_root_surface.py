@@ -45,6 +45,25 @@ for page in sorted((ROOT / "2026").rglob("*.html")):
         line = page.read_text(errors="ignore")[:m.start()].count("\n") + 1
         errs.append(f"2026/{page.name}:{line}: unresolved merge-conflict marker {m.group(0).strip()!r}")
 
+# Serialisation parity for data/master.json.
+# Found on 2026-11-19 while integrating /2026/: build_master.py's final overlay re-dumped
+# data/master.json with json.dump(..., indent=1) - default ensure_ascii=True, no trailing newline -
+# so every em dash became a \u2014 escape. Values were identical, but the committed file no longer
+# matched its generator and the CI drift gate failed on 523 lines. Values accidentally survived; the
+# reproducibility contract did not. Check it directly rather than only in the drift step, so the
+# failure names the cause.
+import json as _json, subprocess as _sp
+_master_path = ROOT / "data" / "master.json"
+_raw = _master_path.read_text(encoding="utf-8")
+if not _raw.endswith("\n"):
+    errs.append("data/master.json: no trailing newline (an overlay wrote it with json.dump default)")
+if "\\u2014" in _raw:
+    errs.append("data/master.json: literal \\u2014 escape present - an overlay re-dumped it with "
+                "ensure_ascii=True; every write in build_master.py must pass ensure_ascii=False")
+_same = _json.dumps(_json.loads(_raw), indent=1, sort_keys=False, ensure_ascii=False) + "\n"
+if _raw != _same:
+    errs.append("data/master.json: not reproducible by json.dumps(indent=1, ensure_ascii=False)+newline")
+
 if errs:
     print("check_root_surface FAILED:"); [print(" -",e) for e in errs]; sys.exit(1)
 print("check_root_surface: root invariants ok (incl. no conflict markers in published HTML)")

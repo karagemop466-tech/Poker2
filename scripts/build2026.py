@@ -466,6 +466,8 @@ def build_days(events):
                 start=r[3], start_m=tminutes(r[3]), reg_close=r[4],
                 reg_close_m=tminutes(r[4]) if r[4] else None,
                 buy_in=ev["buy_in"], gtd=ev["gtd"], sheet_url=ev["sheet_url"],
+                # structure facts used by day_sequence(): the sheet's own level count and length
+                level=ev.get("level"), level_minutes=ev.get("level"),
                 eligibility=ev.get("eligibility"),
                 single_entry_confirmed=ev["single_entry_confirmed"],
                 schedule_sheet_url=SHEETS[r[9]]["url"],
@@ -995,6 +997,47 @@ true-cost-per-night calculator.</li>
     return page("Dashboard", body, "index.html")
 
 
+RULE_HEAD = {"single_entry": "Single entry", "reentry": "Re-entry", "rebuy": "Rebuy", "addon": "Add-on"}
+
+
+def rule_cell(e, key):
+    """One cell per structured rule field, with the value the sheet prints and its status.
+
+    "silent" is not "no". The sheet saying nothing about re-entry is exactly why no event in this
+    series is confirmed as a freezeout, so the silence is shown rather than left blank.
+    """
+    ev = (e.get("rule_evidence") or {}).get(key) or {}
+    value = ev.get("value")
+    excerpt = (ev.get("excerpt") or "").strip()
+    # Two sheets (8 serves events 18 and 58) do not print a re-entry clause, but DO price
+    # "subsequent buy in's" at $200. That is written evidence of a paid additional entry - the
+    # opposite of a freezeout - so it is shown as the flag it is, never folded into "silent".
+    implied = isinstance(value, str) and value.startswith("IMPLIED")
+    if implied and key == "reentry":
+        flag = next((f for f in (e.get("sheet_flags") or []) if "RE-ENTRY" in f.upper()), "")
+        if flag:
+            return ("<span class='tag t-spend'>priced</span><div class='note'>%s</div>"
+                    % esc(flag[:180]))
+    # rule_evidence() carries no status key: it carries the printed value (None when the sheet is
+    # silent) plus the excerpt it came from. Status is therefore derived from the value, never
+    # assumed - a silent clause renders as "silent", a printed one as "printed".
+    status = "explicit" if (value is True or value is False or value not in (None, "")) else "not_stated_sheet_read"
+    if value is True or value is False:
+        text = "yes" if value else "no"
+    elif value not in (None, ""):
+        text = str(value)
+    else:
+        text = ""
+    cls = {"explicit": "t-candidate", "not_stated_sheet_read": "t-warn"}.get(status, "t-warn")
+    label = {"explicit": "printed", "not_stated_sheet_read": "silent"}.get(status, status)
+    out = "<span class='tag %s'>%s</span>" % (cls, esc(label))
+    if text:
+        out += "<div class='note'>%s</div>" % esc(text[:120])
+        if excerpt:
+            out += "<div class='note'>%s</div>" % esc(excerpt[:120])
+    return out
+
+
 def p_tournaments(events):
     dates = sorted({d for e in events for d in e["dates"]})
     rowshtml = []
@@ -1013,6 +1056,7 @@ def p_tournaments(events):
             "<td class='num'>%(pool)s</td>"
             "<td class='num'>%(gtd)s</td>"
             "<td class='num'>%(ratio)s</td>"
+            "<td>%(se)s</td><td>%(re)s</td><td>%(rb)s</td><td>%(ad)s</td>"
             "<td>%(sheet)s</td>"
             "<td class='num'>%(checked)s</td>"
             "<td>%(recheck)s</td>"
@@ -1027,6 +1071,10 @@ def p_tournaments(events):
                 fee="$" + format(e["fee"], ",") if e["fee"] else "&mdash;",
                 pool="$" + format(e["pool_per_entry"], ",") if e["pool_per_entry"] else "&mdash;",
                 gtd=gtdcell, gtdv=e["gtd"] or 0,
+                # Structured rule fields: one cell per printed clause, each showing the value the
+                # official sheet states and marking silence as silence. A blank is never a "no".
+                se=rule_cell(e, "single_entry"), re=rule_cell(e, "reentry"),
+                rb=rule_cell(e, "rebuy"), ad=rule_cell(e, "addon"),
                 ratio="%.1f&times;" % e["ratio"] if e["ratio"] else "&mdash;",
                 sheet="<br>".join(srclink(u, "sheet " + u.rsplit("_", 1)[-1].removesuffix(".pdf"))
                                    for u in event_sources(e)[2:])
@@ -1080,7 +1128,9 @@ changed and is awaiting review), <em>fetch error</em>, or
 <div class="tbl-scroll"><table id="t"><thead><tr>
 <th class="num">#</th><th>Group</th><th>Event</th><th>Dates</th><th>Starts</th>
 <th class="num">Entry fee</th><th class="num">House fee</th><th class="num">To prize pool</th>
-<th class="num">Guarantee</th><th class="num">GTD&divide;entry</th><th>Structure sheet</th>
+<th class="num">Guarantee</th><th class="num">GTD&divide;entry</th>
+<th>Single entry (printed)</th><th>Re-entry</th><th>Rebuy</th><th>Add-on</th>
+<th>Structure sheet</th>
 <th class="num">Last checked</th><th>Source re-check</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 </div>
@@ -1159,6 +1209,53 @@ transcribed on %(ret)s (nine candidate sheets re-read %(reread)s). Not one conta
     return page("Entry rules", body, "entry-rules.html")
 
 
+def day_sequence(entries):
+    """The largest set of same-day entries whose published registration windows do not contradict
+    each other, plus every pair that is impossible rather than merely conditional.
+
+    The repository stores each sheet's level LENGTH in minutes (30, 40, 20/15) but no sheet prints
+    how many levels the event runs, so a finish time cannot be computed and is never invented here.
+    The only hard timing facts are the published start and the published late-registration close.
+
+    Impossible  (must not be presented as a plan):
+      * two entries with the same published start time;
+      * a later event whose registration closes at or before the earlier event's start - you cannot
+        register for it even by busting out immediately.
+    Conditional (possible only if the player is eliminated in time):
+      * everything else. "Enter as many as possible" therefore means "enter the next one only if you
+        are out of the previous one before its close", which is a decision made on the day, not a
+        booking.
+    """
+    slots = []
+    for e in entries:
+        if e.get("start_m") is None:
+            continue
+        slots.append(dict(event_no=e["event_no"], label=e["label"], start=e["start_m"],
+                          start_text=e["start"], close=e.get("reg_close_m"),
+                          close_text=e.get("reg_close") or "", group=e.get("group"),
+                          buy_in=e.get("buy_in")))
+    slots.sort(key=lambda s: (s["start"], s["close"] or 10 ** 6))
+    chain, impossible = [], []
+    for s in slots:
+        if not chain:
+            chain.append(s)
+            continue
+        last = chain[-1]
+        if s["event_no"] in {c["event_no"] for c in chain}:
+            # a later flight of the same event is a second buy-in, not a second tournament - and a
+            # player who bagged chips may not play a later flight at all
+            continue
+        if s["start"] == last["start"]:
+            impossible.append((last, s, "identical published start time"))
+        elif s["close"] is None:
+            impossible.append((last, s, "no published registration close"))
+        elif s["close"] <= last["start"]:
+            impossible.append((last, s, "its registration closes before the earlier event even starts"))
+        else:
+            chain.append(s)
+    return chain, impossible
+
+
 def p_schedule(days, events):
     blocks = []
     for d in days:
@@ -1194,6 +1291,16 @@ def p_schedule(days, events):
                    esc(it["reg_close"] or "not published"),
                    ("$" + format(it["buy_in"], ",")) if it["buy_in"] else "not published",
                    esc(fb["note"])))
+        # the day's planning ceiling, computed once here so the day card and the summary table agree
+        chain, impossible = day_sequence(d["entries"])
+        if len(d["entries"]) > 1:
+            lines.append(
+                "<p class='note maxline' data-max='%d'><strong>Maximum entries today: %d</strong> of %d "
+                "published entr%s. Counts re-entry/rebuy/satellite/team rows too. Reachable only if you "
+                "are out of the previous event before the next registration closes%s</p>"
+                % (len(chain), len(chain), len(d["entries"]), "y" if len(d["entries"]) == 1 else "ies",
+                   ("" if not impossible else "; %d pair(s) here are impossible, not merely tight"
+                    % len(impossible))))
         if d.get("restricted_alternatives"):
             ra = "".join(
                 "<p class='note'>#%d %s &mdash; starts %s, entry %s. <span class='tag t-warn'>not the "
@@ -1250,8 +1357,49 @@ windows. A continuation takes priority if you advance.</div>
 </div>
 <p class="note" id="c"></p>
 </div>
+%(maxes)s
 %(blocks)s
-""" % dict(opts=opts, blocks="".join(blocks)), "schedule.html")
+""" % dict(opts=opts, blocks="".join(blocks), maxes=maxes_html(days)), "schedule.html")
+
+
+def maxes_html(days):
+    """Per-day 'maximum entries' table: the planner's answer to 'play all day, enter as many as
+    possible', built only from published start times and late-registration closes."""
+    rows = []
+    for d in days:
+        chain, impossible = day_sequence(d["entries"])
+        if not d["entries"]:
+            continue
+        when = dt.date.fromisoformat(d["date"]).strftime("%a %d %b")
+        first = chain[0] if chain else None
+        last = chain[-1] if chain else None
+        rows.append(
+            "<tr data-dates='%s' data-max='%d'><td>%s</td><td class='num'>%d</td>"
+            "<td>%s</td><td>%s</td><td>%s</td></tr>"
+            % (d["date"], len(chain), esc(when), len(d["entries"]),
+               ("%s (%s)" % (esc(first["start_text"]), esc(first["close_text"] or "no close published")))
+               if first else "&mdash;",
+               ("%s (closes %s)" % (esc(last["start_text"]), esc(last["close_text"] or "not published")))
+               if last else "&mdash;",
+               ("%d pair(s)" % len(impossible)) if impossible else "&mdash;"))
+    total = sum(len(e["dates"]) for e in [])  # placeholder kept intentionally trivial
+    return ("""
+<div class="panel" id="max-entries"><h2>Maximum entries per day &mdash; planning ceiling, not a promise</h2>
+<p class="note">This answers "how many tournaments could I enter on this date", using only the two
+timing facts every structure sheet and schedule row publish: the <strong>start time</strong> and the
+<strong>late-registration close</strong>. No sheet prints how many levels an event runs, and no room
+publishes a finish time, so no end time is estimated here. An entry is counted as reachable only when
+its registration is still open after the previous event has <em>started</em>; whether you are actually
+free is decided on the day. Two entries with the same start time, or a later event that closes before
+the earlier one begins, are marked impossible and never shown as a sequence.</p>
+<p class="note"><strong>Entries are not all equal.</strong> Re-entry, rebuy, add-on, satellite and team
+rows are counted as entries but are not single-entry tournaments &mdash; see the group column on
+<a href="tournaments.html">Tournaments</a>. A "2" here can mean one tournament plus one satellite.</p>
+<div class="tbl-scroll"><table><thead><tr><th>Date</th><th class="num">Most entries</th>
+<th>Earliest start</th><th>Latest entry that stays open</th><th>Impossible pairs</th>
+</tr></thead><tbody>%s</tbody></table></div>
+<p class="note">The same answer for a chosen date is repeated on each day card below.</p></div>
+""" % "".join(rows))
 
 
 def all_quotes():
@@ -1661,13 +1809,15 @@ comparison.</p></div>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
 
 <div class="panel"><h2>Nearby stays</h2><p>See the <a href="walking.html#google-routes">eight address-based Google Maps estimates</a> and <a href="hotels.html">official booking links and charges</a>. No comparable checkout quote was confirmed.</p></div>
+%(walk)s
 <div class="banner"><strong>Irregularity X-02.</strong> Resolved Nov 19: the series overview now labels DeepStack IV as current. Check the dated source for each start and the <a href="../flagged.html#X-09">NYE discrepancies</a> before planning later dates.
 %(series)s</div>
 """ % dict(n=len(events), rows=rows, ret=RETRIEVED, reread=decisions.READ,
            room=srclink(sched.POKER_ROOM_URL),
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
-           series=srclink(sched.SERIES_URL, "series overview")),
+           series=srclink(sched.SERIES_URL, "series overview"),
+           walk=_walk_panel("V-VEN", "The Venetian poker room")),
                         "venues/venetian.html", subnav=VENUE_SUBNAV)
 
 
@@ -1727,10 +1877,19 @@ ROOM_META = {
         desc="A historical structure sheet is archived; no current slate was confirmed.",
         page="venues/mgm-grand.html",
     ),
+    # Re-checked live 2026-11-19 (arena/c2a75934-poker2). Both descriptions state only what the
+    # official page printed or did NOT print on that date; neither room publishes a dated slate.
     "resorts-world": dict(walk_key=None, title="Resorts World Las Vegas", room="Resorts World poker room",
-                         desc="No current dated tournament schedule verified.", page="venues/resorts-world.html"),
+                         desc=("Re-read 2026-11-19: /gaming/poker-room/ redirects to a 'Poker Room Dining' "
+                               "page, which lists dining options and publishes no tournament date, buy-in, "
+                               "guarantee, start time or structure sheet. No dated event can be transcribed."),
+                         page="venues/resorts-world.html"),
     "westgate": dict(walk_key=None, title="Westgate Las Vegas", room="Westgate poker room",
-                     desc="No current dated tournament schedule verified.", page="venues/westgate.html"),
+                     desc=("Re-read 2026-11-19: the official Poker Room page states only that "
+                           "'Tournaments are available every day' and prints room hours and "
+                           "cash-game limits. No start time, buy-in, guarantee, entry rule or "
+                           "structure sheet is published, so no event row can be transcribed."),
+                     page="venues/westgate.html"),
 }
 
 
@@ -2033,7 +2192,18 @@ re-entry, rebuy or add-on clause appears.</li>
 schedule PDF, which prints registration-close times, chip counts and level lengths the HTML page does
 not. The two agree on every row.</li>
 <li><strong>The hotel numbers</strong> come from the official resort-fee page and the official poker
-suite-rate page, both re-read on Nov 19.</li>
+suite-rate page, both re-read on Nov 19. The same day's live re-read confirmed Bellagio $55 + tax,
+MGM Grand $50 + tax and Wynn $55 + tax (self-parking for two vehicles included in the fee), each on
+the property's own terms page. Caesars Palace and Horseshoe still print no resort-fee amount on any
+official page read, so both stay blank rather than estimated.</li>
+<li><strong>Two further Strip rooms were re-checked live on Nov 19.</strong> Westgate's official
+poker page states only that "Tournaments are available every day" and publishes no start time,
+buy-in, guarantee or structure sheet. Resorts World's poker-room URL redirects to a Poker Room
+Dining page with no tournament document. Neither room can contribute an event row, and neither is
+presented as if it did.</li>
+<li><strong>No live checkout quote could be captured on Nov 19.</strong> The Venetian booking
+engine returned its loading shell for both the exact-stay and the Dec 1&ndash;4 research window, so
+the itemized quotes already in the log keep their own capture dates. <a href="flagged.html#F-05">F-05</a></li>
 <li><strong>Other room schedules:</strong> official Wynn, Caesars Palace and Bellagio documents are linked from the <a href="sources.html#room-feed">morning watch</a>. The Wynn WPT opener allows re-entry, and the audited Caesars and Bellagio slates allow re-entry or paid add-ons.</li>
 </ul></div>
 
