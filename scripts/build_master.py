@@ -2118,3 +2118,49 @@ for _e in _m027["events"]:
         _e["sheet_retrieved"] = "2026-11-19"
 _json027.dump(_m027, open(_p027, "w"), indent=1)
 print("027412f0 overlay applied: as_of=2026-11-19, structure-30 rows re-dated")
+
+# ===========================================================================
+# VERIFICATION SWEEP — arena/a9f5847f-poker2 (2026-11-19, applied above at write)
+# Live re-reads recorded in research/a9f5847f-official-verification-2026-11-19.md
+# and data/session-updates-a9f5847f.json. Same post-write patch pattern as the
+# 027412f0 block above. Dates advance ONLY where the row's own official
+# document was actually re-read today:
+#   * Venetian DSE IV schedule page — all 94 printed rows read end to end;
+#     no event added/removed/retimed vs the stored dataset.
+#   * Venetian structure sheet 7 (Events 14/28/63) — read in full; matches
+#     stored V-14/V-28/V-63 exactly; still silent on re-entry (NOT promoted).
+#   * Venetian structure sheet 30 (Event 8) — re-read; matches stored V-08.
+#   * MGM Grand poker page — daily times 11am/7pm/11pm match stored rows.
+#   * Golden Nugget daily page — times/chips/levels/re-entry/add-on rules match.
+# Wynn WPT schedule PDF, Caesars flyer PDF and Bellagio weekly PDFs were NOT
+# re-read today, so those rows keep their earlier dates. Zero values changed;
+# confirmed single-entry count remains 0.
+# ===========================================================================
+import json as _jsona9, os as _osa9
+_pa9 = _osa9.path.join(ROOT, "data", "master.json")
+_ma9 = _jsona9.load(open(_pa9))
+_ma9["verification_a9f5847f"] = {
+    "retrieved": "2026-11-19", "session": "arena/a9f5847f-poker2",
+    "transcript": "research/a9f5847f-official-verification-2026-11-19.md",
+    "updates": "data/session-updates-a9f5847f.json",
+    "venetian_schedule": "All 94 printed rows re-read; no event added, removed, retimed or renamed vs stored dataset.",
+    "sheet_7": "Events 14/28/63 re-read in full; matches stored rows; still silent on re-entry — not promoted to confirmed single-entry.",
+    "sheet_30": "Event 8 re-read; matches stored V-08; still rules-silent.",
+    "wynn_page": "WPT Nov 27-Dec 21 and Super Gold Million $400/$3M confirmed on the poker page (already stored as X-WPT06); schedule PDF not re-read, Wynn dates unchanged.",
+    "resort_fee": "Venetian $55 plus tax per night confirmed unchanged.",
+    "mgm_gn": "MGM Grand daily times and Golden Nugget daily rules re-read; match stored rows.",
+    "caesars_bellagio": "Pages re-read; schedule PDFs not re-read, so those rows keep earlier dates.",
+    "conclusion": "Zero values changed; confirmed single-entry count remains 0.",
+}
+for _e in _ma9["events"]:
+    _vid = _e.get("venue_id")
+    if _vid == "venetian":
+        _e["schedule_checked"] = "2026-11-19"
+        _e["last_checked"] = "2026-11-19"
+        if (_e.get("struct_url") or "").endswith("dse_nov_2026-structure_7.pdf"):
+            _e["struct_checked"] = "2026-11-19"
+    elif _e.get("id") in ("MGM-1100AM", "MGM-700PM", "MGM-1100PM",
+                          "GN-1000AM", "GN-500PM", "GN-200AM"):
+        _e["last_checked"] = "2026-11-19"
+_jsona9.dump(_ma9, open(_pa9, "w"), indent=1)
+print("a9f5847f overlay applied: Venetian schedule + sheet-7 + MGM/GN rows re-dated to 2026-11-19")
