@@ -22,6 +22,8 @@
 
 No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
 
+**Publication:** [PR #95](https://github.com/karagemop466-tech/Poker2/pull/95) merged to `main` at 2026-11-19T10:53:48Z as `559621f09fbe74d0a7fed66a114df71b05092965`. Both `verify` checks passed (runs [44509788636](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788636) and [44509788664](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788664)). The post-merge [Pages deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44509871647) and [Verify site workflow](https://github.com/karagemop466-tech/Poker2/actions/runs/44509872252) both succeeded. The public dashboard and Flagged page were fetched and rendered after publication. This is a documentation-only audit record, not a declaration that the flagged decisions are resolved.
+
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 
 Read `COORDINATION.md` and checked open PRs before starting: PRs #80–#90 are merged into `main`; only completion-record PRs (#91, #92, touching `COORDINATION.md` only) were open at claim time. Branch `arena/027412f0-poker2` (platform-fixed branch name, noted under flag F02). Earlier 2026-11-19 sessions audited and hardened `/2026/` and `/plan/`, while leaving concrete data-integrity and monitor defects on the **root landing surface** (`https://karagemop466-tech.github.io/Poker2/`). Claiming non-overlapping root-surface repair, live 2026-11-19 source verification, and final integration:
