@@ -29,6 +29,22 @@ if "BIG O" in sec or "Pot Limit Omaha" in sec: errs.append("ranking NLH section 
 # (checked structurally: no data-walk-ok=1 row may simultaneously show both legs as over 30)
 for row in re.findall(r"<tr[^>]*data-walk-ok=\"1\".*?</tr>", hotels, re.S):
     if row.count("over 30 min")>=2: errs.append("hotel row marked walk-ok=1 despite both headline legs over 30 min")
+# Unresolved merge-conflict markers reached a published page.
+# Found live on 2026-11-19: origin/main's index.html shipped a literal "<<<<<<< HEAD" line into the
+# GitHub Pages landing page, and every gate in CI missed it because none of them looks for text a
+# build is not supposed to be able to emit. The markers are only ever written by a human resolving a
+# conflict in the generated file instead of in scripts/build_site.py, so they are checked here, on the
+# committed HTML, for every generated root page rather than just index.html.
+CONFLICT = re.compile(r"^(?:<{7}|={7}|>{7})(?:\s|$)", re.M)
+for page in sorted(ROOT.glob("*.html")):
+    for m in CONFLICT.finditer(page.read_text(errors="ignore")):
+        line = page.read_text(errors="ignore")[:m.start()].count("\n") + 1
+        errs.append(f"{page.name}:{line}: unresolved merge-conflict marker {m.group(0).strip()!r}")
+for page in sorted((ROOT / "2026").rglob("*.html")):
+    for m in CONFLICT.finditer(page.read_text(errors="ignore")):
+        line = page.read_text(errors="ignore")[:m.start()].count("\n") + 1
+        errs.append(f"2026/{page.name}:{line}: unresolved merge-conflict marker {m.group(0).strip()!r}")
+
 if errs:
     print("check_root_surface FAILED:"); [print(" -",e) for e in errs]; sys.exit(1)
-print("check_root_surface: root invariants ok")
+print("check_root_surface: root invariants ok (incl. no conflict markers in published HTML)")
