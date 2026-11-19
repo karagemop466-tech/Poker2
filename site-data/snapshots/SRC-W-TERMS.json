@@ -3,12 +3,12 @@
  "url": "https://www.wynnlasvegas.com/terms-and-conditions/850257",
  "label": "Wynn Las Vegas reservation terms (resort fee $55 plus tax, parking in fee, occupancy surcharge, deposit)",
  "publisher": "Wynn (official)",
- "checked": "2026-11-18T15:53:11.152Z",
+ "checked": "2026-11-19T22:22:48.379Z",
  "http_status": 200,
  "content_type": "text/html; charset=utf-8",
  "bytes": 358538,
- "hash": "06b613ff485af41535a5ae760d51ebc0bf4d16c1b356147f6035112be16c0b52",
- "state": "new",
+ "hash": "9a29cc3fc55a1b5d6dc133f6f2e931b6da42119f7756d49525bcf7e0177b7353",
+ "state": "drifted",
  "binary": false,
  "values": {
   "resort_fee": "55",
@@ -16,6 +16,6 @@
   "deposit": "A full deposit of all room nights and tax"
  },
  "value_diffs": [],
- "excerpt_hint": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/18/2026 - Check Out 11/21/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/18/2026 - 11/21/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings & Events Terms & Conditi",
+ "excerpt_hint": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/19/2026 - Check Out 11/22/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/19/2026 - 11/22/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings & Events Terms & Conditi",
  "note": ""
 }

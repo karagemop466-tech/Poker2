@@ -3,17 +3,17 @@
  "url": "https://www.wynnlasvegas.com/terms-and-conditions/848703",
  "label": "Wynn offer terms (48-hour cancellation, $150/night incidentals)",
  "publisher": "Wynn (official)",
- "checked": "2026-11-18T15:53:11.152Z",
+ "checked": "2026-11-19T22:22:48.379Z",
  "http_status": 200,
  "content_type": "text/html; charset=utf-8",
  "bytes": 351497,
- "hash": "5b61d18c97749f5dccd93408350cd91665e8c73ddd38ef249c453db96d3631ad",
- "state": "new",
+ "hash": "0d869eb051ea6deab1c8a66b329268d35794c9fa8b8bd92cc5d39aa10f585d84",
+ "state": "drifted",
  "binary": false,
  "values": {
   "cancel_hours": "48"
  },
  "value_diffs": [],
- "excerpt_hint": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/18/2026 - Check Out 11/21/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/18/2026 - 11/21/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings & Events Special Offer T",
+ "excerpt_hint": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/19/2026 - Check Out 11/22/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/19/2026 - 11/22/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings & Events Special Offer T",
  "note": ""
 }

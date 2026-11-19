@@ -3,12 +3,12 @@
  "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
  "label": "Venetian resort-fee page",
  "publisher": "The Venetian (official)",
- "checked": "2026-11-18T15:53:11.152Z",
+ "checked": "2026-11-19T22:22:48.379Z",
  "http_status": 200,
  "content_type": "text/html;charset=utf-8",
- "bytes": 227565,
- "hash": "da29b704d486dd901bd99ebc87d01289cf19d03a0f704d41360bcc16f5eeb964",
- "state": "new",
+ "bytes": 227571,
+ "hash": "c6e7531e63e8e037089ae086353e2eef52a8caa6adc662c15eb387cb8a222f7d",
+ "state": "drifted",
  "binary": false,
  "values": {
   "resort_fee": "55"

@@ -3,12 +3,12 @@
  "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
  "label": "Venetian DeepStack Poker Series overview",
  "publisher": "The Venetian (official)",
- "checked": "2026-11-18T15:53:11.152Z",
+ "checked": "2026-11-19T22:22:48.379Z",
  "http_status": 200,
  "content_type": "text/html;charset=utf-8",
- "bytes": 247940,
- "hash": "05a9704857b1ab65a1493036ad764cb0e344adec8f44ecc84c99e902e24fb990",
- "state": "new",
+ "bytes": 248111,
+ "hash": "b5bba467510fb7c0e5fd6cba8efcbf000499d79b100c4f357b7a69856071f225",
+ "state": "drifted",
  "binary": false,
  "values": {
   "stale_current_series_label": null
