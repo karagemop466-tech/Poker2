@@ -2235,3 +2235,24 @@ with open(_p2e7, "w", encoding="utf-8") as _f2e7:
     _json2e7.dump(_m2e7, _f2e7, indent=1, ensure_ascii=False)
     _f2e7.write("\n")
 print("2e732aa2 overlay applied: as_of=2026-11-19, Venetian schedule rows re-dated")
+
+# ---------------------------------------------------------------------------
+# Canonical-format pass (arena/755cb7af-poker2, 2026-11-19).
+# Every session that appends a verification overlay to this script re-dumps
+# data/master.json with its own json.dump flags. With the default
+# ensure_ascii=True that silently re-escapes ~440 em dashes, and the
+# "Root surface reproduces from master.json" gate then fails on main even
+# though no value changed — that is exactly what made CI red after PR #100 and
+# again after PR #107. Normalising the format here, last, after every overlay,
+# means the gate compares data rather than formatting flags. Style only: the
+# round-trip is byte-stable when the file is already canonical, so running this
+# script twice in a row leaves no diff.
+# ---------------------------------------------------------------------------
+import json as _jsonfin, os as _osfin
+_pf = _osfin.path.join(ROOT, "data", "master.json")
+with open(_pf, encoding="utf-8") as _ff:
+    _mf = _jsonfin.load(_ff)
+with open(_pf, "w", encoding="utf-8") as _wf:
+    _jsonfin.dump(_mf, _wf, indent=1, ensure_ascii=False)
+    _wf.write("\n")
+print("canonical-format pass applied (UTF-8 literals, indent=1, trailing newline)")
