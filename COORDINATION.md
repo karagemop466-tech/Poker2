@@ -1985,3 +1985,20 @@ All shared outputs are owned by this final integration session. No booking, paym
 2026-11-19 integration sync: PR #80 landed during the monitor fix. Rebase conflict was append-only in this board; retained both sessions in full. Their trip-calculator implementation and test are preserved. Shared generator scope is now released for integration.
 
 Integration sync: PR #83 landed; only coordination append conflicted. Both records retained; their workflow fix and research file are preserved unchanged.
+### arena/a29d9f35-poker2 — implementation and integration checkpoint (2026-11-19)
+
+- Fresh official reads: Venetian DSE IV HTML schedule (all 4 chunks), Wynn room page, Wynn daily structures (all 3 chunks), Venetian resort fee. Excerpts and exact scope: `research/review-a29d9f35-2026-11-19.md`. Previous 37-sheet readings retain November 17 dates; the 481-field offline consistency check is not claimed as a new retrieval.
+- Added strict confirmed-only/date-range/upcoming controls, sourced Wynn daily exclusions, hotel blank-state safeguards, durable monitor baselines and review warnings, 74-source registry, morning schedule and Latest Review page. N-01/N-02/N-03 publish unresolved evidence and Friday rebuy accounting conflict.
+- Local checks pass: 22-page internal/host link check, build reproduction, strict-filter/hotel regression, trip/search/monitor tests, stored-sheet reconciliation, guarantee/primary-selection, label and semantic gates.
+- Integration collision discovered: PR #81 landed while these claimed-scope edits were in progress; PR #82 edits the shared generator further. Neither session's claim was yet visible on main at the other's start. Notified #82 and will stop editing shared implementation until rebased, preserve both source records and regenerate outputs rather than discard work. No other branch will be checked out or pushed.
+- Live quotes, Google/Apple verification, complete Strip ingestion, strict eligible itinerary and personal trip preferences remain needs review, not asserted complete.
+
+### arena/a29d9f35-poker2 — conflict resolutions after PRs #81 / #82
+
+Rebased onto `69739fc` on the assigned branch. Resolved, without dropping the other session's evidence:
+
+- Shared generator: kept #81/#82's flight-specific date-range implementation, strict toggle, raw numeric fee attributes, fee/eligibility ranking gate, restricted itinerary logic, current-date shortlist, official shortlist citations, date-specific quote-attempt schema and source findings. Added this session's Wynn daily table, Latest Review page, per-field hotel dates, property selector, blank parking/night safeguards and automatic pending-review flags. The two equivalent filters were consolidated, not duplicated.
+- Monitor: kept `decision.WATCH` and `prior_observations`/`last_changed` compatibility; added durable URL state, challenge/non-PDF rejection, full field-level source coverage, and explicit pending-review state. Combined registry = 77 URLs. Chose one morning trigger, 15:00 UTC.
+- Evidence: retained both hotel rate observations and the upstream fresh reads of sheets 5/6/7. These newer read dates are not overwritten by November 17. The hypothetical November 25–28 quote attempt remains explicitly hypothetical, with all quote values blank.
+- README now documents both scopes. Existing stored-sheet, decision, trip and scraper tests remain. Added DOM-level tests supplement them; the existing hotel test now expects the explicit “Not available” empty state instead of an em dash, with unchanged numeric assertions.
+- All conflicting generated HTML/JSON/JS files were rebuilt from the merged generators. No generated-output conflict was resolved by dropping another session's dataset.

@@ -298,7 +298,7 @@ FLAGS = [
                  "scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. "
                  "This sandbox has no outbound access to the venue hosts (curl returns "
                  "SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline "
-                 "can only be set by the 06:00 UTC job running on main."),
+                 "can only be set by the 15:00 UTC job running on main."),
          impact=("Until that job runs, every row reads 'not yet checked'. That is the honest state and "
                  "is deliberately not rendered as 'unchanged'."),
          source=".github/workflows/recheck.yml (repository file, not an external citation)"),
@@ -541,7 +541,7 @@ def _unread_flags():
     except (OSError, ValueError):
         return []
     run = (d.get("runs") or [{}])[0]
-    bad = [r for r in run.get("results", []) if r.get("status") != 200]
+    bad = [r for r in run.get("results", []) if r.get("change") == "fetch error"]
     if not bad:
         return []
     rows = "".join(
@@ -549,13 +549,12 @@ def _unread_flags():
         % (r.get("url"), r.get("status") if r.get("status") else "no response",
            (r.get("error") or "no error text recorded").split(":")[0][:60])
         for r in bad)
-    return [dict(id="F-14", area="Monitoring",
-                 title="Ten of the 61 monitored official URLs could not be read on the last scheduled run",
-                 detail=("The scheduled re-check ran on %s and read 51 of 61 URLs successfully. The ten "
-                         "below returned an HTTP error, a redirect or a timeout, so the site can say only "
-                         "that they were not read - not that they are unchanged. None of the ten is cited "
-                         "by a tournament row; six are hotel fee or cancellation citations.<ul>%s</ul>"
-                         % (run.get("checked") or "the last run", rows)),
+    return [dict(id="M-01", area="Monitoring",
+                 title="%d of %d official URLs could not be read on the last run" % (len(bad), len(run.get("results", []))),
+                 detail=("The scheduled re-check ran on %s. %d of %d documents could not be read. "
+                         "These are monitoring gaps, not evidence of unchanged sources. Failed URLs: %s"
+                         % (run.get("checked") or "the last run", len(bad), len(run.get("results", [])),
+                            "; ".join(r.get("url", "") for r in bad))),
                  impact=("A hotel fee or cancellation term sourced from one of these pages rests on the "
                          "reading date shown on that hotel's row, not on the latest check. Re-open the "
                          "link before you rely on the term."),
@@ -564,5 +563,32 @@ def _unread_flags():
 
 FLAGS = FLAGS + _unread_flags()
 
-SUMMARY_HEADLINE = ("No reviewed event has written rules that confirm the strict single-entry policy. "
-                    "The Venetian schedule gives useful research leads; none is a booking recommendation.")
+SUMMARY_HEADLINE = ("No strict freezeout is confirmed in the reviewed documents. "
+                    "Silence on re-entry is not confirmation; other rooms also publish official structures.")
+
+# New scoped evidence supplements, rather than redates, earlier findings.
+for venue in OTHER_VENUES:
+    if "Wynn" in venue["name"]:
+        venue.update(checked="2026-11-19",
+            status_this_session="The official room page and all three extracted chunks of the daily structures were read November 19. Four recurring daily formats publish entry fees and guarantees; all permit extra spending. Exact-date availability during series remains unverified.",
+            provenance="Daily page and structures read first-hand 2026-11-19; earlier WPT readings retain their original dates.")
+        venue["earlier_findings"].append(dict(
+            text="Daily structures: $200 Monday–Thursday noon, $240 Friday noon rebuy/add-on, $200 weekend noon, $160 nightly 6 p.m. Friday prohibits re-entry but allows rebuys and an add-on; the other three allow re-entry.",
+            url="https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+            retrieved="2026-11-19"))
+for flag in FLAGS:
+    if flag["id"] == "F-01":
+        flag["impact"] = "The confirmed-only toggle returns zero rows. Rules-silent candidates have a separate group filter and remain unconfirmed."
+
+for flag in FLAGS:
+    if flag["id"] == "F-09":
+        flag["detail"] += " Update November 19: the linked daily structures have now been read in full and do publish buy-ins and entry rules for all four daily formats."
+        flag["impact"] = "All four daily formats permit extra spending and are excluded. Exact-date availability during series remains unverified."
+    if flag["id"] == "F-10":
+        flag["title"] = "The dated series table is not exhaustive Strip-wide coverage"
+        flag["detail"] = "The Venetian DSE IV series is fully transcribed here. Wynn, Caesars and Bellagio also publish official schedules or structures; their reviewed daily/weekly formats permit extra spending. Other rooms retain the gaps and read dates on their venue pages."
+    if flag["id"] == "F-11" and flag["area"] == "Coverage":
+        flag["id"] = "C-01"
+        flag["title"] = "Other rooms publish schedules outside the ranked table"
+        flag["detail"] += " Wynn daily structures were read November 19 and are also in a separate excluded table."
+        flag["impact"] = "Reviewed extra-spend events are excluded. Neither these exclusions nor incomplete coverage prove that no freezeout exists elsewhere."

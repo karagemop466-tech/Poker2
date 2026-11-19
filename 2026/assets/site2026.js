@@ -126,11 +126,23 @@
     var o={s:$('#o-sub'),x:$('#o-tax'),nn:$('#o-night'),tt:$('#o-total')};
     var note=$('#h-note');
     function run4(){
-      var est=hotelCost(H);
-      o.s.textContent=fmt(est.sub); o.x.textContent=fmt(est.tax);
-      o.nn.textContent=fmt(est.night); o.tt.textContent=fmt(est.total);
-      note.textContent=est.total==null?'No total until all inputs, including the nightly room rate, are known.':'Illustrative estimate only, not a checkout quote.';
+      var valid=Object.keys(H).every(function(k){return H[k].value!=='' && Number.isFinite(+H[k].value) && +H[k].value>=0});
+      if(!valid || !Number.isInteger(+H.n.value) || +H.n.value<1){
+        Object.keys(o).forEach(function(k){o[k].textContent='Not available'});
+        note.textContent='No complete quote. Blank rate, tax, fee or parking is unknown, not zero. Dates, occupancy and a final checkout total are still required.';
+        return;
+      }
+      var r=+H.r.value, f=+H.f.value, tx=(+H.t.value)/100, pk=+H.p.value, n=+H.n.value;
+      var sub=r+f, tax=sub*tx, night=sub+tax+pk, tot=night*n;
+      o.s.textContent=fmt(sub); o.x.textContent=fmt(tax);
+      o.nn.textContent=fmt(night); o.tt.textContent=fmt(tot);
+      note.textContent='Illustrative formula: (room + resort fee) × (1 + tax rate) + tax-inclusive parking. This assumes the same tax rate on room and resort fee; verify the itemized checkout. Never add fees twice if already included. Not a live quote.';
     }
+    if($('#h-hotel')) $('#h-hotel').addEventListener('change',function(){
+      var option=this.options[this.selectedIndex];
+      H.f.value=option.getAttribute('data-fee'); H.t.value=option.getAttribute('data-tax');
+      H.r.value=''; H.p.value=''; run4();
+    });
     Object.keys(H).forEach(function(k){H[k].addEventListener('input',run4)});
     run4();
   }

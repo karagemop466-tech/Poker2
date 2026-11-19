@@ -85,6 +85,19 @@ def sources():
                 out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " · " + field, h[field])
     out["WYNN_DAILY_STRUCTURES"] = ("Wynn daily tournament rules",
         "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf")
+    # Include every field-level source, not only fee/parking. Booking endpoints are
+    # monitored for availability, never treated as a quote without a dated checkout.
+    for h in hotelsmod.HOTELS:
+        for field, url in h.items():
+            if (field.endswith("_src") or field == "book") and isinstance(url, str) and url.startswith("https://"):
+                out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " " + field, url)
+    for i, item in enumerate(hotelsmod.RATE_LOG):
+        if item[4]:
+            out["RATE_LOG_%d" % i] = ("Rate-log source", item[4])
+    for item in contentmod.FLAGS:
+        url = item.get("source")
+        if isinstance(url, str) and url.startswith("https://") and urlsplit(url).hostname != "www.openstreetmap.org":
+            out["FLAG_" + item["id"]] = ("Flag " + item["id"], url)
     # collapse duplicates so one URL is fetched once, keeping the first label
     seen, deduped = {}, {}
     for k in sorted(out):
@@ -134,7 +147,7 @@ def source_state(history, persisted=None):
             item = state.setdefault(url, {})
             if row.get("hash"):
                 item.update(last_hash=row["hash"], last_success=run.get("checked"))
-            if row.get("change") == "CHANGED" or row.get("review_required"):
+            if row.get("change") == "CHANGED" or row.get("review_required") or row.get("last_changed"):
                 item["review_required"] = True
     for url, item in (persisted or {}).items():
         state.setdefault(url, {}).update(item)
@@ -249,7 +262,6 @@ def main():
             if final and final.rstrip("/") != url.rstrip("/"):
                 # kept, because a citation that resolves somewhere else is a citation to fix
                 row["resolved_to"] = final
-            old = previous.get(url)
             old = state.get(url, {}).get("last_hash")
             if old is None:
                 row["change"] = "first check"

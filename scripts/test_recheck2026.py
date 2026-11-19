@@ -16,6 +16,16 @@ class MonitorTests(unittest.TestCase):
         h = [dict(results=[dict(url='u', hash='b', change='CHANGED')])]
         self.assertFalse(m.source_state(h, {'u': {'review_required': False}})['u']['review_required'])
         self.assertEqual(m.source_state([], {'u': {'last_hash': 'a'}})['u']['last_hash'], 'a')
+    def test_prior_monitor_metadata_is_preserved(self):
+        history = [dict(checked='now', results=[dict(url='u', hash='b', change='unchanged', last_changed='earlier')])]
+        self.assertTrue(m.source_state(history)['u']['review_required'])
+        self.assertEqual(m.prior_observations(history), ({'u':'b'}, {'u':'earlier'}))
+    def test_every_hotel_field_source_is_registered(self):
+        urls = {url for label, url in m.sources().values()}
+        for hotel in m.hotelsmod.HOTELS:
+            for key, value in hotel.items():
+                if key.endswith('_src') and value:
+                    self.assertIn(value, urls)
     def test_reject_fake_pdf(self):
         with self.assertRaises(ValueError):
             m.content_hash('https://official.test/a.pdf', b'<html>Access denied</html>')

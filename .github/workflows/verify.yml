@@ -72,6 +72,14 @@ jobs:
       - name: /2026/ internal links resolve and external hosts are official
         run: python3 scripts/check2026.py
 
+      - name: Decision filters and hotel quote regression tests
+        run: |
+          npm install --no-save --package-lock=false jsdom@26.1.0
+          node scripts/check_decisions2026.mjs
+
+      - name: Monitor baselines survive failures and reject challenge pages
+        run: python3 scripts/test_recheck2026.py
+
       - name: The source-recheck badge actually marks changed rows
         run: python3 scripts/check_monitor_badge.py
 
