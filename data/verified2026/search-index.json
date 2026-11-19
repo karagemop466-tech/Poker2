@@ -1149,7 +1149,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Mon 16 Nov",
-  "x": "Mon 16 Nov | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+  "x": "Mon 16 Nov | 2 | 11:10 AM (3:40 PM) | 5:10 PM (closes 8:40 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1157,7 +1157,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Tue 17 Nov",
-  "x": "Tue 17 Nov | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+  "x": "Tue 17 Nov | 2 | 11:10 AM (3:40 PM) | 5:10 PM (closes 8:40 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1285,7 +1285,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Thu 03 Dec",
-  "x": "Thu 03 Dec | 3 | 11:10 AM (3:40 PM) | 12:10 PM (closes 4:40 PM) | \u2014"
+  "x": "Thu 03 Dec | 3 | 11:10 AM (3:40 PM) | 5:10 PM (closes 8:40 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1293,7 +1293,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Fri 04 Dec",
-  "x": "Fri 04 Dec | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+  "x": "Fri 04 Dec | 2 | 11:10 AM (3:40 PM) | 5:10 PM (closes 8:40 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1301,7 +1301,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Sat 05 Dec",
-  "x": "Sat 05 Dec | 2 | 11:10 AM (3:40 PM) | 11:10 AM (closes 3:40 PM) | \u2014"
+  "x": "Sat 05 Dec | 2 | 11:10 AM (3:40 PM) | 5:10 PM (closes 7:25 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1357,7 +1357,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Sat 12 Dec",
-  "x": "Sat 12 Dec | 4 | 9:10 AM (10:55 AM) | 12:10 PM (closes 1:55 PM) | \u2014"
+  "x": "Sat 12 Dec | 4 | 9:10 AM (10:55 AM) | 6:10 PM (closes 11:10 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1397,7 +1397,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Thu 17 Dec",
-  "x": "Thu 17 Dec | 3 | 10:10 AM (4:55 PM) | 12:10 PM (closes 4:40 PM) | \u2014"
+  "x": "Thu 17 Dec | 3 | 10:10 AM (4:55 PM) | 6:10 PM (closes 11:10 PM) | \u2014"
  },
  {
   "p": "schedule.html",
@@ -1405,7 +1405,7 @@
   "t": "Date Most entries Earliest start Latest entry that stays open",
   "a": "",
   "h": "Fri 18 Dec",
-  "x": "Fri 18 Dec | 2 | 10:10 AM (4:55 PM) | 10:10 AM (closes 4:55 PM) | \u2014"
+  "x": "Fri 18 Dec | 2 | 10:10 AM (4:55 PM) | 6:10 PM (closes 11:10 PM) | \u2014"
  },
  {
   "p": "schedule.html",
