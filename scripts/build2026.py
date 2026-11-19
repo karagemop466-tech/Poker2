@@ -794,9 +794,10 @@ def p_index(events, days):
     # not decision support - it is a wrong answer with a source link. They are listed separately.
     restricted = [e for e in cands if demographic_gate(e)]
     cands_open = [e for e in cands if not demographic_gate(e)]
-    ranked = [e for e in cands_open if e["ratio"]]
+    upcoming = [e for e in cands_open if any(day >= decisions.READ for day in e["dates"])]
+    ranked = [e for e in upcoming if e["ratio"]]
     ranked.sort(key=lambda e: -e["ratio"])
-    cheapest = sorted([e for e in cands_open if e["buy_in"]], key=lambda e: e["buy_in"])[:5]
+    cheapest = sorted([e for e in upcoming if e["buy_in"]], key=lambda e: e["buy_in"])[:5]
     cards = [
         ("Events in the series", len(events), "Venetian DeepStack Extravaganza IV, Nov 16 &ndash; Dec 23 2026"),
         ("Scheduled rows", len(sched.ROWS), "including 12 Day&nbsp;2 / Day&nbsp;3 restarts"),
@@ -812,15 +813,15 @@ def p_index(events, days):
 
     if restricted:
         rrows = "".join(
-            "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a></td>"
+            "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a><br>%s</td>"
             "<td class='num'>$%s</td><td class='num'>%s</td><td>%s</td></tr>"
-            % (i + 1, e["event_no"], esc(e["name"][:64]), format(e["buy_in"], ","),
+            % (i + 1, e["event_no"], esc(e["name"][:64]), srclink(e["sheet_url"], "Structure sheet"), format(e["buy_in"], ","),
                esc(e.get("gtd_text") or ("$%s" % format(e["gtd"], ",") if e.get("gtd") else "&mdash;")),
                esc(demographic_gate(e)))
             for i, e in enumerate(sorted(restricted, key=lambda x: -(x["ratio"] or 0))))
         restricted_html = (
-            "<div class=\"panel\"><h2>Restricted candidates &mdash; confirmed entries you may not be "
-            "able to play</h2>\n<p class=\"note\">These events meet every other single-entry test, but the "
+            "<div class=\"panel\"><h2>Restricted research leads &mdash; events you may not be "
+            "able to play</h2>\n<p class=\"note\">These events are not confirmed freezeouts, and the "
             "official structure sheet restricts who may enter. They are listed here, with the sheet's own "
             "wording, instead of being ranked against open events.</p><div class=\"tbl-scroll\"><table>"
             "<thead><tr><th class=\"num\">#</th><th>Event</th><th class=\"num\">Entry</th>"
@@ -829,10 +830,10 @@ def p_index(events, days):
     else:
         restricted_html = ""
     top = "".join(
-        "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a></td>"
+        "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a><br>%s</td>"
         "<td class='num'>$%s</td><td class='num'>%s</td><td class='num'>%s</td>"
         "<td class='num'>%s</td><td>%s</td></tr>"
-        % (i + 1, e["event_no"], esc(e["name"][:64]), format(e["buy_in"], ","),
+        % (i + 1, e["event_no"], esc(e["name"][:64]), srclink(e["sheet_url"], "Structure sheet"), format(e["buy_in"], ","),
            gtd_cell(e),
            "$" + format(e["fee"], ",") if e["fee"] else "&mdash;",
            "%.1f&times;" % e["ratio"] if e["ratio"] else "&mdash;",
@@ -840,9 +841,9 @@ def p_index(events, days):
         for i, e in enumerate(ranked[:12]))
 
     cheap = "".join(
-        "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a></td>"
+        "<tr><td class='num'>%d</td><td><a href='tournaments.html#ev%d'>%s</a><br>%s</td>"
         "<td class='num'>$%s</td><td>%s</td></tr>"
-        % (i + 1, e["event_no"], esc(e["name"][:64]), format(e["buy_in"], ","),
+        % (i + 1, e["event_no"], esc(e["name"][:64]), srclink(e["sheet_url"], "Structure sheet"), format(e["buy_in"], ","),
            ", ".join("<span class='note'>%s</span>" % d[5:] for d in e["dates"]))
         for i, e in enumerate(cheapest))
 
@@ -871,7 +872,7 @@ quote, and no verified 8 AM start. <a href="summary.html">Executive summary</a> 
 
 <div class="grid2">
 <div class="panel"><h2>Research shortlist by published ratio</h2>
-<p class="note">Open to any player aged 21+ only. %(nres)d candidate event(s) are restricted by the
+<p class="note">Entry dates on or after Nov 19, 2026. Open to any player aged 21+ only. %(nres)d candidate event(s) are restricted by the
 official sheet (age 50+ or women-only) and are listed at the foot of this page rather than ranked
 against events you can actually enter.</p>
 <p class="note">Guarantee &divide; total entry fee, shown only where both figures are printed on the
@@ -886,7 +887,7 @@ excluded from this table on purpose: their guarantees are not like-for-like.</p>
 </div>
 
 <div class="panel"><h2>Lowest entry prices among research leads</h2>
-<p class="note">Lowest total entry fee among the candidate group. Cheap is not the same as good value
+<p class="note">Lowest total entry fee among research leads with entry dates on or after Nov 19, 2026. Cheap is not the same as good value
 &mdash; read it next to the guarantee column on the left.</p>
 <div class="tbl-scroll"><table><thead><tr>
 <th>#</th><th>Event</th><th class="num">Entry</th><th>Dates</th>
@@ -1886,13 +1887,13 @@ event. MGM Grand's poker page returned a not-found page on %(ret)s
 
 def p_summary(events, days):
     cands = [e for e in events if e["group"] == "candidate"]
-    ranked = sorted([e for e in cands if e["ratio"]], key=lambda e: -e["ratio"])
+    ranked = sorted([e for e in cands if e["ratio"] and any(day >= decisions.READ for day in e["dates"])], key=lambda e: -e["ratio"])
     cheapest = sorted([e for e in cands if e["buy_in"]], key=lambda e: e["buy_in"])
     earliest = sorted([e for e in events if e["starts"]], key=lambda e: tminutes(e["starts"][0]))
     top = "".join(
-        "<tr><td class='num'>%d</td><td>#%d %s</td><td class='num'>$%s</td><td class='num'>%s</td>"
+        "<tr><td class='num'>%d</td><td>#%d %s<br>%s</td><td class='num'>$%s</td><td class='num'>%s</td>"
         "<td class='num'>%s</td><td>%s</td></tr>"
-        % (i + 1, e["event_no"], esc(e["name"][:56]), format(e["buy_in"], ","),
+        % (i + 1, e["event_no"], esc(e["name"][:56]), srclink(e["sheet_url"], "Structure sheet"), format(e["buy_in"], ","),
            ("$" + format(e["gtd"], ",")) if e["gtd"] else "&mdash;",
            "%.1f&times;" % e["ratio"] if e["ratio"] else "&mdash;",
            ", ".join("<span class='note'>%s</span>" % d[5:] for d in e["dates"]))
@@ -1904,11 +1905,11 @@ def p_summary(events, days):
                    "<td class='note'>%s</td></tr>"
                    % (k, esc(GROUP_LABEL[k].split(" (")[0]), counts.get(k, 0), why)
                    for k, why in [
-                       ("candidate", "Best available evidence of single entry: one-day, one starting day, no "
+                       ("candidate", "Not confirmed: one-day, one starting day, no "
                                      "re-entry, rebuy or add-on clause on the official sheet."),
-                       ("bounty", "Bounty or PKO. No extra chips for sale, but the guarantee includes bounty "
+                       ("bounty", "Bounty or PKO. The guarantee includes bounty "
                                   "money so the cash pool is smaller."),
-                       ("multiflight", "More than one starting flight. A second flight is a second buy-in."),
+                       ("multiflight", "Multi-flight or multi-day. Buying into another flight differs from a continuation."),
                        ("satellite", "Prize is a seat in another event, not cash."),
                        ("spend", "The official sheet prices a subsequent buy-in."),
                        ("team", "Two players share one entry."),
@@ -1977,7 +1978,7 @@ link on every row. <a href="flagged.html#F-08">F-08</a></li>
 </tr></thead><tbody>%(dist)s</tbody></table></div></div>
 
 <div class="panel"><h2>Research shortlist by published ratio</h2>
-<p class="note">Guarantee &divide; total entry fee, shown only where both numbers are printed on the
+<p class="note">Entry dates on or after Nov 19, 2026. Guarantee &divide; total entry fee, shown only where both numbers are printed on the
 official documents. <strong>Descriptive, not a forecast</strong> &mdash; a guarantee is a floor the room
 commits to, not a predicted pool.</p>
 <div class="tbl-scroll"><table><thead><tr><th class="num">#</th><th>Event</th>
@@ -1993,7 +1994,7 @@ in their own groups.</p>
 <p>The first half cannot be completed from the documents alone. <strong>No official sheet states a
 one-entry rule.</strong> The research candidates have one scheduled starting day and carry no re-entry, rebuy
 or add-on clause at all &mdash; which is the strongest evidence available, and is still silence rather
-than a promise. One email to the poker room closes that gap.
+than a promise. Written confirmation from the poker room would resolve that gap.
 See <a href="suggestions.html#S-01">S-01</a> and <a href="questions.html#Q-01">Q-01</a>.</p>
 </div>
 """ % dict(headline=esc(contentmod.SUMMARY_HEADLINE), n=len(events), nv=len(events), nc=len(cands),
