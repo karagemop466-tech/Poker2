@@ -95,21 +95,6 @@ blocked requirement.
 **Not touched:** the site root generator `scripts/build_site.py`, `data/master.json`, `site-data/**`,
 `plan/**`, and every `.github/workflows/*` file.
 
-=======
-## Session arena/68b54771-poker2 — final integration claim (2026-11-19)
-
-Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894` (PR #101 merged); two record-only PRs from finished sessions remain open — #99 (`arena/a9f5847f-poker2`, COORDINATION.md +2 lines) and #102 (`arena/2c7e846d-poker2`, completion record + F-07 flag correction) — both stale against newer main records appended after them. Platform-fixed branch `arena/68b54771-poker2` (already rebased onto `cf17894`). Claimed scope (final-integrator role per the original brief):
-
-| Task | Status | Owner | Files |
-|---|---|---|---|
-| G1 Carry forward the two stale record PRs (#99, #102) without discarding their work: merge their branch heads into this integration branch, resolve append-only COORDINATION.md conflicts keep-both, re-apply #102's F-07 flag correction on top of the newer dataset, close both PRs with an explanation once this PR is merged | in progress | arena/68b54771-poker2 | `COORDINATION.md`, `data/verified2026/content.py`, `data/verified2026/dataset.json`, `data/verified2026/search-index.json`, regenerated `2026/**` |
-| G2 Live 2026-11-19 official-source re-reads via page-fetch (Venetian DSE IV schedule + poker page, Wynn poker page, Venetian resort fee, Caesars/Golden Nugget/Bellagio/MGM poker pages, Clark County room tax); record any changed values with per-URL retrieval dates; read-only on `data/verified2026/checks.json` | in progress | arena/68b54771-poker2 | `research/68b54771-official-verification-2026-11-19.md` |
-| G3 Run the full local verification suite on the combined tree (root surface, `/2026/`, `/plan/`: build/check/audit/links/semantics/guarantees/labels/search/trip/decisions/monitor) | in progress | arena/68b54771-poker2 | read-only |
-| G4 Final integration: PR → `main`, CI green, merge without waiting, confirm GitHub Pages deployment, verify live pages, record PR link + merge result + closed stale PRs here | pending | arena/68b54771-poker2 | `COORDINATION.md` |
-
-Not claimed: no new product data changes, no ranking/classification changes, no new feature work — the implementation tasks below are complete per the records retained on this board.
->>>>>>> c56cf34 (Coordination: claim arena/68b54771-poker2 final integration scope (stale PR carry-forward, live re-reads, full suite, publication))
-
 ## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
 
 **Scope:** read-only acceptance audit of the existing current dashboard and official-source freshness; this session did not claim or edit shared event/hotel data, generated pages, or application code. Files touched: `COORDINATION.md` only. The implementation tasks below were already present on `main` at `7ab07592e2b861d6000cabea00407eacca656549`; no overlapping active claim or open PR was found.
@@ -2632,7 +2617,9 @@ Read `COORDINATION.md` and checked open PRs before starting: no open PRs at clai
 - V2 done: monitor state read (`data/verified2026/checks.json`, last run 2026-11-18T15:29:01Z, 4 changed / 5 errors). Sheets 7 and 30 re-read today match stored transcriptions, so no value changes result; remaining changed/errored URLs were not re-read and keep their dates/flags.
 - V3 done: `scripts/build_master.py` (new a9f5847f post-write overlay) + `scripts/build2026.py` rebuilt; `build2026.py --check`, `check2026.py` (24 pages, 1629 links, no broken links, no non-official hosts), `check_semantics.py`, `check_guarantees.py`, `check_labels.py`, `check_monitor_badge.py`, `check_sheet_readings.py`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs` all pass. Zero values changed; confirmed single-entry count remains 0. Dates advanced only where the row's own official document was re-read today (Venetian schedule rows, V-14/V-28/V-63 via sheet 7, MGM daily rows, Golden Nugget rows). Wynn WPT PDF, Caesars flyer PDF and Bellagio weekly PDFs were not re-read, so those rows keep earlier dates.
 - Irregularities (non-blocking, recorded in the transcript): Bellagio poker page still carries a stale "Tournament play will resume on Saturday, July 26" note; `https://www.caesars.com/casino/poker` redirects to the Caesars homepage (stored source URLs already correct).
-- V4: PR opened below; CI + Pages deployment recorded here after merge.
+ - V4: PR opened below; CI + Pages deployment recorded here after merge.
+
+ - V4 done: [PR #96](https://github.com/karagemop466-tech/Poker2/pull/96) merged to `main` at `5cd88853a91a8feb96640fa024f817e1e1e78463` on 2026-11-19; both PR `verify` checks passed (first run caught root-surface drift from the new `last_checked` dates — regenerated with `scripts/build_site.py` and re-pushed green). Post-merge `main` runs: Verify site success, Plan success, [pages-build-deployment run 44510190615](https://github.com/karagemop466-tech/Poker2/actions/runs/44510190615) success; Pages API reports `built` from `main` at `/`. Live site: https://karagemop466-tech.github.io/Poker2/ (consolidated surface at `/2026/`).
 
 ## Session arena/2c7e846d-poker2 — claim (2026-11-19)
 
