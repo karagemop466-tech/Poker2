@@ -1661,13 +1661,15 @@ comparison.</p></div>
 </tr></thead><tbody>%(rows)s</tbody></table></div></div>
 
 <div class="panel"><h2>Nearby stays</h2><p>See the <a href="walking.html#google-routes">eight address-based Google Maps estimates</a> and <a href="hotels.html">official booking links and charges</a>. No comparable checkout quote was confirmed.</p></div>
+%(walk)s
 <div class="banner"><strong>Irregularity X-02.</strong> Resolved Nov 19: the series overview now labels DeepStack IV as current. Check the dated source for each start and the <a href="../flagged.html#X-09">NYE discrepancies</a> before planning later dates.
 %(series)s</div>
 """ % dict(n=len(events), rows=rows, ret=RETRIEVED, reread=decisions.READ,
            room=srclink(sched.POKER_ROOM_URL),
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
-           series=srclink(sched.SERIES_URL, "series overview")),
+           series=srclink(sched.SERIES_URL, "series overview"),
+           walk=_walk_panel("V-VEN", "The Venetian poker room")),
                         "venues/venetian.html", subnav=VENUE_SUBNAV)
 
 
