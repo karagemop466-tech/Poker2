@@ -237,7 +237,9 @@ FLAGS = [
          title="Room tax: the hotel's own terms are re-read, the county levy is not",
          detail=("13.38% comes from Clark County's own 'General Information Guide for Transient Lodging "
                  "Establishments' and is corroborated by the Venetian's hotel terms. It was read on 2026-11-16 "
-                 "by an earlier session and was not re-read today."),
+                 "by an earlier session. On 2026-11-19 the 2016 Clark County notice adopting the 13.38% "
+                 "Primary Gaming Corridor rate was re-read (see the ROOM_TAX note). The current county rate "
+                 "table has not been re-checked."),
          impact="Used as the calculator default. Re-check on the county page before you book.",
          source="https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"),
     dict(id="F-08", area="Walking",

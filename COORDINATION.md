@@ -2537,3 +2537,30 @@ rewrite.
 Scope rule: nothing owned by an in-flight session is touched (none are active). Legacy surfaces (`docs/`, `verified/`, `pages/`, `archive/`) are read-only inputs. `S-11` and `S-12` remain open user decisions and are not decided here.
 
 
+## arena/2c7e846d-poker2 — completion record (2026-11-19)
+
+**Outcome.** The eligibility and tax re-verification scope is complete for `/2026/`. The site now states the Venetian Rewards-card condition that every candidate sheet prints, instead of "open to any player aged 21+". Nine candidate sheets were re-read on 2026-11-19 and match the stored data. No fee, guarantee, start time, ranking or classification value changed. The full record is `research/2c7e846d-official-verification-2026-11-19.md`.
+
+- **PR:** [#98](https://github.com/karagemop466-tech/Poker2/pull/98) — "Eligibility printed on candidate sheets; 9 candidate sheets re-read 2026-11-19; N-04 flag", merged with `gh pr merge 98 --merge` at 2026-11-19T10:58:14Z, merge commit `a63a9c3417a2b65bc4d67e80001655c522c2b634`. Both `verify` checks (Verify site, Plan: generated pages match their data) were SUCCESS on head `f05b857`.
+- **Pages:** `pages/builds/latest` for `a63a9c3` → `built`, error null (created 10:58:15Z, updated 10:59:16Z).
+- **Live check (cache-busted URL `?v=a63a9c3`):** `/2026/` shows the 9-sheet re-read line, "13 open to players 21+ with a Venetian Rewards card", and the new candidate note. `/2026/flagged.html` lists N-04. The un-busted URL still served the pre-merge HTML at the time of the check (fetch-tool cache), so the cache-busted URL was used as evidence.
+
+**Sources read 2026-11-19 (official).** Venetian structure sheets 5, 6, 7, 17, 18, 22, 23, 28, 29; the Venetian DSE IV schedule page (all four chunks); the Clark County Department of Business License notice of 2016-11-15 (Primary Gaming Corridor = 13.38%); the Venetian Rewards sign-in page (checked; it states no cost or terms).
+
+**Verification.** 0 of 90 field comparisons differ (buy-in, fee, guarantee, start, late-registration close, chips) across the 15 candidates. Schedule date and start for the 15 candidates: 0 mismatches. Single-entry status unchanged: all nine sheets are silent on re-entry, rebuy and add-on. Full CI-equivalent suite run locally, all exit 0 (audit, build, test_monitor, build_master, build_site, check_root_surface, check_links, build2026 --check, recheck_schedule_live 94/94, check_sheet_readings 37/481, check_guarantees, check2026, check_decisions2026, test_recheck2026, check_monitor_badge, check_refresh2026, check_semantics, check_decisions, check_search, check_trip, check_labels + selftest).
+
+**Irregularities and corrections.**
+- The `/2026/` landing and tournament copy understated eligibility (said "open to any player aged 21+"). Corrected; flag **N-04** added.
+- Flag **F-07** said the 13.38% county rate was "not re-read today." Updated to say the 2016 notice was re-read on 2026-11-19 and the current county rate table was not.
+- The 2016 county notice is old. The live county rate table was not reached, so the current rate is "consistent with the official notice," not a 2026 table check.
+- The Venetian Rewards card's cost and enrolment terms are **not verified** and remain blank (N-04).
+
+**Rebase note.** While this PR was open, PRs #96 and #97 merged to `main`. The rebase conflicted only in the append-only `COORDINATION.md`, resolved by keeping both sides. The other session's `data/verified2026/schedule.py` change is comment-only (a re-read record, no data change). After the rebase the full suite was re-run and regenerated outputs matched the committed files exactly. My branch was force-pushed with `--force-with-lease` only to rewrite this session's own claim and work commits; no other session's commits were rewritten.
+
+**Still open (not claimed in this session).** Google/Apple walking verification (no maps measurement is possible from this sandbox). Live hotel checkout quotes for the same stay. Finish times and any verified single-entry event (F-01, F-04, F-05). Strip-wide scraping. The root surface (legacy) was not changed. Anything marked `needs review` remains non-blocking.
+
+### arena/2c7e846d-poker2 — main repair during integration (2026-11-19)
+
+Found `main` red at `cf17894` while integrating PR #102: (1) `index.html` (root landing page) and `COORDINATION.md` contained a committed, unresolved `<<<<<<< HEAD` conflict marker from an earlier keep-both merge; (2) the verify job `Root surface reproduces from master.json (build_master + build_site drift check)` failed on `cf17894`, because committed root pages did not match their generators' output. Repair: removed the stray COORDINATION marker line, regenerated the root surface from `scripts/build_master.py` + `scripts/build_site.py` (the documented fix), and regenerated `/2026/` via `scripts/build2026.py`. No data value was hand-edited.
+
+Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flyer-2026.pdf`, read 2026-11-19): 10 AM and 6 PM are $100 buy-ins, 2 PM and 9 PM are $160; re-entry allowed by paying the entry fee within the first break; $50 add-on optional. The regenerated "spend-more" classification is consistent with the flyer, but the Caesars summary row still reads "Daily NLH $100 buy-in" as a single figure. Flagged for the owner of that row; not changed here.
