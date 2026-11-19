@@ -3,7 +3,10 @@
 set -euo pipefail
 
 cd "$(git rev-parse --show-toplevel)"
-if [[ $(git branch --show-current) != main ]]; then
+# Publish only for the main-branch run. Schedule/dispatch checkouts are a detached HEAD, where
+# `git branch --show-current` prints nothing - so compare the documented ref env var instead, and
+# fall back to allowing the publish when HEAD does resolve to a local main branch (older checkouts).
+if [[ "${GITHUB_REF_NAME:-$(git branch --show-current)}" != main ]]; then
   echo 'Report publishing only runs from the main checkout; download the workflow artifact instead.'
   exit 0
 fi
