@@ -29,6 +29,7 @@ filters['date-to'].value = '2026-11-20';
 filters.datef.input();
 assert.deepEqual(rows.map(r => r.hidden), [true, false]);
 filters.reset.click();
+filters.sef.checked = false;
 filters.maxbi.value = '1000';
 filters.maxbi.input();
 assert.deepEqual(rows.map(r => r.hidden), [true, false]);
@@ -38,11 +39,13 @@ filters.sef.input();
 assert.deepEqual(rows.map(r => r.hidden), [true, false], 'strict filter needs confirmation, not the candidate group');
 
 const hotel = Object.fromEntries(Object.entries({'h-rate':'','h-fee':'55','h-tax':'13.38','h-park':'20','h-nights':'3',
-  'o-sub':'','o-tax':'','o-night':'','o-total':'','h-note':''}).map(([id,value]) => [id,node(value)]));
+  'h-hotel':'','h-book':'','h-night':'','h-total':''}).map(([id,value]) => [id,node(value)]));
+for (const el of Object.values(hotel)) el.valueAsNumber = el.value === '' ? NaN : Number(el.value);
 load(hotel);
-assert.equal(hotel['o-total'].textContent, 'Not available', 'missing room price is not zero');
+assert.equal(hotel['h-total'].textContent, 'Not available', 'missing room price is not zero');
 hotel['h-rate'].value = '100';
+hotel['h-rate'].valueAsNumber = 100;
 hotel['h-rate'].input();
-assert.equal(hotel['o-night'].textContent, '$195.74');
-assert.equal(hotel['o-total'].textContent, '$587.22');
+assert.equal(hotel['h-night'].textContent, '$195.74');
+assert.equal(hotel['h-total'].textContent, '$587.22');
 console.log('Decision checks: Vegas date, flight range, strict freezeout, entry cap and hotel estimates');

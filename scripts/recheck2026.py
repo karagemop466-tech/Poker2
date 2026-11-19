@@ -10,7 +10,7 @@ Runs on a schedule (see .github/workflows/recheck.yml). For each URL it:
     a page that has actually moved are different facts, and the site must not print them the same
     way: "not read today" is never evidence of "not changed".
 
-Output: data/verified2026/checks.json (90-run history plus durable per-URL state)
+Output: data/verified2026/checks.json  (append-only history, newest run first)
 
 A changed hash means the official document moved, so the value transcribed from it must be
 re-read before it is relied on. The job reports that; it never guesses at the new value and
@@ -24,10 +24,14 @@ import json
 import os
 import re
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
+from html.parser import HTMLParser
+import html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "data", "sheets"))
@@ -36,8 +40,9 @@ sys.path.insert(0, os.path.join(ROOT, "data", "verified2026"))
 import part1, part2, part3, part4, part5, part6          # noqa: E402
 import schedule as sched                                  # noqa: E402
 import hotels as hotelsmod                                # noqa: E402
-import content as contentmod                              # noqa: E402
 import decision as decisions
+import review_20261119 as fresh
+import content as contentmod                              # noqa: E402
 import other_rooms as othermod                            # noqa: E402
 
 OUT = os.path.join(ROOT, "data", "verified2026", "checks.json")
@@ -77,27 +82,26 @@ def sources():
     # Rooms whose official schedules are transcribed onto their venue pages (added 2026-11-17).
     for key, label, url in othermod.MONITOR_URLS:
         out["ROOM_" + key] = (label, url)
-    for i, (label, url) in enumerate(decisions.WATCH, 1):
-        out["FOLLOWUP_%02d" % i] = (label, url)
-    for h in hotelsmod.HOTELS:
-        for field in ("book", "tax_src", "cancel_src", "poker_rate_src"):
-            if h.get(field):
-                out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " · " + field, h[field])
-    out["WYNN_DAILY_STRUCTURES"] = ("Wynn daily tournament rules",
-        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf")
-    # Include every field-level source, not only fee/parking. Booking endpoints are
-    # monitored for availability, never treated as a quote without a dated checkout.
-    for h in hotelsmod.HOTELS:
-        for field, url in h.items():
+    out["WYNN_DAILY_STRUCTURES"] = ("Wynn daily tournament rules", fresh.WYNN_RULES)
+    for hotel in hotelsmod.HOTELS:
+        for field, url in hotel.items():
             if (field.endswith("_src") or field == "book") and isinstance(url, str) and url.startswith("https://"):
-                out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " " + field, url)
+                out[f"HOTEL_{hotel['id']}_{field}"] = (f"{hotel['name']} · {field}", url)
     for i, item in enumerate(hotelsmod.RATE_LOG):
         if item[4]:
-            out["RATE_LOG_%d" % i] = ("Rate-log source", item[4])
-    for item in contentmod.FLAGS:
-        url = item.get("source")
-        if isinstance(url, str) and url.startswith("https://") and urlsplit(url).hostname != "www.openstreetmap.org":
-            out["FLAG_" + item["id"]] = ("Flag " + item["id"], url)
+            out[f"RATE_LOG_{i}"] = ("Rate-log source", item[4])
+    for i, q in enumerate(hotelsmod.QUOTE_LOG):
+        out[f"QUOTE_{i}"] = (f"{q['hotel']} dated booking lookup", q["source"])
+    for label, _, _, page, document in contentmod.SCHEDULE_FEED:
+        for kind, url in (("page", page), ("schedule", document)):
+            if url:
+                out[f"FEED_{label}_{kind}"] = (f"{label} official {kind}", url)
+    for f in contentmod.FLAGS + fresh.FLAGS:
+        url = f["source"]
+        if url.startswith("https://") and urlsplit(url).netloc not in {"www.openstreetmap.org"}:
+            out.setdefault("FLAG_" + f["id"], (f["title"], url))
+    for i, (label, url) in enumerate(decisions.WATCH, 1):
+        out[f"FOLLOWUP_{i:02d}"] = (label, url)
     # collapse duplicates so one URL is fetched once, keeping the first label
     seen, deduped = {}, {}
     for k in sorted(out):
@@ -117,6 +121,63 @@ def normalise(raw):
     return re.sub(r"\s+", " ", text).strip()
 
 
+class ScheduleTable(HTMLParser):
+    """Extract the published identity columns; ignore mutable Results cells."""
+
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self.row = None
+        self.cell = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "tr":
+            self.row = []
+        elif tag == "td" and self.row is not None:
+            self.cell = []
+        elif tag == "a" and self.cell is not None:
+            href = dict(attrs).get("href") or ""
+            if re.search(r"structure_\d+\.pdf", href):
+                self.cell.append(urljoin(sched.SCHEDULE_URL, href))
+
+    def handle_data(self, text):
+        if self.cell is not None:
+            self.cell.append(text)
+
+    def handle_endtag(self, tag):
+        if tag == "td" and self.cell is not None:
+            self.row.append(" ".join(" ".join(self.cell).split()))
+            self.cell = None
+        elif tag == "tr" and self.row is not None:
+            if len(self.row) >= 5:
+                date, start, event, _, linked = self.row[:5]
+                sheet = re.search(r"structure_(\d+)\.pdf", linked)
+                event = re.fullmatch(r"#?\s*(\d+)", event)
+                try:
+                    date = datetime.strptime(date, "%A, %B %d, %Y").date().isoformat()
+                    start = datetime.strptime(start.upper(), "%I:%M %p").strftime("%I:%M %p").lstrip("0")
+                except ValueError:
+                    pass
+                else:
+                    if event and sheet:
+                        self.rows.append((date, start, int(event[1]), int(sheet[1])))
+            self.row = None
+
+
+def schedule_diff(raw):
+    from collections import Counter
+
+    table = ScheduleTable()
+    table.feed(raw.decode("utf-8", "replace"))
+    if not table.rows:
+        return dict(state="unreadable schedule table", count=None, added=[], removed=[])
+    live = Counter(table.rows)
+    expected = Counter((r[0], r[3], r[2], r[9]) for r in sched.ROWS)
+    added, removed = sorted((live - expected).elements()), sorted((expected - live).elements())
+    return dict(state="rows differ" if added or removed else "rows match", count=len(table.rows),
+                added=added, removed=removed)
+
+
 def validate_document(url, raw):
     """HTTP 200 is not proof of a readable official document."""
     if urlsplit(url).path.lower().endswith(".pdf"):
@@ -132,42 +193,83 @@ def validate_document(url, raw):
         raise ValueError("unreadable document: empty, challenge or soft-404 response")
 
 
-def source_state(history, persisted=None):
-    """Key by URL, retain last successful hash across failures and sticky review flags.
-
-    A subsequent unchanged fetch does not acknowledge a changed source. Human review must
-    explicitly reset review_required in the durable state with documented evidence.
-    """
-    state = {}
-    for run in reversed(history):
-        for row in run.get("results", []):
-            url = row.get("url")
-            if not url:
-                continue
-            item = state.setdefault(url, {})
-            if row.get("hash"):
-                item.update(last_hash=row["hash"], last_success=run.get("checked"))
-            if row.get("change") == "CHANGED" or row.get("review_required") or row.get("last_changed"):
-                item["review_required"] = True
-    for url, item in (persisted or {}).items():
-        state.setdefault(url, {}).update(item)
-    return state
-
-
 def content_hash(url, raw):
     validate_document(url, raw)
     if urlsplit(url).path.lower().endswith(".pdf"):
         return hashlib.sha256(raw).hexdigest()[:16], "raw PDF bytes"
-    return hashlib.sha256(normalise(raw).encode("utf-8")).hexdigest()[:16], "normalised HTML text"
+    # Include official PDF targets: a publisher can replace a schedule link without editing its label.
+    text = raw.decode("utf-8", "ignore")
+    links = sorted({urljoin(url, html.unescape(link)) for link in
+                    re.findall(r"(?i)href\s*=\s*['\"]([^'\"]+?\.pdf(?:\?[^'\"]*)?)['\"]", text)})
+    normalized = normalise(raw)
+    return (hashlib.sha256((normalized + "\n" + "\n".join(links)).encode("utf-8")).hexdigest()[:16],
+            "normalised HTML text and PDF links")
 
 
-_OPENER = None
+def prior_successes(history):
+    """Use URL identity and look past failed fetches. Registry labels can be renamed."""
+    previous = {}
+    for run in history:
+        for row in run.get("results", []):
+            if row.get("hash"):
+                previous.setdefault(row["url"], row)
+    return previous
+
+
+def prior_observations(history):
+    """Keep the latest readable baseline by URL across errors and registry-key renames."""
+    baselines, changes = {}, {}
+    for run in history:
+        for row in run.get("results", []):
+            url = row["url"]
+            if row.get("hash"):
+                baselines.setdefault(url, row["hash"])
+            changed = row.get("last_changed") or (run.get("checked") if row.get("change") == "CHANGED" else None)
+            if changed:
+                changes.setdefault(url, changed)
+    return baselines, changes
+
+
+def source_state(history, persisted=None, reviewed=None):
+    """Build durable per-URL state, including both older report schemas."""
+    state = {}
+    for run in reversed(history):
+        for row in run.get("results", []):
+            if not (url := row.get("url")):
+                continue
+            item = state.setdefault(url, {})
+            if row.get("hash"):
+                item.update(last_hash=row["hash"], hash_method=row.get("hash_method"), last_success=run.get("checked"))
+            since = row.get("review_since") or row.get("last_changed")
+            if since or row.get("review_required") or row.get("change") == "CHANGED":
+                item.update(review_required=True, changed_at=since or run.get("checked"))
+    for url, item in (persisted or {}).items():
+        state.setdefault(url, {}).update(item)
+    for url, item in state.items():
+        if url in (reviewed or {}) and reviewed[url] == item.get("last_hash"):
+            item["review_required"] = False
+    return state
+
+
+def review_state(history, reviewed=None, persisted=None):
+    return {url: item.get("changed_at") or "date unknown"
+            for url, item in source_state(history, persisted, reviewed).items() if item.get("review_required")}
+
+
+def reviewed_hashes():
+    path = os.path.join(os.path.dirname(OUT), "reviewed-hashes.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+_LOCAL = threading.local()
 
 # What each failure mode means for the reader. Printed verbatim on the Sources page, so a red row in
 # the monitor log can never be read as "the source is unchanged".
 MEANING = {
-    "blocked": "the request was refused or rate-limited; this alone does not prove whether "
-               "the page is available in a browser",
+    "blocked": "the request was refused or rate-limited; this alone does not prove whether the page is available in a browser",
     "unreadable document": "the response is not the expected document; no baseline is updated",
     "redirect-loop": "the host keeps redirecting without serving content (a cookie or region wall). "
                      "Not evidence that the page moved",
@@ -202,12 +304,11 @@ def error_kind(code, message):
 
 
 def opener():
-    global _OPENER
-    if _OPENER is None:
-        _OPENER = urllib.request.build_opener(
+    if not hasattr(_LOCAL, "opener"):
+        _LOCAL.opener = urllib.request.build_opener(
             urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
             urllib.request.HTTPRedirectHandler())
-    return _OPENER
+    return _LOCAL.opener
 
 
 def fetch(url):
@@ -218,78 +319,70 @@ def fetch(url):
         "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
     })
-    with opener().open(req, timeout=60) as r:
+    with opener().open(req, timeout=30) as r:
         return r.getcode(), r.read(), r.geturl()
 
 
-def prior_observations(history):
-    """Keep the latest readable baseline by URL across errors and registry-key renames."""
-    baselines, changes = {}, {}
-    for run in history:
-        for row in run.get("results", []):
-            url = row["url"]
-            if row.get("hash"):
-                baselines.setdefault(url, row["hash"])
-            changed = row.get("last_changed") or (run.get("checked") if row.get("change") == "CHANGED" else None)
-            if changed:
-                changes.setdefault(url, changed)
-    return baselines, changes
+def check_source(item, state):
+    key, (label, url) = item
+    row = dict(key=key, label=label, url=url)
+    try:
+        code, raw, final = fetch(url)
+        row["status"] = code
+        row["hash"], row["hash_method"] = content_hash(url, raw)
+        row["bytes"] = len(raw)
+        if final and final.rstrip("/") != url.rstrip("/"):
+            # kept, because a citation that resolves somewhere else is a citation to fix
+            row["resolved_to"] = final
+        if url == sched.SCHEDULE_URL:
+            row["schedule_diff"] = schedule_diff(raw)
+        old = state.get(url, {})
+        if not old.get("last_hash") or old.get("hash_method") != row["hash_method"]:
+            row["change"] = "first check"
+        elif old["last_hash"] != row["hash"]:
+            row["change"] = "CHANGED"
+        else:
+            row["change"] = "unchanged"
+    except urllib.error.HTTPError as e:
+        kind = error_kind(e.code, e.reason)
+        row.update(status=e.code, hash=None, change="fetch error", error="HTTP %s" % e.code,
+                   error_kind=kind, reason=MEANING[kind])
+    except Exception as e:  # noqa: BLE001
+        kind = error_kind(None, str(e))
+        row.update(status=None, hash=None, change="fetch error", error=str(e)[:180],
+                   error_kind=kind, reason=MEANING[kind])
+    return row
 
 
 def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    history = []
     saved = {}
     if os.path.exists(OUT):
-        try:
-            with open(OUT, encoding="utf-8") as f:
-                saved = json.load(f)
-            history = saved.get("runs", [])
-        except Exception:
-            history = []
-    previous, changes = prior_observations(history)
-    state = source_state(history, saved.get("source_state"))
+        with open(OUT, encoding="utf-8") as handle:
+            saved = json.load(handle)
+    history = saved.get("runs", [])
+    reviewed = reviewed_hashes()
+    state = source_state(history, saved.get("source_state"), reviewed)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     results = []
-    for key, (label, url) in sorted(sources().items()):
-        row = dict(key=key, label=label, url=url)
-        try:
-            code, raw, final = fetch(url)
-            row["status"] = code
-            row["hash"], row["hash_method"] = content_hash(url, raw)
-            row["bytes"] = len(raw)
-            if final and final.rstrip("/") != url.rstrip("/"):
-                # kept, because a citation that resolves somewhere else is a citation to fix
-                row["resolved_to"] = final
-            old = state.get(url, {}).get("last_hash")
-            if old is None:
-                row["change"] = "first check"
-            elif old != row["hash"]:
-                row["change"] = "CHANGED"
-                changes[url] = now
-            else:
-                row["change"] = "unchanged"
-        except urllib.error.HTTPError as e:
-            kind = error_kind(e.code, e.reason)
-            row.update(status=e.code, hash=None, change="fetch error", error="HTTP %s" % e.code,
-                       error_kind=kind, reason=MEANING[kind])
-        except Exception as e:  # noqa: BLE001
-            kind = error_kind(None, str(e))
-            row.update(status=None, hash=None, change="fetch error", error=str(e)[:180],
-                       error_kind=kind, reason=MEANING[kind])
-        if url in changes:
-            row["last_changed"] = changes[url]
+    # Limit parallelism to three fetches; each worker owns its cookie jar.
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        observed = list(pool.map(lambda item: check_source(item, state), sorted(sources().items())))
+    for row in observed:
+        url = row["url"]
         item = state.setdefault(url, {})
         if row.get("hash"):
-            item.update(last_hash=row["hash"], last_success=now)
-        if row.get("change") == "CHANGED":
-            item["review_required"] = True
-            item["changed_at"] = now
-        row["review_required"] = bool(item.get("review_required"))
-        row["last_success"] = item.get("last_success")
+            item.update(last_hash=row["hash"], hash_method=row["hash_method"], last_success=now)
+        if row["change"] == "CHANGED":
+            item.update(review_required=True, changed_at=now)
+        if reviewed.get(url) and reviewed[url] == item.get("last_hash"):
+            item["review_required"] = False
+        row.update(last_success=item.get("last_success"), review_required=bool(item.get("review_required")))
+        if row["review_required"]:
+            row["review_since"] = item.get("changed_at")
         results.append(row)
-        print("%-10s %-12s %s" % (row.get("status"), row["change"], key))
+        print("%-10s %-12s %s" % (row.get("status"), row["change"], row["key"]))
 
     kinds = {}
     for r in results:
@@ -314,7 +407,7 @@ def main():
     payload = dict(
         last_run=now,
         source_state=state,
-        pending_review=sum(bool(v.get("review_required")) for v in state.values()),
+        pending_review=sum(bool(item.get("review_required")) for item in state.values()),
         monitored=len(results),
         changed_this_run=len(changed),
         # "first check" is the opposite of "never checked": it means the baseline hash was
@@ -331,7 +424,7 @@ def main():
         by_error_kind=kinds,
         coverage="%d of %d URLs could be read by this run" % (sum(1 for r in results if r.get("hash")),
                                                               len(results)),
-        note=("HTML is hashed from normalised visible text; PDFs are hashed as raw response bytes. "
+        note=("HTML is hashed from normalised visible text and PDF links; PDFs are hashed as raw response bytes. "
               "A CHANGED row means the official document moved, so every value transcribed from it "
               "must be re-read before it is relied on. A fetch error is a monitoring failure, not a "
               "verdict: the value it covers keeps its own last human-verified date. "

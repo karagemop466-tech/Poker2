@@ -269,3 +269,32 @@ RATE_LOG = [
     ("2026-11-17", "ALL", "cancellation_deadline", "partial: Bellagio and MGM Grand publish 72 h; Caesars properties publish a 48 h headline; Venetian/Palazzo publish prepaid and early-checkout terms; Wynn publishes deposit terms only",
      None, "See F-06 for the per-property status."),
 ]
+# Checkout observations are separate from published fee/marketing history. None means unverified,
+# never zero; retrieval dates do not stand in for a rate timestamp supplied by the booking engine.
+QUOTE_LOG = [
+    dict(hotel="The Venetian Resort", check_in="2026-12-01", check_out="2026-12-04", adults=1,
+         children=0, rooms=1, room=None, offer=None, checkout_total=None, nightly_average=None,
+         resort_fee=None, tax=None, parking=None, cancellation=None, rate_timestamp=None,
+         retrieved="2026-11-19", source="https://www.venetianlasvegas.com/book?adults%5B%5D=1&arrival_date=2026-12-01&children%5B%5D=0&departure_date=2026-12-04&view=calendar",
+         note="Research window only. The official date link redirected to the reservations loading shell; no quote or availability was returned."),
+    dict(hotel="Wynn Las Vegas", check_in="2026-11-18", check_out="2026-11-19", adults=None,
+         children=None, room="Wynn Resort King", offer="Flexible Getaway Rate", checkout_total=None,
+         nightly_average="$654 incl. fee, excl. tax", resort_fee="$55 plus tax, included in average",
+         tax=None, parking="Self-parking included for registered guests",
+         cancellation="Non-refundable if booked on/after Oct 25 for this stay (offer-specific)",
+         rate_timestamp=None, retrieved="2026-11-19",
+         source="https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658",
+         note="Historical, partial: booking page defaulted to a different stay, not a comparable checkout quote. Occupancy and itemized tax were not confirmed."),
+]
+
+# Google Maps directions observed on 2026-11-19. These are route estimates, not indoor timing tests.
+MAPS_TO_VENETIAN = {
+    "H-VEN": ("The Venetian Resort Las Vegas, 3355 S Las Vegas Blvd", 7),
+    "H-PAL": ("The Palazzo at The Venetian Resort, 3325 S Las Vegas Blvd", 4),
+    "H-WYN": ("Wynn Las Vegas, 3131 S Las Vegas Blvd", 12),
+    "H-ENC": ("Encore Las Vegas, 3131 S Las Vegas Blvd", 18),
+    "H-BEL": ("Bellagio, 3600 S Las Vegas Blvd", 28),
+    "H-CP": ("Caesars Palace, 3570 S Las Vegas Blvd", 19),
+    "H-MGM": ("MGM Grand, 3799 S Las Vegas Blvd", 42),
+    "H-HS": ("Horseshoe Las Vegas, 3645 S Las Vegas Blvd", 24),
+}

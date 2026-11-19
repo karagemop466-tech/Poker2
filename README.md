@@ -14,9 +14,11 @@ That is not proof that none exists anywhere on the Strip. A sheet silent on re-e
 confirmation. The confirmed-only tournament filter returns no rows; rules-silent candidates have a
 separate group filter. Bounty, multiple-flight, satellite, team and extra-spend formats remain separate.
 
-There is no defensible hotel winner or bookable all-day itinerary yet. Exact trip dates, occupancy,
-nightly budget and quality floor were not supplied. No exact-stay checkout quote or Google/Apple-verified
-walking duration was captured. Missing prices remain unavailable, not zero. No 8 a.m. eligible start
+There is no defensible hotel winner or bookable all-day itinerary yet. The comparison is Dec 1–4
+(three nights, one adult), $200 per night all-in, with a private nonsmoking ensuite room and a refundable
+rate with a written deadline. These are research assumptions, not a booked stay. No comparable
+checkout was exposed. Seven of eight newly checked Google routes to Venetian Poker Room are estimated
+at ≤30 minutes; none measures indoor time. Missing prices remain unavailable, not zero. No 8 a.m. eligible start
 or verified tournament finish time has been established.
 
 ### Evidence, with honest dates
@@ -42,7 +44,7 @@ $10 + $5 from a $200 rebuy. The site does not resolve that conflict by guessing.
 - Rule fields and excerpts, official source links, individual retrieval dates and source-change badges.
 - Guarantee ÷ total entry fee is a descriptive ratio, **not** expected winnings or a pool forecast.
   It does not establish strict-policy eligibility.
-- Day plan: one provisional primary plus conditional fallbacks. End times are unverified; no guaranteed
+- Day plan: one primary and at most one conditional fallback only when the evidence qualifies; currently none. End times are unverified; no guaranteed
   sequence is claimed. A fallback requires elimination and enough time to arrive before registration closes.
 - Venue pages: Venetian, Wynn/Encore, Caesars, Bellagio, Horseshoe, MGM and an other-rooms record.
   Wynn daily formats are explicitly in an excluded extra-spend section.
@@ -59,13 +61,13 @@ $10 + $5 from a $200 rebuy. The site does not resolve that conflict by guessing.
 ## Decisions still blocked
 
 1. Obtain written maximum-entry, no-rebuy and no-add-on rules before promoting any event to confirmed.
-2. Establish exact dates and occupancy; no arbitrary booking-widget dates are used as personal preferences.
+2. Keep the Nov 25–28 two-adult lookup separate from Dec 1–4; do not use the booking engine’s default dates as quotes.
 3. Capture itemized checkout totals for the same dates, occupancy, room type and refund terms. Preserve
    room subtotal, nightly average, mandatory fees/taxes, parking, exact cancellation deadline and timestamp.
 4. Verify the actual pedestrian route and poker-room entrance; certify ≤30 minutes only after verification.
 5. Reconfirm official schedules, policies and quotes before any nonrefundable payment.
 
-A live hotel quote service, complete Strip-wide event ingestion, verified walking routes and verified
+A live hotel quote service, complete Strip-wide event ingestion, indoor walking measurements and verified
 finish-time sequencing are **not implemented or claimed as complete**. The evidence page explains
 what is missing and how to obtain it. The current monitor fetches official documents and flags changes;
 it does not silently replace published event facts with scraped guesses.
@@ -127,3 +129,8 @@ date filtering, source citations on shortlists, and refresh-artifact preservatio
 Historical Google Maps readings stay distinguished from OSRM estimates; neither is represented
 as a fresh entrance-specific walking verification by this session. Current table dates reflect both
 sessions' evidence without treating a build as a retrieval.
+
+The consolidated monitor compares Venetian DSE IV event/date/start/sheet keys and tracks other room
+documents at source level. Review changes stay pending across failed or unchanged fetches. After a
+source re-read, record the verified URL/hash in `data/verified2026/reviewed-hashes.json`. Scheduled
+reports remain downloadable even if the guarded push or Pages build request is rejected.

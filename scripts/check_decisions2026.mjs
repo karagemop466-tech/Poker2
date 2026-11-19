@@ -22,32 +22,35 @@ function open(page) {
 {
   const {dom,$,set}=open('tournaments');
   const shown=()=>[...dom.window.document.querySelectorAll('#t tbody tr:not(.hidden)')];
+  assert.equal(shown().length,0,'the initial page shows confirmed freezeouts only');
+  set('sef',false);
   assert.equal(shown().length,62,'past entry dates hidden, including ended multi-flight event');
   set('sef',true); assert.equal(shown().length,0,'rules silent is not confirmed');
-  assert.match($('count').textContent,/No events meet/);
+  assert.match($('count').textContent,/No confirmed freezeout matches/);
   set('sef',false); set('datef','2026-11-19'); set('date-to','2026-11-21');
   assert.deepEqual(shown().map(r=>r.id),['ev3','ev4','ev5']);
   set('datef','2026-11-22'); assert.equal(shown().length,0,'reversed range returns no matches');
-  $('reset').click(); set('include-past',true); set('datef','2026-11-18'); set('date-to','2026-11-18');
+  $('reset').click(); set('sef',false); set('include-past',true); set('datef','2026-11-18'); set('date-to','2026-11-18');
   assert.deepEqual(shown().map(r=>r.id),['ev2'],'restart is not a new entry');
-  $('reset').click(); dom.window.document.querySelector('.pill[data-g="candidate"]').click();
+  $('reset').click(); set('sef',false); dom.window.document.querySelector('.pill[data-g="candidate"]').click();
   assert(shown().every(r=>r.dataset.group==='candidate'));
   dom.window.close();
 }
 {
   const {dom,$,set}=open('hotels');
-  assert.equal($('o-total').textContent,'Not available');
+  assert.equal($('h-total').textContent,'Not available');
+  set('h-hotel','venetian');
   set('h-rate','100'); set('h-nights','2');
-  assert.equal($('o-total').textContent,'Not available','unknown parking is not free');
+  assert.equal($('h-total').textContent,'Not available','unknown parking is not free');
   set('h-park','0');
-  assert.equal($('o-night').textContent,'$175.74');
-  assert.equal($('o-total').textContent,'$351.48');
-  set('h-nights','1.5'); assert.equal($('o-total').textContent,'Not available');
+  assert.equal($('h-night').textContent,'$175.74');
+  assert.equal($('h-total').textContent,'$351.48');
+  set('h-nights','1.5'); assert.equal($('h-total').textContent,'Not available');
   set('h-nights','2'); set('h-hotel','caesars-palace');
   assert.equal($('h-fee').value,''); assert.equal($('h-tax').value,'');
-  assert.equal($('o-total').textContent,'Not available','switch must clear unverified rates');
+  assert.equal($('h-total').textContent,'Not available','switch must clear unverified rates');
   set('h-hotel','venetian'); assert.equal($('h-fee').value,'55');
-  set('h-rate','-1'); assert.equal($('o-total').textContent,'Not available');
+  set('h-rate','-1'); assert.equal($('h-total').textContent,'Not available');
   dom.window.close();
 }
 {
