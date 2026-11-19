@@ -1,5 +1,27 @@
 # Coordination board
 
+## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
+
+**Scope:** read-only acceptance audit of the existing current dashboard and official-source freshness; this session did not claim or edit shared event/hotel data, generated pages, or application code. Files touched: `COORDINATION.md` only. The implementation tasks below were already present on `main` at `7ab07592e2b861d6000cabea00407eacca656549`; no overlapping active claim or open PR was found.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| A1 Verify current official event and hotel-policy pages, and confirm the published dashboard exposes the existing evidence and review flags | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+| A2 Run the local site, data-provenance, calculator, filter, monitor, and link-verification suites; record any unresolved decision blockers | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+
+**Official sources re-opened on 2026-11-19 (UTC):**
+
+- [Venetian DeepStack Extravaganza IV official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html): title dates remain November 16–December 23, 2026; the current HTML page publishes daily event rows and structure-sheet links. This spot check is not a new transcription of every row or a new reading of all 37 PDFs. The stored line-by-line schedule comparison and sheet reconciliation were also run locally, but are not represented as fresh source retrievals.
+- [Wynn official poker page](https://www.wynnlasvegas.com/casino/poker): the page currently lists the WPT World Championship November 27–December 21, 2026, Wynn Signature Series January 11–24, 2027, and warns daily tournaments are suspended during series. Daily structures remain separately linked; entry rules vary by format.
+- [Venetian official resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html): $55 plus tax per night. This is a mandatory-fee input, not an exact room quote or a verified all-in hotel cost.
+- [Published dashboard](https://karagemop466-tech.github.io/Poker2/2026/) and its [executive summary](https://karagemop466-tech.github.io/Poker2/2026/summary.html) and [Flagged for Review page](https://karagemop466-tech.github.io/Poker2/2026/flagged.html) were fetched after the latest Pages deployment and remain available.
+
+**Verification performed:** `build2026.py --check`, `check2026.py` (24 pages, 1,629 links), `check_sheet_readings.py` (37 sheets / 481 field comparisons), `test_recheck2026.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_guarantees.py`, `check_labels.py` and its self-test, `check_refresh2026.py`, `check_plan_fresh.py --strict`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_decisions.mjs`, `check_site.mjs`, `audit.py`, `check_links.py`, `check_root_surface.py`, and all four site generator `--check` commands passed. `jsdom@26.1.0` was installed locally to run the project's Node decision tests; no dependency manifest or lockfile was changed. GitHub reports Verify Site, Plan generated-pages verification, and Pages deployment successful on current main SHA `7ab07592e2b861d6000cabea00407eacca656549`; no open PR was present.
+
+**Decision blockers retained as flagged, not silently “completed”:** no reviewed event has written confirmation of single-entry/no-rebuy/no-add-on (confirmed-only count remains zero); finish times are unpublished; the exact-stay itemized hotel checkout quote is not available from the official booking shell; and the walking data are estimates / Maps checks rather than verified entrance-to-room durations. Thus no strict-policy tournament recommendation, fully feasible all-day sequence, or defensible hotel winner can be claimed. The official hotel booking link is provided, but an automated live checkout-price feed is not implemented because no confirmed official quote endpoint or exact bookable quote was available during this audit. These are already listed on the site's Flagged for Review and Suggestions pages.
+
+No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
+
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 
 Read `COORDINATION.md` and checked open PRs before starting: PRs #80–#90 are merged into `main`; only completion-record PRs (#91, #92, touching `COORDINATION.md` only) were open at claim time. Branch `arena/027412f0-poker2` (platform-fixed branch name, noted under flag F02). Earlier 2026-11-19 sessions audited and hardened `/2026/` and `/plan/`, while leaving concrete data-integrity and monitor defects on the **root landing surface** (`https://karagemop466-tech.github.io/Poker2/`). Claiming non-overlapping root-surface repair, live 2026-11-19 source verification, and final integration:
