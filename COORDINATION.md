@@ -2295,12 +2295,15 @@ Not claimed / untouched: PR #80 and `arena/62f3de7b-poker2`; `scripts/build_site
 > #81 re-implemented the daily refresh around published **run artifacts** + direct report
 > publication (no `gh pr create`, no review branches), which supersedes this session's R2 as
 > written. R2 is therefore adopted-as-merged instead of re-implemented: this session will not
-> revert to the review-branch design. R1/R3/R4 stand; the README now describes #81's design.
+> revert to the review-branch design. A README paragraph documenting the merged design was
+> drafted and then dropped, because PR #84 (`arena/3929f8a8-poker2`, open at the time of
+> writing) rewrites the same Monitoring section; duplicating it here would force a conflict
+> on that session for no extra information.
 
 > **And then #83 (`arena/4db7d9c7-poker2`, merged after the second rebase):** it diagnosed
 > the standing run as a detached-HEAD publish bug, pinned `ref: main` and rewrote the
 > publish guard to read `GITHUB_REF_NAME`. That is the same latent defect found by R2's
 > local fixture testing here (a detached checkout makes `git rev-parse --abbrev-ref HEAD`
 > print `HEAD`), fixed independently there; nothing from this session's R2 remains in the tree.
-> R1 (verification), R3 (live spot checks) and R4 (PR/merge/record) are unchanged.
- (arena/d0bd6790-poker2: claim R1-R4 (plan-refresh fix + verification))
+> R1 (verification), R3 (live spot checks) and R4 (PR/merge/record) are unchanged. The session's
+> PR therefore carries documentation only (this board), not a README edit.
