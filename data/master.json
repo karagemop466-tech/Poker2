@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-17",
+ "as_of": "2026-11-19",
  "generated_by": "scripts/build_master.py",
  "policy": "Every row links to an official source. Values not confirmed from an official source are left blank and flagged. \u2018sheet silent on re-entry\u2019 means the official structure sheet was read in full and prints no re-entry, rebuy or add-on mechanism. That is NOT the same as a published no-re-entry rule: no Las Vegas room in this dataset publishes one, so no event is labelled confirmed single-entry (see flag IR-8234-02).",
  "events": [
@@ -590,7 +590,7 @@
     "sheet_read": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
     "sheet_prints_reentry_mechanism": "none \u2014 sheet prints no re-entry, rebuy or add-on clause"
    },
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "struct_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
    "notes": "",
@@ -663,7 +663,7 @@
    "sheet": 30,
    "sheet_read": true,
    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
-   "sheet_retrieved": "2026-11-17",
+   "sheet_retrieved": "2026-11-19",
    "plan_row_id": "V08-20261123-1710",
    "event_no": "08",
    "kind": "DAY",
@@ -17603,5 +17603,11 @@
    "H-WG"
   ],
   "note": "Only these six documents were opened again on 2026-11-17 by this session. Structure-sheet dates come from the 2026-11-17 read recorded in site-data/ (that pass is cited per field, per row); no date was advanced for a document this session did not itself open."
+ },
+ "verification_027412f0": {
+  "retrieved": "2026-11-19",
+  "session": "arena/027412f0-poker2",
+  "transcript": "research/027412f0-official-verification-2026-11-19.md",
+  "venetian_series_update": "Series overview now lists Current Series: DeepStack Extravaganza IV (Nov 16-Dec 23, 2026); DeepStack Extravaganza NYE Dec 24, 2026-Jan 10, 2027 (>$1.1M GTD) newly posted; stale WPT Fall Festival banner gone."
  }
 }

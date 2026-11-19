@@ -44,6 +44,21 @@ jobs:
             suggestions.html summary.html repo-review.html \
             venue-venetian.html venue-wynn.html venue-others.html || true
 
+      - name: Monitor hardening unit tests
+        run: python3 scripts/test_monitor.py
+
+      - name: Root surface reproduces from master.json (build_master + build_site drift check)
+        run: |
+          python3 scripts/build_master.py
+          python3 scripts/build_site.py
+          if [ -n "$(git status --porcelain -- data/master.json index.html tournaments.html hotels.html planner.html ranking.html venue-venetian.html venue-wynn.html venue-others.html)" ]; then
+            echo "::error::Root surface drift: run scripts/build_master.py + scripts/build_site.py and commit."
+            git status --porcelain; git diff --stat; exit 1
+          fi
+
+      - name: Root surface invariants (calculator, walk filter, ranking, planner)
+        run: python3 scripts/check_root_surface.py
+
       - name: No broken internal links, no non-official external hosts
         run: python3 scripts/check_links.py
 

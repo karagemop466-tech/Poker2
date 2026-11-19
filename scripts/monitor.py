@@ -87,14 +87,52 @@ VENUE_HOSTS = ("venetianlasvegas.com", "wynnlasvegas.com", "wynnresorts.com", "c
                "mgmresorts.com", "goldennugget.com", "contentstack.io", "visitwynn.com")
 
 
-def norm_text(raw: bytes) -> str:
-    t = raw.decode("utf-8", "replace")
-    t = re.sub(r"\s+", " ", t)
-    return t
+CHALLENGE_MARKERS = ("pardon our interruption", "are you a robot", "access denied",
+                     "please verify you are a human", "captcha")
+SOFT404_MARKERS = ("page not found", "404 not found", "this page could not be found")
 
+def validate_response(url, raw, status=200):
+    """Reject HTTP-200 bot challenges / soft-404s and non-PDF bodies for PDF URLs.
+    Raises ValueError; caller must treat as unreachable (no date/hash advance)."""
+    if status != 200:
+        raise ValueError("HTTP %s" % status)
+    low = raw[:20000].decode("utf-8", "replace").lower()
+    title = re.search(r"<title[^>]*>(.*?)</title>", low, re.S)
+    title_txt = title.group(1) if title else ""
+    if any(m in title_txt for m in CHALLENGE_MARKERS) or "pardon our interruption" in low:
+        raise ValueError("bot challenge page (HTTP 200)")
+    if url.lower().split("?")[0].endswith(".pdf") or raw[:5] == b"%PDF-":
+        if not raw.startswith(b"%PDF-"):
+            raise ValueError("expected PDF, got non-PDF body")
+        return "pdf"
+    if any(m in title_txt for m in SOFT404_MARKERS):
+        raise ValueError("soft 404 page (HTTP 200)")
+    return "html"
+
+def norm_text(raw: bytes) -> str:
+    """Visible-text fingerprint for HTML; raw bytes are fingerprinted separately for PDFs.
+    Scripts/styles and rolling booking-widget dates are not content."""
+    t = raw.decode("utf-8", "replace")
+    t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
+    t = re.sub(r"(?is)<!--.*?-->", " ", t)
+    t = re.sub(r"(?s)<[^>]+>", " ", t)
+    t = re.sub(r"&[a-z#0-9]+;", " ", t)
+    # Venetian global header booking widget: rolling arrival/departure dates churn daily
+    t = re.sub(r"(?i)(arrival_date|departure_date)=[0-9-]+", r"\1=DATE", t)
+    t = re.sub(r"(?i)select dates[^a-z0-9]+[a-z]{3},?\s+[a-z]{3}\s+\d{1,2}[^a-z0-9]+[a-z]{3},?\s+[a-z]{3}\s+\d{1,2}", "select dates DATE", t)
+    t = re.sub(r"\s+", " ", t)
+    return t.strip()
+
+def fingerprint(url, raw, status=200):
+    kind = validate_response(url, raw, status)
+    if kind == "pdf":
+        return hashlib.sha256(raw).hexdigest(), kind, None
+    text = norm_text(raw)
+    return hashlib.sha256(text.encode()).hexdigest(), kind, text
 
 def slug(u):
-    return re.sub(r"[^a-z0-9]+", "-", u.lower()).strip("-")[:80]
+    base = re.sub(r"[^a-z0-9]+", "-", u.lower()).strip("-")[:60]
+    return "%s-%s" % (base, hashlib.sha256(u.encode()).hexdigest()[:12])
 
 
 _OPENER = None
@@ -123,11 +161,13 @@ def fetch(url):
         return r.read(), r.status
 
 
-def write_snapshot(rel, text):
+def write_snapshot(rel, data):
     full = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(full), exist_ok=True)
-    with open(full, "w") as f:
-        f.write(text)
+    if isinstance(data, bytes):
+        with open(full, "wb") as f: f.write(data)
+    else:
+        with open(full, "w") as f: f.write(data)
 
 
 def main(dry=False):
@@ -173,39 +213,37 @@ def main(dry=False):
             failed.append((rec["label"], kind, rec["consecutive_failures"]))
             continue
 
-        text = norm_text(raw)
-        digest = hashlib.sha256(text.encode()).hexdigest()
+        try:
+            digest, kind, text = fingerprint(url, raw, code)
+        except ValueError as ex:
+            rec["last_attempt"] = today
+            rec["consecutive_failures"] = int(rec.get("consecutive_failures") or 0) + 1
+            rec["status"] = "unreachable — %s" % ex
+            failed.append((rec["label"], str(ex), rec["consecutive_failures"]))
+            continue
         had_baseline = rec.get("sha256") is not None
         rec["last_attempt"] = today
-        rec["last_checked"] = today          # a successful fetch is the only thing that earns a date
+        rec["last_checked"] = today
         rec["http_status"] = code
         rec["consecutive_failures"] = 0
-        # snapshot only when the bytes differ from what is already on disk
-        rel_latest = os.path.join("data", "snapshots", "latest", slug(url) + ".html")
-        prev_path = rec.get("snapshot")
-        differs = True
-        if prev_path and os.path.exists(os.path.join(ROOT, prev_path)):
-            try:
-                with open(os.path.join(ROOT, prev_path), encoding="utf-8") as f:
-                    differs = f.read() != text
-            except Exception:
-                differs = True
-        if differs and not had_baseline:
-            differs = True
+        ext = ".pdf" if kind == "pdf" else ".html"
+        payload = raw if kind == "pdf" else text
+        rel_latest = os.path.join("data", "snapshots", "latest", slug(url) + ext)
+        differs = (not had_baseline) or digest != rec.get("sha256")
         if differs and not dry:
-            write_snapshot(os.path.join("data", "snapshots", today, slug(url) + ".html"), text)
-            write_snapshot(rel_latest, text)
+            write_snapshot(os.path.join("data", "snapshots", today, slug(url) + ext), payload)
+            write_snapshot(rel_latest, payload)
             rec["snapshot"] = rel_latest
             rec["snapshot_date"] = today
         if not had_baseline:
-            rec["status"] = "new"
-            rec["sha256"] = digest
-            first_baseline.append(rec["label"])
-        elif digest != rec.get("sha256"):
+            rec["status"] = "new"; rec["sha256"] = digest; first_baseline.append(rec["label"])
+        elif differs:
+            rec["status"] = "changed"; rec["review_pending"] = True
+            rec["previous_sha256"] = rec.get("sha256"); rec["sha256"] = digest; rec["changed_on"] = today
+            changed.append(rec["label"])
+        elif rec.get("review_pending"):
+            # A pending change is not cleared by a later identical fetch; only manual review clears it.
             rec["status"] = "changed"
-            rec["previous_sha256"] = rec.get("sha256")
-            rec["sha256"] = digest
-            rec["changed_on"] = today
             changed.append(rec["label"])
         else:
             rec["status"] = "unchanged"

@@ -320,7 +320,9 @@ def event_table(evs, table_id, show_checkboxes=False, extra_cols=True):
         walk = ""
         cb = (f'<td><input type="checkbox" data-buyin="{e.get("buy_in") or 0}"></td>' if show_checkboxes else "")
         extra = (f'<td>{struct_cell(e)}</td>' if extra_cols else "")
-        rows.append(f"""<tr data-date="{esc(e.get('date',''))}" data-cat="{esc(e.get('category',''))}" data-tags="{esc(' '.join(e.get('tags',[])))}">
+        _se=(e.get('rules_fields') or {}).get('single_entry') or {}
+        _fz="1" if (_se.get('status')=='explicit' and str(_se.get('value')).lower() in ('yes','true','single entry','freezeout')) else "0"
+        rows.append(f"""<tr data-date="{esc(e.get('date',''))}" data-cat="{esc(e.get('category',''))}" data-freezeout="{_fz}" data-game="{esc(e.get('game',''))}" data-tags="{esc(' '.join(e.get('tags',[])))}">
 <td>{esc(e.get('date'))}</td><td>{esc(e.get('start'))}</td><td>{esc(e.get('venue'))}</td>
 <td><strong>{esc(e.get('name'))}</strong>{tags}{gate}{avail}</td>
 <td>{buy_cell}</td><td>{gtd}</td><td>{ratio}</td>
@@ -356,6 +358,10 @@ def toolbar(table_id, dates=None, with_walk=False, cat_options=True):
     return f"""<div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="{table_id}">
 <select data-bind-date="{table_id}"><option value="">All dates</option>{opts}</select>
+<label>From <input type="date" data-bind-from="{table_id}"></label>
+<label>To <input type="date" data-bind-to="{table_id}"></label>
+<label><input type="checkbox" data-bind-upcoming="{table_id}"> Upcoming only (≥ 2026-11-19)</label>
+<label><input type="checkbox" data-bind-freezeout="{table_id}"> Confirmed single-entry / freezeout only</label>
 {f'<select data-bind-cat="{table_id}">{cats}</select>' if cat_options else ''}
 {walk}
 {silent_box}
@@ -476,7 +482,7 @@ def hotel_table(hotels, table_id, show_calc=True):
                          'see the log below</small>')
         calc = ""
         if show_calc:
-            calc = f"""<div data-hotel-calc data-fee="{fee or 0}" data-tax="{tax or 0}" data-parking="{h.get('parking_value') or 0}">
+            calc = f"""<div data-hotel-calc data-fee="{fee if fee is not None else ''}" data-tax="{tax if tax is not None else ''}" data-parking="{h.get('parking_value') if h.get('parking_value') is not None else ''}">
 <input type="number" class="hc-rate" min="0" step="1" value="{prefill}" placeholder="dated room rate $" style="width:9rem;padding:.35rem">
 {f'<div class="small note">{esc(prefill_src)}</div>' if prefill_src else '<div class="small note">no dated rate on file — enter one to compute</div>'}
 <div class="hc-out small note"></div></div>"""
@@ -536,8 +542,7 @@ def hotel_table(hotels, table_id, show_calc=True):
                 walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(_lnk) + "</div>")
         # the ≤30-min filter is honest only if it reads the same evidence the cell shows: a hotel
         # qualifies when either main venue, or any routed pair, is inside the limit
-        walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")
-                          or any(p.get("within_30_min") for p in pairs)) else "0"
+        walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")) else "0"
         rows.append(f"""<tr data-cat="hotel" data-walk-ok="{walk_ok}">
 <td><strong>{esc(h['name'])}</strong><small class="note">{esc(h.get('area',''))}</small></td>
 <td>{esc(h.get('address',''))}</td>
@@ -1236,12 +1241,18 @@ property's own terms page states them, with the date that page was read. This is
         return h * 60 + m
 
     def entry_rank(e):
-        # which rows may be recommended as an entry at all
-        return e.get("category") in ("single", "ambiguous")
+        # playable primary/fallback: open-to-all, non-bounty, sheet-silent/ambiguous only
+        if e.get("category") not in ("single", "ambiguous"): return False
+        if "bounty" in " ".join(e.get("tags", [])): return False
+        # demographic gate defined later in ranking scope is duplicated here intentionally
+        el = e.get("eligibility")
+        if isinstance(el, dict): el = el.get("value") or el.get("excerpt") or ""
+        if el and ("50+" in str(el) or "female" in str(el).lower() or str(el).startswith("Teams")): return False
+        return True
 
     plan_rows = []
     dated = [e for e in evs if re.match(r"^\d{4}-", e.get("date", ""))]
-    for date in all_dates:
+    for date in [d for d in all_dates if d >= "2026-11-19"]:
         day = [e for e in dated if e["date"] == date]
         day.sort(key=lambda x: (to_min(x.get("start")) is None, to_min(x.get("start")) or 0))
         if not day:
@@ -1284,8 +1295,8 @@ property's own terms page states them, with the date that page was read. This is
                 if (a.get("venue") != b.get("venue")) and abs(sb - sa) <= 30:
                     clashes.append(("starts within 30 min at a different property", a, b))
         ov_html = " ".join(
-            f'<span class="badge b-bad">{esc(a.get("name","")[:22])} ({esc(a.get("start"))}) vs '
-            f'{esc(b.get("name","")[:22])} ({esc(b.get("start"))}) — {esc(why)}</span>'
+            f'<span class="badge b-bad">{esc(a.get("name",""))} ({esc(a.get("start"))}) vs '
+            f'{esc(b.get("name",""))} ({esc(b.get("start"))}) — {esc(why)}</span>'
             for why, a, b in clashes)
         def cell(e, cls):
             if not e:
@@ -1302,16 +1313,24 @@ property's own terms page states them, with the date that page was read. This is
         plan_rows.append(f"""<tr><td>{esc(date)}</td>{cell(primary,'primary')}{fb_cell}
 <td>{ov_html or '<span class="badge b-good">no impossible sequence on the published times</span>'}</td></tr>""")
 
-    trip_events = sorted([e for e in evs if e["category"] in ("single", "ambiguous") and e.get("buy_in")],
+    trip_events = sorted([e for e in evs if entry_rank(e) and e.get("buy_in") and e.get("date","") >= "2026-11-19"],
                          key=lambda x: (x.get("date", ""), x.get("start", "")))
     cb_items = "".join(
-        f'<label style="display:block"><input type="checkbox" data-buyin="{e["buy_in"]}"> '
-        f'{esc(e.get("date"))} {esc(e.get("start"))} — {esc(e.get("name"))[:58]} ({money(e["buy_in"])})</label>'
+        f'<label style="display:block"><input type="checkbox" data-buyin="{e["buy_in"]}" data-date="{e.get("date","")}" data-start="{e.get("start","")}" data-name="{esc(e.get("name",""))}"> '
+        f'{esc(e.get("date"))} {esc(e.get("start"))} — {esc(e.get("name"))} ({money(e["buy_in"])})</label>'
         for e in trip_events)
-    hotel_opts = "".join(
-        f'<option value="{esc(h["id"])}" data-rate="{(h.get("rate_log") or [{}])[-1].get("rate","") if h.get("rate_log") else ""}" '
-        f'data-fee="{h.get("resort_fee_value") or 0}" data-tax="{(h.get("tax_rate") or 0)*100}" '
-        f'data-parking="{h.get("parking_value") or 0}">{esc(h["name"])}</option>' for h in hotels)
+    def _quote_rate(h):
+        q=h.get("quote") or {}
+        if q.get("checkout_total_usd") is not None and q.get("room_subtotal_usd") and q.get("nights"):
+            return round(q["room_subtotal_usd"]/q["nights"],2)
+        return ""
+    def _opt(h):
+        fee = h.get("resort_fee_value"); fee = "" if fee is None else fee
+        tax = h.get("tax_rate"); tax = "" if tax is None else tax * 100
+        park = h.get("parking_value"); park = "" if park is None else park
+        return (f'<option value="{esc(h["id"])}" data-rate="{_quote_rate(h)}" '
+                f'data-fee="{fee}" data-tax="{tax}" data-parking="{park}">{esc(h["name"])}</option>')
+    hotel_opts = "".join(_opt(h) for h in hotels)
 
     body_p = f"""
 <h1>Trip planner</h1>
@@ -1354,19 +1373,17 @@ Every row carries a last-checked date and a source link; re-open it the day you 
     <label>Nights</label><input type="number" id="trip-nights" min="1" value="7">
     <label>Room rate per night ($) — from a dated quote only</label>
     <input type="number" id="trip-nightly" min="0" value="" placeholder="not captured from any official source">
-    <label>Resort fee per night ($)</label><input type="number" id="trip-resort-fee" min="0" value="55">
+    <label>Resort fee per night ($)</label><input type="number" id="trip-resort-fee" min="0" value="" placeholder="per selected hotel">
     <label>Tax (%)</label><input type="number" id="trip-tax" min="0" step="0.01" value="13.38">
-    <label>Parking per night ($)</label><input type="number" id="trip-parking" min="0" value="20">
-    <p class="note" id="trip-rate-warning">No dated room rate has been captured from an official source,
-    so the hotel side of this estimate is intentionally blank. The resort fee ($55 + tax) and the 13.38% Clark
-    County room tax are sourced; the room rate is not, and the calculator will not invent one.</p>
+    <label>Parking per night ($)</label><input type="number" id="trip-parking" min="0" value="" placeholder="per selected hotel">
+    <p class="note" id="trip-rate-warning">No dated room rate is selected, so the hotel side of this estimate is intentionally blank. Resort fee, tax and parking are loaded per-hotel from verified rows (blank where unverified — the calculator will not substitute $0); the room rate is not invented.</p>
   </div>
 </div>
 <div class="result">
   True hotel cost per night: <span class="total" id="trip-true-nightly">—</span><br>
   Hotel total for stay: <span class="total" id="trip-hotel-total">—</span><br>
   <strong>Estimated trip total (entries + hotel): <span class="total" id="trip-grand">—</span></strong>
-  <p class="note">Formula: entries × buy-ins + nights × true hotel cost. Excludes flights, food, and cash-game bankroll. The resort fee and tax are the sourced figures; the room rate stays empty until a dated checkout quote is captured.</p>
+  <p class="note" id="trip-overlap-warning"></p><p class="note">Formula: entries × buy-ins + nights × true hotel cost. Excludes flights, food, and cash-game bankroll. The resort fee and tax are the sourced figures; the room rate stays empty until a dated checkout quote is captured.</p>
 </div>
 </div>
 <h2 id="dayplan">Day-by-day plan — primary + conditional fallback</h2>
@@ -1412,6 +1429,8 @@ before the primary began, or two events at different properties start within 30 
     _pool = singles + ambiguous
     nlh_singles = [e for e in _pool
                    if e.get("gtd_ratio") and "bounty" not in " ".join(e.get("tags", []))
+                   and "plo" not in " ".join(e.get("tags", [])) and "mixed" not in " ".join(e.get("tags", []))
+                   and "Pot Limit" not in (e.get("name") or "") and "BIG O" not in (e.get("name") or "")
                    and not _demographic_gate(e)]
     bounty_singles = [e for e in _pool
                       if e.get("gtd_ratio") and "bounty" in " ".join(e.get("tags", []))

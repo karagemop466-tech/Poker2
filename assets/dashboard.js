@@ -9,6 +9,10 @@
   function applyFilters(table) {
     var q = norm(table.getAttribute("data-search") || "");
     var date = table.getAttribute("data-date") || "";
+    var from = table.getAttribute("data-from") || "";
+    var to = table.getAttribute("data-to") || "";
+    var upcoming = table.getAttribute("data-upcoming") === "1";
+    var freezeout = table.getAttribute("data-freezeout") === "1";
     var cat = table.getAttribute("data-cat") || "";
     var walkOnly = table.getAttribute("data-walkonly") === "1";
     var rows = table.querySelectorAll("tbody tr");
@@ -17,6 +21,11 @@
       var ok = true;
       if (q && norm(row.textContent).indexOf(q) === -1) ok = false;
       if (date && (row.getAttribute("data-date") || "") !== date) ok = false;
+      var rd = row.getAttribute("data-date") || "";
+      if (from && rd && rd < from) ok = false;
+      if (to && rd && rd > to) ok = false;
+      if (upcoming && rd && rd < "2026-11-19") ok = false;
+      if (freezeout && row.getAttribute("data-freezeout") !== "1") ok = false;
       if (cat && (row.getAttribute("data-cat") || "") !== cat) ok = false;
       if (walkOnly) {
         var w = row.getAttribute("data-walk-ok");
@@ -44,6 +53,14 @@
     });
     if (catSel) catSel.addEventListener("change", function () {
       table.setAttribute("data-cat", catSel.value); applyFilters(table);
+    });
+    [["data-bind-from","data-from"],["data-bind-to","data-to"]].forEach(function(pair){
+      var el=document.querySelector('['+pair[0]+'="'+id+'"]');
+      if(el) el.addEventListener("change",function(){ table.setAttribute(pair[1], el.value); applyFilters(table); });
+    });
+    [["data-bind-upcoming","data-upcoming"],["data-bind-freezeout","data-freezeout"]].forEach(function(pair){
+      var el=document.querySelector('['+pair[0]+'="'+id+'"]');
+      if(el) el.addEventListener("change",function(){ table.setAttribute(pair[1], el.checked?"1":""); applyFilters(table); });
     });
     if (walkChk) walkChk.addEventListener("change", function () {
       table.setAttribute("data-walkonly", walkChk.checked ? "1" : ""); applyFilters(table);
@@ -123,6 +140,13 @@
         : "$" + grand.toFixed(2);
       var warn = document.getElementById("trip-rate-warning");
       if (warn) warn.style.display = noRate ? "" : "none";
+      var ov = document.getElementById("trip-overlap-warning");
+      if (ov) {
+        var byDate = {}, clash = [];
+        entriesList.forEach(function(cb){ if(cb.checked && cb.dataset.date){ (byDate[cb.dataset.date]=byDate[cb.dataset.date]||[]).push(cb.dataset.name||cb.dataset.start||"event"); } });
+        Object.keys(byDate).forEach(function(d){ if(byDate[d].length>1) clash.push(d+": "+byDate[d].join(" + ")); });
+        ov.textContent = clash.length ? "Overlap warning — multiple entries picked the same day (no finish times are published, so a second entry is only a conditional fallback if you exit the first before its late registration closes): " + clash.join("; ") : "";
+      }
     }
 
     tripForm.addEventListener("input", recalcTrip);
@@ -145,15 +169,20 @@
   document.querySelectorAll("[data-hotel-calc]").forEach(function (wrap) {
     function recalc() {
       var rate = parseFloat(wrap.querySelector(".hc-rate").value) || 0;
-      var fee = parseFloat(wrap.getAttribute("data-fee")) || 0;
+      var feeRaw = wrap.getAttribute("data-fee"), parkRaw = wrap.getAttribute("data-parking");
+      var fee = parseFloat(feeRaw) || 0;
       var tax = parseFloat(wrap.getAttribute("data-tax")) || 0;
-      var parking = parseFloat(wrap.getAttribute("data-parking")) || 0;
+      var parking = parseFloat(parkRaw) || 0;
       var out = wrap.querySelector(".hc-out");
       if (!out) return;
       var nightly = (rate + fee) * (1 + tax) + parking;
-      out.textContent = rate > 0
-        ? "True cost per night: $" + nightly.toFixed(2) + "  (room $" + rate.toFixed(2) + " + resort fee $" + fee.toFixed(2) + ", tax " + (tax * 100).toFixed(2) + "%, parking $" + parking.toFixed(2) + ")"
-        : "Enter a dated room rate to compute true cost per night.";
+      if (feeRaw === "" || feeRaw === null || parkRaw === "" || parkRaw === null) {
+        out.textContent = "Resort fee and/or parking is unverified for this hotel (blank in the dataset, not $0) — true cost cannot be computed until it is verified from an official source.";
+      } else {
+        out.textContent = rate > 0
+          ? "True cost per night: $" + nightly.toFixed(2) + "  (room $" + rate.toFixed(2) + " + resort fee $" + fee.toFixed(2) + ", tax " + (tax * 100).toFixed(2) + "%, parking $" + parking.toFixed(2) + ")"
+          : "Enter a dated room rate to compute true cost per night.";
+      }
     }
     wrap.addEventListener("input", recalc);
     recalc();

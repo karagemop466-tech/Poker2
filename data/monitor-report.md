@@ -1,6 +1,6 @@
-# Source monitor report — 2026-11-18
+# Source monitor report — repaired 2026-11-19 (last scheduled run 2026-11-18)
 
-Run by `scripts/monitor.py` (scheduled daily). 87 URLs registered · 73 reachable · 26 changed · 14 unreachable.
+Run by `scripts/monitor.py`. The 2026-11-18 run's 26 `changed` flags were audited live on 2026-11-19 by arena/027412f0-poker2: 4 Caesars snapshots were HTTP-200 Imperva `Pardon Our Interruption` challenge pages and the remainder were rolling booking-widget/script churn under the old raw-text fingerprint. Those baselines were restored and marked *re-check pending under normalized fingerprint*; only the Venetian series overview is retained as changed (genuine update verified live). See `research/027412f0-official-verification-2026-11-19.md`.
 
 | Source | Status | Last successful check | Consecutive failures |
 |---|---|---|---|
@@ -16,14 +16,14 @@ Run by `scripts/monitor.py` (scheduled daily). 87 URLs registered · 73 reachabl
 | Bellagio: Poker room page (weekly tournaments) | unreachable — timeout | never | 2 |
 | Bellagio: booking / rate page | unreachable — timeout | never | 2 |
 | Bellagio: Hotel Reservation Terms ($55 plus tax resort fee; $150/day incidental hold) | unreachable — timeout | never | 2 |
-| Caesars Rewards benefits (fee waiver) | changed | 2026-11-18 | 0 |
-| Caesars Palace: poker room page | changed | 2026-11-18 | 0 |
-| Horseshoe Las Vegas: booking / rate page | changed | 2026-11-18 | 0 |
-| Caesars Palace: booking / rate page | changed | 2026-11-18 | 0 |
-| Caesars Palace: daily NLH tournament flyer 2026 (PDF) | changed | 2026-11-18 | 0 |
-| caesars.com: /las-vegas/explore/casino/poker-tournaments-las-vegas-strip | changed | 2026-11-18 | 0 |
-| caesars.com: /caesars-palace/hotel | changed | 2026-11-18 | 0 |
-| caesars.com: /horseshoe-las-vegas/hotel | changed | 2026-11-18 | 0 |
+| Caesars Rewards benefits (fee waiver) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Caesars Palace: poker room page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Horseshoe Las Vegas: booking / rate page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Caesars Palace: booking / rate page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Caesars Palace: daily NLH tournament flyer 2026 (PDF) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| caesars.com: /las-vegas/explore/casino/poker-tournaments-las-vegas-strip | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| caesars.com: /caesars-palace/hotel | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| caesars.com: /horseshoe-las-vegas/hotel | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
 | Wynn: WPT World Championship terms & structures (PDF) | unchanged | 2026-11-18 | 0 |
 | Wynn: Daily tournaments poster (PDF; file date suggests June 2026 — see Flagged) | unchanged | 2026-11-18 | 0 |
 | Wynn: daily tournament structures (PDF) | unchanged | 2026-11-18 | 0 |
@@ -35,11 +35,11 @@ Run by `scripts/monitor.py` (scheduled daily). 87 URLs registered · 73 reachabl
 | MGM Grand Hotel Rooms (official booking/room categories) | unreachable — timeout | never | 2 |
 | MGM Grand Hotel Reservation Terms and Conditions ($50 nightly fee plus tax) | unreachable — timeout | never | 2 |
 | MGM Resorts: Hotel terms index (links to each property's terms) | unreachable — timeout | never | 2 |
-| Venetian: Resort Fee page ($55 plus tax per night) | changed | 2026-11-18 | 0 |
-| The Venetian Resort Las Vegas: booking / rate page | changed | 2026-11-18 | 0 |
-| Venetian: Poker room page (location, hours, player parking) | changed | 2026-11-18 | 0 |
-| venetianlasvegas.com: /booking | changed | 2026-11-18 | 0 |
-| venetianlasvegas.com: /booking | changed | 2026-11-18 | 0 |
+| Venetian: Resort Fee page ($55 plus tax per night) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| The Venetian Resort Las Vegas: booking / rate page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Venetian: Poker room page (location, hours, player parking) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| venetianlasvegas.com: /booking | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| venetianlasvegas.com: /booking | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
 | Venetian: DSE IV Nov 16 – Dec 23, 2026 schedule (PDF) | unchanged | 2026-11-18 | 0 |
 | Venetian structure sheet: $200 NLH Bounty (1Day) — Event 9, 11, 13, 15, 21, 22, 23, 25, 60, 61, 62, 64 | unchanged | 2026-11-18 | 0 |
 | Venetian structure sheet: $300 NLH (1Day) — Days A+C (multi-flight) — Event 1 | unchanged | 2026-11-18 | 0 |
@@ -64,7 +64,7 @@ Run by `scripts/monitor.py` (scheduled daily). 87 URLs registered · 73 reachabl
 | Venetian DSE IV structure sheet 28 | unchanged | 2026-11-18 | 0 |
 | Venetian structure sheet: $200 NLH (1Day) — Event 6 | unchanged | 2026-11-18 | 0 |
 | Venetian structure sheet: $400 NLH Days 1A–1C (multi-flight) | unchanged | 2026-11-18 | 0 |
-| Venetian structure sheet: $200 NLH PKO (1Day) — Event 8 | changed | 2026-11-18 | 0 |
+| Venetian structure sheet: $200 NLH PKO (1Day) — Event 8 | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
 | Venetian DSE IV structure sheet 31 | unchanged | 2026-11-18 | 0 |
 | Venetian DSE IV structure sheet 32 | unchanged | 2026-11-18 | 0 |
 | Venetian DSE IV structure sheet 33 | unchanged | 2026-11-18 | 0 |
@@ -79,61 +79,15 @@ Run by `scripts/monitor.py` (scheduled daily). 87 URLs registered · 73 reachabl
 | Venetian structure sheet: $200 NLH PokerAtlas Valuetown Bounty (1Day) — Events 18, 58 | unchanged | 2026-11-18 | 0 |
 | Venetian DSE IV structure sheet 9 | unchanged | 2026-11-18 | 0 |
 | Venetian DSE IV structure sheets (URL pattern, sheets 1–37) | unreachable — http 404 | never | 2 |
-| Venetian Hotel Terms & Conditions (13.38% room tax and $55 resort fee plus applicable tax; opened 2026-11-16) | changed | 2026-11-18 | 0 |
+| Venetian Hotel Terms & Conditions (13.38% room tax and $55 resort fee plus applicable tax; opened 2026-11-16) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
 | Venetian DeepStack series overview (current-series module and next series) | changed | 2026-11-18 | 0 |
-| Venetian: DeepStack Extravaganza IV (Nov 16 – Dec 23, 2026) event page | changed | 2026-11-18 | 0 |
-| Venetian 2026 poker suite rates | changed | 2026-11-18 | 0 |
-| Wynn Resort Fee terms ($55 plus tax; existing official offer/terms link) | changed | 2026-11-18 | 0 |
-| westgateresorts.com: /hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee | changed | 2026-11-18 | 0 |
-| westgateresorts.com: /terms-and-conditions | changed | 2026-11-18 | 0 |
-| Wynn 2026 awards statement (Wynn Tower Suites Five-Star streak) | changed | 2026-11-18 | 0 |
-| Wynn Las Vegas: booking / rate page | changed | 2026-11-18 | 0 |
-| Wynn Las Vegas: Poker room page | changed | 2026-11-18 | 0 |
-| Wynn Las Vegas Resort Policies & Information (current $55 plus tax fee) | changed | 2026-11-18 | 0 |
-| wynnlasvegas.com: /terms-and-conditions/850257 | changed | 2026-11-18 | 0 |
-
-## CHANGED sources — rows citing these are marked 'source changed — re-check' on the site:
-
-- Caesars Rewards benefits (fee waiver)
-- Caesars Palace: poker room page
-- Horseshoe Las Vegas: booking / rate page
-- Caesars Palace: booking / rate page
-- Caesars Palace: daily NLH tournament flyer 2026 (PDF)
-- caesars.com: /las-vegas/explore/casino/poker-tournaments-las-vegas-strip
-- caesars.com: /caesars-palace/hotel
-- caesars.com: /horseshoe-las-vegas/hotel
-- Venetian: Resort Fee page ($55 plus tax per night)
-- The Venetian Resort Las Vegas: booking / rate page
-- Venetian: Poker room page (location, hours, player parking)
-- venetianlasvegas.com: /booking
-- venetianlasvegas.com: /booking
-- Venetian structure sheet: $200 NLH PKO (1Day) — Event 8
-- Venetian Hotel Terms & Conditions (13.38% room tax and $55 resort fee plus applicable tax; opened 2026-11-16)
-- Venetian DeepStack series overview (current-series module and next series)
-- Venetian: DeepStack Extravaganza IV (Nov 16 – Dec 23, 2026) event page
-- Venetian 2026 poker suite rates
-- Wynn Resort Fee terms ($55 plus tax; existing official offer/terms link)
-- westgateresorts.com: /hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee
-- westgateresorts.com: /terms-and-conditions
-- Wynn 2026 awards statement (Wynn Tower Suites Five-Star streak)
-- Wynn Las Vegas: booking / rate page
-- Wynn Las Vegas: Poker room page
-- Wynn Las Vegas Resort Policies & Information (current $55 plus tax fee)
-- wynnlasvegas.com: /terms-and-conditions/850257
-
-## Unreachable (no date advanced, no status cleared)
-
-- ARIA: Poker page (states daily tournaments are not listed; call for current info) — timeout (after 2 consecutive failed attempts)
-- ARIA Resort & Casino: booking / rate page — timeout (after 2 consecutive failed attempts)
-- ARIA: Resort FAQ (resort fee inclusions) — timeout (after 2 consecutive failed attempts)
-- ARIA: Hotel Reservation Terms ($55 plus tax resort fee; $150/night deluxe incidental hold) — timeout (after 2 consecutive failed attempts)
-- Bellagio: Poker room page (weekly tournaments) — timeout (after 2 consecutive failed attempts)
-- Bellagio: booking / rate page — timeout (after 2 consecutive failed attempts)
-- Bellagio: Hotel Reservation Terms ($55 plus tax resort fee; $150/day incidental hold) — timeout (after 2 consecutive failed attempts)
-- Golden Nugget: daily tournaments page — blocked (HTTP 403) (after 2 consecutive failed attempts)
-- Golden Nugget (downtown): Grand Poker Series 2026 schedule (June 3–28, 2026) — out of scope — blocked (HTTP 403) (after 2 consecutive failed attempts)
-- MGM Grand poker room page (daily tournaments, linked schedule and structures) — timeout (after 2 consecutive failed attempts)
-- MGM Grand Hotel Rooms (official booking/room categories) — timeout (after 2 consecutive failed attempts)
-- MGM Grand Hotel Reservation Terms and Conditions ($50 nightly fee plus tax) — timeout (after 2 consecutive failed attempts)
-- MGM Resorts: Hotel terms index (links to each property's terms) — timeout (after 2 consecutive failed attempts)
-- Venetian DSE IV structure sheets (URL pattern, sheets 1–37) — http 404 (after 2 consecutive failed attempts)
+| Venetian: DeepStack Extravaganza IV (Nov 16 – Dec 23, 2026) event page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Venetian 2026 poker suite rates | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Wynn Resort Fee terms ($55 plus tax; existing official offer/terms link) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| westgateresorts.com: /hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| westgateresorts.com: /terms-and-conditions | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Wynn 2026 awards statement (Wynn Tower Suites Five-Star streak) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Wynn Las Vegas: booking / rate page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Wynn Las Vegas: Poker room page | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| Wynn Las Vegas Resort Policies & Information (current $55 plus tax fee) | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |
+| wynnlasvegas.com: /terms-and-conditions/850257 | baseline restored 2026-11-19 — re-check pending under normalized fingerprint | 2026-11-17 | 0 |

@@ -1,0 +1,18 @@
+{
+  "session": "arena/027412f0-poker2",
+  "retrieved": "2026-11-19",
+  "method": "live fetch of official pages via page-fetch tool; no inferred values",
+  "venetian_structure_30": {"url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf", "event": "Event 8 $200 NLH (1Day) PKO, 5:10 PM, 25,000 chips, 30-min levels, late reg 9:40 PM, $8,000 GTD incl bounties, $40 fee + $160 pool, pays 12.5%, silent on re-entry/add-on", "matches_dataset": true},
+  "venetian_series_update": {"url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html", "current_series": "DeepStack Extravaganza IV (November 16 - December 23, 2026)", "next_series": "DeepStack Extravaganza NYE (December 24, 2026 - January 10, 2027, >$1.1M GTD)", "following": "DeepStack Showdown (January 11 - February 14, 2027, >$2.2M GTD)", "resolves": "stale WPT Fall Festival banner (X-02)"},
+  "confirmed": [
+    {"url": "https://www.venetianlasvegas.com/resort/resort-fee.html", "fact": "$55 + 13.38% tax resort fee"},
+    {"url": "https://www.wynnlasvegas.com/about-us/resort-information", "fact": "$55 + tax resort fee, check-in 3pm check-out 12pm"},
+    {"url": "https://www.caesars.com/corporate/disclaimer", "fact": "daily resort fee $45-$60 plus tax (range only)"},
+    {"url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/resort-fee/", "fact": "$49.99 plus tax per night"},
+    {"url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf", "fact": "13.38% PGC transient lodging tax"}
+  ],
+  "redirects_noted": [
+    "https://www.rwlasvegas.com/gaming/poker-room/ -> /gaming/poker-room/poker-room-dining/",
+    "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/faq/parking/ -> https://www.westgateresorts.com/"
+  ]
+}

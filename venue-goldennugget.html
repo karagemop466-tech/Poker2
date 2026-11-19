@@ -10,7 +10,7 @@
 <body>
 <header class="site">
   <div class="brand">Las Vegas Poker Trip Planner <span>· verified-source dashboard</span></div>
-  <div class="tagline">Every row links to an official source · data as of 2026-11-17 · unconfirmed values stay blank and flagged</div>
+  <div class="tagline">Every row links to an official source · data as of 2026-11-19 · unconfirmed values stay blank and flagged</div>
 </header>
 <nav class="site"><span class="navgroup">Start here</span><a href="index.html">Dashboard</a><a href="2026/" class="cross" title="Separate surface with its own generator, dataset and scheduled re-check (scripts/build2026.py, .github/workflows/recheck.yml). Linked, not maintained here.">DSE IV audit, Nov–Dec 2026</a><a href="summary.html">Executive summary</a>
 <span class="navgroup">Tournaments</span><a href="tournaments.html">All events</a><a href="single-entry.html" class="static" title="Preserved page from an earlier session or another surface. This dashboard’s generator does not rebuild it, so check its own as-of date before relying on it.">Single-entry candidates</a><a href="ranking.html">Ranking</a><a href="rules.html">Entry rules</a><a href="schedule.html" class="static" title="Preserved page from an earlier session or another surface. This dashboard’s generator does not rebuild it, so check its own as-of date before relying on it.">Day schedule</a>
@@ -39,26 +39,30 @@
 <div class="toolbar">
 <input type="search" placeholder="Search all columns…" data-bind-search="tbl-venue">
 <select data-bind-date="tbl-venue"><option value="">All dates</option></select>
+<label>From <input type="date" data-bind-from="tbl-venue"></label>
+<label>To <input type="date" data-bind-to="tbl-venue"></label>
+<label><input type="checkbox" data-bind-upcoming="tbl-venue"> Upcoming only (≥ 2026-11-19)</label>
+<label><input type="checkbox" data-bind-freezeout="tbl-venue"> Confirmed single-entry / freezeout only</label>
 <select data-bind-cat="tbl-venue"><option value="">All categories</option><option value="single">Sheet silent on re-entry</option><option value="ambiguous">Entry limit ambiguous</option><option value="spend-more">Spend-more (re-entry/add-on)</option><option value="multi-flight">Multi-flight</option><option value="multi-day">Multi-day (one starting day)</option><option value="satellite">Satellite</option><option value="team">Team</option><option value="unverified">Unverified</option></select>
 
 <label><input type="checkbox" onchange="var s=document.querySelector('[data-bind-cat=&quot;tbl-venue&quot;]');if(s){s.value=this.checked?'single':'';s.dispatchEvent(new Event('change'));}"> Sheet silent on re-entry only</label>
 <span class="count" data-count-for="tbl-venue"></span>
 </div>
-<table class="data" id="tbl-venue"><thead><tr><th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th><th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th><th>Stack · levels · registration · payout</th><th>Sources / last checked</th></tr></thead><tbody><tr data-date="Recurring (daily)" data-cat="spend-more" data-tags="recurring add-on">
+<table class="data" id="tbl-venue"><thead><tr><th>Date</th><th>Start</th><th>Venue</th><th>Event</th><th>Buy-in (fee split)</th><th>Guarantee</th><th>Pool ÷ fee</th><th>Entry rules</th><th>Stack · levels · registration · payout</th><th>Sources / last checked</th></tr></thead><tbody><tr data-date="Recurring (daily)" data-cat="spend-more" data-freezeout="0" data-game="NLH" data-tags="recurring add-on">
 <td>Recurring (daily)</td><td>10:00 AM</td><td>Golden Nugget (downtown)</td>
 <td><strong>Daily NLH, 15,000 chips, 15-min levels</strong><span class="badge b-chip">recurring</span> <span class="badge b-chip">add-on</span></td>
 <td><span class="badge b-warn">blank</span></td><td><span class="badge b-chip">none published</span></td><td>—</td>
 <td><span class="badge b-bad">Spend-more (re-entry/add-on)</span> <span class="badge b-warn">unverified</span></td>
 <td><small class="note">15,000 chips · 15-min levels · Registration closes after level 4 (~11:15 AM / 6:15 PM / 3:15 AM)</small></td><td class="src"><a href="https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/" rel="noopener" target="_blank">poker room page</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-date="Recurring (daily)" data-cat="spend-more" data-tags="recurring add-on">
+<tr data-date="Recurring (daily)" data-cat="spend-more" data-freezeout="0" data-game="NLH" data-tags="recurring add-on">
 <td>Recurring (daily)</td><td>2:00 AM</td><td>Golden Nugget (downtown)</td>
 <td><strong>Daily NLH, 15,000 chips, 15-min levels</strong><span class="badge b-chip">recurring</span> <span class="badge b-chip">add-on</span></td>
 <td><span class="badge b-warn">blank</span></td><td><span class="badge b-chip">none published</span></td><td>—</td>
 <td><span class="badge b-bad">Spend-more (re-entry/add-on)</span> <span class="badge b-warn">unverified</span></td>
 <td><small class="note">15,000 chips · 15-min levels · Registration closes after level 4 (~11:15 AM / 6:15 PM / 3:15 AM)</small></td><td class="src"><a href="https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/" rel="noopener" target="_blank">poker room page</a> <small class="note">checked 2026-11-17</small></td>
 </tr>
-<tr data-date="Recurring (daily)" data-cat="spend-more" data-tags="recurring add-on">
+<tr data-date="Recurring (daily)" data-cat="spend-more" data-freezeout="0" data-game="NLH" data-tags="recurring add-on">
 <td>Recurring (daily)</td><td>5:00 PM</td><td>Golden Nugget (downtown)</td>
 <td><strong>Daily NLH, 15,000 chips, 15-min levels</strong><span class="badge b-chip">recurring</span> <span class="badge b-chip">add-on</span></td>
 <td><span class="badge b-warn">blank</span></td><td><span class="badge b-chip">none published</span></td><td>—</td>
@@ -71,7 +75,7 @@
 source does not publish that value; blanks are listed on the <a href="flagged.html">Flagged for review</a> page.</p>
 </main>
 <footer class="site">
-  Built from official venue pages and structure sheets only · data as of 2026-11-17 ·
+  Built from official venue pages and structure sheets only · data as of 2026-11-19 ·
   <a href="https://github.com/karagemop466-tech/Poker2">GitHub repository</a> ·
   <a href="COORDINATION.md">COORDINATION.md</a> ·
   Archived earlier dashboards: <a href="docs/index.html">/docs</a> · <a href="verified/index.html">/verified</a> · <a href="archive/arena-7a4b09e2/README.md">archive/arena-7a4b09e2</a><br>Parallel-session pages kept live: <a href="schedule.html">schedule.html</a> · <a href="single-entry.html">single-entry.html</a> · <a href="sources.html">sources.html</a> · <a href="venues.html">venues.html</a>
