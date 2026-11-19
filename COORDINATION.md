@@ -1964,10 +1964,10 @@ Branch `arena/4db7d9c7-poker2` (from `main` `76b25aa`). Scope is deliberately na
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| K1 Fix the red scheduled workflow “Plan: daily official-source refresh” (run 44340744461, failed at step “Commit snapshots, or open a review PR when a source moved”). Suspected root cause: on `schedule` runs `actions/checkout` leaves a detached HEAD, `git rev-parse --abbrev-ref HEAD` prints `HEAD`, and the snapshot commit is pushed to `HEAD:HEAD` instead of `main`. Fix the refspec, harden the rebase-retry path, keep the open-a-review-PR-on-change behaviour | in progress | arena/4db7d9c7-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` |
-| K2 Live 2026-11-19 re-read of the always-on official sources (Venetian resort fee, suite rates, hotel terms, DSE IV schedule page, Caesars daily flyer, Bellagio weekly sheets, Wynn poker page). Record results; flag discrepancies; never rewrite a value silently | in progress | arena/4db7d9c7-poker2 | `research/arena-4db7d9c7-official-recheck-2026-11-19.md` |
-| K3 Verify the site end-to-end on this branch (generator `--check`s, link audits, search check) and confirm nothing regresses | in progress | arena/4db7d9c7-poker2 | — (read-only) |
-| K4 Final integration for this branch: PR → `main`, merge, Pages deploy confirmed, record PR link and merge result here | in progress | arena/4db7d9c7-poker2 | `COORDINATION.md` |
+| K1 Fix the red scheduled workflow “Plan: daily official-source refresh” (run 44340744461, failed at step “Commit snapshots, or open a review PR when a source moved”). Root-caused the detached-HEAD push; main was rewritten in parallel (PR #81) with an inert publish guard of its own — kept PR #81 wholesale and fixed the guard (`GITHUB_REF_NAME`, `ref: main` in checkout) | done ([#83](https://github.com/karagemop466-tech/Poker2/pull/83)) | arena/4db7d9c7-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/commit-refresh.sh` |
+| K2 Live 2026-11-19 re-read of the always-on official sources — 9 documents fetched live; every stored value matches; nothing edited | done | arena/4db7d9c7-poker2 | `research/arena-4db7d9c7-official-recheck-2026-11-19.md` |
+| K3 Verify the site end-to-end on this branch — full CI gate suite green on the rebased tree; zero diffs | done | arena/4db7d9c7-poker2 | — (read-only) |
+| K4 Final integration for this branch: PR → `main`, merge, Pages deploy confirmed, record PR link and merge result here | done ([#83](https://github.com/karagemop466-tech/Poker2/pull/83)) | arena/4db7d9c7-poker2 | `COORDINATION.md` |
 
 Not claimed / not touched: anything under open PR #80; `2026/**` and `plan/**` (regenerated only if K2 finds a changed value — it will be flagged on the Flagged page, not silently rewritten); shared generators owned by other sessions.
 ## Session arena/a29d9f35-poker2 — final integration claim (2026-11-19 UTC)
@@ -2002,3 +2002,57 @@ Rebased onto `69739fc` on the assigned branch. Resolved, without dropping the ot
 - Evidence: retained both hotel rate observations and the upstream fresh reads of sheets 5/6/7. These newer read dates are not overwritten by November 17. The hypothetical November 25–28 quote attempt remains explicitly hypothetical, with all quote values blank.
 - README now documents both scopes. Existing stored-sheet, decision, trip and scraper tests remain. Added DOM-level tests supplement them; the existing hotel test now expects the explicit “Not available” empty state instead of an em dash, with unchanged numeric assertions.
 - All conflicting generated HTML/JSON/JS files were rebuilt from the merged generators. No generated-output conflict was resolved by dropping another session's dataset.
+
+## Session arena/4db7d9c7-poker2 — completion record (2026-11-19)
+
+**K1 — “Plan: daily official-source refresh” can never have worked.** Run 44340744461 failed
+2026-11-18 at the publish step, deterministically. Root cause reproduced in a scratch clone:
+`actions/checkout` on a `schedule` run leaves a **detached HEAD** → `git rev-parse --abbrev-ref HEAD`
+prints `HEAD` → `git push origin HEAD:HEAD` is rejected with *“The destination you provided is not a
+full refname”* (verified locally against a scratch remote; before the PR #81 rewrite it created a push
+the remote rejected on refname resolution, every day). While this branch was open, main merged
+[PR #81](https://github.com/karagemop466-tech/Poker2/pull/81) which rewrote the job wholesale (no
+review PRs; reports published + preserved as artifacts; `HEAD:main` push). The rewrite is kept in full.
+One defect in it remains and is fixed in [PR #83](https://github.com/karagemop466-tech/Poker2/pull/83):
+publication was gated on `git branch --show-current == main`, which prints nothing on a detached
+checkout — the job would have exited 0 having published nothing, silently, every day. The guard now
+reads `${GITHUB_REF_NAME}` (== `main` on schedule/dispatch) with a fallback to the local branch name,
+and the workflow pins `ref: main`. Conflicts during rebase onto PR #81 were resolved keeping PR #81's
+work; only the guard (and checkout `ref:`) differ from main's rewrite. `bash -n`, all workflow YAMLs
+parse, non-main guard path exits 0 without committing (verified), `HEAD:refs/heads/main` resolves
+against the real remote (dry-run, non-fast-forward only because of the shallow scratch, not the
+refspec), and `source-monitor.yml` pushes the same `HEAD:main` pattern daily with success.
+`workflow_dispatch` is **not** granted to this sandbox's GitHub token (HTTP 403), so the next live
+proof is the scheduled run at 2026-11-19T14:30Z; check it and this entry will say so.
+
+**K2 — live 2026-11-19 re-check** (`research/arena-4db7d9c7-official-recheck-2026-11-19.md`):
+Venetian resort fee ($55 + tax), Venetian poker suite rates ($119/$209, EPOKR25, six hours cash or a
+$300+ tournament per night, before 2 a.m. last night), DSE IV schedule page (Nov 16 – Dec 23; #3
+RaceDay Stack runs today; results column still unposted), Caesars 2026 daily NLH flyer (unchanged),
+Bellagio Friday/Saturday/Sunday sheets (unchanged; FG-09/X-04/X-05 still accurate), Bellagio poker
+page (stale "July 26" resume line still published; X-03 still stands), Wynn poker room (WPT
+Nov 27 – Dec 21, Super Gold Million $400 buy-in / $3M GTD, Signature Series Jan 11–24 2027, daily
+slate suspended during series, stale 2025 JSON-LD recorded). **Every stored value matches — no
+dataset or page edited.**
+
+**K3 — verification on the rebased tree** (`origin/main` = `7d50e58` plus this commit):
+`audit.py`, `build.py` (zero drift after the ownership restore), `check_links.py`,
+`build2026.py --check`, `check2026.py` (21 pages, 1354 links, 804 external citations, 0 broken),
+`check_guarantees.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_labels.py` +
+selftest, `check_search.mjs`, `check_decisions.mjs`, `build-events/schedule/walk/site --check`,
+`check_plan_fresh.py`, `check_sources.mjs --selftest`, `scrape-schedule.mjs --selftest`, and the
+64-event / 37-sheet / 0-confirmed-single-entry invariant — all green, zero diffs.
+
+**K4 — publication.** [PR #83](https://github.com/karagemop466-tech/Poker2/pull/83)
+(`arena/4db7d9c7-poker2` → `main`) merged with `gh pr merge 83 --merge` at 2026-11-19T05:41:55Z,
+merge commit `7d50e5852b8e0c1231515856d1e2d9306da994b3`. `Verify site` success (runs
+44466943064 / 44466872057), `Plan: generated pages match their data` success (44466943008),
+`pages build and deployment` success for `7d50e58` (run 44466942691). Live site re-read after deploy:
+<https://karagemop466-tech.github.io/Poker2/> serves correctly. PR #80 (arena/62f3de7b-poker2) had
+merged earlier the same morning (main `69739fc`); its Board entry and work are untouched here.
+
+**Handoff / open items (unchanged, blocking nothing):** Wynn WPT Championship structures PDF F-11
+follow-ups, F-05 dated checkout quotes (booking engines render with JavaScript), F-04 finish times,
+and the monitor's 26 "changed" hashes from 2026-11-18 (raw byte drift on dynamic pages — the tracked-
+value comparison, not the hash, is authoritative). No row was marked verified without a fetched
+official source; nothing was inferred.
