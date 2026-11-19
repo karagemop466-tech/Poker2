@@ -7,6 +7,13 @@
 #
 # Both retrieved 2026-11-17. Every row below was read off those two official documents.
 #
+# RECHECK 2026-11-19 (session arena/a9f5847f-poker2): the HTML schedule page
+# (Source A) was re-read end to end — all 94 printed rows. No event was added,
+# removed, retimed or renamed vs the rows below; every date, start, event
+# number, name, guarantee and structure-sheet URL matches. The schedule PDF
+# (Source B) was NOT re-read on 2026-11-19, so RETRIEVED stays 2026-11-17.
+# Transcript: research/a9f5847f-official-verification-2026-11-19.md
+#
 # IRREGULARITY X-01: the PDF's DATE column is garbled on 12 rows - a sponsor banner
 # ("@PokerAtlas PRO", "@PokerAtlas* TOUR") or a series logo ("LIPS CHAMPIONSHIP ...") is
 # printed where the date should be. The date for each of those rows was recovered from the

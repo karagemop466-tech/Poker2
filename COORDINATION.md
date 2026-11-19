@@ -2442,3 +2442,22 @@ byte-identical output; `build2026.py --check` OK; `check2026.py` OK (21 pages,
 4. Every check green above was run on top of `f8ede89`; later merges (if any) do not invalidate
    the merged PR #87 itself, which CI verified on `83f415a`.
  (arena/d0bd6790-poker2: completion record (PR #87 merged, Pages built))
+
+## Session arena/a9f5847f-poker2 — live 2026-11-19 official-source verification sweep & final integration (2026-11-19)
+
+Read `COORDINATION.md` and checked open PRs before starting: no open PRs at claim time; `main` at `7ab0759` (PR #94 merged). Bash sandbox has no route to official hotel sites, so all live re-reads use the page-fetch tool; results are recorded with retrieval date 2026-11-19. Scope is non-overlapping: new research note + session-updates JSON + regenerated `/2026/` pages only.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live re-read of official sources (Venetian DSE IV schedule + structure sheets, Wynn, Caesars, Bellagio, MGM, Horseshoe, Resorts World, Westgate, Venetian resort-fee/tax pages); record any changed values, new events, or newly explicit single-entry rules with per-URL retrieval dates | in progress | arena/a9f5847f-poker2 | `research/a9f5847f-official-verification-2026-11-19.md`, `data/session-updates-a9f5847f.json` |
+| V2 Re-run scheduled source monitor state check; confirm no source changed since last run or flag changes | in progress | arena/a9f5847f-poker2 | `data/verified2026/checks.json` (read-only unless a change is found) |
+| V3 Rebuild `/2026/` from reconciled data, run full check suite (build --check, check2026, semantics, guarantees, labels, search, trip, decisions), confirm GitHub Pages live | pending | arena/a9f5847f-poker2 | `scripts/build2026.py` outputs, `2026/**` |
+| V4 Final integration: PR → `main`, green CI, merge, verify Pages deployment, record PR link + merge result here | pending | arena/a9f5847f-poker2 | `COORDINATION.md` |
+
+### Completion (arena/a9f5847f-poker2, 2026-11-19)
+
+- V1 done: live re-reads of the Venetian DSE IV schedule page (all 94 printed rows, zero changes vs stored dataset), structure sheets 7 (Events 14/28/63) and 30 (Event 8) in full (both match stored rows exactly; both still silent on re-entry — NOT promoted to confirmed single-entry), Wynn poker page (WPT Nov 27–Dec 21 and Super Gold Million $400/$3M confirmed, already stored as X-WPT06), Venetian resort-fee page ($55 plus tax, unchanged), Bellagio/MGM Grand/Caesars/Golden Nugget poker pages (MGM daily times 11am/7pm/11pm and Golden Nugget daily rules match stored rows). Transcript: `research/a9f5847f-official-verification-2026-11-19.md`; machine-readable record: `data/session-updates-a9f5847f.json`.
+- V2 done: monitor state read (`data/verified2026/checks.json`, last run 2026-11-18T15:29:01Z, 4 changed / 5 errors). Sheets 7 and 30 re-read today match stored transcriptions, so no value changes result; remaining changed/errored URLs were not re-read and keep their dates/flags.
+- V3 done: `scripts/build_master.py` (new a9f5847f post-write overlay) + `scripts/build2026.py` rebuilt; `build2026.py --check`, `check2026.py` (24 pages, 1629 links, no broken links, no non-official hosts), `check_semantics.py`, `check_guarantees.py`, `check_labels.py`, `check_monitor_badge.py`, `check_sheet_readings.py`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs` all pass. Zero values changed; confirmed single-entry count remains 0. Dates advanced only where the row's own official document was re-read today (Venetian schedule rows, V-14/V-28/V-63 via sheet 7, MGM daily rows, Golden Nugget rows). Wynn WPT PDF, Caesars flyer PDF and Bellagio weekly PDFs were not re-read, so those rows keep earlier dates.
+- Irregularities (non-blocking, recorded in the transcript): Bellagio poker page still carries a stale "Tournament play will resume on Saturday, July 26" note; `https://www.caesars.com/casino/poker` redirects to the Caesars homepage (stored source URLs already correct).
+- V4: PR opened below; CI + Pages deployment recorded here after merge.

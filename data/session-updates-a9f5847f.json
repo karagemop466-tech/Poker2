@@ -1,0 +1,67 @@
+{
+  "session": "arena/a9f5847f-poker2",
+  "retrieved": "2026-11-19",
+  "method": "live fetch of official pages/PDFs via page-fetch tool; no inferred values",
+  "transcript": "research/a9f5847f-official-verification-2026-11-19.md",
+  "venetian_schedule_page": {
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "rows_read": 94,
+    "changes_vs_dataset": "none — no event added, removed, retimed or renamed; all dates, starts, event numbers, names, guarantees and structure-sheet URLs match stored rows",
+    "action": "schedule_checked + last_checked -> 2026-11-19 for all Venetian rows"
+  },
+  "venetian_structure_7": {
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+    "event": "Events 14/28/63 $600 NLH (1Day), 11:10 AM, 40,000 chips, 30-min levels, late reg 10 levels + break (~4:55 PM), $30K GTD (14, 63) / $40K GTD (28), $90 fee + $510 pool, pays 12.5%, silent on re-entry/add-on",
+    "matches_dataset": true,
+    "action": "struct_checked -> 2026-11-19 for V-14, V-28, V-63; rows remain rules-silent, NOT confirmed single-entry"
+  },
+  "venetian_structure_30": {
+    "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+    "event": "Event 8 $200 NLH (1Day) PKO, 5:10 PM, 25,000 chips, 30-min levels, late reg 9:40 PM, $8,000 GTD incl bounties, $40 fee + $160 pool, pays 12.5%, silent on re-entry/add-on",
+    "matches_dataset": true,
+    "action": "confirmation only; already dated 2026-11-19 by prior session"
+  },
+  "wynn_poker_page": {
+    "url": "https://www.wynnlasvegas.com/casino/poker",
+    "findings": "WPT World Championship Nov 27-Dec 21; Super Gold Million $400 buy-in $3,000,000 guarantee (already stored as X-WPT06); Signature Series Jan 11-24 2027; daily tournaments suspended during series",
+    "changes_vs_dataset": "none; WPT schedule PDF not re-read, Wynn rows keep 2026-11-17 dates"
+  },
+  "venetian_resort_fee": {
+    "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+    "finding": "$55 plus tax per night, payable upon check-in — unchanged vs stored H-VEN"
+  },
+  "bellagio_poker_page": {
+    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+    "finding": "Weekly PDFs (Fri $600 NLH, Sat $1,000 NLH, Sun $400 HORSE) linked with same URLs as stored; stale 'tournament play will resume July 26' note on page; PDFs not re-read today"
+  },
+  "mgm_grand_poker_page": {
+    "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+    "finding": "Daily tournaments 11:00am, 7:00pm, 11:00pm — matches stored MGM daily rows; weekly/structure PDFs same URLs",
+    "action": "last_checked -> 2026-11-19 for MGM-1100AM, MGM-700PM, MGM-1100PM (not MGM-SAT-150)"
+  },
+  "caesars_poker": {
+    "urls": [
+      "https://www.caesars.com/caesars-palace/casino/poker",
+      "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    ],
+    "finding": "Poker room open 24/7, daily tournaments; schedule data comes from flyer PDF which was not re-read today; Caesars/Horseshoe rows keep 2026-11-17 dates. Note: /casino/poker redirects to homepage.",
+    "action": "no date changes"
+  },
+  "golden_nugget_daily": {
+    "url": "https://www.goldennugget.com/las-vegas/casino/poker-room/daily-tournaments/",
+    "finding": "Daily 10AM/5PM/2AM, 15,000 chips, 15-min levels, unlimited re-entries to level 5, two $20 add-ons — matches stored GN rows; extra-spend confirmed",
+    "action": "last_checked -> 2026-11-19 for GN-1000AM, GN-500PM, GN-200AM"
+  },
+  "monitor_state": {
+    "file": "data/verified2026/checks.json",
+    "last_run": "2026-11-18T15:29:01Z",
+    "changed_this_run": 4,
+    "errors": 5,
+    "action": "read-only; sheets 7 and 30 re-read today match stored transcriptions, so no value changes result"
+  },
+  "conclusion": "Zero values changed, zero events added/removed, zero rows promoted to confirmed single-entry (count remains 0). Dates advanced only where the row's own official document was re-read today.",
+  "irregularities": [
+    "Bellagio poker page still carries a stale 'Tournament play will resume on Saturday, July 26' note while linking current weekly PDFs — cosmetic, no data impact.",
+    "https://www.caesars.com/casino/poker redirects to the Caesars homepage; stored source URLs already point at the correct poker pages."
+  ]
+}
