@@ -527,19 +527,39 @@ def hotel_table(hotels, table_id, show_calc=True):
         if _pair_links:
             # a pair can have a Google route and no Apple one (19 of 68 in the matrix); an empty
             # url must never become href="", which silently links the page to itself
-            def _ml(url, label):
+            def _self_route(url):
+                # Some pairs are a hotel and that same hotel's poker room (the venue's own
+                # property). The dataset has no separate geocode for those rooms, so the URL
+                # asks Google for a route from a coordinate to the identical coordinate: a
+                # zero-length "walk" that is not a published route. Offering it as
+                # confirmation would imply evidence that does not exist, so the link is
+                # dropped and the cell says so instead.
                 if not url:
+                    return False
+                def _q(key):
+                    m = re.search(r"[?&]" + key + r"=([^&]*)", url)
+                    return m.group(1) if m else None
+                o, d = _q("origin"), _q("destination")
+                return bool(o) and o == d
+
+            def _ml(url, label):
+                if not url or _self_route(url):
                     return None
                 return ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(url), esc(label)))
 
             _lnk = []
+            _self_pairs = 0
             for p in _pair_links:
                 _vn = (p.get("venue_label") or p["venue"]).split()[0]
+                if _self_route(p.get("google_maps")) or _self_route(p.get("apple_maps")):
+                    _self_pairs += 1
                 _one = [x for x in (_ml(p.get("google_maps"), _vn + " Google"),
                                     _ml(p.get("apple_maps"), _vn + " Apple")) if x]
                 _lnk.extend(_one)
-            if _lnk:
-                walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(_lnk) + "</div>")
+            if _lnk or _self_pairs:
+                _tail = (' <span class="note">same-property pair: the stored origin and destination '
+                         'are identical, so no route link is shown</span>' if _self_pairs else '')
+                walk_cell += ('<div class="small note">confirm on a map: ' + " · ".join(_lnk) + _tail + "</div>")
         # the ≤30-min filter is honest only if it reads the same evidence the cell shows: a hotel
         # qualifies when either main venue, or any routed pair, is inside the limit
         walk_ok = "1" if (walk.get("within_30_to_venetian") or walk.get("within_30_to_wynn")) else "0"
