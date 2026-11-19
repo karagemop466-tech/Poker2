@@ -1,0 +1,21 @@
+{
+ "id": "SRC-V-POKER",
+ "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+ "label": "Venetian poker room page (location, 24h hours, 50 tables, player parking, contact)",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html;charset=utf-8",
+ "bytes": 255855,
+ "hash": "1c23c56551d995533bc443f1f4126c8eb1e91a6365eb477cf056f91dcb37701e",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "room_location": "The Palazzo, level 2, Grand Canal Shoppes",
+  "player_parking": "three hours or more",
+  "series_module": null
+ },
+ "value_diffs": [],
+ "excerpt_hint": "Las Vegas Poker Room | Poker Games & Tournaments Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Check Rates {{ loginSt",
+ "note": ""
+}

@@ -1,0 +1,17 @@
+{
+ "id": "SRC-CC-TLGUIDE",
+ "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+ "label": "Clark County transient lodging licensee guide (per-property tax rate and street address)",
+ "publisher": "Clark County (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "application/pdf",
+ "bytes": 441123,
+ "hash": "c10f7016a5a853d338d6ec622fcc97620e80548d91372c95edf0eb396ff632cd",
+ "state": "new",
+ "binary": true,
+ "values": {},
+ "value_diffs": [],
+ "excerpt_hint": "(binary: hash-only check)",
+ "note": ""
+}

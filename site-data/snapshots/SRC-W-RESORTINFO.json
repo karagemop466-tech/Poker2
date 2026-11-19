@@ -1,0 +1,19 @@
+{
+ "id": "SRC-W-RESORTINFO",
+ "url": "https://www.wynnlasvegas.com/about-us/resort-information",
+ "label": "Wynn resort information page (current resort-fee statement)",
+ "publisher": "Wynn (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html; charset=utf-8",
+ "bytes": 368018,
+ "hash": "f06800674c53395e766b707f41db52c4f6008e69f7d84c332bcb33690c122e05",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "resort_fee": "1"
+ },
+ "value_diffs": [],
+ "excerpt_hint": "Resort Policies & Information | Wynn Las Vegas and Encore Resort Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/18/2026 - Check Out 11/21/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/18/2026 - 11/21/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experienc",
+ "note": ""
+}
