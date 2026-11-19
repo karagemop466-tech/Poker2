@@ -1495,6 +1495,7 @@ def p_hotels():
                ((esc(h["parking"]) if h["parking"] else '<span class="blank">not published</span>')
                 # The parking value must show the page that prints it. Venetian/Palazzo were re-cited
                 # 2026-11-19 (flag P-01): their old source, the poker room page, prints no parking fee.
+                + (("<div class='note'>%s</div>" % esc(h["parking_note"])) if h.get("parking_note") else "")
                 + (("<div class='note'>%s</div>" % (srclink(h["parking_src"], "Parking fee, official page")
                        + ((" · " + srclink(h["parking_src_2"], "Verified independently here"))
                           if h.get("parking_src_2") else "")))
@@ -1502,7 +1503,8 @@ def p_hotels():
                canc,
                ('<span class="blank">not published</span>' if not h["dated_total"] else esc(h["dated_total"])),
                srclink(h["resort_fee_src"], "Official fee source") + " · " + srclink(h["book"], "Official booking")
-               + "<div class='note'>Fee read %s</div>" % esc(h.get("resort_fee_checked")),
+               + "<div class='note'>Fee read %s</div>" % esc(h.get("resort_fee_checked"))
+               + (("<div class='note'>Parking read %s</div>" % esc(h["parking_checked"])) if h.get("parking_checked") else ""),
                check_badge(*(h[f] for f in ("resort_fee_src", "parking_src", "cancel_src", "tax_src", "book") if h.get(f)))))
 
     # Occupancy and early-departure charges, which change the true cost per night and are usually

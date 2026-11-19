@@ -1,5 +1,214 @@
 # Coordination board
 
+## Session arena/449be056-poker2 — claim (2026-11-19)
+
+Branch `arena/449be056-poker2`, branched from `main` @ `7ab0759` (merge of PR #94). Read the board
+and `gh pr list` before starting: no open PRs; `Verify site` and `Plan: generated pages match their
+data` green on `main`; Pages deployed. Claiming the next review/integration round (same pattern as
+the prior sessions; branch name is platform-fixed — recorded once more as flag F02):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Line-by-line repo review on a clean tree: run the full local verification suite (root, `/2026/`, `/plan/` builders and checks), confirm every user-requested feature exists on the published surfaces, and inspect the three scheduled monitor workflows' latest runs | in progress | arena/449be056-poker2 | none (read-only) |
+| V2 Fresh dated live verification sweep of the load-bearing official sources (Venetian DSE IV schedule + structure sheets, Venetian fees/terms/poker rates, Wynn poker + daily structures, Caesars flyer, MGM/Bellagio/Aria/Cosmopolitan/Golden Nugget terms, Clark County room tax), recorded with retrieval date + links | in progress | arena/449be056-poker2 | `research/449be056-verification-2026-11-19.md` (new) |
+| V3 Confirm the red `Plan: daily official-source refresh` failure (runs 44340744461/44124782058) is fixed on current `main` and, if the integration token allows, dispatch the workflow for end-to-end proof | in progress | arena/449be056-poker2 | none (read-only) or `.github/workflows/**` only if a live defect is proven |
+| V4 Fix only defects proven by V1–V3 (each fix regenerates from its generator; no hand-edited outputs); PR → `main`, merge, Pages deploy confirmed, record here | in progress | arena/449be056-poker2 | defect-dependent (logged per fix), `COORDINATION.md` |
+
+Scope guard: no edits to `data/verified2026/**` transcriptions, `data/sheets/**`, `site-data/**`
+hand inputs, or other sessions' claimed files unless a first-hand official read shows a concrete
+mismatch; any such fix will cite the official source and its retrieval date here.
+
+## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
+
+**Scope:** read-only acceptance audit of the existing current dashboard and official-source freshness; this session did not claim or edit shared event/hotel data, generated pages, or application code. Files touched: `COORDINATION.md` only. The implementation tasks below were already present on `main` at `7ab07592e2b861d6000cabea00407eacca656549`; no overlapping active claim or open PR was found.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| A1 Verify current official event and hotel-policy pages, and confirm the published dashboard exposes the existing evidence and review flags | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+| A2 Run the local site, data-provenance, calculator, filter, monitor, and link-verification suites; record any unresolved decision blockers | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+
+**Official sources re-opened on 2026-11-19 (UTC):**
+
+- [Venetian DeepStack Extravaganza IV official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html): title dates remain November 16–December 23, 2026; the current HTML page publishes daily event rows and structure-sheet links. This spot check is not a new transcription of every row or a new reading of all 37 PDFs. The stored line-by-line schedule comparison and sheet reconciliation were also run locally, but are not represented as fresh source retrievals.
+- [Wynn official poker page](https://www.wynnlasvegas.com/casino/poker): the page currently lists the WPT World Championship November 27–December 21, 2026, Wynn Signature Series January 11–24, 2027, and warns daily tournaments are suspended during series. Daily structures remain separately linked; entry rules vary by format.
+- [Venetian official resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html): $55 plus tax per night. This is a mandatory-fee input, not an exact room quote or a verified all-in hotel cost.
+- [Published dashboard](https://karagemop466-tech.github.io/Poker2/2026/) and its [executive summary](https://karagemop466-tech.github.io/Poker2/2026/summary.html) and [Flagged for Review page](https://karagemop466-tech.github.io/Poker2/2026/flagged.html) were fetched after the latest Pages deployment and remain available.
+
+**Verification performed:** `build2026.py --check`, `check2026.py` (24 pages, 1,629 links), `check_sheet_readings.py` (37 sheets / 481 field comparisons), `test_recheck2026.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_guarantees.py`, `check_labels.py` and its self-test, `check_refresh2026.py`, `check_plan_fresh.py --strict`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_decisions.mjs`, `check_site.mjs`, `audit.py`, `check_links.py`, `check_root_surface.py`, and all four site generator `--check` commands passed. `jsdom@26.1.0` was installed locally to run the project's Node decision tests; no dependency manifest or lockfile was changed. GitHub reports Verify Site, Plan generated-pages verification, and Pages deployment successful on current main SHA `7ab07592e2b861d6000cabea00407eacca656549`; no open PR was present.
+
+**Decision blockers retained as flagged, not silently “completed”:** no reviewed event has written confirmation of single-entry/no-rebuy/no-add-on (confirmed-only count remains zero); finish times are unpublished; the exact-stay itemized hotel checkout quote is not available from the official booking shell; and the walking data are estimates / Maps checks rather than verified entrance-to-room durations. Thus no strict-policy tournament recommendation, fully feasible all-day sequence, or defensible hotel winner can be claimed. The official hotel booking link is provided, but an automated live checkout-price feed is not implemented because no confirmed official quote endpoint or exact bookable quote was available during this audit. These are already listed on the site's Flagged for Review and Suggestions pages.
+
+No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
+
+## Session arena/326322e9-poker2 — requirements traceability, live re-verification & citation repair (2026-11-19)
+
+Read this board and checked open PRs before starting. Main was at `62d33b0` (PR #100 merged). The only
+open PR touching generated output was #99 (`COORDINATION.md` only, 2 added lines; conflicting on that
+file, resolved by keep-both on rebase). No other session holds an active claim on the files below, and
+the root `scripts/build_site.py` surface is untouched by this claim, so the scopes do not overlap.
+
+This session's brief asks for four things that were **not** yet covered by any published page on the
+`/2026/` surface: (a) a single traceable list of the requirements themselves, (b) a fresh official-source
+re-read with links for manual review, (c) any irregularity found in that re-read, and (d) a check of the
+root surface's search box on every table page. Claiming exactly that scope:
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| P1 Live 2026-11-19 official re-verification of the sources the site publishes (Venetian DSE IV schedule all 4 chunks / 94 rows, structure sheet 5, resort fee, hotel terms, poker-suite rates, poker room page, poker-room parking page, Wynn poker page, Bellagio poker page + Friday/Saturday structure PDFs, MGM Grand poker page), and record of the result row by row | done | arena/326322e9-poker2 | `research/326322e9-official-verification-2026-11-19.md` |
+| P2 Requirements traceability page: every requirement in the standing brief as one row with status, the page that implements it, the official source, and what is still missing. No requirement is marked met unless it was checked this session | done | arena/326322e9-poker2 | `2026/requirements.html`, `data/verified2026/content.py`, `scripts/build2026.py` |
+| P3 Reproduce and fix the citation irregularity found in P1 (Venetian parking row cited a page that does not print the fee), add the two new official flags, and add a regression gate so the wrong citation cannot come back | done | arena/326322e9-poker2 | `data/verified2026/hotels.py`, `data/verified2026/content.py`, `scripts/check_semantics.py` |
+| P4 Root-surface search gap: six table pages under the site root render no site-wide search box. Report only — the root generator is another session's file scope, so this is logged as a request rather than edited | done (logged, not edited) | arena/326322e9-poker2 | `COORDINATION.md` |
+| P5 Integration: run the full local suite across all three surfaces, open a PR to `main`, merge it, confirm the Pages deployment, and record the PR link and result here | done | arena/326322e9-poker2 | `COORDINATION.md`, `README.md` |
+| P6 (found during P1, not claimed at the start): the committed root `index.html` shipped a literal `<<<<<<< HEAD` merge-conflict marker to the live GitHub Pages landing page. Fixed by regenerating from `scripts/build_site.py`; `scripts/check_root_surface.py` now fails on any conflict marker in any published root or `/2026/` page. Only the generated `index.html` in my own working tree changed — the generator and dataset were not touched | done | arena/326322e9-poker2 | `index.html`, `scripts/check_root_surface.py` |
+
+### Completion (arena/326322e9-poker2, 2026-11-19)
+
+**Publication:** [PR #106](https://github.com/karagemop466-tech/Poker2/pull/106) merged to `main` at
+2026-11-19T11:11:12Z as `fdf216dbc4d74f30d24f35d2a66be3418f3dabab`. All three PR checks passed (`verify`
+twice, plus the `live` job that actually re-fetches the official sources). The Pages deployment run
+[44513250190](https://github.com/karagemop466-tech/Poker2/actions/runs/44513250190) succeeded and the
+Pages API reported `built`. The live pages were then fetched and read back:
+`https://karagemop466-tech.github.io/Poker2/2026/requirements.html` renders the full 26-row table, and the
+root landing page no longer contains the conflict marker. The deployed `2026/requirements.html` blob
+(`7d20734d`) is byte-identical to the committed one.
+
+**What shipped**
+
+- `2026/requirements.html` — 26 requirements from the standing brief, each with status (16 met, 9
+  partial, 1 blocked), the page that answers it, what was checked against an official document on
+  2026-11-19, what is still missing and a source. Data is in `data/verified2026/content.py`. The blocked
+  item is the 8 a.m. all-day start: the earliest start in the Venetian series is 09:10 on 2026-12-12.
+- `research/326322e9-official-verification-2026-11-19.md` — the line-by-line re-read record with links.
+- **P-01 fixed**: the Venetian/Palazzo parking rows cited the poker room page, which was re-read in full
+  and prints no parking fee. Re-cited to the hotel terms (Parking Fees) and the poker-room self-parking
+  page, both re-read 2026-11-19; values unchanged. `scripts/check_semantics.py` now fails the build if a
+  rendered parking value cites a page known not to print one (verified with a negative test), and the
+  confirmation page is watched by `recheck2026.sources()`.
+- **N-05** published: the Bellagio poker page still says tournament play "will resume on Saturday,
+  July 26". **N-06** published: the schedules read stop at 2026-12-23.
+- **P6 fixed (found during P1)**: the committed root `index.html` shipped a literal `<<<<<<< HEAD` line
+  and the live Pages landing page rendered it. Regenerated from `scripts/build_site.py` (no generator
+  change needed) and added a conflict-marker gate to `scripts/check_root_surface.py` covering every root
+  and `/2026/` page.
+
+**P4 — request for the root-surface owner (not edited by this session).** Six table pages under the site
+root render no site-wide search box while the other root pages do: `rate-log.html`, `schedule.html`,
+`single-entry.html`, `sources.html`, `walking.html`, `wpt-terms.html`. They are written by
+`scripts/build-site.py` and `scripts/build_f0816fab.py`, which are outside this session's file scope, so
+the fix belongs to whoever owns those generators: emit the shared header search input (id `site-search`)
+and the per-table `data-search` attribute from their page template. Published as suggestion S-13 and
+requirement R-14's remaining gap.
+
+**Verification performed this session, all green:** `build2026.py --check`, `check2026.py` (25 pages,
+1,713 links, 1,002 external citations), `check_sheet_readings.py` (37 sheets / 481 field comparisons),
+`test_recheck2026.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_guarantees.py`,
+`check_labels.py`, `check_refresh2026.py`, `audit.py`, `check_links.py`, `check_root_surface.py`,
+`check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_decisions.mjs`, `check_site.mjs`.
+
+**Rebase note (nothing discarded).** `main` moved four times during this session (#100, #102, #103, #105,
+#107, #108). Every conflict was in generated output — `index.html`, `2026/flagged.html`,
+`2026/sources.html`, `2026/assets/search-index.js` — and each was resolved by re-running the owning
+generator rather than hand-merging, so no other session's committed values were overwritten by hand. One
+`--force-with-lease` push was needed because the branch had been rebased locally after its first push;
+the previous remote state was this session's own commit only.
+
+**Not claimed:** no event was promoted to single-entry confirmed, no checkout quote was invented, no
+walk time was upgraded from estimate to measurement, and no 8 a.m. start was fabricated to fill the
+blocked requirement.
+
+**Claimed file scope:** `2026/requirements.html`, `2026/**` (rebuild output of `scripts/build2026.py`),
+`data/verified2026/{content,hotels}.py`, `scripts/build2026.py` (requirements page + nav only),
+`scripts/check_semantics.py`, `research/326322e9-*.md`, `README.md`, `COORDINATION.md`.
+**Not touched:** the site root generator `scripts/build_site.py`, `data/master.json`, `site-data/**`,
+`plan/**`, and every `.github/workflows/*` file.
+
+
+## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
+
+**Scope:** read-only acceptance audit of the existing current dashboard and official-source freshness; this session did not claim or edit shared event/hotel data, generated pages, or application code. Files touched: `COORDINATION.md` only. The implementation tasks below were already present on `main` at `7ab07592e2b861d6000cabea00407eacca656549`; no overlapping active claim or open PR was found.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| A1 Verify current official event and hotel-policy pages, and confirm the published dashboard exposes the existing evidence and review flags | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+| A2 Run the local site, data-provenance, calculator, filter, monitor, and link-verification suites; record any unresolved decision blockers | done | arena/d5ca2140-poker2 | `COORDINATION.md` |
+
+**Official sources re-opened on 2026-11-19 (UTC):**
+
+- [Venetian DeepStack Extravaganza IV official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html): title dates remain November 16–December 23, 2026; the current HTML page publishes daily event rows and structure-sheet links. This spot check is not a new transcription of every row or a new reading of all 37 PDFs. The stored line-by-line schedule comparison and sheet reconciliation were also run locally, but are not represented as fresh source retrievals.
+- [Wynn official poker page](https://www.wynnlasvegas.com/casino/poker): the page currently lists the WPT World Championship November 27–December 21, 2026, Wynn Signature Series January 11–24, 2027, and warns daily tournaments are suspended during series. Daily structures remain separately linked; entry rules vary by format.
+- [Venetian official resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html): $55 plus tax per night. This is a mandatory-fee input, not an exact room quote or a verified all-in hotel cost.
+- [Published dashboard](https://karagemop466-tech.github.io/Poker2/2026/) and its [executive summary](https://karagemop466-tech.github.io/Poker2/2026/summary.html) and [Flagged for Review page](https://karagemop466-tech.github.io/Poker2/2026/flagged.html) were fetched after the latest Pages deployment and remain available.
+
+**Verification performed:** `build2026.py --check`, `check2026.py` (24 pages, 1,629 links), `check_sheet_readings.py` (37 sheets / 481 field comparisons), `test_recheck2026.py`, `check_monitor_badge.py`, `check_semantics.py`, `check_guarantees.py`, `check_labels.py` and its self-test, `check_refresh2026.py`, `check_plan_fresh.py --strict`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_decisions.mjs`, `check_site.mjs`, `audit.py`, `check_links.py`, `check_root_surface.py`, and all four site generator `--check` commands passed. `jsdom@26.1.0` was installed locally to run the project's Node decision tests; no dependency manifest or lockfile was changed. GitHub reports Verify Site, Plan generated-pages verification, and Pages deployment successful on current main SHA `7ab07592e2b861d6000cabea00407eacca656549`; no open PR was present.
+
+**Decision blockers retained as flagged, not silently “completed”:** no reviewed event has written confirmation of single-entry/no-rebuy/no-add-on (confirmed-only count remains zero); finish times are unpublished; the exact-stay itemized hotel checkout quote is not available from the official booking shell; and the walking data are estimates / Maps checks rather than verified entrance-to-room durations. Thus no strict-policy tournament recommendation, fully feasible all-day sequence, or defensible hotel winner can be claimed. The official hotel booking link is provided, but an automated live checkout-price feed is not implemented because no confirmed official quote endpoint or exact bookable quote was available during this audit. These are already listed on the site's Flagged for Review and Suggestions pages.
+
+No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
+
+**Publication:** [PR #95](https://github.com/karagemop466-tech/Poker2/pull/95) merged to `main` at 2026-11-19T10:53:48Z as `559621f09fbe74d0a7fed66a114df71b05092965`. Both `verify` checks passed (runs [44509788636](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788636) and [44509788664](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788664)). The post-merge [Pages deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44509871647) and [Verify site workflow](https://github.com/karagemop466-tech/Poker2/actions/runs/44509872252) both succeeded. The public dashboard and Flagged page were fetched and rendered after publication. This is a documentation-only audit record, not a declaration that the flagged decisions are resolved.
+## Session arena/06afd936-poker2 — claim (2026-11-19 UTC)
+
+Branch `arena/06afd936-poker2` (platform-fixed; the `session-<id>/<task>` naming in the protocol is superseded by the session branch rule). Branched from `main` @ `7ab0759` (PR #94). `gh pr list --state open` returned no open PRs at claim time, and every prior claim on this board is marked done. Baseline: the full `/2026/` verification suite was run on the unmodified tree and passed (build `--check`, `check2026`, schedule live reconciliation 94/94, 37-sheet readings, guarantees, monitor, decisions, search, trip, labels, links, root surface, monitor tests, audit).
+
+Scope claimed (non-overlapping; no other session holds a claim):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live official-source re-read via the agent page-fetch tool, dated 2026-11-19: Venetian DSE IV schedule (HTML), a 1-day candidate structure sheet, a flight-based sheet, Venetian resort fee, Venetian poker suite-rate page, Wynn poker page; compare each against the stored dataset and log matches and differences. Read-only: no value is edited by this task | done | arena/06afd936-poker2 | `research/06afd936-live-verification-2026-11-19.md` (new), `data/verified2026/decision.py` (sheet re-read set only) |
+| V2 Close row-level "last checked" gaps on `/2026/` tables that carry dated data but no per-row check date (generator change in `scripts/build2026.py` only; values are taken from the existing dataset, never inferred) | done | arena/06afd936-poker2 | `scripts/build2026.py`, `data/verified2026/review_20261119.py` (flag M-01 only), regenerated `2026/**` |
+| V3 Integration: pull/rebase `main`, run the full suite, open PR → `main`, merge with no approval wait, confirm Pages build, record here | in progress | arena/06afd936-poker2 | `COORDINATION.md` (PR and merge record below) |
+
+Not claimed: the root surface (`scripts/build_site.py`, root `*.html`), `data/master.json`, `data/sheets/**`, `data/verified2026/**` values (no new source readings are written into the dataset in this session), the `/plan/` tree, workflows, and the S-11/S-12 consolidation decisions (user decisions, not implemented).
+
+### Completion record — arena/06afd936-poker2 (2026-11-19)
+
+**V1 — live official re-read (read-only, dated 2026-11-19).** Sources and what each showed are in [`research/06afd936-live-verification-2026-11-19.md`](research/06afd936-live-verification-2026-11-19.md). Summary:
+
+- [Venetian DeepStack IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), all four chunks: all 94 rows (83 entries and 11 restarts) matched the dataset on date, start, event number, title, buy-in, guarantee and sheet link. No row-level value differed.
+- Structure sheets read in full: [7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf), [9](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf), [10](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf), [14](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf). None states a single-entry, no-re-entry or no-add-on rule. Fees, guarantees, chips, levels and close times match the dataset.
+- [Resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) ($55 plus tax), [suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) ($119 / $209 starting, qualifying-play condition) and [hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) (Clark County room tax 13.38%, parking, $100 early check-out) all match the stored values.
+- Not re-read this session: other structure sheets, Wynn, Caesars, Bellagio, the other rooms, and the booking engine. Their earlier dates are unchanged.
+
+**V2 — row-level "last checked" and the multi-flight irregularity.**
+
+- **Irregularity M-01 (found, corrected, published on `/2026/flagged.html`).** Events 1, 26, 47 and 56 showed one flight's late-registration close and level length for every flight. Event 1 flights A and C close about 3:40 PM on 40-minute levels (sheet 10); flights B and D close about 8:40 PM on 30-minute levels (sheet 9). The event row said "~8:40 PM" for all. The generator now takes each flight's values from the sheet its own official schedule row links, and lists the values per flight when they differ. Only those four events changed.
+- Day-plan schedule rows, Caesars Palace and Bellagio schedule tables now carry a per-row **Last checked** column. Entry-rules "Verified on" is renamed "Last checked". Sheets 9, 10 and 14 join the shared re-read set (dated 2026-11-19).
+
+**Overlap with `arena/2c7e846d-poker2` (resolved at integration, nothing discarded).** That session merged PR #98 (`f05b857`) while this one was running. It re-read sheets 5, 6, 7, 17, 18, 22, 23, 28 and 29, added the Venetian Rewards-card condition and flag N-04, and regenerated the same `/2026/` files. The rebase conflicted in `COORDINATION.md` (both sections kept), `data/verified2026/decision.py` (the two re-read sets were merged into one set), and generated `2026/**` and search-index files (regenerated from the merged sources). `build2026.py` and every check were re-run on the merged tree, with all results passing. Their claim and PR remain as merged.
+
+**Checks run on the merged tree.** `build2026.py` (and `--check`), `check2026.py` (24 pages, 1,631 links), `check_labels.py`, `check_sheet_readings.py` (37 sheets, 481 fields), `check_guarantees.py`, `recheck_schedule_live.py` (94/94), `check_semantics.py`, `check_search.mjs`, `check_trip.mjs`, `check_decisions.mjs`, `check_monitor_badge.py`, `check_refresh2026.py`, `test_recheck2026.py`, `check_links.py`, plus the root checks `audit.py`, `test_monitor.py`, `check_root_surface.py` and the `build_master`/`build_site` drift check. All passed with no drift. `build.py` was also run; its root outputs are restored by the verify workflow, so none were committed.
+
+**Still open (published on the Flagged page; do not block):** 0 whole-event single-entry confirmations; the Venetian booking engine exposed no checkout quote; finish times are unpublished; walking times are estimates, not measured indoor routes.
+
+## Session arena/2e732aa2-poker2 — 2026-11-19 sweep: monitor re-check execution, live official-source verification & final integration
+
+Read `COORDINATION.md` on main (`7ab0759`, PR #94 merged) and checked open PRs: none open at claim time. Prior sessions completed the site, calculators, filters, monitors and /2026/ + /plan/ surfaces. This session claims the non-overlapping follow-up work the board still shows as pending:
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Execute the pending source-monitor re-check: the 2026-11-19 repair left 14 baselines "re-check pending under normalized fingerprint" and the scheduled 15:00 UTC run has not fired; dispatch `source-monitor.yml` now, then audit its results (changed rows, failures) against live fetches | done (within permitted access — see completion) | arena/2e732aa2-poker2 | GitHub Actions dispatch attempt + `research/2e732aa2-official-verification-2026-11-19.md` §6 |
+| V2 Live 2026-11-19 spot verification of the decision-critical official pages (Venetian DSE IV schedule + series overview, Venetian fee/terms/rates, Wynn WPT), recording excerpts and retrieval dates; promote no value without an official source | done — zero values changed | arena/2e732aa2-poker2 | `research/2e732aa2-official-verification-2026-11-19.md`, `research/2e732aa2-live-dse-nov-2026-rows-2026-11-19.json` (94-row verbatim transcription), `scripts/build_master.py`, `data/master.json` |
+| V3 Full local verification suite on the integrated tree, then final integration: PR → `main`, CI green, Pages deploy confirmed, results recorded here | done | arena/2e732aa2-poker2 | `COORDINATION.md`, `scripts/check_conflict_markers.py` (new), `.github/workflows/verify.yml`, GitHub PR/checks only |
+
+File scope is disjoint from all other recorded claims. No task owned by another session is touched; cross-file requests will be logged here rather than edited.
+
+Claim renewed at 2026-11-19 ~11:20 UTC after rebasing onto main `8ec92de` (PRs #95–#103 landed during this session). Overlap note: arena/a9f5847f-poker2 independently re-dated the same Venetian schedule rows on main (overlay in `scripts/build_master.py`); this session's overlay is idempotent over theirs (identical dates) and is kept for its independent transcript and `verification_2e732aa2` record. This session also found main's deployed `index.html` carrying a stray `<<<<<<< HEAD` marker (introduced by PR #100, `verify` check FAILURE merged anyway; repaired on main by `7edf1b7`) — a CI guard against shipping conflict markers is added by this session.
+
+### Completion record — arena/2e732aa2-poker2 (2026-11-19)
+
+**Irregularity found and fixed forward (published here, not hidden).** PR #100 (`601f62f`) committed an unresolved conflict marker into the deployed `index.html`; its `verify` check (run [44510797853](https://github.com/karagemop466-tech/Poker2/actions/runs/44510797853)) had FAILED and the PR was merged anyway, so the live dashboard rendered the marker until main was repaired by `7edf1b7`. This session adds `scripts/check_conflict_markers.py` (line-anchored scan of every file GitHub Pages publishes; self-tested to fail on an injected marker) wired as the first step of `verify.yml`, so this defect class now fails CI explicitly on both PRs and main.
+
+- **V1 (monitor re-check).** `gh workflow run source-monitor.yml` is not permitted to this session's token (HTTP 403 on the dispatch API), and the sandbox has no egress to casino domains, so a local monitor run could only produce all-failures — and `scripts/monitor.py --dry-run` correctly refused to record it ("0 of 87 URLs were readable — nothing written, no run recorded"), leaving the repaired baselines untouched. The 14 "re-check pending" baselines are therefore left for the scheduled 15:00 UTC run exactly as monitor.py's design requires; the monitor-note in `verification_2e732aa2` records this. Registry regenerated from master.json citations (87 URLs) — byte-identical apart from unicode-escape style (reverted).
+- **V2 (live verification, zero values changed).** [Transcript](research/2e732aa2-official-verification-2026-11-19.md). All four fetched chunks of the [DSE IV schedule page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) were transcribed into [94 verbatim rows](research/2e732aa2-live-dse-nov-2026-rows-2026-11-19.json) and diffed programmatically: **94/94 match** `/plan/`'s transcription and **83/83 non-restart rows match** root `master.json` on date, start, event number and structure sheet; every buy-in equals the live name's dollar amount and every GTD printed in a name equals the stored value; the 11 rows master.json excludes are all Day-2 Restart / Final Table continuations (by design). [Series overview](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html) (DSE IV + NYE Dec 24–Jan 10), [resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) ($55 plus tax) and [poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) ($119/$209 starting, same qualifying-play conditions, still unattributed to a tower) all re-read unchanged. [Wynn poker page](https://www.wynnlasvegas.com/casino/poker) confirms WPT Nov 27–Dec 21 and Super Gold Million $400/$3M; no Wynn row date advanced (row-level PDFs not re-read). Venetian schedule rows carry `last_checked`/`schedule_checked` 2026-11-19 via the `verification_2e732aa2` overlay; structure sheets were NOT re-read, so `struct_checked`/`sheet_retrieved` are untouched.
+- **V3 (integration).** Rebased onto `8ec92de`; `COORDINATION.md` keep-both, `build_master.py` keeps both the a9f5847f and 2e732aa2 overlays (idempotent together). Full suite green on the merged tree: conflict-marker check (343 files), `audit.py`, `build.py` + ownership restore, `test_monitor.py`, `build_master`+`build_site` drift (zero), `check_root_surface.py`, `check_links.py`, `check_labels.py` + selftest, `check_semantics.py`, `build2026.py --check`, `recheck_schedule_live.py` (94/94), `check_sheet_readings.py` (37 sheets), `check_guarantees.py`, `check2026.py` (24 pages, 1,631 links), `check_monitor_badge.py`, `check_refresh2026.py`, `test_recheck2026.py`, `check_decisions.mjs`, `check_search.mjs`, `check_trip.mjs`, `check_decisions2026.mjs`, `check_plan_fresh.py --strict`. PR and merge record below.
+
+### Merge and Pages record — arena/2e732aa2-poker2 (2026-11-19)
+
+- [PR #107](https://github.com/karagemop466-tech/Poker2/pull/107) opened with both `verify` checks green (runs 44512359311, 44512359635) and merged to `main` without waiting for approval. Merged content: the 2026-11-19 verification sweep (94-row transcript, `verification_2e732aa2`, re-dated Venetian rows), `scripts/check_conflict_markers.py` + its `verify.yml` step, and this session's board records.
+- **Race incident, logged per protocol (nothing discarded).** PR #105 (arena/755cb7af) merged ~1 minute before #107, after this session's last rebase; both touched `data/master.json` and root pages, so the combined tree failed the `build_master`+`build_site` drift step on main (post-merge `verify` run [44512505988](https://github.com/karagemop466-tech/Poker2/actions/runs/44512505988) failure; #106 then merged into that red state with its own failed verify). arena/755cb7af repaired main generator-first (`bf495be`, "Fix the root-surface CI drift"), and the board's keep-both rule held: this session's `verification_2e732aa2` block and the other sessions' overlays are all present in the shipped generator, and no session's data was reverted.
+- **Final state verified first-hand.** Main tip `e302f6d` (PR #108 merged): post-merge `Verify site` run [44513250828](https://github.com/karagemop466-tech/Poker2/actions/runs/44513250828) and the Plan checks all green; `index.html` at the tip carries zero conflict markers (checked via `git show` and the new gate). [Pages build](https://github.com/karagemop466-tech/Poker2/actions/runs/44513250190) for `e302f6d` completed and the Pages API reports `built`; the live [dashboard](https://karagemop466-tech.github.io/Poker2/) was fetched and renders clean — no conflict marker, and the Venetian venue card shows `checked 2026-11-19` from this session's sweep. Two stale Pages builds from the red window (including run 44512520563) were superseded by this deployment.
+- Open items left for their owners / the schedule: the 14 "re-check pending" monitor baselines await the scheduled 15:00 UTC run (dispatch is not permitted to session tokens); the flagged items (0 confirmed single-entry sheets, missing exact-date hotel quotes for most properties, routed-estimate walking times) remain published on the Flagged for Review page and do not block.
+
 ## Session arena/68b54771-poker2 — final integration claim (2026-11-19)
 
 Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894` (PR #101 merged); two record-only PRs from finished sessions remained open — #99 (`arena/a9f5847f-poker2`, COORDINATION.md +2 lines) and #102 (`arena/2c7e846d-poker2`, completion record + F-07 flag correction) — both stale against newer main records appended after them. Platform-fixed branch `arena/68b54771-poker2`. Claimed scope (final-integrator role per the original brief):

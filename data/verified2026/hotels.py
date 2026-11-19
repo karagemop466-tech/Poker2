@@ -36,6 +36,7 @@ HOTELS = [
         # in full and does NOT print any parking fee. Both pages below do print it verbatim.
         parking_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
         parking_src_2="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+        parking_checked="2026-11-19",
         parking_note="Quoted from the hotel terms (Parking Fees) and the poker-room self-parking page, both re-read 2026-11-19. Both additionally state that non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking for the day, confirmed with a supervisor at the end of the session.",
         cancel=("No cancellation deadline is printed for the poker suite rate. The general hotel terms "
                 "say a deposit (first night or entire stay, depending on the offer) is billed at "
@@ -69,6 +70,7 @@ HOTELS = [
         parking_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
         parking_src_2="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
         parking_note="The pool includes both properties; the hotel terms' Parking Fees section does not separate them.",
+        parking_checked="2026-11-19",
         cancel=("Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed."),
         cancel_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
         cancel_checked="2026-11-19",
