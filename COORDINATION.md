@@ -2564,3 +2564,9 @@ Scope rule: nothing owned by an in-flight session is touched (none are active). 
 Found `main` red at `cf17894` while integrating PR #102: (1) `index.html` (root landing page) and `COORDINATION.md` contained a committed, unresolved `<<<<<<< HEAD` conflict marker from an earlier keep-both merge; (2) the verify job `Root surface reproduces from master.json (build_master + build_site drift check)` failed on `cf17894`, because committed root pages did not match their generators' output. Repair: removed the stray COORDINATION marker line, regenerated the root surface from `scripts/build_master.py` + `scripts/build_site.py` (the documented fix), and regenerated `/2026/` via `scripts/build2026.py`. No data value was hand-edited.
 
 Checked against the official Caesars flyer (`clv-poker-daily-nlh-tournament-flyer-2026.pdf`, read 2026-11-19): 10 AM and 6 PM are $100 buy-ins, 2 PM and 9 PM are $160; re-entry allowed by paying the entry fee within the first break; $50 add-on optional. The regenerated "spend-more" classification is consistent with the flyer, but the Caesars summary row still reads "Daily NLH $100 buy-in" as a single figure. Flagged for the owner of that row; not changed here.
+
+### arena/2c7e846d-poker2 — PR #102 merge record (2026-11-19)
+
+- [PR #102](https://github.com/karagemop466-tech/Poker2/pull/102) (main repair + F-07 correction) merged with `gh pr merge 102 --merge` at 2026-11-19T11:05:36Z, merge commit `d5d22ea3069e626e551bfd49b2f32c8da74f8a33`. Checks on head `e0be8ca`: `Verify site` SUCCESS, `Plan: generated pages match their data` SUCCESS.
+- Pages: `pages/builds/latest` for `d5d22ea` → `built`, error null. Live root page renders without the stray marker; the cache-busted `/2026/flagged.html` lists N-04.
+- After this merge, `main` is green (Verify site, Plan check, Pages deployment). Session `arena/2c7e846d-poker2` has no further open work and no open claims.
