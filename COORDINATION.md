@@ -1,5 +1,23 @@
 # Coordination board
 
+## Session arena/0c4869c8-poker2 — final integration (2026-11-19)
+
+Checked the board and open PRs: no open PR or current overlapping claim was found at main `76b25aa`. Historical claims below are retained for audit. While this session worked, PR #80 landed at `17019a5` and overlapped the trip calculator. The rebase stopped on conflicts; resolution kept #80’s verified-checkout input, cents arithmetic, and regression test, combined with this session’s one-entry-per-candidate cart. Both generated files were rebuilt from the combined generator.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Audit current evidence and make the published planner enforce the single-entry, dates, quote and walk decision gates | done | arena/0c4869c8-poker2 | `2026/**`, `data/verified2026/**`, `scripts/build2026.py`, `scripts/check2026.py`, new QA in `scripts/`, `README.md`, `COORDINATION.md` |
+| Repair schedule monitoring and verify Pages publication | in progress | arena/0c4869c8-poker2 | `scripts/{scrape-schedule.mjs,recheck2026.py,commit-refresh.sh,check_plan_fresh.py,build-site.py}` (plan monitor reporting only), `.github/workflows/{plan-refresh,recheck,verify}.yml`, GitHub Pages |
+
+### Integration evidence (2026-11-19)
+
+- Reconciled the archived official schedule transcription (94/94 rows) and official structure-sheet audit (37 sheets, 481 fields). Reopened the [Venetian HTML schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) for November 25–27 and re-read official structure sheets [#6](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf), [#5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), and [#7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf). Events #10/#12/#14 still lack written maximum-entry/no-add-on confirmation; none was promoted.
+- [Wynn poker room](https://www.wynnlasvegas.com/casino/poker): WPT opener explicitly allows unlimited re-entry until level 9; January 2027 schedule is posted, but the structures PDF was a placeholder. Wynn series entries remain separate from strict freezeouts.
+- [Hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) confirm $55 plus applicable tax per night, 13.38% advertised room tax, and standard 3 p.m. check-in. [Poker rate page](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) lists starting prices but does not explicitly allocate them to towers. The exact November 25–28 two-adult booking lookup exposed no checkout price. Unverified quote fields stay null. [Official indoor directions](https://www.venetianlasvegas.com/resort/casino/poker.html) confirmed; no indoor duration published. The walking table uses dated historical Maps route estimates where recorded, not new measurements.
+- Findings are published on `/2026/flagged.html`, including booking and Wynn source links. Strict freezeout itinerary and hotel ranking remain empty. No citywide coverage, automated hotel checkout, or verified 8 a.m. sequence is claimed.
+- Scheduled monitoring now retains source changes after an unchanged or failed re-fetch, distinguishes a schedule fetch/parse failure from a clean diff, and publishes `/plan/` reports without editing event or rate transcriptions. The prior `/plan/` run failed at the report-publish step; inaccessible logs prevented attribution to a specific GitHub permission or command. Artifacts now retain the report even when GitHub publication fails.
+- Local checks passed: both site builds, internal links, source hosts/provenance, 37-sheet/94-row audits, strict filter/range, hotel and trip arithmetic, schedule diff, site search and monitor fixtures. GitHub PR checks and Pages publication to follow.
+
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
 | Task | Status | Owner | Files |

@@ -16,6 +16,26 @@
   "days": 38,
   "confirmed_single_entry": 0
  },
+ "quote_log": [
+  {
+   "arrival": "2026-11-25",
+   "departure": "2026-11-28",
+   "adults": 2,
+   "rooms": 1,
+   "nightly_cap": 200,
+   "checked": "2026-11-19",
+   "property": "Venetian / Palazzo booking engine",
+   "total": null,
+   "nightly": null,
+   "fee": null,
+   "tax": null,
+   "parking": null,
+   "cancel": null,
+   "rate_timestamp": null,
+   "url": "https://www.venetianlasvegas.com/book?adults[]=2&arrival_date=2026-11-25&children[]=0&departure_date=2026-11-28&view=calendar",
+   "status": "Unverified: booking shell returned; no checkout quote exposed."
+  }
+ ],
  "room_tax_pct": 13.38,
  "events": [
   {
@@ -47,6 +67,31 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-16",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-16",
+     "11:10 AM"
+    ],
+    [
+     "2026-11-16",
+     "5:10 PM"
+    ],
+    [
+     "2026-11-17",
+     "11:10 AM"
+    ],
+    [
+     "2026-11-17",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "3:40 PM",
    "chips": 30000,
    "level": "40",
@@ -96,6 +141,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-18",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-18",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -142,6 +199,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-11-19",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-19",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "12:25 PM",
    "chips": 30000,
    "level": "20/15",
@@ -192,6 +261,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-11-20",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-20",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "12:25 PM",
    "chips": 30000,
    "level": "20/15",
@@ -242,6 +323,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-11-21",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-21",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "12:25 PM",
    "chips": 30000,
    "level": "20/15",
@@ -292,6 +385,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-22",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-22",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "3:40 PM",
    "chips": 30000,
    "level": "30",
@@ -346,6 +451,22 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-23",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-23",
+     "11:10 AM"
+    ],
+    [
+     "2026-11-24",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "5:55 PM",
    "chips": 40000,
    "level": "40",
@@ -394,6 +515,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-23",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-23",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -442,6 +575,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-24",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-24",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -490,6 +635,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-25",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-25",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -536,6 +693,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-25",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-25",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -584,6 +753,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-26",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-26",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -630,6 +811,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-26",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-26",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -678,6 +871,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-27",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-27",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -726,6 +931,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-27",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-27",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -774,6 +991,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-28",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-28",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -823,6 +1052,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-11-28",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-28",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "4:40 PM",
    "chips": 30000,
    "level": "30",
@@ -872,6 +1113,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-28",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-28",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -931,6 +1184,26 @@
     "11:10 AM"
    ],
    "first_date": "2026-11-29",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-29",
+     "11:10 AM"
+    ],
+    [
+     "2026-11-30",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-01",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "5:55 PM",
    "chips": 40000,
    "level": "40",
@@ -979,6 +1252,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-11-29",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-29",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "4:40 PM",
    "chips": 30000,
    "level": "30",
@@ -1028,6 +1313,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-29",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-29",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1076,6 +1373,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-11-30",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-11-30",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1124,6 +1433,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-01",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-01",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1172,6 +1493,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-12-02",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-02",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "3:55 PM",
    "chips": 40000,
    "level": "30",
@@ -1182,7 +1515,7 @@
    "gtd": 40000,
    "gtd_note": "sheet serves 2 events and prints one guarantee for them",
    "gtd_text": "$40,000",
-   "ratio": 66.7,
+   "ratio": null,
    "bounty": null,
    "bounty_flag": null,
    "reentry": "silent",
@@ -1220,6 +1553,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-02",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-02",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1284,6 +1629,40 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-03",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-03",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-03",
+     "5:10 PM"
+    ],
+    [
+     "2026-12-04",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-04",
+     "5:10 PM"
+    ],
+    [
+     "2026-12-05",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-05",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "3:40 PM",
    "chips": 40000,
    "level": "40",
@@ -1333,6 +1712,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-12-03",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-03",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "4:40 PM",
    "chips": 30000,
    "level": "30",
@@ -1381,6 +1772,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-06",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-06",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -1429,6 +1832,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-06",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-06",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1477,6 +1892,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-07",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-07",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -1526,6 +1953,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-07",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-07",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1574,6 +2013,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-12-08",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-08",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "3:55 PM",
    "chips": 40000,
    "level": "30",
@@ -1584,7 +2035,7 @@
    "gtd": 40000,
    "gtd_note": "sheet serves 2 events and prints one guarantee for them",
    "gtd_text": "$40,000",
-   "ratio": 66.7,
+   "ratio": null,
    "bounty": null,
    "bounty_flag": null,
    "reentry": "silent",
@@ -1622,6 +2073,18 @@
     "4:10 PM"
    ],
    "first_date": "2026-12-08",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-08",
+     "4:10 PM"
+    ]
+   ],
    "reg_close": "6:25 PM",
    "chips": 20000,
    "level": "20",
@@ -1671,6 +2134,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-08",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-08",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1719,6 +2194,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-12-09",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-09",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "2:40 PM",
    "chips": 40000,
    "level": "30",
@@ -1729,7 +2216,7 @@
    "gtd": 10000,
    "gtd_note": null,
    "gtd_text": "$10,000",
-   "ratio": 16.7,
+   "ratio": null,
    "bounty": null,
    "bounty_flag": null,
    "reentry": "silent",
@@ -1769,6 +2256,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-09",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-09",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -1817,6 +2316,18 @@
     "4:10 PM"
    ],
    "first_date": "2026-12-09",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-09",
+     "4:10 PM"
+    ]
+   ],
    "reg_close": "6:25 PM",
    "chips": 20000,
    "level": "20",
@@ -1866,6 +2377,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-09",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-09",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -1916,6 +2439,18 @@
     "10:10 AM"
    ],
    "first_date": "2026-12-10",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-10",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "40",
@@ -1926,7 +2461,7 @@
    "gtd": 40000,
    "gtd_note": null,
    "gtd_text": "$40,000",
-   "ratio": 50.0,
+   "ratio": null,
    "bounty": null,
    "bounty_flag": null,
    "reentry": "silent",
@@ -1965,6 +2500,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-12-10",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-10",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "4:40 PM",
    "chips": 30000,
    "level": "30",
@@ -2014,6 +2561,18 @@
     "4:10 PM"
    ],
    "first_date": "2026-12-10",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-10",
+     "4:10 PM"
+    ]
+   ],
    "reg_close": "6:25 PM",
    "chips": 20000,
    "level": "20",
@@ -2063,6 +2622,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-10",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-10",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2111,6 +2682,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-11",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-11",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -2160,6 +2743,18 @@
     "4:10 PM"
    ],
    "first_date": "2026-12-11",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-11",
+     "4:10 PM"
+    ]
+   ],
    "reg_close": "6:25 PM",
    "chips": 20000,
    "level": "20",
@@ -2209,6 +2804,18 @@
     "8:10 PM"
    ],
    "first_date": "2026-12-11",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-11",
+     "8:10 PM"
+    ]
+   ],
    "reg_close": "9:55 PM",
    "chips": 20000,
    "level": "15",
@@ -2259,6 +2866,18 @@
     "9:10 AM"
    ],
    "first_date": "2026-12-12",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-12",
+     "9:10 AM"
+    ]
+   ],
    "reg_close": "10:55 AM",
    "chips": 20000,
    "level": "15",
@@ -2316,6 +2935,23 @@
     "6:10 PM"
    ],
    "first_date": "2026-12-12",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-12",
+     "10:10 AM"
+    ],
+    [
+     "2026-12-12",
+     "6:10 PM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "40",
@@ -2365,6 +3001,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-12-12",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-12",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "1:55 PM",
    "chips": 20000,
    "level": "15",
@@ -2421,6 +3069,22 @@
     "10:10 AM"
    ],
    "first_date": "2026-12-13",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-13",
+     "10:10 AM"
+    ],
+    [
+     "2026-12-14",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "40",
@@ -2431,7 +3095,7 @@
    "gtd": 300000,
    "gtd_note": null,
    "gtd_text": "$300,000",
-   "ratio": 272.7,
+   "ratio": null,
    "bounty": null,
    "bounty_flag": null,
    "reentry": "silent on re-entry between flights",
@@ -2470,6 +3134,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-13",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-13",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2518,6 +3194,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-14",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-14",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2566,6 +3254,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-15",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-15",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -2614,6 +3314,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-15",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-15",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2662,6 +3374,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-16",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-16",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -2711,6 +3435,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-16",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-16",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2773,6 +3509,35 @@
     "6:10 PM"
    ],
    "first_date": "2026-12-17",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-17",
+     "10:10 AM"
+    ],
+    [
+     "2026-12-17",
+     "6:10 PM"
+    ],
+    [
+     "2026-12-18",
+     "10:10 AM"
+    ],
+    [
+     "2026-12-18",
+     "6:10 PM"
+    ],
+    [
+     "2026-12-19",
+     "10:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "40",
@@ -2822,6 +3587,18 @@
     "12:10 PM"
    ],
    "first_date": "2026-12-17",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-17",
+     "12:10 PM"
+    ]
+   ],
    "reg_close": "4:40 PM",
    "chips": 30000,
    "level": "30",
@@ -2870,6 +3647,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-19",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-19",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -2929,6 +3718,26 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-20",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-20",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-21",
+     "11:10 AM"
+    ],
+    [
+     "2026-12-22",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "5:55 PM",
    "chips": 40000,
    "level": "40",
@@ -2978,6 +3787,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-20",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-20",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -3026,6 +3847,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-21",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-21",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -3074,6 +3907,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-22",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-22",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -3122,6 +3967,18 @@
     "11:10 AM"
    ],
    "first_date": "2026-12-23",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   ],
+   "sheet_retrieved": "2026-11-19",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-23",
+     "11:10 AM"
+    ]
+   ],
    "reg_close": "4:55 PM",
    "chips": 40000,
    "level": "30",
@@ -3170,6 +4027,18 @@
     "5:10 PM"
    ],
    "first_date": "2026-12-23",
+   "single_entry_confirmed": false,
+   "sheet_urls": [
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   ],
+   "sheet_retrieved": "2026-11-17",
+   "schedule_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "entry_slots": [
+    [
+     "2026-12-23",
+     "5:10 PM"
+    ]
+   ],
    "reg_close": "9:40 PM",
    "chips": 25000,
    "level": "30",
@@ -3219,7 +4088,7 @@
      "reg_close_m": 940,
      "buy_in": 300,
      "gtd": 75000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "eligibility": null,
      "date": "2026-11-16",
      "dow": "Mon"
@@ -3257,15 +4126,15 @@
     "reg_close_m": 940,
     "buy_in": 300,
     "gtd": 75000,
-    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
     "eligibility": null,
     "date": "2026-11-16",
     "dow": "Mon"
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #1 $300 NO LIMIT HOLD'EM 1A before #1 $300 NO LIMIT HOLD'EM 1B's registration closes at 8:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 1,
      "name": "$300 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -3304,7 +4173,7 @@
      "reg_close_m": 940,
      "buy_in": 300,
      "gtd": 75000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "eligibility": null,
      "date": "2026-11-17",
      "dow": "Tue"
@@ -3342,15 +4211,15 @@
     "reg_close_m": 940,
     "buy_in": 300,
     "gtd": 75000,
-    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+    "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
     "eligibility": null,
     "date": "2026-11-17",
     "dow": "Tue"
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #1 $300 NO LIMIT HOLD'EM 1C before #1 $300 NO LIMIT HOLD'EM 1D's registration closes at 8:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 1,
      "name": "$300 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -3409,7 +4278,7 @@
      "reg_close_m": null,
      "buy_in": null,
      "gtd": null,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
      "date": "2026-11-18",
      "dow": "Wed",
      "restart": true
@@ -3683,8 +4552,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #8 $200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) before #7 $400 NO LIMIT HOLD'EM 1A's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 7,
      "name": "$400 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -3768,8 +4637,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #9 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #7 $400 NO LIMIT HOLD'EM 1B's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 7,
      "name": "$400 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -3872,8 +4741,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #10 $400 NO LIMIT HOLD'EM (1DAY) before #11 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 11,
      "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -3957,8 +4826,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #12 $300 NO LIMIT HOLD'EM (1DAY) before #13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 13,
      "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -4042,8 +4911,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #14 $600 NO LIMIT HOLD'EM (1DAY) before #15 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 15,
      "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -4145,8 +5014,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #16 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS before #17 $400 POT LIMIT OMAHA BOUNTY (1DAY)'s registration closes at 4:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 17,
      "name": "$400 POT LIMIT OMAHA BOUNTY (1DAY)",
      "group": "bounty",
@@ -4165,8 +5034,8 @@
      "dow": "Sat"
     },
     {
-     "note": "Conditional: only if you are out of #16 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS before #18 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT's registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 18,
      "name": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
      "group": "spend",
@@ -4268,8 +5137,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #20 $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) before #19 $400 NO LIMIT HOLD'EM 1A's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 19,
      "name": "$400 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4288,8 +5157,8 @@
      "dow": "Sun"
     },
     {
-     "note": "Conditional: only if you are out of #20 $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) before #21 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 21,
      "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -4373,8 +5242,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #19 $400 NO LIMIT HOLD'EM 1B's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 19,
      "name": "$400 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4458,8 +5327,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #23 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #19 $400 NO LIMIT HOLD'EM 1C's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 19,
      "name": "$400 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4562,8 +5431,8 @@
    },
    "fallbacks": [
     {
-     "note": "Registration for #24 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE closes at 3:55 PM, before #25 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) even starts at 5:10 PM. You cannot start both.",
-     "verdict": "cannot be sequenced",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 24,
      "name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
      "group": "candidate",
@@ -4657,7 +5526,7 @@
      "reg_close_m": 1240,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
      "eligibility": null,
      "date": "2026-12-03",
      "dow": "Thu"
@@ -4684,8 +5553,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #27 $600 BIG O (1DAY) before #26 $800 NO LIMIT HOLD'EM 1A's registration closes at 3:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 26,
      "name": "$800 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4704,8 +5573,8 @@
      "dow": "Thu"
     },
     {
-     "note": "Conditional: only if you are out of #27 $600 BIG O (1DAY) before #26 $800 NO LIMIT HOLD'EM 1B's registration closes at 8:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 26,
      "name": "$800 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4718,7 +5587,7 @@
      "reg_close_m": 1240,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
      "eligibility": null,
      "date": "2026-12-03",
      "dow": "Thu"
@@ -4762,7 +5631,7 @@
      "reg_close_m": 1240,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
      "eligibility": null,
      "date": "2026-12-04",
      "dow": "Fri"
@@ -4789,8 +5658,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #26 $800 NO LIMIT HOLD'EM 1C before #26 $800 NO LIMIT HOLD'EM 1D's registration closes at 8:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 26,
      "name": "$800 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4803,7 +5672,7 @@
      "reg_close_m": 1240,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
      "eligibility": null,
      "date": "2026-12-04",
      "dow": "Fri"
@@ -4847,7 +5716,7 @@
      "reg_close_m": 1165,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "eligibility": null,
      "date": "2026-12-05",
      "dow": "Sat"
@@ -4874,8 +5743,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #26 $800 NO LIMIT HOLD'EM 1E before #26 $800 NO LIMIT HOLD'EM 1F (TURBO)'s registration closes at 7:25 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 26,
      "name": "$800 NO LIMIT HOLD'EM",
      "group": "multiflight",
@@ -4888,7 +5757,7 @@
      "reg_close_m": 1165,
      "buy_in": 800,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
      "eligibility": null,
      "date": "2026-12-05",
      "dow": "Sat"
@@ -4978,8 +5847,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #28 $600 NO LIMIT HOLD'EM (1DAY) before #29 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 29,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -5063,8 +5932,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #30 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY before #31 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 31,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -5166,8 +6035,8 @@
    },
    "fallbacks": [
     {
-     "note": "Registration for #32 $600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE closes at 3:55 PM, before #34 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) even starts at 5:10 PM. You cannot start both.",
-     "verdict": "cannot be sequenced",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 32,
      "name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
      "group": "candidate",
@@ -5186,8 +6055,8 @@
      "dow": "Tue"
     },
     {
-     "note": "Conditional: only if you are out of #34 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) before #33 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39's registration closes at 6:25 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 33,
      "name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
      "group": "satellite",
@@ -5344,8 +6213,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY before #35 $600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE's registration closes at 2:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 35,
      "name": "$600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE",
      "group": "team",
@@ -5364,8 +6233,8 @@
      "dow": "Wed"
     },
     {
-     "note": "Conditional: only if you are out of #36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY before #37 $100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39's registration closes at 6:25 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 37,
      "name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
      "group": "satellite",
@@ -5384,8 +6253,8 @@
      "dow": "Wed"
     },
     {
-     "note": "Conditional: only if you are out of #36 $800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY before #38 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 38,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -5524,8 +6393,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #40 $600 POT LIMIT OMAHA BOUNTY (1DAY) before #39 $800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT's registration closes at 4:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 39,
      "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
      "group": "multiflight",
@@ -5544,8 +6413,8 @@
      "dow": "Thu"
     },
     {
-     "note": "Conditional: only if you are out of #40 $600 POT LIMIT OMAHA BOUNTY (1DAY) before #41 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47's registration closes at 6:25 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 41,
      "name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
      "group": "satellite",
@@ -5564,8 +6433,8 @@
      "dow": "Thu"
     },
     {
-     "note": "Conditional: only if you are out of #40 $600 POT LIMIT OMAHA BOUNTY (1DAY) before #42 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 42,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -5723,8 +6592,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #43 $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS before #44 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47's registration closes at 6:25 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 44,
      "name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
      "group": "satellite",
@@ -5743,8 +6612,8 @@
      "dow": "Fri"
     },
     {
-     "note": "Conditional: only if you are out of #43 $600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS before #45 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47's registration closes at 9:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 45,
      "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
      "group": "satellite",
@@ -5837,7 +6706,7 @@
      "reg_close_m": 1390,
      "buy_in": 2200,
      "gtd": 1000000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "eligibility": null,
      "date": "2026-12-12",
      "dow": "Sat"
@@ -5864,8 +6733,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT before #46 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47's registration closes at 10:55 AM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 46,
      "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
      "group": "satellite",
@@ -5884,8 +6753,8 @@
      "dow": "Sat"
     },
     {
-     "note": "Conditional: only if you are out of #47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT before #48 $260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47's registration closes at 1:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 48,
      "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
      "group": "satellite",
@@ -5904,8 +6773,8 @@
      "dow": "Sat"
     },
     {
-     "note": "Conditional: only if you are out of #47 $2,200 NO LIMIT HOLD'EM 1A POKERATLAS CHAMPIONSHIP TITLE EVENT before #47 $2,200 NO LIMIT HOLD'EM 1B POKERATLAS CHAMPIONSHIP TITLE EVENT's registration closes at 11:10 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 47,
      "name": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT",
      "group": "multiflight",
@@ -5918,7 +6787,7 @@
      "reg_close_m": 1390,
      "buy_in": 2200,
      "gtd": 1000000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
      "eligibility": null,
      "date": "2026-12-12",
      "dow": "Sat"
@@ -6008,8 +6877,8 @@
    },
    "fallbacks": [
     {
-     "note": "Registration for #49 $1,100 NO LIMIT HOLD'EM SENIORS 1A MUST BE 50+ YEARS OF AGE TO PARTICIPATE closes at 4:55 PM, before #50 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) even starts at 5:10 PM. You cannot start both.",
-     "verdict": "cannot be sequenced",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 49,
      "name": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
      "group": "multiflight",
@@ -6131,8 +7000,8 @@
    },
    "fallbacks": [
     {
-     "note": "Registration for #49 $1,100 NO LIMIT HOLD'EM SENIORS 1B MUST BE 50+ YEARS OF AGE TO PARTICIPATE closes at 4:55 PM, before #51 $300 NO LIMIT HOLD'EM BOUNTY (1DAY) even starts at 5:10 PM. You cannot start both.",
-     "verdict": "cannot be sequenced",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 49,
      "name": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
      "group": "multiflight",
@@ -6254,8 +7123,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #52 $1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO) before #53 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 53,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -6339,8 +7208,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #54 $600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY before #55 $300 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 55,
      "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -6415,7 +7284,7 @@
      "reg_close_m": 1390,
      "buy_in": 1100,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
      "eligibility": null,
      "date": "2026-12-17",
      "dow": "Thu"
@@ -6442,8 +7311,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) before #56 $1,100 NO LIMIT HOLD'EM 1A $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM's registration closes at 4:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 56,
      "name": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
      "group": "multiflight",
@@ -6462,8 +7331,8 @@
      "dow": "Thu"
     },
     {
-     "note": "Conditional: only if you are out of #57 $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) before #56 $1,100 NO LIMIT HOLD'EM 1B $40 RAKE DISCOUNT FOR ENTRIES BEFORE 6:10 PM's registration closes at 11:10 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 56,
      "name": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
      "group": "multiflight",
@@ -6476,7 +7345,7 @@
      "reg_close_m": 1390,
      "buy_in": 1100,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
      "eligibility": null,
      "date": "2026-12-17",
      "dow": "Thu"
@@ -6520,7 +7389,7 @@
      "reg_close_m": 1390,
      "buy_in": 1100,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
      "eligibility": null,
      "date": "2026-12-18",
      "dow": "Fri"
@@ -6547,8 +7416,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #56 $1,100 NO LIMIT HOLD'EM 1C before #56 $1,100 NO LIMIT HOLD'EM 1D's registration closes at 11:10 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Another flight of the same event; not a single-entry fallback.",
+     "verdict": "excluded: second flight",
      "event_no": 56,
      "name": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
      "group": "multiflight",
@@ -6561,7 +7430,7 @@
      "reg_close_m": 1390,
      "buy_in": 1100,
      "gtd": 500000,
-     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+     "sheet_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
      "eligibility": null,
      "date": "2026-12-18",
      "dow": "Fri"
@@ -6632,8 +7501,8 @@
    },
    "fallbacks": [
     {
-     "note": "Registration for #56 $1,100 NO LIMIT HOLD'EM 1E closes at 4:55 PM, before #58 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT even starts at 5:10 PM. You cannot start both.",
-     "verdict": "cannot be sequenced",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 56,
      "name": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
      "group": "multiflight",
@@ -6736,8 +7605,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #60 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #59 $600 NO LIMIT HOLD'EM 1A $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 59,
      "name": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
      "group": "multiflight",
@@ -6821,8 +7690,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #61 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #59 $600 NO LIMIT HOLD'EM 1B's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 59,
      "name": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
      "group": "multiflight",
@@ -6906,8 +7775,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #62 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) before #59 $600 NO LIMIT HOLD'EM 1C's registration closes at 5:55 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 59,
      "name": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
      "group": "multiflight",
@@ -7010,8 +7879,8 @@
    },
    "fallbacks": [
     {
-     "note": "Conditional: only if you are out of #63 $600 NO LIMIT HOLD'EM (1DAY) before #64 $200 NO LIMIT HOLD'EM BOUNTY (1DAY)'s registration closes at 9:40 PM (official).",
-     "verdict": "conditional fallback",
+     "note": "Separate format or eligibility restriction; not an option on a strict itinerary.",
+     "verdict": "separate / restricted",
      "event_no": 64,
      "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
      "group": "bounty",
@@ -7043,20 +7912,20 @@
    "resort_fee": 55,
    "resort_fee_note": "$55 per night, plus tax. Includes Canyon Ranch fitness for two, in-suite internet, boarding-pass printing, local/toll-free calls, PressReader.",
    "resort_fee_src": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "resort_fee_checked": "2026-11-17",
+   "resort_fee_checked": "2026-11-19",
    "tax_pct": 13.38,
    "tax_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "tax_checked": "2026-11-17",
-   "poker_rate": 119,
-   "poker_rate_note": "Poker suite rate starts as low as $119 at The Venetian (and $209 at The Palazzo). Book by phone 866.255.8936, code EPOKR25. Conditional: six hours of active live cash play OR a buy-in to a $300-or-higher tournament for each night stayed, completed before 2 a.m. on the last night; otherwise the night is re-rated to the prevailing rate. Cannot be combined with other promotional rates. Blackout dates may apply.",
+   "tax_checked": "2026-11-19",
+   "poker_rate": null,
+   "poker_rate_note": "The shared poker offer lists starting prices of $119 and $209 without assigning them to properties. Book by phone 866.255.8936, code EPOKR25. Conditional: six hours of active live cash play OR a buy-in to a $300-or-higher tournament for each night stayed, completed before 2 a.m. on the last night; otherwise the night is re-rated to the prevailing rate. Cannot be combined with other promotional rates. Blackout dates may apply.",
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "poker_rate_checked": "2026-11-17",
+   "poker_rate_checked": "2026-11-19",
    "parking": "Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
    "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "parking_note": "The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
    "cancel": "No cancellation deadline is printed for the poker suite rate. The general hotel terms say a deposit (first night or entire stay, depending on the offer) is billed at confirmation, that prepaid offers are non-cancellable and non-refundable unless the offer says otherwise, and that check-out before the scheduled departure date costs an additional $100 plus tax.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "cancel_checked": "2026-11-17",
+   "cancel_checked": "2026-11-19",
    "cancel_type": "general hotel terms; not specific to the poker rate",
    "extra_guest_fee": "$50 per night for each additional guest 13 or older above double occupancy (Prestige: $50 for 5-20, $75 for 21+).",
    "early_checkout_fee": "$100 plus tax",
@@ -7071,20 +7940,20 @@
    "resort_fee": 55,
    "resort_fee_note": "Same resort-fee page as The Venetian: $55 per night, plus tax.",
    "resort_fee_src": "https://www.venetianlasvegas.com/resort/resort-fee.html",
-   "resort_fee_checked": "2026-11-17",
+   "resort_fee_checked": "2026-11-19",
    "tax_pct": 13.38,
    "tax_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "tax_checked": "2026-11-17",
-   "poker_rate": 209,
-   "poker_rate_note": "Poker suite rate starts as low as $209 at The Palazzo. Same code EPOKR25 and the same per-night qualifying-play condition.",
+   "tax_checked": "2026-11-19",
+   "poker_rate": null,
+   "poker_rate_note": "See shared poker offer; the official wording does not assign either price to a property.",
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
-   "poker_rate_checked": "2026-11-17",
+   "poker_rate_checked": "2026-11-19",
    "parking": "Same resort parking terms as The Venetian.",
    "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
    "parking_note": null,
    "cancel": "Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "cancel_checked": "2026-11-17",
+   "cancel_checked": "2026-11-19",
    "cancel_type": "general hotel terms; not specific to the poker rate",
    "extra_guest_fee": "$50 per night for each additional guest 13 or older above double occupancy.",
    "early_checkout_fee": "$100 plus tax",
@@ -7250,6 +8119,30 @@
  ],
  "rate_log": [
   {
+   "date": "2026-11-19",
+   "property": "venetian / palazzo",
+   "field": "published poker offer",
+   "value": "from $119 and $209; tower assignment not stated",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "note": "Live reread; conditional starting prices, not a booking quote."
+  },
+  {
+   "date": "2026-11-19",
+   "property": "venetian / palazzo",
+   "field": "resort fee",
+   "value": "$55 plus applicable tax per night",
+   "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "note": "Live reread; confirmed policy, not exact-stay checkout."
+  },
+  {
+   "date": "2026-11-19",
+   "property": "venetian / palazzo",
+   "field": "room tax",
+   "value": "13.38%",
+   "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "note": "Live reread of the general hotel terms; no itemized checkout exposed."
+  },
+  {
    "date": "2026-11-17",
    "property": "venetian",
    "field": "resort_fee",
@@ -7277,7 +8170,7 @@
    "date": "2026-11-17",
    "property": "venetian",
    "field": "poker_rate",
-   "value": "from $119 (Venetian) / $209 (Palazzo), code EPOKR25",
+   "value": "from $119 / $209, code EPOKR25; property attribution not stated",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "note": "read this session"
   },
@@ -7684,7 +8577,7 @@
    "id": "Q-06",
    "q": "Do you have, or will you open, a Venetian Rewards card?",
    "why": "Every structure sheet requires one to participate, and the poker suite rate is tracked through it.",
-   "blocks": "Both entering any Venetian event and holding the $119 poker rate.",
+   "blocks": "Both entering any Venetian event and qualifying for the conditional poker offer.",
    "answer": null
   },
   {

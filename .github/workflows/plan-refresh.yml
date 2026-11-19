@@ -1,18 +1,15 @@
 name: "Plan: daily official-source refresh"
 
-# Re-reads every official URL the site is built from, records a dated snapshot, and either
-# commits the snapshots (nothing moved) or opens a pull request (something moved that the
-# planner depends on). It never edits event or hotel values itself: those are transcribed by
-# scripts/build-events.py from the cited structure sheet, so a change becomes a human review.
+# Re-reads official sources and publishes dated evidence without automatically changing event
+# or hotel transcriptions. The run artifact preserves the reports if publication cannot proceed.
 
 on:
   schedule:
-    - cron: "30 6 * * *"   # daily, 06:30 UTC
+    - cron: "30 14 * * *"   # daily, 06:30–07:30 Las Vegas
   workflow_dispatch: {}     # run it by hand the morning you pay for anything
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: daily-refresh
@@ -42,7 +39,7 @@ jobs:
           # dataset committed without its pages) would be silently overwritten by this job's own
           # render step and pushed as if it were intended. On the clean tree there is nothing to
           # blame but the last commit, so this is where that drift is visible. Non-blocking: the
-          # outcome is carried into scripts/commit-refresh.sh, which opens a review PR instead of
+          # outcome is carried into scripts/commit-refresh.sh, which keeps the run artifact instead of
           # ending the run with no artefacts.
           rc=0
           { python3 scripts/build-events.py --check \
@@ -60,11 +57,12 @@ jobs:
             if [ "$rc" -ne 0 ]; then
               echo
               echo "**exit $rc** - main's committed pages do not reproduce from main's committed data. " \
-                   "This job's render step will regenerate them, so review the diff in the pull request " \
+                   "This job's render step will regenerate them, so review the run artifacts " \
                    "rather than assuming the previous commit was right."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
           if [ "$rc" -ne 0 ]; then
+            touch /tmp/pristine.failed
             echo failed >> /tmp/verify.failed
             echo "::warning title=Committed output not reproducible::plan/** does not reproduce from site-data on a clean checkout"
           fi
@@ -96,7 +94,7 @@ jobs:
         run: |
           # Non-blocking on purpose: when an official page changes, the transcriptions in
           # scripts/build-events.py stop matching, and that is exactly the situation we want
-          # reported as a pull request rather than a red X with no artefacts.
+          # reported for review rather than a red X with no artefacts.
           # `--check` on build-events/build-schedule/build-walk still tells us whether the
           # transcriptions still match; build-site is checked by the freshness gate below,
           # which compares against the tree *after* this run's own re-render.
@@ -123,14 +121,23 @@ jobs:
           cat /tmp/verify.log /tmp/pristine.log 2>/dev/null > /tmp/verify.all || true
           if [ -f /tmp/verify.failed ]; then
             echo "GENERATOR CHECK FAILED: official text no longer matches the transcription (or the " \
-                 "committed pages were already unreproducible) - opening a review PR"
+                 "committed pages were already unreproducible) - preserving the report for review"
           fi
           true
 
       - name: Plan pages reproduce from the datasets and the reports are well-formed
         run: python3 scripts/check_plan_fresh.py
 
-      - name: Commit snapshots, or open a review PR when a source moved
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Preserve the dated reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-source-refresh
+          path: |
+            site-data/change-report.json
+            site-data/schedule-diff.json
+            site-data/snapshots/schedule-live.json
+            /tmp/verify.all
+
+      - name: Publish audit reports without editing verified values
         run: bash scripts/commit-refresh.sh

@@ -436,7 +436,7 @@ QUESTIONS = [
          answer=None),
     dict(id="Q-06", q="Do you have, or will you open, a Venetian Rewards card?",
          why="Every structure sheet requires one to participate, and the poker suite rate is tracked through it.",
-         blocks="Both entering any Venetian event and holding the $119 poker rate.",
+         blocks="Both entering any Venetian event and qualifying for the conditional poker offer.",
          answer=None),
     dict(id="Q-07", q="Do you object to bounty formats on principle, or only to paying extra for an advantage?",
          why="Bounty events do not let you buy extra chips, but their guarantee includes bounty money so the cash pool is smaller than the headline number.",
@@ -564,6 +564,5 @@ def _unread_flags():
 
 FLAGS = FLAGS + _unread_flags()
 
-SUMMARY_HEADLINE = ("No Strip poker room publishes a single-entry rule. The Venetian is the only room "
-                   "that publishes enough to rank line by line. Silence on re-entry is recorded as "
-                   "silence, never as a promise.")
+SUMMARY_HEADLINE = ("No reviewed event has written rules that confirm the strict single-entry policy. "
+                    "The Venetian schedule gives useful research leads; none is a booking recommendation.")

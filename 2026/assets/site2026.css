@@ -39,6 +39,7 @@ letter-spacing:.03em;color:var(--dim);cursor:pointer;user-select:none;white-spac
 th:hover{color:var(--fg)}
 td.num,th.num{text-align:right;white-space:nowrap}
 tbody tr:hover{background:#141a24}
+.slot{display:block}.slot[hidden]{display:none}
 .tbl-scroll{overflow:auto;max-height:76vh;border:1px solid var(--line);border-radius:10px}
 .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:12px}
 .controls label{display:flex;flex-direction:column;gap:3px;font-size:.76rem;color:var(--dim);
