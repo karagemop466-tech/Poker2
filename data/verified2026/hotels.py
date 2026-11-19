@@ -32,8 +32,11 @@ HOTELS = [
         poker_rate_src="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
         poker_rate_checked="2026-11-19",
         parking="Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
-        parking_src="https://www.venetianlasvegas.com/resort/casino/poker.html",
-        parking_note="The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
+        # Re-cited 2026-11-19 (flag P-01). This row used to cite the poker room page, which was re-read
+        # in full and does NOT print any parking fee. Both pages below do print it verbatim.
+        parking_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        parking_src_2="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+        parking_note="Quoted from the hotel terms (Parking Fees) and the poker-room self-parking page, both re-read 2026-11-19. Both additionally state that non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking for the day, confirmed with a supervisor at the end of the session.",
         cancel=("No cancellation deadline is printed for the poker suite rate. The general hotel terms "
                 "say a deposit (first night or entire stay, depending on the offer) is billed at "
                 "confirmation, that prepaid offers are non-cancellable and non-refundable unless the "
@@ -62,8 +65,10 @@ HOTELS = [
         poker_rate_src="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
         poker_rate_checked="2026-11-19",
         parking="Same resort parking terms as The Venetian.",
-        parking_src="https://www.venetianlasvegas.com/resort/casino/poker.html",
-        parking_note=None,
+        # Re-cited 2026-11-19 for the same reason as The Venetian row (flag P-01).
+        parking_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+        parking_src_2="https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+        parking_note="The pool includes both properties; the hotel terms' Parking Fees section does not separate them.",
         cancel=("Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed."),
         cancel_src="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
         cancel_checked="2026-11-19",

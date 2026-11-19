@@ -74,6 +74,12 @@ def sources():
         if h.get("parking_src"):
             out["HPARK_" + h["id"].upper().replace("-", "")] = (
                 "%s parking source" % h["name"], h["parking_src"])
+        # Added 2026-11-19 (flag P-01): a parking value is confirmed against a second official page,
+        # so that page is watched as well. The key must end differently from the first or the two
+        # pages collapse into one watch entry.
+        if h.get("parking_src_2"):
+            out["HPARK2_" + h["id"].upper().replace("-", "")] = (
+                "%s parking fee (confirmation page)" % h["name"], h["parking_src_2"])
     for v in contentmod.OTHER_VENUES:
         key = re.sub(r"[^A-Z0-9]", "", v["name"].upper())[:12]
         out["VEN_" + key] = ("%s official page" % v["name"], v["url"])

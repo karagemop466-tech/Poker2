@@ -11389,8 +11389,9 @@
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "poker_rate_checked": "2026-11-19",
    "parking": "Registered hotel guests $20/day. Non-registered guests $20 Mon-Thu, $25 Fri-Sun; valet $40/day. Free self-parking for Venetian Rewards Sapphire and above.",
-   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "parking_note": "The official poker page read today additionally states: non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking.",
+   "parking_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "parking_src_2": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+   "parking_note": "Quoted from the hotel terms (Parking Fees) and the poker-room self-parking page, both re-read 2026-11-19. Both additionally state that non-registered hotel guests who play three hours or more in tournaments or cash games receive complimentary self-parking for the day, confirmed with a supervisor at the end of the session.",
    "cancel": "No cancellation deadline is printed for the poker suite rate. The general hotel terms say a deposit (first night or entire stay, depending on the offer) is billed at confirmation, that prepaid offers are non-cancellable and non-refundable unless the offer says otherwise, and that check-out before the scheduled departure date costs an additional $100 plus tax.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "cancel_checked": "2026-11-19",
@@ -11417,8 +11418,9 @@
    "poker_rate_src": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "poker_rate_checked": "2026-11-19",
    "parking": "Same resort parking terms as The Venetian.",
-   "parking_src": "https://www.venetianlasvegas.com/resort/casino/poker.html",
-   "parking_note": null,
+   "parking_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "parking_src_2": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html",
+   "parking_note": "The pool includes both properties; the hotel terms' Parking Fees section does not separate them.",
    "cancel": "Same terms as The Venetian; no poker-rate-specific cancellation deadline is printed.",
    "cancel_src": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "cancel_checked": "2026-11-19",
@@ -11997,6 +11999,30 @@
   }
  ],
  "flags": [
+  {
+   "id": "P-01",
+   "area": "Source citation",
+   "title": "The Venetian parking row cited a poker page that does not print the parking fees",
+   "detail": "Re-read 2026-11-19: the poker room page (https://www.venetianlasvegas.com/resort/casino/poker.html) describes the room, its location, hours, promotions and the poker suite rate. It does not print any parking price. The published parking row was nonetheless attributed to it. The fees it quotes ($20/day registered guests; $20 Mon-Thu and $25 Fri-Sun for non-guests; $40/day valet) and the 'three hours of play' self-parking benefit are printed verbatim on two other official Venetian pages, both re-read 2026-11-19: the hotel terms and conditions (Parking Fees section) and the poker-room self-parking page. The row is re-cited to those two pages; the values themselves did not change.",
+   "impact": "No value on the site changed. What changed is that the citation now points at the page that actually prints the number, so a reader who opens it sees the fee instead of a page that never mentions it. A regression gate fails the build if the poker page is used as the parking source again.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/player-parking.html"
+  },
+  {
+   "id": "N-05",
+   "area": "Official page defect",
+   "title": "The Bellagio poker page still advertises tournament play as resuming on 26 July",
+   "detail": "Re-read 2026-11-19: the official Bellagio poker page still prints 'Tournament play will resume on Saturday, July 26, beginning with the $300 PLO Double Board Bomb Pot Tournament at 2 PM PT.' That date has long passed, so the notice is stale rather than a livestream of the current schedule. The same page still links the three weekly structure PDFs the site transcribes, and those PDFs were re-read 2026-11-19 and are unchanged (see the verification record). The Saturday sheet also still prints a Combined Final Day 2 of 9/13/26, already recorded as X-05.",
+   "impact": "The Bellagio rows stay published because their own structure PDFs were re-read and match, but the room page itself cannot be used to prove the events are currently being run. Confirmed by the room before travelling. The rows remain outside the single-entry ranking.",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "id": "N-06",
+   "area": "Seed limits",
+   "title": "Official schedules seen this session stop at 23 December 2026; no 8 a.m. eligible start exists in them",
+   "detail": "All four HTML chunks of the Venetian DSE IV page were re-read 2026-11-19: the series runs November 16 to December 23, 2026. Read on the same day, the Wynn poker page lists the WPT World Championship (November 27 to December 21) and the Wynn Signature Series (January 11 to 24, 2027), and warns that daily tournaments are suspended during series. No official page read this session publishes a date-specific tournament in January 2027 or later, and the earliest start printed anywhere in the Venetian series is 9:10 AM (event 46, December 12) - every main-schedule event starts at 10:10 AM or later.",
+   "impact": "A trip after 23 December 2026, or one that wants an 8 a.m. start, has no verified schedule on this site yet. The dates remain a research window (Dec 1-4 2026) and the day plan stays empty rather than inventing an 8 a.m. event.",
+   "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
   {
    "id": "F-01",
    "area": "Entry rules",
@@ -12659,6 +12685,24 @@
    "cost": "Already implemented",
    "effort": "Done",
    "blocks": "F-13"
+  },
+  {
+   "id": "S-13",
+   "title": "Give the six tabular root pages the same site-wide search box",
+   "what": "Under the site root, rate-log.html, schedule.html, single-entry.html, sources.html, walking.html and wpt-terms.html each render at least one table with no search input, while every other root page has one. Its generator, scripts/build_site.py, is a different session's file scope, so this session logged the gap instead of editing it. The fix is to emit the shared header search box from that generator's page() template and add the same data-search attribute the existing tables use.",
+   "decides": "Whether the 'search across all tables' requirement (R-14) is met on the root surface, not just on /2026/.",
+   "cost": "Small: one template change plus a per-page assertion",
+   "effort": "Low",
+   "blocks": "R-14"
+  },
+  {
+   "id": "S-14",
+   "title": "Make the search box reachable without a table on the page",
+   "what": "The /2026/ search index is site-wide, so a no-match-free search from any page works, but a reader who has never opened the tournament table does not know that. An empty result that names the page where the match was found, and a two-line note on the dashboard, would remove that ambiguity.",
+   "decides": "Whether the search feature is discoverable, which is separate from whether it works.",
+   "cost": "Small",
+   "effort": "Low",
+   "blocks": "R-14"
   },
   {
    "id": "S-12",
