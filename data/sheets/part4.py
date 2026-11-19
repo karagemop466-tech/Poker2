@@ -10,6 +10,7 @@ def s(n, **kw):
 
 s(23,
   title="$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+  eligibility="Must be 21+ years of age and have a Venetian Rewards card to participate.",
   events=[57],
   buy_in=600, fee=90, pool_per_entry=510,
   start="12:10 PM", chips=30000, level_min=30,
@@ -87,6 +88,7 @@ s(27,
 
 s(28,
   title="$600 BIG O (1Day)",
+  eligibility="Must be 21+ years of age and have a Venetian Rewards card to participate.",
   events=[27],
   buy_in=600, fee=90, pool_per_entry=510,
   start="12:10 PM", chips=30000, level_min=30,

@@ -827,9 +827,9 @@ def p_index(events, days):
     cards = [
         ("Events in the series", len(events), "Venetian DeepStack Extravaganza IV, Nov 16 &ndash; Dec 23 2026"),
         ("Scheduled rows", len(sched.ROWS), "including 12 Day&nbsp;2 / Day&nbsp;3 restarts"),
-        ("Structure sheets read", len(SHEETS), "all 37, every one read on %s" % RETRIEVED),
+        ("Structure sheets read", len(SHEETS), "all 37 transcribed on %s; 9 candidate sheets re-read on %s" % (RETRIEVED, decisions.READ)),
         ("Confirmed single-entry", 0, "no audited sheet states a one-entry rule &mdash; see F-01"),
-        ("Best candidates", len(cands), "%d open to any player, %d restricted by age/field; one-day, "
+        ("Best candidates", len(cands), "%d open to players 21+ with a Venetian Rewards card (printed rule 2), %d restricted by the sheet (age or gender); one-day, "
          "no bounty, no re-entry/add-on clause printed" % (len(cands_open), len(restricted))),
         ("Comparable hotel quotes", 0, "no verified total for the same stay &mdash; see hotels"),
     ]
@@ -879,7 +879,7 @@ def p_index(events, days):
 <p class="lede">Compare Las Vegas poker schedules and hotel costs using linked official sources.
 Keep a clear distinction between written entry rules, route estimates and unverified prices.</p>
 <p class="lede"><strong>No reviewed event meets the strict freezeout policy.</strong> All 37 official
-Venetian DeepStack IV structure sheets were read on %(ret)s. A sheet that is silent on re-entry,
+Venetian DeepStack IV structure sheets were transcribed on %(ret)s, and the nine sheets behind the research candidates were re-read on %(reread)s and still match. A sheet that is silent on re-entry,
 rebuy and add-on is a research lead, not a booking recommendation.</p>
 </div>
 <div class="cards">%(cards)s</div>
@@ -894,7 +894,7 @@ rebuy and add-on is a research lead, not a booking recommendation.</p>
 
 <div class="grid2">
 <div class="panel"><h2>Research shortlist by published ratio</h2>
-<p class="note">Entry dates on or after Nov 19, 2026. Open to any player aged 21+ only. %(nres)d candidate event(s) are restricted by the
+<p class="note">Entry dates on or after Nov 19, 2026. Open to players aged 21+ who hold a Venetian Rewards card, as printed on each sheet (rule 2); the card's cost and enrolment terms are not on the sheet. %(nres)d candidate event(s) are restricted by the
 official sheet (age 50+ or women-only) and are listed at the foot of this page rather than ranked
 against unrestricted research leads.</p>
 <p class="note">Guarantee &divide; total entry fee, shown only where both figures are printed on the
@@ -958,7 +958,7 @@ true-cost-per-night calculator.</li>
 </ul>
 </div>
 </div></div>
-""" % dict(ret=RETRIEVED, cards=cardhtml, top=top, cheap=cheap, n=len(events),
+""" % dict(ret=RETRIEVED, reread=decisions.READ, cards=cardhtml, top=top, cheap=cheap, n=len(events),
                   nres=len(restricted), restricted_html=restricted_html)
     return page("Dashboard", body, "index.html")
 
@@ -1094,8 +1094,8 @@ what a sheet probably means. Where a sheet says nothing, that is recorded as sil
 silence is not a prohibition.</p></div>
 
 <div class="banner"><strong>The one thing to understand.</strong> All 37 official structure sheets were
-read on %(ret)s. Not one contains a one-entry-only rule. Where a restriction is absent, it stays unverified even when the fee, starting stack and schedule are confirmed. Flag <a href="flagged.html#F-01">F-01</a>.</div>
-""" % dict(ret=RETRIEVED)
+transcribed on %(ret)s (nine candidate sheets re-read %(reread)s). Not one contains a one-entry-only rule. Where a restriction is absent, it stays unverified even when the fee, starting stack and schedule are confirmed. Flag <a href="flagged.html#F-01">F-01</a>.</div>
+""" % dict(ret=RETRIEVED, reread=decisions.READ)
 
     body += block("Group A \u2014 best single-entry candidates", "candidate",
                   "Events with one starting day, no bounty, no satellite seat, no team format, and "
@@ -1608,7 +1608,7 @@ comparison.</p></div>
 <dt>Series</dt><dd>DeepStack Extravaganza IV, Nov 16 &ndash; Dec 23 2026</dd>
 <dt>Schedule page</dt><dd>%(sched)s</dd>
 <dt>Schedule PDF</dt><dd>%(pdf)s</dd>
-<dt>Structure sheets</dt><dd>37 PDFs, all read on %(ret)s</dd>
+<dt>Structure sheets</dt><dd>37 PDFs; transcribed %(ret)s; nine candidate sheets re-read %(reread)s</dd>
 <dt>Next series</dt><dd>DeepStack Extravaganza NYE, Dec 24 2026 &ndash; Jan 10 2027</dd>
 <dt>Then</dt><dd>DeepStack Showdown, Jan 11 &ndash; Feb 14 2027</dd>
 </dl>
@@ -1624,7 +1624,7 @@ comparison.</p></div>
 <div class="panel"><h2>Nearby stays</h2><p>See the <a href="walking.html#google-routes">eight address-based Google Maps estimates</a> and <a href="hotels.html">official booking links and charges</a>. No comparable checkout quote was confirmed.</p></div>
 <div class="banner"><strong>Irregularity X-02.</strong> Resolved Nov 19: the series overview now labels DeepStack IV as current. Check the dated source for each start and the <a href="../flagged.html#X-09">NYE discrepancies</a> before planning later dates.
 %(series)s</div>
-""" % dict(n=len(events), rows=rows, ret=RETRIEVED,
+""" % dict(n=len(events), rows=rows, ret=RETRIEVED, reread=decisions.READ,
            room=srclink(sched.POKER_ROOM_URL),
            sched=srclink(sched.SCHEDULE_URL, "dse-nov-2026.html"),
            pdf=srclink(sched.SCHEDULE_PDF, "dse-nov-2026-schedule.pdf"),
