@@ -40,6 +40,8 @@
  "events": [
   {
    "event_no": 1,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM",
    "flights": [
     "A",
@@ -125,6 +127,8 @@
   },
   {
    "event_no": 2,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM (1DAY)",
@@ -183,6 +187,8 @@
   },
   {
    "event_no": 3,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
    "flights": [],
    "official_name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
@@ -245,6 +251,8 @@
   },
   {
    "event_no": 4,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
    "flights": [],
    "official_name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
@@ -307,6 +315,8 @@
   },
   {
    "event_no": 5,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
    "flights": [],
    "official_name": "$200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RACE",
@@ -369,6 +379,8 @@
   },
   {
    "event_no": 6,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM (1DAY)",
@@ -429,6 +441,8 @@
   },
   {
    "event_no": 7,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$400 NO LIMIT HOLD'EM",
    "flights": [
     "A",
@@ -499,6 +513,8 @@
   },
   {
    "event_no": 8,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
@@ -559,6 +575,8 @@
   },
   {
    "event_no": 9,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -619,6 +637,8 @@
   },
   {
    "event_no": 10,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$400 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$400 NO LIMIT HOLD'EM (1DAY)",
@@ -677,6 +697,8 @@
   },
   {
    "event_no": 11,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -737,6 +759,8 @@
   },
   {
    "event_no": 12,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM (1DAY)",
@@ -795,6 +819,8 @@
   },
   {
    "event_no": 13,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -855,6 +881,8 @@
   },
   {
    "event_no": 14,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM (1DAY)",
@@ -915,6 +943,8 @@
   },
   {
    "event_no": 15,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -975,6 +1005,8 @@
   },
   {
    "event_no": 16,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES FROM THE START & $500 BOUNTIES ONCE WE REACH THE POSTED PAYOUTS",
@@ -1036,6 +1068,8 @@
   },
   {
    "event_no": 17,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$400 POT LIMIT OMAHA BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$400 POT LIMIT OMAHA BOUNTY (1DAY)",
@@ -1097,6 +1131,8 @@
   },
   {
    "event_no": 18,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
    "flights": [],
    "official_name": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
@@ -1159,6 +1195,8 @@
   },
   {
    "event_no": 19,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$400 NO LIMIT HOLD'EM",
    "flights": [
     "A",
@@ -1236,6 +1274,8 @@
   },
   {
    "event_no": 20,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
    "flights": [],
    "official_name": "$300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
@@ -1297,6 +1337,8 @@
   },
   {
    "event_no": 21,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1357,6 +1399,8 @@
   },
   {
    "event_no": 22,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1417,6 +1461,8 @@
   },
   {
    "event_no": 23,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1477,6 +1523,8 @@
   },
   {
    "event_no": 24,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
@@ -1537,6 +1585,8 @@
   },
   {
    "event_no": 25,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1597,6 +1647,8 @@
   },
   {
    "event_no": 26,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$800 NO LIMIT HOLD'EM",
    "flights": [
     "A",
@@ -1696,6 +1748,8 @@
   },
   {
    "event_no": 27,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 BIG O (1DAY)",
    "flights": [],
    "official_name": "$600 BIG O (1DAY)",
@@ -1756,6 +1810,8 @@
   },
   {
    "event_no": 28,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM (1DAY)",
@@ -1816,6 +1872,8 @@
   },
   {
    "event_no": 29,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1876,6 +1934,8 @@
   },
   {
    "event_no": 30,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
@@ -1937,6 +1997,8 @@
   },
   {
    "event_no": 31,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -1997,6 +2059,8 @@
   },
   {
    "event_no": 32,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
@@ -2057,6 +2121,8 @@
   },
   {
    "event_no": 33,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
    "flights": [],
    "official_name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
@@ -2118,6 +2184,8 @@
   },
   {
    "event_no": 34,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -2178,6 +2246,8 @@
   },
   {
    "event_no": 35,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE",
    "flights": [],
    "official_name": "$600 NLH LIPS POKER JINGLE TAG TEAM (1DAY) TAG TEAMS CONSIST OF FEMALE/FEMALE OR FEMALE/MALE",
@@ -2240,6 +2310,8 @@
   },
   {
    "event_no": 36,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
@@ -2300,6 +2372,8 @@
   },
   {
    "event_no": 37,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
    "flights": [],
    "official_name": "$100 NLH LIPS LADIES MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #39",
@@ -2361,6 +2435,8 @@
   },
   {
    "event_no": 38,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -2421,6 +2497,8 @@
   },
   {
    "event_no": 39,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$800 NO LIMIT HOLD'EM LIPS LADIES (2DAY) WOMEN IN POKER - MAIN EVENT",
    "flights": [],
    "official_name": "$800 NO LIMIT HOLD'EM LIPS DAY 2 RESTART PLAY DOWN TO FINAL 7 - STREAMED FINAL TABLE (POKERGO) AT 7:00 PM",
@@ -2484,6 +2562,8 @@
   },
   {
    "event_no": 40,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 POT LIMIT OMAHA BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$600 POT LIMIT OMAHA BOUNTY (1DAY)",
@@ -2545,6 +2625,8 @@
   },
   {
    "event_no": 41,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "flights": [],
    "official_name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
@@ -2606,6 +2688,8 @@
   },
   {
    "event_no": 42,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -2666,6 +2750,8 @@
   },
   {
    "event_no": 43,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM LIPS (1DAY) KINGS AND QUEENS BOUNTY - OPEN TO ALL PLAYERS",
@@ -2727,6 +2813,8 @@
   },
   {
    "event_no": 44,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "flights": [],
    "official_name": "$260 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
@@ -2788,6 +2876,8 @@
   },
   {
    "event_no": 45,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "flights": [],
    "official_name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
@@ -2850,6 +2940,8 @@
   },
   {
    "event_no": 46,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "flights": [],
    "official_name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
@@ -2912,6 +3004,8 @@
   },
   {
    "event_no": 47,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$2,200 NO LIMIT HOLD'EM POKERATLAS CHAMPIONSHIP TITLE EVENT",
    "flights": [
     "A",
@@ -2985,6 +3079,8 @@
   },
   {
    "event_no": 48,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
    "flights": [],
    "official_name": "$260 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY INTO EVENT #47",
@@ -3047,6 +3143,8 @@
   },
   {
    "event_no": 49,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$1,100 NO LIMIT HOLD'EM SENIORS MUST BE 50+ YEARS OF AGE TO PARTICIPATE",
    "flights": [
     "A",
@@ -3118,6 +3216,8 @@
   },
   {
    "event_no": 50,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3178,6 +3278,8 @@
   },
   {
    "event_no": 51,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3238,6 +3340,8 @@
   },
   {
    "event_no": 52,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
    "flights": [],
    "official_name": "$1,100 NO LIMIT HOLD'EM (1DAY) PROGRESSIVE KNOCK-OUT BOUNTY (PKO)",
@@ -3298,6 +3402,8 @@
   },
   {
    "event_no": 53,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3358,6 +3464,8 @@
   },
   {
    "event_no": 54,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM BOUNTY (1DAY) $200 BOUNTIES TO START $500 BOUNTIES IN THE MONEY",
@@ -3419,6 +3527,8 @@
   },
   {
    "event_no": 55,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$300 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3479,6 +3589,8 @@
   },
   {
    "event_no": 56,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$1,100 NO LIMIT HOLD'EM $40 RAKE DISCOUNT FOR ENTRIES BEFORE 10:10 AM",
    "flights": [
     "A",
@@ -3571,6 +3683,8 @@
   },
   {
    "event_no": 57,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
    "flights": [],
    "official_name": "$600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY)",
@@ -3631,6 +3745,8 @@
   },
   {
    "event_no": 58,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
    "flights": [],
    "official_name": "$200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
@@ -3693,6 +3809,8 @@
   },
   {
    "event_no": 59,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM $20 RAKE DISCOUNT FOR ENTRIES BEFORE 11:10 AM",
    "flights": [
     "A",
@@ -3771,6 +3889,8 @@
   },
   {
    "event_no": 60,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3831,6 +3951,8 @@
   },
   {
    "event_no": 61,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3891,6 +4013,8 @@
   },
   {
    "event_no": 62,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -3951,6 +4075,8 @@
   },
   {
    "event_no": 63,
+   "last_checked": "2026-11-19",
+   "schedule_last_checked": "2026-11-17",
    "name": "$600 NO LIMIT HOLD'EM (1DAY)",
    "flights": [],
    "official_name": "$600 NO LIMIT HOLD'EM (1DAY)",
@@ -4011,6 +4137,8 @@
   },
   {
    "event_no": 64,
+   "last_checked": "2026-11-17",
+   "schedule_last_checked": "2026-11-17",
    "name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
    "flights": [],
    "official_name": "$200 NO LIMIT HOLD'EM BOUNTY (1DAY)",
@@ -8143,6 +8271,14 @@
    "note": "Live reread of the general hotel terms; no itemized checkout exposed."
   },
   {
+   "date": "2026-11-19",
+   "property": "venetian / palazzo",
+   "field": "resort_fee",
+   "value": "$55 plus tax per night",
+   "source": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "note": "Fresh official page read by arena/a29d9f35-poker2; no dated room quote or checkout total captured."
+  },
+  {
    "date": "2026-11-17",
    "property": "venetian",
    "field": "resort_fee",
@@ -8333,7 +8469,7 @@
    "area": "Entry rules",
    "title": "No Venetian structure sheet states a single-entry or freezeout rule",
    "detail": "All 37 official structure sheets were read on 2026-11-17. Not one contains the words 'single entry', 'one entry', 'freezeout' or 'no re-entry'. Every one-day sheet is simply silent on re-entry, rebuy and add-on. Silence is not a prohibition, so no event is marked 'single-entry confirmed'.",
-   "impact": "The single-entry filter can only offer 'no re-entry/add-on clause printed', never 'confirmed'.",
+   "impact": "The confirmed-only toggle returns zero rows. Rules-silent candidates have a separate group filter and remain unconfirmed.",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/"
   },
   {
@@ -8404,15 +8540,15 @@
    "id": "F-09",
    "area": "Other venues",
    "title": "The Wynn poker citation on this site pointed at a page that no longer exists",
-   "detail": "https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures PDF lines still come from the 2026-11-16 reading and stay labelled as such.",
-   "impact": "Until the room states an entry limit, no Wynn event can leave the 'not single-entry confirmed' group - the page was reachable, the missing values are genuinely unpublished, not unfetched.",
+   "detail": "https://www.wynnlasvegas.com/casino/poker-room returns Wynn's 'IT SEEMS THIS PAGE HAS CHECKED OUT' not-found page, which is why the scheduled re-check logged HTTP 404 for the Wynn row on 2026-11-17. The room's live page is https://www.wynnlasvegas.com/casino/poker, read there first-hand on 2026-11-17, and every Wynn citation on this site now points at it. What that page does *not* publish: a buy-in for any daily event, any one-entry or re-entry limit for the daily slate, or a start time other than the 6 p.m. evening guarantee. The WPT structures PDF lines still come from the 2026-11-16 reading and stay labelled as such. Update November 19: the linked daily structures have now been read in full and do publish buy-ins and entry rules for all four daily formats.",
+   "impact": "All four daily formats permit extra spending and are excluded. Exact-date availability during series remains unverified.",
    "source": "https://www.wynnlasvegas.com/casino/poker"
   },
   {
    "id": "F-10",
    "area": "Other venues",
-   "title": "Only The Venetian publishes a dated schedule plus a per-event structure sheet",
-   "detail": "Every other Strip room checked either publishes no tournament schedule, no structure sheet, or both. Horseshoe publishes six daily start times with no buy-ins; Resorts World's poker page redirects to a dining page; Westgate publishes room hours only; MGM's weekly grid carries no year; Bellagio's Saturday sheet contradicts itself.",
+   "title": "The dated series table is not exhaustive Strip-wide coverage",
+   "detail": "The Venetian DSE IV series is fully transcribed here. Wynn, Caesars and Bellagio also publish official schedules or structures; their reviewed daily/weekly formats permit extra spending. Other rooms retain the gaps and read dates on their venue pages.",
    "impact": "The ranked tables are Venetian DSE IV only. That is a coverage limit, not a preference.",
    "source": "https://www.caesars.com/horseshoe-las-vegas/casino"
   },
@@ -8436,7 +8572,7 @@
    "id": "F-13",
    "area": "Monitoring",
    "title": "The scheduled re-check had never run, and this sandbox cannot reach the venue sites",
-   "detail": "GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline hash existed for any official URL. Two consequences were visible in the site text: it pointed at data/site/checks.json, which the scheduled job does not write (it writes data/verified2026/checks.json), and nothing read that file to mark rows. Both are fixed - every tournament row now carries a Source re-check cell driven by the real file, and scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. This sandbox has no outbound access to the venue hosts (curl returns SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline can only be set by the 06:00 UTC job running on main.",
+   "detail": "GitHub Actions had recorded no run of .github/workflows/recheck.yml, so no baseline hash existed for any official URL. Two consequences were visible in the site text: it pointed at data/site/checks.json, which the scheduled job does not write (it writes data/verified2026/checks.json), and nothing read that file to mark rows. Both are fixed - every tournament row now carries a Source re-check cell driven by the real file, and scripts/check_monitor_badge.py fails the build if the badge stops marking changed rows. This sandbox has no outbound access to the venue hosts (curl returns SSL_ERROR_SYSCALL; the workflow-dispatch API is not permitted), so the first baseline can only be set by the 15:00 UTC job running on main.",
    "impact": "Until that job runs, every row reads 'not yet checked'. That is the honest state and is deliberately not rendered as 'unchanged'.",
    "source": ".github/workflows/recheck.yml (repository file, not an external citation)"
   },
@@ -8521,20 +8657,242 @@
    "source": "data/verified2026/checks.json (committed by .github/workflows/recheck.yml)"
   },
   {
-   "id": "F-11",
+   "id": "C-01",
    "area": "Coverage",
-   "title": "Two rooms publish schedules that are not in the ranked tables",
-   "detail": "Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages instead.",
-   "impact": "The ranked table stays Venetian-only not because other rooms publish nothing, but because the rooms that do publish are not single-entry. That is a finding, not a coverage gap.",
+   "title": "Other rooms publish schedules outside the ranked table",
+   "detail": "Caesars Palace (four daily NLH events) and Bellagio (three weekly events) both publish official schedule documents, read live on 2026-11-17. Every one of those events is a re-entry or add-on event on the face of its own sheet, so none of them can enter the single-entry ranking; they are published on their venue pages instead. Wynn daily structures were read November 19 and are also in a separate excluded table.",
+   "impact": "Reviewed extra-spend events are excluded. Neither these exclusions nor incomplete coverage prove that no freezeout exists elsewhere.",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
   },
   {
-   "id": "F-14",
+   "id": "M-01",
    "area": "Monitoring",
-   "title": "Ten of the 61 monitored official URLs could not be read on the last scheduled run",
-   "detail": "The scheduled re-check ran on 2026-11-18T15:29:01Z and read 51 of 61 URLs successfully. The ten below returned an HTTP error, a redirect or a timeout, so the site can say only that they were not read - not that they are unchanged. None of the ten is cited by a tournament row; six are hotel fee or cancellation citations.<ul><li><code>https://bellagio.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://bellagio.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://mgmgrand.mgmresorts.com/en/casino/poker.html</code> &mdash; no response (The read operation timed out)</li><li><code>https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf</code> &mdash; 422 (HTTP 422)</li></ul>",
+   "title": "5 of 63 official URLs could not be read on the last run",
+   "detail": "The scheduled re-check ran on 2026-11-18T15:29:01Z. 5 of 63 documents could not be read. These are monitoring gaps, not evidence of unchanged sources. Failed URLs: https://bellagio.mgmresorts.com/en/terms-and-conditions.html; https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html; https://bellagio.mgmresorts.com/en/casino/poker.html; https://mgmgrand.mgmresorts.com/en/casino/poker.html; https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8e5621/mgm-grand-casino-poker-120_nlh.pdf",
    "impact": "A hotel fee or cancellation term sourced from one of these pages rests on the reading date shown on that hotel's row, not on the latest check. Re-open the link before you rely on the term.",
    "source": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+  },
+  {
+   "id": "N-01",
+   "area": "Wynn daily rules",
+   "title": "No re-entry does not mean no extra spending",
+   "detail": "The Friday sheet prohibits re-entry but permits unlimited $200 rebuys and a $100 add-on. All four daily formats fail the strict policy; none is placed in the freezeout ranking.",
+   "impact": "Keep in the extra-spend section. Daily availability during a series remains unverified.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+  },
+  {
+   "id": "N-02",
+   "area": "Wynn Friday accounting",
+   "title": "Rebuy pool split conflicts within the official sheet",
+   "detail": "Rule 3 says $190 of each entry and rebuy funds the prize pool, but also withholds $10 staff plus $5 tournament fee from a $200 rebuy. Those rebuy figures do not reconcile. Rebuy pool contribution is not published as a settled value here.",
+   "impact": "Ask the room for corrected written rebuy accounting; initial entry split does reconcile.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+  },
+  {
+   "id": "N-03",
+   "area": "Trip readiness",
+   "title": "Exact-stay hotel comparison is not possible yet",
+   "detail": "Travel dates, occupancy, nightly budget and quality floor were not supplied. No checkout total, exact cancellation deadline or verified Google/Apple walking duration was captured. Do not substitute a booking widget\u2019s default dates or a promotional rate for a trip quote.",
+   "impact": "No hotel winner or bookable single-entry itinerary is claimed. Keep totals blank and retain official booking links.",
+   "source": "https://www.venetianlasvegas.com/resort/resort-fee.html"
+  }
+ ],
+ "wynn_daily": [
+  {
+   "name": "Monday\u2013Thursday NLH",
+   "days": "Monday\u2013Thursday",
+   "start": "12 p.m.",
+   "entry": 200,
+   "guarantee": 10000,
+   "house_fee": 26,
+   "staff_fee": 12,
+   "pool": 162,
+   "chips": 25000,
+   "level_minutes": 30,
+   "late_registration": "Start of level 9 (approximately 4:30 p.m.)",
+   "finish": null,
+   "single_entry": {
+    "value": false,
+    "excerpt": "The Tournament entry fee, as well as the re-entry fee, is $200",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "reentry": {
+    "value": 200,
+    "excerpt": "Registration and re-entries will be available until the start of level 9",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "rebuy": {
+    "value": null,
+    "excerpt": "",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "addon": {
+    "value": null,
+    "excerpt": "",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "fee": {
+    "value": 200,
+    "excerpt": "$26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "last_checked": "2026-11-19",
+   "category": "extra-spend \u2014 excluded",
+   "dated_occurrence": null,
+   "suspension": "May be suspended during Seniors Events, Classic Events, or other Tournament Series."
+  },
+  {
+   "name": "Friday NLH Rebuy & Add-on",
+   "days": "Friday",
+   "start": "12 p.m.",
+   "entry": 240,
+   "guarantee": 40000,
+   "house_fee": 35,
+   "staff_fee": 15,
+   "pool": 190,
+   "chips": 25000,
+   "level_minutes": 30,
+   "late_registration": "Start of level 9 (approximately 4:30 p.m.)",
+   "finish": null,
+   "single_entry": {
+    "value": false,
+    "excerpt": "Unlimited $200 rebuys for 25,000 tournament chips",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "reentry": {
+    "value": false,
+    "excerpt": "Re-entry is NOT allowed. All rebuys must be done immediately from the player\u2019s original seat.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "rebuy": {
+    "value": 200,
+    "excerpt": "Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "addon": {
+    "value": 100,
+    "excerpt": "One (1) $100 addon for 15,000 tournament chips is available any time until the end of registration.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "fee": {
+    "value": 240,
+    "excerpt": "The Tournament entry fee is $240 ... $35 ... Tournament fee and $15 ... service charge for poker staff.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "last_checked": "2026-11-19",
+   "category": "extra-spend \u2014 excluded",
+   "dated_occurrence": null,
+   "suspension": "May be suspended during Seniors Events, Classic Events, or other Tournament Series."
+  },
+  {
+   "name": "Saturday & Sunday NLH",
+   "days": "Saturday & Sunday",
+   "start": "12 p.m.",
+   "entry": 200,
+   "guarantee": 25000,
+   "house_fee": 26,
+   "staff_fee": 12,
+   "pool": 162,
+   "chips": 25000,
+   "level_minutes": 30,
+   "late_registration": "Start of level 11 (approximately 5:30 p.m.)",
+   "finish": null,
+   "single_entry": {
+    "value": false,
+    "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "reentry": {
+    "value": 200,
+    "excerpt": "The Tournament entry fee, as well as the re-entry fee, is $200",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "rebuy": {
+    "value": null,
+    "excerpt": "",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "addon": {
+    "value": 100,
+    "excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "fee": {
+    "value": 200,
+    "excerpt": "$26 for the Tournament fee, $12 for the poker staff service charge, and $162 for the Tournament prize pool.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "last_checked": "2026-11-19",
+   "category": "extra-spend \u2014 excluded",
+   "dated_occurrence": null,
+   "suspension": "May be suspended during Seniors Events, Classic Events, or other Tournament Series."
+  },
+  {
+   "name": "Nightly NLH",
+   "days": "Monday\u2013Sunday",
+   "start": "6 p.m.",
+   "entry": 160,
+   "guarantee": 10000,
+   "house_fee": 20,
+   "staff_fee": 10,
+   "pool": 130,
+   "chips": 25000,
+   "level_minutes": 20,
+   "late_registration": "Start of level 9 (approximately 9:00 p.m.)",
+   "finish": null,
+   "single_entry": {
+    "value": false,
+    "excerpt": "Registration, re-entries, and one (1) add-on per entry will be available",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "reentry": {
+    "value": 160,
+    "excerpt": "The Tournament entry fee, as well as the re-entry fee, is $160",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "rebuy": {
+    "value": null,
+    "excerpt": "",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "addon": {
+    "value": 100,
+    "excerpt": "One (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "fee": {
+    "value": 160,
+    "excerpt": "$20 for the Tournament fee, $10 for the poker staff service charge, and $130 for the Tournament prize pool.",
+    "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+    "retrieved": "2026-11-19"
+   },
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "last_checked": "2026-11-19",
+   "category": "extra-spend \u2014 excluded",
+   "dated_occurrence": null,
+   "suspension": "May be suspended during Seniors Events, Classic Events, or other Tournament Series."
   }
  ],
  "questions": [
@@ -8751,9 +9109,9 @@
   {
    "name": "Wynn / Encore",
    "poker_room": "Wynn Poker Room (WPT World Championship host room)",
-   "status_this_session": "Read first-hand on 2026-11-17 at https://www.wynnlasvegas.com/casino/poker. The room publishes three tournament documents - WPT World Championship (Nov 27 - Dec 21), the Wynn Signature Series (January 11-24, 2027) and a daily-tournament poster - and the page states the daily slate runs 'twice a day during non-event timeframes' with '$200,000 in guaranteed prize pools weekly'. No start time is printed on the page except the evening event ('a $10,000 guaranteed event every evening at 6 p.m.'), and no buy-in is printed for any daily event. The older URL this site used to cite, /casino/poker-room, returns Wynn's not-found page and is the reason the scheduled re-check logged HTTP 404 for this venue.",
+   "status_this_session": "The official room page and all three extracted chunks of the daily structures were read November 19. Four recurring daily formats publish entry fees and guarantees; all permit extra spending. Exact-date availability during series remains unverified.",
    "url": "https://www.wynnlasvegas.com/casino/poker",
-   "checked": "2026-11-17",
+   "checked": "2026-11-19",
    "earlier_findings": [
     {
      "text": "Wynn's official WPT World Championship structures PDF prints 'Unlimited re-entry until the start of level 9' for the $600 Turbo, the $600 mixed-game events, and the $400 / $1,100 PLO events.",
@@ -8764,10 +9122,15 @@
      "text": "The same PDF prints the buy-in splits, e.g. $600 NLH $400K GTD is $510 prize pool + $65 house fee + $25 staff gratuity.",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
      "retrieved": "2026-11-16"
+    },
+    {
+     "text": "Daily structures: $200 Monday\u2013Thursday noon, $240 Friday noon rebuy/add-on, $200 weekend noon, $160 nightly 6 p.m. Friday prohibits re-entry but allows rebuys and an add-on; the other three allow re-entry.",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+     "retrieved": "2026-11-19"
     }
    ],
    "verdict": "Excluded from the single-entry ranking. Two independent official statements support the exclusion: the WPT structures PDF prints unlimited re-entry on named events, and the room's own page advertises the Friday daily as a '$40,000 guaranteed NLH Rebuy' - a rebuy is a second buy-in, so the event cannot enter a single-entry table on either reading.",
-   "provenance": "page itself read first-hand 2026-11-17; the WPT structures PDF lines are cited from an earlier session's reading on 2026-11-16 and are labelled as such"
+   "provenance": "Daily page and structures read first-hand 2026-11-19; earlier WPT readings retain their original dates."
   },
   {
    "name": "Horseshoe Las Vegas",

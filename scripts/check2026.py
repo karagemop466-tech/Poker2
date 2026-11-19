@@ -20,7 +20,7 @@ PAGES = [
     "venues/wynn.html", "venues/horseshoe.html", "venues/caesars-palace.html",
     "venues/bellagio.html", "venues/mgm-grand.html",
     "summary.html", "questions.html", "suggestions.html", "flagged.html", "sources.html",
-    "repo-review.html",
+    "repo-review.html", "latest-review.html",
 ]
 
 OFFICIAL_HOSTS = {
@@ -89,6 +89,7 @@ def main():
         path = os.path.join(SITE_ROOT, page)
         with open(path, encoding="utf-8") as f:
             html_text = f.read()
+        depth = os.path.dirname(page)
         for m in re.finditer(r'href="([^"#]+\.html)#([^"]+)"', html_text):
             tgt, frag = m.group(1), m.group(2)
             if tgt.startswith("../"):

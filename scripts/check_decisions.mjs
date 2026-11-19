@@ -40,7 +40,7 @@ assert.deepEqual(rows.map(r => r.hidden), [true, false], 'strict filter needs co
 const hotel = Object.fromEntries(Object.entries({'h-rate':'','h-fee':'55','h-tax':'13.38','h-park':'20','h-nights':'3',
   'o-sub':'','o-tax':'','o-night':'','o-total':'','h-note':''}).map(([id,value]) => [id,node(value)]));
 load(hotel);
-assert.equal(hotel['o-total'].textContent, '—', 'missing room price is not zero');
+assert.equal(hotel['o-total'].textContent, 'Not available', 'missing room price is not zero');
 hotel['h-rate'].value = '100';
 hotel['h-rate'].input();
 assert.equal(hotel['o-night'].textContent, '$195.74');

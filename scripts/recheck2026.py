@@ -10,7 +10,7 @@ Runs on a schedule (see .github/workflows/recheck.yml). For each URL it:
     a page that has actually moved are different facts, and the site must not print them the same
     way: "not read today" is never evidence of "not changed".
 
-Output: data/verified2026/checks.json  (append-only history, newest run first)
+Output: data/verified2026/checks.json (90-run history plus durable per-URL state)
 
 A changed hash means the official document moved, so the value transcribed from it must be
 re-read before it is relied on. The job reports that; it never guesses at the new value and
@@ -83,6 +83,21 @@ def sources():
         for field in ("book", "tax_src", "cancel_src", "poker_rate_src"):
             if h.get(field):
                 out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " · " + field, h[field])
+    out["WYNN_DAILY_STRUCTURES"] = ("Wynn daily tournament rules",
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf")
+    # Include every field-level source, not only fee/parking. Booking endpoints are
+    # monitored for availability, never treated as a quote without a dated checkout.
+    for h in hotelsmod.HOTELS:
+        for field, url in h.items():
+            if (field.endswith("_src") or field == "book") and isinstance(url, str) and url.startswith("https://"):
+                out["HOTEL_%s_%s" % (h["id"], field)] = (h["name"] + " " + field, url)
+    for i, item in enumerate(hotelsmod.RATE_LOG):
+        if item[4]:
+            out["RATE_LOG_%d" % i] = ("Rate-log source", item[4])
+    for item in contentmod.FLAGS:
+        url = item.get("source")
+        if isinstance(url, str) and url.startswith("https://") and urlsplit(url).hostname != "www.openstreetmap.org":
+            out["FLAG_" + item["id"]] = ("Flag " + item["id"], url)
     # collapse duplicates so one URL is fetched once, keeping the first label
     seen, deduped = {}, {}
     for k in sorted(out):
@@ -102,7 +117,45 @@ def normalise(raw):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def validate_document(url, raw):
+    """HTTP 200 is not proof of a readable official document."""
+    if urlsplit(url).path.lower().endswith(".pdf"):
+        if not raw.lstrip().startswith(b"%PDF-"):
+            raise ValueError("unreadable document: PDF URL served non-PDF content")
+        return
+    text = raw.decode("utf-8", "ignore")
+    title = re.search(r"(?is)<title[^>]*>(.*?)</title>", text)
+    title = normalise(title.group(1).encode()) if title else ""
+    if not normalise(raw) or re.search(
+        r"(?i)(access denied|just a moment|page not found|404|robot|captcha)", title
+    ) or re.search(r"(?i)(IT SEEMS THIS PAGE HAS CHECKED OUT|Oops! We can't find that page)", text):
+        raise ValueError("unreadable document: empty, challenge or soft-404 response")
+
+
+def source_state(history, persisted=None):
+    """Key by URL, retain last successful hash across failures and sticky review flags.
+
+    A subsequent unchanged fetch does not acknowledge a changed source. Human review must
+    explicitly reset review_required in the durable state with documented evidence.
+    """
+    state = {}
+    for run in reversed(history):
+        for row in run.get("results", []):
+            url = row.get("url")
+            if not url:
+                continue
+            item = state.setdefault(url, {})
+            if row.get("hash"):
+                item.update(last_hash=row["hash"], last_success=run.get("checked"))
+            if row.get("change") == "CHANGED" or row.get("review_required") or row.get("last_changed"):
+                item["review_required"] = True
+    for url, item in (persisted or {}).items():
+        state.setdefault(url, {}).update(item)
+    return state
+
+
 def content_hash(url, raw):
+    validate_document(url, raw)
     if urlsplit(url).path.lower().endswith(".pdf"):
         return hashlib.sha256(raw).hexdigest()[:16], "raw PDF bytes"
     return hashlib.sha256(normalise(raw).encode("utf-8")).hexdigest()[:16], "normalised HTML text"
@@ -113,8 +166,9 @@ _OPENER = None
 # What each failure mode means for the reader. Printed verbatim on the Sources page, so a red row in
 # the monitor log can never be read as "the source is unchanged".
 MEANING = {
-    "blocked": "the property's bot protection refused the runner; the page is live for a person, "
-               "so this value has to be re-read by hand",
+    "blocked": "the request was refused or rate-limited; this alone does not prove whether "
+               "the page is available in a browser",
+    "unreadable document": "the response is not the expected document; no baseline is updated",
     "redirect-loop": "the host keeps redirecting without serving content (a cookie or region wall). "
                      "Not evidence that the page moved",
     "not found": "the official URL no longer serves a document - the citation itself needs correcting",
@@ -128,6 +182,8 @@ MEANING = {
 
 def error_kind(code, message):
     m = str(message or "").lower()
+    if "unreadable document" in m:
+        return "unreadable document"
     if code in (401, 403, 429):
         return "blocked"
     if code in (301, 302, 303, 307, 308):
@@ -183,12 +239,16 @@ def prior_observations(history):
 def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     history = []
+    saved = {}
     if os.path.exists(OUT):
         try:
-            history = json.load(open(OUT, encoding="utf-8")).get("runs", [])
+            with open(OUT, encoding="utf-8") as f:
+                saved = json.load(f)
+            history = saved.get("runs", [])
         except Exception:
             history = []
     previous, changes = prior_observations(history)
+    state = source_state(history, saved.get("source_state"))
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     results = []
@@ -202,7 +262,7 @@ def main():
             if final and final.rstrip("/") != url.rstrip("/"):
                 # kept, because a citation that resolves somewhere else is a citation to fix
                 row["resolved_to"] = final
-            old = previous.get(url)
+            old = state.get(url, {}).get("last_hash")
             if old is None:
                 row["change"] = "first check"
             elif old != row["hash"]:
@@ -220,6 +280,14 @@ def main():
                        error_kind=kind, reason=MEANING[kind])
         if url in changes:
             row["last_changed"] = changes[url]
+        item = state.setdefault(url, {})
+        if row.get("hash"):
+            item.update(last_hash=row["hash"], last_success=now)
+        if row.get("change") == "CHANGED":
+            item["review_required"] = True
+            item["changed_at"] = now
+        row["review_required"] = bool(item.get("review_required"))
+        row["last_success"] = item.get("last_success")
         results.append(row)
         print("%-10s %-12s %s" % (row.get("status"), row["change"], key))
 
@@ -245,6 +313,8 @@ def main():
     changed = [r for r in results if r["change"] == "CHANGED"]
     payload = dict(
         last_run=now,
+        source_state=state,
+        pending_review=sum(bool(v.get("review_required")) for v in state.values()),
         monitored=len(results),
         changed_this_run=len(changed),
         # "first check" is the opposite of "never checked": it means the baseline hash was
