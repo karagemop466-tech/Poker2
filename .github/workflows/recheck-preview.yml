@@ -1,0 +1,43 @@
+name: Test the official-source re-check
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/recheck.yml
+      - .github/workflows/recheck-preview.yml
+      - scripts/recheck2026.py
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    # A PR can test source access and rendering, but cannot publish or request a deployment.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and validate the official source report
+        run: |
+          python3 scripts/recheck2026.py
+          python3 scripts/build2026.py
+          python3 scripts/check2026.py
+          python3 scripts/check_semantics.py
+          python3 - <<'PY'
+          import json
+          with open('data/verified2026/checks.json', encoding='utf-8') as handle:
+              report = json.load(handle)
+          rows = report['runs'][0]['results']
+          schedule = next((row['schedule_diff'] for row in rows if 'schedule_diff' in row), {})
+          print(f"::notice title=Live official sources::{report['readable']} of {report['monitored']} readable; "
+                f"{report['errors']} unavailable; {report['changed_this_run']} changed under a comparable hash; "
+                f"DSE IV: {schedule.get('state', 'fetch failed')} (rows: {schedule.get('count')}).")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview-official-source-recheck
+          path: data/verified2026/checks.json
+          if-no-files-found: error

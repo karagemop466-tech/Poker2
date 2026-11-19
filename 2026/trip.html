@@ -10,7 +10,7 @@
 </head><body>
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html">Vegas <span>Single-Entry</span> Poker Planner</a>
-<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html" class="on">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="latest-review.html">Latest review</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
+<nav class="main"><a href="index.html">Dashboard</a><a href="tournaments.html">Tournaments</a><a href="entry-rules.html">Entry rules</a><a href="schedule.html">Day plan</a><a href="hotels.html">Hotels &amp; true cost</a><a href="walking.html">Walking times</a><a href="trip.html" class="on">Trip cost</a><a href="venues.html">Venues</a><a href="summary.html">Executive summary</a><a href="latest-review.html">Latest evidence</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="repo-review.html">Repo review</a><a class="xlink" href="../index.html">Root dashboard</a></nav>
 <div class="gsbar"><div class="wrap2">
 <label class="gs-label" for="gs">Search every table</label>
 <input type="text" id="gs" autocomplete="off" placeholder="event, hotel, price, rule, question&hellip;">
@@ -23,49 +23,55 @@
 
 
 <div class="hero"><h1>Trip cost estimator</h1>
-<p class="lede">Estimated cost of a trip = entries &times; buy-ins + nights &times; true hotel cost
-per night. Use the calculator for scenarios only; there is no verified stay quote and no confirmed
-freezeout to add to an itinerary.</p></div>
-
+<p class="lede">Estimated trip cost = sum of entries × total buy-in + nights × estimated hotel cost.
+Entry prices come from official structure sheets; lodging inputs are scenario amounts, not a checkout quote.
+No tournament currently qualifies for the confirmed single-entry itinerary.</p></div>
 <div class="panel"><h2>Entries</h2>
-<p class="note">Compare at most one buy-in per research candidate. The shortlist excludes known spending formats
-and restricted entries. A candidate is not a confirmed freezeout.</p>
+<p class="note">Use at most one buy-in per research candidate for a what-if budget. Known spending formats are excluded. The calculator does not confirm eligibility,
+registration, or schedule fit. It does not count potential winnings or a conditional poker-room discount.</p>
 <div class="controls">
-<label>Add an event<select id="pick"><option value="">Choose a research lead</option><option value="3" data-buyin="200" data-pool="165">#3 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="4" data-buyin="200" data-pool="165">#4 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="5" data-buyin="200" data-pool="165">#5 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200)</option><option value="6" data-buyin="200" data-pool="160">#6 &mdash; $200 NO LIMIT HOLD&#x27;EM (1DAY) ($200)</option><option value="2" data-buyin="300" data-pool="242">#2 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300)</option><option value="12" data-buyin="300" data-pool="242">#12 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300)</option><option value="20" data-buyin="300" data-pool="242">#20 &mdash; $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($300)</option><option value="10" data-buyin="400" data-pool="335">#10 &mdash; $400 NO LIMIT HOLD&#x27;EM (1DAY) ($400)</option><option value="14" data-buyin="600" data-pool="510">#14 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option><option value="27" data-buyin="600" data-pool="510">#27 &mdash; $600 BIG O (1DAY) ($600)</option><option value="28" data-buyin="600" data-pool="510">#28 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option><option value="57" data-buyin="600" data-pool="510">#57 &mdash; $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($600)</option><option value="63" data-buyin="600" data-pool="510">#63 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600)</option></select></label>
-<button class="btn" id="add">Add</button>
+<label class="chk"><input type="checkbox" id="research-entries"> Allow research events in estimate only</label>
+<label>Event<select id="pick"><option value="">Choose a confirmed entry</option><option value="3" data-buyin="200" data-confirmed="0">#3 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200) · Best single-entry candidates</option><option value="4" data-buyin="200" data-confirmed="0">#4 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200) · Best single-entry candidates</option><option value="5" data-buyin="200" data-confirmed="0">#5 &mdash; $200 NLH RACEDAY STACK (1DAY) RACE TO FINISH BEFORE THE RA ($200) · Best single-entry candidates</option><option value="6" data-buyin="200" data-confirmed="0">#6 &mdash; $200 NO LIMIT HOLD&#x27;EM (1DAY) ($200) · Best single-entry candidates</option><option value="2" data-buyin="300" data-confirmed="0">#2 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300) · Best single-entry candidates</option><option value="12" data-buyin="300" data-confirmed="0">#12 &mdash; $300 NO LIMIT HOLD&#x27;EM (1DAY) ($300) · Best single-entry candidates</option><option value="20" data-buyin="300" data-confirmed="0">#20 &mdash; $300 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($300) · Best single-entry candidates</option><option value="10" data-buyin="400" data-confirmed="0">#10 &mdash; $400 NO LIMIT HOLD&#x27;EM (1DAY) ($400) · Best single-entry candidates</option><option value="14" data-buyin="600" data-confirmed="0">#14 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600) · Best single-entry candidates</option><option value="27" data-buyin="600" data-confirmed="0">#27 &mdash; $600 BIG O (1DAY) ($600) · Best single-entry candidates</option><option value="28" data-buyin="600" data-confirmed="0">#28 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600) · Best single-entry candidates</option><option value="57" data-buyin="600" data-confirmed="0">#57 &mdash; $600 POT LIMIT OMAHA DOUBLE BOARD BOMB POT (1DAY) ($600) · Best single-entry candidates</option><option value="63" data-buyin="600" data-confirmed="0">#63 &mdash; $600 NO LIMIT HOLD&#x27;EM (1DAY) ($600) · Best single-entry candidates</option></select></label>
+<button class="btn" id="add" type="button" disabled>Add</button>
 </div>
-<table id="cart"><thead><tr><th class="num">#</th><th>Event</th><th class="num">Entry fee</th>
-<th class="num">To prize pool</th><th></th></tr></thead><tbody></tbody>
-<tfoot><tr><th colspan="2">Total entry fees</th><th class="num" id="sum-buyin">$0</th>
-<th class="num" id="sum-pool">$0</th><th></th></tr></tfoot></table>
+<div class="tbl-scroll"><table id="cart"><thead><tr><th>Event and official sources</th><th>Entries</th><th>Entry subtotal</th><th></th></tr></thead><tbody></tbody></table></div>
 </div>
 
-<div class="panel"><h2>Hotel</h2>
-<div class="calc">
-<label>Hotel checkout total for the stay ($)<input type="number" id="t-checkout" min="0" step="0.01"></label>
-<label>Nights<input type="number" id="t-nights" min="0" step="1"></label>
-</div>
-<p class="note">Use the final checkout total for the same dates and occupancy, including mandatory fees
-and taxes. Include applicable parking once. Leave the quote blank if unavailable, or enter zero nights
-for an entries-only trip. <a href="hotels.html">Hotel sources and rate log</a>.</p>
-</div>
+<div class="panel" data-estimator="t"><h2>Estimate lodging cost</h2>
+<p class="note">This is not a quote. Provide the average base room rate <em>before</em> resort fee and tax.
+The model applies tax to room rate + resort fee, then adds parking at the all-in amount. This is a
+scenario, not confirmation of how every property itemizes tax. No dated price is prefilled.</p>
 
-<div class="panel"><h2>Total</h2>
+<label>Final checkout total for the stay ($)<input type="number" id="t-checkout" min="0" step="0.01"></label>
+<p class="note">Use the exact-stay checkout total (include mandatory fees, tax and applicable parking once).
+A valid checkout total overrides the component estimate below. Leave it blank only for a what-if estimate.
+Enter zero nights for entries only.</p>
 <div class="calc">
-<div class="out"><div class="k">Entry fees</div><div class="v" id="tot-buyin">$0</div></div>
-<div class="out"><div class="k">True cost per night</div><div class="v" id="tot-night">Not available</div></div>
-<div class="out"><div class="k">Hotel for the stay</div><div class="v" id="tot-hotel">Not available</div></div>
-<div class="out"><div class="k">Estimated trip cost</div><div class="v" id="tot-all">Not available</div></div>
+<label>Hotel<select id="t-hotel"><option data-fee="" data-tax="" data-book="">Choose a hotel</option><option value="venetian" data-fee="55" data-tax="13.38" data-book="https://www.venetianlasvegas.com/book">The Venetian Resort</option><option value="palazzo" data-fee="55" data-tax="13.38" data-book="https://www.venetianlasvegas.com/book">The Palazzo</option><option value="wynn" data-fee="55" data-tax="" data-book="https://www.wynnlasvegas.com/">Wynn Las Vegas</option><option value="encore" data-fee="55" data-tax="" data-book="https://www.wynnlasvegas.com/">Encore at Wynn Las Vegas</option><option value="bellagio" data-fee="55" data-tax="" data-book="https://bellagio.mgmresorts.com/en.html">Bellagio</option><option value="mgm-grand" data-fee="50" data-tax="" data-book="https://mgmgrand.mgmresorts.com/en.html">MGM Grand</option><option value="caesars-palace" data-fee="" data-tax="" data-book="https://www.caesars.com/caesars-palace">Caesars Palace</option><option value="horseshoe" data-fee="" data-tax="" data-book="https://www.caesars.com/horseshoe-las-vegas">Horseshoe Las Vegas</option></select></label>
+<label>Nightly base rate ($)<input type="number" id="t-rate" min="0" step="0.01"></label>
+<label>Resort fee / night ($)<input type="number" id="t-fee" min="0" step="0.01"></label>
+<label>Room tax (%)<input type="number" id="t-tax" min="0" step="0.01" placeholder="13.38 if applicable"></label>
+<label>All-in parking / night ($)<input type="number" id="t-park" value="0" min="0" step="0.01"></label>
+<label>Nights<input type="number" id="t-nights" value="3" min="0" step="1"></label>
 </div>
-<p class="note">Excludes flights, food and cash-game bankroll. No promotional room rate is assumed.</p>
-</div>
+<p class="note">Trip scenario defaults to no car ($0 parking). Choosing a property preloads only known
+fee/tax values. Enter 0 explicitly when a charge is confirmed absent. <a id="t-book" href="hotels.html#checkout-log">Official booking links and lookup log</a>.</p>
+<div class="calc" aria-live="polite">
+<div class="out"><div class="k">Estimated nightly cost</div><div class="v" id="tot-night">&mdash;</div></div>
+<div class="out"><div class="k">Estimated stay total</div><div class="v" id="tot-hotel">&mdash;</div></div>
+</div></div>
+
+<div class="panel"><h2>Trip totals</h2><div class="calc" aria-live="polite">
+<div class="out"><div class="k">Entry fees</div><div class="v" id="tot-buyin">$0.00</div></div>
+<div class="out"><div class="k">Estimated trip cost</div><div class="v" id="tot-all">&mdash;</div></div>
+</div><p class="note">Excludes flights, food, cash-game bankroll and other trip costs.</p></div>
 
 </main>
 <footer><div class="wrap">
 <p><strong>Data policy.</strong> Every value on this site is transcribed from an official venue
 document that was read and is linked on every row. A value the organiser does not publish is left
-empty and listed on <a href="flagged.html">Flagged for review</a>. Calculations and routing estimates
-are labelled separately from verified facts. Core sheet retrieval: 2026-11-17; later reads carry individual dates.</p>
+empty and listed on <a href="flagged.html">Flagged for review</a>. Routing and cost estimates are
+labeled separately. Core structure-sheet audit: 2026-11-17.</p>
 <p class="small">This is a research tool, not a booking service. Re-confirm every official page
 before you pay anything non-refundable. This <code>/2026/</code> surface is generated by
 <code>scripts/build2026.py</code>; the site root hosts the older multi-venue dashboard, and the two

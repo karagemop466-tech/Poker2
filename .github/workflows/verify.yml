@@ -81,7 +81,9 @@ jobs:
         run: python3 scripts/test_recheck2026.py
 
       - name: The source-recheck badge actually marks changed rows
-        run: python3 scripts/check_monitor_badge.py
+        run: |
+          python3 scripts/check_monitor_badge.py
+          python3 scripts/check_refresh2026.py
 
       - name: Pages mean what they say (monitor arithmetic, fee provenance)
         run: python3 scripts/check_semantics.py

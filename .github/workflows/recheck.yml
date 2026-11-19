@@ -10,19 +10,18 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
-  group: recheck
+  group: recheck-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   recheck:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -55,27 +54,33 @@ jobs:
           python3 scripts/build2026.py
           python3 scripts/check2026.py
 
-      # The re-check drives the per-row "Source re-check" badge, so the regenerated pages and the
-      # search index must be committed with the log. Committing checks.json alone would leave main's
-      # pages stale against it and fail the verify workflow's "regenerating leaves no diff" step.
-      - name: Commit the dated check log and the pages it changes
+      - name: Preserve the dated monitor report
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-source-recheck
+          path: data/verified2026/checks.json
+          if-no-files-found: error
+
+      # Do not rebase generated evidence onto a moving main. An overlapping release may
+      # have changed the evidence registry or the generator. The artifact survives a race.
+      - name: Publish the report and regenerated pages to main
+        id: publish
+        if: github.ref == 'refs/heads/main'
         run: |
-          git config user.name  "source-monitor"
+          git config user.name "source-monitor"
           git config user.email "actions@users.noreply.github.com"
-          git add data/verified2026/checks.json \
-                  data/verified2026/dataset.json \
-                  data/verified2026/search-index.json \
-                  2026
+          git add data/verified2026/{checks,dataset,search-index}.json 2026
           if git diff --cached --quiet; then
             echo "No change since the last recorded run."
             exit 0
           fi
           git commit -m "chore: scheduled official-source re-check $(date -u +%Y-%m-%dT%H:%MZ)"
-          # main can move while this job runs; rebase onto it rather than failing the run.
-          for i in 1 2 3; do
-            git pull --rebase --autostash origin main && git push && exit 0
-            echo "push attempt $i failed; retrying after rebase"
-            sleep 5
-          done
-          echo "::error::could not push the re-check commit after 3 attempts"
-          exit 1
+          git push origin HEAD:refs/heads/main
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+      # A branch-source Pages build is not triggered by a push made with GITHUB_TOKEN.
+      - name: Request a Pages build for the refreshed report
+        if: steps.publish.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

@@ -55,6 +55,6 @@ FLAGS = [
          detail='Rule 3 says $190 of each entry and rebuy funds the prize pool, but also withholds $10 staff plus $5 tournament fee from a $200 rebuy. Those rebuy figures do not reconcile. Rebuy pool contribution is not published as a settled value here.',
          impact='Ask the room for corrected written rebuy accounting; initial entry split does reconcile.', source=WYNN_RULES),
     dict(id='N-03', area='Trip readiness', title='Exact-stay hotel comparison is not possible yet',
-         detail='Travel dates, occupancy, nightly budget and quality floor were not supplied. No checkout total, exact cancellation deadline or verified Google/Apple walking duration was captured. Do not substitute a booking widget’s default dates or a promotional rate for a trip quote.',
+         detail='The Dec 1–4 research screen provides comparable stay criteria, not booking preferences. No valid checkout total or cancellation deadline was captured. Google route estimates are dated, but do not time the indoor portion. Do not substitute a booking widget’s default dates or a promotional rate for a trip quote.',
          impact='No hotel winner or bookable single-entry itinerary is claimed. Keep totals blank and retain official booking links.', source=FEE),
 ]

@@ -18,7 +18,7 @@
     var q=$('#q'), df=$('#datef'), mbi=$('#maxbi'), sef=$('#sef'), ng=$('#nogtd'), cnt=$('#count');
     var pills=$$('.pill[data-g]'), until=$('#date-to'), past=$('#include-past');
     var today=vegasDate();
-    if(/^#ev\d+$/.test(location.hash)) past.checked=true;  // Index links can cite historical rows.
+    if(/^#ev\d+$/.test(location.hash)){ past.checked=true; sef.checked=false; } // A source link can cite research.
     var activeGroups={};
     function run(){
       var s=(q.value||'').toLowerCase().trim();
@@ -37,7 +37,7 @@
         tr.classList.toggle('hidden',!ok);
         if(ok) shown++;
       });
-      cnt.textContent=shown+' of '+rows.length+' events shown.'+(sef.checked&&!shown?' No events meet the confirmed freezeout filter.':'');
+      cnt.textContent=shown+' of '+rows.length+' events shown.'+(sef.checked&&!shown?' No confirmed freezeout matches. Turn off the filter to see research only.':'');
     }
     [q,df,until,past,mbi,sef,ng].forEach(function(el){ el.addEventListener('input',run); el.addEventListener('change',run); });
     pills.forEach(function(p){p.addEventListener('click',function(){
@@ -46,7 +46,7 @@
       p.classList.toggle('on'); run();
     });});
     $('#reset').addEventListener('click',function(){
-      q.value=''; df.value=''; until.value=''; past.checked=false; mbi.value=''; sef.checked=false; ng.checked=false;
+      q.value=''; df.value=''; until.value=''; past.checked=false; mbi.value=''; sef.checked=true; ng.checked=false;
       activeGroups={}; pills.forEach(function(p){p.classList.remove('on')}); run();
     });
     $$('#t th').forEach(function(th,i){
@@ -69,20 +69,27 @@
 
   // ---- schedule page -----------------------------------------------------
   if($('#df')){
-    var df2=$('#df'), ov=$('#ov'), c2=$('#c'), panels=$$('.panel[data-date]');
+    var df2=$('#df'), ov=$('#ov'), past=$('#past'), c2=$('#c'), panels=$$('.panel[data-date]');
+    var today=vegasDate();
     function run2(){
       var d=df2.value, shown=0;
       panels.forEach(function(p){
         var ok=true;
         if(d && p.getAttribute('data-date')!==d) ok=false;
-        if(ok && ov.checked && p.getAttribute('data-multiple')!=='1') ok=false;
+        if(ok && !past.checked && !d && p.getAttribute('data-date')<today) ok=false;
+        if(ok && ov.checked && p.getAttribute('data-overlap')!=='1') ok=false;
         p.style.display=ok?'':'none';
         if(ok) shown++;
       });
       c2.textContent=shown+' of '+panels.length+' days shown.';
     }
-    df2.addEventListener('change',run2); ov.addEventListener('change',run2); run2();
+    df2.addEventListener('change',run2); ov.addEventListener('change',run2); past.addEventListener('change',run2); run2();
   }
+
+  var google30=$('#google30');
+  if(google30)google30.addEventListener('change',function(){
+    $$('tr[data-google-min]').forEach(function(tr){tr.hidden=google30.checked && Number(tr.dataset.googleMin)>30;});
+  });
 
   // ---- walking page ------------------------------------------------------
   if($('#v')){
@@ -100,7 +107,7 @@
         var ok=(!vv||tr.closest('.panel').getAttribute('data-venue')===vv);
         if(ok && w30.checked && !(m<=30)) ok=false;
         if(ok && w15.checked && !(m<=15)) ok=false;
-        if(ok && maps.checked && tr.getAttribute('data-maps')!=='1') ok=false;
+        if(ok && maps.checked && tr.getAttribute('data-maps')!=='1')ok=false;
         tr.classList.toggle('hidden',!ok);
         if(ok) shown++;
       });
@@ -110,42 +117,40 @@
     run3();
   }
 
-  function fmt(n){return n==null?'\u2014':n.toLocaleString('en-US',{style:'currency',currency:'USD'});}
-  function hotelCost(H){
-    function read(el){return el.value!==''&&el.validity.valid ? Number(el.value) : null;}
-    var r=read(H.r), f=read(H.f), t=read(H.t), p=read(H.p), n=read(H.n);
-    var sub=r!=null&&f!=null?r+f:null;
-    var tax=sub!=null&&t!=null?sub*t/100:null;
-    var night=tax!=null&&p!=null?sub+tax+p:null;
-    return {sub:sub,tax:tax,night:night,total:n===0?0:night!=null&&n!=null?night*n:null};
-  }
+  function fmt(n){return n===null ? 'Not available' : n.toLocaleString('en-US',{style:'currency',currency:'USD'});}
+  function number(input){return input.value!=='' && input.validity.valid && Number.isFinite(input.valueAsNumber)
+    ? input.valueAsNumber : null;}
 
-  // ---- hotels calculator -------------------------------------------------
-  if($('#h-rate')){
-    var H={r:$('#h-rate'),f:$('#h-fee'),t:$('#h-tax'),p:$('#h-park'),n:$('#h-nights')};
-    var o={s:$('#o-sub'),x:$('#o-tax'),nn:$('#o-night'),tt:$('#o-total')};
-    var note=$('#h-note');
-    function run4(){
-      var valid=Object.keys(H).every(function(k){return H[k].value!=='' && Number.isFinite(+H[k].value) && +H[k].value>=0});
-      if(!valid || !Number.isInteger(+H.n.value) || +H.n.value<1){
-        Object.keys(o).forEach(function(k){o[k].textContent='Not available'});
-        note.textContent='No complete quote. Blank rate, tax, fee or parking is unknown, not zero. Dates, occupancy and a final checkout total are still required.';
-        return;
+  function setupLodging(p, onTotal){
+    var hotel=$('#'+p+'-hotel'), book=$('#'+p+'-book'), checkout=$('#'+p+'-checkout');
+    var fields=['rate','fee','tax','park','nights'].map(function(key){return $('#'+p+'-'+key);});
+    function update(){
+      var v=fields.map(number);
+      var nightly=v.slice(0,4).includes(null) ? null : Math.round(((v[0]+v[1])*(1+v[2]/100)+v[3])*100)/100;
+      var n=v[4], total=nightly===null || n===null ? null : nightly*n;
+      if(checkout && (checkout.value!=='' || checkout.validity.badInput)){
+        total=number(checkout);
+        nightly=n>0 && total!==null ? total/n : null;
       }
-      var r=+H.r.value, f=+H.f.value, tx=(+H.t.value)/100, pk=+H.p.value, n=+H.n.value;
-      var sub=r+f, tax=sub*tx, night=sub+tax+pk, tot=night*n;
-      o.s.textContent=fmt(sub); o.x.textContent=fmt(tax);
-      o.nn.textContent=fmt(night); o.tt.textContent=fmt(tot);
-      note.textContent='Illustrative formula: (room + resort fee) × (1 + tax rate) + tax-inclusive parking. This assumes the same tax rate on room and resort fee; verify the itemized checkout. Never add fees twice if already included. Not a live quote.';
+      if(n===0){total=0; nightly=null;}
+      else if(n===null){total=null; nightly=null;}
+      $(p==='t'?'#tot-night':'#h-night').textContent=fmt(nightly);
+      $(p==='t'?'#tot-hotel':'#h-total').textContent=fmt(total);
+      if(onTotal)onTotal(total);
     }
-    if($('#h-hotel')) $('#h-hotel').addEventListener('change',function(){
-      var option=this.options[this.selectedIndex];
-      H.f.value=option.getAttribute('data-fee'); H.t.value=option.getAttribute('data-tax');
-      H.r.value=''; H.p.value=''; run4();
+    hotel.addEventListener('change',function(){
+      var opt=hotel.options[hotel.selectedIndex];
+      fields[0].value=''; fields[1].value=opt.dataset.fee; fields[2].value=opt.dataset.tax;
+      fields[3].value=p==='t'?'0':'';
+      if(checkout)checkout.value='';
+      book.href=opt.dataset.book || 'hotels.html#checkout-log';
+      book.textContent=opt.dataset.book ? 'Official booking for '+opt.textContent : 'Official booking links and lookup log';
+      update();
     });
-    Object.keys(H).forEach(function(k){H[k].addEventListener('input',run4)});
-    run4();
+    if(checkout)checkout.addEventListener('input',update);
+    fields.forEach(function(f){f.addEventListener('input',update);}); update();
   }
+  if($('#h-rate'))setupLodging('h');
 
   // ---- single-room walking table (venue pages) --------------------------
   var rw=$('#w30[data-walk-room]');
@@ -208,42 +213,37 @@
 
   // ---- trip calculator ---------------------------------------------------
   if($('#pick')){
-    var pick=$('#pick'), body=$('#cart').tBodies[0];
-    var checkout=$('#t-checkout'), nights=$('#t-nights');
-    function setCost(selector, amount){
-      $(selector).textContent=amount===null?'Not available':amount.toLocaleString('en-US',{style:'currency',currency:'USD'});
-    }
+    var pick=$('#pick'), body=$('#cart').tBodies[0], add=$('#add');
+    var research=$('#research-entries'), hotelTotal=null;
+    function alreadyPicked(){return pick.value && Array.from(body.rows).some(function(tr){return tr.dataset.event===pick.value;});}
     function recalc(){
-      var buyin=0,pool=0;
-      $$('#cart tbody tr').forEach(function(tr){
-        buyin+=parseFloat(tr.getAttribute('data-buyin'))||0;
-        pool+=parseFloat(tr.getAttribute('data-pool'))||0;
-      });
-      var n=nights.valueAsNumber, quote=checkout.valueAsNumber;
-      var valid=Number.isInteger(n)&&n>0&&Number.isFinite(quote)&&quote>=0&&checkout.validity.valid;
-      var hotel=n===0?0:valid?quote:null;
-      setCost('#sum-buyin',buyin);
-      setCost('#sum-pool',pool);
-      setCost('#tot-buyin',buyin);
-      setCost('#tot-night',valid?quote/n:null);
-      setCost('#tot-hotel',hotel);
-      setCost('#tot-all',hotel===null?null:buyin+hotel);
+      var buyin=$$('#cart tbody tr').reduce(function(sum,tr){return sum+Number(tr.dataset.subtotal);},0);
+      $('#tot-buyin').textContent=fmt(buyin);
+      $('#tot-all').textContent=fmt(hotelTotal===null ? null : buyin+hotelTotal);
+      add.disabled=!pick.value || alreadyPicked();
     }
-    $('#add').addEventListener('click',function(){
-      var o=pick.options[pick.selectedIndex]; if(!o||!o.value) return;
-      if(body.querySelector('[data-event="'+o.value+'"]')) return;
-      var tr=document.createElement('tr');
-      tr.setAttribute('data-event',o.value);
-      tr.setAttribute('data-buyin',o.getAttribute('data-buyin'));
-      tr.setAttribute('data-pool',o.getAttribute('data-pool')||'0');
-      tr.innerHTML='<td class="num">'+o.value+'</td><td>'+o.textContent+'</td>'
-        +'<td class="num">'+fmt(+o.getAttribute('data-buyin'))+'</td>'
-        +'<td class="num">'+(o.getAttribute('data-pool')?fmt(+o.getAttribute('data-pool')):'\u2014')+'</td>'
-        +'<td><button class="btn del">remove</button></td>';
-      tr.querySelector('.del').addEventListener('click',function(){tr.remove();recalc()});
-      body.appendChild(tr); recalc();
+    function filterCart(){
+      var choice=pick.value;
+      Array.from(pick.options).forEach(function(o){if(o.value)o.hidden=o.disabled=!research.checked && o.dataset.confirmed!=='1';});
+      if(!research.checked){
+        $$('#cart tbody tr[data-research="true"]').forEach(function(tr){tr.remove();});
+      }
+      if(choice && (!pick.options[pick.selectedIndex] || pick.options[pick.selectedIndex].disabled))pick.value='';
+      recalc();
+    }
+    add.addEventListener('click',function(){
+      var o=pick.options[pick.selectedIndex];
+      if(!o || !o.value || o.disabled || alreadyPicked())return;
+      var tr=body.insertRow(), cost=Number(o.dataset.buyin);
+      tr.dataset.event=o.value;
+      tr.dataset.subtotal=cost;
+      tr.dataset.research=o.dataset.confirmed!=='1';
+      var link=document.createElement('a'); link.href='tournaments.html#ev'+o.value; link.textContent=o.textContent;
+      tr.insertCell().appendChild(link); tr.insertCell().textContent=1; tr.insertCell().textContent=fmt(cost);
+      var del=document.createElement('button'); del.type='button'; del.className='btn'; del.textContent='Remove';
+      tr.insertCell().appendChild(del); del.addEventListener('click',function(){tr.remove();recalc();}); recalc();
     });
-    [checkout,nights].forEach(function(input){input.addEventListener('input',recalc)});
-    recalc();
+    pick.addEventListener('change',recalc);
+    research.addEventListener('change',filterCart); setupLodging('t',function(total){hotelTotal=total;recalc();}); filterCart();
   }
 })();

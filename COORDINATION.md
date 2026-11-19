@@ -19,6 +19,25 @@ Checked the board and open PRs: no open PR or current overlapping claim was foun
 - Local checks passed: both site builds, internal links, source hosts/provenance, 37-sheet/94-row audits, strict filter/range, hotel and trip arithmetic, schedule diff, site search and monitor fixtures. Both GitHub PR checks passed.
 - [Integration PR #81](https://github.com/karagemop466-tech/Poker2/pull/81) merged to `main` at `96057d30dc107c107c80b93f8024f8f943cce447` on 2026-11-19 05:37 UTC. [Pages run 44466471227](https://github.com/karagemop466-tech/Poker2/actions/runs/44466471227) deployed successfully; GitHub Pages API returned `built` for that commit and the public executive summary was fetched with the updated text. Morning monitor changes were tested locally; no post-merge scheduled run had completed when this entry was written.
 
+## Session arena/3929f8a8-poker2 — integration follow-up (2026-11-19)
+
+Read the shared board on main before editing. Main at `76b25aa`; no open PRs at claim time. This follow-up does not reopen prior transcriptions or edit the root and `/plan/` data owned by earlier sessions.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Audit decision safety and refresh coverage; fix demonstrated gaps in the consolidated `/2026/` surface | in progress | arena/3929f8a8-poker2 | `scripts/build2026.py`, `scripts/recheck2026.py`, new regression tests, `data/verified2026/**`, `2026/**`, research notes, README, and verification workflows as needed |
+| Final integration PR, CI, and Pages verification | in progress | arena/3929f8a8-poker2 | `COORDINATION.md`, GitHub PR/checks only |
+
+Merge conflict during rebase onto `17019a5` (PR #80): `scripts/build2026.py`, generated trip HTML and JS both changed. Kept PR #80's checkout-total-first calculation, zero-night use case and regression scenarios; incorporated the fee/tax scenario as a separate fallback, then regenerated both files.
+
+Second rebase stopped on conflicts after PR #81 (`96057d3`) landed. Both session sections were kept. Integration retained #81's date ranges and per-flight filtering, Nov 25–28 comparison attempt, re-read sheet dates, Wynn evidence, historical Google Maps evidence, one-entry-per-candidate budget, and legacy refresh improvements. This follow-up adds stricter plan gating, persistent review acknowledgments, a DeepStack IV row parser, eight new Google route readings and further official source discoveries. Generated files were rebuilt from the reconciled inputs.
+
+Third rebase preserved PR #82 (`69739fc`): dated research rankings with direct official sheet links and its deployment record. Conflicting generated pages were regenerated.
+
+[Integration PR #84](https://github.com/karagemop466-tech/Poker2/pull/84) includes the reconciled data, evidence log, and verification suite. PR #83 landed before #84; its detached-HEAD fix for the legacy `/plan/` monitor remains intact. This session's `/2026/` job preserves an artifact, publishes only from main, and explicitly requests a branch-source Pages build after its bot push.
+
+Fourth integration rebase preserved PR #85 (`47dd783`), including its full Wynn daily rules read, four extra-spend formats, accounting flag, latest evidence page, all field-level watch URLs, soft-404/challenge checks and durable monitor baselines. The hotel and schedule descriptions now account for the new comparison screen and dated route estimates. The decision tests were reconciled with the stricter default filter and preserved quote arithmetic. The [read-only live check](https://github.com/karagemop466-tech/Poker2/actions/runs/44467110566) passed before the latest rebase; manual dispatch was denied by the GitHub integration.
+
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
 | Task | Status | Owner | Files |
