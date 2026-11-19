@@ -1,5 +1,14 @@
 # Coordination board
 
+## Session arena/0c4869c8-poker2 — final integration (2026-11-19)
+
+Checked the board and open PRs: no open PR or current overlapping claim was found at main `76b25aa`. Historical claims below are retained for audit.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Audit current evidence and make the published planner enforce the single-entry, dates, quote and walk decision gates | in progress | arena/0c4869c8-poker2 | `2026/**`, `data/verified2026/**`, `scripts/build2026.py`, `scripts/check2026.py`, new QA in `scripts/`, `README.md`, `COORDINATION.md` |
+| Repair schedule monitoring and verify Pages publication | in progress | arena/0c4869c8-poker2 | `scripts/scrape-schedule.mjs`, `.github/workflows/{plan-refresh,verify}.yml`, GitHub Pages |
+
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
 | Task | Status | Owner | Files |
