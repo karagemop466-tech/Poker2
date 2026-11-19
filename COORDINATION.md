@@ -1,5 +1,18 @@
 # Coordination board
 
+## Session arena/68b54771-poker2 — final integration claim (2026-11-19)
+
+Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894` (PR #101 merged); two record-only PRs from finished sessions remained open — #99 (`arena/a9f5847f-poker2`, COORDINATION.md +2 lines) and #102 (`arena/2c7e846d-poker2`, completion record + F-07 flag correction) — both stale against newer main records appended after them. Platform-fixed branch `arena/68b54771-poker2`. Claimed scope (final-integrator role per the original brief):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| G1 Carry forward the stale record PRs without discarding their work. Status update at claim resolution: #102 merged independently (its completion record + F-07 correction are on main via #102/#104) and #99 was closed unmerged, so only #99's 2-line V4-done record still needs carrying forward; main-repair findings were independently fixed by #103/#105/#106/#108 | in progress | arena/68b54771-poker2 | `COORDINATION.md` |
+| G2 Live 2026-11-19 official-source re-reads via page-fetch (Venetian DSE IV schedule + poker page, Wynn poker page, Venetian resort fee, Caesars/Golden Nugget/Bellagio/MGM poker pages, Clark County room tax); record any changed values with per-URL retrieval dates; read-only on `data/verified2026/checks.json` | in progress | arena/68b54771-poker2 | `research/68b54771-official-verification-2026-11-19.md` |
+| G3 Run the full local verification suite on the combined tree (root surface, `/2026/`, `/plan/`: build/check/audit/links/semantics/guarantees/labels/search/trip/decisions/monitor) | in progress | arena/68b54771-poker2 | read-only |
+| G4 Final integration: PR → `main`, CI green, merge without waiting, confirm GitHub Pages deployment, verify live pages, record PR link + merge result + closed stale PRs here | pending | arena/68b54771-poker2 | `COORDINATION.md` |
+
+Not claimed: no new product data changes, no ranking/classification changes, no new feature work — the implementation tasks below are complete per the records retained on this board.
+
 ## Session arena/326322e9-poker2 — requirements traceability, live re-verification & citation repair (2026-11-19)
 
 Read this board and checked open PRs before starting. Main was at `62d33b0` (PR #100 merged). The only
@@ -82,6 +95,20 @@ blocked requirement.
 **Not touched:** the site root generator `scripts/build_site.py`, `data/master.json`, `site-data/**`,
 `plan/**`, and every `.github/workflows/*` file.
 
+=======
+## Session arena/68b54771-poker2 — final integration claim (2026-11-19)
+
+Read `COORDINATION.md` and checked open PRs before starting: `main` at `cf17894` (PR #101 merged); two record-only PRs from finished sessions remain open — #99 (`arena/a9f5847f-poker2`, COORDINATION.md +2 lines) and #102 (`arena/2c7e846d-poker2`, completion record + F-07 flag correction) — both stale against newer main records appended after them. Platform-fixed branch `arena/68b54771-poker2` (already rebased onto `cf17894`). Claimed scope (final-integrator role per the original brief):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| G1 Carry forward the two stale record PRs (#99, #102) without discarding their work: merge their branch heads into this integration branch, resolve append-only COORDINATION.md conflicts keep-both, re-apply #102's F-07 flag correction on top of the newer dataset, close both PRs with an explanation once this PR is merged | in progress | arena/68b54771-poker2 | `COORDINATION.md`, `data/verified2026/content.py`, `data/verified2026/dataset.json`, `data/verified2026/search-index.json`, regenerated `2026/**` |
+| G2 Live 2026-11-19 official-source re-reads via page-fetch (Venetian DSE IV schedule + poker page, Wynn poker page, Venetian resort fee, Caesars/Golden Nugget/Bellagio/MGM poker pages, Clark County room tax); record any changed values with per-URL retrieval dates; read-only on `data/verified2026/checks.json` | in progress | arena/68b54771-poker2 | `research/68b54771-official-verification-2026-11-19.md` |
+| G3 Run the full local verification suite on the combined tree (root surface, `/2026/`, `/plan/`: build/check/audit/links/semantics/guarantees/labels/search/trip/decisions/monitor) | in progress | arena/68b54771-poker2 | read-only |
+| G4 Final integration: PR → `main`, CI green, merge without waiting, confirm GitHub Pages deployment, verify live pages, record PR link + merge result + closed stale PRs here | pending | arena/68b54771-poker2 | `COORDINATION.md` |
+
+Not claimed: no new product data changes, no ranking/classification changes, no new feature work — the implementation tasks below are complete per the records retained on this board.
+>>>>>>> c56cf34 (Coordination: claim arena/68b54771-poker2 final integration scope (stale PR carry-forward, live re-reads, full suite, publication))
 
 ## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
 
