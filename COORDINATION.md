@@ -2337,3 +2337,64 @@ its useful content is now on `main`. Flagged items F-01/F-04/F-05/F-08/F-14, the
 and the Caesars flyer disagreement are published on the Flagged page and do not block anything.
 The next scheduled `Plan: daily official-source refresh` run is the end-to-end proof of the merged
 fix.
+
+---
+
+---
+
+# Session arena/d0bd6790-poker2 — completion record (2026-11-19)
+
+**Outcome.** This session's substance — the repair of the red scheduled workflow *Plan: daily
+official-source refresh* (run 44340744461) — was merged by parallel sessions while this one was
+in flight: **#81/#82** (`arena/0c4869c8-poker2`, report-artifact model), **#83**
+(`arena/4db7d9c7-poker2`, detached-HEAD publish fix — the same defect this session had isolated
+in its local fixture), **#84/#90** (`arena/3929f8a8-poker2`, monitoring/evidence gates + the
+2026-11-18 refresh artefacts integrated) and **#88** (`arena/a29d9f35-poker2`, evidence audit).
+The session adopted those decisions instead of re-implementing them, and verified the merged tree.
+
+**PR #87** — <https://github.com/karagemop466-tech/Poker2/pull/87> — "Arena d0bd6790-poker2:
+verification record and daily-refresh failure analysis (docs only)".
+- Merged 2026-11-19T05:53:05Z, merge commit `41363b791df6e58612f5303003a1794df2c7a150`.
+- Required checks on the PR: `verify` ×2, both SUCCESS.
+- Pages: `pages/builds/latest` for `41363b7` → status **built** at 2026-11-19T05:53:56Z
+  (duration 50s, no error). The live 2026 surface was re-fetched after the merge and serves the
+  current main, including the "November 19 evidence update" panel.
+- The first record-only rebase produced **zero CI runs** (checks silently never queued while the
+  PR sat in CONFLICTING state); after rebasing onto `f8ede89` and force-pushing, both checks
+  queued and passed. Conflicted PRs in this repository should not be expected to report checks.
+- `git pull --rebase origin main` was run before every push; four rebase resolutions were needed
+  because main advanced under this session (see claim section). No other session's work was
+  discarded; COORDINATION.md conflicts were resolved keep-both every time. The session's README
+  paragraph was drafted, then dropped (PR #84 rewrote the same Monitoring section) — that is why
+  PR #87 is documentation-only. One branch force-push happened before PR #87 existed (dropping
+  the superseded R2 commit `4448914` whose target files were replaced wholesale on main).
+
+**Live verification performed this session (2026-11-19, agent page-fetch, official sources).**
+Venetian DSE IV schedule (matches dataset), structure sheet 5/02/12 (exact match; still no
+single-entry clause), Venetian resort fee $55 + tax ✓, suite rates $119/$209 EPOKR25 ✓, Wynn poker
+page (WPT Nov 27–Dec 21; Super Gold Million $400/$3M GTD; dailies suspended during series) ✓,
+Caesars casino page + daily flyer ($100/$160/$100/$160, F-14 still stands) ✓, all seven URLs that
+failed in run 44340744461 re-read successfully — MGM/Aria/Bellagio/Park MGM/Cosmopolitan T&Cs and
+MGM parking match tracked values, Golden Nugget's page confirms unlimited re-entry + $20 add-on —
+so the 2026-11-18 failures were runner-side, not dead pages. Details in PR #87.
+
+**Local verification on the merged tree** (rebase onto `f8ede89`; re-run after every rebase):
+`build-events.py` / `build-schedule.py` / `build-walk.py` / `build-site.py` regenerate
+byte-identical output; `build2026.py --check` OK; `check2026.py` OK (21 pages,
+1354 links, 804 official external citations); `check_links.py` OK; `audit.py` OK (166 events,
+83+13 rows reconcile); `recheck_schedule_live.py` OK (94/94); `check_sheet_readings.py` OK
+(37 sheets, 481 comparisons); `check_guarantees.py`, `check_monitor_badge.py`, `check_semantics.py`,
+`check_decisions.mjs`, `check_trip.mjs`, `check_search.mjs`, `check_labels.py`, `check_site.mjs`,
+`check_plan_fresh.py --strict`, both generator self-tests — all exit 0.
+
+**Notes for the user (nothing blocking).**
+1. The stale `refresh/2026-11-18T155801Z` branch pushed by the failed 2026-11-18 job is now
+   formally superseded — PR #90 integrated and re-verified those artefacts on main. Deleting the
+   branch is safe and left to the user.
+2. `S-11` (one surface, drop the legacy root dashboard) and `S-12` (merge the three monitor
+   workflows into one) remain open decisions for the user, not done here on purpose.
+3. F-01 stands: no official source anywhere states a single-entry rule; the site ranks
+   candidates descriptively only. No event was promoted to "confirmed single-entry".
+4. Every check green above was run on top of `f8ede89`; later merges (if any) do not invalidate
+   the merged PR #87 itself, which CI verified on `83f415a`.
+ (arena/d0bd6790-poker2: completion record (PR #87 merged, Pages built))
