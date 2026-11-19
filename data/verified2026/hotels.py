@@ -214,6 +214,22 @@ HOTELS = [
 # The dated rate log. One line per reading, newest first. This is the whole point of the
 # "rates are a log, not a value" requirement: a rate without a date and a source is not data.
 RATE_LOG = [
+    ("2026-11-19", "bellagio", "resort_fee", "$55.00 plus applicable tax per night",
+     "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+     "Live reread of the Hotel Reservation Terms: 'A daily resort fee of $55.00 plus applicable tax'. "
+     "Same page confirms the $50/night third-occupant charge and the 72-hour deposit-refund window."),
+    ("2026-11-19", "mgm-grand", "resort_fee", "$50.00 plus applicable tax per night",
+     "https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html",
+     "Live reread of the Hotel Reservation Terms: 'A daily resort fee of $50.00 plus applicable tax'. "
+     "Same page confirms the $40/night third-occupant charge and the 72-hour deposit-refund window."),
+    ("2026-11-19", "wynn", "resort_fee", "$55 plus tax per night; includes self-parking for up to two vehicles",
+     "https://www.wynnlasvegas.com/about-us/resort-information",
+     "Live reread of Resort Policies: 'a daily resort fee of $55 plus tax' and 'Complimentary self-parking "
+     "for up to two vehicles' inside the fee. Tower Suites carry the same $55 daily resort fee."),
+    ("2026-11-19", "caesars-palace / horseshoe", "resort_fee", "still not printed",
+     "https://www.caesars.com/caesars-palace/hotel",
+     "Live reread of both Caesar Entertainment property hotel pages: neither prints a resort-fee amount. "
+     "The Caesars FAQ path /faq/resort-fees redirects to the corporate home page. Value stays blank on the site."),
     ("2026-11-19", "venetian / palazzo", "published poker offer", "from $119 and $209; tower assignment not stated",
      "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html", "Live reread; conditional starting prices, not a booking quote."),
     ("2026-11-19", "venetian / palazzo", "resort fee", "$55 plus applicable tax per night",

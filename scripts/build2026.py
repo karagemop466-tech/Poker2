@@ -995,6 +995,47 @@ true-cost-per-night calculator.</li>
     return page("Dashboard", body, "index.html")
 
 
+RULE_HEAD = {"single_entry": "Single entry", "reentry": "Re-entry", "rebuy": "Rebuy", "addon": "Add-on"}
+
+
+def rule_cell(e, key):
+    """One cell per structured rule field, with the value the sheet prints and its status.
+
+    "silent" is not "no". The sheet saying nothing about re-entry is exactly why no event in this
+    series is confirmed as a freezeout, so the silence is shown rather than left blank.
+    """
+    ev = (e.get("rule_evidence") or {}).get(key) or {}
+    value = ev.get("value")
+    excerpt = (ev.get("excerpt") or "").strip()
+    # Two sheets (8 serves events 18 and 58) do not print a re-entry clause, but DO price
+    # "subsequent buy in's" at $200. That is written evidence of a paid additional entry - the
+    # opposite of a freezeout - so it is shown as the flag it is, never folded into "silent".
+    implied = isinstance(value, str) and value.startswith("IMPLIED")
+    if implied and key == "reentry":
+        flag = next((f for f in (e.get("sheet_flags") or []) if "RE-ENTRY" in f.upper()), "")
+        if flag:
+            return ("<span class='tag t-spend'>priced</span><div class='note'>%s</div>"
+                    % esc(flag[:180]))
+    # rule_evidence() carries no status key: it carries the printed value (None when the sheet is
+    # silent) plus the excerpt it came from. Status is therefore derived from the value, never
+    # assumed - a silent clause renders as "silent", a printed one as "printed".
+    status = "explicit" if (value is True or value is False or value not in (None, "")) else "not_stated_sheet_read"
+    if value is True or value is False:
+        text = "yes" if value else "no"
+    elif value not in (None, ""):
+        text = str(value)
+    else:
+        text = ""
+    cls = {"explicit": "t-candidate", "not_stated_sheet_read": "t-warn"}.get(status, "t-warn")
+    label = {"explicit": "printed", "not_stated_sheet_read": "silent"}.get(status, status)
+    out = "<span class='tag %s'>%s</span>" % (cls, esc(label))
+    if text:
+        out += "<div class='note'>%s</div>" % esc(text[:120])
+        if excerpt:
+            out += "<div class='note'>%s</div>" % esc(excerpt[:120])
+    return out
+
+
 def p_tournaments(events):
     dates = sorted({d for e in events for d in e["dates"]})
     rowshtml = []
@@ -1013,6 +1054,7 @@ def p_tournaments(events):
             "<td class='num'>%(pool)s</td>"
             "<td class='num'>%(gtd)s</td>"
             "<td class='num'>%(ratio)s</td>"
+            "<td>%(se)s</td><td>%(re)s</td><td>%(rb)s</td><td>%(ad)s</td>"
             "<td>%(sheet)s</td>"
             "<td class='num'>%(checked)s</td>"
             "<td>%(recheck)s</td>"
@@ -1027,6 +1069,10 @@ def p_tournaments(events):
                 fee="$" + format(e["fee"], ",") if e["fee"] else "&mdash;",
                 pool="$" + format(e["pool_per_entry"], ",") if e["pool_per_entry"] else "&mdash;",
                 gtd=gtdcell, gtdv=e["gtd"] or 0,
+                # Structured rule fields: one cell per printed clause, each showing the value the
+                # official sheet states and marking silence as silence. A blank is never a "no".
+                se=rule_cell(e, "single_entry"), re=rule_cell(e, "reentry"),
+                rb=rule_cell(e, "rebuy"), ad=rule_cell(e, "addon"),
                 ratio="%.1f&times;" % e["ratio"] if e["ratio"] else "&mdash;",
                 sheet="<br>".join(srclink(u, "sheet " + u.rsplit("_", 1)[-1].removesuffix(".pdf"))
                                    for u in event_sources(e)[2:])
@@ -1080,7 +1126,9 @@ changed and is awaiting review), <em>fetch error</em>, or
 <div class="tbl-scroll"><table id="t"><thead><tr>
 <th class="num">#</th><th>Group</th><th>Event</th><th>Dates</th><th>Starts</th>
 <th class="num">Entry fee</th><th class="num">House fee</th><th class="num">To prize pool</th>
-<th class="num">Guarantee</th><th class="num">GTD&divide;entry</th><th>Structure sheet</th>
+<th class="num">Guarantee</th><th class="num">GTD&divide;entry</th>
+<th>Single entry (printed)</th><th>Re-entry</th><th>Rebuy</th><th>Add-on</th>
+<th>Structure sheet</th>
 <th class="num">Last checked</th><th>Source re-check</th>
 </tr></thead><tbody>%(rows)s</tbody></table></div>
 </div>
@@ -1729,10 +1777,19 @@ ROOM_META = {
         desc="A historical structure sheet is archived; no current slate was confirmed.",
         page="venues/mgm-grand.html",
     ),
+    # Re-checked live 2026-11-19 (arena/c2a75934-poker2). Both descriptions state only what the
+    # official page printed or did NOT print on that date; neither room publishes a dated slate.
     "resorts-world": dict(walk_key=None, title="Resorts World Las Vegas", room="Resorts World poker room",
-                         desc="No current dated tournament schedule verified.", page="venues/resorts-world.html"),
+                         desc=("Re-read 2026-11-19: /gaming/poker-room/ redirects to a 'Poker Room Dining' "
+                               "page, which lists dining options and publishes no tournament date, buy-in, "
+                               "guarantee, start time or structure sheet. No dated event can be transcribed."),
+                         page="venues/resorts-world.html"),
     "westgate": dict(walk_key=None, title="Westgate Las Vegas", room="Westgate poker room",
-                     desc="No current dated tournament schedule verified.", page="venues/westgate.html"),
+                     desc=("Re-read 2026-11-19: the official Poker Room page states only that "
+                           "'Tournaments are available every day' and prints room hours and "
+                           "cash-game limits. No start time, buy-in, guarantee, entry rule or "
+                           "structure sheet is published, so no event row can be transcribed."),
+                     page="venues/westgate.html"),
 }
 
 
