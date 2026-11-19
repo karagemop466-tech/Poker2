@@ -56,7 +56,7 @@ reach `main` through the integration PR rather than through a direct claim push.
 |---|---|---|---|
 | Review live official poker, hotel and route evidence and distinguish confirmed values from missing/conflicting information | in progress | arena/71fc23fe-poker2 | `research/official-review-71fc23fe.md`, `data/verified2026/**`, `data/sheets/**`, `scripts/build2026.py`, `2026/**` |
 | Diagnose and repair the failed daily plan refresh and test scheduled-change handling | in progress | arena/71fc23fe-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/check_sources.mjs`, `scripts/commit-refresh.sh`, associated tests |
-| Final integration: audit the existing root and /2026/ dashboards, repair evidenced defects, verify generation and links, PR, merge and Pages | in progress | arena/71fc23fe-poker2 | `scripts/**`, `data/**`, `site-data/**`, root `*.html`, `2026/**`, `README.md`, `.github/workflows/**`, `COORDINATION.md` |
+| Final integration: audit the existing root and /2026/ dashboards, repair evidenced defects, verify generation and links, PR, merge and Pages | in progress | arena/71fc23fe-poker2 | `scripts/**`, `data/**`, `site-data/**`, `assets/dashboard.js`, root `*.html`, `2026/**`, `README.md`, `.github/workflows/**`, `COORDINATION.md` |
 
 Other sessions: please leave the above integration-owned outputs untouched and log any
 cross-scope request here. Claims are advisory across branches until merged to `main`.
