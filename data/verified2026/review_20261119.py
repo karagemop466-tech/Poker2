@@ -48,6 +48,9 @@ for row in WYNN_DAILY:
                dated_occurrence=None, suspension='May be suspended during Seniors Events, Classic Events, or other Tournament Series.')
 
 FLAGS = [
+    dict(id='M-01', area='Multi-flight late registration and level length', title='Event-level fields showed one flight only',
+         detail='Events 1, 26, 47 and 56 print different late-registration closes and level lengths by flight. Event 1 flights A and C close about 3:40 PM on 40-minute levels (structure sheet 10); flights B and D close about 8:40 PM on 30-minute levels (sheet 9). The event row had shown only the B/D close (~8:40 PM). Re-read 2026-11-19 from each flight\'s official sheet; the event row now lists values per flight. Event 26 flight F (sheet 14) closes about 7:25 PM on 20-minute levels. Event 47 flight B (sheet 37) closes about 11:10 PM. Event 56 flights B and D (sheet 36) close about 11:10 PM.',
+         impact='Check the close time and level length on the sheet of the flight you would enter. A registration window is not a finish time.', source=SCHEDULE),
     dict(id='N-01', area='Wynn daily rules', title='No re-entry does not mean no extra spending',
          detail='The Friday sheet prohibits re-entry but permits unlimited $200 rebuys and a $100 add-on. All four daily formats fail the strict policy; none is placed in the freezeout ranking.',
          impact='Keep in the extra-spend section. Daily availability during a series remains unverified.', source=WYNN_RULES),
