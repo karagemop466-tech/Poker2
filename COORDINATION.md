@@ -2418,3 +2418,14 @@ byte-identical output; `build2026.py --check` OK; `check2026.py` OK (21 pages,
 4. Every check green above was run on top of `f8ede89`; later merges (if any) do not invalidate
    the merged PR #87 itself, which CI verified on `83f415a`.
  (arena/d0bd6790-poker2: completion record (PR #87 merged, Pages built))
+
+## Session arena/a9f5847f-poker2 — live 2026-11-19 official-source verification sweep & final integration (2026-11-19)
+
+Read `COORDINATION.md` and checked open PRs before starting: no open PRs at claim time; `main` at `7ab0759` (PR #94 merged). Bash sandbox has no route to official hotel sites, so all live re-reads use the page-fetch tool; results are recorded with retrieval date 2026-11-19. Scope is non-overlapping: new research note + session-updates JSON + regenerated `/2026/` pages only.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live re-read of official sources (Venetian DSE IV schedule + structure sheets, Wynn, Caesars, Bellagio, MGM, Horseshoe, Resorts World, Westgate, Venetian resort-fee/tax pages); record any changed values, new events, or newly explicit single-entry rules with per-URL retrieval dates | in progress | arena/a9f5847f-poker2 | `research/a9f5847f-official-verification-2026-11-19.md`, `data/session-updates-a9f5847f.json` |
+| V2 Re-run scheduled source monitor state check; confirm no source changed since last run or flag changes | in progress | arena/a9f5847f-poker2 | `data/verified2026/checks.json` (read-only unless a change is found) |
+| V3 Rebuild `/2026/` from reconciled data, run full check suite (build --check, check2026, semantics, guarantees, labels, search, trip, decisions), confirm GitHub Pages live | pending | arena/a9f5847f-poker2 | `scripts/build2026.py` outputs, `2026/**` |
+| V4 Final integration: PR → `main`, green CI, merge, verify Pages deployment, record PR link + merge result here | pending | arena/a9f5847f-poker2 | `COORDINATION.md` |
