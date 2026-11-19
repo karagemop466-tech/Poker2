@@ -25,8 +25,8 @@ Read the shared board on main before editing. Main at `76b25aa`; no open PRs at 
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| Audit decision safety and refresh coverage; fix demonstrated gaps in the consolidated `/2026/` surface | in progress | arena/3929f8a8-poker2 | `scripts/build2026.py`, `scripts/recheck2026.py`, new regression tests, `data/verified2026/**`, `2026/**`, research notes, README, and verification workflows as needed |
-| Final integration PR, CI, and Pages verification | in progress | arena/3929f8a8-poker2 | `COORDINATION.md`, GitHub PR/checks only |
+| Audit decision safety and refresh coverage; fix demonstrated gaps in the consolidated `/2026/` surface | done | arena/3929f8a8-poker2 | `scripts/build2026.py`, `scripts/recheck2026.py`, new regression tests, `data/verified2026/**`, `2026/**`, research notes, README, and verification workflows as needed |
+| Final integration PR, CI, and Pages verification | done | arena/3929f8a8-poker2 | `COORDINATION.md`, GitHub PR/checks only |
 
 Merge conflict during rebase onto `17019a5` (PR #80): `scripts/build2026.py`, generated trip HTML and JS both changed. Kept PR #80's checkout-total-first calculation, zero-night use case and regression scenarios; incorporated the fee/tax scenario as a separate fallback, then regenerated both files.
 
@@ -37,6 +37,12 @@ Third rebase preserved PR #82 (`69739fc`): dated research rankings with direct o
 [Integration PR #84](https://github.com/karagemop466-tech/Poker2/pull/84) includes the reconciled data, evidence log, and verification suite. PR #83 landed before #84; its detached-HEAD fix for the legacy `/plan/` monitor remains intact. This session's `/2026/` job preserves an artifact, publishes only from main, and explicitly requests a branch-source Pages build after its bot push.
 
 Fourth integration rebase preserved PR #85 (`47dd783`), including its full Wynn daily rules read, four extra-spend formats, accounting flag, latest evidence page, all field-level watch URLs, soft-404/challenge checks and durable monitor baselines. The hotel and schedule descriptions now account for the new comparison screen and dated route estimates. The decision tests were reconciled with the stricter default filter and preserved quote arithmetic. The [read-only live check](https://github.com/karagemop466-tech/Poker2/actions/runs/44467110566) passed before the latest rebase; manual dispatch was denied by the GitHub integration.
+
+### Completion and deployment (2026-11-19)
+
+- [PR #84](https://github.com/karagemop466-tech/Poker2/pull/84) merged to `main` at `972e77e186f5bfdceaa26ef971f993f1420f0c99` at 05:47:44 UTC. Both site-verification jobs and the [read-only live monitor check](https://github.com/karagemop466-tech/Poker2/actions/runs/44467421501) passed. The live job read 72 of 83 registered URLs, reported 11 unavailable and found 0 changes under comparable fingerprints. All 94 official Venetian schedule row keys matched. The preview artifact is not a paid rate quote, a full rules re-read, or proof of the cron publish path.
+- [GitHub Pages build and deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44467604959) succeeded on the integration merge commit. The [public evidence page](https://karagemop466-tech.github.io/Poker2/2026/latest-review.html?v=972e77e) returned the updated Dec 1–4 research screen and Google-route wording after deploy. Verified 24 generated pages, 64 Venetian events, 38 day panels, 37 structure sheets, and 1,629 links (including 971 external citations). The link gate checks local targets and provenance; network fetch failures are separately reported.
+- No written whole-event freezeout, verified 8 a.m. start, feasible full-day sequence, or comparable checkout. The Dec 1–4 one-adult, $200/night screen is research only. Sources, open gaps and requested follow-up are in [the dated evidence log](research/3929f8a8-official-review-2026-11-19.md) and the public Flagged page. Scheduled main-branch report publication and its automatic Pages request await the next cron run; the integration token could not dispatch a workflow manually (403).
 
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
