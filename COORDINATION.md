@@ -1976,9 +1976,9 @@ No open PRs at claim time; earlier scopes are completed or older than 60 minutes
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| A1 Audit current site, workflows, and evidence; fresh official retrieval attempts; publish exact limitations | in progress | arena/a29d9f35-poker2 | `research/*a29d9f35*`, `data/verified2026/*`, `README.md` |
-| A2 Repair decision-making, freshness, monitor and source coverage defects; preserve blanks and strict freezeout policy | in progress | arena/a29d9f35-poker2 | `scripts/*2026*`, `assets/*`, `.github/workflows/*`, `2026/**` |
-| A3 Build, tests, link checks, PR, merge, Pages deployment and completion record | in progress | arena/a29d9f35-poker2 | `COORDINATION.md`, integration outputs above |
+| A1 Audit current site, workflows, and evidence; fresh official retrieval attempts; publish exact limitations | done (scoped reads; evidence gaps below) | arena/a29d9f35-poker2 | `research/*a29d9f35*`, `data/verified2026/*`, `README.md` |
+| A2 Repair decision-making, freshness, monitor and source coverage defects; preserve blanks and strict freezeout policy | done | arena/a29d9f35-poker2 | `scripts/*2026*`, `assets/*`, `.github/workflows/*`, `2026/**` |
+| A3 Build, tests, link checks, PR, merge, Pages deployment and completion record | done | arena/a29d9f35-poker2 | `COORDINATION.md`, integration outputs above |
 
 All shared outputs are owned by this final integration session. No booking, payment, or invented trip dates/occupancy/budget will be made. Access errors will not be recorded as successful source verification.
 
@@ -2056,3 +2056,24 @@ follow-ups, F-05 dated checkout quotes (booking engines render with JavaScript),
 and the monitor's 26 "changed" hashes from 2026-11-18 (raw byte drift on dynamic pages — the tracked-
 value comparison, not the hash, is authoritative). No row was marked verified without a fetched
 official source; nothing was inferred.
+
+### arena/a29d9f35-poker2 — merged and deployed (2026-11-19)
+
+- Integration PR **[#85](https://github.com/karagemop466-tech/Poker2/pull/85)** merged successfully at **2026-11-19T05:43:44Z**, merge commit `47dd783e36986eca02c2771fbffd5f7e8c200d6c`.
+- Both PR checks passed: [Verify site](https://github.com/karagemop466-tech/Poker2/actions/runs/44467088234) and [Plan generated pages](https://github.com/karagemop466-tech/Poker2/actions/runs/44467088285).
+- GitHub Pages **build and deploy succeeded** for that exact merge SHA: [run 44467144979](https://github.com/karagemop466-tech/Poker2/actions/runs/44467144979). Pages API reports `built`, source `main` `/`.
+- Live dashboard: https://karagemop466-tech.github.io/Poker2/2026/ . New review: https://karagemop466-tech.github.io/Poker2/2026/latest-review.html . Flagged page: https://karagemop466-tech.github.io/Poker2/2026/flagged.html . An external fetch-tool smoke attempt returned “Failed to fetch page”; publication confirmation is from the successful Pages deployment and API, not a claimed successful browser read.
+- Final local checks: 22 pages, 1,427 link references (834 external references checked for allowed hosts, not universal live reachability); 8 monitor regression tests; both decision suites; trip, search, monitor badge, labels and self-tests; semantic, guarantee, archived schedule, 481-field saved-sheet reconciliation, root audit and plan freshness. All passed. CI independently passed.
+- PR #84 is another session's subsequent shared-scope work; notified its owner to preserve this merged evidence and tests on rebase. This session did not check out, push or discard another session's branch.
+
+| Remaining evidence/task | Status | Publication / path to resolution |
+|---|---|---|
+| Written whole-event single-entry / no-rebuy / no-add-on policy | needs review | F-01, N-01 and Latest Review; obtain explicit official written rules, not silence |
+| Friday Wynn rebuy pool accounting | needs review | N-02, official daily structures linked; initial entry split reconciles but rebuy split does not |
+| Actual dates, occupancy, budget, quality floor and comparable hotel checkout totals | needs review | N-03 / F-QUOTE; hypothetical prior-session lookup remains clearly hypothetical, quote cells blank |
+| Current Google/Apple entrance-specific walking durations | needs review | Walking page distinguishes historical readings and estimates; no fresh certification claimed |
+| Complete Strip-wide live schedule ingestion, verified finish-time sequences, 8 AM eligible start | needs review | Latest Review; scheduled source monitoring is not represented as exhaustive ingestion or a guaranteed itinerary |
+
+These evidence gaps are published and do not block the working site's merge. No unverified event was relabelled a confirmed freezeout, no quote was invented and no booking/payment was made.
+
+Documentation-only sync: retained the concurrent deployment-record append on main alongside this session’s completion record.
