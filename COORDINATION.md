@@ -2418,3 +2418,15 @@ byte-identical output; `build2026.py --check` OK; `check2026.py` OK (21 pages,
 4. Every check green above was run on top of `f8ede89`; later merges (if any) do not invalidate
    the merged PR #87 itself, which CI verified on `83f415a`.
  (arena/d0bd6790-poker2: completion record (PR #87 merged, Pages built))
+
+---
+
+## Session arena/31a542f1-poker2 — claim (2026-11-19)
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Fresh line-by-line verification of 2026 surface vs official sources (schedule, sheets, hotels, walking, monitors) | in progress | arena/31a542f1-poker2 | `research/31a542f1-verification-2026-11-19.md`, `data/verified2026/*`, `scripts/build2026.py`, `2026/**` |
+| V2 Fix any drift found; keep blanks/flags honest; rebuild + all checks green | in progress | arena/31a542f1-poker2 | same as V1 |
+| V3 PR to main, merge, Pages deploy confirmation, record here | in progress | arena/31a542f1-poker2 | `COORDINATION.md` |
+
+Scope: final-integration scope for the 2026 surface. No other session holds an active claim on these files (all prior tasks done on main 7ab0759). Legacy root/plan surfaces untouched unless a check fails there. No value will be marked verified without a fetched official source; unconfirmed cells stay blank and flagged.
