@@ -23,6 +23,19 @@
 No product data or implementation were changed during this acceptance pass. The earlier completed implementation records below remain the source of truth for the shipped feature work and merge history.
 
 **Publication:** [PR #95](https://github.com/karagemop466-tech/Poker2/pull/95) merged to `main` at 2026-11-19T10:53:48Z as `559621f09fbe74d0a7fed66a114df71b05092965`. Both `verify` checks passed (runs [44509788636](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788636) and [44509788664](https://github.com/karagemop466-tech/Poker2/actions/runs/44509788664)). The post-merge [Pages deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44509871647) and [Verify site workflow](https://github.com/karagemop466-tech/Poker2/actions/runs/44509872252) both succeeded. The public dashboard and Flagged page were fetched and rendered after publication. This is a documentation-only audit record, not a declaration that the flagged decisions are resolved.
+## Session arena/06afd936-poker2 — claim (2026-11-19 UTC)
+
+Branch `arena/06afd936-poker2` (platform-fixed; the `session-<id>/<task>` naming in the protocol is superseded by the session branch rule). Branched from `main` @ `7ab0759` (PR #94). `gh pr list --state open` returned no open PRs at claim time, and every prior claim on this board is marked done. Baseline: the full `/2026/` verification suite was run on the unmodified tree and passed (build `--check`, `check2026`, schedule live reconciliation 94/94, 37-sheet readings, guarantees, monitor, decisions, search, trip, labels, links, root surface, monitor tests, audit).
+
+Scope claimed (non-overlapping; no other session holds a claim):
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| V1 Live official-source re-read via the agent page-fetch tool, dated 2026-11-19: Venetian DSE IV schedule (HTML), a 1-day candidate structure sheet, a flight-based sheet, Venetian resort fee, Venetian poker suite-rate page, Wynn poker page; compare each against the stored dataset and log matches and differences. Read-only: no value is edited by this task | in progress | arena/06afd936-poker2 | `research/06afd936-live-verification-2026-11-19.md` (new) |
+| V2 Close row-level "last checked" gaps on `/2026/` tables that carry dated data but no per-row check date (generator change in `scripts/build2026.py` only; values are taken from the existing dataset, never inferred) | in progress | arena/06afd936-poker2 | `scripts/build2026.py`, regenerated `2026/**` |
+| V3 Integration: pull/rebase `main`, run the full suite, open PR → `main`, merge with no approval wait, confirm Pages build, record here | in progress | arena/06afd936-poker2 | `COORDINATION.md` |
+
+Not claimed: the root surface (`scripts/build_site.py`, root `*.html`), `data/master.json`, `data/sheets/**`, `data/verified2026/**` values (no new source readings are written into the dataset in this session), the `/plan/` tree, workflows, and the S-11/S-12 consolidation decisions (user decisions, not implemented).
 
 ## Session arena/027412f0-poker2 — root surface audit, monitor hardening, live 2026-11-19 verification & final integration (2026-11-19)
 
