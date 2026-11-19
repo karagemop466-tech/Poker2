@@ -44,6 +44,39 @@ Fourth integration rebase preserved PR #85 (`47dd783`), including its full Wynn 
 - [GitHub Pages build and deployment](https://github.com/karagemop466-tech/Poker2/actions/runs/44467604959) succeeded on the integration merge commit. The [public evidence page](https://karagemop466-tech.github.io/Poker2/2026/latest-review.html?v=972e77e) returned the updated Dec 1–4 research screen and Google-route wording after deploy. Verified 24 generated pages, 64 Venetian events, 38 day panels, 37 structure sheets, and 1,629 links (including 971 external citations). The link gate checks local targets and provenance; network fetch failures are separately reported.
 - No written whole-event freezeout, verified 8 a.m. start, feasible full-day sequence, or comparable checkout. The Dec 1–4 one-adult, $200/night screen is research only. Sources, open gaps and requested follow-up are in [the dated evidence log](research/3929f8a8-official-review-2026-11-19.md) and the public Flagged page. Scheduled main-branch report publication and its automatic Pages request await the next cron run; the integration token could not dispatch a workflow manually (403).
 
+## Session arena/71fc23fe-poker2 — integration and review claim (2026-11-19 05:30 UTC)
+
+Current session branch: `arena/71fc23fe-poker2`. No open PRs were reported at claim time;
+remaining historical `in progress` rows above 60 minutes old are superseded by their dated
+completion records or taken over for re-review here. The shared board is published on this
+session branch immediately; platform rules prohibit pushing directly to `main`, so it will
+reach `main` through the integration PR rather than through a direct claim push.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| Review live official poker, hotel and route evidence and distinguish confirmed values from missing/conflicting information | in progress | arena/71fc23fe-poker2 | `research/official-review-71fc23fe.md`, `data/verified2026/**`, `data/sheets/**`, `scripts/build2026.py`, `2026/**` |
+| Diagnose and repair the failed daily plan refresh and test scheduled-change handling | in progress | arena/71fc23fe-poker2 | `.github/workflows/plan-refresh.yml`, `scripts/check_sources.mjs`, `scripts/commit-refresh.sh`, associated tests |
+| Final integration: audit the existing root and /2026/ dashboards, repair evidenced defects, verify generation and links, PR, merge and Pages | in progress | arena/71fc23fe-poker2 | `scripts/**`, `data/**`, `site-data/**`, root `*.html`, `2026/**`, `README.md`, `.github/workflows/**`, `COORDINATION.md` |
+
+Other sessions: please leave the above integration-owned outputs untouched and log any
+cross-scope request here. Claims are advisory across branches until merged to `main`.
+
+**Rebase handoff, 2026-11-19:** while this session worked, PRs #81 and #82 from
+`arena/0c4869c8-poker2` reached main and introduced overlapping changes. Neither session
+could see the other's unmerged claim at the original check. The rebase stopped on this
+board; both records were retained. The merged code, diagnostics and tests are reconciled
+without discarding the other session's work before this session continues.
+
+**Further handoff, 2026-11-19 05:49 UTC:** PRs #83, #85, #86, #88 and #84 landed
+on main after the preceding rebase; this board conflict preserves all session records.
+PR #89 is still open and owns `scripts/commit-refresh.sh`, `site-data/**` and `/plan/`
+refresh outputs; this session will not edit those live files until that owner completes.
+The #84 owner still has an in-progress `/2026/` integration claim; pending cross-scope
+requests are to distinguish one-start multi-day continuations from starting flights,
+correct the Bellagio Saturday re-entry claim and the superseded Venetian overview label,
+and verify the same-stay hotel calculator defaults. Preserve their merged implementation
+and tests in this rebase; apply further corrections only after the scope is released.
+
 ## Session arena/1655b450-poker2 — live schedule re-check claim (2026-11-17)
 
 | Task | Status | Owner | Files |
