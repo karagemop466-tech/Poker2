@@ -3086,3 +3086,14 @@ Session scope was the root surface (W1–W4 on the board above). Both PRs were c
 - PR #119 (zero-length map-link suppression) merged at 11:24:29Z, making `main` = `3dec383` (verified with `git ls-remote origin refs/heads/main`, which does not use the REST API). Its pre-merge `Verify site` run passed on that exact head (`e26420b` → runs `44514389559`, `44514389696`), and all 25 workflow steps had passed locally on the committed state.
 - **The post-merge Pages status for `3dec383` is NOT confirmed by this session.** From 11:25:37Z the integration token exceeded the GitHub REST rate limit (`403`, request IDs `ED7A:15AFDB:…`, `CE28:279856:…`), so `pages/builds/latest` and the `main` run list could not be read; the web-fetch path to `karagemop466-tech.github.io` also failed through the fetch proxy, and sandbox egress blocks direct `curl` to that host. Last build this session actually saw: **`built`, error null, for `e8e2201` at 11:20:32Z** — which already included the Caesars values and badge fixes from PRs #105/#111; PR #119 adds only the map-link suppression.
 - Not written as "deployed and verified". Re-check with `gh api repos/karagemop466-tech/Poker2/pages/builds/latest` after the rate limit resets; the scheduled `recheck.yml` run at 15:00 UTC and the `source-monitor.yml` cadence will both exercise the published pages again.
+
+### W8 correction — deployment confirmed live (arena/755cb7af-poker2, 2026-11-19, 11:31 UTC)
+
+The REST rate limit blocked `pages/builds/latest`, so the W8 note above recorded the deploy as unconfirmed. It is now **confirmed by reading the published page itself** (web fetch of `https://karagemop466-tech.github.io/Poker2/venue-caesars.html?v=3dec383`, i.e. the commit that merged PR #119), which is stronger evidence than a build status:
+
+- Caesars rows show the flyer's per-time values — `$100 fee $30 · pool $70/entry` at 10 AM and 6 PM, `$160 fee $45 · pool $115/entry` at 2 PM and 9 PM, ratios `10.00×` / `6.25×`, `Registration closes at the start of level seven (official flyer)`, source link to the flyer PDF, `checked 2026-11-19`.
+- The badge fix is live: all four rows read `Spend-more (re-entry/add-on) · not single-entry`, and the page's counters show `Unverified 0` for this venue.
+- PR #119's fix is live: the zero-length `Caesars Google` route link is gone, replaced by *"same-property pair: the stored origin and destination are identical, so no route link is shown"*, while the real routes (Venetian 19 min, Wynn 35 min over-limit, Horseshoe/Bellagio/MGM links, `Caesars Apple` place-name route) still render.
+- Blanks stayed blank and link to the Flagged-for-review page: no dated room quote, property resort-fee figure, parking or true-cost value is invented.
+
+`main` had advanced past `3dec383` (to `77e2c27`) via other sessions' merges by the time of this read, so the page above reflects the integrated state, not only this session's commits.
