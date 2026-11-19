@@ -1,5 +1,32 @@
 # Coordination board
 
+## Session arena/326322e9-poker2 — requirements traceability, live re-verification & citation repair (2026-11-19)
+
+Read this board and checked open PRs before starting. Main was at `62d33b0` (PR #100 merged). The only
+open PR touching generated output was #99 (`COORDINATION.md` only, 2 added lines; conflicting on that
+file, resolved by keep-both on rebase). No other session holds an active claim on the files below, and
+the root `scripts/build_site.py` surface is untouched by this claim, so the scopes do not overlap.
+
+This session's brief asks for four things that were **not** yet covered by any published page on the
+`/2026/` surface: (a) a single traceable list of the requirements themselves, (b) a fresh official-source
+re-read with links for manual review, (c) any irregularity found in that re-read, and (d) a check of the
+root surface's search box on every table page. Claiming exactly that scope:
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| P1 Live 2026-11-19 official re-verification of the sources the site publishes (Venetian DSE IV schedule all 4 chunks / 94 rows, structure sheet 5, resort fee, hotel terms, poker-suite rates, poker room page, poker-room parking page, Wynn poker page, Bellagio poker page + Friday/Saturday structure PDFs, MGM Grand poker page), and record of the result row by row | done | arena/326322e9-poker2 | `research/326322e9-official-verification-2026-11-19.md` |
+| P2 Requirements traceability page: every requirement in the standing brief as one row with status, the page that implements it, the official source, and what is still missing. No requirement is marked met unless it was checked this session | done | arena/326322e9-poker2 | `2026/requirements.html`, `data/verified2026/content.py`, `scripts/build2026.py` |
+| P3 Reproduce and fix the citation irregularity found in P1 (Venetian parking row cited a page that does not print the fee), add the two new official flags, and add a regression gate so the wrong citation cannot come back | done | arena/326322e9-poker2 | `data/verified2026/hotels.py`, `data/verified2026/content.py`, `scripts/check_semantics.py` |
+| P4 Root-surface search gap: six table pages under the site root render no site-wide search box. Report only — the root generator is another session's file scope, so this is logged as a request rather than edited | done (logged, not edited) | arena/326322e9-poker2 | `COORDINATION.md` |
+| P5 Integration: run the full local suite across all three surfaces, open a PR to `main`, merge it, confirm the Pages deployment, and record the PR link and result here | in progress | arena/326322e9-poker2 | `COORDINATION.md`, `README.md` |
+
+**Claimed file scope:** `2026/requirements.html`, `2026/**` (rebuild output of `scripts/build2026.py`),
+`data/verified2026/{content,hotels}.py`, `scripts/build2026.py` (requirements page + nav only),
+`scripts/check_semantics.py`, `research/326322e9-*.md`, `README.md`, `COORDINATION.md`.
+**Not touched:** the site root generator `scripts/build_site.py`, `data/master.json`, `site-data/**`,
+`plan/**`, and every `.github/workflows/*` file.
+
+
 ## Session arena/d5ca2140-poker2 — consolidated site acceptance audit (2026-11-19)
 
 **Scope:** read-only acceptance audit of the existing current dashboard and official-source freshness; this session did not claim or edit shared event/hotel data, generated pages, or application code. Files touched: `COORDINATION.md` only. The implementation tasks below were already present on `main` at `7ab07592e2b861d6000cabea00407eacca656549`; no overlapping active claim or open PR was found.
