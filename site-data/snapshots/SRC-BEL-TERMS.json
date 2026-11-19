@@ -1,0 +1,13 @@
+{
+ "id": "SRC-BEL-TERMS",
+ "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+ "label": "Bellagio reservation terms (resort fee $55 + tax, occupancy, incidentals, 72-hour cancellation)",
+ "publisher": "Bellagio / MGM Resorts (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "state": "error-new",
+ "error": "The operation was aborted due to timeout",
+ "hash": null,
+ "values": {},
+ "value_diffs": [],
+ "note": "fetch failed; the previous snapshot is kept so the site still shows the last verified value"
+}

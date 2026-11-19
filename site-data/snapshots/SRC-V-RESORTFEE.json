@@ -1,0 +1,19 @@
+{
+ "id": "SRC-V-RESORTFEE",
+ "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+ "label": "Venetian resort-fee page",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html;charset=utf-8",
+ "bytes": 227565,
+ "hash": "da29b704d486dd901bd99ebc87d01289cf19d03a0f704d41360bcc16f5eeb964",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "resort_fee": "55"
+ },
+ "value_diffs": [],
+ "excerpt_hint": "Resort Fee | Resort Fee Inclusions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Chec",
+ "note": ""
+}

@@ -1,0 +1,19 @@
+{
+ "id": "SRC-W-OFFER72",
+ "url": "https://www.wynnlasvegas.com/terms-and-conditions/849723",
+ "label": "Wynn offer terms (72-hour cancellation variant)",
+ "publisher": "Wynn (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html; charset=utf-8",
+ "bytes": 353784,
+ "hash": "16a271b98a13bf68c1ee1ee9d736f60591653d027b72e47c4b1b444796395b59",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "cancel_hours": "72"
+ },
+ "value_diffs": [],
+ "excerpt_hint": "Wynn Las Vegas - Terms Skip to main content Click to view our Accessibility Policy or contact us with accessibility related questions Check In 11/18/2026 - Check Out 11/21/2026 Rooms 1 Guests Per Room 2 Promo Code Check Availability 11/18/2026 - 11/21/2026 Check Availability Rooms & Suites Offers Wynn Rewards Dining Casino Entertainment Nightlife Experiences Shops Meetings & Events Terms & Conditi",
+ "note": ""
+}

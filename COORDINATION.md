@@ -2096,3 +2096,142 @@ official source; nothing was inferred.
 These evidence gaps are published and do not block the working site's merge. No unverified event was relabelled a confirmed freezeout, no quote was invented and no booking/payment was made.
 
 Documentation-only sync: retained the concurrent deployment-record append on main alongside this session’s completion record.
+
+## Session arena/f594ea1f-poker2 — claim and record (2026-11-19)
+
+Branch `arena/f594ea1f-poker2` (fixed by the platform). This session acts as the finishing
+integration session for the current brief. Base `main` moved repeatedly mid-session (PR #80, #81, #83, #86 and #84/#88); this record is written after rebasing onto all of them (final base 972e77e = merge of PR #84). Nothing was
+re-read live from the official hosts from this sandbox (shell egress to them is blocked); every
+live reading cited below was produced by the scheduled jobs or fetched in earlier sessions and is
+cited with its retrieval date.
+
+| Task | Status | Files |
+|---|---|---|
+| R1 Fold the 2026-11-18 `plan-refresh` run's artefacts into current `main`, bypassing the stale auto-branch | done | `site-data/change-report.json`, `site-data/schedule-diff.json`, `site-data/snapshots/**`, `plan/flagged.html` |
+| R2 Fix the daily refresh job so it cannot repeat (stale base) and merge with the parallel fix | done | `scripts/commit-refresh.sh` |
+| R3 `/2026/` hotels page | done — superseded by arena/4db7d9c7-poker2 (PR #83), which shipped the same intent with more evidence | — (see below) |
+| R4 Final integration: checks green, PR → `main`, merge, Pages confirmed, record here | in progress | `COORDINATION.md` |
+
+### R1 — what the 2026-11-18 refresh run produced, and what was done with it
+
+The scheduled `Plan: daily official-source refresh` run (run 44340744461, started 06:30 UTC, actually
+executed ~15:53Z) completed every check step and exited 1 at the last step,
+"Commit snapshots, or open a review PR": it pushed `refresh/2026-11-18T155801Z`
+(commit `f645103`, "refresh 2026-11-18T15:58:01Z: 7 source(s) need review") and then failed to open
+the pull request (`gh pr create` exits 1 in that job; the same integration token gets HTTP 403 from
+`workflow_dispatch`, and cannot even read the repo's Actions permissions — both confirmed directly).
+
+That branch was **not merged**. It was cut from the job-start base, which is now stale: about six and a half hours
+later the root source monitor committed `76b25aa` (2026-11-18T22:36Z) directly to `main`, and merging
+`refresh/2026-11-18T155801Z` would have deleted `data/snapshots/2026-11-18/*` and
+`data/snapshots/latest/*`, reverted `data/source_monitor.json` and `data/monitor-report.md` to their
+2026-11-17 state, and stripped ~190 "source changed — re-check" badges from the root pages. That
+content loss is exactly what R2 prevents going forward.
+
+Instead, only the run's *additive* artefacts were cherry-picked onto current `main`
+(`git cherry-pick -n f645103`):
+`site-data/snapshots/**` (66 files: every monitored official URL's first baseline, read live
+2026-11-18T15:53Z), `site-data/change-report.json`, `site-data/schedule-diff.json`, and the
+`plan/flagged.html` render that displays them. `plan/` was then re-rendered from the current tree
+(`python3 scripts/build-site.py`): output byte-identical, registry badges in the root pages
+preserved (93/83/4/10 in the four venue pages; 2 in `monitor.html`).
+
+What the run found, stated exactly:
+`sources_checked: 66` — **59 `new`** (first baseline; nothing to compare yet), **7 `error-new`**,
+all of them blocked fetches, none of them a value change and none of them dead pages:
+`SRC-MGM-PARKING` (mgmresorts.com parking, timeout), `SRC-PMGM-TERMS`,
+`SRC-MGM-TERMINDEX`, `SRC-ARIA-TERMS`, `SRC-BEL-TERMS`, `SRC-COSMO-TERMS` (all mgmresorts.com,
+timeouts) and `SRC-GN-DAILY` (goldennugget.com, HTTP 403). These are now published on
+`plan/flagged.html` as unreadable-without-baseline; every one carries a snapshot
+(`site-data/snapshots/SRC-*.json`) so the next run can classify them.
+`schedule-diff.json`: state `ok` — 94 rows parsed, 94 expected, 0 added / 0 removed / 0 modified;
+the "renamed" entries are the scraper seeing the leading "1 " card number and a "View —" label the
+old wording lacked, identical slots on both sides; no guarantee/buy-in/row moved.
+
+### R2 — why the job went red twice, and the fix (merged with the parallel fix)
+
+arena/4db7d9c7-poker2 diagnosed the same run independently (PR #83): `actions/checkout` leaves a
+detached HEAD on `schedule` runs, the old `git rev-parse --abbrev-ref HEAD` printed `HEAD`, and the
+snapshot push targeted `HEAD:HEAD` instead of `main`. Their fix publishes the generated reports
+straight to `main` from the main checkout only (never over generator drift, never from a forked or
+topic checkout) and needs no pull-request permission — the same direct-to-`main` model `recheck.yml`
+already uses.
+
+This session's independent defects found and merged into the same file:
+
+1. **Stale base.** The job checks out `main` at start; `main` can move before the publish step
+   (observed 2026-11-18). The script now fetches `origin/main`; if the run started behind, it copies
+   only the run's data artefacts (`site-data/snapshots`, `change-report.json`, `schedule-diff.json`)
+   to a temp dir, resets hard to `origin/main`, restores the artefacts, and regenerates `plan/`
+   (`scripts/build-site.py`) before committing — the publish contains this run's evidence on top of
+   current `main`, never a revert of newer monitor commits. Verified against a scratch repository
+   with a simulated mid-run `main` move (job base A → origin/main B: after the block HEAD = B, fresh
+   snapshots and report restored, `plan/flagged.html` rendered from B).
+2. **No empty-branch / no-op commit.** The script exits 0 ("No report changes to publish.") when the
+   re-applied tree has no diff vs current `main`.
+3. **Push race.** After committing, if the push is rejected because `main` moved again, the script
+   rebases the report commit once (`git pull --rebase --autostash origin main`, same pattern
+   `recheck.yml` uses) and retries; a conflict aborts the rebase (non-zero exit) rather than revert
+   hand-transcribed data — fail safe, report downloadable in Actions.
+4. My earlier `gh pr create` fallback was dropped in the merge: with #83's main-checkout publish
+   model it is dead code (no PR step exists on that path). The token still cannot open PRs
+   (HTTP 403, confirmed); publishing to `main` directly sidesteps that entirely.
+
+### R3 — /2026/ hotels page (superseded by PR #83)
+
+This session removed the `$119` pre-filled nightly rate from the true-cost calculator and added an
+"Official booking" column to the hotel comparison table. PR #83, merged first, already shipped both
+intents with more evidence (per-hotel booking link inside the *Fee source* cell together with its
+`resort_fee_checked` date and a monitor check badge; the rate input is now
+`placeholder="No verified quote"` with no value). My generator edits were dropped in the merge to
+avoid double-rendering; the committed `2026/**` pages reproduce from PR #83's generator
+(`python3 scripts/build2026.py --check` → OK). The official booking links published are each
+property's own engine; prices render with JavaScript, so F-05 stays open and no dated checkout
+total is published anywhere.
+
+### Verification run on this tree (this session; re-run after the merge with PR #83)
+
+```
+Re-run after the final rebase onto main 972e77e (PRs #80/#81/#83/#84/#86/#88 merged); all green:
+python3 scripts/audit.py                OK (166 events, 10 hotels; 83 + 13 rows reconcile)
+python3 scripts/build2026.py --check    OK: every page matches the verified data
+python3 scripts/check2026.py            OK: 24 pages, 1629 links (971 external citations), no broken links, no non-official hosts
+python3 scripts/build-site.py --check   OK (22 pages; committed output unchanged)
+python3 scripts/check_plan_fresh.py --strict  OK
+python3 scripts/check_guarantees.py     OK (69 events resolved across 37 sheets;
+                                        0 day(s) carry a primary — no event has a written
+                                        single-entry rule, so the strict primary rule is vacuous;
+                                        that is the merged policy, not a regression)
+python3 scripts/check_monitor_badge.py  OK
+python3 scripts/check_semantics.py      OK
+python3 scripts/check_labels.py         OK (76 pages, 7075 links)
+python3 scripts/check_labels_selftest.py OK
+python3 scripts/check_sheet_readings.py OK: 37 sheets, 481 comparisons, 0 mismatches; 0 single-entry clauses
+node   scripts/check_search.mjs         OK
+node   scripts/check_trip.mjs           OK
+node   scripts/check_decisions.mjs      OK
+node   scripts/check_sources.mjs --selftest   OK
+node   scripts/scrape-schedule.mjs --selftest OK
+node   scripts/check_site.mjs           OK
+python3 scripts/build-events.py --check  OK (94 rows)
+python3 scripts/build-schedule.py --check OK
+python3 scripts/build-walk.py --check     OK
+bash -n scripts/commit-refresh.sh         OK
+git diff --check                          OK
+```
+
+### Still open (unchanged by this session)
+
+1. F-05 — no dated checkout total can be read: official booking engines render prices with
+   JavaScript. The booking links are the verified path; the value stays blank and flagged.
+2. F-04 — no finish times published; no two events can be promised as a sequence.
+3. F-08 — walking minutes are OSM routing estimates labelled as such (Google/Apple links per row);
+   not official measured values.
+4. Single-entry: 0 confirmed; every candidate rides on sheet silence, and the site says so.
+5. The stale `refresh/2026-11-18T155801Z` branch remains on origin, unmerged on purpose; its useful
+   content is on `main` via this branch. It can be deleted once this PR merges.
+6. The next scheduled `Plan: daily official-source refresh` run is the end-to-end proof of the
+   merged fix; when anything changed it will publish the report straight to `main` (or, if `main`
+   moved mid-run, re-apply onto current `main` once and retry; a conflict fails safe with the
+   report downloadable in Actions). Which trigger fires next (06:30 or 14:30 UTC) depends on the
+   workflow file as merged in PR #83/#86.

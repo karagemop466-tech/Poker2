@@ -1,0 +1,25 @@
+{
+ "id": "SRC-V-HOTELTC",
+ "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+ "label": "Venetian Hotel Terms & Conditions (resort fee, 13.38% room tax, parking, incidentals, occupancy, cancellation, checkout)",
+ "publisher": "The Venetian (official)",
+ "checked": "2026-11-18T15:53:11.152Z",
+ "http_status": 200,
+ "content_type": "text/html;charset=utf-8",
+ "bytes": 233104,
+ "hash": "3d100697ee1b5a9e832de0eb7c2efe9e76f173c2c277385cb360ecff60addc16",
+ "state": "new",
+ "binary": false,
+ "values": {
+  "room_tax": "13.38",
+  "resort_fee": "55",
+  "guest_parking": "20",
+  "valet_parking": "40",
+  "incidentals": "150",
+  "extra_guest": "50",
+  "early_checkout": "100"
+ },
+ "value_diffs": [],
+ "excerpt_hint": "Hotel Terms & Conditions | The Venetian Resort Las Vegas Skip to main content --> Menu Offers Search Account Account Sign In {{ loginStatus.firstName }} {{ loginStatus.lastName }} Venetian Rewards ID {{ loginStatus.patronId }} Tier {{ loginStatus.loyaltyTier }} Venetian Rewards Points {{ loginStatus.formattedNumberOfPoints }} Account Information Sign Out Select Dates Loading Loading Check Rates {{",
+ "note": ""
+}
