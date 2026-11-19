@@ -2096,3 +2096,25 @@ print("data/master.json written: %d events, %d hotels, %d flags"
       % (len(events), len(hotels), len(flags)))
 from collections import Counter
 print("categories:", dict(Counter(e["category"] for e in events)))
+
+# ===========================================================================
+# VERIFICATION SWEEP — arena/027412f0-poker2 (2026-11-19, applied above at write)
+# Live re-reads recorded in research/027412f0-official-verification-2026-11-19.md.
+# NOTE: this block runs after master.json is written above, so it patches the
+# file on disk directly (idempotent on rebuild).
+# ===========================================================================
+import json as _json027, os as _os027
+_p027 = _os027.path.join(ROOT, "data", "master.json")
+_m027 = _json027.load(open(_p027))
+_m027["verification_027412f0"] = {
+    "retrieved": "2026-11-19", "session": "arena/027412f0-poker2",
+    "transcript": "research/027412f0-official-verification-2026-11-19.md",
+    "venetian_series_update": "Series overview now lists Current Series: DeepStack Extravaganza IV (Nov 16-Dec 23, 2026); DeepStack Extravaganza NYE Dec 24, 2026-Jan 10, 2027 (>$1.1M GTD) newly posted; stale WPT Fall Festival banner gone.",
+}
+_m027["as_of"] = "2026-11-19"
+for _e in _m027["events"]:
+    if (_e.get("struct_url") or "").endswith("dse_nov_2026-structure_30.pdf"):
+        _e["last_checked"] = "2026-11-19"
+        _e["sheet_retrieved"] = "2026-11-19"
+_json027.dump(_m027, open(_p027, "w"), indent=1)
+print("027412f0 overlay applied: as_of=2026-11-19, structure-30 rows re-dated")
