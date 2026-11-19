@@ -16,6 +16,17 @@ class MonitorTests(unittest.TestCase):
         h = [dict(results=[dict(url='u', hash='b', change='CHANGED')])]
         self.assertFalse(m.source_state(h, {'u': {'review_required': False}})['u']['review_required'])
         self.assertEqual(m.source_state([], {'u': {'last_hash': 'a'}})['u']['last_hash'], 'a')
+    def test_reviewed_hash_clears_only_the_exact_content_version(self):
+        changed = [dict(checked='today', results=[dict(url='u', hash='b', change='CHANGED')])]
+        self.assertFalse(m.source_state(changed, reviewed={'u': 'b'})['u']['review_required'])
+        self.assertTrue(m.source_state(changed, reviewed={'u': 'old'})['u']['review_required'])
+        changed_again = [
+            dict(checked='later', results=[dict(url='u', hash='c', change='CHANGED')]),
+            dict(checked='today', results=[dict(url='u', hash='b', change='CHANGED')]),
+        ]
+        state = m.source_state(changed_again, reviewed={'u': 'b'})['u']
+        self.assertEqual(state['last_hash'], 'c')
+        self.assertTrue(state['review_required'])
     def test_prior_monitor_metadata_is_preserved(self):
         history = [dict(checked='now', results=[dict(url='u', hash='b', change='unchanged', last_changed='earlier')])]
         self.assertTrue(m.source_state(history)['u']['review_required'])

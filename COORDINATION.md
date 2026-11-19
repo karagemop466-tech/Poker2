@@ -2493,3 +2493,14 @@ Claim commit pushed on this platform-assigned branch before implementation; no o
 created or used. Shared event tables, navigation and schedules are not being reclassified. A source
 hash can only be acknowledged after the official source is re-read; next scheduled fetches must reopen
 a row if its content changes again.
+
+### Coordination update — 2026-11-19T10:59Z
+
+After the claim commit, the source-review work overlapped the newly posted independent reads in PR #96
+(schedule page / Sheet 30 / Wynn poker page) and PR #98 (nine Venetian sheets); both were merged by
+their owners, so this session adopts their published re-read evidence and makes no duplicate event-row
+edits. PR #100 (`arena/9e862af8-poker2`) is now the active root-data final-verification PR, and PR #99
+is its source session's completion record. To keep scopes separate, this session will not edit root
+`data/master.json`, root pages or `scripts/build_master.py`; it is limited to `/2026/` pending-monitor
+acknowledgements, the related regression test, and this review record. Any `/2026/` generated outputs
+will be rebuilt only after the active integration PRs settle and the branch is rebased on current main.
