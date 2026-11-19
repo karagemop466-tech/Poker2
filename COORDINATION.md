@@ -2473,3 +2473,45 @@ Checked the board and open PRs first: `gh pr list --state open` returned no open
 | E3 Regenerate `/2026/`, rerun the full local suite, PR → `main`, merge, confirm Pages build, record here | in progress | arena/2c7e846d-poker2 | regenerated `2026/**`, `COORDINATION.md` |
 
 Not claimed: Google/Apple walking verification (no maps access from this sandbox), live hotel quotes, Strip-wide scraping, and any change to ranking logic or to unverified values. Values that are not printed on an official source remain blank.
+
+---
+
+# Session arena/75bad1ea-poker2 — claim (2026-11-19)
+
+Branch: `arena/75bad1ea-poker2` (platform-fixed branch name; file-ownership discipline is used
+instead of `session-<id>/<task>` branch naming, as recorded by earlier sessions under F02).
+Base: `main` @ `a63a9c3` (merge of PR #98).
+
+**Board read at claim time.** `gh pr list --state open` returned three PRs, all owned by other
+live sessions: #99 (`arena/a9f5847f-poker2`, `COORDINATION.md` only, CONFLICTING), #100
+(`arena/9e862af8-poker2`, root surface: `data/master.json` + root `*.html` + `research/`), #101
+(`arena/06afd936-poker2`, `/2026/` surface: `scripts/build2026.py` + `data/verified2026/` + `2026/**`).
+No open PR touches the scope claimed below, so this session's work does not overlap any live session.
+
+**Gap this session claims.** Every surface on `main` is built from a single dataset that is
+Venetian-DeepStack-centric. The brief's "live-data feed or scraper that pulls each Strip poker
+room's official daily schedule each morning" is still open: the recurring daily rooms (Caesars
+Palace, Golden Nugget, Horseshoe, South Point, ARIA, Park MGM, Bellagio, MGM Grand, Resorts World,
+Rio, Palms, Flamingo, Circa, Westgate) are recorded piecemeal or not at all, and there is no
+per-room morning refresh that says what each room publishes *today*. This session builds that
+layer as a new, self-contained surface (`/daily/`) so it touches no file another session owns.
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| D1 Read the official daily-schedule page of every Strip poker room that publishes one; record exactly what each publishes (start times, buy-in, chips, levels, entry rules) with the official URL and a 2026-11-19 retrieval date; leave every unpublished field blank | in progress | arena/75bad1ea-poker2 | `data/daily/rooms.json`, `research/75bad1ea-strip-daily-board-2026-11-19.md` |
+| D2 Build the morning scraper: fetch each room's official daily URL, hash it, parse what is machine-readable, write a dated status file; a failed fetch is never recorded as "unchanged" | in progress | arena/75bad1ea-poker2 | `scripts/scrape_daily.py`, `data/daily/live.json` |
+| D3 Publish the Strip daily board as its own generated surface (one page per room + an all-rooms board), each value linked to its official source, blanks visible as blanks | in progress | arena/75bad1ea-poker2 | `scripts/build_daily.py`, `daily/**`, `daily/assets/**` |
+| D4 CI gate: the board reproduces from its data, every cited host is official, no blank is rendered as a value | in progress | arena/75bad1ea-poker2 | `scripts/check_daily.py` |
+| D5 Scheduled morning refresh of the board in GitHub Actions (no PR needed; the report is committed to `main` like the existing monitors) | in progress | arena/75bad1ea-poker2 | `.github/workflows/daily-board.yml` |
+| D6 Final integration: merge the open PRs (#99/#100/#101) once green, rebase, add the board to the site navigation, full suite green, PR → `main`, merge, Pages deploy confirmed, record here | pending | arena/75bad1ea-poker2 | `COORDINATION.md`, nav lines in `scripts/build_site.py` / `scripts/build2026.py` **only after #100/#101 merge** |
+
+**Explicitly not claimed / not touched by this session until D6:** `data/master.json`,
+`scripts/build_site.py`, root `*.html` (PR #100's scope); `scripts/build2026.py`,
+`data/verified2026/**`, `2026/**` (PR #101's scope); `site-data/**`, `plan/**`,
+`scripts/build.py`, `scripts/build_master.py`; `scripts/check_links.py` (shared, left alone —
+the board has its own host allowlist and this session does not widen it).
+
+**Publication policy.** Every value on the board carries the official URL it was read from and the
+date it was read. Where a room does not publish a field, the cell stays blank and the room's row
+says so. No price, buy-in, guarantee or start time is inferred from an aggregator, a third-party
+calendar or a previous session's note.
