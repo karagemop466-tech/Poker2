@@ -2519,3 +2519,11 @@ scope: `data/verified2026/hotels.py`, `scripts/build2026.py`, `scripts/recheck20
 `scripts/check_monitor_badge.py`, the exact-hash review test/registry, and generated `/2026/**` outputs.
 The Self-Parking Info URL was read 2026-11-19 and is newly registered but not in the 2026-11-18 run;
 its monitor status must remain partial until a scheduled fetch establishes a baseline.
+
+### Scope refinement — event 08 eligibility quote — 2026-11-19T11:23Z
+
+The same official Sheet 30 re-read shows Rule 2 requires age 21+ and a Venetian Rewards card for Event 08.
+This session adds that exact quote and its existing source/read-date attribution to the sheet data and the
+rendered event row; it does not infer a one-entry cap or change the bounty/PKO classification. The narrow
+additional source file is `data/sheets/part5.py`; generated `/2026/**` outputs and the existing sheet-reading
+and site-integrity tests cover the rendering. PR #100 remains disjoint on root-dashboard data.
