@@ -3104,3 +3104,26 @@ The REST rate limit blocked `pages/builds/latest`, so the W8 note above recorded
 - **Pages:** the post-merge `pages-build-deployment` was triggered on `3cf1cfd`. The GitHub REST API was rate-limited at record time (concurrent sessions), so instead of an API `built` confirmation the deployment is evidenced by cache-busted live fetches minutes after the merge: `https://karagemop466-tech.github.io/Poker2/?v=68b54771` (root dashboard: 45 sheet-silent, 37 spend-more, 40 unverified, 10 hotels, 46 flags, clean landing with no conflict markers) and `https://karagemop466-tech.github.io/Poker2/2026/?v=68b54771` (64 events / 94 scheduled rows / 37 sheets / 0 confirmed single-entry / 15 research candidates with the printed Rewards-card condition and restricted-lead section). Both served the merged state.
 - **Open PRs left untouched for their owners** (fresh claims at publication time, per the takeover rule): #109 (`arena/449be056`, official-source sweep + parking citation fixes) and #110 (`arena/799d66c1`, independent final integration). Their owners should rebase onto `3cf1cfd` before pushing; their scopes do not block publication.
 - **Session outcome.** The site is published and green: no broken links (check_links/check2026/check_site), every row carries an official source link, every unconfirmed value is blank + flagged, the confirmed single-entry count is honestly 0, and the standing brief's decision path (dates → structure sheets → comparison → hotel itemization → day plan → pre-payment reconfirmation) is implemented page by page with a requirements traceability page (`/2026/requirements.html`). Remaining open items are decision blockers only the user can resolve (trip dates, budget, exact-stay quote capture) plus the physical verifications flagged on the site (measured walks, live checkout quotes, finish times). This is the terminal record of session arena/68b54771-poker2.
+
+## Session arena/583f0096-poker2 — claim (2026-11-20)
+
+Checked the board and `gh pr list --state open` first. Open PRs left by other sessions: #110 (`arena/799d66c1`, 2026-11-19) and #117 (`arena/c2a75934`, completion record). Neither is claimed by this session and neither is touched here. Main head is `59639bf`; the local suite was run on a clean tree and passed (build `--check`, `check2026`, sheet readings, recheck tests, monitor badge, semantics, guarantees, labels, conflict markers, root surface).
+
+| Task | Status | Owner | Files |
+|---|---|---|---|
+| S1 Live spot re-read, dated 2026-11-20, of load-bearing official pages: Venetian DSE IV schedule page, Venetian resort-fee page, Wynn poker page, one Venetian structure-sheet PDF. Record confirm / contradict per URL; no value written unless a first-hand read shows a mismatch | done | arena/583f0096-poker2 | `research/583f0096-live-reread-2026-11-20.md` (new) |
+| S2 Publish the result: record the table below and the flags on the board; no edits to generated pages unless a mismatch is proven | done | arena/583f0096-poker2 | `COORDINATION.md` |
+| S3 PR → `main`, green checks, merge, Pages confirmed, record here | in progress | arena/583f0096-poker2 | `COORDINATION.md` |
+
+Not claimed: Google/Apple walking verification, live hotel checkout quotes, Strip-wide scraping, and any edit to ranking logic. These need access the sandbox does not have and remain open.
+
+### arena/583f0096-poker2 — result (2026-11-20)
+
+Full table with links: `research/583f0096-live-reread-2026-11-20.md`.
+
+- **Confirmed (first-hand read 2026-11-20):** Venetian resort fee $55 + tax per night ([resort-fee page](https://www.venetianlasvegas.com/resort/resort-fee.html)); 16 DSE IV schedule rows for Nov 16–28 ([DSE schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), chunk 1 of 4); Wynn WPT Nov 27–Dec 21, Wynn Signature Series Jan 11–24 2027, and the Friday $40,000 guaranteed rebuy wording ([Wynn poker page](https://www.wynnlasvegas.com/casino/poker)); structure sheet 1 on every stored field, including silence on re-entry ([structure 1](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf)).
+- **Mismatches found:** none. No stored value was changed.
+- **Irregularities (non-blocking, logged in the research file):** R-01 structure 1 is silent on re-entry, so it is not single-entry; R-02 only chunk 1 of the schedule was re-read today; R-03 Venetian booking default dates are not trip dates; R-04 the Wynn rebuy wording is the same as flag N-02.
+- **Local suite on the clean tree before this session's edits:** build `--check`, `check2026` (25 pages, 1,769 links, no broken links), sheet readings, recheck tests, monitor badge, semantics, guarantees, labels, conflict markers, and root surface all passed.
+- **Open PRs not touched:** #110 (`arena/799d66c1`) and #117 (`arena/c2a75934`).
+- **Still not claimed:** Google/Apple walking verification, live hotel checkout quotes, Strip-wide scraping, Clark County tax, and any single-entry event confirmation.
