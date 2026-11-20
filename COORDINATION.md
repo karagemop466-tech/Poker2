@@ -3111,8 +3111,19 @@ Checked the board and `gh pr list --state open` first. Open PRs left by other se
 
 | Task | Status | Owner | Files |
 |---|---|---|---|
-| S1 Live spot re-read, dated 2026-11-20, of load-bearing official pages: Venetian DSE IV schedule page, Venetian resort-fee page, Wynn poker page, one Venetian structure-sheet PDF. Record confirm / contradict per URL; no value written unless a first-hand read shows a mismatch | in progress | arena/583f0096-poker2 | `research/583f0096-live-reread-2026-11-20.md` (new) |
-| S2 Publish the result: record the table below and the flags on the board; no edits to generated pages unless a mismatch is proven | in progress | arena/583f0096-poker2 | `COORDINATION.md` |
+| S1 Live spot re-read, dated 2026-11-20, of load-bearing official pages: Venetian DSE IV schedule page, Venetian resort-fee page, Wynn poker page, one Venetian structure-sheet PDF. Record confirm / contradict per URL; no value written unless a first-hand read shows a mismatch | done | arena/583f0096-poker2 | `research/583f0096-live-reread-2026-11-20.md` (new) |
+| S2 Publish the result: record the table below and the flags on the board; no edits to generated pages unless a mismatch is proven | done | arena/583f0096-poker2 | `COORDINATION.md` |
 | S3 PR → `main`, green checks, merge, Pages confirmed, record here | in progress | arena/583f0096-poker2 | `COORDINATION.md` |
 
 Not claimed: Google/Apple walking verification, live hotel checkout quotes, Strip-wide scraping, and any edit to ranking logic. These need access the sandbox does not have and remain open.
+
+### arena/583f0096-poker2 — result (2026-11-20)
+
+Full table with links: `research/583f0096-live-reread-2026-11-20.md`.
+
+- **Confirmed (first-hand read 2026-11-20):** Venetian resort fee $55 + tax per night ([resort-fee page](https://www.venetianlasvegas.com/resort/resort-fee.html)); 16 DSE IV schedule rows for Nov 16–28 ([DSE schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), chunk 1 of 4); Wynn WPT Nov 27–Dec 21, Wynn Signature Series Jan 11–24 2027, and the Friday $40,000 guaranteed rebuy wording ([Wynn poker page](https://www.wynnlasvegas.com/casino/poker)); structure sheet 1 on every stored field, including silence on re-entry ([structure 1](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf)).
+- **Mismatches found:** none. No stored value was changed.
+- **Irregularities (non-blocking, logged in the research file):** R-01 structure 1 is silent on re-entry, so it is not single-entry; R-02 only chunk 1 of the schedule was re-read today; R-03 Venetian booking default dates are not trip dates; R-04 the Wynn rebuy wording is the same as flag N-02.
+- **Local suite on the clean tree before this session's edits:** build `--check`, `check2026` (25 pages, 1,769 links, no broken links), sheet readings, recheck tests, monitor badge, semantics, guarantees, labels, conflict markers, and root surface all passed.
+- **Open PRs not touched:** #110 (`arena/799d66c1`) and #117 (`arena/c2a75934`).
+- **Still not claimed:** Google/Apple walking verification, live hotel checkout quotes, Strip-wide scraping, Clark County tax, and any single-entry event confirmation.
