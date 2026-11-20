@@ -3127,3 +3127,10 @@ Full table with links: `research/583f0096-live-reread-2026-11-20.md`.
 - **Local suite on the clean tree before this session's edits:** build `--check`, `check2026` (25 pages, 1,769 links, no broken links), sheet readings, recheck tests, monitor badge, semantics, guarantees, labels, conflict markers, and root surface all passed.
 - **Open PRs not touched:** #110 (`arena/799d66c1`) and #117 (`arena/c2a75934`).
 - **Still not claimed:** Google/Apple walking verification, live hotel checkout quotes, Strip-wide scraping, Clark County tax, and any single-entry event confirmation.
+
+### arena/583f0096-poker2 — merge and deploy record (2026-11-20)
+
+- **PR:** [#124](https://github.com/karagemop466-tech/Poker2/pull/124) — live spot re-read 2026-11-20. Both `verify` checks passed (runs 44725190512 / 44725190513). Merged with `gh pr merge 124 --merge` at 2026-11-20T11:10:04Z, merge commit `6d53aba`.
+- **Pages:** `gh api repos/karagemop466-tech/Poker2/pages/builds/latest` reports `built` at `6d53aba`. The live dashboard at https://karagemop466-tech.github.io/Poker2/2026/ serves the current content (fetched 2026-11-20).
+- **Session status:** S1–S3 done. Research file: `research/583f0096-live-reread-2026-11-20.md`. No stored value changed.
+- **Open PRs untouched:** #110 (`arena/799d66c1`) and #117 (`arena/c2a75934`). Their owners should rebase onto `6d53aba`.
